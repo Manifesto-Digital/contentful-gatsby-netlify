@@ -5,11 +5,11 @@ import { StaticQuery, graphql } from 'gatsby'
 
 // Styles
 import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from './theme/global'
 import theme from './theme'
 
 // Component
 import Header from './header'
-import './layout.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -25,6 +25,7 @@ const Layout = ({ children }) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <>
+          <GlobalStyle />
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[

@@ -15,12 +15,19 @@ theme.palette = {
 
 theme.fonts = {
   primary: 'Helvetica Neue, Helvetica, Roboto, sans-serif',
-  header: 'Consolas, Liberation Mono, Menlo, Courier, monospace',
+  header: 'Helvetica Neue, Helvetica, arial,sans-serif',
   quote: 'Georgia, serif',
 }
 
 theme.sizes = {
   maxWidth: '1100px',
+}
+
+theme.headers = {
+  h1: '3em',
+  h2: '2.25em',
+  h3: '1.75em',
+  h4: '1.125em',
 }
 
 theme.spacing = {
