@@ -2,7 +2,7 @@ import React from 'react'
 
 // Components
 import Layout from '../components/layout'
-import ComponentDemo from '../components/component-demo'
+import ComponentDemo from '../components/demo'
 
 const IndexPage = () => (
   <Layout>
