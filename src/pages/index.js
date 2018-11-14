@@ -5,8 +5,8 @@ import Layout from '../components/layout'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <h1>Hi develop</h1>
+    <p>Welcome to your new Shelter Gatsby site.</p>
     <p>Now go build something great.</p>
     <Link to="/demo/">Go to demo page</Link> <br />
     <Link to="/page/">Go to page</Link>
