@@ -9,12 +9,17 @@ import RichText from '../components/richText'
 import { Container } from '../components/styled/containers'
 
 const Page = ({ data }) => {
-  const { bodyCopy, heroContent } = data.contentfulPageAssemblyContentPage
+  const {
+    bodyCopy,
+    heroContent,
+    assemblies,
+  } = data.contentfulPageAssemblyContentPage
 
   return (
     <Layout>
       <Hero content={heroContent} />
       <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
+      <Assemblies assemblies={assemblies} />
     </Layout>
   )
 }
@@ -60,6 +65,18 @@ export const pageQuery = graphql`
               type
             }
           }
+        }
+      }
+      assemblies {
+        id
+        internal {
+          type
+        }
+        ctaHeaderText
+        cta {
+          ctaColour
+          name
+          buttonText
         }
       }
     }
