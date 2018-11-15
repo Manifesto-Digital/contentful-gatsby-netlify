@@ -7,7 +7,7 @@ import ComponentDemo from '../components/demo'
 const IndexPage = () => (
   <Layout>
     <ComponentDemo>
-      <h3>INSIDEE</h3>
+      <h3>INSIDE</h3>
     </ComponentDemo>
   </Layout>
 )
