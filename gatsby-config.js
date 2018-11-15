@@ -9,6 +9,8 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-remark`,
+    'gatsby-plugin-eslint',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
