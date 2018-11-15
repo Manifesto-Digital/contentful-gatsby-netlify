@@ -7,12 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     html {
         height: 100%;
         scroll-behavior: smooth !important;
-<<<<<<< HEAD
-=======
         ${breakpoint.tablet`
             font-size:  115%;
         `};
->>>>>>> cd4ba4249a6699a6ba039d07ff006ab8f1bec027
     }
 
     body {
@@ -21,10 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: ${props => props.theme.fonts.primary};
-<<<<<<< HEAD
-=======
         color: ${props => props.theme.palette.secondary};
->>>>>>> cd4ba4249a6699a6ba039d07ff006ab8f1bec027
     }
 
     h1,
@@ -40,24 +34,10 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.25;
     }
 
-<<<<<<< HEAD
-    img {
-        max-width: 100%;
-    }
-
-    a {
-        color: ${props => props.theme.palette.link};
-    }
-
-    h1 {
-        font-size:  ${props => props.theme.headers.h2};
-
-=======
 
 
     h1 {
         font-size:  ${props => props.theme.headers.h2};
->>>>>>> cd4ba4249a6699a6ba039d07ff006ab8f1bec027
         ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h1};
         `};
@@ -65,27 +45,17 @@ export const GlobalStyle = createGlobalStyle`
 
     h2 {
         font-size:  ${props => props.theme.headers.h3};
-<<<<<<< HEAD
-
-=======
->>>>>>> cd4ba4249a6699a6ba039d07ff006ab8f1bec027
         ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h1};
         `};
     }
     h3 {
         font-size:  ${props => props.theme.headers.h4};
-<<<<<<< HEAD
-
-=======
->>>>>>> cd4ba4249a6699a6ba039d07ff006ab8f1bec027
         ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h3};
         `};
     }
 
-<<<<<<< HEAD
-=======
     img {
         max-width: 100%;
     }
@@ -98,5 +68,4 @@ export const GlobalStyle = createGlobalStyle`
         margin-bottom: .5rem;
     }
 
->>>>>>> cd4ba4249a6699a6ba039d07ff006ab8f1bec027
 `
