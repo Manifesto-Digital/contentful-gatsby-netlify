@@ -30,13 +30,7 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.25;
     }
 
-    img {
-        max-width: 100%;
-    }
 
-    a {
-        color: ${props => props.theme.palette.link};
-    }
 
     h1 {
         font-size:  ${props => props.theme.headers.h2};
@@ -59,6 +53,14 @@ export const GlobalStyle = createGlobalStyle`
         ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h3};
         `};
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    a {
+        color: ${props => props.theme.palette.link};
     }
 
 `
