@@ -7,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     html {
         height: 100%;
         scroll-behavior: smooth !important;
+        ${breakpoint.tablet`
+            font-size:  115%;
+        `};
     }
 
     body {
@@ -15,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: ${props => props.theme.fonts.primary};
+        color: ${props => props.theme.palette.secondary};
     }
 
     h1,
@@ -28,6 +32,30 @@ export const GlobalStyle = createGlobalStyle`
 
     h1, h2, h3 {
         line-height: 1.25;
+
+        ${breakpoint.tablet`
+            line-height: 1.5;
+        `};
+    }
+
+    h1 {
+        font-size:  ${props => props.theme.headers.h2};
+        ${breakpoint.tablet`
+            font-size:  ${props => props.theme.headers.h1};
+        `};
+    }
+
+    h2 {
+        font-size:  ${props => props.theme.headers.h3};
+        ${breakpoint.tablet`
+            font-size:  ${props => props.theme.headers.h1};
+        `};
+    }
+    h3 {
+        font-size:  ${props => props.theme.headers.h4};
+        ${breakpoint.tablet`
+            font-size:  ${props => props.theme.headers.h3};
+        `};
     }
 
     img {
@@ -38,27 +66,8 @@ export const GlobalStyle = createGlobalStyle`
         color: ${props => props.theme.palette.link};
     }
 
-    h1 {
-        font-size:  ${props => props.theme.headers.h2};
-
-        ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h1};
-        `};
-    }
-
-    h2 {
-        font-size:  ${props => props.theme.headers.h3};
-
-        ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h1};
-        `};
-    }
-    h3 {
-        font-size:  ${props => props.theme.headers.h4};
-
-        ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h3};
-        `};
+    li {
+        margin-bottom: .5rem;
     }
 
 `
