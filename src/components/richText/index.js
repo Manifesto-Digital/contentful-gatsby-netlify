@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 // Components
 import Paragraph from './paragraph'
 import UnorderedList from './unordered-list'
 import OrderedList from './ordered-list'
 import Header from './header'
+// Styles
+import { Section } from '../styled/sections'
 
 const RichText = ({ richText }) => {
   const { content: allContent } = richText
 
   const hasContent = allContent && allContent.length > 0
   return (
-    <>
+    <Section>
       {hasContent &&
         allContent.map((block, i) => {
           if (block.nodeType.includes('heading-'))
@@ -27,7 +28,7 @@ const RichText = ({ richText }) => {
             return <UnorderedList content={block.content} key={i} />
           return null
         })}
-    </>
+    </Section>
   )
 }
 

@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 // Components
 import Hero from '../components/hero'
 import RichText from '../components/richText'
+import Assemblies from '../components/assemblies'
 // Styles
 import { Container } from '../components/styled/containers'
 
@@ -72,10 +73,16 @@ export const pageQuery = graphql`
         internal {
           type
         }
+        bannerColour
         ctaHeaderText
         cta {
           ctaColour
           name
+          internalLink {
+            id
+            slug
+          }
+          externalUrl
           buttonText
         }
       }
