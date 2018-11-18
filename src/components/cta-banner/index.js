@@ -16,17 +16,9 @@ const CTABanner = ({ cta, headerText, bannerColour }) => (
 )
 
 CTABanner.propTypes = {
-  cta: PropTypes.shape({
-    buttonText: PropTypes.string.isRequired,
-    ctaColour: PropTypes.string.isRequired,
-    internalLink: PropTypes.shape({
-      id: PropTypes.string,
-      slug: PropTypes.string,
-    }),
-    externalUrl: PropTypes.string,
-  }),
+  cta: PropTypes.object.isRequired,
   headerText: PropTypes.string.isRequired,
-  bannerColour: PropTypes.string,
+  bannerColour: PropTypes.oneOf(['Red', 'Green', 'Blue', 'Black']).isRequired,
 }
 
 export default CTABanner

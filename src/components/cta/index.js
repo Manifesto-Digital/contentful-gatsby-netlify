@@ -16,7 +16,13 @@ const CTA = ({ cta: { buttonText, ctaColour, internalLink, externalUrl } }) => {
 CTA.propTypes = {
   cta: PropTypes.shape({
     buttonText: PropTypes.string.isRequired,
-    ctaColour: PropTypes.string.isRequired,
+    ctaColour: PropTypes.oneOf([
+      'Red',
+      'Green',
+      'Blue',
+      'Black',
+      'White Outline',
+    ]).isRequired,
     internalLink: PropTypes.shape({
       id: PropTypes.string,
       slug: PropTypes.string,
