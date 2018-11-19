@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // Components
 import Paragraph from './paragraph'
+import Underline from './underline'
 import UnorderedList from './unordered-list'
 import OrderedList from './ordered-list'
 import Header from './header'
@@ -22,6 +23,8 @@ const RichText = ({ richText }) => {
             )
           if (block.nodeType === 'paragraph')
             return <Paragraph content={block.content} key={i} />
+          if (block.nodeType === 'underline')
+            return <Underline content={block.content} key={i} />
           if (block.nodeType === 'ordered-list')
             return <OrderedList content={block.content} key={i} />
           if (block.nodeType === 'unordered-list')
