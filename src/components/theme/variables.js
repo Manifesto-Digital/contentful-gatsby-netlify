@@ -2,8 +2,8 @@ const theme = {}
 
 theme.palette = {
   primary: '#EA232D',
-  secondary: 'DBC8B6',
-  donate: '12b9bf',
+  secondary: '#DBC8B6',
+  donate: '#12b9bf',
   link: '#4d63b5',
   danger: '#ff0000',
   success: '#72dcd4',

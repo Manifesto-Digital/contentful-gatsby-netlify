@@ -7,7 +7,7 @@ export const HeroNoCard = styled.div`
   position: relative;
   overflow: hidden;
   padding-top: 350px;
-  margin-bottom: ${props => props.theme.spacing.padding};
+  margin-bottom: ${props => props.theme.spacing.largePadding};
   ${breakpoint.tablet`
     padding-top: 60vh;
 `};

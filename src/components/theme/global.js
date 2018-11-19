@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: ${props => props.theme.fonts.primary};
-        color: ${props => props.theme.palette.secondary};
+        color: ${props => props.theme.palette.black};
     }
 
     h1,
