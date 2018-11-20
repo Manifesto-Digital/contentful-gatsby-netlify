@@ -11,7 +11,9 @@ const Hero = ({ content }) => {
   return (
     <HeroNoCard>
       <MediaWrapper>
-        <ResponsiveImage mobileW={700} desktopW={1500} image={image} />
+        {image && (
+          <ResponsiveImage mobileW={700} desktopW={1500} image={image} />
+        )}
       </MediaWrapper>
       <Content black={blackText}>
         <Title>{title}</Title>
