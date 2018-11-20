@@ -120,21 +120,7 @@ a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
 }
-a: hover {
-    text-decoration: underline;
-}
-a: not([href]): not([tabindex]) {
-    color: inherit;
-    text-decoration: none;
-}
-a: not([href]): not([tabindex]): focus,
-    a: not([href]): not([tabindex]): hover {
-    color: inherit;
-    text-decoration: none;
-}
-a: not([href]): not([tabindex]): focus {
-    outline: 0;
-}
+
 code,
     kbd,
     pre,

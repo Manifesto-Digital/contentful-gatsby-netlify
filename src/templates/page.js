@@ -42,14 +42,7 @@ export const pageQuery = graphql`
         subtitle
         blackText
         image {
-          id
-          description
-          title
-          file {
-            url
-            fileName
-            contentType
-          }
+          ...ImageFragment
         }
       }
       bodyCopy {
@@ -69,22 +62,7 @@ export const pageQuery = graphql`
         }
       }
       assemblies {
-        id
-        internal {
-          type
-        }
-        bannerColour
-        ctaHeaderText
-        cta {
-          ctaColour
-          name
-          internalLink {
-            id
-            slug
-          }
-          externalUrl
-          buttonText
-        }
+        ...CTAAssemblyFragment
       }
     }
   }

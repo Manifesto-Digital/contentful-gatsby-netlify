@@ -18,6 +18,7 @@ const Assemblies = ({ assemblies }) => {
           <CTABanner
             key={id}
             headerText={assembly.ctaHeaderText}
+            removeMarginBottom={assembly.removeMarginBottom}
             cta={assembly.cta}
             bannerColour={assembly.bannerColour}
           />

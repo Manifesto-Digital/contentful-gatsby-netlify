@@ -1,8 +1,14 @@
 import { graphql } from 'gatsby'
 
-export const ImageStuff = graphql`
-  fragment ImageStuff on ContentfulAsset {
-    title
+export const ImageFragment = graphql`
+  fragment ImageFragment on ContentfulAsset {
+    id
     description
+    title
+    file {
+      url
+      fileName
+      contentType
+    }
   }
 `
