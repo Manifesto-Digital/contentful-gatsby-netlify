@@ -7,6 +7,8 @@ export const Banner = styled.div`
     (props.bannerColour === 'blue' && props.theme.palette.link) ||
     (props.bannerColour === 'black' && props.theme.palette.black) ||
     (props.bannerColour === 'green' && props.theme.palette.donate)};
+  margin-bottom: ${props =>
+    props.removeMarginBottom ? '0' : props.theme.spacing.largePadding};
 `
 
 export const Header = styled.h3`
