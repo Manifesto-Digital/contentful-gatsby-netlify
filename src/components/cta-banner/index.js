@@ -6,21 +6,18 @@ import CTA from '../cta'
 import { Container } from '../styled/containers'
 import { Banner, Header } from './styles'
 
-const CTABanner = ({ cta, headerText, bannerColour, removeMarginBottom }) => {
-  console.log('margin', removeMarginBottom)
+const CTABanner = ({ cta, headerText, bannerColour, removeMarginBottom }) => (
+  <Banner
+    bannerColour={bannerColour.toLowerCase()}
+    removeMarginBottom={removeMarginBottom}
+  >
+    <Container>
+      <Header bannerColour={bannerColour.toLowerCase()}>{headerText}</Header>
+      <CTA cta={cta} />
+    </Container>
+  </Banner>
+)
 
-  return (
-    <Banner
-      bannerColour={bannerColour.toLowerCase()}
-      removeMarginBottom={removeMarginBottom}
-    >
-      <Container>
-        <Header bannerColour={bannerColour.toLowerCase()}>{headerText}</Header>
-        <CTA cta={cta} />
-      </Container>
-    </Banner>
-  )
-}
 CTABanner.propTypes = {
   cta: PropTypes.object.isRequired,
   headerText: PropTypes.string.isRequired,
