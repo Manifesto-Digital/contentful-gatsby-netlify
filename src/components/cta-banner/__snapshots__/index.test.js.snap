@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c3 {
+  display: inline-block;
+  padding: 0.65em 2em;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.c1 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c0 {
+  padding: 20px 0;
+  background-color: #4d63b5;
+}
+
+.c2 {
+  color: #fff;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h3
+      className="c2"
+    >
+      mock header text
+    </h3>
+    <a
+      className="c3"
+      href="https://www.google.com"
+    >
+      Click me
+    </a>
+  </div>
+</div>
+`;

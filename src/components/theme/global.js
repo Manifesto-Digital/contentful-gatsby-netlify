@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
     h2 {
         font-size:  ${props => props.theme.headers.h3};
         ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h1};
+            font-size:  ${props => props.theme.headers.h2};
         `};
     }
     h3 {

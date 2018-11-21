@@ -6,7 +6,7 @@ import {
   mountWithTheme,
 } from '../../../__tests__/helpers/index'
 import Hero from './index'
-import { Title } from './styles'
+import { Title, Subtitle } from './styles'
 
 it('renders correctly', () => {
   const mockData = {
@@ -32,7 +32,19 @@ it('displays the correct title', () => {
   expect(wrapper.find(Title).text()).toBe(mockData.title)
 })
 
-it('Renders an image', () => {
+it('displays the correct subtitle', () => {
+  const mockData = {
+    title: 'Mock Title',
+    subtitle: 'Mock Subtitle',
+    blackText: true,
+    image: global.__IMAGE_MOCK,
+  }
+
+  const wrapper = shallow(<Hero content={mockData} />)
+  expect(wrapper.find(Subtitle).text()).toBe(mockData.subtitle)
+})
+
+it('renders an image', () => {
   const mockData = {
     title: 'Mock Title',
     subtitle: 'Mock Subtitle',
