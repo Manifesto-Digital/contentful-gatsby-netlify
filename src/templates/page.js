@@ -18,7 +18,7 @@ const Page = ({ data }) => {
 
   return (
     <Layout>
-      <Hero content={heroContent} />
+      <Hero content={heroContent[0]} />
       <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
       <Assemblies assemblies={assemblies} />
     </Layout>
@@ -38,11 +38,30 @@ export const pageQuery = graphql`
     contentfulPageAssemblyContentPage(slug: { eq: $slug }) {
       title
       heroContent {
-        title
-        subtitle
-        blackText
-        image {
-          ...ImageFragment
+        __typename
+        ... on ContentfulTopicHeroNoCard {
+          id
+          title
+          subtitle
+          blackText
+          image {
+            ...ImageFragment
+          }
+        }
+        ... on ContentfulTopicHeroWithCard {
+          id
+          title
+          subtitle
+          cardPosition
+          image {
+            ...ImageFragment
+          }
+          linkText
+          internalLink {
+            id
+            slug
+          }
+          externalUrl
         }
       }
       bodyCopy {

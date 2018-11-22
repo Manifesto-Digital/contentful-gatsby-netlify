@@ -1,35 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Components
-import ResponsiveImage from '../image/responsive'
-// Styles
-import { HeroNoCard, MediaWrapper, Content, Title, Subtitle } from './styles'
+import HeroWithCard from './hero-with-card'
+import HeroNoCard from './hero-no-card'
 
 const Hero = ({ content }) => {
-  const { image, title, subtitle, blackText } = content
+  const { __typename: types } = content
 
   return (
-    <HeroNoCard>
-      <MediaWrapper>
-        {image && (
-          <ResponsiveImage mobileW={700} desktopW={1500} image={image} />
-        )}
-      </MediaWrapper>
-      <Content black={blackText}>
-        <Title>{title}</Title>
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
-      </Content>
-    </HeroNoCard>
+    <>
+      {types === 'ContentfulTopicHeroWithCard' ? (
+        <HeroWithCard content={content} />
+      ) : (
+        <HeroNoCard content={content} />
+      )}
+    </>
   )
 }
 
 Hero.propTypes = {
-  content: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-    blackText: PropTypes.bool,
-    image: PropTypes.object,
-  }),
+  content: PropTypes.object,
 }
 
 export default Hero
