@@ -26,7 +26,7 @@ const LinkHandler = ({ internalLink, externalUrl, text, Styled, ...props }) => {
     return (
       <>
         {Styled ? (
-          <Styled as={Link} to={externalUrl} {...props}>
+          <Styled href={externalUrl} {...props}>
             {text}
           </Styled>
         ) : (
