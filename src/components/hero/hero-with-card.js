@@ -25,7 +25,6 @@ const Hero = ({ content }) => {
     externalUrl,
     internalLink,
   } = content
-  console.log('content', content)
 
   const link = internalLink ? getInternalLink(internalLink.slug) : externalUrl
 
