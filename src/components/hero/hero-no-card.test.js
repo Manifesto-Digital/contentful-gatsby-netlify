@@ -5,7 +5,7 @@ import {
   renderWithTheme,
   mountWithTheme,
 } from '../../../__tests__/helpers/index'
-import Hero from './index'
+import Hero from './hero-no-card'
 import { Title } from './styles'
 
 it('renders correctly', () => {
