@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  padding: 0.65em 2em;
+  background-color: #EA232D;
+  border: none;
+  color: #fff;
+}
+
+<a
+  className="c0"
+  href="http://localhost:8000/slug"
+>
+  Button text
+</a>
+`;
