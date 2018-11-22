@@ -24,14 +24,15 @@ theme.sizes = {
 }
 
 theme.headers = {
-  h1: '3em',
-  h2: '2.25em',
-  h3: '1.75em',
+  h1: '2.35em',
+  h2: '1.8em',
+  h3: '1.35em',
   h4: '1.125em',
 }
 
 theme.spacing = {
   padding: '20px',
+  smallPadding: '10px',
   largePadding: '40px',
 }
 export default theme
