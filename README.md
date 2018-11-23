@@ -30,7 +30,7 @@
     - ctfl_preview_accessToken = 'XXXXXXXXX'
     - ctfl_host = 'XXXXXXXXX'
 
-3)  **Start developing.**
+3)  **Start developing**
 
     ```sh
     npm run develop
@@ -42,15 +42,15 @@
 
     \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
 
-## Hosting and deploying
+## 🏠 Hosting and deploying
 
 Netlify will control branch deployments
 
-develop -> [public url to follow](some.url)
-staging -> [public url to follow](some.url)
-master -> [public url to follow](some.url)
+- develop: [public url to follow](some.url)
+- staging: [public url to follow](some.url)
+- master: [public url to follow](some.url)
 
-## Branch strategy
+## 🌿 Branch strategy
 
 Gitflow will be used as a default.
 
