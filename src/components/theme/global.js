@@ -40,13 +40,14 @@ export const GlobalStyle = createGlobalStyle`
         font-size:  ${props => props.theme.headers.h2};
         ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h1};
+            line-height: 1.15;
         `};
     }
 
     h2 {
         font-size:  ${props => props.theme.headers.h3};
         ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h1};
+            font-size:  ${props => props.theme.headers.h2};
         `};
     }
     h3 {
@@ -62,6 +63,9 @@ export const GlobalStyle = createGlobalStyle`
 
     a {
         color: ${props => props.theme.palette.link};
+        text-decoration: underline;
+        font-weight: 700;
+
     }
 
     li {
