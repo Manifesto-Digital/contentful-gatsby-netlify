@@ -17,17 +17,46 @@
     npm run setup
     ```
 
-3.  **Start developing.**
+    Create your .env.develop file in the project root.
+
+    ```sh
+    touch .env.development
+    ```
+
+    You will need the following values:
+
+    - ctfl_spaceId = 'XXXXXXXXX'
+    - ctfl_accessToken = 'XXXXXXXXX'
+    - ctfl_preview_accessToken = 'XXXXXXXXX'
+    - ctfl_host = 'XXXXXXXXX'
+
+3)  **Start developing.**
 
     ```sh
     npm run develop
     ```
 
-4.  **Open the source code and start editing!**
+4)  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
     \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
+
+## Hosting and deploying
+
+Netlify will control branch deployments
+
+develop -> [public url to follow](some.url)
+staging -> [public url to follow](some.url)
+master -> [public url to follow](some.url)
+
+## Branch strategy
+
+Gitflow will be used as a default.
+
+Feature branches should follow the following convention: `feature/JRATKT-01-DESCRIPTION-OF-BRANCH`
+
+Master and develop are both locked to direct push. All code acceptance into these branches is required to have gone through formal pull request process which needs at least one peer approval. Merging is also restricted based on unit tests and linting rules passing against the PR.
 
 ## 🧐 What's inside?
 
