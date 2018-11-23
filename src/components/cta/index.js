@@ -1,17 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getInternalLink } from '../../utils/links'
+// Components
+import LinkHandler from '../link-handler'
 // Styles
 import { ButtonLink } from './styles'
 
-const CTA = ({ cta: { buttonText, ctaColour, internalLink, externalUrl } }) => {
-  const link = internalLink ? getInternalLink(internalLink.slug) : externalUrl
-  return (
-    <ButtonLink href={link} bg={ctaColour.toLowerCase()}>
-      {buttonText}
-    </ButtonLink>
-  )
-}
+const CTA = ({ cta: { buttonText, ctaColour, internalLink, externalUrl } }) => (
+  <LinkHandler
+    externalUrl={externalUrl}
+    internalLink={internalLink}
+    text={buttonText}
+    Styled={ButtonLink}
+    bg={ctaColour.toLowerCase()}
+  >
+    {buttonText}
+  </LinkHandler>
+)
 
 CTA.propTypes = {
   cta: PropTypes.shape({

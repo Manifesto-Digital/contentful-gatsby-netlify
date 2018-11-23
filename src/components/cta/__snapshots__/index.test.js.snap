@@ -9,10 +9,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
-<a
+<Link
   className="c0"
-  href="http://localhost:8000/slug"
+  to="slug"
 >
   Button text
-</a>
+</Link>
 `;
