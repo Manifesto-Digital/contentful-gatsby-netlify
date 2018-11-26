@@ -10,7 +10,8 @@ const IndexPage = () => (
     <h1>Hi develop</h1>
     <p>Welcome to your new Shelter Gatsby site.</p>
     <p>Now go build something great.</p>
-    <Link to="/page/">Go to page</Link>
+    <Link to="/content-page-1">Go to page</Link>
+    <Link to="/form">Go to form</Link>
   </Layout>
 )
 
