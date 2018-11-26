@@ -5,9 +5,9 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 // Styles
 
-const IndexPage = () => (
+const FormPage = () => (
   <Layout>
-    <form name="contact" method="POST" netlify>
+    <form name="contact" method="POST" data-netlify="true">
       <p>
         <label htmlFor="fname">
           Your Name: <input id="fname" type="text" name="name" />
@@ -31,4 +31,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default FormPage
