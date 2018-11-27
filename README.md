@@ -50,6 +50,29 @@ Netlify will control branch deployments
 - staging: [public url to follow](some.url)
 - master: [public url to follow](some.url)
 
+### 📌 Deploy a local branch for testing
+
+Netlify will only deploy develop, staging and master brnaches. If you want to provide a local version for QA you can build a production version of the site.
+
+```sh
+    npm run mock-deploy-build
+    npm install netlify-cli -g
+    netlify login
+```
+
+This will open a browser window, asking you to log in with Netlify and grant access to Netlify CLI.
+
+```sh
+    npm run netlify-deploy-current
+```
+
+Which should give you a result containing published url and logs.
+
+```sh
+    Logs:           https://app.netlify.com/sites/shelter-website/deploys/5bfc0af6792f897b2bef8349
+    Live Draft Url: https://5bfc0af6792f897b2bef8349--shelter-website.netlify.com
+```
+
 ## 🌿 Branch strategy
 
 Gitflow will be used as a default.
