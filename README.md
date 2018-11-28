@@ -45,9 +45,9 @@
 
 Netlify will control branch deployments
 
-- develop: [public url to follow](some.url)
-- staging: [public url to follow](some.url)
-- master: [public url to follow](some.url)
+- develop: [develop--shelter-website.netlify.com](some.url)
+- staging: [staging--shelter-website.netlify.com](some.url)
+- master: [shelter-website.netlify.com](some.url)
 
 ### 📌 Deploy a local branch for testing
 
@@ -76,7 +76,7 @@ Which should give you a result containing published url and logs.
 
 Gitflow will be used as a default.
 
-Feature branches should follow the following convention: `feature/JRATKT-01-DESCRIPTION-OF-BRANCH`
+Feature branches should follow the following convention: `feature/TKT-01-description-of-feature`
 
 Master and develop are both locked to direct push. All code acceptance into these branches is required to have gone through formal pull request process which needs at least one peer approval. Merging is also restricted based on unit tests and linting rules passing against the PR.
 
