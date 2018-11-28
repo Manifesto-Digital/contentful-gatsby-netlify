@@ -26,8 +26,7 @@
     You will need the following values:
 
     - ctfl_spaceId = 'XXXXXXXXX'
-    - ctfl_accessToken = 'XXXXXXXXX'
-    - ctfl_preview_accessToken = 'XXXXXXXXX'
+    - ctfl_accessToken = 'XXXXXXXXX' //change api token depending if you want to use the content or preview api
     - ctfl_host = 'XXXXXXXXX'
 
 3)  **Start developing**
