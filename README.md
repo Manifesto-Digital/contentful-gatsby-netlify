@@ -5,7 +5,7 @@
     Clone the repository to your local development environment
 
     ```sh
-    git clone git@github.com:Manifesto-Digital/Shelter.git
+    git clone git@github.com:Shelter-England/website-assets.git
     ```
 
 2.  **Get setup**
@@ -26,8 +26,7 @@
     You will need the following values:
 
     - ctfl_spaceId = 'XXXXXXXXX'
-    - ctfl_accessToken = 'XXXXXXXXX'
-    - ctfl_preview_accessToken = 'XXXXXXXXX'
+    - ctfl_accessToken = 'XXXXXXXXX' //change api token depending if you want to use the content or preview api
     - ctfl_host = 'XXXXXXXXX'
 
 3)  **Start developing**
@@ -38,7 +37,7 @@
 
 4)  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    Your site is now running at `http://localhost:8000`
 
     \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
 
@@ -46,15 +45,38 @@
 
 Netlify will control branch deployments
 
-- develop: [public url to follow](some.url)
-- staging: [public url to follow](some.url)
-- master: [public url to follow](some.url)
+- develop: [develop--shelter-website.netlify.com](develop--shelter-website.netlify.com)
+- staging: [staging--shelter-website.netlify.com](staging--shelter-website.netlify.com)
+- master: [shelter-website.netlify.com](shelter-website.netlify.com)
+
+### 📌 Deploy a local branch for testing
+
+Netlify will only deploy develop, staging and master brnaches. If you want to provide a local version for QA you can build a production version of the site.
+
+```sh
+    npm run mock-deploy-build
+    npm install netlify-cli -g
+    netlify login
+```
+
+This will open a browser window, asking you to log in with Netlify and grant access to Netlify CLI.
+
+```sh
+    npm run netlify-deploy-current
+```
+
+Which should give you a result containing published url and logs.
+
+```sh
+    Logs:           https://app.netlify.com/sites/shelter-website/deploys/5bfc0af6792f897b2bef8349
+    Live Draft Url: https://5bfc0af6792f897b2bef8349--shelter-website.netlify.com
+```
 
 ## 🌿 Branch strategy
 
 Gitflow will be used as a default.
 
-Feature branches should follow the following convention: `feature/JRATKT-01-DESCRIPTION-OF-BRANCH`
+Feature branches should follow the following convention: `feature/TKT-01-description-of-feature`
 
 Master and develop are both locked to direct push. All code acceptance into these branches is required to have gone through formal pull request process which needs at least one peer approval. Merging is also restricted based on unit tests and linting rules passing against the PR.
 
