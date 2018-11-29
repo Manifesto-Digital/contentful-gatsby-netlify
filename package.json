@@ -59,7 +59,8 @@
     "test-watch": "jest --watch",
     "lint": "./node_modules/.bin/eslint src",
     "deploy": "npm test && npm run lint && git push",
-    "mock-deploy": "rm -rf ./node_modules/* && npm install && npm test && npm run lint && gatsby build",
+    "mock-deploy-build": "rm -rf ./node_modules/* && npm install && npm test && npm run lint && gatsby build",
+    "netlify-deploy-current": "netlify deploy --dir=public",
     "setup": "npm install"
   },
   "devDependencies": {
