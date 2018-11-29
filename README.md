@@ -5,7 +5,7 @@
     Clone the repository to your local development environment
 
     ```sh
-    git clone git@github.com:Manifesto-Digital/Shelter.git
+    git clone git@github.com:Shelter-England/website-assets.git
     ```
 
 2.  **Get setup**
