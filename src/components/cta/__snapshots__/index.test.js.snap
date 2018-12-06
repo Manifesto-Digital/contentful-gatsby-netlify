@@ -10,7 +10,6 @@ exports[`renders correctly 1`] = `
 }
 
 <Link
-  bg="red"
   className="c0"
   to="slug"
 >
