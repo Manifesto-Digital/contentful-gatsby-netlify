@@ -58,10 +58,10 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "lint": "./node_modules/.bin/eslint src",
-    "deploy": "npm test && npm run lint && git push",
-    "mock-deploy-build": "rm -rf ./node_modules/* && npm install && npm test && npm run lint && gatsby build",
+    "deploy": "yarn test && yarn lint && git push",
+    "mock-deploy-build": "rm -rf ./node_modules/* && yarn install && yarn test && yarn lint && gatsby build",
     "netlify-deploy-current": "netlify deploy --dir=public",
-    "setup": "npm install"
+    "setup": "yarn install"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
