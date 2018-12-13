@@ -8,7 +8,7 @@ const Assemblies = ({ assemblies }) => {
 
   const AssembliesLoop = () =>
     assemblies.map(assembly => {
-      // Make sure an id and name of component has been queried
+      // Make sure an id and name of component have been queried
       if (!assembly.id || !assembly.internal) return null
       const { id, internal } = assembly
 
@@ -19,7 +19,7 @@ const Assemblies = ({ assemblies }) => {
             key={id}
             headerText={assembly.ctaHeaderText}
             removeMarginBottom={assembly.removeMarginBottom}
-            cta={assembly.cta}
+            cta={assembly.cta[0]}
             bannerColour={assembly.bannerColour}
           />
         )
