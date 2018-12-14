@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // Components
 import CTABanner from '../cta-banner'
+import ContentGrid from '../content-grid'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
@@ -23,7 +24,8 @@ const Assemblies = ({ assemblies }) => {
             bannerColour={assembly.bannerColour}
           />
         )
-
+      if (internal.type === 'ContentfulTopicContentGrid4')
+        return <ContentGrid key={id} content={assembly} />
       return null
     })
 
