@@ -85,12 +85,12 @@ export const CardContent = styled.div`
     margin-bottom: 3em;
     width: 65%;
     padding-bottom: 1em;
-  `}
-  
+  `};
+
   ${breakpoint.desktop`
     width: 55%;
     margin-bottom: 7em;
-  `}
+  `};
 `
 export const Title = styled.h1`
   margin-bottom: 0;
