@@ -19,7 +19,7 @@ const Assemblies = ({ assemblies }) => {
             key={id}
             headerText={assembly.ctaHeaderText}
             removeMarginBottom={assembly.removeMarginBottom}
-            cta={assembly.cta}
+            cta={assembly.cta[0]}
             bannerColour={assembly.bannerColour}
           />
         )
