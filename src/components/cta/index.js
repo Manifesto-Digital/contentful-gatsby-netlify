@@ -7,23 +7,30 @@ import Image from '../image'
 import { ButtonLink, CtaIcon, CtaText } from './styles'
 
 const CTA = ({
-  cta: { buttonText, ctaColour, internalLink, externalUrl, icon },
-}) => (
-  <LinkHandler
-    externalUrl={externalUrl}
-    internalLink={internalLink}
-    Styled={ButtonLink}
-    bg={ctaColour.toLowerCase()}
-  >
-    {icon && icon.file && (
-      <CtaIcon>
-        <Image image={icon} />
-      </CtaIcon>
-    )}
+  cta: { buttonText, ctaColour, internalLink, externalUrl, icon, internal },
+}) => {
+  if (
+    internal.type !== 'ContentfulTopicStandardCta' ||
+    internal.type !== 'ContentfulTopicCtaWithIcon'
+  )
+    return null
+  return (
+    <LinkHandler
+      externalUrl={externalUrl}
+      internalLink={internalLink}
+      Styled={ButtonLink}
+      bg={ctaColour.toLowerCase()}
+    >
+      {icon && icon.file && (
+        <CtaIcon>
+          <Image image={icon} />
+        </CtaIcon>
+      )}
 
-    <CtaText>{buttonText}</CtaText>
-  </LinkHandler>
-)
+      <CtaText>{buttonText}</CtaText>
+    </LinkHandler>
+  )
+}
 
 CTA.propTypes = {
   cta: PropTypes.shape({
@@ -42,6 +49,9 @@ CTA.propTypes = {
     externalUrl: PropTypes.string,
     icon: PropTypes.shape({
       file: PropTypes.object,
+    }),
+    internal: PropTypes.shape({
+      type: PropTypes.string.isRequired,
     }),
   }),
 }
