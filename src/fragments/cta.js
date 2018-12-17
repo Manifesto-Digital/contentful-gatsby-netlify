@@ -5,12 +5,13 @@ export const ctaStandardFragment = graphql`
     id
     name
     ctaColour
-    internal {
-      type
-    }
     internalLink {
       id
       slug
+
+      internal {
+        type
+      }
     }
     externalUrl
     buttonText
@@ -22,12 +23,13 @@ export const ctaWithIconFragment = graphql`
     id
     name
     ctaColour
-    internal {
-      type
-    }
     internalLink {
       id
       slug
+
+      internal {
+        type
+      }
     }
     externalUrl
     buttonText
