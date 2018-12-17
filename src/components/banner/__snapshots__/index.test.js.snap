@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c0 {
+  padding: 20px 0;
+  background-color: #EA232D;
+  margin-bottom: 40px;
+}
+
+.c2 {
+  color: #fff;
+}
+
+.c3 {
+  color: #fff;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h2
+      className="c2"
+    >
+      What an amazing banner
+    </h2>
+    <Link
+      bg="red"
+      className="c3"
+      to="content-grid-check"
+    >
+      woooo this is a link
+    </Link>
+  </div>
+</div>
+`;
