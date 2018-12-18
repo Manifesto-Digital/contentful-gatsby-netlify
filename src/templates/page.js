@@ -83,6 +83,7 @@ export const pageQuery = graphql`
       assemblies {
         ...CtaAssemblyFragment
         ...DownloadBannerAssemblyFragment
+        ...BannerTopicFragment
       }
     }
   }
