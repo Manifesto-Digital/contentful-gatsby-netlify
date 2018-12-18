@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 // Components
 import CTABanner from '../cta-banner'
 import ContentGrid from '../content-grid'
+import DownloadBanner from '../download-banner'
 import Banner from '../banner'
 
 const Assemblies = ({ assemblies }) => {
@@ -29,6 +30,9 @@ const Assemblies = ({ assemblies }) => {
         return <ContentGrid key={id} content={assembly} />
       if (internal.type === 'ContentfulTopicBanner')
         return <Banner key={id} banner={assembly} />
+
+      if (internal.type === 'ContentfulAssemblyDownloadBanner')
+        return <DownloadBanner key={id} banner={assembly} />
 
       return null
     })
