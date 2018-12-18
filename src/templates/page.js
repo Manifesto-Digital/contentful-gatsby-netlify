@@ -84,6 +84,7 @@ export const pageQuery = graphql`
         ... on Node {
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
+          ...BannerTopicFragment
         }
       }
     }
