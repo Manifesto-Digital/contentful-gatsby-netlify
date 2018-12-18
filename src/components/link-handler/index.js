@@ -3,20 +3,21 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 /**
- * If both internal and external links provided internal is chosen
+ * If both internal and external links provided, internal is chosen
+ * Internal link uses Gatsby Link
  *
  */
-const LinkHandler = ({ internalLink, externalUrl, text, Styled, ...props }) => {
+const LinkHandler = ({ internalLink, externalUrl, Styled, ...props }) => {
   if (internalLink) {
     return (
       <>
         {Styled ? (
           <Styled as={Link} to={internalLink.slug} {...props}>
-            {text}
+            {props.children}
           </Styled>
         ) : (
           <Link to={internalLink.slug} {...props}>
-            {text}
+            {props.children}
           </Link>
         )}
       </>
@@ -27,11 +28,11 @@ const LinkHandler = ({ internalLink, externalUrl, text, Styled, ...props }) => {
       <>
         {Styled ? (
           <Styled href={externalUrl} {...props}>
-            {text}
+            {props.children}
           </Styled>
         ) : (
           <a href={externalUrl} {...props}>
-            {text}
+            {props.children}
           </a>
         )}
       </>
@@ -41,7 +42,6 @@ const LinkHandler = ({ internalLink, externalUrl, text, Styled, ...props }) => {
 }
 
 LinkHandler.propTypes = {
-  text: PropTypes.string,
   externalUrl: PropTypes.string,
   internalLink: PropTypes.shape({
     id: PropTypes.string,

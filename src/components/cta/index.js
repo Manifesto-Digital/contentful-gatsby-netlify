@@ -2,18 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // Components
 import LinkHandler from '../link-handler'
+import Image from '../image'
 // Styles
-import { ButtonLink } from './styles'
+import { ButtonLink, CtaIcon, CtaText } from './styles'
 
-const CTA = ({ cta: { buttonText, ctaColour, internalLink, externalUrl } }) => (
+const CTA = ({
+  cta: { buttonText, ctaColour, internalLink, externalUrl, icon },
+}) => (
   <LinkHandler
     externalUrl={externalUrl}
     internalLink={internalLink}
-    text={buttonText}
     Styled={ButtonLink}
     bg={ctaColour.toLowerCase()}
   >
-    {buttonText}
+    {icon && icon.file && (
+      <CtaIcon>
+        <Image image={icon} />
+      </CtaIcon>
+    )}
+
+    <CtaText>{buttonText}</CtaText>
   </LinkHandler>
 )
 
@@ -22,7 +30,7 @@ CTA.propTypes = {
     buttonText: PropTypes.string.isRequired,
     ctaColour: PropTypes.oneOf([
       'Red',
-      'Green',
+      'Donate',
       'Blue',
       'Black',
       'White Outline',
@@ -32,6 +40,9 @@ CTA.propTypes = {
       slug: PropTypes.string,
     }),
     externalUrl: PropTypes.string,
+    icon: PropTypes.shape({
+      file: PropTypes.object,
+    }),
   }),
 }
 

@@ -16,6 +16,9 @@ it('renders correctly', () => {
       slug: 'slug',
     },
     externalUrl: 'http://example.com',
+    internal: {
+      type: 'ContentfulTopicStandardCta',
+    },
   }
 
   const tree = renderWithTheme(<CTA cta={mockData} />).toJSON()
@@ -28,7 +31,23 @@ it('displays the correct text', () => {
     ctaColour: 'Red',
     internalLink: null,
     externalUrl: 'http://example.com',
+    internal: {
+      type: 'ContentfulTopicStandardCta',
+    },
   }
   const wrapper = mountWithTheme(<CTA cta={mockData} />)
   expect(wrapper.find(LinkHandler).text()).toBe(mockData.buttonText)
+})
+
+it('displays an icon if provided', () => {
+  const mockData = {
+    buttonText: 'Button text',
+    ctaColour: 'Red',
+    internalLink: null,
+    externalUrl: 'http://example.com',
+    icon: global.__IMAGE_MOCK,
+    internal: { type: 'ContentfulTopicCtaWithIcon' },
+  }
+  const wrapper = mountWithTheme(<CTA cta={mockData} />)
+  expect(wrapper.find('img').prop('src')).toBe(mockData.icon.file.url)
 })

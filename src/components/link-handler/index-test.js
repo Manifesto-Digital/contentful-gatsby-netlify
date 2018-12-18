@@ -16,9 +16,10 @@ it('renders correctly', () => {
     <LinkHandler
       internalLink={internalLink}
       externalUrl={externalUrl}
-      text={text}
       Styled={Styled}
-    />
+    >
+      {text}
+    </LinkHandler>
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })
@@ -33,9 +34,10 @@ it('displays the correct internal link', () => {
     <LinkHandler
       internalLink={internalLink}
       externalUrl={externalUrl}
-      text={text}
       Styled={Styled}
-    />
+    >
+      {text}
+    </LinkHandler>
   )
 
   expect(wrapper.find(Link).prop('to')).toBe(getInternalLink(internalLink.slug))
@@ -51,9 +53,10 @@ it('displays the external link', () => {
     <LinkHandler
       internalLink={internalLink}
       externalUrl={externalUrl}
-      text={text}
       Styled={Styled}
-    />
+    >
+      {text}
+    </LinkHandler>
   )
 
   expect(wrapper.find('a').prop('href')).toBe(externalUrl)
