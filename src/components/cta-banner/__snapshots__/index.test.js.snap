@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c4 {
+  display: inline-block;
+}
+
 .c3 {
   display: inline-block;
-  padding: 0.65em 2em;
+  padding: 0.65em 1em;
+  font-weight: normal;
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -40,7 +45,11 @@ exports[`renders correctly 1`] = `
       className="c3"
       href="https://www.google.com"
     >
-      Click me
+      <span
+        className="c4"
+      >
+        Click me
+      </span>
     </a>
   </div>
 </div>

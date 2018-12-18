@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 
-export const CTAAssemblyFragment = graphql`
-  fragment CTAAssemblyFragment on ContentfulAssemblyCta {
+export const CtaAssemblyFragment = graphql`
+  fragment CtaAssemblyFragment on ContentfulAssemblyCta {
     id
     internal {
       type
@@ -10,7 +10,8 @@ export const CTAAssemblyFragment = graphql`
     bannerColour
     ctaHeaderText
     cta {
-      ...CTAFragment
+      ...ctaStandardFragment
+      ...ctaWithIconFragment
     }
   }
 `

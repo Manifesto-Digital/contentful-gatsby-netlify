@@ -27,16 +27,12 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `${process.env.ctfl_spaceId}`,
-        accessToken: `${process.env.ctfl_accessToken}`,
-      },
-    },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `${process.env.ctfl_spaceId}`,
-        accessToken: `${process.env.ctfl_preview_accessToken}`,
-        host: `preview.contentful.com`,
+        spaceId:
+          process.env.GATSBY_CONTENTFUL_SPACE_ID || process.env.ctfl_spaceId,
+        accessToken:
+          process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN ||
+          process.env.ctfl_accessToken,
+        host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
       },
     },
     'gatsby-plugin-offline',

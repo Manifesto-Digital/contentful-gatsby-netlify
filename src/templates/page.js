@@ -81,7 +81,8 @@ export const pageQuery = graphql`
         }
       }
       assemblies {
-        ...CTAAssemblyFragment
+        ...CtaAssemblyFragment
+        ...BannerTopicFragment
       }
     }
   }
