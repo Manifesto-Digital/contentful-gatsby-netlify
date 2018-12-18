@@ -9,3 +9,15 @@ global.__IMAGE_MOCK = {
     contentType: 'image/jpeg',
   },
 }
+
+global.__FILE_MOCK = {
+  file: {
+    url:
+      '//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf',
+    details: {
+      size: 78019,
+      image: null,
+    },
+    fileName: 'component tree-pdf.pdf',
+  },
+}
