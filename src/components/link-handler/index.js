@@ -7,35 +7,19 @@ import { Link } from 'gatsby'
  * Internal link uses Gatsby Link
  *
  */
-const LinkHandler = ({ internalLink, externalUrl, Styled, ...props }) => {
+const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
   if (internalLink) {
     return (
-      <>
-        {Styled ? (
-          <Styled as={Link} to={internalLink.slug} {...props}>
-            {props.children}
-          </Styled>
-        ) : (
-          <Link to={internalLink.slug} {...props}>
-            {props.children}
-          </Link>
-        )}
-      </>
+      <Link to={internalLink.slug} className={className}>
+        {children}
+      </Link>
     )
   }
   if (externalUrl) {
     return (
-      <>
-        {Styled ? (
-          <Styled href={externalUrl} {...props}>
-            {props.children}
-          </Styled>
-        ) : (
-          <a href={externalUrl} {...props}>
-            {props.children}
-          </a>
-        )}
-      </>
+      <a href={externalUrl} className={className}>
+        {children}
+      </a>
     )
   }
   return null
@@ -47,7 +31,11 @@ LinkHandler.propTypes = {
     id: PropTypes.string,
     slug: PropTypes.string,
   }),
-  styled: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  className: PropTypes.string,
 }
 
 export default LinkHandler

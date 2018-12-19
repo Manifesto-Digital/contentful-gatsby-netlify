@@ -11,7 +11,7 @@ import {
   Title,
   CardSubtitle,
   WithCardMedia,
-  CardLink,
+  StyledLinkHandler,
 } from './styles'
 import { Container } from '../styled/containers'
 
@@ -40,14 +40,12 @@ const Hero = ({ content }) => {
           <Title>{title}</Title>
           {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
           {link && linkText && (
-            <LinkHandler
+            <StyledLinkHandler
               internalLink={internalLink}
               externalUrl={externalUrl}
-              text={linkText}
-              Styled={CardLink}
             >
               {linkText}
-            </LinkHandler>
+            </StyledLinkHandler>
           )}
         </CardContent>
       </Container>

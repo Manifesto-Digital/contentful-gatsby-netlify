@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import LinkHandler from '../link-handler'
 
 export const CtaIcon = styled.span`
   display: inline-block;
@@ -16,7 +17,7 @@ export const CtaText = styled.span`
   display: inline-block;
 `
 
-export const ButtonLink = styled.a`
+export const StyledLinkHandler = styled(LinkHandler)`
   display: inline-block;
   padding: 0.65em 1em;
   font-weight: normal;

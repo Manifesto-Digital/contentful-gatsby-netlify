@@ -10,14 +10,9 @@ it('renders correctly', () => {
   const text = 'Button text'
   const externalUrl = 'https://example.com'
   const internalLink = { id: '12345', slug: 'slug' }
-  const Styled = null
 
   const tree = renderWithTheme(
-    <LinkHandler
-      internalLink={internalLink}
-      externalUrl={externalUrl}
-      Styled={Styled}
-    >
+    <LinkHandler internalLink={internalLink} externalUrl={externalUrl}>
       {text}
     </LinkHandler>
   ).toJSON()
@@ -28,14 +23,9 @@ it('displays the correct internal link', () => {
   const text = 'Button text'
   const externalUrl = 'https://example.com'
   const internalLink = { id: '12345', slug: 'slug' }
-  const Styled = null
 
   const wrapper = shallow(
-    <LinkHandler
-      internalLink={internalLink}
-      externalUrl={externalUrl}
-      Styled={Styled}
-    >
+    <LinkHandler internalLink={internalLink} externalUrl={externalUrl}>
       {text}
     </LinkHandler>
   )
@@ -47,14 +37,9 @@ it('displays the external link', () => {
   const text = 'Button text'
   const externalUrl = 'https://example.com'
   const internalLink = null
-  const Styled = null
 
   const wrapper = shallow(
-    <LinkHandler
-      internalLink={internalLink}
-      externalUrl={externalUrl}
-      Styled={Styled}
-    >
+    <LinkHandler internalLink={internalLink} externalUrl={externalUrl}>
       {text}
     </LinkHandler>
   )
