@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// Components
-import LinkHandler from '../link-handler'
 // Styles
 import { Container } from '../styled/containers'
 import { Header, Wrapper, StyledLinkHandler } from './styles'

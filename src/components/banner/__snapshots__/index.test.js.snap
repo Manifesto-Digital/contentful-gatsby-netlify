@@ -34,7 +34,7 @@ exports[`renders correctly 1`] = `
     </h2>
     <Link
       className="c3"
-      to="content-grid-check"
+      to="internal-link-slug"
     >
       woooo this is a link
     </Link>

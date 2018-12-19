@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 {
+  display: inline-block;
+}
+
+.c0 {
+  display: inline-block;
+  padding: 0.65em 1em;
+  font-weight: normal;
+  background-color: #EA232D;
+  border: none;
+  color: #fff;
+}
+
+<Link
+  className="c0"
+  to="internal-link-slug"
+>
+  <span
+    className="c1"
+  >
+    Button text
+  </span>
+</Link>
+`;
+
+exports[`renders correctly 2`] = `
 .c4 {
   display: inline-block;
 }
@@ -43,12 +69,12 @@ exports[`renders correctly 1`] = `
     </h3>
     <a
       className="c3"
-      href="https://www.google.com"
+      href="http://example.com"
     >
       <span
         className="c4"
       >
-        Click me
+        Button text
       </span>
     </a>
   </div>

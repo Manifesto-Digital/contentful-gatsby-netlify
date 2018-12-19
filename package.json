@@ -48,8 +48,7 @@
     },
     "testURL": "http://localhost:8000",
     "setupFiles": [
-      "<rootDir>/loadershim.js",
-      "<rootDir>/__mocks__/global.js"
+      "<rootDir>/loadershim.js"
     ]
   },
   "scripts": {
