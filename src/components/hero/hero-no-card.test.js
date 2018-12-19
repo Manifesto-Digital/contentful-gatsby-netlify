@@ -25,21 +25,27 @@ it('renders correctly', () => {
 })
 
 it('displays the correct title', () => {
-  const mockData = createHeroNoCard()
+  const mockData = createHeroNoCard({ title: 'Mock Title' })
 
   const wrapper = shallow(<Hero content={mockData} />)
   expect(wrapper.find(Title).text()).toBe(mockData.title)
 })
 
 it('displays the correct subtitle', () => {
-  const mockData = createHeroNoCard()
+  const mockData = createHeroNoCard({ subtitle: 'Mock Subtitle' })
 
   const wrapper = shallow(<Hero content={mockData} />)
   expect(wrapper.find(Subtitle).text()).toBe(mockData.subtitle)
 })
 
 it('renders an image', () => {
-  const mockData = createHeroNoCard()
+  const mockData = createHeroNoCard({
+    image: createImage({
+      file: {
+        url: 'https://via.placeholder.com/150',
+      },
+    }),
+  })
 
   const wrapper = mountWithTheme(<Hero content={mockData} />)
   expect(wrapper.find('img')).toHaveLength(1)

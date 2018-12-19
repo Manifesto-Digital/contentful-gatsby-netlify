@@ -29,7 +29,7 @@ it('renders correctly', () => {
 })
 
 it('displays the correct header text', () => {
-  const mockData = createCtaBanner()
+  const mockData = createCtaBanner({ headerText: 'Mock header text' })
 
   const wrapper = shallow(
     <CTABanner

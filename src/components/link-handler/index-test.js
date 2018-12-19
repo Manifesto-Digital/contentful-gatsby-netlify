@@ -29,7 +29,9 @@ it('renders correctly', () => {
 })
 
 it('displays the correct internal link', () => {
-  const mockData = createLinkHandler()
+  const mockData = createLinkHandler({
+    internalLink: createInternalLink({ slug: 'internal-slug' }),
+  })
   const wrapper = shallow(
     <LinkHandler
       internalLink={mockData.internalLink}
@@ -45,7 +47,10 @@ it('displays the correct internal link', () => {
 })
 
 it('displays the external link', () => {
-  const mockData = createLinkHandler({ internalLink: null })
+  const mockData = createLinkHandler({
+    internalLink: null,
+    externalUrl: 'https://example.com',
+  })
 
   const wrapper = shallow(
     <LinkHandler

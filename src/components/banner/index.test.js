@@ -23,13 +23,13 @@ it('renders correctly', () => {
 })
 
 it('displays the correct header text', () => {
-  const mockBanner = createBanner()
+  const mockBanner = createBanner({ headerText: 'Test header text' })
   const wrapper = shallow(<Banner banner={mockBanner} />)
   expect(wrapper.find(Header).text()).toBe(mockBanner.headerText)
 })
 
 it('changes background colour based on props', () => {
-  const mockBanner = createBanner()
+  const mockBanner = createBanner({ bannerColour: 'Red' })
 
   const tree = renderWithTheme(<Banner banner={mockBanner} />)
   expect(tree.toJSON()).toHaveStyleRule(

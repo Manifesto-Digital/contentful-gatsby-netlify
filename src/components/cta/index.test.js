@@ -29,7 +29,7 @@ it('renders correctly', () => {
 })
 
 it('displays the correct text', () => {
-  const mockData = createCTA()
+  const mockData = createCTA({ buttonText: 'Mock button text' })
   const wrapper = shallow(<CTA cta={mockData} />)
   expect(wrapper.find(StyledLinkHandler).text()).toBe(mockData.buttonText)
 })
