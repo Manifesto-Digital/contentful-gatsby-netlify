@@ -31,7 +31,10 @@ LinkHandler.propTypes = {
     id: PropTypes.string,
     slug: PropTypes.string,
   }),
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   className: PropTypes.string,
 }
 
