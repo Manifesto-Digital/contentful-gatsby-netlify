@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { getInternalLink } from '../../utils/links'
 // Components
 import ResponsiveImage from '../image/responsive'
-import LinkHandler from '../link-handler'
 // Styles
 import {
   HeroWithCard,
