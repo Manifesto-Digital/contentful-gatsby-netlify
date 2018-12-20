@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
-<div
+<section
   className="c0"
 >
   <div
@@ -39,5 +39,5 @@ exports[`renders correctly 1`] = `
       woooo this is a link
     </Link>
   </div>
-</div>
+</section>
 `;
