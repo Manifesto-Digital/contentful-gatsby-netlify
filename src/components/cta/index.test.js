@@ -1,53 +1,41 @@
 import React from 'react'
 import 'jest-styled-components'
+import { shallow } from 'enzyme'
 import {
   renderWithTheme,
   mountWithTheme,
 } from '../../../__tests__/helpers/index'
 import CTA from './index'
-import LinkHandler from '../link-handler'
+import { StyledLinkHandler } from './styles'
+import {
+  createFactory,
+  createInternalLink,
+  createImage,
+} from '../../utils/test-factories'
+
+// Default props
+export const createCTA = createFactory({
+  buttonText: 'Button text',
+  ctaColour: 'Red',
+  internalLink: createInternalLink(),
+  externalUrl: 'http://example.com',
+})
 
 it('renders correctly', () => {
-  const mockData = {
-    buttonText: 'Button text',
-    ctaColour: 'Red',
-    internalLink: {
-      id: '12345',
-      slug: 'slug',
-    },
-    externalUrl: 'http://example.com',
-    internal: {
-      type: 'ContentfulTopicStandardCta',
-    },
-  }
+  const mockData = createCTA()
 
   const tree = renderWithTheme(<CTA cta={mockData} />).toJSON()
   expect(tree).toMatchSnapshot()
 })
 
 it('displays the correct text', () => {
-  const mockData = {
-    buttonText: 'Button text',
-    ctaColour: 'Red',
-    internalLink: null,
-    externalUrl: 'http://example.com',
-    internal: {
-      type: 'ContentfulTopicStandardCta',
-    },
-  }
-  const wrapper = mountWithTheme(<CTA cta={mockData} />)
-  expect(wrapper.find(LinkHandler).text()).toBe(mockData.buttonText)
+  const mockData = createCTA({ buttonText: 'Mock button text' })
+  const wrapper = shallow(<CTA cta={mockData} />)
+  expect(wrapper.find(StyledLinkHandler).text()).toBe(mockData.buttonText)
 })
 
 it('displays an icon if provided', () => {
-  const mockData = {
-    buttonText: 'Button text',
-    ctaColour: 'Red',
-    internalLink: null,
-    externalUrl: 'http://example.com',
-    icon: global.__IMAGE_MOCK,
-    internal: { type: 'ContentfulTopicCtaWithIcon' },
-  }
+  const mockData = createCTA({ icon: createImage() })
   const wrapper = mountWithTheme(<CTA cta={mockData} />)
   expect(wrapper.find('img').prop('src')).toBe(mockData.icon.file.url)
 })

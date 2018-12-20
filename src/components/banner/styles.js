@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import LinkHandler from '../link-handler'
 
 export const Wrapper = styled.div`
   padding: ${props => props.theme.spacing.padding} 0;
@@ -18,7 +19,7 @@ export const Header = styled.h2`
     (props.bg === 'black' && props.theme.palette.white) ||
     (props.bg === 'green' && props.theme.palette.white)};
 `
-export const LinkText = styled.a`
+export const StyledLinkHandler = styled(LinkHandler)`
   color: ${props =>
     (props.bg === 'red' && props.theme.palette.white) ||
     (props.bg === 'blue' && props.theme.palette.white) ||

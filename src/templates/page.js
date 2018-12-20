@@ -81,9 +81,12 @@ export const pageQuery = graphql`
         }
       }
       assemblies {
-        ...CtaAssemblyFragment
-        ...DownloadBannerAssemblyFragment
-        ...BannerTopicFragment
+        ... on Node {
+          ...CtaAssemblyFragment
+          ...ContentGrid4Fragment
+          ...BannerTopicFragment
+          ...DownloadBannerAssemblyFragment
+        }
       }
     }
   }

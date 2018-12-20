@@ -635,7 +635,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
   dependencies:
@@ -709,6 +709,23 @@
   dependencies:
     follow-redirects "^1.2.5"
     is-buffer "^1.1.5"
+
+"@contentful/gatsby-transformer-contentful-richtext@12.0.4":
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/@contentful/gatsby-transformer-contentful-richtext/-/gatsby-transformer-contentful-richtext-12.0.4.tgz#04ad286ac848a0236a2bf1ce2e410e599b0ee8e2"
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    "@contentful/rich-text-html-renderer" "^12.0.3"
+
+"@contentful/rich-text-html-renderer@^12.0.3":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-html-renderer/-/rich-text-html-renderer-12.1.0.tgz#5947939dd4b8456562985f2b9065c4dcad231f06"
+  dependencies:
+    "@contentful/rich-text-types" "^12.0.1"
+
+"@contentful/rich-text-types@^12.0.1":
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-12.0.1.tgz#e7fdee0ea679e95c3bbf39567c059ca4d3870dbe"
 
 "@emotion/is-prop-valid@^0.6.8":
   version "0.6.8"

@@ -5,41 +5,42 @@ import {
   renderWithTheme,
   mountWithTheme,
 } from '../../../__tests__/helpers/index'
-import Hero from './hero-no-card'
-import { Title, Subtitle } from './styles'
+import Hero from './hero-with-card'
+import { Title, CardSubtitle } from './styles'
 import { createFactory, createImage } from '../../utils/test-factories'
 
 // Default props
-export const createHeroNoCard = createFactory({
+export const createHeroWithCard = createFactory({
   title: 'Mock Title',
   subtitle: 'Mock Subtitle',
+  cardPosition: 'Right',
   blackText: true,
   image: createImage(),
 })
 
 it('renders correctly', () => {
-  const mockData = createHeroNoCard()
+  const mockData = createHeroWithCard()
 
   const tree = renderWithTheme(<Hero content={mockData} />).toJSON()
   expect(tree).toMatchSnapshot()
 })
 
 it('displays the correct title', () => {
-  const mockData = createHeroNoCard({ title: 'Mock Title' })
+  const mockData = createHeroWithCard({ title: 'Mock Title' })
 
   const wrapper = shallow(<Hero content={mockData} />)
   expect(wrapper.find(Title).text()).toBe(mockData.title)
 })
 
 it('displays the correct subtitle', () => {
-  const mockData = createHeroNoCard({ subtitle: 'Mock Subtitle' })
+  const mockData = createHeroWithCard({ subtitle: 'Mock Subtitle' })
 
   const wrapper = shallow(<Hero content={mockData} />)
-  expect(wrapper.find(Subtitle).text()).toBe(mockData.subtitle)
+  expect(wrapper.find(CardSubtitle).text()).toBe(mockData.subtitle)
 })
 
 it('renders an image', () => {
-  const mockData = createHeroNoCard({
+  const mockData = createHeroWithCard({
     image: createImage({
       file: {
         url: 'https://via.placeholder.com/150',
@@ -49,4 +50,14 @@ it('renders an image', () => {
 
   const wrapper = mountWithTheme(<Hero content={mockData} />)
   expect(wrapper.find('img')).toHaveLength(1)
+})
+
+it('renders the link', () => {
+  const mockData = createHeroWithCard({
+    externalUrl: 'http://google.com',
+    linkText: 'Woo amazing link text',
+  })
+
+  const wrapper = mountWithTheme(<Hero content={mockData} />)
+  expect(wrapper.find('a')).toHaveLength(1)
 })

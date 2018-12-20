@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// Components
-import LinkHandler from '../link-handler'
 // Styles
 import { Container } from '../styled/containers'
-import { Header, Wrapper, LinkText } from './styles'
+import { Header, Wrapper, StyledLinkHandler } from './styles'
 
 const Banner = ({ banner }) => {
   const {
@@ -22,14 +20,13 @@ const Banner = ({ banner }) => {
     >
       <Container>
         <Header bg={bannerColour.toLowerCase()}>{headerText}</Header>
-        <LinkHandler
+        <StyledLinkHandler
           externalUrl={externalUrl}
           internalLink={internalLink}
-          Styled={LinkText}
           bg={bannerColour.toLowerCase()}
         >
           {linkText}
-        </LinkHandler>
+        </StyledLinkHandler>
       </Container>
     </Wrapper>
   )

@@ -44,5 +44,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    '@contentful/gatsby-transformer-contentful-richtext',
   ],
 }
