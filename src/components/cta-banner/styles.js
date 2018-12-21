@@ -4,7 +4,7 @@ export const Banner = styled.div`
   padding: ${props => props.theme.spacing.padding} 0;
   background-color: ${props =>
     (props.bannerColour === 'red' && props.theme.palette.primary) ||
-    (props.bannerColour === 'blue' && props.theme.palette.link) ||
+    (props.bannerColour === 'blue' && props.theme.palette.sanMarino) ||
     (props.bannerColour === 'black' && props.theme.palette.black) ||
     (props.bannerColour === 'green' && props.theme.palette.donate)};
   margin-bottom: ${props =>

@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   padding: ${props => props.theme.spacing.padding} 0;
   background-color: ${props =>
     (props.bg === 'red' && props.theme.palette.primary) ||
-    (props.bg === 'blue' && props.theme.palette.link) ||
+    (props.bg === 'blue' && props.theme.palette.sanMarino) ||
     (props.bg === 'black' && props.theme.palette.black) ||
     (props.bg === 'green' && props.theme.palette.donate)};
   margin-bottom: ${props =>
