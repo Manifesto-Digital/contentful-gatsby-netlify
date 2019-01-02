@@ -27,11 +27,11 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`renders correctly 2`] = `
-.c4 {
+.c3 {
   display: inline-block;
 }
 
-.c3 {
+.c2 {
   display: inline-block;
   padding: 0.65em 1em;
   font-weight: normal;
@@ -48,12 +48,7 @@ exports[`renders correctly 2`] = `
 
 .c0 {
   padding: 20px 0;
-  background-color: #4d63b5;
   margin-bottom: 40px;
-}
-
-.c2 {
-  color: #fff;
 }
 
 <div
@@ -63,16 +58,16 @@ exports[`renders correctly 2`] = `
     className="c1"
   >
     <h3
-      className="c2"
+      className=""
     >
       mock header text
     </h3>
     <a
-      className="c3"
+      className="c2"
       href="http://example.com"
     >
       <span
-        className="c4"
+        className="c3"
       >
         Button text
       </span>
