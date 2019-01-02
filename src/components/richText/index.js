@@ -6,14 +6,14 @@ import UnorderedList from './unordered-list'
 import OrderedList from './ordered-list'
 import Header from './header'
 // Styles
-import { Section } from '../styled/sections'
+import { MarginBottom } from '../styled/layout'
 
 const RichText = ({ richText }) => {
   const { content: allContent } = richText
 
   const hasContent = allContent && allContent.length > 0
   return (
-    <Section>
+    <MarginBottom>
       {hasContent &&
         allContent.map((block, i) => {
           if (block.nodeType.includes('heading-'))
@@ -28,7 +28,7 @@ const RichText = ({ richText }) => {
             return <UnorderedList content={block.content} key={i} />
           return null
         })}
-    </Section>
+    </MarginBottom>
   )
 }
 
