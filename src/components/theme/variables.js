@@ -6,12 +6,12 @@ theme.palette = {
   // Greys
   white: '#fff',
   offWhite: '#f7f7f7',
-  greyLight: '#e5e5e5',
-  greyMid: '#d9d9d9',
-  greyDark: '#8c8c8c',
+  grey10: '#e5e5e5',
+  grey15: '#d9d9d9',
+  grey45: '#8c8c8c',
   black: '#212122',
   // Blues
-  sanMarino: '#4d63b5',
+  sanMarinoBlue: '#4d63b5',
   royalBlue: '#0b0b89',
   shelterBlue: '#65cfe9',
   // Social sharing

@@ -21,7 +21,7 @@ const CTABanner = ({ cta, headerText, bannerColour, removeMarginBottom }) => (
 CTABanner.propTypes = {
   cta: PropTypes.object.isRequired,
   headerText: PropTypes.string.isRequired,
-  bannerColour: PropTypes.oneOf(['Red', 'Green', 'Blue', 'Black']).isRequired,
+  bannerColour: PropTypes.oneOf(['Red', 'San Marino Blue', 'Black']).isRequired,
   removeMarginBottom: PropTypes.bool,
 }
 
