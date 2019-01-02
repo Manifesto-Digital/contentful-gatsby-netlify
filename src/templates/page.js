@@ -19,7 +19,7 @@ const Page = ({ data }) => {
   return (
     <Layout>
       {heroContent && <Hero content={heroContent[0]} />}
-      <Container>{bodyCopy && <RichText content={bodyCopy} />}</Container>
+      <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
       <Assemblies assemblies={assemblies} />
     </Layout>
   )
