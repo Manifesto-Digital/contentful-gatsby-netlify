@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { breakpoint } from '../theme/breakpoint'
 import RichText from '../rich-text'
 
-export const Grid = styled.div`
+export const Grid = styled.section`
   display: block;
   margin-bottom: ${props => props.theme.spacing.padding};
 `
