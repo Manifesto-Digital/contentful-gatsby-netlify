@@ -1,7 +1,6 @@
 import React from 'react'
-import 'jest-styled-components'
 import { shallow } from 'enzyme'
-import { renderWithTheme } from '../../../__tests__/helpers/index'
+import { snapshotComponent } from '../../../__tests__/helpers/index'
 import DownloadBanner from './index'
 import { Header } from './styles'
 import {
@@ -23,8 +22,7 @@ export const createDownloadBanner = createFactory({
 
 it('renders correctly', () => {
   const mockData = createDownloadBanner()
-  const tree = renderWithTheme(<DownloadBanner banner={mockData} />).toJSON()
-  expect(tree).toMatchSnapshot()
+  snapshotComponent(<DownloadBanner banner={mockData} />)
 })
 
 it('displays the correct header text', () => {

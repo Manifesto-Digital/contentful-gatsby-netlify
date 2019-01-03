@@ -1,7 +1,9 @@
 import React from 'react'
-import 'jest-styled-components'
 import { shallow } from 'enzyme'
-import { renderWithTheme } from '../../../__tests__/helpers/index'
+import {
+  renderWithTheme,
+  snapshotComponent,
+} from '../../../__tests__/helpers/index'
 import Banner from './index'
 import { Header } from './styles'
 import theme from '../theme/variables'
@@ -18,8 +20,8 @@ export const createBanner = createFactory({
 
 it('renders correctly', () => {
   const mockBanner = createBanner()
-  const tree = renderWithTheme(<Banner banner={mockBanner} />).toJSON()
-  expect(tree).toMatchSnapshot()
+
+  snapshotComponent(<Banner banner={mockBanner} />)
 })
 
 it('displays the correct header text', () => {
