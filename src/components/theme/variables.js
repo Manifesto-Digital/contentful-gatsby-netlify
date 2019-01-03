@@ -10,7 +10,7 @@ theme.palette = {
   white: '#fff',
   black: '#212122',
   greyLight: '#e5e5e5',
-  greyMed: '#d9d9d9',
+  greyMed: '#8c8c8c',
 }
 
 theme.fonts = {

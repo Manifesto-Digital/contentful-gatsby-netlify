@@ -35,6 +35,14 @@ module.exports = {
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
     'gatsby-plugin-offline',
     '@contentful/gatsby-transformer-contentful-richtext',
   ],

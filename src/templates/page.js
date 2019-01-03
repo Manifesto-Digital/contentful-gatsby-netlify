@@ -89,6 +89,7 @@ export const pageQuery = graphql`
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
           ...BannerTopicFragment
+          ...DownloadBannerAssemblyFragment
         }
       }
     }
