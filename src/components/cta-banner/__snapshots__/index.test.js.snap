@@ -51,7 +51,7 @@ exports[`renders correctly 2`] = `
   margin-bottom: 40px;
 }
 
-<div
+<section
   className="c0"
 >
   <div
@@ -73,5 +73,5 @@ exports[`renders correctly 2`] = `
       </span>
     </a>
   </div>
-</div>
+</section>
 `;

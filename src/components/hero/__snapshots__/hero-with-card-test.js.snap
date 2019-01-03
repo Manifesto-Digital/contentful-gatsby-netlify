@@ -78,7 +78,7 @@ exports[`renders correctly 1`] = `
   }
 }
 
-<div
+<section
   className="c0"
 >
   <div
@@ -109,5 +109,5 @@ exports[`renders correctly 1`] = `
       </p>
     </div>
   </div>
-</div>
+</section>
 `;

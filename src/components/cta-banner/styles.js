@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Banner = styled.div`
+export const Banner = styled.section`
   padding: ${props => props.theme.spacing.padding} 0;
   background-color: ${props =>
     (props.bannerColour === 'red' && props.theme.palette.primary) ||

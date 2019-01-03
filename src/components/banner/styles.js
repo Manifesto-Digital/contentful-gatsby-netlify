@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import LinkHandler from '../link-handler'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   padding: ${props => props.theme.spacing.padding} 0;
   background-color: ${props =>
     (props.bg === 'red' && props.theme.palette.primary) ||
