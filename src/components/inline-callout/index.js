@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Icon from './icon'
 import { richTextPropTypes } from '../../prop-types'
 // Components
-import RichText from '../richText'
+
 // Styles
-import { InlineBanner } from './styles'
+import { InlineBanner, TextWrapper } from './styles'
 
 const InlineCallOut = ({ content }) => {
   let { icon } = content
@@ -15,7 +15,7 @@ const InlineCallOut = ({ content }) => {
   return (
     <InlineBanner>
       <Icon icon={icon} />
-      <RichText richText={callOutText} />
+      <TextWrapper richText={callOutText} />
     </InlineBanner>
   )
 }
