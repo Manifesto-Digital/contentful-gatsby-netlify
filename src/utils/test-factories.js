@@ -30,3 +30,17 @@ export const createChildContentfulRichText = createFactory({
       '<p>Our advice and support services across the UK give people <b>one-to-one</p>',
   },
 })
+
+export const createFile = createFactory({
+  description: 'Mock file description',
+  title: 'Mock file title',
+  file: {
+    url:
+      '//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf',
+    fileName: 'component tree-pdf.pdf',
+    details: {
+      size: 78019,
+      image: null,
+    },
+  },
+})

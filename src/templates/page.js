@@ -90,6 +90,7 @@ export const pageQuery = graphql`
           ...ContentGrid4Fragment
           ...BannerTopicFragment
           ...InlineCallout
+          ...DownloadBannerAssemblyFragment
         }
       }
     }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // Components
 import CTABanner from '../cta-banner'
+import DownloadBanner from '../download-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
 import InlineCallOut from '../inline-callout'
@@ -33,6 +34,8 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicInlineCallout')
         return <InlineCallOut key={id} content={assembly} />
+      if (internal.type === 'ContentfulAssemblyDownloadBanner')
+        return <DownloadBanner key={id} banner={assembly} />
 
       return null
     })
