@@ -40,12 +40,13 @@ const VideoEmbed = ({ data }) => {
           itemProp="description"
           content={metaDescription ? metaDescription : title}
         />
-        <meta itemProp="uploadDate" content={createdAt} />
         <meta itemProp="embedUrl" content={externalUrl} />
       </VideoWrapper>
-      <BottomText>
-        <RichText richText={bottomText} />
-      </BottomText>
+      {bottomText && (
+        <BottomText>
+          <RichText richText={bottomText} />
+        </BottomText>
+      )}
     </Wrapper>
   )
 }

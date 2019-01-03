@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #e5e5e5;
+}
+
+.c1 {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.c1 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
+  margin-top: 20px;
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    'The not knowing was pretty scary'
+  </h3>
+  <div
+    className="c1"
+  >
+    <div
+      preload="true"
+      style={
+        Object {
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+      >
+        <div />
+      </div>
+    </div>
+    <meta
+      content="'The not knowing was pretty scary'"
+      itemProp="name"
+    />
+    <meta
+      content="Lyndsay describes the moment she received a section 21"
+      itemProp="description"
+    />
+    <meta
+      content="https://www.youtube.com/watch?v=lohPp0QdV-w"
+      itemProp="embedUrl"
+    />
+  </div>
+  <div
+    className="c2"
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+        }
+      }
+    />
+  </div>
+</div>
+`;
