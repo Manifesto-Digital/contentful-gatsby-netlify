@@ -1,19 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Icon from './icon'
 import { richTextPropTypes } from '../../prop-types'
 // Components
-// import Image from '../image'
 import RichText from '../richText'
 // Styles
 import { InlineBanner } from './styles'
 
 const InlineCallOut = ({ content }) => {
-  const { icon } = content
+  let { icon } = content
   const callOutText = content.content
 
-  console.log({ callOutText, icon })
+  icon = icon.replace(/\s+/g, '-').toLowerCase()
   return (
     <InlineBanner>
+      <Icon icon={icon} />
       <RichText richText={callOutText} />
     </InlineBanner>
   )

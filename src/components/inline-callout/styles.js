@@ -13,3 +13,12 @@ export const InlineBanner = styled.div`
     margin-bottom: 0;
   }
 `
+
+export const BannerSVG = styled.svg`
+  display: block;
+  fill: ${props => props.theme.palette.black};
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: green;
+`
