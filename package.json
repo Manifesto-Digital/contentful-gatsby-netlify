@@ -50,7 +50,8 @@
     "testURL": "http://localhost:8000",
     "setupFiles": [
       "<rootDir>/loadershim.js"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js"
   },
   "scripts": {
     "build": "gatsby build",
