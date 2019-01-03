@@ -24,7 +24,7 @@ export const StyledLinkHandler = styled(LinkHandler)`
   background-color: ${props =>
     (props.bg === 'red' && props.theme.palette.primary) ||
     (props.bg === 'black' && props.theme.palette.black) ||
-    (props.bg === 'blue' && props.theme.palette.link) ||
+    (props.bg === 'blue' && props.theme.palette.sanMarinoBlue) ||
     (props.bg === 'donate' && props.theme.palette.donate) ||
     (props.bg === 'white outline' && 'transparent')};
 
