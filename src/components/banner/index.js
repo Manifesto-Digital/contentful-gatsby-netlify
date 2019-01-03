@@ -13,6 +13,7 @@ const Banner = ({ banner }) => {
     externalUrl,
     removeMarginBottom,
   } = banner
+
   return (
     <Wrapper
       bg={bannerColour.toLowerCase()}
@@ -34,7 +35,8 @@ const Banner = ({ banner }) => {
 Banner.propTypes = {
   banner: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
-    bannerColour: PropTypes.oneOf(['Red', 'Green', 'Blue', 'Black']).isRequired,
+    bannerColour: PropTypes.oneOf(['Red', 'San Marino Blue', 'Black'])
+      .isRequired,
     linkText: PropTypes.string.isRequired,
     internalLink: PropTypes.shape({
       id: PropTypes.string,

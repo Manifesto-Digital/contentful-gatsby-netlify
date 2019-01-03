@@ -38,11 +38,11 @@ it('changes background colour based on props', () => {
   )
 
   // Update prop value of the background banner colour and check this is reflected
-  const changedMock = createBanner({ bannerColour: 'Green' })
+  const changedMock = createBanner({ bannerColour: 'San Marino Blue' })
 
   const changedTree = renderWithTheme(<Banner banner={changedMock} />)
   expect(changedTree.toJSON()).toHaveStyleRule(
     'background-color',
-    theme.palette.donate
+    theme.palette.sanMarinoBlue
   )
 })
