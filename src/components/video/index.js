@@ -1,18 +1,21 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import theme from '../theme/variables'
-import * as S from './styles'
-
-function createMarkup(markupToRender) {
-  return { __html: markupToRender }
-}
+import RichText from '../rich-text'
+import { Wrapper, VideoWrapper, BottomText } from './styles'
 
 /* eslint-disable */
 const VideoEmbed = ({ data }) => {
-  const { externalUrl, title, bottomText, removeMarginBottom, createdAt } = data
-  const metaDescription = bottomText.content[0].content[0].value
+  const {
+    externalUrl,
+    title,
+    bottomText,
+    removeMarginBottom,
+    metaDescription,
+    createdAt,
+  } = data
 
-  const opts = {
+  const options = {
     youtube: {
       playerVars: {
         autoplay: 0,
@@ -22,12 +25,12 @@ const VideoEmbed = ({ data }) => {
   }
 
   return (
-    <S.Wrapper theme={theme} removeMarginBottom={removeMarginBottom}>
+    <Wrapper theme={theme} removeMarginBottom={removeMarginBottom}>
       <h3>{title}</h3>
-      <S.VideoWrapper>
+      <VideoWrapper>
         <ReactPlayer
           url={externalUrl}
-          config={{ ...opts }}
+          config={{ ...options }}
           width="100%"
           height="100%"
           preload="true"
@@ -39,13 +42,11 @@ const VideoEmbed = ({ data }) => {
         />
         <meta itemProp="uploadDate" content={createdAt} />
         <meta itemProp="embedUrl" content={externalUrl} />
-      </S.VideoWrapper>
-      <S.BottomText
-        dangerouslySetInnerHTML={createMarkup(
-          bottomText.childContentfulRichText.html
-        )}
-      />
-    </S.Wrapper>
+      </VideoWrapper>
+      <BottomText>
+        <RichText richText={bottomText} />
+      </BottomText>
+    </Wrapper>
   )
 }
 /* eslint-enable */

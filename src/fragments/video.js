@@ -7,12 +7,8 @@ export const VideoTopicFragment = graphql`
     name
     externalUrl
     title
+    metaDescription
     bottomText {
-      content {
-        content {
-          value
-        }
-      }
       childContentfulRichText {
         html
       }
