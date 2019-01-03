@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import CTABanner from '../cta-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
+import InlineCallOut from '../inline-callout'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
@@ -29,6 +30,9 @@ const Assemblies = ({ assemblies }) => {
         return <ContentGrid key={id} content={assembly} />
       if (internal.type === 'ContentfulTopicBanner')
         return <Banner key={id} banner={assembly} />
+
+      if (internal.type === 'ContentfulTopicInlineCallout')
+        return <InlineCallOut key={id} content={assembly} />
 
       return null
     })
