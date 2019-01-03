@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        color: ${props => props.theme.palette.link};
+        color: ${props => props.theme.palette.sanMarinoBlue};
         text-decoration: underline;
         font-weight: 700;
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { breakpoint } from '../theme/breakpoint'
+import RichText from '../rich-text'
 
 export const Grid = styled.section`
   display: block;
@@ -12,7 +13,7 @@ export const ItemsWrapper = styled.div`
   flex-wrap: wrap;
 `
 
-export const Item = styled.div`
+export const Item = styled(RichText)`
   margin-bottom: ${props => props.theme.spacing.padding};
 
   ${breakpoint.tablet`
