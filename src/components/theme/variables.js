@@ -37,6 +37,10 @@ theme.headers = {
   h4: '1.125em',
 }
 
+theme.fontsize = {
+  small: '0.875rem', // 14px
+}
+
 theme.spacing = {
   padding: '20px',
   smallPadding: '10px',

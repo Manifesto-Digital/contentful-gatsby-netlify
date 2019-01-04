@@ -5,6 +5,7 @@ import CTABanner from '../cta-banner'
 import DownloadBanner from '../download-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
+import NavigationLinkBox from '../navigation-link-box'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
@@ -33,6 +34,9 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulAssemblyDownloadBanner')
         return <DownloadBanner key={id} banner={assembly} />
+
+      if (internal.type === 'ContentfulTopicNavigationLinkBox')
+        return <NavigationLinkBox key={id} data={assembly} />
 
       return null
     })
