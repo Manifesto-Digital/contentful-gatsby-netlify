@@ -26,6 +26,10 @@ exports[`renders correctly 1`] = `
   margin-top: 20px;
 }
 
+.c2 p:last-child {
+  margin-bottom: 0;
+}
+
 <div
   className="c0"
 >
