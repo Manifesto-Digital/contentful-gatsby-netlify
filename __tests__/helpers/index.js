@@ -7,5 +7,11 @@ import theme from '../../src/components/theme/variables'
 export const renderWithTheme = component =>
   TestRenderer.create(<ThemeProvider theme={theme}>{component}</ThemeProvider>)
 
+export const snapshotComponent = element => {
+  const tree = renderWithTheme(element).toJSON()
+
+  expect(tree).toMatchSnapshot()
+}
+
 export const mountWithTheme = component =>
   mount(<ThemeProvider theme={theme}>{component}</ThemeProvider>)

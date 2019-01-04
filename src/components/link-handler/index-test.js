@@ -1,8 +1,7 @@
 import React from 'react'
-import 'jest-styled-components'
 import { Link } from 'gatsby'
 import { shallow } from 'enzyme'
-import { renderWithTheme } from '../../../__tests__/helpers/index'
+import { snapshotComponent } from '../../../__tests__/helpers/index'
 import LinkHandler from './index'
 import { getInternalLink } from '../../utils/links'
 import { createFactory, createInternalLink } from '../../utils/test-factories'
@@ -17,15 +16,14 @@ export const createLinkHandler = createFactory({
 it('renders correctly', () => {
   const mockData = createLinkHandler()
 
-  const tree = renderWithTheme(
+  snapshotComponent(
     <LinkHandler
       internalLink={mockData.internalLink}
       externalUrl={mockData.externalUrl}
     >
       {mockData.text}
     </LinkHandler>
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+  )
 })
 
 it('displays the correct internal link', () => {

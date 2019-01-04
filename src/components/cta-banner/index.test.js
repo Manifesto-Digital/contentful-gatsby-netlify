@@ -1,7 +1,9 @@
 import React from 'react'
-import 'jest-styled-components'
 import { shallow } from 'enzyme'
-import { renderWithTheme } from '../../../__tests__/helpers/index'
+import {
+  renderWithTheme,
+  snapshotComponent,
+} from '../../../__tests__/helpers/index'
 import CTABanner from './index'
 import { Header } from './styles'
 import theme from '../theme/variables'
@@ -18,14 +20,13 @@ export const createCtaBanner = createFactory({
 it('renders correctly', () => {
   const mockData = createCtaBanner()
 
-  const tree = renderWithTheme(
+  snapshotComponent(
     <CTABanner
       cta={mockData.cta}
       bannerColour={mockData.bannerColour}
       headerText={mockData.headerText}
     />
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+  )
 })
 
 it('displays the correct header text', () => {
