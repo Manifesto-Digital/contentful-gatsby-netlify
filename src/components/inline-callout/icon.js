@@ -12,38 +12,38 @@ import MapMarker from '../../assets/svg/icons/map-marker.svg'
 import { BannerSVG } from './styles'
 
 const Icon = ({ icon }) => {
-  let choosenIcon
+  let chosenIcon
 
   switch (icon) {
     case 'speech-bubble':
-      choosenIcon = SpeechBubble
+      chosenIcon = SpeechBubble
       break
     case 'envelope':
-      choosenIcon = Envelope
+      chosenIcon = Envelope
       break
     case 'download':
-      choosenIcon = Download
+      chosenIcon = Download
       break
     case 'printer':
-      choosenIcon = Printer
+      chosenIcon = Printer
       break
     case 'open-book':
-      choosenIcon = OpenBook
+      chosenIcon = OpenBook
       break
     case 'information':
-      choosenIcon = Information
+      chosenIcon = Information
       break
     case 'telephone':
-      choosenIcon = Telephone
+      chosenIcon = Telephone
       break
     case 'map-marker':
-      choosenIcon = MapMarker
+      chosenIcon = MapMarker
       break
     default:
-      choosenIcon = null
+      chosenIcon = null
   }
 
-  return choosenIcon !== null ? <BannerSVG as={choosenIcon} /> : null
+  return chosenIcon !== null ? <BannerSVG as={chosenIcon} /> : null
 }
 
 Icon.propTypes = {
