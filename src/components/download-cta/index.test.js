@@ -1,8 +1,7 @@
 import React from 'react'
-import 'jest-styled-components'
 import {
-  renderWithTheme,
   mountWithTheme,
+  snapshotComponent,
 } from '../../../__tests__/helpers/index'
 import DownloadCTA from './index'
 import { formatFilesize } from '../../utils/filesize-formatting'
@@ -20,8 +19,7 @@ const createDownloadCTA = createFactory({
 
 it('renders correctly', () => {
   const mockData = createDownloadCTA()
-  const tree = renderWithTheme(<DownloadCTA cta={mockData} />).toJSON()
-  expect(tree).toMatchSnapshot()
+  snapshotComponent(<DownloadCTA cta={mockData} />)
 })
 
 it('displays the correct text and size', () => {

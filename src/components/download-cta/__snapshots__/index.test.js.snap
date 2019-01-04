@@ -15,7 +15,6 @@ exports[`renders correctly 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.65em 1em;
-  background-color: #8c8c8c;
   color: #fff;
   -webkit-text-decoration: none;
   text-decoration: none;

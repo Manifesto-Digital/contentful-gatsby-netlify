@@ -1,7 +1,9 @@
 import React from 'react'
-import 'jest-styled-components'
 import { shallow } from 'enzyme'
-import { renderWithTheme } from '../../../__tests__/helpers/index'
+import {
+  renderWithTheme,
+  snapshotComponent,
+} from '../../../__tests__/helpers/index'
 import Banner from './index'
 import { Header } from './styles'
 import theme from '../theme/variables'
@@ -18,8 +20,8 @@ export const createBanner = createFactory({
 
 it('renders correctly', () => {
   const mockBanner = createBanner()
-  const tree = renderWithTheme(<Banner banner={mockBanner} />).toJSON()
-  expect(tree).toMatchSnapshot()
+
+  snapshotComponent(<Banner banner={mockBanner} />)
 })
 
 it('displays the correct header text', () => {
@@ -38,11 +40,11 @@ it('changes background colour based on props', () => {
   )
 
   // Update prop value of the background banner colour and check this is reflected
-  const changedMock = createBanner({ bannerColour: 'Green' })
+  const changedMock = createBanner({ bannerColour: 'San Marino Blue' })
 
   const changedTree = renderWithTheme(<Banner banner={changedMock} />)
   expect(changedTree.toJSON()).toHaveStyleRule(
     'background-color',
-    theme.palette.donate
+    theme.palette.sanMarinoBlue
   )
 })

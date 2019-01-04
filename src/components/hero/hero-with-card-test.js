@@ -1,9 +1,8 @@
 import React from 'react'
-import 'jest-styled-components'
 import { shallow } from 'enzyme'
 import {
-  renderWithTheme,
   mountWithTheme,
+  snapshotComponent,
 } from '../../../__tests__/helpers/index'
 import Hero from './hero-with-card'
 import { Title, CardSubtitle } from './styles'
@@ -21,8 +20,7 @@ export const createHeroWithCard = createFactory({
 it('renders correctly', () => {
   const mockData = createHeroWithCard()
 
-  const tree = renderWithTheme(<Hero content={mockData} />).toJSON()
-  expect(tree).toMatchSnapshot()
+  snapshotComponent(<Hero content={mockData} />)
 })
 
 it('displays the correct title', () => {
