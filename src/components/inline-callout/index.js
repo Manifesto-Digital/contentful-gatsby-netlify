@@ -29,7 +29,7 @@ InlineCallOut.propTypes = {
     content: PropTypes.shape(richTextPropTypes).isRequired,
     icon: PropTypes.string,
     borderColour: PropTypes.string,
-    bannerCol: PropTypes.string,
+    bannerColour: PropTypes.string,
   }),
 }
 
