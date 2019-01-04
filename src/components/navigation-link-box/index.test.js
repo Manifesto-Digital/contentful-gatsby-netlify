@@ -17,19 +17,19 @@ export const createNavigationLinkBox = createFactory({
 })
 
 it('renders correctly', () => {
-  const mockBanner = createNavigationLinkBox()
+  const mockData = createNavigationLinkBox()
 
-  snapshotComponent(<NavigationLinkBox data={mockBanner} />)
+  snapshotComponent(<NavigationLinkBox data={mockData} />)
 })
 
 it('displays the correct header text', () => {
-  const mockBanner = createNavigationLinkBox({ headerText: 'Test header text' })
-  const wrapper = shallow(<NavigationLinkBox data={mockBanner} />)
-  expect(wrapper.find('h2').text()).toBe(mockBanner.headerText)
+  const mockData = createNavigationLinkBox({ headerText: 'Test header text' })
+  const wrapper = shallow(<NavigationLinkBox data={mockData} />)
+  expect(wrapper.find('h2').text()).toBe(mockData.headerText)
 })
 
 it('displays link and title correctly', () => {
-  const mockBanner = createNavigationLinkBox({
+  const mockData = createNavigationLinkBox({
     link: [
       {
         title: 'Shelter Demo Page',
@@ -37,19 +37,19 @@ it('displays link and title correctly', () => {
       },
     ],
   })
-  const wrapper = shallow(<NavigationLinkBox data={mockBanner} />)
+  const wrapper = shallow(<NavigationLinkBox data={mockData} />)
 
   expect(
     wrapper
       .find(StyledLink)
       .at(0)
       .text()
-  ).toBe(mockBanner.links[0].title)
+  ).toBe(mockData.links[0].title)
 
   expect(
     wrapper
       .find(StyledLink)
       .at(0)
       .prop('to')
-  ).toBe(mockBanner.links[0].slug)
+  ).toBe(mockData.links[0].slug)
 })
