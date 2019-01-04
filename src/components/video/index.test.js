@@ -1,6 +1,6 @@
 import React from 'react'
 import 'jest-styled-components'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import { renderWithTheme } from '../../../__tests__/helpers/index'
 import VideoEmbed from './index'
 import {
