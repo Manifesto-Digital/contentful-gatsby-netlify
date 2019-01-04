@@ -1,10 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 import theme from '../theme/variables'
 import RichText from '../rich-text'
 import { Wrapper, VideoWrapper, BottomText } from './styles'
 
-/* eslint-disable */
 const VideoEmbed = ({ data }) => {
   const {
     externalUrl,
@@ -12,7 +12,6 @@ const VideoEmbed = ({ data }) => {
     bottomText,
     removeMarginBottom,
     metaDescription,
-    createdAt,
   } = data
 
   const options = {
@@ -36,10 +35,7 @@ const VideoEmbed = ({ data }) => {
           preload="true"
         />
         <meta itemProp="name" content={title} />
-        <meta
-          itemProp="description"
-          content={metaDescription ? metaDescription : title}
-        />
+        <meta itemProp="description" content={metaDescription || title} />
         <meta itemProp="embedUrl" content={externalUrl} />
       </VideoWrapper>
       {bottomText && (
@@ -50,5 +46,15 @@ const VideoEmbed = ({ data }) => {
     </Wrapper>
   )
 }
-/* eslint-enable */
+
+VideoEmbed.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    bottomText: PropTypes.string,
+    metaDescription: PropTypes.string,
+    externalUrl: PropTypes.string.isRequired,
+    removeMarginBottom: PropTypes.bool,
+  }),
+}
+
 export default VideoEmbed
