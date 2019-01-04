@@ -1,9 +1,8 @@
 import React from 'react'
-import 'jest-styled-components'
 import { shallow } from 'enzyme'
 import {
-  renderWithTheme,
   mountWithTheme,
+  snapshotComponent,
 } from '../../../__tests__/helpers/index'
 import CTA from './index'
 import { StyledLinkHandler } from './styles'
@@ -24,8 +23,7 @@ export const createCTA = createFactory({
 it('renders correctly', () => {
   const mockData = createCTA()
 
-  const tree = renderWithTheme(<CTA cta={mockData} />).toJSON()
-  expect(tree).toMatchSnapshot()
+  snapshotComponent(<CTA cta={mockData} />)
 })
 
 it('displays the correct text', () => {

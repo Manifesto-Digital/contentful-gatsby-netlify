@@ -1,10 +1,6 @@
 import React from 'react'
-import 'jest-styled-components'
-import { shallow, mount } from 'enzyme'
-import {
-  renderWithTheme,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index'
+import { shallow } from 'enzyme'
+import { snapshotComponent } from '../../../__tests__/helpers/index'
 import Grid from './index'
 import { Item } from './styles'
 import RichText from '../rich-text'
@@ -24,6 +20,5 @@ export const createContentGrid = createFactory({
 it('renders correctly', () => {
   const mockData = createContentGrid()
 
-  const tree = renderWithTheme(<Grid content={mockData} />).toJSON()
-  expect(tree).toMatchSnapshot()
+  snapshotComponent(<Grid content={mockData} />)
 })
