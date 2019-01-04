@@ -1,10 +1,11 @@
 import React from 'react'
 import 'jest-styled-components'
 import { renderWithTheme } from '../../../__tests__/helpers/index'
-import { createChildContentfulRichText } from '../../utils/test-factories'
+import {
+  createFactory,
+  createChildContentfulRichText,
+} from '../../utils/test-factories'
 import InlineCallOut from './index'
-
-import { createFactory } from '../../utils/test-factories'
 
 // Default props
 export const createInlineBanner = createFactory({
