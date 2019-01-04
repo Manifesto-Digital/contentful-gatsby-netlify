@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
   margin: ${props => props.theme.spacing.largePadding} 0;
   padding: ${props => props.theme.spacing.padding};
   background: ${props => props.theme.palette.white};
+  box-shadow: ${props => props.theme.boxshadow.small};
   border-radius: 3px;
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.06);
 `
 
 export const ListWrapper = styled.div`

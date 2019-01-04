@@ -41,6 +41,10 @@ theme.fontsize = {
   small: '0.875rem', // 14px
 }
 
+theme.boxshadow = {
+  small: '0 1.5px 4px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.06);',
+}
+
 theme.spacing = {
   padding: '20px',
   smallPadding: '10px',
