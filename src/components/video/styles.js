@@ -24,4 +24,8 @@ export const VideoWrapper = styled.div`
 
 export const BottomText = styled.div`
   margin-top: ${props => props.theme.spacing.padding};
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 `
