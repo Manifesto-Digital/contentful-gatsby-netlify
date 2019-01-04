@@ -50,7 +50,7 @@ const VideoEmbed = ({ data }) => {
 VideoEmbed.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string,
-    bottomText: PropTypes.string,
+    bottomText: PropTypes.object,
     metaDescription: PropTypes.string,
     externalUrl: PropTypes.string.isRequired,
     removeMarginBottom: PropTypes.bool,

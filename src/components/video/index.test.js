@@ -1,7 +1,7 @@
 import React from 'react'
 import 'jest-styled-components'
 import { shallow } from 'enzyme'
-import { renderWithTheme } from '../../../__tests__/helpers/index'
+import { snapshotComponent } from '../../../__tests__/helpers/index'
 import VideoEmbed from './index'
 import {
   createFactory,
@@ -18,9 +18,7 @@ export const createVideo = createFactory({
 
 it('renders correctly', () => {
   const mockData = createVideo()
-
-  const tree = renderWithTheme(<VideoEmbed data={mockData} />).toJSON()
-  expect(tree).toMatchSnapshot()
+  snapshotComponent(<VideoEmbed data={mockData} />)
 })
 
 it('displays the correct title', () => {
