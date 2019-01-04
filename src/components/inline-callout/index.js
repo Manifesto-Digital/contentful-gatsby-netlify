@@ -1,20 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from './icon'
 import { richTextPropTypes } from '../../prop-types'
 // Components
-
+import Icon from './icon'
 // Styles
 import { InlineBanner, TextWrapper } from './styles'
 
-const InlineCallOut = ({ content }) => {
-  let { icon } = content
-  const callOutText = content.content
+function formatString(string) {
+  return string !== null ? string.replace(/\s+/g, '-').toLowerCase() : 'default'
+}
 
-  icon = icon.replace(/\s+/g, '-').toLowerCase()
+const InlineCallOut = ({ content }) => {
+  const { icon, borderColour, bannerColour } = content
+  const callOutText = content.content
   return (
-    <InlineBanner>
-      <Icon icon={icon} />
+    <InlineBanner
+      borderCol={formatString(borderColour)}
+      bannerCol={formatString(bannerColour)}
+    >
+      <Icon icon={formatString(icon)} />
       <TextWrapper richText={callOutText} />
     </InlineBanner>
   )
@@ -24,6 +28,8 @@ InlineCallOut.propTypes = {
   content: PropTypes.shape({
     content: PropTypes.shape(richTextPropTypes).isRequired,
     icon: PropTypes.string,
+    borderColour: PropTypes.string,
+    bannerCol: PropTypes.string,
   }),
 }
 

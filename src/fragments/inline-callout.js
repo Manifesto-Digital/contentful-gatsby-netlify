@@ -5,6 +5,8 @@ export const InlineCallout = graphql`
     id
     name
     icon
+    borderColour
+    bannerColour
     internal {
       type
     }
