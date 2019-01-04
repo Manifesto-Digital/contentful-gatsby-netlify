@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h3>
+    Search our housing advice
+  </h3>
+  <input
+    placeholder="Search topics"
+  />
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</div>
+`;
