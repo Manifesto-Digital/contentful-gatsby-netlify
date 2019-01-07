@@ -5,12 +5,15 @@ import CTABanner from '../cta-banner'
 import DownloadBanner from '../download-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
+import DonationBanner from '../donation-banner'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
 
   const AssembliesLoop = () =>
     assemblies.map(assembly => {
+      console.log('assembly', assembly)
+
       // Make sure an id and name of component have been queried
       if (!assembly.id || !assembly.internal) return null
       const { id, internal } = assembly
@@ -30,9 +33,10 @@ const Assemblies = ({ assemblies }) => {
         return <ContentGrid key={id} content={assembly} />
       if (internal.type === 'ContentfulTopicBanner')
         return <Banner key={id} banner={assembly} />
-
       if (internal.type === 'ContentfulAssemblyDownloadBanner')
         return <DownloadBanner key={id} banner={assembly} />
+      if (internal.type === 'ContentfulTopicDonationBanner')
+        return <DonationBanner key={id} banner={assembly} />
 
       return null
     })
