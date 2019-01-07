@@ -1,3 +1,5 @@
+const { BLOCKS, MARKS, INLINES } = require('@contentful/rich-text-types')
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -44,6 +46,19 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    '@contentful/gatsby-transformer-contentful-richtext',
+    {
+      resolve: '@contentful/gatsby-transformer-contentful-richtext',
+      options: {
+        renderOptions: {
+          /*
+           * Defines custom html string for each mark type like bold, italic etc..
+           */
+          renderMark: {
+            // Example
+            [MARKS.BOLD]: text => `<strong>${text}</strong>`,
+          },
+        },
+      },
+    },
   ],
 }
