@@ -1,7 +1,9 @@
 import React from 'react'
 import 'jest-styled-components'
-import { shallow } from 'enzyme'
-import { snapshotComponent } from '../../../__tests__/helpers/index'
+import {
+  mountWithTheme,
+  snapshotComponent,
+} from '../../../__tests__/helpers/index'
 import VideoEmbed from './index'
 import {
   createFactory,
@@ -24,7 +26,7 @@ it('renders correctly', () => {
 it('displays the correct title', () => {
   const mockData = createVideo({ title: 'Topic - Video Embed' })
 
-  const wrapper = shallow(<VideoEmbed data={mockData} />)
+  const wrapper = mountWithTheme(<VideoEmbed data={mockData} />)
   expect(wrapper.find('h3').text()).toBe(mockData.title)
 })
 
@@ -33,7 +35,7 @@ it('displays a meta name', () => {
     title: 'Topic - Video Embed',
   })
 
-  const wrapper = shallow(<VideoEmbed data={mockData} />)
+  const wrapper = mountWithTheme(<VideoEmbed data={mockData} />)
   expect(wrapper.find('meta[itemProp="name"]').prop('content')).toBe(
     mockData.title
   )
@@ -44,7 +46,7 @@ it('displays a meta description', () => {
     metaDescription: 'Lyndsay describes the moment she received a section 21',
   })
 
-  const wrapper = shallow(<VideoEmbed data={mockData} />)
+  const wrapper = mountWithTheme(<VideoEmbed data={mockData} />)
   expect(wrapper.find('meta[itemProp="description"]').prop('content')).toBe(
     mockData.metaDescription
   )
@@ -55,7 +57,7 @@ it('displays a meta embedUrl', () => {
     title: 'Topic - Video Embed',
   })
 
-  const wrapper = shallow(<VideoEmbed data={mockData} />)
+  const wrapper = mountWithTheme(<VideoEmbed data={mockData} />)
   expect(wrapper.find('meta[itemProp="embedUrl"]').prop('content')).toBe(
     mockData.externalUrl
   )

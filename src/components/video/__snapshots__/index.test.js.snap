@@ -38,6 +38,9 @@ exports[`renders correctly 1`] = `
   </h3>
   <div
     className="c1"
+    itemProp="video"
+    itemScope={true}
+    itemType="http://schema.org/VideoObject"
   >
     <div
       preload="true"

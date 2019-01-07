@@ -5,7 +5,7 @@ import theme from '../theme/variables'
 import RichText from '../rich-text'
 import { Wrapper, VideoWrapper, BottomText } from './styles'
 
-const VideoEmbed = ({ data }) => {
+function VideoEmbed({ data }) {
   const [videoDuration, setDuration] = useState(null)
   const [videoURL, setVideoID] = useState(null)
   const {
