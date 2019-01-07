@@ -5,6 +5,7 @@ import CTABanner from '../cta-banner'
 import DownloadBanner from '../download-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
+import ShareBlock from '../share-block'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
@@ -12,6 +13,7 @@ const Assemblies = ({ assemblies }) => {
   const AssembliesLoop = () =>
     assemblies.map(assembly => {
       // Make sure an id and name of component have been queried
+      console.log(assembly)
       if (!assembly.id || !assembly.internal) return null
       const { id, internal } = assembly
 
@@ -33,6 +35,9 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulAssemblyDownloadBanner')
         return <DownloadBanner key={id} banner={assembly} />
+
+      if (internal.type === 'ContentfulTopicShareBlock')
+        return <ShareBlock key={id} data={assembly} />
 
       return null
     })
