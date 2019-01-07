@@ -9,6 +9,8 @@ import {
   SubpageMenuTitle,
 } from './styles'
 
+import { Container } from '../styled/containers'
+
 const SubpageMenu = ({ data, activeSlug }) => {
   if (data === null) {
     return null
@@ -58,10 +60,12 @@ const SubpageMenu = ({ data, activeSlug }) => {
   }
 
   return (
-    <SubpageMenuNav>
-      <MenuTitle />
-      <MenuList items={data.pages} />
-    </SubpageMenuNav>
+    <Container>
+      <SubpageMenuNav>
+        <MenuTitle />
+        <MenuList items={data.pages} />
+      </SubpageMenuNav>
+    </Container>
   )
 }
 

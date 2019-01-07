@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SubpageMenu from '../components/subpage-menu'
+import SubpageNextPrev from '../components/subpage-next-prev'
 // Components
 import Hero from '../components/hero'
 import RichText from '../components/richText'
@@ -19,15 +20,14 @@ const Page = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Container>
-        <SubpageMenu
-          data={pageContext.subpages}
-          activeSlug={pageContext.slug}
-        />
-      </Container>
+      <SubpageMenu data={pageContext.subpages} activeSlug={pageContext.slug} />
       {heroContent && <Hero content={heroContent[0]} />}
       <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
       <Assemblies assemblies={assemblies} />
+      <SubpageNextPrev
+        data={pageContext.subpages}
+        activeSlug={pageContext.slug}
+      />
     </Layout>
   )
 }

@@ -29,7 +29,6 @@ function shelterCreatePage(
   })
 
   if (nodeData.subPages) {
-    //console.log(nodeData.subPages);
     nodeData.subPages.pages.forEach(subNode => {
       shelterCreatePage(gatsbyCreatePage, pageTemplate, subNode, subPages)
     })
