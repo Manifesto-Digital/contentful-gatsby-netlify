@@ -45,5 +45,12 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     '@contentful/gatsby-transformer-contentful-richtext',
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-WWSW2HH',
+        includeInDevelopment: true,
+      },
+    },
   ],
 }
