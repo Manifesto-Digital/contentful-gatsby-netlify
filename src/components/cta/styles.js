@@ -1,12 +1,31 @@
 import styled from 'styled-components'
+import LinkHandler from '../link-handler'
 
-export const ButtonLink = styled.a`
+export const CtaIcon = styled.span`
   display: inline-block;
-  padding: 0.65em 2em;
+  margin-right: 5px;
+
+  img {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+`
+
+export const CtaText = styled.span`
+  display: inline-block;
+`
+
+export const StyledLinkHandler = styled(LinkHandler)`
+  display: inline-block;
+  padding: 0.65em 1em;
+  font-weight: normal;
   background-color: ${props =>
     (props.bg === 'red' && props.theme.palette.primary) ||
     (props.bg === 'black' && props.theme.palette.black) ||
-    (props.bg === 'blue' && props.theme.palette.link) ||
+    (props.bg === 'blue' && props.theme.palette.sanMarinoBlue) ||
+    (props.bg === 'donate' && props.theme.palette.donate) ||
     (props.bg === 'white outline' && 'transparent')};
 
   border: ${props =>
@@ -18,5 +37,6 @@ export const ButtonLink = styled.a`
     (props.bg === 'red' && props.theme.palette.white) ||
     (props.bg === 'black' && props.theme.palette.white) ||
     (props.bg === 'blue' && props.theme.palette.white) ||
+    (props.bg === 'donate' && props.theme.palette.white) ||
     (props.bg === 'white outline' && props.theme.palette.white)};
 `

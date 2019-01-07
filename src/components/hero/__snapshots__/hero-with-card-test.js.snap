@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.c1 img {
+  min-width: 100%;
+}
+
+.c3 {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60em;
+  padding: 1em 1em 0;
+  position: relative;
+  width: 100%;
+  background: hsla(0,0%,100%,0.9);
+}
+
+.c4 {
+  margin-bottom: 0;
+}
+
+.c5 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.c2 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+@media (min-width:40.0625em) {
+  .c0 {
+    padding-top: 3em;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    padding-top: 10em;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c1 img {
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
+    float: right;
+    margin-bottom: 3em;
+    width: 65%;
+    padding-bottom: 1em;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    width: 55%;
+    margin-bottom: 7em;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <img
+      alt="Collection hero"
+      src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=1600"
+      srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=800 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=1600"
+    />
+  </div>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <h1
+        className="c4"
+      >
+        Mock Title
+      </h1>
+      <p
+        className="c5"
+      >
+        Mock Subtitle
+      </p>
+    </div>
+  </div>
+</section>
+`;

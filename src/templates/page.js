@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 // Components
 import Hero from '../components/hero'
-import RichText from '../components/richText'
+import RichText from '../components/rich-text'
 import Assemblies from '../components/assemblies'
 // Styles
 import { Container } from '../components/styled/containers'
@@ -18,9 +18,13 @@ const Page = ({ data }) => {
 
   return (
     <Layout>
-      {heroContent && <Hero content={heroContent[0]} />}
-      <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
-      <Assemblies assemblies={assemblies} />
+      <article>
+        {heroContent && <Hero content={heroContent[0]} />}
+        <section>
+          <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
+        </section>
+        <Assemblies assemblies={assemblies} />
+      </article>
     </Layout>
   )
 }
@@ -65,23 +69,21 @@ export const pageQuery = graphql`
         }
       }
       bodyCopy {
-        content {
-          nodeType
-          content {
-            value
-            content {
-              content {
-                value
-              }
-            }
-            marks {
-              type
-            }
-          }
+        id
+        internal {
+          type
+        }
+        childContentfulRichText {
+          html
         }
       }
       assemblies {
-        ...CTAAssemblyFragment
+        ... on Node {
+          ...CtaAssemblyFragment
+          ...ContentGrid4Fragment
+          ...BannerTopicFragment
+          ...DownloadBannerAssemblyFragment
+        }
       }
     }
   }

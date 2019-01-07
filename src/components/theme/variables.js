@@ -2,15 +2,22 @@ const theme = {}
 
 theme.palette = {
   primary: '#EA232D',
-  secondary: '#DBC8B6',
   donate: '#12b9bf',
-  link: '#4d63b5',
-  danger: '#ff0000',
-  success: '#72dcd4',
+  // Greys
   white: '#fff',
+  offWhite: '#f7f7f7',
+  grey10: '#e5e5e5',
+  grey15: '#d9d9d9',
+  grey45: '#8c8c8c',
   black: '#212122',
-  greyLight: '#e5e5e5',
-  greyMed: '#d9d9d9',
+  // Blues
+  sanMarinoBlue: '#4d63b5',
+  royalBlue: '#0b0b89',
+  shelterBlue: '#65cfe9',
+  // Social sharing
+  twitter: '#1da1f3',
+  facebook: '#3b5998',
+  whatsapp: '#25d366',
 }
 
 theme.fonts = {

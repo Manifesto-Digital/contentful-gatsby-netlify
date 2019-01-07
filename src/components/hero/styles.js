@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { breakpoint } from '../theme/breakpoint'
 import { absoluteCenter } from '../styled/utils'
+import LinkHandler from '../link-handler'
 
-export const HeroNoCard = styled.div`
+export const HeroNoCard = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -14,7 +15,7 @@ export const HeroNoCard = styled.div`
 `};
 `
 
-export const HeroWithCard = styled.div`
+export const HeroWithCard = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -103,7 +104,7 @@ export const CardSubtitle = styled.p`
   margin-bottom: ${props => props.theme.spacing.smallPadding};
   margin-top: ${props => props.theme.spacing.smallPadding};
 `
-export const CardLink = styled.a`
+export const StyledLinkHandler = styled(LinkHandler)`
   &:hover {
     color: ${props => props.theme.palette.primary};
   }

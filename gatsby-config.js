@@ -35,6 +35,22 @@ module.exports = {
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
     'gatsby-plugin-offline',
+    '@contentful/gatsby-transformer-contentful-richtext',
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-WWSW2HH',
+        includeInDevelopment: true,
+      },
+    },
   ],
 }

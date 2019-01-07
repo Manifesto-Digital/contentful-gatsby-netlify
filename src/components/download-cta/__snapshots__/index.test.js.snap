@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.65em 1em;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c2 {
+  font-size: 0.65em;
+  margin-bottom: 5px;
+}
+
+.c1 {
+  margin-bottom: 5px;
+}
+
+.c3 {
+  display: block;
+  fill: #fff;
+  float: right;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+<a
+  className="c0"
+  download={true}
+  href="//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf"
+>
+  <div>
+    <p
+      className="c1"
+    >
+      Button text
+    </p>
+    <p
+      className="c2"
+    >
+      78.02 KB
+    </p>
+  </div>
+  <test-file-stub
+    className="c3"
+  />
+</a>
+`;

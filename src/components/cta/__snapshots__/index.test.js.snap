@@ -1,19 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 {
+  display: inline-block;
+}
+
 .c0 {
   display: inline-block;
-  padding: 0.65em 2em;
+  padding: 0.65em 1em;
+  font-weight: normal;
   background-color: #EA232D;
   border: none;
   color: #fff;
 }
 
 <Link
-  bg="red"
   className="c0"
-  to="slug"
+  to="internal-link-slug"
 >
-  Button text
+  <span
+    className="c1"
+  >
+    Button text
+  </span>
 </Link>
 `;
