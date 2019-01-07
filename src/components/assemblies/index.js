@@ -5,6 +5,7 @@ import CTABanner from '../cta-banner'
 import DownloadBanner from '../download-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
+import InlineCallOut from '../inline-callout'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
@@ -31,6 +32,8 @@ const Assemblies = ({ assemblies }) => {
       if (internal.type === 'ContentfulTopicBanner')
         return <Banner key={id} banner={assembly} />
 
+      if (internal.type === 'ContentfulTopicInlineCallout')
+        return <InlineCallOut key={id} content={assembly} />
       if (internal.type === 'ContentfulAssemblyDownloadBanner')
         return <DownloadBanner key={id} banner={assembly} />
 
