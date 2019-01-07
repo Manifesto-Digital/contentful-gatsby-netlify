@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 // Components
 import Hero from '../components/hero'
-import RichText from '../components/richText'
+import RichText from '../components/rich-text'
 import Assemblies from '../components/assemblies'
 // Styles
 import { Container } from '../components/styled/containers'
@@ -69,19 +69,12 @@ export const pageQuery = graphql`
         }
       }
       bodyCopy {
-        content {
-          nodeType
-          content {
-            value
-            content {
-              content {
-                value
-              }
-            }
-            marks {
-              type
-            }
-          }
+        id
+        internal {
+          type
+        }
+        childContentfulRichText {
+          html
         }
       }
       assemblies {
@@ -89,6 +82,7 @@ export const pageQuery = graphql`
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
           ...BannerTopicFragment
+          ...VideoTopicFragment
           ...DownloadBannerAssemblyFragment
         }
       }
