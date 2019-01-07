@@ -33,9 +33,12 @@ const VideoEmbed = ({ data }) => {
     }
   }
 
-  useEffect(() => {
-    getVideoID(externalUrl)
-  })
+  useEffect(
+    () => {
+      getVideoID(externalUrl)
+    },
+    [externalUrl]
+  )
 
   return (
     <Wrapper theme={theme} removeMarginBottom={removeMarginBottom}>
