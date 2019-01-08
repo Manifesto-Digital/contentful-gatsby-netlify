@@ -25,6 +25,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true,
+        svgo: true,
+        svgoConfig: {
+          removeScriptElement: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId:
@@ -33,14 +43,6 @@ module.exports = {
           process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN ||
           process.env.ctfl_accessToken,
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/,
-        },
       },
     },
     'gatsby-plugin-offline',
