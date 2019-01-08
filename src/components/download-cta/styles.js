@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-import SVG from 'react-inlinesvg'
-import { breakpoint } from '../theme/breakpoint'
-
+import styled from 'styled-components';
+import SVG from 'react-inlinesvg';
+import { breakpoint } from '../theme/breakpoint';
 
 export const Button = styled.a`
   display: flex;

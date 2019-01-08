@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { breakpoint } from '../theme/breakpoint'
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { breakpoint } from '../theme/breakpoint';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   background: ${props => props.theme.palette.white};
   box-shadow: ${props => props.theme.boxshadow.small};
   border-radius: 3px;
-`
+`;
 
 export const ListWrapper = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const ListWrapper = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   `};
-`
+`;
 
 export const StyledLink = styled(Link)`
   margin-bottom: ${props => props.theme.spacing.padding};
@@ -35,4 +35,4 @@ export const StyledLink = styled(Link)`
   &:hover {
     color: ${props => props.theme.palette.primary};
   }
-`
+`;

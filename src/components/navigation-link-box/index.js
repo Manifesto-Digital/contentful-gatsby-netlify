@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Container } from '../styled/containers'
-import { Wrapper, ListWrapper, StyledLink } from './styles'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Container } from '../styled/containers';
+import { Wrapper, ListWrapper, StyledLink } from './styles';
 
 const NavigationLinkBox = ({ data }) => {
-  const { headerText, links } = data
+  const { headerText, links } = data;
   return (
     <Container>
       <Wrapper>
@@ -18,8 +18,8 @@ const NavigationLinkBox = ({ data }) => {
         </ListWrapper>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
 NavigationLinkBox.propTypes = {
   data: PropTypes.shape({
@@ -31,6 +31,6 @@ NavigationLinkBox.propTypes = {
       })
     ),
   }),
-}
+};
 
-export default NavigationLinkBox
+export default NavigationLinkBox;
