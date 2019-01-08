@@ -18,6 +18,11 @@ theme.palette = {
   twitter: '#1da1f3',
   facebook: '#3b5998',
   whatsapp: '#25d366',
+  // Feedback
+  error: '#EA232D',
+  errorLight: '#ffe7ec',
+  success: '#62B33C',
+  successLight: '#e6f8e7',
 };
 
 theme.fonts = {
@@ -41,5 +46,6 @@ theme.spacing = {
   padding: '20px',
   smallPadding: '10px',
   largePadding: '40px',
+  formElementVerticalPadding: '0.65em',
 };
 export default theme;

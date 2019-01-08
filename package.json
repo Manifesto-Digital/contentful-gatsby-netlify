@@ -10,7 +10,8 @@
     "dotenv": "^6.1.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
-    "gatsby": "^2.0.55",
+    "formik": "^1.4.1",
+    "gatsby": "^2.0.83",
     "gatsby-plugin-google-tagmanager": "^2.0.7",
     "gatsby-plugin-manifest": "^2.0.10",
     "gatsby-plugin-offline": "^2.0.17",
@@ -21,12 +22,14 @@
     "gatsby-transformer-remark": "^2.1.12",
     "jest-styled-components": "^6.3.1",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
     "react-helmet": "^5.2.0",
     "react-inlinesvg": "0.8.3",
+    "react-modal": "^3.8.1",
     "react-player": "1.8.0",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.1",
+    "yup": "^0.26.6"
   },
   "keywords": [
     "gatsby"

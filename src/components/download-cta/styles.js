@@ -7,7 +7,7 @@ export const Button = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65em 1em;
+  padding: ${props => props.theme.spacing.formElementVerticalPadding} 1em;
   background-color: ${props => props.theme.palette.greyMed};
   color: ${props => props.theme.palette.white};
   text-decoration: none;

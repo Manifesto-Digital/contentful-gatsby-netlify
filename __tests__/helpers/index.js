@@ -1,17 +1,38 @@
-import React from 'react'
-import TestRenderer from 'react-test-renderer'
-import { mount } from 'enzyme'
-import { ThemeProvider } from 'styled-components'
-import theme from '../../src/components/theme/variables'
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
+import { mount } from 'enzyme';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../src/components/theme/variables';
+import * as FormProvider from '../../src/components/forms/provider';
 
-export const renderWithTheme = component =>
-  TestRenderer.create(<ThemeProvider theme={theme}>{component}</ThemeProvider>)
+export const renderWithProviders = component => {
+  const submitForm = jest.fn();
 
-export const snapshotComponent = element => {
-  const tree = renderWithTheme(element).toJSON()
+  return {
+    renderer: TestRenderer.create(
+      <FormProvider.Provider submitForm={submitForm}>
+        <ThemeProvider theme={theme}>{component}</ThemeProvider>
+      </FormProvider.Provider>
+    ),
+    submitForm,
+  };
+};
 
-  expect(tree).toMatchSnapshot()
-}
+export const snapshotComponent = (element, name) => {
+  const tree = renderWithProviders(element).renderer.toJSON();
 
-export const mountWithTheme = component =>
-  mount(<ThemeProvider theme={theme}>{component}</ThemeProvider>)
+  expect(tree).toMatchSnapshot(name);
+};
+
+export const mountWithProviders = component => {
+  const submitForm = jest.fn();
+
+  return {
+    wrapper: mount(
+      <FormProvider.Provider submitForm={submitForm}>
+        <ThemeProvider theme={theme}>{component}</ThemeProvider>
+      </FormProvider.Provider>
+    ),
+    submitForm,
+  };
+};
