@@ -124,3 +124,25 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 12. **`README.md`**: A text file containing useful reference information about your project.
 
 13. **`.eslintrc`**: Linting configuration for the code standards.
+
+## 🗒️ Documentation
+
+**Document important decisions with ADRs**
+An architecture decision record is a short text file that describes a set of forces and a single decision in response to those forces.
+
+By documenting each time we have to make a decision we build up a collection of records for "architecturally significant" decisions: those that affect the structure, non-functional characteristics, dependencies, interfaces, or construction techniques.
+
+ADRs should live in the project repository under `docs/` - we are utilising the following command line tool to automate the creation https://github.com/npryce/adr-tools.
+
+**To create a new ADR**
+
+- Install ADR Tools.
+- Run `adr new Implement as Unix shell scripts` from the project root
+
+It can be difficult to put firm set of criteria around what decisions are architecturally significant enough to warrant an ADR - below are a series of (non-definitive) questions to ask when evaluating if one is needed:
+
+- Does it pass the smell test, is it clearly a significant choice?
+- Can the reasoning behind a decision be understood from the code?
+- Does a decision affect how the code is structured?
+- Does a decision touch code across a large section of the code?
+- Does a decision speak to an underlying technology, plugin or framework selection?
