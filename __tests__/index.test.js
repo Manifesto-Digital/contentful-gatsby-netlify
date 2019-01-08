@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 describe('Index', () =>
   it('passes', () => {
-    expect(2).toEqual(2)
-  }))
+    expect(2).toEqual(2);
+  }));
