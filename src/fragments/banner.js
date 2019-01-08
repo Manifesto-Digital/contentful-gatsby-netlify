@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const BannerTopicFragment = graphql`
   fragment BannerTopicFragment on ContentfulTopicBanner {
@@ -21,4 +21,4 @@ export const BannerTopicFragment = graphql`
     }
     removeMarginBottom
   }
-`
+`;

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import LinkHandler from '../link-handler'
+import styled from 'styled-components';
+import LinkHandler from '../link-handler';
 
 export const CtaIcon = styled.span`
   display: inline-block;
@@ -11,11 +11,11 @@ export const CtaIcon = styled.span`
     display: inline-block;
     vertical-align: text-bottom;
   }
-`
+`;
 
 export const CtaText = styled.span`
   display: inline-block;
-`
+`;
 
 export const StyledLinkHandler = styled(LinkHandler)`
   display: inline-block;
@@ -39,4 +39,4 @@ export const StyledLinkHandler = styled(LinkHandler)`
     (props.bg === 'blue' && props.theme.palette.white) ||
     (props.bg === 'donate' && props.theme.palette.white) ||
     (props.bg === 'white outline' && props.theme.palette.white)};
-`
+`;

@@ -1,20 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 // Components
-import Hero from '../components/hero'
-import RichText from '../components/rich-text'
-import Assemblies from '../components/assemblies'
+import Hero from '../components/hero';
+import RichText from '../components/rich-text';
+import Assemblies from '../components/assemblies';
 // Styles
-import { Container } from '../components/styled/containers'
+import { Container } from '../components/styled/containers';
 
 const Page = ({ data }) => {
   const {
     bodyCopy,
     heroContent,
     assemblies,
-  } = data.contentfulPageAssemblyContentPage
+  } = data.contentfulPageAssemblyContentPage;
 
   return (
     <Layout>
@@ -26,16 +26,16 @@ const Page = ({ data }) => {
         <Assemblies assemblies={assemblies} />
       </article>
     </Layout>
-  )
-}
+  );
+};
 
 Page.propTypes = {
   data: PropTypes.shape({
     contentfulPageAssemblyContentPage: PropTypes.object,
   }),
-}
+};
 
-export default Page
+export default Page;
 
 export const pageQuery = graphql`
   query pageTemplateQuery($slug: String!) {
@@ -82,10 +82,11 @@ export const pageQuery = graphql`
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
           ...BannerTopicFragment
+          ...VideoTopicFragment
           ...DownloadBannerAssemblyFragment
           ...AdviceSearchBoxTopicFragment
         }
       }
     }
   }
-`
+`;

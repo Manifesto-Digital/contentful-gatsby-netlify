@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const ctaStandardFragment = graphql`
   fragment ctaStandardFragment on ContentfulTopicStandardCta {
@@ -16,7 +16,7 @@ export const ctaStandardFragment = graphql`
     externalUrl
     buttonText
   }
-`
+`;
 
 export const ctaWithIconFragment = graphql`
   fragment ctaWithIconFragment on ContentfulTopicCtaWithIcon {
@@ -42,4 +42,4 @@ export const ctaWithIconFragment = graphql`
       }
     }
   }
-`
+`;

@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // Components
-import Image from '../image'
+import Image from '../image';
 // Styles
-import { StyledLinkHandler, CtaIcon, CtaText } from './styles'
+import { StyledLinkHandler, CtaIcon, CtaText } from './styles';
 
 const CTA = ({ cta }) => {
-  const { buttonText, ctaColour, internalLink, externalUrl, icon } = cta
+  const { buttonText, ctaColour, internalLink, externalUrl, icon } = cta;
 
   return (
     <StyledLinkHandler
@@ -22,8 +22,8 @@ const CTA = ({ cta }) => {
 
       <CtaText>{buttonText}</CtaText>
     </StyledLinkHandler>
-  )
-}
+  );
+};
 
 CTA.propTypes = {
   cta: PropTypes.shape({
@@ -44,6 +44,6 @@ CTA.propTypes = {
       file: PropTypes.object,
     }),
   }),
-}
+};
 
-export default CTA
+export default CTA;

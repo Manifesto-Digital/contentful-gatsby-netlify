@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const CtaAssemblyFragment = graphql`
   fragment CtaAssemblyFragment on ContentfulAssemblyCta {
@@ -14,4 +14,4 @@ export const CtaAssemblyFragment = graphql`
       ...ctaWithIconFragment
     }
   }
-`
+`;
