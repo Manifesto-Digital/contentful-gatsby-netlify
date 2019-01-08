@@ -6,6 +6,7 @@ import DownloadBanner from '../download-banner'
 import ContentGrid from '../content-grid'
 import Banner from '../banner'
 import ShareBlock from '../share-block'
+import VideoEmbed from '../video'
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
@@ -32,6 +33,8 @@ const Assemblies = ({ assemblies }) => {
         return <ContentGrid key={id} content={assembly} />
       if (internal.type === 'ContentfulTopicBanner')
         return <Banner key={id} banner={assembly} />
+      if (internal.type === 'ContentfulTopicVideoEmbed')
+        return <VideoEmbed key={id} data={assembly} />
 
       if (internal.type === 'ContentfulAssemblyDownloadBanner')
         return <DownloadBanner key={id} banner={assembly} />
