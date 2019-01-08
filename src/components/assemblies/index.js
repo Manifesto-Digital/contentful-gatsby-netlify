@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Components
-import CTABanner from '../cta-banner'
-import DownloadBanner from '../download-banner'
-import ContentGrid from '../content-grid'
-import Banner from '../banner'
-import NavigationLinkBox from '../navigation-link-box'
-import VideoEmbed from '../video'
+import CTABanner from '../cta-banner';
+import DownloadBanner from '../download-banner';
+import ContentGrid from '../content-grid';
+import Banner from '../banner';
+import NavigationLinkBox from '../navigation-link-box';
+import VideoEmbed from '../video';
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -34,16 +34,13 @@ const Assemblies = ({ assemblies }) => {
         return <Banner key={id} banner={assembly} />;
       if (internal.type === 'ContentfulTopicVideoEmbed')
         return <VideoEmbed key={id} data={assembly} />;
-
       if (internal.type === 'ContentfulAssemblyDownloadBanner')
         return <DownloadBanner key={id} banner={assembly} />;
-
       if (internal.type === 'ContentfulTopicNavigationLinkBox')
-        return <NavigationLinkBox key={id} data={assembly} />
+        return <NavigationLinkBox key={id} data={assembly} />;
 
-      return null
-    })
-
+      return null;
+    });
 
   return (
     <>
