@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import SVG from 'react-inlinesvg'
 import { breakpoint } from '../theme/breakpoint'
 
+
 export const Button = styled.a`
   display: flex;
   align-items: center;
@@ -14,15 +15,15 @@ export const Button = styled.a`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 export const Filesize = styled.p`
   font-size: 0.65em;
   margin-bottom: 5px;
-`
+`;
 
 export const ButtonText = styled.p`
   margin-bottom: 5px;
-`
+`;
 
 export const ButtonSVG = styled(SVG)`
   display: block;
@@ -36,4 +37,4 @@ export const ButtonSVG = styled(SVG)`
     width: 25px;
     height: 25px;
   `}
-`
+`;

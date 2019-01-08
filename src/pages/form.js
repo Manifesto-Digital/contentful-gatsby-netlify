@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 // Components
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 // Styles
 
 const FormPage = () => (
@@ -29,6 +29,6 @@ const FormPage = () => (
     </form>
     <Link to="/">Home</Link>
   </Layout>
-)
+);
 
-export default FormPage
+export default FormPage;

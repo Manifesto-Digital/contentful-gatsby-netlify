@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import { reset } from './reset'
-import { breakpoint } from './breakpoint'
+import { createGlobalStyle } from 'styled-components';
+import { reset } from './reset';
+import { breakpoint } from './breakpoint';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -72,4 +72,4 @@ export const GlobalStyle = createGlobalStyle`
         margin-bottom: .5rem;
     }
 
-`
+`;
