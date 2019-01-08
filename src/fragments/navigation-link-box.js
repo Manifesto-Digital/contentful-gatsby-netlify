@@ -1,7 +1,7 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
-export const navigationLinkBoxFragment = graphql`
-  fragment navigationLinkBoxFragment on ContentfulTopicNavigationLinkBox {
+export const NavigationLinkBoxFragment = graphql`
+  fragment NavigationLinkBoxFragment on ContentfulTopicNavigationLinkBox {
     id
     internal {
       type
@@ -12,4 +12,4 @@ export const navigationLinkBoxFragment = graphql`
       slug
     }
   }
-`
+`;
