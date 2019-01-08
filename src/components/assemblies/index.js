@@ -18,7 +18,7 @@ const Assemblies = ({ assemblies }) => {
       const { id, internal } = assembly;
 
       // CTA
-      if (internal.type === 'ContentfulAssemblyCta')
+      if (internal.type === 'ContentfulAssemblyCta') {
         return (
           <CTABanner
             key={id}
@@ -28,16 +28,26 @@ const Assemblies = ({ assemblies }) => {
             bannerColour={assembly.bannerColour}
           />
         );
-      if (internal.type === 'ContentfulTopicContentGrid4')
+      }
+      if (internal.type === 'ContentfulTopicContentGrid4') {
         return <ContentGrid key={id} content={assembly} />;
-      if (internal.type === 'ContentfulTopicBanner')
+      }
+
+      if (internal.type === 'ContentfulTopicBanner') {
         return <Banner key={id} banner={assembly} />;
-      if (internal.type === 'ContentfulTopicVideoEmbed')
+      }
+
+      if (internal.type === 'ContentfulTopicVideoEmbed') {
         return <VideoEmbed key={id} data={assembly} />;
-      if (internal.type === 'ContentfulAssemblyDownloadBanner')
+      }
+
+      if (internal.type === 'ContentfulAssemblyDownloadBanner') {
         return <DownloadBanner key={id} banner={assembly} />;
-      if (internal.type === 'ContentfulTopicNavigationLinkBox')
+      }
+
+      if (internal.type === 'ContentfulTopicNavigationLinkBox') {
         return <NavigationLinkBox key={id} data={assembly} />;
+      }
 
       return null;
     });
