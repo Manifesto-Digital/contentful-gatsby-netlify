@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     ${reset}
     html {
         height: 100%;
+        font-size:16px;
         scroll-behavior: smooth !important;
         ${breakpoint.tablet`
             font-size:  115%;
