@@ -5,13 +5,13 @@
 export const createFactory = defaults => properties => ({
   ...defaults,
   ...properties,
-})
+});
 
 export const createInternalLink = createFactory({
   id: 'ee6c2ca6-54d8-5c26-bbff-7dafdaa823e3',
   title: 'Test Page Title',
   slug: 'internal-link-slug',
-})
+});
 
 export const createImage = createFactory({
   id: 'ca8e4a9c-9491-5257-8e53-d3d74ae204a5',
@@ -23,14 +23,14 @@ export const createImage = createFactory({
     fileName: 'collection-hero.jpg',
     contentType: 'image/jpeg',
   },
-})
+});
 
 export const createChildContentfulRichText = createFactory({
   childContentfulRichText: {
     html:
       '<p>Our advice and support services across the UK give people <b>one-to-one</p>',
   },
-})
+});
 
 export const createFile = createFactory({
   description: 'Mock file description',
@@ -44,4 +44,4 @@ export const createFile = createFactory({
       image: null,
     },
   },
-})
+});

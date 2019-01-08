@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { getInternalLink } from '../../utils/links'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { getInternalLink } from '../../utils/links';
 // Components
-import ResponsiveImage from '../image/responsive'
+import ResponsiveImage from '../image/responsive';
 // Styles
 import {
   HeroWithCard,
@@ -11,8 +11,8 @@ import {
   CardSubtitle,
   WithCardMedia,
   StyledLinkHandler,
-} from './styles'
-import { Container } from '../styled/containers'
+} from './styles';
+import { Container } from '../styled/containers';
 
 const Hero = ({ content }) => {
   const {
@@ -23,9 +23,9 @@ const Hero = ({ content }) => {
     linkText,
     externalUrl,
     internalLink,
-  } = content
+  } = content;
 
-  const link = internalLink ? getInternalLink(internalLink.slug) : externalUrl
+  const link = internalLink ? getInternalLink(internalLink.slug) : externalUrl;
 
   return (
     <HeroWithCard>
@@ -49,8 +49,8 @@ const Hero = ({ content }) => {
         </CardContent>
       </Container>
     </HeroWithCard>
-  )
-}
+  );
+};
 
 Hero.propTypes = {
   content: PropTypes.shape({
@@ -65,6 +65,6 @@ Hero.propTypes = {
     }),
     image: PropTypes.object,
   }),
-}
+};
 
-export default Hero
+export default Hero;

@@ -1,13 +1,13 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import { snapshotComponent } from '../../../__tests__/helpers/index'
-import DownloadBanner from './index'
-import { Header } from './styles'
+import React from 'react';
+import { shallow } from 'enzyme';
+import { snapshotComponent } from '../../../__tests__/helpers/index';
+import DownloadBanner from './index';
+import { Header } from './styles';
 import {
   createFactory,
   createImage,
   createFile,
-} from '../../utils/test-factories'
+} from '../../utils/test-factories';
 
 // Default props
 export const createDownloadBanner = createFactory({
@@ -18,18 +18,18 @@ export const createDownloadBanner = createFactory({
     filePreview: createImage(),
     download: createFile(),
   },
-})
+});
 
 it('renders correctly', () => {
-  const mockData = createDownloadBanner()
-  snapshotComponent(<DownloadBanner banner={mockData} />)
-})
+  const mockData = createDownloadBanner();
+  snapshotComponent(<DownloadBanner banner={mockData} />);
+});
 
 it('displays the correct header text', () => {
-  const mockData = createDownloadBanner({ headerText: 'Test header text' })
-  const wrapper = shallow(<DownloadBanner banner={mockData} />)
-  expect(wrapper.find(Header).text()).toBe(mockData.headerText)
-})
+  const mockData = createDownloadBanner({ headerText: 'Test header text' });
+  const wrapper = shallow(<DownloadBanner banner={mockData} />);
+  expect(wrapper.find(Header).text()).toBe(mockData.headerText);
+});
 
 it('displays the file preview image if provided', () => {
   const mockData = createDownloadBanner({
@@ -44,9 +44,9 @@ it('displays the file preview image if provided', () => {
         },
       },
     },
-  })
+  });
 
-  const wrapper = shallow(<DownloadBanner banner={mockData} />)
+  const wrapper = shallow(<DownloadBanner banner={mockData} />);
 
-  expect(wrapper.find('img')).toHaveLength(1)
-})
+  expect(wrapper.find('img')).toHaveLength(1);
+});

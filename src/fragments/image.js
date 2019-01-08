@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const ImageFragment = graphql`
   fragment ImageFragment on ContentfulAsset {
@@ -11,4 +11,4 @@ export const ImageFragment = graphql`
       contentType
     }
   }
-`
+`;
