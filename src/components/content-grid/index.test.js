@@ -1,9 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 import Grid from './index';
-import { Item } from './styles';
-import RichText from '../rich-text';
 import {
   createFactory,
   createChildContentfulRichText,
