@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 // Components
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 // Styles
 
 const IndexPage = () => (
@@ -12,6 +12,6 @@ const IndexPage = () => (
     <p>Now go build something great.</p>
     <Link to="/page/">Go to page</Link>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

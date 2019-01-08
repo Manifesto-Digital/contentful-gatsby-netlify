@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 export const richTextPropTypes = {
   childContentfulRichText: PropTypes.shape({
     html: PropTypes.string,
   }),
-}
+};

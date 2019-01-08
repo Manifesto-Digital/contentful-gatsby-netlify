@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ReactPlayer from 'react-player'
-import theme from '../theme/variables'
-import RichText from '../rich-text'
-import { Wrapper, VideoWrapper, BottomText } from './styles'
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactPlayer from 'react-player';
+import theme from '../theme/variables';
+import RichText from '../rich-text';
+import { Wrapper, VideoWrapper, BottomText } from './styles';
 
 const VideoEmbed = ({ data }) => {
   const {
@@ -12,7 +12,7 @@ const VideoEmbed = ({ data }) => {
     bottomText,
     removeMarginBottom,
     metaDescription,
-  } = data
+  } = data;
 
   const options = {
     youtube: {
@@ -21,7 +21,7 @@ const VideoEmbed = ({ data }) => {
         modestbranding: 1,
       },
     },
-  }
+  };
 
   return (
     <Wrapper theme={theme} removeMarginBottom={removeMarginBottom}>
@@ -44,8 +44,8 @@ const VideoEmbed = ({ data }) => {
         </BottomText>
       )}
     </Wrapper>
-  )
-}
+  );
+};
 
 VideoEmbed.propTypes = {
   data: PropTypes.shape({
@@ -55,6 +55,6 @@ VideoEmbed.propTypes = {
     externalUrl: PropTypes.string.isRequired,
     removeMarginBottom: PropTypes.bool,
   }),
-}
+};
 
-export default VideoEmbed
+export default VideoEmbed;
