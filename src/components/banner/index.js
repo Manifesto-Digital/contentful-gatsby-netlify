@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // Styles
-import { Container } from '../styled/containers'
-import { Header, Wrapper, StyledLinkHandler } from './styles'
+import { Container } from '../styled/containers';
+import { Header, Wrapper, StyledLinkHandler } from './styles';
 
 const Banner = ({ banner }) => {
   const {
@@ -12,7 +12,7 @@ const Banner = ({ banner }) => {
     internalLink,
     externalUrl,
     removeMarginBottom,
-  } = banner
+  } = banner;
 
   return (
     <Wrapper
@@ -30,8 +30,8 @@ const Banner = ({ banner }) => {
         </StyledLinkHandler>
       </Container>
     </Wrapper>
-  )
-}
+  );
+};
 Banner.propTypes = {
   banner: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
@@ -45,6 +45,6 @@ Banner.propTypes = {
     externalUrl: PropTypes.string,
     removeMarginBottom: PropTypes.bool,
   }),
-}
+};
 
-export default Banner
+export default Banner;

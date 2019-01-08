@@ -1,24 +1,24 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+import React from 'react';
+import { shallow } from 'enzyme';
 import {
   renderWithTheme,
   snapshotComponent,
-} from '../../../__tests__/helpers/index'
-import CTABanner from './index'
-import { Header } from './styles'
-import theme from '../theme/variables'
-import { createFactory } from '../../utils/test-factories'
-import { createCTA } from '../cta/index.test'
+} from '../../../__tests__/helpers/index';
+import CTABanner from './index';
+import { Header } from './styles';
+import theme from '../theme/variables';
+import { createFactory } from '../../utils/test-factories';
+import { createCTA } from '../cta/index.test';
 
 // Default prop values
 export const createCtaBanner = createFactory({
   cta: createCTA({ ctaColour: 'White Outline', internalLink: null }),
   bannerColour: 'Blue',
   headerText: 'mock header text',
-})
+});
 
 it('renders correctly', () => {
-  const mockData = createCtaBanner()
+  const mockData = createCtaBanner();
 
   snapshotComponent(
     <CTABanner
@@ -26,11 +26,11 @@ it('renders correctly', () => {
       bannerColour={mockData.bannerColour}
       headerText={mockData.headerText}
     />
-  )
-})
+  );
+});
 
 it('displays the correct header text', () => {
-  const mockData = createCtaBanner({ headerText: 'Mock header text' })
+  const mockData = createCtaBanner({ headerText: 'Mock header text' });
 
   const wrapper = shallow(
     <CTABanner
@@ -38,12 +38,12 @@ it('displays the correct header text', () => {
       bannerColour={mockData.bannerColour}
       headerText={mockData.headerText}
     />
-  )
-  expect(wrapper.find(Header).text()).toBe(mockData.headerText)
-})
+  );
+  expect(wrapper.find(Header).text()).toBe(mockData.headerText);
+});
 
 it('changes background colour based on props', () => {
-  const mockData = createCtaBanner({ bannerColour: 'Red' })
+  const mockData = createCtaBanner({ bannerColour: 'Red' });
 
   const tree = renderWithTheme(
     <CTABanner
@@ -51,13 +51,13 @@ it('changes background colour based on props', () => {
       bannerColour={mockData.bannerColour}
       headerText={mockData.headerText}
     />
-  )
+  );
   expect(tree.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.primary
-  )
+  );
 
-  const updatedMockData = createCtaBanner({ bannerColour: 'Black' })
+  const updatedMockData = createCtaBanner({ bannerColour: 'Black' });
 
   const changedTree = renderWithTheme(
     <CTABanner
@@ -65,9 +65,9 @@ it('changes background colour based on props', () => {
       bannerColour={updatedMockData.bannerColour}
       headerText={updatedMockData.headerText}
     />
-  )
+  );
   expect(changedTree.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.black
-  )
-})
+  );
+});

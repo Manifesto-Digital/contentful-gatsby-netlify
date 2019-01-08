@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ResponsiveImage = ({
   image: { description, file },
@@ -10,14 +10,14 @@ const ResponsiveImage = ({
   mobileH,
   desktopH,
 }) => {
-  if (!mobileW || !desktopW || !file) return null
+  if (!mobileW || !desktopW || !file) return null;
 
   // Use the https://www.contentful.com/developers/docs/references/images-api/ to construct a mobile and desktop image
   const baseUrl = `${file.url}?fm=jpg${progressive ? `&fl=progressive` : ``}${
     fit ? `&fit=${fit}` : ``
-  }`
-  const mobileSize = `&w=${mobileW}${mobileH ? `&h=${mobileH}` : ``}`
-  const desktopSize = `&w=${desktopW}${desktopH ? `&h=${desktopH}` : ``}`
+  }`;
+  const mobileSize = `&w=${mobileW}${mobileH ? `&h=${mobileH}` : ``}`;
+  const desktopSize = `&w=${desktopW}${desktopH ? `&h=${desktopH}` : ``}`;
 
   return (
     <img
@@ -26,9 +26,9 @@ const ResponsiveImage = ({
       src={`${baseUrl}${desktopSize}`}
       alt={`${description}`}
     />
-  )
-}
-export default ResponsiveImage
+  );
+};
+export default ResponsiveImage;
 
 ResponsiveImage.propTypes = {
   mobileW: PropTypes.number.isRequired,
@@ -46,4 +46,4 @@ ResponsiveImage.propTypes = {
       url: PropTypes.string.isRequired,
     }).isRequired,
   }),
-}
+};

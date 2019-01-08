@@ -133,8 +133,8 @@ exports[`renders correctly 1`] = `
               78.02 KB
             </p>
           </div>
-          <test-file-stub
-            className="c9"
+          <span
+            className="isvg loading c9"
           />
         </a>
       </div>
