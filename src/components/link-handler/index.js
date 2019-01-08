@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
 /**
  * If both internal and external links provided, internal is chosen
@@ -13,17 +13,17 @@ const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
       <Link to={internalLink.slug} className={className}>
         {children}
       </Link>
-    )
+    );
   }
   if (externalUrl) {
     return (
       <a href={externalUrl} className={className}>
         {children}
       </a>
-    )
+    );
   }
-  return null
-}
+  return null;
+};
 
 LinkHandler.propTypes = {
   externalUrl: PropTypes.string,
@@ -36,6 +36,6 @@ LinkHandler.propTypes = {
     PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
-}
+};
 
-export default LinkHandler
+export default LinkHandler;
