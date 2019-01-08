@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // Components
-import ResponsiveImage from '../image/responsive'
+import ResponsiveImage from '../image/responsive';
 // Styles
 import {
   HeroNoCard,
@@ -9,10 +9,10 @@ import {
   CenteredContent,
   Title,
   Subtitle,
-} from './styles'
+} from './styles';
 
 const Hero = ({ content }) => {
-  const { image, title, subtitle, blackText } = content
+  const { image, title, subtitle, blackText } = content;
 
   return (
     <HeroNoCard>
@@ -26,8 +26,8 @@ const Hero = ({ content }) => {
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
       </CenteredContent>
     </HeroNoCard>
-  )
-}
+  );
+};
 
 Hero.propTypes = {
   content: PropTypes.shape({
@@ -36,6 +36,6 @@ Hero.propTypes = {
     blackText: PropTypes.bool,
     image: PropTypes.object,
   }),
-}
+};
 
-export default Hero
+export default Hero;

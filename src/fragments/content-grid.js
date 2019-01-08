@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const ContentGrid4Fragment = graphql`
   fragment ContentGrid4Fragment on ContentfulTopicContentGrid4 {
@@ -27,4 +27,4 @@ export const ContentGrid4Fragment = graphql`
       }
     }
   }
-`
+`;

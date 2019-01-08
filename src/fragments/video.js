@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const VideoTopicFragment = graphql`
   fragment VideoTopicFragment on ContentfulTopicVideoEmbed {
@@ -17,4 +17,4 @@ export const VideoTopicFragment = graphql`
       type
     }
   }
-`
+`;

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { breakpoint } from '../theme/breakpoint'
+import styled from 'styled-components';
+import { breakpoint } from '../theme/breakpoint';
 
 export const Button = styled.a`
   display: flex;
@@ -13,15 +13,15 @@ export const Button = styled.a`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 export const Filesize = styled.p`
   font-size: 0.65em;
   margin-bottom: 5px;
-`
+`;
 
 export const ButtonText = styled.p`
   margin-bottom: 5px;
-`
+`;
 
 export const ButtonSVG = styled.svg`
   display: block;
@@ -35,4 +35,4 @@ export const ButtonSVG = styled.svg`
     width: 25px;
     height: 25px;
   `}
-`
+`;
