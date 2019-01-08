@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
+import PropTypes from 'prop-types';
+import * as Yup from 'yup';
 import Button from '../button';
 import * as FormProvider from '../forms/provider';
 import TextInput from '../forms/text-input';
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ heading }) {
+  const [submissionState, setSubmissionState] = useState({
+    state: 'pending',
+  });
+
+  if (submissionState.state === 'success') {
+    return (
+      <>
+        <h3>Thank you</h3>
+        <p>Your feedback has been submitted to the team.</p>
+      </>
+    );
+  }
+
   return (
     <FormProvider.Consumer>
       {({ submitForm }) => (
         <Formik
           initialValues={{ comment: '' }}
-          onSubmit={values => {
-            submitForm('feedback', values);
+          validationSchema={Yup.object({ comment: Yup.string().required() })}
+          onSubmit={async values => {
+            await submitForm('feedback', values);
+            setSubmissionState({ state: 'success' });
           }}
         >
           {() => (
             <Form>
+              <h3>{heading}</h3>
+
               <Field
                 name="comment"
                 render={props => (
@@ -37,3 +56,7 @@ export default function FeedbackForm() {
     </FormProvider.Consumer>
   );
 }
+
+FeedbackForm.propTypes = {
+  heading: PropTypes.string.isRequired,
+};

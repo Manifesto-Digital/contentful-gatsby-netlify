@@ -18,8 +18,7 @@ export default function FeedbackModal(props) {
         {props.linkText}
       </LinkButton>
       <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-        <h3>{props.heading}</h3>
-        <FeedbackForm />
+        <FeedbackForm heading={props.heading} />
       </Modal>
     </>
   );

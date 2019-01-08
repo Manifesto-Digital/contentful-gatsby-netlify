@@ -26,6 +26,9 @@ exports[`renders correctly 1`] = `
   onReset={[Function]}
   onSubmit={[Function]}
 >
+  <h3>
+    My Heading
+  </h3>
   <textarea
     className="c0"
     name="comment"
