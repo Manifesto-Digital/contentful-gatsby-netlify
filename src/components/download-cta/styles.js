@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import SVG from 'react-inlinesvg'
 import { breakpoint } from '../theme/breakpoint'
 
 export const Button = styled.a`
@@ -23,7 +24,7 @@ export const ButtonText = styled.p`
   margin-bottom: 5px;
 `
 
-export const ButtonSVG = styled.svg`
+export const ButtonSVG = styled(SVG)`
   display: block;
   fill: ${props => props.theme.palette.white};
   float: right;
@@ -31,7 +32,7 @@ export const ButtonSVG = styled.svg`
   width: 20px;
   height: 20px;
 
-  ${breakpoint.tablet` 
+  ${breakpoint.tablet`
     width: 25px;
     height: 25px;
   `}

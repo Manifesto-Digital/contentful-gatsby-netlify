@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "12.0.4",
+    "@svgr/webpack": "4.1.0",
     "babel-plugin-styled-components": "^1.8.0",
     "dotenv": "^6.1.0",
     "enzyme": "^3.7.0",
@@ -14,8 +15,8 @@
     "gatsby-plugin-manifest": "^2.0.10",
     "gatsby-plugin-offline": "^2.0.17",
     "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-plugin-react-svg": "^2.0.0",
     "gatsby-plugin-styled-components": "^3.0.3",
+    "gatsby-plugin-svgr": "2.0.1",
     "gatsby-source-contentful": "^2.0.15",
     "gatsby-transformer-remark": "^2.1.12",
     "jest-styled-components": "^6.3.1",
@@ -23,6 +24,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
+    "react-inlinesvg": "0.8.3",
     "react-player": "1.8.0",
     "styled-components": "^4.1.1"
   },
