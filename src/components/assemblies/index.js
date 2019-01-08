@@ -8,7 +8,6 @@ import Banner from '../banner'
 import NavigationLinkBox from '../navigation-link-box'
 import VideoEmbed from '../video'
 
-
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null
 
