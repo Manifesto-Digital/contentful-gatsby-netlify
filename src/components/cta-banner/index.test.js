@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  renderWithProviders,
+  renderWithTheme,
   snapshotComponent,
 } from '../../../__tests__/helpers/index';
 import CTABanner from './index';
@@ -45,7 +45,7 @@ it('displays the correct header text', () => {
 it('changes background colour based on props', () => {
   const mockData = createCtaBanner({ bannerColour: 'Red' });
 
-  const tree = renderWithProviders(
+  const tree = renderWithTheme(
     <CTABanner
       cta={mockData.cta}
       bannerColour={mockData.bannerColour}
@@ -59,7 +59,7 @@ it('changes background colour based on props', () => {
 
   const updatedMockData = createCtaBanner({ bannerColour: 'Black' });
 
-  const changedTree = renderWithProviders(
+  const changedTree = renderWithTheme(
     <CTABanner
       cta={updatedMockData.cta}
       bannerColour={updatedMockData.bannerColour}

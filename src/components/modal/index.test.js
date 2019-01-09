@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import Modal from '.';
-import { mountWithProviders } from '../../../__tests__/helpers';
+import { mountWithTheme } from '../../../__tests__/helpers';
 
 const getCss = node =>
   window
@@ -10,7 +10,7 @@ const getCss = node =>
     .join(';\n');
 
 it('renders correct styles', () => {
-  const wrapper = mountWithProviders(<Modal isOpen />);
+  const wrapper = mountWithTheme(<Modal isOpen />);
 
   const { overlay, content } = wrapper.find(ReactModal).instance().portal;
 

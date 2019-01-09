@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  snapshotComponent,
-  mountWithProviders,
-} from '../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
 import { sendForm } from '../forms/send';
@@ -37,7 +34,7 @@ const submitFormElement = wrapper => {
 };
 
 it('sends form after typing into box and submitting', async () => {
-  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
   await submitFormElement(wrapper.find('form'));
@@ -51,7 +48,7 @@ it('sends form after typing into box and submitting', async () => {
 });
 
 it('displays thank you message when form submission succeeds', async () => {
-  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
   await submitFormElement(wrapper.find('form'));
@@ -65,7 +62,7 @@ it('displays thank you message when form submission succeeds', async () => {
 });
 
 it('displays error message if submission fails', async () => {
-  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   sendForm.mockReturnValue(Promise.reject(new Error()));
 
@@ -83,7 +80,7 @@ it('displays error message if submission fails', async () => {
 });
 
 it('sends you back to form when clicking try again on failure page', async () => {
-  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   sendForm.mockReturnValue(Promise.reject(new Error()));
 
@@ -98,7 +95,7 @@ it('sends you back to form when clicking try again on failure page', async () =>
 });
 
 it('does not allow submission if comment is empty', async () => {
-  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   await submitFormElement(wrapper.find('form'));
 

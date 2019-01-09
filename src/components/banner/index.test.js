@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import {
   snapshotComponent,
-  renderWithProviders,
+  renderWithTheme,
 } from '../../../__tests__/helpers/index';
 import Banner from './index';
 import { Header } from './styles';
@@ -33,7 +33,7 @@ it('displays the correct header text', () => {
 it('changes background colour based on props', () => {
   const mockBanner = createBanner({ bannerColour: 'Red' });
 
-  const tree = renderWithProviders(<Banner banner={mockBanner} />);
+  const tree = renderWithTheme(<Banner banner={mockBanner} />);
   expect(tree.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.primary
@@ -42,7 +42,7 @@ it('changes background colour based on props', () => {
   // Update prop value of the background banner colour and check this is reflected
   const changedMock = createBanner({ bannerColour: 'San Marino Blue' });
 
-  const changedTree = renderWithProviders(<Banner banner={changedMock} />);
+  const changedTree = renderWithTheme(<Banner banner={changedMock} />);
   expect(changedTree.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.sanMarinoBlue
