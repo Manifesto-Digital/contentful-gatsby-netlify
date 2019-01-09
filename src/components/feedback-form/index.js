@@ -7,7 +7,7 @@ import { sendForm } from '../forms/send';
 import TextInput from '../forms/text-input';
 import LinkButton from '../link-button';
 
-export default function FeedbackForm({ heading }) {
+const FeedbackForm = ({ heading }) => {
   const [submissionState, setSubmissionState] = useState('pending');
 
   if (submissionState === 'success') {
@@ -66,8 +66,10 @@ export default function FeedbackForm({ heading }) {
       )}
     </Formik>
   );
-}
+};
 
 FeedbackForm.propTypes = {
   heading: PropTypes.string.isRequired,
 };
+
+export default FeedbackForm;
