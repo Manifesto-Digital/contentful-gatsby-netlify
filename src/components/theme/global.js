@@ -1,11 +1,12 @@
-import { createGlobalStyle } from 'styled-components'
-import { reset } from './reset'
-import { breakpoint } from './breakpoint'
+import { createGlobalStyle } from 'styled-components';
+import { reset } from './reset';
+import { breakpoint } from './breakpoint';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
     html {
         height: 100%;
+        font-size:16px;
         scroll-behavior: smooth !important;
         ${breakpoint.tablet`
             font-size:  115%;
@@ -72,4 +73,4 @@ export const GlobalStyle = createGlobalStyle`
         margin-bottom: .5rem;
     }
 
-`
+`;

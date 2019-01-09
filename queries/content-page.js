@@ -10,7 +10,7 @@ const getContentPages = async graphql => {
         }
       }
     }
-  `)
-}
+  `);
+};
 
-module.exports = { getContentPages }
+module.exports = { getContentPages };
