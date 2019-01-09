@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 export const buttonStyles = css`
   display: inline-block;
-  padding: ${props => props.theme.spacing.formElementVerticalPadding} 1em;
+  padding: ${props => props.theme.spacing.small} 1em;
   font-weight: normal;
   background-color: ${props =>
     (props.bg === 'red' && props.theme.palette.primary) ||

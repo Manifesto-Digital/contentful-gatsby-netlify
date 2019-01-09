@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Banner = styled.section`
-  padding: ${props => props.theme.spacing.padding} 0;
+  padding: ${props => props.theme.spacing.standard} 0;
   background-color: ${props =>
     (props.bannerColour === 'red' && props.theme.palette.primary) ||
     (props.bannerColour === 'san marino blue' &&
       props.theme.palette.sanMarinoBlue) ||
     (props.bannerColour === 'black' && props.theme.palette.black)};
   margin-bottom: ${props =>
-    props.removeMarginBottom ? '0' : props.theme.spacing.largePadding};
+    props.removeMarginBottom ? '0' : props.theme.spacing.large};
 `;
 
 export const Header = styled.h3`

@@ -33,8 +33,8 @@ const Input = styled.input`
   background-size: 15px 15px;
   outline: none;
   width: 100%;
-  margin-bottom: ${props => props.theme.spacing.padding};
-  padding: ${props => props.theme.spacing.formElementVerticalPadding};
+  margin-bottom: ${props => props.theme.spacing.standard};
+  padding: ${props => props.theme.spacing.small};
 `;
 
 /**

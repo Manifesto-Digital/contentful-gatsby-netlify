@@ -8,7 +8,7 @@ export const HeroNoCard = styled.section`
   position: relative;
   overflow: hidden;
   padding-top: 350px;
-  margin-bottom: ${props => props.theme.spacing.largePadding};
+  margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.tablet`
     padding-top: 60vh;
@@ -19,7 +19,7 @@ export const HeroWithCard = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
-  margin-bottom: ${props => props.theme.spacing.largePadding};
+  margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.tablet`
     padding-top: 3em;
@@ -64,7 +64,7 @@ export const CenteredContent = styled.div`
   ${absoluteCenter};
   text-align: center;
   width: 100%;
-  padding: 0 ${props => props.theme.spacing.padding};
+  padding: 0 ${props => props.theme.spacing.standard};
   color: ${props =>
     props.black
       ? `${props.theme.palette.black}`
@@ -101,8 +101,8 @@ export const Subtitle = styled.p`
   margin-bottom: 0;
 `;
 export const CardSubtitle = styled.p`
-  margin-bottom: ${props => props.theme.spacing.smallPadding};
-  margin-top: ${props => props.theme.spacing.smallPadding};
+  margin-bottom: ${props => props.theme.spacing.small};
+  margin-top: ${props => props.theme.spacing.small};
 `;
 export const StyledLinkHandler = styled(LinkHandler)`
   &:hover {

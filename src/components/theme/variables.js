@@ -51,9 +51,8 @@ theme.boxshadow = {
 };
 
 theme.spacing = {
-  padding: '20px',
-  smallPadding: '10px',
-  largePadding: '40px',
-  formElementVerticalPadding: '0.65em',
+  standard: '20px',
+  small: '10px',
+  large: '40px',
 };
 export default theme;

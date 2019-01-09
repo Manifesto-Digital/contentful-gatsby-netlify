@@ -10,7 +10,7 @@ exports[`displays error if invalid & touched 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
@@ -28,7 +28,7 @@ exports[`displays neutral state if not touched: no error 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
@@ -46,7 +46,7 @@ exports[`displays neutral state if not touched: with error 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
@@ -65,7 +65,7 @@ exports[`displays success if valid & touched 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
