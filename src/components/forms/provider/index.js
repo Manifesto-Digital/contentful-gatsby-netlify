@@ -15,10 +15,11 @@ Provider.propTypes = {
 export const Consumer = ({ children }) => (
   <FormContext.Consumer>
     {submitForm => {
-      if (!submitForm)
+      if (!submitForm) {
         throw new Error(
           'You cannot use a form consumer without a corresponding provider'
         );
+      }
 
       return children({ submitForm });
     }}
