@@ -26,7 +26,7 @@ const changeInput = (wrapper, value) => {
   });
 };
 
-const submitFormElement = wrapper => {
+const submitForm = wrapper => {
   wrapper.simulate('submit');
 
   // form submission seems to happen asynchronously
@@ -37,7 +37,7 @@ it('sends form after typing into box and submitting', async () => {
   const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  await submitForm(wrapper.find('form'));
 
   expect(sendForm.mock.calls[0]).toEqual([
     'feedback',
@@ -51,7 +51,7 @@ it('displays thank you message when form submission succeeds', async () => {
   const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  await submitForm(wrapper.find('form'));
 
   wrapper.update();
 
@@ -67,7 +67,7 @@ it('displays error message if submission fails', async () => {
   sendForm.mockReturnValue(Promise.reject(new Error()));
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  await submitForm(wrapper.find('form'));
 
   wrapper.update();
 
@@ -85,7 +85,7 @@ it('sends you back to form when clicking try again on failure page', async () =>
   sendForm.mockReturnValue(Promise.reject(new Error()));
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  await submitForm(wrapper.find('form'));
 
   wrapper.update();
 
@@ -97,7 +97,7 @@ it('sends you back to form when clicking try again on failure page', async () =>
 it('does not allow submission if comment is empty', async () => {
   const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
-  await submitFormElement(wrapper.find('form'));
+  await submitForm(wrapper.find('form'));
 
   expect(sendForm).not.toHaveBeenCalled();
 });
