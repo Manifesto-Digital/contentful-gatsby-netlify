@@ -8,8 +8,6 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../theme/global';
 import theme from '../theme/variables';
 
-import * as FormProvider from '../forms/provider';
-
 // Component
 import Header from '../header';
 
@@ -26,20 +24,18 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <FormProvider.Provider submitForm={(...args) => console.log(...args)}>
-          <GlobalStyle />
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
-        </FormProvider.Provider>
+        <GlobalStyle />
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main>{children}</main>
       </ThemeProvider>
     )}
   />

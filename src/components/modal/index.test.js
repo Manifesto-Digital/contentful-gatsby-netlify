@@ -10,7 +10,7 @@ const getCss = node =>
     .join(';\n');
 
 it('renders correct styles', () => {
-  const { wrapper } = mountWithProviders(<Modal isOpen />);
+  const wrapper = mountWithProviders(<Modal isOpen />);
 
   const { overlay, content } = wrapper.find(ReactModal).instance().portal;
 

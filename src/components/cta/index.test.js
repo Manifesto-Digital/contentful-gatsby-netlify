@@ -34,6 +34,6 @@ it('displays the correct text', () => {
 
 it('displays an icon if provided', () => {
   const mockData = createCTA({ icon: createImage() });
-  const { wrapper } = mountWithProviders(<CTA cta={mockData} />);
+  const wrapper = mountWithProviders(<CTA cta={mockData} />);
   expect(wrapper.find('img').prop('src')).toBe(mockData.icon.file.url);
 });

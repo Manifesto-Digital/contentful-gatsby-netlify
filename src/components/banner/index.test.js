@@ -33,8 +33,8 @@ it('displays the correct header text', () => {
 it('changes background colour based on props', () => {
   const mockBanner = createBanner({ bannerColour: 'Red' });
 
-  const { renderer } = renderWithProviders(<Banner banner={mockBanner} />);
-  expect(renderer.toJSON()).toHaveStyleRule(
+  const tree = renderWithProviders(<Banner banner={mockBanner} />);
+  expect(tree.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.primary
   );
@@ -42,10 +42,8 @@ it('changes background colour based on props', () => {
   // Update prop value of the background banner colour and check this is reflected
   const changedMock = createBanner({ bannerColour: 'San Marino Blue' });
 
-  const { renderer: changedRenderer } = renderWithProviders(
-    <Banner banner={changedMock} />
-  );
-  expect(changedRenderer.toJSON()).toHaveStyleRule(
+  const changedTree = renderWithProviders(<Banner banner={changedMock} />);
+  expect(changedTree.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.sanMarinoBlue
   );

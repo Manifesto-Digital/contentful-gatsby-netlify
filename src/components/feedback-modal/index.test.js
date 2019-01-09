@@ -8,7 +8,7 @@ function isModalOpen() {
 }
 
 it('renders linkText', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithProviders(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -21,7 +21,7 @@ it('renders linkText', () => {
 });
 
 it('opens modal when link is clicked', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithProviders(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -36,7 +36,7 @@ it('opens modal when link is clicked', () => {
 });
 
 it('starts with modal closed', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithProviders(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -49,7 +49,7 @@ it('starts with modal closed', () => {
 });
 
 it('closes modal when a close is requested', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithProviders(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -68,7 +68,7 @@ it('closes modal when a close is requested', () => {
 });
 
 it('displays heading in modal', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithProviders(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 

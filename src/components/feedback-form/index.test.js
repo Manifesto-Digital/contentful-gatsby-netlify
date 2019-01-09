@@ -5,6 +5,13 @@ import {
 } from '../../../__tests__/helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
+import { sendForm } from '../forms/send';
+
+jest.mock('../forms/send');
+
+afterEach(() => {
+  sendForm.mockReset();
+});
 
 it('renders correctly', () => {
   snapshotComponent(<FeedbackForm heading="My Heading" />);
@@ -30,14 +37,12 @@ const submitFormElement = wrapper => {
 };
 
 it('sends form after typing into box and submitting', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
   await submitFormElement(wrapper.find('form'));
 
-  expect(submitForm.mock.calls[0]).toEqual([
+  expect(sendForm.mock.calls[0]).toEqual([
     'feedback',
     {
       comment: 'Foo',
@@ -46,7 +51,7 @@ it('sends form after typing into box and submitting', async () => {
 });
 
 it('displays thank you message when form submission succeeds', async () => {
-  const { wrapper } = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
   await submitFormElement(wrapper.find('form'));
@@ -60,11 +65,9 @@ it('displays thank you message when form submission succeeds', async () => {
 });
 
 it('displays error message if submission fails', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
 
-  submitForm.mockReturnValue(Promise.reject(new Error()));
+  sendForm.mockReturnValue(Promise.reject(new Error()));
 
   changeInput(wrapper.find('textarea'), 'Foo');
   await submitFormElement(wrapper.find('form'));
@@ -80,11 +83,9 @@ it('displays error message if submission fails', async () => {
 });
 
 it('sends you back to form when clicking try again on failure page', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
 
-  submitForm.mockReturnValue(Promise.reject(new Error()));
+  sendForm.mockReturnValue(Promise.reject(new Error()));
 
   changeInput(wrapper.find('textarea'), 'Foo');
   await submitFormElement(wrapper.find('form'));
@@ -97,11 +98,9 @@ it('sends you back to form when clicking try again on failure page', async () =>
 });
 
 it('does not allow submission if comment is empty', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithProviders(<FeedbackForm heading="My Heading" />);
 
   await submitFormElement(wrapper.find('form'));
 
-  expect(submitForm).not.toHaveBeenCalled();
+  expect(sendForm).not.toHaveBeenCalled();
 });

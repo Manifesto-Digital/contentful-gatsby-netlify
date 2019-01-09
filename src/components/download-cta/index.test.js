@@ -34,7 +34,7 @@ it('displays the correct text and size', () => {
     },
   });
 
-  const { wrapper } = mountWithProviders(<DownloadCTA cta={mockData} />);
+  const wrapper = mountWithProviders(<DownloadCTA cta={mockData} />);
   expect(wrapper.find('a').text()).toBe(
     `${mockData.buttonText}${formatFilesize(
       mockData.download.file.details.size
@@ -53,12 +53,12 @@ it('the download file src is correct', () => {
     },
   });
 
-  const { wrapper } = mountWithProviders(<DownloadCTA cta={mockData} />);
+  const wrapper = mountWithProviders(<DownloadCTA cta={mockData} />);
   expect(wrapper.find('a').prop('href')).toBe(mockData.download.file.url);
 });
 
 it('the download attribute is present', () => {
   const mockData = createDownloadCTA();
-  const { wrapper } = mountWithProviders(<DownloadCTA cta={mockData} />);
+  const wrapper = mountWithProviders(<DownloadCTA cta={mockData} />);
   expect(wrapper.find('a').prop('download')).toEqual(true);
 });

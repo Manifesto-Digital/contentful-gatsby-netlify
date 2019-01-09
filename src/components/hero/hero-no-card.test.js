@@ -45,6 +45,6 @@ it('renders an image', () => {
     }),
   });
 
-  const { wrapper } = mountWithProviders(<Hero content={mockData} />);
+  const wrapper = mountWithProviders(<Hero content={mockData} />);
   expect(wrapper.find('img')).toHaveLength(1);
 });

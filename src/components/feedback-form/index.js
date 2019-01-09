@@ -3,7 +3,7 @@ import { Form, Field, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import Button from '../button';
-import * as FormProvider from '../forms/provider';
+import { sendForm } from '../forms/send';
 import TextInput from '../forms/text-input';
 import LinkButton from '../link-button';
 
@@ -32,43 +32,39 @@ export default function FeedbackForm({ heading }) {
   }
 
   return (
-    <FormProvider.Consumer>
-      {({ submitForm }) => (
-        <Formik
-          initialValues={{ comment: '' }}
-          validationSchema={Yup.object({ comment: Yup.string().required() })}
-          onSubmit={async values => {
-            try {
-              await submitForm('feedback', values);
-              setSubmissionState('success');
-            } catch (error) {
-              setSubmissionState('failed');
-            }
-          }}
-        >
-          {() => (
-            <Form>
-              <h3>{heading}</h3>
+    <Formik
+      initialValues={{ comment: '' }}
+      validationSchema={Yup.object({ comment: Yup.string().required() })}
+      onSubmit={async values => {
+        try {
+          await sendForm('feedback', values);
+          setSubmissionState('success');
+        } catch (error) {
+          setSubmissionState('failed');
+        }
+      }}
+    >
+      {() => (
+        <Form>
+          <h3>{heading}</h3>
 
-              <Field
-                name="comment"
-                render={props => (
-                  <TextInput
-                    type="textarea"
-                    placeholder="Your comment"
-                    {...props}
-                  />
-                )}
+          <Field
+            name="comment"
+            render={props => (
+              <TextInput
+                type="textarea"
+                placeholder="Your comment"
+                {...props}
               />
+            )}
+          />
 
-              <Button type="submit" fullWidth bg="red">
-                Submit
-              </Button>
-            </Form>
-          )}
-        </Formik>
+          <Button type="submit" fullWidth bg="red">
+            Submit
+          </Button>
+        </Form>
       )}
-    </FormProvider.Consumer>
+    </Formik>
   );
 }
 
