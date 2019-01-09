@@ -3,9 +3,8 @@ import ReactModal from 'react-modal';
 import FeedbackModal from '.';
 import { mountWithTheme } from '../../../__tests__/helpers';
 
-function isModalOpen() {
-  return document.body.classList.contains('ReactModal__Body--open');
-}
+const isModalOpen = () =>
+  document.body.classList.contains('ReactModal__Body--open');
 
 it('renders linkText', () => {
   const wrapper = mountWithTheme(

@@ -4,26 +4,26 @@ import PropTypes from 'prop-types';
 import successIcon from './success.png';
 import errorIcon from './error.png';
 
-const getStyles = props => {
-  if (!props.touched) {
+const getStyles = ({ touched, error, theme }) => {
+  if (!touched) {
     return css`
-      border: 1px solid ${props.theme.palette.grey15};
+      border: 1px solid ${theme.palette.grey15};
       background-color: white;
     `;
   }
 
-  if (props.error) {
+  if (error) {
     return css`
-      border: 1px solid ${props.theme.palette.error};
+      border: 1px solid ${theme.palette.error};
       background: no-repeat 97% url(${errorIcon});
-      background-color: ${props.theme.palette.errorLight};
+      background-color: ${theme.palette.errorLight};
     `;
   }
 
   return css`
-    border 1px solid ${props.theme.palette.success};
+    border 1px solid ${theme.palette.success};
     background: no-repeat 97% url(${successIcon});
-    background-color: ${props.theme.palette.successLight};
+    background-color: ${theme.palette.successLight};
   `;
 };
 
@@ -42,19 +42,15 @@ const Input = styled.input`
  *
  * @param {import('formik').FieldProps} props
  */
-export default function TextInput(props) {
-  const { field, form, ...rest } = props;
-
-  return (
-    <Input
-      as={rest.type === 'textarea' ? 'textarea' : undefined}
-      {...field}
-      {...rest}
-      error={form.errors[field.name]}
-      touched={form.touched[field.name]}
-    />
-  );
-}
+const TextInput = ({ field, form, ...rest }) => (
+  <Input
+    as={rest.type === 'textarea' ? 'textarea' : undefined}
+    {...field}
+    {...rest}
+    error={form.errors[field.name]}
+    touched={form.touched[field.name]}
+  />
+);
 
 TextInput.propTypes = {
   type: PropTypes.oneOf(['textarea', 'text', 'url', 'email', 'number', 'tel']),
@@ -64,3 +60,5 @@ TextInput.propTypes = {
     touched: PropTypes.object,
   }),
 };
+
+export default TextInput;

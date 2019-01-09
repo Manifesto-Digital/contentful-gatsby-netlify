@@ -4,7 +4,7 @@ import Modal from '../modal';
 import LinkButton from '../link-button';
 import FeedbackForm from '../feedback-form';
 
-export default function FeedbackModal(props) {
+const FeedbackModal = ({ heading, linkText }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,16 +15,18 @@ export default function FeedbackModal(props) {
           setIsOpen(true);
         }}
       >
-        {props.linkText}
+        {linkText}
       </LinkButton>
       <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-        <FeedbackForm heading={props.heading} />
+        <FeedbackForm heading={heading} />
       </Modal>
     </>
   );
-}
+};
 
 FeedbackModal.propTypes = {
   linkText: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
 };
+
+export default FeedbackModal;
