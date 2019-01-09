@@ -1,53 +1,52 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import SpeechBubble from '../../assets/svg/icons/comment-light.svg'
-import Envelope from '../../assets/svg/icons/envelope-light.svg'
-import Download from '../../assets/svg/icons/download-light.svg'
-import Printer from '../../assets/svg/icons/print-light.svg'
-import OpenBook from '../../assets/svg/icons/book-open-light.svg'
-import Exclamation from '../../assets/svg/icons/exclamation-circle-light.svg'
-import Telephone from '../../assets/svg/icons/phone-light.svg'
-import MapMarker from '../../assets/svg/icons/map-marker-alt-light.svg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import SpeechBubble from '../../assets/svg/icons/comment-light.svg';
+import Envelope from '../../assets/svg/icons/envelope-light.svg';
+import Download from '../../assets/svg/icons/download-light.svg';
+import Printer from '../../assets/svg/icons/print-light.svg';
+import OpenBook from '../../assets/svg/icons/book-open-light.svg';
+import Exclamation from '../../assets/svg/icons/exclamation-circle-light.svg';
+import Telephone from '../../assets/svg/icons/phone-light.svg';
+import MapMarker from '../../assets/svg/icons/map-marker-alt-light.svg';
 
-import { BannerSVG } from './styles'
+import { BannerSVG } from './styles';
 
 const Icon = ({ icon }) => {
-  let chosenIcon
+  let chosenIcon;
 
   switch (icon) {
     case 'speech-bubble':
-      chosenIcon = SpeechBubble
-      break
+      chosenIcon = SpeechBubble;
+      break;
     case 'envelope':
-      chosenIcon = Envelope
-      break
+      chosenIcon = Envelope;
+      break;
     case 'download':
-      chosenIcon = Download
-      break
+      chosenIcon = Download;
+      break;
     case 'printer':
-      chosenIcon = Printer
-      break
+      chosenIcon = Printer;
+      break;
     case 'open-book':
-      chosenIcon = OpenBook
-      break
+      chosenIcon = OpenBook;
+      break;
     case 'exclamation-mark':
-      chosenIcon = Exclamation
-      break
+      chosenIcon = Exclamation;
+      break;
     case 'telephone':
-      chosenIcon = Telephone
-      break
+      chosenIcon = Telephone;
+      break;
     case 'map-marker':
-      chosenIcon = MapMarker
-      break
+      chosenIcon = MapMarker;
+      break;
     default:
-      chosenIcon = null
+      chosenIcon = null;
   }
-
-  return chosenIcon !== null ? <BannerSVG as={chosenIcon} /> : null
-}
+  return chosenIcon !== null ? <BannerSVG src={chosenIcon} /> : null;
+};
 
 Icon.propTypes = {
   icon: PropTypes.string,
-}
+};
 
-export default Icon
+export default Icon;
