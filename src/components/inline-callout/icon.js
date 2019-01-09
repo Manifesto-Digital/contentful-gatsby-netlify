@@ -20,12 +20,21 @@ const icons = {
   'exclamation-mark': Exclamation,
   telephone: Telephone,
   'map-marker': MapMarker,
+  'no-icon': null,
   default: null,
 };
 
 const Icon = ({ icon }) => {
+  if (icons[icon] === undefined) {
+    throw new Error(
+      'No matching icon was found. Is it set as an option in the CMS? Has it been imported and included in the object above?'
+    );
+  }
+
   const chosenIcon = icons[icon] || null;
-  return chosenIcon && <BannerSVG src={chosenIcon} />;
+
+  if (!chosenIcon) return null;
+  return <BannerSVG src={chosenIcon} />;
 };
 
 Icon.propTypes = {
