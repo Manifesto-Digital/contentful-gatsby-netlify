@@ -24,18 +24,20 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
+        <>
+          <GlobalStyle />
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'Sample' },
+              { name: 'keywords', content: 'sample, something' },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <main>{children}</main>
+        </>
       </ThemeProvider>
     )}
   />
