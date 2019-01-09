@@ -38,6 +38,7 @@ exports[`renders correctly 1`] = `
     type="textarea"
     value=""
   />
+  <mock-recaptcha />
   <button
     className="c1"
     type="submit"
