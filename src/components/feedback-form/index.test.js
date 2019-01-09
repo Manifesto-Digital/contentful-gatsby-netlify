@@ -4,6 +4,7 @@ import {
   mountWithProviders,
 } from '../../../__tests__/helpers';
 import FeedbackForm from '.';
+import LinkButton from '../link-button';
 
 it('renders correctly', () => {
   snapshotComponent(<FeedbackForm heading="My Heading" />);
@@ -58,8 +59,42 @@ it('displays thank you message when form submission succeeds', async () => {
   );
 });
 
-// TODO: Implement this.
-it.skip('displays error message if submission fails', () => {});
+it('displays error message if submission fails', async () => {
+  const { wrapper, submitForm } = mountWithProviders(
+    <FeedbackForm heading="My Heading" />
+  );
+
+  submitForm.mockReturnValue(Promise.reject(new Error()));
+
+  changeInput(wrapper.find('textarea'), 'Foo');
+  await submitFormElement(wrapper.find('form'));
+
+  wrapper.update();
+
+  expect(wrapper.find('h3').text()).toBe('Sorry');
+  expect(wrapper.find('p').text()).toBe(
+    'There was a problem with submitting your feedback.'
+  );
+
+  expect(wrapper.find(LinkButton).text()).toBe('Try again');
+});
+
+it('sends you back to form when clicking try again on failure page', async () => {
+  const { wrapper, submitForm } = mountWithProviders(
+    <FeedbackForm heading="My Heading" />
+  );
+
+  submitForm.mockReturnValue(Promise.reject(new Error()));
+
+  changeInput(wrapper.find('textarea'), 'Foo');
+  await submitFormElement(wrapper.find('form'));
+
+  wrapper.update();
+
+  wrapper.find(LinkButton).simulate('click');
+
+  expect(wrapper.find('h3').text()).toBe('My Heading');
+});
 
 it('does not allow submission if comment is empty', async () => {
   const { wrapper, submitForm } = mountWithProviders(

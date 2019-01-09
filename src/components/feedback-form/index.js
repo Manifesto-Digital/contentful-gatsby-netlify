@@ -5,17 +5,28 @@ import * as Yup from 'yup';
 import Button from '../button';
 import * as FormProvider from '../forms/provider';
 import TextInput from '../forms/text-input';
+import LinkButton from '../link-button';
 
 export default function FeedbackForm({ heading }) {
-  const [submissionState, setSubmissionState] = useState({
-    state: 'pending',
-  });
+  const [submissionState, setSubmissionState] = useState('pending');
 
-  if (submissionState.state === 'success') {
+  if (submissionState === 'success') {
     return (
       <>
         <h3>Thank you</h3>
         <p>Your feedback has been submitted to the team.</p>
+      </>
+    );
+  }
+
+  if (submissionState === 'failed') {
+    return (
+      <>
+        <h3>Sorry</h3>
+        <p>There was a problem with submitting your feedback.</p>
+        <LinkButton onClick={() => setSubmissionState('pending')}>
+          Try again
+        </LinkButton>
       </>
     );
   }
@@ -27,8 +38,12 @@ export default function FeedbackForm({ heading }) {
           initialValues={{ comment: '' }}
           validationSchema={Yup.object({ comment: Yup.string().required() })}
           onSubmit={async values => {
-            await submitForm('feedback', values);
-            setSubmissionState({ state: 'success' });
+            try {
+              await submitForm('feedback', values);
+              setSubmissionState('success');
+            } catch (error) {
+              setSubmissionState('failed');
+            }
           }}
         >
           {() => (
