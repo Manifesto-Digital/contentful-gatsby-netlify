@@ -30,3 +30,11 @@ export const addMarksToContent = content => {
 
   return markup;
 };
+
+export const consistentString = string => {
+  if (string !== null) {
+    return string.replace(/\s+/g, '-').toLowerCase();
+  }
+
+  return 'default';
+};

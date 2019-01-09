@@ -1,51 +1,46 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {} from './styles'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Icon from './icon';
+import { consistentString } from '../../utils/content-formatting';
+import { Wrapper, PrintButton } from './styles';
 
 const ShareBlock = ({ data }) => {
-  const { headerText, shareType } = data
-  let shareUrl
-  switch (shareType) {
-    case 'Email':
-      shareUrl = 'mailto:?&body='
-      break
-    case 'WhatsApp':
-      shareUrl = 'https://api.whatsapp.com/send?text='
-      break
-    case 'Twitter':
-      shareUrl = 'https://twitter.com/home?status='
-      break
-    case 'Facebook':
-      shareUrl = 'https://www.facebook.com/sharer/sharer.php?u='
-      break
-    default:
-      shareUrl = 'mailto:?&body='
-      break
-  }
+  const { headerText, shareType } = data;
+  const url = {
+    Email: 'mailto:?&subject=Shelter&body=',
+    WhatsApp: 'https://api.whatsapp.com/send?text=',
+    Twitter: 'https://twitter.com/home?status=',
+    Facebook: 'https://www.facebook.com/sharer/sharer.php?u=',
+  };
+  const shareUrl = url[shareType] || url.Email;
+
   return (
-    <div>
+    <Wrapper>
       {headerText}
-      <div
+      <PrintButton
         onClick={() => window.print()}
-        onKeyDown={() => window.print()}
-        role="button"
+        onKeyDown={event => {
+          if (event.keycode === 13) window.print();
+        }}
+        type="button"
         tabIndex="0"
       >
         Print this article
-      </div>
+      </PrintButton>
       <a href={`${shareUrl}${window.location.href}`}>
+        <Icon icon={consistentString(shareType)} />
         {shareType === 'Email' ? 'Email' : 'Share'}
         {' this article'}
       </a>
-    </div>
-  )
-}
+    </Wrapper>
+  );
+};
 
 ShareBlock.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
     shareType: PropTypes.string.isRequired,
   }),
-}
+};
 
-export default ShareBlock
+export default ShareBlock;
