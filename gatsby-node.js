@@ -1,16 +1,16 @@
-const path = require('path')
-const { getContentPages } = require('./queries/content-page')
+const path = require('path');
+const { getContentPages } = require('./queries/content-page');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const pageTemplate = path.resolve('src/templates/page.js')
+  const { createPage } = actions;
+  const pageTemplate = path.resolve('src/templates/page.js');
 
   // Create pages
-  const pages = await getContentPages(graphql)
+  const pages = await getContentPages(graphql);
 
   if (pages.errors) {
-    console.error(pages.errors)
-    throw Error(pages.errors)
+    console.error(pages.errors);
+    throw Error(pages.errors);
   }
 
   // Create pages
@@ -21,6 +21,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: edge.node.slug,
       },
-    })
-  })
-}
+    });
+  });
+};

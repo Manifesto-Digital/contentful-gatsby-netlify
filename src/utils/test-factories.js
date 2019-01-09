@@ -9,6 +9,7 @@ export const createFactory = defaults => properties => ({
 
 export const createInternalLink = createFactory({
   id: 'ee6c2ca6-54d8-5c26-bbff-7dafdaa823e3',
+  title: 'Test Page Title',
   slug: 'internal-link-slug',
 });
 
