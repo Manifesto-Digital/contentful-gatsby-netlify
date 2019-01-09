@@ -15,7 +15,7 @@ const defaultStyles = {
     left: undefined,
     right: undefined,
     borderRadius: 'none',
-    padding: theme.spacing.largePadding,
+    padding: theme.spacing.large,
     border: undefined,
     backgroundColor: theme.palette.offWhite,
   },

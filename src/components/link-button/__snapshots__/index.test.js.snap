@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c0:hover {
-  color: #EA232D;
+  color: #ea232d;
 }
 
 <button

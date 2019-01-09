@@ -33,8 +33,8 @@ const Input = styled.input`
   background-size: 15px 15px;
   outline: none;
   width: 100%;
-  margin-bottom: ${props => props.theme.spacing.padding};
-  padding: ${props => props.theme.spacing.formElementVerticalPadding};
+  margin-bottom: ${props => props.theme.spacing.standard};
+  padding: ${props => props.theme.spacing.small};
 `;
 
 /**
@@ -57,7 +57,7 @@ export default function TextInput(props) {
 }
 
 TextInput.propTypes = {
-  type: PropTypes.oneOf(['textarea', 'text', 'url', 'email', 'number']),
+  type: PropTypes.oneOf(['textarea', 'text', 'url', 'email', 'number', 'tel']),
   field: PropTypes.object,
   form: PropTypes.shape({
     errors: PropTypes.object,

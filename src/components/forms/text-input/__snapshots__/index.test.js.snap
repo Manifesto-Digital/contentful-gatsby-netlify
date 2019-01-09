@@ -2,7 +2,7 @@
 
 exports[`displays error if invalid & touched 1`] = `
 .c0 {
-  border: 1px solid #EA232D;
+  border: 1px solid #ea232d;
   background: no-repeat 97% url(test-file-stub);
   background-color: #ffe7ec;
   display: block;
@@ -10,7 +10,7 @@ exports[`displays error if invalid & touched 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
@@ -28,7 +28,7 @@ exports[`displays neutral state if not touched: no error 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
@@ -46,7 +46,7 @@ exports[`displays neutral state if not touched: with error 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input
@@ -57,7 +57,7 @@ exports[`displays neutral state if not touched: with error 1`] = `
 
 exports[`displays success if valid & touched 1`] = `
 .c0 {
-  border: 1px solid #62B33C;
+  border: 1px solid #62b33c;
   background: no-repeat 97% url(test-file-stub);
   background-color: #e6f8e7;
   display: block;
@@ -65,7 +65,7 @@ exports[`displays success if valid & touched 1`] = `
   outline: none;
   width: 100%;
   margin-bottom: 20px;
-  padding: 0.65em;
+  padding: 10px;
 }
 
 <input

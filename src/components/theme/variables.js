@@ -1,7 +1,7 @@
 const theme = {};
 
 theme.palette = {
-  primary: '#EA232D',
+  primary: '#ea232d',
   donate: '#12b9bf',
   // Greys
   white: '#fff',
@@ -19,9 +19,9 @@ theme.palette = {
   facebook: '#3b5998',
   whatsapp: '#25d366',
   // Feedback
-  error: '#EA232D',
+  error: '#ea232d',
   errorLight: '#ffe7ec',
-  success: '#62B33C',
+  success: '#62b33c',
   successLight: '#e6f8e7',
 };
 
@@ -51,9 +51,8 @@ theme.boxshadow = {
 };
 
 theme.spacing = {
-  padding: '20px',
-  smallPadding: '10px',
-  largePadding: '40px',
-  formElementVerticalPadding: '0.65em',
+  standard: '20px',
+  small: '10px',
+  large: '40px',
 };
 export default theme;
