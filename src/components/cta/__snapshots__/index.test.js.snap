@@ -7,9 +7,9 @@ exports[`renders correctly 1`] = `
 
 .c0 {
   display: inline-block;
-  padding: 0.65em 1em;
+  padding: 10px 1em;
   font-weight: normal;
-  background-color: #EA232D;
+  background-color: #ea232d;
   border: none;
   color: #fff;
 }

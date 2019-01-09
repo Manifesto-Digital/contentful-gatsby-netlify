@@ -1,5 +1,5 @@
 const babelOptions = {
-  presets: ['@babel/react', '@babel/env'],
+  presets: ['@babel/react', ['@babel/env', { targets: { node: 'current' } }]],
   plugins: ['@babel/plugin-proposal-class-properties'],
 };
 

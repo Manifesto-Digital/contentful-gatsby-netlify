@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  mountWithTheme,
   snapshotComponent,
+  mountWithTheme,
 } from '../../../__tests__/helpers/index';
 import CTA from './index';
 import { StyledLinkHandler } from './styles';

@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom"]
+  },
+  "exclude": ["node_modules", ".cache"]
+}

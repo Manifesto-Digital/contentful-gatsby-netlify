@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { reset } from './reset';
 import { breakpoint } from './breakpoint';
+import { linkStyles } from '../styled/links';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -63,10 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        color: ${props => props.theme.palette.sanMarinoBlue};
-        text-decoration: underline;
-        font-weight: 700;
-
+        ${linkStyles};
     }
 
     li {

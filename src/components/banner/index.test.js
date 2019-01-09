@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  renderWithTheme,
   snapshotComponent,
+  renderWithTheme,
 } from '../../../__tests__/helpers/index';
 import Banner from './index';
 import { Header } from './styles';

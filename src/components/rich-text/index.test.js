@@ -1,8 +1,7 @@
 import React from 'react';
-import 'jest-styled-components';
 import { shallow } from 'enzyme';
 import RichText from './index';
-import { renderWithTheme } from '../../../__tests__/helpers';
+import { snapshotComponent } from '../../../__tests__/helpers';
 import { createFactory } from '../../utils/test-factories';
 
 // Default props
@@ -15,8 +14,7 @@ export const createRichText = createFactory({
 
 it('renders correctly', () => {
   const mockData = createRichText();
-  const tree = renderWithTheme(<RichText richText={mockData} />).toJSON();
-  expect(tree).toMatchSnapshot();
+  snapshotComponent(<RichText richText={mockData} />);
 });
 
 it('only renders items that have content', () => {
