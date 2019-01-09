@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  mountWithTheme,
   snapshotComponent,
+  mountWithProviders,
 } from '../../../__tests__/helpers/index';
 import CTA from './index';
 import { StyledLinkHandler } from './styles';
@@ -34,6 +34,6 @@ it('displays the correct text', () => {
 
 it('displays an icon if provided', () => {
   const mockData = createCTA({ icon: createImage() });
-  const wrapper = mountWithTheme(<CTA cta={mockData} />);
+  const { wrapper } = mountWithProviders(<CTA cta={mockData} />);
   expect(wrapper.find('img').prop('src')).toBe(mockData.icon.file.url);
 });

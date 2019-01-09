@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correct styles: content 1`] = `
+"display: block;
+ bottom: 40px;
+ background: rgb(255, 255, 255);
+ overflow: auto;
+ border-radius: none;
+ outline: none;
+ padding: 40px;
+ background-color: rgb(247, 247, 247);
+"
+`;
+
+exports[`renders correct styles: overlay 1`] = `
+"display: flex;
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ right: 0px;
+ bottom: 0px;
+ background-color: rgba(43, 46, 56, 0.9);
+ align-items: center;
+ justify-content: center;
+"
+`;

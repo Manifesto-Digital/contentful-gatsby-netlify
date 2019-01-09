@@ -42,7 +42,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c3:hover {
-  color: #EA232D;
+  color: #ea232d;
 }
 
 @media (min-width:62em) {

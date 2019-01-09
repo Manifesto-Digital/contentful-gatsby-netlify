@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  renderWithTheme,
+  renderWithProviders,
   snapshotComponent,
 } from '../../../__tests__/helpers/index';
 import CTABanner from './index';
@@ -45,28 +45,28 @@ it('displays the correct header text', () => {
 it('changes background colour based on props', () => {
   const mockData = createCtaBanner({ bannerColour: 'Red' });
 
-  const tree = renderWithTheme(
+  const { renderer } = renderWithProviders(
     <CTABanner
       cta={mockData.cta}
       bannerColour={mockData.bannerColour}
       headerText={mockData.headerText}
     />
   );
-  expect(tree.toJSON()).toHaveStyleRule(
+  expect(renderer.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.primary
   );
 
   const updatedMockData = createCtaBanner({ bannerColour: 'Black' });
 
-  const changedTree = renderWithTheme(
+  const { renderer: changedRenderer } = renderWithProviders(
     <CTABanner
       cta={updatedMockData.cta}
       bannerColour={updatedMockData.bannerColour}
       headerText={updatedMockData.headerText}
     />
   );
-  expect(changedTree.toJSON()).toHaveStyleRule(
+  expect(changedRenderer.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.black
   );
