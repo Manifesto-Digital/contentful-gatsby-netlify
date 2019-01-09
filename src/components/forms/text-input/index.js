@@ -57,7 +57,7 @@ export default function TextInput(props) {
 }
 
 TextInput.propTypes = {
-  type: PropTypes.oneOf(['textarea', 'text', 'url', 'email', 'number']),
+  type: PropTypes.oneOf(['textarea', 'text', 'url', 'email', 'number', 'tel']),
   field: PropTypes.object,
   form: PropTypes.shape({
     errors: PropTypes.object,
