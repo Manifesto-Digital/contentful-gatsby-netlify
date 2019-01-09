@@ -50,8 +50,9 @@ const Assemblies = ({ assemblies }) => {
         return <NavigationLinkBox key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicAdviceSearchBox')
+      if (internal.type === 'ContentfulTopicAdviceSearchBox') {
         return <AdviceSearchBox key={id} data={assembly} />;
+      }
 
       return null;
     });

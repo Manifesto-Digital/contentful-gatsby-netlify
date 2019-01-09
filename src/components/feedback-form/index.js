@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import Button from '../button';
+import { Button } from '../button';
 import * as FormProvider from '../forms/provider';
 import TextInput from '../forms/text-input';
 import LinkButton from '../link-button';

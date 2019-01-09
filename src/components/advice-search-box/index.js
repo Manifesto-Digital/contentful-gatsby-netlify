@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { AdviceSearchForm, SearchInput, SearchButton } from './styles'
-import { VisuallyHidden } from '../styled/accessibility'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { AdviceSearchForm, SearchInput, SearchButton } from './styles';
+import { VisuallyHidden } from '../styled/accessibility';
 
 const AdviceSearchBox = ({ data }) => {
-  const { headerText, placeholder } = data
-  const country = data.collectionToSearch.toLowerCase()
+  const { headerText, placeholder } = data;
+  const country = data.collectionToSearch.toLowerCase();
 
   return (
     <AdviceSearchForm
@@ -35,14 +35,14 @@ const AdviceSearchBox = ({ data }) => {
           value="Advice"
         />
 
-        <SearchButton name="Search" type="submit">
+        <SearchButton name="Search" type="submit" bg="blue">
           Search
           <i className="fa fa-search button__search--icon" aria-hidden="true" />
         </SearchButton>
       </fieldset>
     </AdviceSearchForm>
-  )
-}
+  );
+};
 
 AdviceSearchBox.propTypes = {
   data: PropTypes.shape({
@@ -50,6 +50,6 @@ AdviceSearchBox.propTypes = {
     placeholder: PropTypes.string.isRequired,
     collectionToSearch: PropTypes.string.isRequired,
   }),
-}
+};
 
-export default AdviceSearchBox
+export default AdviceSearchBox;
