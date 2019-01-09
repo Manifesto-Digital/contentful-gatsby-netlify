@@ -3,13 +3,14 @@ import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
 import { sendForm } from '../forms/send';
-import { lastProps as lastRecaptchaProps } from '../forms/recaptcha';
+import Recaptcha from '../forms/recaptcha';
 
 jest.mock('../forms/send');
 jest.mock('../forms/recaptcha');
 
 afterEach(() => {
-  sendForm.mockReset();
+  sendForm.mockClear();
+  Recaptcha.mockClear();
 });
 
 it('renders correctly', () => {
@@ -17,7 +18,9 @@ it('renders correctly', () => {
 });
 
 const verifyCaptcha = () => {
-  lastRecaptchaProps.verifyCallback('token');
+  Recaptcha.mock.calls[Recaptcha.mock.calls.length - 1][0].verifyCallback(
+    'token'
+  );
 };
 
 const nextTick = () => new Promise(resolve => process.nextTick(resolve));
