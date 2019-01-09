@@ -11,38 +11,21 @@ import MapMarker from '../../assets/svg/icons/map-marker-alt-light.svg';
 
 import { BannerSVG } from './styles';
 
-const Icon = ({ icon }) => {
-  let chosenIcon;
+const icons = {
+  'speech-bubble': SpeechBubble,
+  envelope: Envelope,
+  download: Download,
+  printer: Printer,
+  'open-book': OpenBook,
+  'exclamation-mark': Exclamation,
+  telephone: Telephone,
+  'map-marker': MapMarker,
+  default: null,
+};
 
-  switch (icon) {
-    case 'speech-bubble':
-      chosenIcon = SpeechBubble;
-      break;
-    case 'envelope':
-      chosenIcon = Envelope;
-      break;
-    case 'download':
-      chosenIcon = Download;
-      break;
-    case 'printer':
-      chosenIcon = Printer;
-      break;
-    case 'open-book':
-      chosenIcon = OpenBook;
-      break;
-    case 'exclamation-mark':
-      chosenIcon = Exclamation;
-      break;
-    case 'telephone':
-      chosenIcon = Telephone;
-      break;
-    case 'map-marker':
-      chosenIcon = MapMarker;
-      break;
-    default:
-      chosenIcon = null;
-  }
-  return chosenIcon !== null ? <BannerSVG src={chosenIcon} /> : null;
+const Icon = ({ icon }) => {
+  const chosenIcon = icons[icon] || null;
+  return chosenIcon && <BannerSVG src={chosenIcon} />;
 };
 
 Icon.propTypes = {
