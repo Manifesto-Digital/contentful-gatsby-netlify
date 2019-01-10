@@ -7,7 +7,14 @@ import { defaultStyles, StyledCloseButton } from './styles';
  */
 export default function Modal({ children, ...otherProps }) {
   return (
-    <ReactModal {...otherProps} style={defaultStyles}>
+    <ReactModal
+      {...otherProps}
+      style={defaultStyles}
+      aria={{
+        modal: true,
+        labelledby: 'title-text',
+      }}
+    >
       <StyledCloseButton title="Close" onClick={otherProps.onRequestClose}>
         ✕
       </StyledCloseButton>

@@ -51,11 +51,11 @@ const FeedbackForm = ({ heading }) => {
       {({ setFieldValue }) => (
         <Form>
           <h3>{heading}</h3>
-
           <Field
             name="comment"
             render={props => (
               <TextInput
+                autoFocus
                 type="textarea"
                 placeholder="Your comment"
                 {...props}
