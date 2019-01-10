@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatFilesize } from '../../utils/filesize-formatting';
-import DownloadSVG from '../../assets/svg/download.svg';
+import DownloadSVG from '../../assets/svg/icons/download.svg';
 // Styles
 import { Button, Filesize, ButtonText, ButtonSVG } from './styles';
 
