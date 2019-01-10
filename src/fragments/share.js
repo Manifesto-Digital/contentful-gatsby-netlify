@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const ShareBlockFragment = graphql`
   fragment ShareBlockFragment on ContentfulTopicShareBlock {
@@ -9,4 +9,4 @@ export const ShareBlockFragment = graphql`
     headerText
     shareType
   }
-`
+`;
