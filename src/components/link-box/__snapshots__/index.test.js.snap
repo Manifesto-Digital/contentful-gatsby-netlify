@@ -78,24 +78,28 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c3"
+        rowcount={3}
         to="internal-link-slug"
       >
         Test Page Title
       </Link>
       <Link
         className="c3"
+        rowcount={3}
         to="internal-link-slug"
       >
         Test Page Title
       </Link>
       <Link
         className="c3"
+        rowcount={3}
         to="internal-link-slug"
       >
         Test Page Title
       </Link>
       <Link
         className="c3"
+        rowcount={3}
         to="internal-link-slug"
       >
         Test Page Title
