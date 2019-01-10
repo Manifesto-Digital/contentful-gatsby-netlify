@@ -1,12 +1,13 @@
 import { graphql } from 'gatsby';
 
-export const NavigationLinkBoxFragment = graphql`
-  fragment NavigationLinkBoxFragment on ContentfulTopicNavigationLinkBox {
+export const LinkBoxFragment = graphql`
+  fragment LinkBoxFragment on ContentfulTopicLinkBox {
     id
     internal {
       type
     }
     headerText
+    itemsPerRow
     links {
       title
       slug
