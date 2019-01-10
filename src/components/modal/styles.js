@@ -4,7 +4,7 @@ import { buttonReset } from '../styled/buttons';
 
 export const defaultStyles = {
   overlay: {
-    backgroundColor: 'rgba(43,46,56,.9)',
+    backgroundColor: theme.palette.overlay,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
