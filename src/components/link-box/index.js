@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { Container } from '../styled/containers';
-import { Wrapper, ListWrapper, StyledLink } from './styles';
+import { Wrapper, ListWrapper, ListItem } from './styles';
 
 const LinkBox = ({ data }) => {
   const { headerText, itemsPerRow, links } = data;
@@ -11,9 +12,9 @@ const LinkBox = ({ data }) => {
         <h2>{headerText}</h2>
         <ListWrapper>
           {links.map((link, i) => (
-            <StyledLink key={i} to={link.slug} rowcount={itemsPerRow}>
-              {link.title}
-            </StyledLink>
+            <ListItem key={i} rowCount={itemsPerRow}>
+              <Link to={link.slug}>{link.title}</Link>
+            </ListItem>
           ))}
         </ListWrapper>
       </Wrapper>

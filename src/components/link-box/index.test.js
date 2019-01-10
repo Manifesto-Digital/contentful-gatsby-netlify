@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Link } from 'gatsby';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 import LinkBox from './index';
-import { StyledLink } from './styles';
+import { ListItem } from './styles';
 import { createFactory, createInternalLink } from '../../utils/test-factories';
 
 // Default props
@@ -36,9 +37,9 @@ it('sets the number of links per row', () => {
   const wrapper = shallow(<LinkBox data={mockData} />);
   expect(
     wrapper
-      .find(StyledLink)
+      .find(ListItem)
       .at(0)
-      .prop('rowcount')
+      .prop('rowCount')
   ).toBe(mockData.itemsPerRow);
 });
 
@@ -55,14 +56,14 @@ it('displays link and title correctly', () => {
 
   expect(
     wrapper
-      .find(StyledLink)
+      .find(Link)
       .at(0)
       .text()
   ).toBe(mockData.links[0].title);
 
   expect(
     wrapper
-      .find(StyledLink)
+      .find(Link)
       .at(0)
       .prop('to')
   ).toBe(mockData.links[0].slug);
