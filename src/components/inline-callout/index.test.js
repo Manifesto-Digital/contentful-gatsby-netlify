@@ -1,5 +1,4 @@
 import React from 'react';
-import { renderWithTheme } from '../../../__tests__/helpers/index';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 
 import {
