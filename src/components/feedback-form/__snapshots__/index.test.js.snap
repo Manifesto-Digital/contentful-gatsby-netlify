@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c1 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #ea232d;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+.c0 {
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  display: block;
+  background-size: 15px 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+<form
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <h3>
+    My Heading
+  </h3>
+  <textarea
+    autoFocus={true}
+    className="c0"
+    name="comment"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your comment"
+    type="textarea"
+    value=""
+  />
+  <mock-recaptcha />
+  <button
+    className="c1"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

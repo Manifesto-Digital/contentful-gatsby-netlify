@@ -11,7 +11,7 @@ export const InlineBanner = styled.div`
     (props.bannerCol === 'white' && props.theme.palette.white) ||
     (props.bannerCol === 'transparent' && 'transparent')};
 
-  padding: ${props => props.theme.spacing.padding};
+  padding: ${props => props.theme.spacing.standard};
   margin-bottom: 1em;
   border-left: 4px solid;
   border-color: ${props =>
