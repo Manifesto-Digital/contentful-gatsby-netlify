@@ -12,7 +12,6 @@ export default function Modal({ children, ...otherProps }) {
       style={defaultStyles}
       aria={{
         modal: true,
-        labelledby: 'title-text',
       }}
     >
       <StyledCloseButton title="Close" onClick={otherProps.onRequestClose}>
