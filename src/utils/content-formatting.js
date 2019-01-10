@@ -31,6 +31,8 @@ export const addMarksToContent = content => {
   return markup;
 };
 
+// Used to return a formatted and consistent string from a human readable cms field.
+// If the field is not required and left empty, 'default' is returned
 export const consistentString = string => {
   if (string !== null) {
     return string.replace(/\s+/g, '-').toLowerCase();

@@ -6,6 +6,7 @@ import DownloadBanner from '../download-banner';
 import ContentGrid from '../content-grid';
 import Banner from '../banner';
 import ShareBlock from '../share-block';
+import InlineCallOut from '../inline-callout';
 import NavigationLinkBox from '../navigation-link-box';
 import VideoEmbed from '../video';
 
@@ -36,6 +37,10 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicBanner') {
         return <Banner key={id} banner={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicInlineCallout') {
+        return <InlineCallOut key={id} content={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicVideoEmbed') {
