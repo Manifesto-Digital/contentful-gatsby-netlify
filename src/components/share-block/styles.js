@@ -19,22 +19,33 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const PrintButton = styled.button`
-  ${buttonReset}
-  ${linkStyles}
+export const Inner = styled.div`
   display: flex;
   width: 100%;
   margin-bottom: ${props => props.theme.spacing.small};
-  text-decoration: none;
+
+  &:hover {
+    a,
+    svg {
+      color: ${props => props.theme.palette.primary};
+      fill: ${props => props.theme.palette.primary};
+    }
+  }
 
   ${breakpoint.tablet`
     margin-bottom: 0;
   `}
 `;
 
+export const PrintButton = styled.button`
+  ${buttonReset}
+  ${linkStyles}
+  display:flex;
+  text-decoration: none;
+`;
+
 export const ShareLink = styled.a`
   display: flex;
-  width: 100%;
   text-decoration: none;
 `;
 

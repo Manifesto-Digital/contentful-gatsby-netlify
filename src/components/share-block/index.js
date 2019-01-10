@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 import Icon from './icon';
 import { consistentString } from '../../utils/content-formatting';
-import { Wrapper, PrintButton, ShareLink } from './styles';
+import { Wrapper, Inner, PrintButton, ShareLink } from './styles';
 
 const ShareBlock = ({ data }) => {
   const { headerText, shareType } = data;
@@ -19,37 +19,40 @@ const ShareBlock = ({ data }) => {
     <>
       <h3>{headerText}</h3>
       <Wrapper>
-        {shareType.map(type => (
-          <>
+        {shareType.map((type, i) => (
+          <Fragment key={i}>
             {type === 'Print' ? (
-              <PrintButton
-                onClick={() => window.print()}
-                onKeyDown={event => {
-                  if (event.keycode === 13) window.print();
-                }}
-                type="button"
-                tabIndex="0"
-              >
-                <Icon icon="print" />
-                Print this article
-              </PrintButton>
+              <Inner>
+                <PrintButton
+                  onClick={() => window.print()}
+                  onKeyDown={event => {
+                    if (event.keycode === 13) window.print();
+                  }}
+                  type="button"
+                  tabIndex="0"
+                >
+                  <Icon icon="print" />
+                  Print this article
+                </PrintButton>
+              </Inner>
             ) : (
-              <Location>
-                {({ location }) => (
-                  <ShareLink
-                    href={`${url[type]}${location.href}`}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    {console.log(location)}
-                    <Icon icon={consistentString(type)} />
-                    {type === 'Email' ? 'Email' : 'Share'}
-                    {' this article'}
-                  </ShareLink>
-                )}
-              </Location>
+              <Inner>
+                <Location>
+                  {({ location }) => (
+                    <ShareLink
+                      href={`${url[type]}${location.href}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <Icon icon={consistentString(type)} />
+                      {type === 'Email' ? 'Email' : 'Share'}
+                      {' this article'}
+                    </ShareLink>
+                  )}
+                </Location>
+              </Inner>
             )}
-          </>
+          </Fragment>
         ))}
       </Wrapper>
     </>
