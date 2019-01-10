@@ -64,7 +64,6 @@ const FeedbackForm = ({ heading }) => {
           />
 
           <Recaptcha
-            sitekey="6LfRECMUAAAAALhAyfG-4Rq7EEcZX6MTYuDx_tOq"
             verifyCallback={token => {
               setFieldValue('recaptchaToken', token);
             }}
