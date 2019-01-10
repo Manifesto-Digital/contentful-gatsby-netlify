@@ -29,7 +29,7 @@ export const StyledLink = styled(Link)`
   font-weight: 400;
   text-decoration: none;
   ${breakpoint.desktop`
-    flex: 0 0 ${props => (props.rowcount === 3 ? '33%' : '50%')};
+    flex: 0 0 ${props => 100 / props.rowcount}%;
   `};
 
   &:hover {
