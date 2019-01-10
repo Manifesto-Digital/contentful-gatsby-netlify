@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import FeedbackModal from '.';
-import { mountWithProviders } from '../../../__tests__/helpers';
+import { mountWithTheme } from '../../../__tests__/helpers';
 
-function isModalOpen() {
-  return document.body.classList.contains('ReactModal__Body--open');
-}
+const isModalOpen = () =>
+  document.body.classList.contains('ReactModal__Body--open');
 
 it('renders linkText', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithTheme(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -21,7 +20,7 @@ it('renders linkText', () => {
 });
 
 it('opens modal when link is clicked', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithTheme(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -36,7 +35,7 @@ it('opens modal when link is clicked', () => {
 });
 
 it('starts with modal closed', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithTheme(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -49,7 +48,7 @@ it('starts with modal closed', () => {
 });
 
 it('closes modal when a close is requested', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithTheme(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 
@@ -68,7 +67,7 @@ it('closes modal when a close is requested', () => {
 });
 
 it('displays heading in modal', () => {
-  const { wrapper } = mountWithProviders(
+  const wrapper = mountWithTheme(
     <FeedbackModal linkText="Open Me" heading="My Modal" />
   );
 

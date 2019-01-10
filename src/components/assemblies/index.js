@@ -6,7 +6,8 @@ import DownloadBanner from '../download-banner';
 import ContentGrid from '../content-grid';
 import Banner from '../banner';
 import AdviceSearchBox from '../advice-search-box';
-import NavigationLinkBox from '../navigation-link-box';
+import InlineCallOut from '../inline-callout';
+import LinkBox from '../link-box';
 import VideoEmbed from '../video';
 
 const Assemblies = ({ assemblies }) => {
@@ -38,6 +39,10 @@ const Assemblies = ({ assemblies }) => {
         return <Banner key={id} banner={assembly} />;
       }
 
+      if (internal.type === 'ContentfulTopicInlineCallout') {
+        return <InlineCallOut key={id} content={assembly} />;
+      }
+
       if (internal.type === 'ContentfulTopicVideoEmbed') {
         return <VideoEmbed key={id} data={assembly} />;
       }
@@ -46,8 +51,8 @@ const Assemblies = ({ assemblies }) => {
         return <DownloadBanner key={id} banner={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicNavigationLinkBox') {
-        return <NavigationLinkBox key={id} data={assembly} />;
+      if (internal.type === 'ContentfulTopicLinkBox') {
+        return <LinkBox key={id} data={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicAdviceSearchBox') {

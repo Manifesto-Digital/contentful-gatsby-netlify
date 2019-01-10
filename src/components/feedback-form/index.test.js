@@ -1,14 +1,27 @@
 import React from 'react';
-import {
-  snapshotComponent,
-  mountWithProviders,
-} from '../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
+import { sendForm } from '../forms/send';
+import Recaptcha from '../forms/recaptcha';
+
+jest.mock('../forms/send');
+jest.mock('../forms/recaptcha');
+
+afterEach(() => {
+  sendForm.mockClear();
+  Recaptcha.mockClear();
+});
 
 it('renders correctly', () => {
   snapshotComponent(<FeedbackForm heading="My Heading" />);
 });
+
+const verifyCaptcha = () => {
+  Recaptcha.mock.calls[Recaptcha.mock.calls.length - 1][0].verifyCallback(
+    'token'
+  );
+};
 
 const nextTick = () => new Promise(resolve => process.nextTick(resolve));
 
@@ -22,34 +35,35 @@ const changeInput = (wrapper, value) => {
   });
 };
 
-const submitFormElement = wrapper => {
+const submitForm = wrapper => {
   wrapper.simulate('submit');
 
   // form submission seems to happen asynchronously
   return nextTick();
 };
 
-it('sends form after typing into box and submitting', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+it('sends form data after passing validation & submitting', async () => {
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  verifyCaptcha();
+  await submitForm(wrapper.find('form'));
 
-  expect(submitForm.mock.calls[0]).toEqual([
+  expect(sendForm.mock.calls[0]).toEqual([
     'feedback',
     {
       comment: 'Foo',
+      recaptchaToken: 'token',
     },
   ]);
 });
 
 it('displays thank you message when form submission succeeds', async () => {
-  const { wrapper } = mountWithProviders(<FeedbackForm heading="My Heading" />);
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  verifyCaptcha();
+  await submitForm(wrapper.find('form'));
 
   wrapper.update();
 
@@ -60,14 +74,13 @@ it('displays thank you message when form submission succeeds', async () => {
 });
 
 it('displays error message if submission fails', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
-  submitForm.mockReturnValue(Promise.reject(new Error()));
+  sendForm.mockReturnValue(Promise.reject(new Error()));
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  verifyCaptcha();
+  await submitForm(wrapper.find('form'));
 
   wrapper.update();
 
@@ -80,14 +93,13 @@ it('displays error message if submission fails', async () => {
 });
 
 it('sends you back to form when clicking try again on failure page', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
-  submitForm.mockReturnValue(Promise.reject(new Error()));
+  sendForm.mockReturnValue(Promise.reject(new Error()));
 
   changeInput(wrapper.find('textarea'), 'Foo');
-  await submitFormElement(wrapper.find('form'));
+  verifyCaptcha();
+  await submitForm(wrapper.find('form'));
 
   wrapper.update();
 
@@ -97,11 +109,19 @@ it('sends you back to form when clicking try again on failure page', async () =>
 });
 
 it('does not allow submission if comment is empty', async () => {
-  const { wrapper, submitForm } = mountWithProviders(
-    <FeedbackForm heading="My Heading" />
-  );
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
 
-  await submitFormElement(wrapper.find('form'));
+  verifyCaptcha();
+  await submitForm(wrapper.find('form'));
 
-  expect(submitForm).not.toHaveBeenCalled();
+  expect(sendForm).not.toHaveBeenCalled();
+});
+
+it('does not allow submission if captcha is not verified', async () => {
+  const wrapper = mountWithTheme(<FeedbackForm heading="My Heading" />);
+
+  changeInput(wrapper.find('textarea'), 'Foo');
+  await submitForm(wrapper.find('form'));
+
+  expect(sendForm).not.toHaveBeenCalled();
 });

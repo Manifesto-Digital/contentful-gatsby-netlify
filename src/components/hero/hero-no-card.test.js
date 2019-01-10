@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  mountWithProviders,
+  mountWithTheme,
   snapshotComponent,
 } from '../../../__tests__/helpers/index';
 import Hero from './hero-no-card';
@@ -45,6 +45,6 @@ it('renders an image', () => {
     }),
   });
 
-  const { wrapper } = mountWithProviders(<Hero content={mockData} />);
+  const wrapper = mountWithTheme(<Hero content={mockData} />);
   expect(wrapper.find('img')).toHaveLength(1);
 });

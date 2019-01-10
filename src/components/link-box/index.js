@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { Container } from '../styled/containers';
-import { Wrapper, ListWrapper, StyledLink } from './styles';
+import { Wrapper, ListWrapper, ListItem } from './styles';
 
-const NavigationLinkBox = ({ data }) => {
-  const { headerText, links } = data;
+const LinkBox = ({ data }) => {
+  const { headerText, itemsPerRow, links } = data;
   return (
     <Container>
       <Wrapper>
         <h2>{headerText}</h2>
         <ListWrapper>
           {links.map((link, i) => (
-            <StyledLink key={i} to={link.slug}>
-              {link.title}
-            </StyledLink>
+            <ListItem key={i} rowCount={itemsPerRow}>
+              <Link to={link.slug}>{link.title}</Link>
+            </ListItem>
           ))}
         </ListWrapper>
       </Wrapper>
@@ -21,9 +22,10 @@ const NavigationLinkBox = ({ data }) => {
   );
 };
 
-NavigationLinkBox.propTypes = {
+LinkBox.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
+    itemsPerRow: PropTypes.number.isRequired,
     links: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
@@ -33,4 +35,4 @@ NavigationLinkBox.propTypes = {
   }),
 };
 
-export default NavigationLinkBox;
+export default LinkBox;
