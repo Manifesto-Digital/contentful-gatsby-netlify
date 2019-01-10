@@ -6,7 +6,6 @@ import LinkBox from './index';
 import { ListItem } from './styles';
 import { createFactory, createInternalLink } from '../../utils/test-factories';
 
-// Default props
 export const createLinkBox = createFactory({
   headerText: 'What an amazing banner',
   itemsPerRow: 3,
