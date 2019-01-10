@@ -1,37 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+// Components
+import DonationForm from './donation-form';
 // Styles
-import { Container } from '../styled/containers'
-import { Banner, Wrapper, Header, FormWrapper, Button } from './styles'
+import { Container } from '../styled/containers';
+import { Banner, Wrapper, Header } from './styles';
 
 const DonationBanner = ({ banner }) => {
-  const { headerText, removeMarginBottom, donationInputPlaceholder } = banner
+  const { headerText, removeMarginBottom, donationInputPlaceholder } = banner;
 
   return (
     <Banner removeMarginBottom={removeMarginBottom}>
       <Container>
         <Wrapper>
           <Header>{headerText}</Header>
-          <FormWrapper>
-            <form>
-              <input
-                type="text"
-                placeholder={donationInputPlaceholder || '30'}
-              />
-              <Button type="submit">Donate</Button>
-            </form>
-          </FormWrapper>
+          <DonationForm placeholder={donationInputPlaceholder} />
         </Wrapper>
       </Container>
     </Banner>
-  )
-}
+  );
+};
 DonationBanner.propTypes = {
   banner: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
     removeMarginBottom: PropTypes.bool,
     donationInputPlaceholder: PropTypes.number,
   }),
-}
+};
 
-export default DonationBanner
+export default DonationBanner;

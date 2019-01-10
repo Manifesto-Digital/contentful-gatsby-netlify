@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c5 {
+  position: relative;
+}
+
+.c7 {
+  display: inline-block;
+  background-size: 15px 15px;
+  width: auto;
+  margin-bottom: 0;
+  padding: 10px;
+  padding-left: 30px;
+  max-width: 10em;
+}
+
+.c7::-webkit-outer-spin-button,
+.c7::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  left: 12px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 0.875rem;
+}
+
+.c9 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.c0 {
+  padding: 20px 0;
+  background-color: #12b9bf;
+  margin-bottom: 40px;
+}
+
+.c3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 .c8 {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.c1 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c4 {
+    -webkit-flex: 0 1 40%;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+    margin-bottom: 0;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <section
+      className="c2"
+    >
+      <h3
+        className="c3"
+      >
+        What an amazing banner
+      </h3>
+      <form
+        action="https://donate.shelter.org.uk/b"
+        className="c4"
+        method="GET"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <input
+          name="cid"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="hidden"
+          value="263"
+        />
+        <input
+          name="free_amount"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="hidden"
+          value="1"
+        />
+        <input
+          name="amount"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="hidden"
+          value="3000"
+        />
+        <input
+          name="reserved_appeal_code"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="hidden"
+          value=""
+        />
+        <input
+          name="frequency"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="hidden"
+          value="once"
+        />
+        <span
+          className="c5"
+        >
+          <span
+            className="c6"
+          >
+            £
+          </span>
+          <input
+            aria-label="Donate"
+            className="c7"
+            data-default-amount="30"
+            name="amount-holder"
+            onBlur={[Function]}
+            onChange={[Function]}
+            pattern="[0-9]*"
+            placeholder="30"
+            type="number"
+            value=""
+          />
+        </span>
+        <button
+          className="c8 c9"
+          type="submit"
+        >
+          Donate
+        </button>
+      </form>
+    </section>
+  </div>
+</section>
+`;

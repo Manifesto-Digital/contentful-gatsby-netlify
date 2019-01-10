@@ -1,33 +1,43 @@
-import styled from 'styled-components'
-import { breakpoint } from '../theme/breakpoint'
+import styled from 'styled-components';
+import { breakpoint } from '../theme/breakpoint';
+import Button from '../button';
 
 export const Banner = styled.section`
-  padding: ${props => props.theme.spacing.padding} 0;
+  padding: ${props => props.theme.spacing.standard} 0;
   background-color: ${props => props.theme.palette.donate};
   margin-bottom: ${props =>
-    props.removeMarginBottom ? '0' : props.theme.spacing.largePadding};
-`
+    props.removeMarginBottom ? '0' : props.theme.spacing.large};
+`;
+
 export const Wrapper = styled.section`
-  ${breakpoint.desktop`
+  ${breakpoint.tablet`
     display: flex;
     justify-content: space-between;
     align-items: center;
   `};
-`
+`;
 
 export const Header = styled.h3`
   color: ${props => props.theme.palette.white};
-  margin-bottom: ${props => props.theme.padding};
+  margin-bottom: ${props => props.theme.spacing.standard};
 
-  ${breakpoint.desktop`
-    flex: 1;
+  ${breakpoint.tablet`
+    flex: 0 1 50%;
     margin-bottom: 0;
   `};
-`
+`;
 
-export const FormWrapper = styled.div``
+export const InlineForm = styled.form`
+  display: flex;
 
-export const Button = styled.button`
-  padding: 10px; /* Will replace */
-  margin-left: ${props => props.theme.smallPadding};
-`
+  ${breakpoint.tablet`
+    flex: 0 1 40%;
+    margin-bottom: 0;
+    justify-content: flex-end;
+  `};
+
+  ${Button} {
+    cursor: pointer;
+    margin-left: ${props => props.theme.spacing.small};
+  }
+`;
