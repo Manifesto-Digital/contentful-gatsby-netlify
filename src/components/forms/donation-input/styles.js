@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { inputStyles } from '../../styled/inputs';
 
-export const Wrapper = styled.span`
+export const Wrapper = styled.div`
   position: relative;
 `;
 

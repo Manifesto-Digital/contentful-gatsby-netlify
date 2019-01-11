@@ -6,6 +6,7 @@ import { getQueryParams } from '../../utils/query-params';
 // Components
 import DonationInput from '../forms/donation-input';
 // Styles
+import { VisuallyHidden } from '../styled/accessibility';
 import { InlineForm } from './styles';
 import Button from '../button';
 
@@ -57,6 +58,7 @@ const DonationForm = ({ placeholder }) => {
               <Field type="hidden" name="amount" />
               <Field type="hidden" name="reserved_appeal_code" />
               <Field type="hidden" name="frequency" />
+              <VisuallyHidden as="label" htmlFor="amount-holder" />
               <Field
                 name="amount-holder"
                 render={props => (
@@ -66,6 +68,7 @@ const DonationForm = ({ placeholder }) => {
                     placeholder={placeholder ? placeholder.toString() : '30'}
                     {...props}
                     aria-label="Donate"
+                    id="amount-holder"
                     onChange={e => handleAmountChange(e, setFieldValue)}
                   />
                 )}
