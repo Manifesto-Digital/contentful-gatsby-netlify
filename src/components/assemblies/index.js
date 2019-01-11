@@ -7,6 +7,7 @@ import ContentGrid from '../content-grid';
 import Banner from '../banner';
 import InlineCallOut from '../inline-callout';
 import LinkBox from '../link-box';
+import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 
 const Assemblies = ({ assemblies }) => {
@@ -52,6 +53,10 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicLinkBox') {
         return <LinkBox key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicRelatedAdvice') {
+        return <RelatedAdvice key={id} data={assembly} />;
       }
 
       return null;
