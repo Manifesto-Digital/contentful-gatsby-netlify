@@ -87,6 +87,7 @@ export const pageQuery = graphql`
           ...DownloadBannerAssemblyFragment
           ...ShareBlockFragment
           ...NavigationLinkBoxFragment
+          ...LinkBoxFragment
         }
       }
     }

@@ -23,6 +23,8 @@ theme.palette = {
   errorLight: '#ffe7ec',
   success: '#62b33c',
   successLight: '#e6f8e7',
+
+  overlay: 'rgba(43,46,56,.9)',
 };
 
 theme.fonts = {

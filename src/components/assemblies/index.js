@@ -7,7 +7,7 @@ import ContentGrid from '../content-grid';
 import Banner from '../banner';
 import ShareBlock from '../share-block';
 import InlineCallOut from '../inline-callout';
-import NavigationLinkBox from '../navigation-link-box';
+import LinkBox from '../link-box';
 import VideoEmbed from '../video';
 
 const Assemblies = ({ assemblies }) => {
@@ -51,8 +51,8 @@ const Assemblies = ({ assemblies }) => {
         return <DownloadBanner key={id} banner={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicNavigationLinkBox') {
-        return <NavigationLinkBox key={id} data={assembly} />;
+      if (internal.type === 'ContentfulTopicLinkBox') {
+        return <LinkBox key={id} data={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicShareBlock') {

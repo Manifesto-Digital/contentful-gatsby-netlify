@@ -2,6 +2,7 @@
 
 exports[`renders correct styles: content 1`] = `
 "display: block;
+ position: relative;
  bottom: 40px;
  background: rgb(255, 255, 255);
  overflow: auto;

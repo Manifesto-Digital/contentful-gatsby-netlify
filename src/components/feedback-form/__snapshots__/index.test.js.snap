@@ -30,6 +30,7 @@ exports[`renders correctly 1`] = `
     My Heading
   </h3>
   <textarea
+    autoFocus={true}
     className="c0"
     name="comment"
     onBlur={[Function]}
@@ -38,6 +39,7 @@ exports[`renders correctly 1`] = `
     type="textarea"
     value=""
   />
+  <mock-recaptcha />
   <button
     className="c1"
     type="submit"

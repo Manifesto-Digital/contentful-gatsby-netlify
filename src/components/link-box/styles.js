@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Wrapper = styled.div`
@@ -23,13 +22,14 @@ export const ListWrapper = styled.div`
   `};
 `;
 
-export const StyledLink = styled(Link)`
+export const ListItem = styled.div`
   margin-bottom: ${props => props.theme.spacing.standard};
+  padding-right: ${props => props.theme.spacing.standard};
   font-size: ${props => props.theme.fontsize.small};
   font-weight: 400;
   text-decoration: none;
   ${breakpoint.desktop`
-    flex: 0 0 33%;
+    flex: 0 0 ${props => 100 / props.rowCount}%;
   `};
 
   &:hover {
