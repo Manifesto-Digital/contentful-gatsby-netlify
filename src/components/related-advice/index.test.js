@@ -1,39 +1,33 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Link } from 'gatsby';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
-import LinkBox from './index';
-import { ListItem } from './styles';
+import RelatedAdvice from './index';
+import { Title, ListItem } from './styles';
 import { createFactory, createInternalLink } from '../../utils/test-factories';
 
-export const createLinkBox = createFactory({
+export const createRelatedAdvice = createFactory({
   headerText: 'What an amazing banner',
   itemsPerRow: 3,
-  links: [
-    createInternalLink(),
-    createInternalLink(),
-    createInternalLink(),
-    createInternalLink(),
-  ],
+  links: [createInternalLink(), createInternalLink(), createInternalLink()],
 });
 
 it('renders correctly', () => {
-  const mockData = createLinkBox();
+  const mockData = createRelatedAdvice();
 
-  snapshotComponent(<LinkBox data={mockData} />);
+  snapshotComponent(<RelatedAdvice data={mockData} />);
 });
 
 it('displays the correct header text', () => {
-  const mockData = createLinkBox({
+  const mockData = createRelatedAdvice({
     headerText: 'Test header text',
   });
-  const wrapper = shallow(<LinkBox data={mockData} />);
-  expect(wrapper.find('h2').text()).toBe(mockData.headerText);
+  const wrapper = shallow(<RelatedAdvice data={mockData} />);
+  expect(wrapper.find(Title).text()).toBe(mockData.headerText);
 });
 
 it('sets the number of links per row', () => {
-  const mockData = createLinkBox({ itemsPerRow: 3 });
-  const wrapper = shallow(<LinkBox data={mockData} />);
+  const mockData = createRelatedAdvice({ itemsPerRow: 3 });
+  const wrapper = shallow(<RelatedAdvice data={mockData} />);
   expect(
     wrapper
       .find(ListItem)
@@ -43,7 +37,7 @@ it('sets the number of links per row', () => {
 });
 
 it('displays link and title correctly', () => {
-  const mockData = createLinkBox({
+  const mockData = createRelatedAdvice({
     link: [
       {
         title: 'Shelter Demo Page',
@@ -51,19 +45,19 @@ it('displays link and title correctly', () => {
       },
     ],
   });
-  const wrapper = shallow(<LinkBox data={mockData} />);
+  const wrapper = shallow(<RelatedAdvice data={mockData} />);
 
   expect(
     wrapper
-      .find(Link)
+      .find(ListItem)
       .at(0)
       .text()
   ).toBe(mockData.links[0].title);
 
   expect(
     wrapper
-      .find(Link)
+      .find(ListItem)
       .at(0)
-      .prop('to')
+      .prop('href')
   ).toBe(mockData.links[0].slug);
 });

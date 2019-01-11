@@ -7,6 +7,10 @@ exports[`renders correctly 1`] = `
   padding: 0 20px;
 }
 
+.c2 {
+  margin-bottom: 30px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16,13 +20,9 @@ exports[`renders correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 40px 0;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
-  border-radius: 3px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -33,21 +33,46 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 20px;
-  padding-right: 20px;
-  font-size: 0.875rem;
+  margin-right: 20px;
+  padding: 20px;
+  background: #212122;
+  border: 2px solid #212122;
+  color: #fff;
+  font-size: 1rem;
   font-weight: 400;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c3:hover {
-  color: #ea232d;
+.c4:hover {
+  background: #fff;
+  color: #212122;
 }
 
-@media (min-width:62em) {
-  .c2 {
+.c5 {
+  display: block;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  fill: #fff;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 15px;
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -57,11 +82,11 @@ exports[`renders correctly 1`] = `
   }
 }
 
-@media (min-width:62em) {
-  .c3 {
-    -webkit-flex: 0 0 33.333333333333336%;
-    -ms-flex: 0 0 33.333333333333336%;
-    flex: 0 0 33.333333333333336%;
+@media (min-width:40.0625em) {
+  .c4 {
+    -webkit-flex: 0 0 calc(33.333333333333336% - 20px);
+    -ms-flex: 0 0 calc(33.333333333333336% - 20px);
+    flex: 0 0 calc(33.333333333333336% - 20px);
   }
 }
 
@@ -71,48 +96,41 @@ exports[`renders correctly 1`] = `
   <div
     className="c1"
   >
-    <h2>
+    <h2
+      className="c2"
+    >
       What an amazing banner
     </h2>
     <div
-      className="c2"
+      className="c3"
     >
-      <div
-        className="c3"
+      <a
+        className="c4"
+        href="internal-link-slug"
       >
-        <Link
-          to="internal-link-slug"
-        >
-          Test Page Title
-        </Link>
-      </div>
-      <div
-        className="c3"
+        Test Page Title
+        <span
+          className="isvg loading c5"
+        />
+      </a>
+      <a
+        className="c4"
+        href="internal-link-slug"
       >
-        <Link
-          to="internal-link-slug"
-        >
-          Test Page Title
-        </Link>
-      </div>
-      <div
-        className="c3"
+        Test Page Title
+        <span
+          className="isvg loading c5"
+        />
+      </a>
+      <a
+        className="c4"
+        href="internal-link-slug"
       >
-        <Link
-          to="internal-link-slug"
-        >
-          Test Page Title
-        </Link>
-      </div>
-      <div
-        className="c3"
-      >
-        <Link
-          to="internal-link-slug"
-        >
-          Test Page Title
-        </Link>
-      </div>
+        Test Page Title
+        <span
+          className="isvg loading c5"
+        />
+      </a>
     </div>
   </div>
 </div>
