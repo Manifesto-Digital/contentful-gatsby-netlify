@@ -19,6 +19,42 @@ exports[`displays error if invalid & touched 1`] = `
 />
 `;
 
+exports[`displays neutral state if not touched: no error 1`] = `
+.c0 {
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  display: block;
+  background-size: 15px 15px;
+  outline: none;
+  width: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+<input
+  className="c0"
+  name="foo"
+/>
+`;
+
+exports[`displays neutral state if not touched: with error 1`] = `
+.c0 {
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  display: block;
+  background-size: 15px 15px;
+  outline: none;
+  width: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+<input
+  className="c0"
+  name="foo"
+/>
+`;
+
 exports[`displays success if valid & touched 1`] = `
 .c0 {
   border: 1px solid #62b33c;
