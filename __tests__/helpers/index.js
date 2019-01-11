@@ -15,3 +15,13 @@ export const snapshotComponent = (element, name) => {
 
 export const mountWithTheme = component =>
   mount(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
+
+export const changeInput = (wrapper, value) => {
+  const input = wrapper.getDOMNode();
+  input.value = value;
+
+  wrapper.simulate('change', {
+    target: input,
+    currentTarget: input,
+  });
+};

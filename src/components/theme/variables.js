@@ -9,6 +9,7 @@ theme.palette = {
   grey10: '#e5e5e5',
   grey15: '#d9d9d9',
   grey45: '#8c8c8c',
+  grey60: '#999',
   black: '#212122',
   // Blues
   sanMarinoBlue: '#4d63b5',
