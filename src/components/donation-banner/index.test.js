@@ -1,5 +1,4 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
 import DonationBanner from './index';
 import { createFactory } from '../../utils/test-factories';
