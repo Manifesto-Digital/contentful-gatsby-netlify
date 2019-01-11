@@ -1,17 +1,136 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+.c5 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #4d63b5;
+  border: none;
+  color: #fff;
+}
+
+.c6 {
+  fill: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: top;
+  margin-top: -2px;
+}
+
+.c3 {
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  display: block;
+  background-size: 15px 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.c0 {
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.c2 {
+  margin-bottom: 1em;
+}
+
+.c4 {
+  background: #4d63b5;
+  position: relative;
+  width: auto;
+  padding: 10px;
+  color: #fff;
+  display: block;
+}
+
+.c1 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    display: inline-block;
+    width: 75%;
+    margin-right: 2em;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c4 {
+    display: inline-block;
+  }
+}
+
+<form
+  action="https://england.shelter.org.uk/search"
+  className="c0"
+  method="GET"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
   <h3>
     Search our housing advice
   </h3>
+  <legend
+    className="c1"
+  >
+    Search our website by keyword
+  </legend>
+  <label
+    className="c1"
+    htmlFor="searchTerm"
+  >
+    Enter your search term
+  </label>
   <input
+    autoComplete="off"
+    className="c2 c3"
+    id="searchTerm"
+    name="query"
+    onBlur={[Function]}
+    onChange={[Function]}
     placeholder="Search topics"
+    type="search"
+  />
+  <input
+    name="collection"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="shelter-england"
+  />
+  <input
+    name="type"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="Advice"
   />
   <button
+    className="c4 c5"
+    name="Search"
     type="submit"
   >
+    <span
+      className="isvg loading c6"
+    />
     Search
   </button>
-</div>
+</form>
 `;

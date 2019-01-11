@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-// import Button from '../button';
-import { ButtonWithIcon } from '../button';
+import ButtonWithIcon from '../button/button-with-icon';
 import { breakpoint } from '../theme/breakpoint';
+import TextInput from '../forms/text-input';
 
 export const AdviceSearchForm = styled.form`
-  padding: ${props => props.theme.spacing.padding};
+  padding: ${props => props.theme.spacing.standard};
   background-color: ${props => props.theme.palette.offWhite};
 `;
 
-export const SearchInput = styled.input`
+export const SearchInput = styled(TextInput)`
   margin-bottom: 1em;
   ${breakpoint.tablet`
         display: inline-block;
@@ -21,7 +21,7 @@ export const SearchButton = styled(ButtonWithIcon)`
   background: ${props => props.theme.palette.sanMarinoBlue};
   position: relative;
   width: auto;
-  padding: ${props => props.theme.spacing.smallPadding};
+  padding: ${props => props.theme.spacing.small};
   color: ${props => props.theme.palette.white};
   display: block;
   ${breakpoint.tablet`

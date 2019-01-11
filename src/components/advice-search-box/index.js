@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Form, Field, Formik } from 'formik';
+import * as Yup from 'yup';
+import MagGlass from '../../assets/svg/icons/search-light.svg';
+
 import { AdviceSearchForm, SearchInput, SearchButton } from './styles';
+
 import { VisuallyHidden } from '../styled/accessibility';
 
 const AdviceSearchBox = ({ data }) => {
@@ -8,44 +13,58 @@ const AdviceSearchBox = ({ data }) => {
   const country = data.collectionToSearch.toLowerCase();
 
   return (
-    <AdviceSearchForm
-      method="GET"
-      action={`https://${country}.shelter.org.uk/search`}
+    <Formik
+      initialValues={{
+        collection: `shelter-${country}`,
+      }}
+      validationSchema={Yup.object({
+        query: Yup.string(),
+      })}
     >
-      <h3>{headerText}</h3>
+      {({ submitForm }) => (
+        <AdviceSearchForm
+          as={Form}
+          onSubmit={submitForm}
+          action={`https://${country}.shelter.org.uk/search`}
+          method="GET"
+        >
+          <h3>{headerText}</h3>
 
-      <fieldset>
-        <VisuallyHidden as="legend">
-          Search our website by keyword
-        </VisuallyHidden>
+          <VisuallyHidden as="legend">
+            Search our website by keyword
+          </VisuallyHidden>
 
-        <VisuallyHidden as="label" htmlFor="searchTerm">
-          Enter your search term
-        </VisuallyHidden>
+          <VisuallyHidden as="label" htmlFor="searchTerm">
+            Enter your search term
+          </VisuallyHidden>
 
-        <SearchInput
-          id="searchTerm"
-          placeholder={placeholder || 'Search topics'}
-          type="search"
-          name="query"
-          aria-label="Search"
-          autoComplete="off"
-        />
+          <Field
+            name="query"
+            render={props => (
+              <SearchInput
+                id="searchTerm"
+                placeholder={placeholder || 'Search topics'}
+                type="search"
+                autoComplete="off"
+                {...props}
+              />
+            )}
+          />
 
-        <input type="hidden" name="collection" value={`shelter-${country}`} />
+          <Field type="hidden" name="collection" />
 
-        <input
-          type="hidden"
-          name={country === 'england' ? 'type' : 'meta_A'}
-          value="Advice"
-        />
+          <Field
+            type="hidden"
+            name={country === 'england' ? 'type' : 'meta_A'}
+            value="Advice"
+          />
 
-        <SearchButton name="Search" type="submit" bg="blue">
-          Search
-          <i className="fa fa-search button__search--icon" aria-hidden="true" />
-        </SearchButton>
-      </fieldset>
-    </AdviceSearchForm>
+          <SearchButton name="Search" type="submit" bg="blue" icon={MagGlass}>
+            Search
+          </SearchButton>
+        </AdviceSearchForm>
+      )}
+    </Formik>
   );
 };
 
