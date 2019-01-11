@@ -7,7 +7,6 @@ exports[`displays error if invalid & touched 1`] = `
   background-color: #ffe7ec;
   display: block;
   background-size: 15px 15px;
-  outline: none;
   width: auto;
   margin-bottom: 20px;
   padding: 10px;
@@ -25,7 +24,6 @@ exports[`displays neutral state if not touched: no error 1`] = `
   background-color: white;
   display: block;
   background-size: 15px 15px;
-  outline: none;
   width: auto;
   margin-bottom: 20px;
   padding: 10px;
@@ -43,7 +41,6 @@ exports[`displays neutral state if not touched: with error 1`] = `
   background-color: white;
   display: block;
   background-size: 15px 15px;
-  outline: none;
   width: auto;
   margin-bottom: 20px;
   padding: 10px;
@@ -62,7 +59,6 @@ exports[`displays success if valid & touched 1`] = `
   background-color: #e6f8e7;
   display: block;
   background-size: 15px 15px;
-  outline: none;
   width: auto;
   margin-bottom: 20px;
   padding: 10px;
