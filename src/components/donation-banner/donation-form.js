@@ -3,6 +3,7 @@ import { Form, Field, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 import { getQueryParams } from '../../utils/query-params';
+import { donation } from '../../variables';
 // Components
 import DonationInput from '../forms/donation-input';
 // Styles
@@ -41,7 +42,7 @@ const DonationForm = ({ defaultDonationValue }) => {
       {({ location }) => (
         <Formik
           initialValues={{
-            cid: '263',
+            cid: donation.defaultEnglandCampaignId,
             free_amount: '1',
             'amount-holder': '',
             amount: defaultPennyValue.toString(),
