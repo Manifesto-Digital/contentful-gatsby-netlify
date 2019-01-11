@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { inputStyles } from '../../styled/inputs';
 import successIcon from './success.png';
 import errorIcon from './error.png';
 
@@ -27,11 +28,5 @@ const getStyles = ({ touched, error, theme }) => {
 
 export const StyledInput = styled.input`
   ${getStyles};
-  display: ${props => (props.inline ? 'inline-block' : 'block')};
-  background-size: 15px 15px;
-  outline: none;
-  width: ${props => (props.fullWidth ? '100%' : 'auto')};
-  margin-bottom: ${props =>
-    props.noMargin ? '0' : props.theme.spacing.standard};
-  padding: ${props => props.theme.spacing.small};
+  ${inputStyles}
 `;
