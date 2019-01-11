@@ -1,11 +1,13 @@
-import { createGlobalStyle } from 'styled-components'
-import { reset } from './reset'
-import { breakpoint } from './breakpoint'
+import { createGlobalStyle } from 'styled-components';
+import { reset } from './reset';
+import { breakpoint } from './breakpoint';
+import { linkStyles } from '../styled/links';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
     html {
         height: 100%;
+        font-size:16px;
         scroll-behavior: smooth !important;
         ${breakpoint.tablet`
             font-size:  115%;
@@ -62,14 +64,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        color: ${props => props.theme.palette.sanMarinoBlue};
-        text-decoration: underline;
-        font-weight: 700;
-
+        ${linkStyles};
     }
 
     li {
         margin-bottom: .5rem;
     }
 
-`
+`;

@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { richTextPropTypes } from '../../prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { richTextPropTypes } from '../../prop-types';
 // Styles
-import { Grid, Item, ItemsWrapper } from './styles'
-import { Container } from '../styled/containers'
+import { Grid, Item, ItemsWrapper } from './styles';
+import { Container } from '../styled/containers';
 
 const ContentGrid = ({ content }) => {
-  const { grid1, grid2, grid3, grid4 } = content
+  const { grid1, grid2, grid3, grid4 } = content;
 
   return (
     <Grid>
@@ -19,8 +19,8 @@ const ContentGrid = ({ content }) => {
         </ItemsWrapper>
       </Container>
     </Grid>
-  )
-}
+  );
+};
 ContentGrid.propTypes = {
   content: PropTypes.shape({
     grid1: PropTypes.shape(richTextPropTypes),
@@ -28,6 +28,6 @@ ContentGrid.propTypes = {
     grid3: PropTypes.shape(richTextPropTypes),
     grid4: PropTypes.shape(richTextPropTypes),
   }),
-}
+};
 
-export default ContentGrid
+export default ContentGrid;

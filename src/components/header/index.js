@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 // Styles
-import { Wrapper } from './styles'
+import { Wrapper } from './styles';
 
-const Header = () => <Wrapper />
+const Header = () => <Wrapper />;
 
-export default Header
+export default Header;

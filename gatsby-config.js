@@ -1,6 +1,6 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -25,6 +25,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true,
+        svgo: true,
+        svgoConfig: {
+          removeScriptElement: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId:
@@ -35,15 +45,14 @@ module.exports = {
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/,
-        },
-      },
-    },
     'gatsby-plugin-offline',
     '@contentful/gatsby-transformer-contentful-richtext',
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-WWSW2HH',
+        includeInDevelopment: true,
+      },
+    },
   ],
-}
+};
