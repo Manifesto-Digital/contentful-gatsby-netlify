@@ -42,7 +42,6 @@ exports[`renders correctly 1`] = `
   </span>
   <input
     className="c2"
-    data-default-amount="30"
     name="foo"
     pattern="[0-9]*"
     type="number"

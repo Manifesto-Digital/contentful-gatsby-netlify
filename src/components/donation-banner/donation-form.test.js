@@ -38,6 +38,23 @@ it('updates the hidden amount field when visible donation amount field changes',
   expect(hiddenInput.props().value).toEqual((25 * 100).toString());
 });
 
+it('reverts to default value when visible input has no value', () => {
+  const mockDefaultValue = 20;
+  const wrapper = mountWithTheme(
+    <DonationForm defaultDonationValue={mockDefaultValue} />
+  );
+  const visibleInput = wrapper.find('input[name="amount-holder"]');
+  // Give visible input value then remove
+  visibleInput.simulate('change', { target: { value: '25' } });
+  visibleInput.simulate('change', { target: { value: '' } });
+
+  const hiddenInput = wrapper.find('input[name="amount"]');
+  // Expect the amount hidden field to have reverted back to the default
+  expect(hiddenInput.props().value).toEqual(
+    (mockDefaultValue * 100).toString()
+  );
+});
+
 it('has the correct form method', () => {
   const wrapper = mountWithTheme(<DonationForm />);
   // Check method is GET
@@ -58,11 +75,11 @@ it('has submit button', () => {
 });
 
 it('shows the placeholder based on prop', () => {
-  const mockPlaceholder = 30;
+  const mockDefaultValue = 30;
   const wrapper = mountWithTheme(
-    <DonationForm placeholder={mockPlaceholder} />
+    <DonationForm defaultDonationValue={mockDefaultValue} />
   );
   expect(
     wrapper.find('input[name="amount-holder"]').props().placeholder
-  ).toEqual(mockPlaceholder.toString());
+  ).toEqual(mockDefaultValue.toString());
 });

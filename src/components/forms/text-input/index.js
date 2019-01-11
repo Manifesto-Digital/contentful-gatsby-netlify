@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { StyledInput } from './styles';
 
 /**
- * Renders
- *
  * @param {import('formik').FieldProps} props
  */
 const TextInput = ({ field, form, ...rest }) => (

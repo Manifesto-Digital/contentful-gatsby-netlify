@@ -125,7 +125,9 @@ exports[`renders correctly 1`] = `
   <label
     className="c1"
     htmlFor="amount-holder"
-  />
+  >
+    Donate
+  </label>
   <div
     className="c2"
   >
@@ -135,9 +137,7 @@ exports[`renders correctly 1`] = `
       £
     </span>
     <input
-      aria-label="Donate"
       className="c4"
-      data-default-amount="30"
       id="amount-holder"
       name="amount-holder"
       onBlur={[Function]}

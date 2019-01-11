@@ -8,7 +8,7 @@ export const DonationBanner = graphql`
       type
     }
     headerText
-    donationInputPlaceholder
+    donationInputDefaultValue
     removeMarginBottom
   }
 `;

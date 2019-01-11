@@ -10,8 +10,11 @@ import { VisuallyHidden } from '../styled/accessibility';
 import { InlineForm } from './styles';
 import Button from '../button';
 
-const DonationForm = ({ placeholder }) => {
-  const checkReservedCode = ({ search }) => {
+const DonationForm = ({ defaultDonationValue }) => {
+  const defaultValue = defaultDonationValue || 30;
+  const defaultPennyValue = defaultValue * 100;
+
+  const getReservedAppealCode = ({ search }) => {
     const urlParams = getQueryParams(search);
     return urlParams.reserved_appeal_code || '';
   };
@@ -25,12 +28,12 @@ const DonationForm = ({ placeholder }) => {
     setFieldValue(amountHolderName, amountValue);
 
     // Also update the actual hidden amount field if an amount has been set
-    if (amountValue && amountValue.length > 0) {
+    if (amountValue) {
       const amountInPennies = (amountValue * 100).toString();
       setFieldValue('amount', amountInPennies);
     } else {
       // Reset it back to default to ensure always set
-      setFieldValue('amount', '3000');
+      setFieldValue('amount', defaultPennyValue.toString());
     }
   };
   return (
@@ -41,8 +44,8 @@ const DonationForm = ({ placeholder }) => {
             cid: '263',
             free_amount: '1',
             'amount-holder': '',
-            amount: '3000',
-            reserved_appeal_code: checkReservedCode(location),
+            amount: defaultPennyValue.toString(),
+            reserved_appeal_code: getReservedAppealCode(location),
             frequency: 'once',
           }}
         >
@@ -58,16 +61,17 @@ const DonationForm = ({ placeholder }) => {
               <Field type="hidden" name="amount" />
               <Field type="hidden" name="reserved_appeal_code" />
               <Field type="hidden" name="frequency" />
-              <VisuallyHidden as="label" htmlFor="amount-holder" />
+              <VisuallyHidden as="label" htmlFor="amount-holder">
+                Donate
+              </VisuallyHidden>
               <Field
                 name="amount-holder"
                 render={props => (
                   <DonationInput
                     noMargin
                     inline
-                    placeholder={placeholder ? placeholder.toString() : '30'}
+                    placeholder={defaultValue.toString()}
                     {...props}
-                    aria-label="Donate"
                     id="amount-holder"
                     onChange={e => handleAmountChange(e, setFieldValue)}
                   />

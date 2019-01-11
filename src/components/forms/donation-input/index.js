@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 // Styles
 import { Wrapper, CurrencySymbol, Input } from './styles';
 
-/**
- * Renders
- *
- * @param {import('formik').FieldProps} props
- */
 const DonationInput = ({ field, form, ...rest }) => (
   <Wrapper>
     <CurrencySymbol>£</CurrencySymbol>
@@ -18,7 +13,6 @@ const DonationInput = ({ field, form, ...rest }) => (
       error={form.errors[field.name]}
       touched={form.touched[field.name]}
       pattern="[0-9]*"
-      data-default-amount="30"
     />
   </Wrapper>
 );

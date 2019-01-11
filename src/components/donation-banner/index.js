@@ -7,14 +7,14 @@ import { Container } from '../styled/containers';
 import { Banner, Wrapper, Header } from './styles';
 
 const DonationBanner = ({ banner }) => {
-  const { headerText, removeMarginBottom, donationInputPlaceholder } = banner;
+  const { headerText, removeMarginBottom, donationInputDefaultValue } = banner;
 
   return (
     <Banner removeMarginBottom={removeMarginBottom}>
       <Container>
         <Wrapper>
           <Header>{headerText}</Header>
-          <DonationForm placeholder={donationInputPlaceholder} />
+          <DonationForm defaultDonationValue={donationInputDefaultValue} />
         </Wrapper>
       </Container>
     </Banner>
