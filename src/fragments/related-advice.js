@@ -11,7 +11,6 @@ export const RelatedAdviceFragment = graphql`
     links {
       title
       slug
-      reviewStatus
     }
   }
 `;

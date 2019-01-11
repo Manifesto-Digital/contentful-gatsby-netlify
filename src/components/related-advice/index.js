@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { Container } from '../styled/containers';
-import { Wrapper, ListWrapper, ListItem } from './styles';
+import { Title, Wrapper, ListWrapper, ListItem, ArrowSVG } from './styles';
+import ArrowRight from '../../assets/svg/icons/arrow-right.svg';
 
 const RelatedAdvice = ({ data }) => {
   const { headerText, itemsPerRow, links } = data;
   return (
     <Container>
       <Wrapper>
-        <h2>{headerText}</h2>
+        <Title>{headerText}</Title>
         <ListWrapper>
           {links.map((link, i) => (
-            <ListItem key={i} rowCount={itemsPerRow}>
-              <Link to={link.slug}>{link.title}</Link>
+            <ListItem key={i} rowCount={itemsPerRow} href={link.slug}>
+              {link.title}
+              <ArrowSVG src={ArrowRight} cacheGetRequests />
             </ListItem>
           ))}
         </ListWrapper>
