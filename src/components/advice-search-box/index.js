@@ -19,7 +19,12 @@ const AdviceSearchBox = ({ data }) => {
           Search our website by keyword
         </VisuallyHidden>
 
+        <VisuallyHidden as="label" htmlFor="searchTerm">
+          Enter your search term
+        </VisuallyHidden>
+
         <SearchInput
+          id="searchTerm"
           placeholder={placeholder || 'Search topics'}
           type="search"
           name="query"
