@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Tabs, TabPanel } from 'react-tabs';
 import PropTypes from 'prop-types';
+import { StyledSlider, markStyle } from './slider';
 import { Container } from '../styled/containers';
 import {
   StyledDonateHero,
@@ -28,6 +29,24 @@ function validateDefaultAmounts(props) {
   });
 }
 
+const getMarks = (tab, activeValue) => {
+  const values = Object.keys(tab.amounts).map(x => Number.parseInt(x));
+  values.sort((a, b) => a - b);
+
+  const marks = {};
+  values.forEach(value => {
+    marks[value] = {
+      style: markStyle(value === activeValue),
+      label: `£${value}`,
+    };
+  });
+
+  const min = values[0];
+  const max = values[values.length - 1];
+
+  return { marks, min, max };
+};
+
 const DonateHero = props => {
   const [selectedTabId, setSelectedTabId] = useState('single');
 
@@ -39,7 +58,7 @@ const DonateHero = props => {
     monthly: props.monthly.defaultAmount,
   });
 
-  const amount = selectedTab.amounts[values[selectedTabId]];
+  const selectedAmount = selectedTab.amounts[values[selectedTabId]];
 
   // TODO: Supress error boundary warnings. See https://github.com/facebook/react/issues/11098
   // REVIEW: Possibly make this conditionally run during SSR.
@@ -47,7 +66,7 @@ const DonateHero = props => {
 
   return (
     <StyledDonateHero>
-      <StyledImage {...amount.image} />
+      <StyledImage {...selectedAmount.image} />
 
       <Container>
         <StyledSliderBox>
@@ -57,27 +76,35 @@ const DonateHero = props => {
               <StyledTab>Give monthly</StyledTab>
             </StyledTabList>
 
-            {tabIds.map(tabId => (
-              <TabPanel>
-                <StyledTabContent>
-                  <h2>Your donations make a difference</h2>
-                  <p>{amount.description}</p>
-                  <input
-                    type="range"
-                    step={10}
-                    value={values[tabId]}
-                    onChange={event => {
-                      const value = Number.parseFloat(event.target.value);
+            {tabIds.map(tabId => {
+              const tab = props[tabId];
 
-                      setValues(oldValues => ({
-                        ...oldValues,
-                        [tabId]: value,
-                      }));
-                    }}
-                  />
-                </StyledTabContent>
-              </TabPanel>
-            ))}
+              const currentValue = values[tabId];
+
+              const { marks, min, max } = getMarks(tab, currentValue);
+
+              return (
+                <TabPanel key={tabId}>
+                  <StyledTabContent>
+                    <h2>Your donations make a difference</h2>
+                    <p>{selectedAmount.description}</p>
+                    <StyledSlider
+                      min={min}
+                      max={max}
+                      marks={marks}
+                      step={null}
+                      value={currentValue}
+                      onChange={value =>
+                        setValues(oldValues => ({
+                          ...oldValues,
+                          [tabId]: value,
+                        }))
+                      }
+                    />
+                  </StyledTabContent>
+                </TabPanel>
+              );
+            })}
           </Tabs>
         </StyledSliderBox>
       </Container>

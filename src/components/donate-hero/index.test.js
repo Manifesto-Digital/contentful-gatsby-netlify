@@ -1,6 +1,7 @@
 import React from 'react';
+import Slider from 'rc-slider/lib/Slider';
 import DonateHero from '.';
-import { mountWithTheme, changeInput } from '../../../__tests__/helpers';
+import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
 
 const createImage = (type, amount) => ({
   src: `${type}-${amount}-foo`,
@@ -25,7 +26,7 @@ const createTab = (type, defaultAmount) => ({
 
 const expectAmount = (wrapper, { value, description, image }) => {
   expect(wrapper.find('img').props()).toMatchObject(image);
-  expect(wrapper.find('input[type="range"]').prop('value')).toBe(value);
+  expect(wrapper.find(Slider).prop('value')).toBe(value);
   // REVIEW: Maybe make this more specific?
   expect(wrapper.text()).toEqual(expect.stringContaining(description));
 };
@@ -56,6 +57,15 @@ describe('error handling', () => {
       `"Invalid default monthly amount of £10. The default amount must correspond to one of the specified amounts."`
     );
   });
+});
+
+it('renders correctly', () => {
+  snapshotComponent(
+    <DonateHero
+      monthly={createTab('monthly', 2)}
+      single={createTab('single', 3)}
+    />
+  );
 });
 
 it('initially displays default single-payment amount, background image and description', () => {
@@ -104,7 +114,11 @@ it('switches background image and description when changing slider', () => {
 
   const expectedImage = createImage('single', 1);
 
-  changeInput(wrapper.find('input[type="range"]'), 1);
+  const onChange = wrapper.find(Slider).prop('onChange');
+
+  onChange(1);
+
+  wrapper.update();
 
   expectAmount(wrapper, {
     value: 1,

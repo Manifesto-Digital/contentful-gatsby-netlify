@@ -29,7 +29,6 @@ export const StyledTab = styled(Tab).attrs({
   selectedClassName: 'is-selected',
 })`
   flex: 1 1 0;
-  cursor: pointer;
   padding: ${props => props.theme.spacing.standard};
   text-align: center;
 

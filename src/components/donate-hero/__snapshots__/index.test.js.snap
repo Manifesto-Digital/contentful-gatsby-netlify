@@ -1,0 +1,328 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c7 {
+  position: relative;
+  padding-top: 45px;
+}
+
+.c2 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c0 {
+  height: 32rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.c1 {
+  position: absolute;
+  width: 100%;
+}
+
+.c3 {
+  width: 70%;
+  background: #d9d9d9;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.c4 {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 > li {
+  margin: 0;
+}
+
+.c5 {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.c5:not(.is-selected) {
+  background: #f7f7f7;
+  color: #999;
+}
+
+.c5:hover {
+  color: #ea232d;
+}
+
+.c6 {
+  padding: 40px;
+}
+
+<section
+  className="c0"
+>
+  <img
+    className="c1"
+    src="single-3-foo"
+    srcSet="single-3-foo 100w, single-3-bar 200w"
+    title="Image for single 3"
+  />
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="react-tabs"
+        data-tabs={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <ul
+          className="c4"
+          role="tablist"
+        >
+          <li
+            aria-controls="react-tabs-1"
+            aria-disabled="false"
+            aria-selected="true"
+            className="c5 is-selected"
+            id="react-tabs-0"
+            role="tab"
+            tabIndex="0"
+          >
+            Give once
+          </li>
+          <li
+            aria-controls="react-tabs-3"
+            aria-disabled="false"
+            aria-selected="false"
+            className="c5"
+            id="react-tabs-2"
+            role="tab"
+            tabIndex={null}
+          >
+            Give monthly
+          </li>
+        </ul>
+        <div
+          aria-labelledby="react-tabs-0"
+          className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+          id="react-tabs-1"
+          role="tabpanel"
+        >
+          <section
+            className="c6"
+          >
+            <h2>
+              Your donations make a difference
+            </h2>
+            <p>
+              Donate £3 single.
+            </p>
+            <div
+              className="rc-slider rc-slider-with-marks c7"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchStart={[Function]}
+            >
+              <div
+                className="rc-slider-rail"
+                style={
+                  Object {
+                    "backgroundColor": "#bdbec0",
+                    "borderRadius": 5,
+                    "height": 10,
+                    "position": "absolute",
+                    "width": "100%",
+                  }
+                }
+              />
+              <div
+                className="rc-slider-track"
+                style={
+                  Object {
+                    "backgroundColor": "#5a5a5a",
+                    "borderRadius": 5,
+                    "height": 10,
+                    "left": "0%",
+                    "position": "absolute",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              />
+              <div
+                className="rc-slider-step"
+              >
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "0%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "33.33333333333333%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot rc-slider-dot-active"
+                  style={
+                    Object {
+                      "left": "66.66666666666666%",
+                    }
+                  }
+                />
+                <span
+                  className="rc-slider-dot"
+                  style={
+                    Object {
+                      "left": "100%",
+                    }
+                  }
+                />
+              </div>
+              <div
+                aria-disabled={false}
+                aria-valuemax={4}
+                aria-valuemin={1}
+                aria-valuenow={3}
+                className="rc-slider-handle"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                role="slider"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "border": "1px solid #d9d9d9",
+                    "borderRadius": "50%",
+                    "boxShadow": "inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb",
+                    "height": 30,
+                    "left": "66.66666666666666%",
+                    "marginLeft": -15,
+                    "marginTop": -10,
+                    "position": "absolute",
+                    "width": 30,
+                  }
+                }
+                tabIndex={0}
+              />
+              <div
+                className="rc-slider-mark"
+              >
+                <span
+                  className="rc-slider-mark-text rc-slider-mark-text-active"
+                  onMouseDown={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "display": "inline-block",
+                      "left": "0%",
+                      "lineHeight": "35px",
+                      "marginLeft": "-15.000000000000002%",
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "top": 0,
+                      "verticalAlign": "middle",
+                      "width": "30.000000000000004%",
+                    }
+                  }
+                >
+                  £1
+                </span>
+                <span
+                  className="rc-slider-mark-text rc-slider-mark-text-active"
+                  onMouseDown={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "display": "inline-block",
+                      "left": "33.33333333333333%",
+                      "lineHeight": "35px",
+                      "marginLeft": "-15.000000000000002%",
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "top": 0,
+                      "verticalAlign": "middle",
+                      "width": "30.000000000000004%",
+                    }
+                  }
+                >
+                  £2
+                </span>
+                <span
+                  className="rc-slider-mark-text rc-slider-mark-text-active"
+                  onMouseDown={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "display": "inline-block",
+                      "fontSize": "1.25em",
+                      "fontWeight": "bold",
+                      "left": "66.66666666666666%",
+                      "lineHeight": "35px",
+                      "marginLeft": "-15.000000000000002%",
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "top": 0,
+                      "verticalAlign": "middle",
+                      "width": "30.000000000000004%",
+                    }
+                  }
+                >
+                  £3
+                </span>
+                <span
+                  className="rc-slider-mark-text"
+                  onMouseDown={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "display": "inline-block",
+                      "left": "100%",
+                      "lineHeight": "35px",
+                      "marginLeft": "-15.000000000000002%",
+                      "position": "absolute",
+                      "textAlign": "center",
+                      "top": 0,
+                      "verticalAlign": "middle",
+                      "width": "30.000000000000004%",
+                    }
+                  }
+                >
+                  £4
+                </span>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          aria-labelledby="react-tabs-2"
+          className="react-tabs__tab-panel"
+          id="react-tabs-3"
+          role="tabpanel"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;
