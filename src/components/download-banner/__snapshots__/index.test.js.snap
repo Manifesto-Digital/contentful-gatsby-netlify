@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.65em 1em;
+  padding: 10px 20px;
   color: #fff;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -133,8 +133,8 @@ exports[`renders correctly 1`] = `
               78.02 KB
             </p>
           </div>
-          <test-file-stub
-            className="c9"
+          <span
+            className="isvg loading c9"
           />
         </a>
       </div>

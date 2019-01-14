@@ -4,4 +4,16 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+import React from 'react';
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <script
+      key="recaptcha-script"
+      type="text/javascript"
+      async
+      defer
+      src="https://www.google.com/recaptcha/api.js"
+    />,
+  ]);
+};
