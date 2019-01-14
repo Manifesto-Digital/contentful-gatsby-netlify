@@ -5,7 +5,7 @@ import DonateHero from '../components/donate-hero';
 const ModalTest = () => (
   <Layout>
     <DonateHero
-      single={{
+      once={{
         defaultAmount: 30,
         amounts: {
           10: {

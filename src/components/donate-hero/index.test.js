@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from 'rc-slider/lib/Slider';
 import DonateHero from '.';
 import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
+import { StyledDonateButton } from './styles';
+// import serialiseForm from 'form-serialize';
 
 const createImage = (type, amount) => ({
   src: `${type}-${amount}-foo`,
@@ -27,17 +29,27 @@ const createTab = (type, defaultAmount) => ({
 const expectAmount = (wrapper, { value, description, image }) => {
   expect(wrapper.find('img').props()).toMatchObject(image);
   expect(wrapper.find(Slider).prop('value')).toBe(value);
+  expect(wrapper.find(StyledDonateButton).text()).toBe(`Donate £${value}`);
   // REVIEW: Maybe make this more specific?
   expect(wrapper.text()).toEqual(expect.stringContaining(description));
 };
 
+// const serialiseGetForm = form => {
+//   if(form.method.toLowerCase() !== 'get') throw new Error('Form must have method GET');
+
+//   const queryString = serialiseForm(form);
+//   const action = form.getAttribute('action');
+
+//   return queryString ? `${action}?${queryString}` : action;
+// }
+
 describe('error handling', () => {
-  it('errors if default amount is not valid (single)', () => {
+  it('errors if default amount is not valid (once)', () => {
     expect(() => {
       mountWithTheme(
         <DonateHero
           monthly={createTab('monthly', 3)}
-          single={createTab('single', 10)}
+          once={createTab('once', 10)}
         />
       );
     }).toThrowErrorMatchingInlineSnapshot(
@@ -50,7 +62,7 @@ describe('error handling', () => {
       mountWithTheme(
         <DonateHero
           monthly={createTab('monthly', 10)}
-          single={createTab('single', 3)}
+          once={createTab('once', 3)}
         />
       );
     }).toThrowErrorMatchingInlineSnapshot(
@@ -61,36 +73,27 @@ describe('error handling', () => {
 
 it('renders correctly', () => {
   snapshotComponent(
-    <DonateHero
-      monthly={createTab('monthly', 2)}
-      single={createTab('single', 3)}
-    />
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
   );
 });
 
 it('initially displays default single-payment amount, background image and description', () => {
   const wrapper = mountWithTheme(
-    <DonateHero
-      monthly={createTab('monthly', 2)}
-      single={createTab('single', 3)}
-    />
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
   );
 
-  const expectedImage = createImage('single', 3);
+  const expectedImage = createImage('once', 3);
 
   expectAmount(wrapper, {
     value: 3,
-    description: 'Donate £3 single.',
+    description: 'Donate £3 once.',
     image: expectedImage,
   });
 });
 
 it('displays default monthly amount, background image and description when switching to monthly tab', () => {
   const wrapper = mountWithTheme(
-    <DonateHero
-      monthly={createTab('monthly', 2)}
-      single={createTab('single', 3)}
-    />
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
   );
 
   wrapper.find('li[children="Give monthly"]').simulate('click');
@@ -106,13 +109,10 @@ it('displays default monthly amount, background image and description when switc
 
 it('switches background image and description when changing slider', () => {
   const wrapper = mountWithTheme(
-    <DonateHero
-      monthly={createTab('monthly', 2)}
-      single={createTab('single', 3)}
-    />
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
   );
 
-  const expectedImage = createImage('single', 1);
+  const expectedImage = createImage('once', 1);
 
   const onChange = wrapper.find(Slider).prop('onChange');
 
@@ -122,7 +122,28 @@ it('switches background image and description when changing slider', () => {
 
   expectAmount(wrapper, {
     value: 1,
-    description: 'Donate £1 single.',
+    description: 'Donate £1 once.',
     image: expectedImage,
+  });
+});
+
+describe('submission', () => {
+  beforeAll(() => {
+    jest.spyOn(window.location, 'assign');
+  });
+
+  it('submits default amount to correct url', () => {
+    const wrapper = mountWithTheme(
+      <DonateHero
+        monthly={createTab('monthly', 2)}
+        once={createTab('once', 3)}
+      />
+    );
+
+    wrapper.find(StyledDonateButton).simulate('click');
+
+    expect(window.location.assign).toHaveBeenLastCalledWith(
+      'https://donate.shelter.org.uk/?cid=263&amount=300&frequency=once'
+    );
   });
 });

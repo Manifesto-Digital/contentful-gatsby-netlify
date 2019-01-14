@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c7 {
+.c8 {
   position: relative;
   padding-top: 45px;
+  margin-bottom: calc(40px + 10px);
 }
 
 .c2 {
@@ -33,6 +34,7 @@ exports[`renders correctly 1`] = `
 .c4 {
   list-style-type: none;
   padding: 0;
+  margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,14 +66,46 @@ exports[`renders correctly 1`] = `
   padding: 40px;
 }
 
+.c9 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.c7 {
+  margin-bottom: 40px;
+}
+
+.c10 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  color: #4d63b5;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.c10:hover {
+  color: #ea232d;
+}
+
 <section
   className="c0"
 >
   <img
     className="c1"
-    src="single-3-foo"
-    srcSet="single-3-foo 100w, single-3-bar 200w"
-    title="Image for single 3"
+    src="once-3-foo"
+    srcSet="once-3-foo 100w, once-3-bar 200w"
+    title="Image for once 3"
   />
   <div
     className="c2"
@@ -124,11 +158,13 @@ exports[`renders correctly 1`] = `
             <h2>
               Your donations make a difference
             </h2>
-            <p>
-              Donate £3 single.
+            <p
+              className="c7"
+            >
+              Donate £3 once.
             </p>
             <div
-              className="rc-slider rc-slider-with-marks c7"
+              className="rc-slider rc-slider-with-marks c8"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -313,6 +349,19 @@ exports[`renders correctly 1`] = `
                 </span>
               </div>
             </div>
+            <button
+              className="c9"
+              onClick={[Function]}
+              type="button"
+            >
+              Donate £
+              3
+            </button>
+            <button
+              className="c10"
+            >
+              Choose your own amount
+            </button>
           </section>
         </div>
         <div

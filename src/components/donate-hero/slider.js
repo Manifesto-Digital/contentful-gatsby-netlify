@@ -5,6 +5,8 @@ const railHeight = 10;
 const handleSize = 30;
 const markHeight = 35;
 
+const handleOverflow = (handleSize - railHeight) / 2;
+
 export const markStyle = isActive => ({
   position: 'absolute',
   display: 'inline-block',
@@ -41,9 +43,12 @@ export const StyledSlider = styled(Slider).attrs({
     boxShadow:
       'inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb',
     marginLeft: -(handleSize / 2),
-    marginTop: -((handleSize - railHeight) / 2),
+    marginTop: -handleOverflow,
   },
 })`
   position: relative;
-  padding-top: ${markHeight + (handleSize - railHeight) / 2}px;
+  padding-top: ${markHeight + handleOverflow}px;
+  margin-bottom: calc(
+    ${props => props.theme.spacing.large} + ${handleOverflow}px
+  );
 `;

@@ -11,9 +11,12 @@ import {
   StyledTab,
   StyledTabContent,
   StyledTabList,
+  StyledDonateButton,
+  StyledDescription,
 } from './styles';
+import LinkButton from '../link-button';
 
-const tabIds = ['single', 'monthly'];
+const tabIds = ['once', 'monthly'];
 
 function validateDefaultAmounts(props) {
   tabIds.forEach(tabId => {
@@ -47,14 +50,21 @@ const getMarks = (tab, activeValue) => {
   return { marks, min, max };
 };
 
+const goToDonatePage = (amount, frequency) => {
+  window.location.assign(
+    `https://donate.shelter.org.uk/?cid=263&amount=${amount *
+      100}&frequency=${frequency}`
+  );
+};
+
 const DonateHero = props => {
-  const [selectedTabId, setSelectedTabId] = useState('single');
+  const [selectedTabId, setSelectedTabId] = useState('once');
 
   // eslint-disable-next-line react/destructuring-assignment
   const selectedTab = props[selectedTabId];
 
   const [values, setValues] = useState({
-    single: props.single.defaultAmount,
+    once: props.once.defaultAmount,
     monthly: props.monthly.defaultAmount,
   });
 
@@ -87,7 +97,9 @@ const DonateHero = props => {
                 <TabPanel key={tabId}>
                   <StyledTabContent>
                     <h2>Your donations make a difference</h2>
-                    <p>{selectedAmount.description}</p>
+                    <StyledDescription>
+                      {selectedAmount.description}
+                    </StyledDescription>
                     <StyledSlider
                       min={min}
                       max={max}
@@ -101,6 +113,14 @@ const DonateHero = props => {
                         }))
                       }
                     />
+                    <StyledDonateButton
+                      type="button"
+                      onClick={() => goToDonatePage(currentValue, tabId)}
+                    >
+                      Donate £{currentValue}
+                    </StyledDonateButton>
+
+                    <LinkButton>Choose your own amount</LinkButton>
                   </StyledTabContent>
                 </TabPanel>
               );

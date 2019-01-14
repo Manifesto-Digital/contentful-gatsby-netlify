@@ -8,6 +8,7 @@ export const absoluteCenter = () => `
 export const removeListStyles = `
   list-style-type: none;
   padding: 0;
+  margin: 0;
 
   > li {
     margin: 0;
