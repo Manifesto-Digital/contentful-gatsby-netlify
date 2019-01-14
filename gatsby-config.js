@@ -1,4 +1,4 @@
-const { BLOCKS, MARKS } = require('@contentful/rich-text-types');
+const { MARKS } = require('@contentful/rich-text-types');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
