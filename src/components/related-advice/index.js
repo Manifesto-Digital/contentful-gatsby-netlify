@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '../styled/containers';
 import { Title, Wrapper, ListWrapper, ListItem, ArrowSVG } from './styles';
-import ArrowRight from '../../assets/svg/icons/arrow-right.svg';
+import AngleRight from '../../assets/svg/icons/angle-right.svg';
 
 const RelatedAdvice = ({ data }) => {
-  const { headerText, itemsPerRow, links } = data;
+  const { headerText, columns, links } = data;
   return (
     <Container>
       <Wrapper>
         <Title>{headerText}</Title>
         <ListWrapper>
           {links.map((link, i) => (
-            <ListItem key={i} rowCount={itemsPerRow} href={link.slug}>
+            <ListItem key={i} columns={columns} href={link.slug}>
               {link.title}
-              <ArrowSVG src={ArrowRight} cacheGetRequests />
+              <ArrowSVG src={AngleRight} cacheGetRequests />
             </ListItem>
           ))}
         </ListWrapper>
@@ -26,7 +26,7 @@ const RelatedAdvice = ({ data }) => {
 RelatedAdvice.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
-    itemsPerRow: PropTypes.number.isRequired,
+    columns: PropTypes.number.isRequired,
     links: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,

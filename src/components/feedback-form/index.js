@@ -58,6 +58,7 @@ const FeedbackForm = ({ heading }) => {
                 autoFocus
                 type="textarea"
                 placeholder="Your comment"
+                fullWidth
                 {...props}
               />
             )}

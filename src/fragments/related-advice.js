@@ -7,7 +7,7 @@ export const RelatedAdviceFragment = graphql`
       type
     }
     headerText
-    itemsPerRow
+    columns
     links {
       title
       slug

@@ -37,7 +37,7 @@ export const ListItem = styled.a`
   text-decoration: none;
 
   ${breakpoint.tablet`
-    flex: 0 0 calc(${props => 100 / props.rowCount}% - ${props =>
+    flex: 0 0 calc(${props => 100 / props.columns}% - ${props =>
     props.theme.spacing.standard});
   `};
 
