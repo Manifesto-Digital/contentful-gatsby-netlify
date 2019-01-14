@@ -1,25 +1,25 @@
-import styled from 'styled-components'
-import { breakpoint } from '../theme/breakpoint'
-import { absoluteCenter } from '../styled/utils'
-import LinkHandler from '../link-handler'
+import styled from 'styled-components';
+import { breakpoint } from '../theme/breakpoint';
+import { absoluteCenter } from '../styled/utils';
+import LinkHandler from '../link-handler';
 
 export const HeroNoCard = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
   padding-top: 350px;
-  margin-bottom: ${props => props.theme.spacing.largePadding};
+  margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.tablet`
     padding-top: 60vh;
 `};
-`
+`;
 
 export const HeroWithCard = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
-  margin-bottom: ${props => props.theme.spacing.largePadding};
+  margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.tablet`
     padding-top: 3em;
@@ -27,7 +27,7 @@ export const HeroWithCard = styled.section`
   ${breakpoint.desktop`
     padding-top: 10em;
   `}
-`
+`;
 
 export const CenteredMedia = styled.div`
   ${absoluteCenter};
@@ -48,7 +48,7 @@ export const CenteredMedia = styled.div`
         height: auto;
     `};
   }
-`
+`;
 
 export const WithCardMedia = styled.div`
   img {
@@ -58,18 +58,18 @@ export const WithCardMedia = styled.div`
       ${absoluteCenter};
     `};
   }
-`
+`;
 
 export const CenteredContent = styled.div`
   ${absoluteCenter};
   text-align: center;
   width: 100%;
-  padding: 0 ${props => props.theme.spacing.padding};
+  padding: 0 ${props => props.theme.spacing.standard};
   color: ${props =>
     props.black
       ? `${props.theme.palette.black}`
       : `${props.theme.palette.white}`};
-`
+`;
 
 export const CardContent = styled.div`
   box-sizing: border-box;
@@ -92,20 +92,20 @@ export const CardContent = styled.div`
     width: 55%;
     margin-bottom: 7em;
   `};
-`
+`;
 export const Title = styled.h1`
   margin-bottom: 0;
-`
+`;
 export const Subtitle = styled.p`
   font-size: ${props => props.theme.headers.h2};
   margin-bottom: 0;
-`
+`;
 export const CardSubtitle = styled.p`
-  margin-bottom: ${props => props.theme.spacing.smallPadding};
-  margin-top: ${props => props.theme.spacing.smallPadding};
-`
+  margin-bottom: ${props => props.theme.spacing.small};
+  margin-top: ${props => props.theme.spacing.small};
+`;
 export const StyledLinkHandler = styled(LinkHandler)`
   &:hover {
     color: ${props => props.theme.palette.primary};
   }
-`
+`;

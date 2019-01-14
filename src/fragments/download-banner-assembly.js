@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const DownloadBannerAssemblyFragment = graphql`
   fragment DownloadBannerAssemblyFragment on ContentfulAssemblyDownloadBanner {
@@ -7,7 +7,6 @@ export const DownloadBannerAssemblyFragment = graphql`
       type
     }
     headerText
-    bannerColour
     removeMarginBottom
     downloadCta {
       name
@@ -33,4 +32,4 @@ export const DownloadBannerAssemblyFragment = graphql`
       }
     }
   }
-`
+`;

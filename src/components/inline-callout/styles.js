@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import RichText from '../rich-text'
+import styled from 'styled-components';
+import SVG from 'react-inlinesvg';
+import RichText from '../rich-text';
 
 export const InlineBanner = styled.div`
   position: relative;
@@ -10,7 +11,7 @@ export const InlineBanner = styled.div`
     (props.bannerCol === 'white' && props.theme.palette.white) ||
     (props.bannerCol === 'transparent' && 'transparent')};
 
-  padding: ${props => props.theme.spacing.padding};
+  padding: ${props => props.theme.spacing.standard};
   margin-bottom: 1em;
   border-left: 4px solid;
   border-color: ${props =>
@@ -20,16 +21,16 @@ export const InlineBanner = styled.div`
     (props.borderCol === 'facebook-blue' && props.theme.palette.facebook) ||
     (props.borderCol === 'twitter-blue' && props.theme.palette.twitter) ||
     (props.borderCol === 'whatsapp-green' && props.theme.palette.whatsapp)};
-`
+`;
 
 export const TextWrapper = styled(RichText)`
   display: inline-block;
   & > :last-child {
     margin-bottom: 0;
   }
-`
+`;
 
-export const BannerSVG = styled.svg`
+export const BannerSVG = styled(SVG)`
   fill: ${props => props.theme.palette.black};
   width: 30px;
   height: 30px;
@@ -40,4 +41,4 @@ export const BannerSVG = styled.svg`
   + div {
     width: calc(100% - 3em);
   }
-`
+`;

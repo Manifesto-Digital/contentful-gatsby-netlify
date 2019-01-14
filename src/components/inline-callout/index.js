@@ -1,28 +1,25 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { richTextPropTypes } from '../../prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { richTextPropTypes } from '../../prop-types';
+import { consistentString } from '../../utils/content-formatting';
 // Components
-import Icon from './icon'
+import Icon from './icon';
 // Styles
-import { InlineBanner, TextWrapper } from './styles'
-
-function formatString(string) {
-  return string !== null ? string.replace(/\s+/g, '-').toLowerCase() : 'default'
-}
+import { InlineBanner, TextWrapper } from './styles';
 
 const InlineCallOut = ({ content }) => {
-  const { icon, borderColour, bannerColour } = content
-  const callOutText = content.content
+  const { icon, borderColour, bannerColour } = content;
+  const callOutText = content.content;
   return (
     <InlineBanner
-      borderCol={formatString(borderColour)}
-      bannerCol={formatString(bannerColour)}
+      borderCol={consistentString(borderColour)}
+      bannerCol={consistentString(bannerColour)}
     >
-      <Icon icon={formatString(icon)} />
+      <Icon icon={consistentString(icon)} />
       <TextWrapper richText={callOutText} />
     </InlineBanner>
-  )
-}
+  );
+};
 
 InlineCallOut.propTypes = {
   content: PropTypes.shape({
@@ -31,6 +28,6 @@ InlineCallOut.propTypes = {
     borderColour: PropTypes.string,
     bannerColour: PropTypes.string,
   }),
-}
+};
 
-export default InlineCallOut
+export default InlineCallOut;

@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const InlineCallout = graphql`
   fragment InlineCallout on ContentfulTopicInlineCallout {
@@ -16,4 +16,4 @@ export const InlineCallout = graphql`
       }
     }
   }
-`
+`;

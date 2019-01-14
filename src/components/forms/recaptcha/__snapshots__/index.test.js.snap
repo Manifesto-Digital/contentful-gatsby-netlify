@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin-bottom: 20px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="g-recaptcha"
+    data-badge="bottomright"
+    data-sitekey="6Le6UIgUAAAAAKSuQM0dGqG0_Sp6emnU6aRaglAk"
+    data-size="normal"
+    data-tabindex="0"
+    data-theme="light"
+    data-type="image"
+    id="g-recaptcha"
+  />
+</div>
+`;

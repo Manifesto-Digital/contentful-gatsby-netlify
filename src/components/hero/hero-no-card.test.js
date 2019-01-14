@@ -1,12 +1,12 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+import React from 'react';
+import { shallow } from 'enzyme';
 import {
   mountWithTheme,
   snapshotComponent,
-} from '../../../__tests__/helpers/index'
-import Hero from './hero-no-card'
-import { Title, Subtitle } from './styles'
-import { createFactory, createImage } from '../../utils/test-factories'
+} from '../../../__tests__/helpers/index';
+import Hero from './hero-no-card';
+import { Title, Subtitle } from './styles';
+import { createFactory, createImage } from '../../utils/test-factories';
 
 // Default props
 export const createHeroNoCard = createFactory({
@@ -14,27 +14,27 @@ export const createHeroNoCard = createFactory({
   subtitle: 'Mock Subtitle',
   blackText: true,
   image: createImage(),
-})
+});
 
 it('renders correctly', () => {
-  const mockData = createHeroNoCard()
+  const mockData = createHeroNoCard();
 
-  snapshotComponent(<Hero content={mockData} />)
-})
+  snapshotComponent(<Hero content={mockData} />);
+});
 
 it('displays the correct title', () => {
-  const mockData = createHeroNoCard({ title: 'Mock Title' })
+  const mockData = createHeroNoCard({ title: 'Mock Title' });
 
-  const wrapper = shallow(<Hero content={mockData} />)
-  expect(wrapper.find(Title).text()).toBe(mockData.title)
-})
+  const wrapper = shallow(<Hero content={mockData} />);
+  expect(wrapper.find(Title).text()).toBe(mockData.title);
+});
 
 it('displays the correct subtitle', () => {
-  const mockData = createHeroNoCard({ subtitle: 'Mock Subtitle' })
+  const mockData = createHeroNoCard({ subtitle: 'Mock Subtitle' });
 
-  const wrapper = shallow(<Hero content={mockData} />)
-  expect(wrapper.find(Subtitle).text()).toBe(mockData.subtitle)
-})
+  const wrapper = shallow(<Hero content={mockData} />);
+  expect(wrapper.find(Subtitle).text()).toBe(mockData.subtitle);
+});
 
 it('renders an image', () => {
   const mockData = createHeroNoCard({
@@ -43,8 +43,8 @@ it('renders an image', () => {
         url: 'https://via.placeholder.com/150',
       },
     }),
-  })
+  });
 
-  const wrapper = mountWithTheme(<Hero content={mockData} />)
-  expect(wrapper.find('img')).toHaveLength(1)
-})
+  const wrapper = mountWithTheme(<Hero content={mockData} />);
+  expect(wrapper.find('img')).toHaveLength(1);
+});

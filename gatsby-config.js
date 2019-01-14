@@ -1,8 +1,8 @@
-const { BLOCKS, MARKS, INLINES } = require('@contentful/rich-text-types')
+const { BLOCKS, MARKS } = require('@contentful/rich-text-types');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -27,6 +27,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true,
+        svgo: true,
+        svgoConfig: {
+          removeScriptElement: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId:
@@ -37,15 +47,15 @@ module.exports = {
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
       },
     },
+    'gatsby-plugin-offline',
+    '@contentful/gatsby-transformer-contentful-richtext',
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        rule: {
-          include: /assets/,
-        },
+        id: 'GTM-WWSW2HH',
+        includeInDevelopment: true,
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: '@contentful/gatsby-transformer-contentful-richtext',
       options: {
@@ -61,4 +71,4 @@ module.exports = {
       },
     },
   ],
-}
+};

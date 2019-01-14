@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // Components
-import DownloadCTA from '../download-cta'
+import DownloadCTA from '../download-cta';
 // Styles
-import { Container } from '../styled/containers'
-import { Banner, FileImage, Wrapper, FileDetails, Header } from './styles'
+import { Container } from '../styled/containers';
+import { Banner, FileImage, Wrapper, FileDetails, Header } from './styles';
 
 const DownloadBanner = ({ banner }) => {
-  const { headerText, removeMarginBottom, downloadCta } = banner
+  const { headerText, removeMarginBottom, downloadCta } = banner;
 
   return (
     <Banner removeMarginBottom={removeMarginBottom}>
@@ -28,8 +28,8 @@ const DownloadBanner = ({ banner }) => {
         </Wrapper>
       </Container>
     </Banner>
-  )
-}
+  );
+};
 
 DownloadBanner.propTypes = {
   banner: PropTypes.shape({
@@ -45,6 +45,6 @@ DownloadBanner.propTypes = {
     }),
     removeMarginBottom: PropTypes.bool,
   }),
-}
+};
 
-export default DownloadBanner
+export default DownloadBanner;
