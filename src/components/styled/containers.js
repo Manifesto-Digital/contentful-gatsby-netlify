@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoint } from '../theme/breakpoint';
 
 export const Container = styled.div`
   max-width: 960px;
@@ -8,5 +9,9 @@ export const Container = styled.div`
 `;
 
 export const TwoThirds = styled.div`
-  max-width: 66%;
+  max-width: 100%;
+
+  ${breakpoint.tablet`
+    max-width: 66%;
+  `}
 `;
