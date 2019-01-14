@@ -7,7 +7,6 @@ export const DownloadBannerAssemblyFragment = graphql`
       type
     }
     headerText
-    bannerColour
     removeMarginBottom
     downloadCta {
       name
