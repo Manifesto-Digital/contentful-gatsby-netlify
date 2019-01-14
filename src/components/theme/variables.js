@@ -46,6 +46,7 @@ theme.headers = {
 
 theme.fontsize = {
   small: '0.875rem', // 14px
+  larger: '1.4rem',
 };
 
 theme.boxshadow = {

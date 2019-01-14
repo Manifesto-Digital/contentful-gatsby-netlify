@@ -36,8 +36,6 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.25;
     }
 
-
-
     h1 {
         font-size:  ${props => props.theme.headers.h2};
         ${breakpoint.tablet`
@@ -69,6 +67,28 @@ export const GlobalStyle = createGlobalStyle`
 
     li {
         margin-bottom: .5rem;
+    }
+
+    ol {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ol li{
+        counter-increment: step-counter;
+        position: relative;
+        padding-left: 2em;
+    }
+
+    ol li:before {
+        content: counter(step-counter);
+        display: block;
+        font-size: inherit;
+        left: .6em;
+        min-width: 1em;
+        position: absolute;
+        text-align: center;
+        top: 0;
     }
 
 `;

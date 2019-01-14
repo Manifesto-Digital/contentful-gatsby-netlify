@@ -6,3 +6,7 @@ export const Container = styled.div`
   padding: 0
     ${props => (props.padding === false ? 0 : props.theme.spacing.standard)};
 `;
+
+export const TwoThirds = styled.div`
+  max-width: 66%;
+`;

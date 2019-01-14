@@ -1,5 +1,5 @@
-const getContentPages = async graphql => {
-  return graphql(`
+const getContentPages = async graphql =>
+  graphql(`
     {
       allContentfulPageAssemblyContentPage {
         edges {
@@ -11,6 +11,5 @@ const getContentPages = async graphql => {
       }
     }
   `);
-};
 
 module.exports = { getContentPages };
