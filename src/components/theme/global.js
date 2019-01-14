@@ -71,11 +71,4 @@ export const GlobalStyle = createGlobalStyle`
         margin-bottom: .5rem;
     }
 
-    input{
-        border: 1px solid ${props => props.theme.palette.grey15};
-    }
-
-    button{
-        border: none;
-    }
 `;

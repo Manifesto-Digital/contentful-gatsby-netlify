@@ -28,40 +28,41 @@ const AdviceSearchBox = ({ data }) => {
           action={`https://${country}.shelter.org.uk/search`}
           method="GET"
         >
-          <h3>{headerText}</h3>
+          <fieldset>
+            <h3>{headerText}</h3>
 
-          <VisuallyHidden as="legend">
-            Search our website by keyword
-          </VisuallyHidden>
+            <VisuallyHidden as="legend">
+              Search our website by keyword
+            </VisuallyHidden>
 
-          <VisuallyHidden as="label" htmlFor="searchTerm">
-            Enter your search term
-          </VisuallyHidden>
+            <VisuallyHidden as="label" htmlFor="searchTerm">
+              Enter your search term
+            </VisuallyHidden>
 
-          <Field
-            name="query"
-            render={props => (
-              <SearchInput
-                id="searchTerm"
-                placeholder={placeholder || 'Search topics'}
-                type="search"
-                autoComplete="off"
-                {...props}
-              />
-            )}
-          />
+            <Field
+              name="query"
+              render={props => (
+                <SearchInput
+                  id="searchTerm"
+                  placeholder={placeholder || 'Search topics'}
+                  type="search"
+                  {...props}
+                />
+              )}
+            />
 
-          <Field type="hidden" name="collection" />
+            <Field type="hidden" name="collection" />
 
-          <Field
-            type="hidden"
-            name={country === 'england' ? 'type' : 'meta_A'}
-            value="Advice"
-          />
+            <Field
+              type="hidden"
+              name={country === 'england' ? 'type' : 'meta_A'}
+              value="Advice"
+            />
 
-          <SearchButton name="Search" type="submit" bg="blue" icon={MagGlass}>
-            Search
-          </SearchButton>
+            <SearchButton name="Search" type="submit" bg="blue" icon={MagGlass}>
+              Search
+            </SearchButton>
+          </fieldset>
         </AdviceSearchForm>
       )}
     </Formik>

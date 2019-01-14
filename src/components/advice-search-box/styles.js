@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ButtonWithIcon from '../button/button-with-icon';
+import Button from '../button';
 import { breakpoint } from '../theme/breakpoint';
 import TextInput from '../forms/text-input';
 
@@ -17,7 +17,7 @@ export const SearchInput = styled(TextInput)`
     `};
 `;
 
-export const SearchButton = styled(ButtonWithIcon)`
+export const SearchButton = styled(Button)`
   background: ${props => props.theme.palette.sanMarinoBlue};
   position: relative;
   width: auto;
