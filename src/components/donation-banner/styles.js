@@ -37,7 +37,6 @@ export const InlineForm = styled.form`
   `};
 
   ${Button} {
-    cursor: pointer;
     margin-left: ${props => props.theme.spacing.small};
   }
 `;

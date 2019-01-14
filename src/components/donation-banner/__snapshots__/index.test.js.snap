@@ -74,7 +74,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c4 .c9 {
-  cursor: pointer;
   margin-left: 10px;
 }
 

@@ -63,7 +63,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c0 .c5 {
-  cursor: pointer;
   margin-left: 10px;
 }
 
