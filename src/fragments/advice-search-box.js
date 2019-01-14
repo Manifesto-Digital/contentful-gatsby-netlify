@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const AdviceSearchBoxTopicFragment = graphql`
   fragment AdviceSearchBoxTopicFragment on ContentfulTopicAdviceSearchBox {
@@ -10,4 +10,4 @@ export const AdviceSearchBoxTopicFragment = graphql`
     }
     placeholder
   }
-`
+`;
