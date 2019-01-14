@@ -1,7 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import {
+  snapshotComponent,
+  mountWithTheme,
+} from '../../../__tests__/helpers/index';
 import AdviceSearchBox from './index';
+import { SearchInput } from './styles';
 import { createFactory } from '../../utils/test-factories';
 
 // Default props
@@ -20,15 +24,11 @@ it('displays the correct header text', () => {
   const mockData = createAdviceSearch({
     headerText: 'Search our housing advice',
   });
-  const wrapper = shallow(<AdviceSearchBox data={mockData} />).dive();
-  expect(wrapper.find('h3').text()).toBe(mockData.headerText);
-});
-
-it('displays the correct placeholder text', () => {
-  const mockData = createAdviceSearch({
-    placeholder: 'Search topics',
-  });
-
   const wrapper = shallow(<AdviceSearchBox data={mockData} />);
-  //expect(wrapper.find('form').prop('placeholder')).toBe(mockData.placeholder);
+  expect(
+    wrapper
+      .dive()
+      .find('h3')
+      .text()
+  ).toBe(mockData.headerText);
 });
