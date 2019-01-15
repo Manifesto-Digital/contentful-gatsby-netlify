@@ -25,9 +25,9 @@ const AdvicePage = ({ data, pageContext }) => {
           {bodyCopy && <RichText richText={bodyCopy} />}
           <Assemblies assemblies={assemblies} />
           <FeedbackModal />
-          <SubpagePagination subpages={subpages} activeSlug={slug} />
         </TwoThirds>
       </Container>
+      <SubpagePagination subpages={subpages} activeSlug={slug} />
     </Layout>
   );
 };
