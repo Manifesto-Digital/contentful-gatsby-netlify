@@ -63,6 +63,7 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicRelatedAdvice') {
         return <RelatedAdvice key={id} data={assembly} />;
+      }
 
       if (internal.type === 'ContentfulTopicShareBlock') {
         return <ShareBlock key={id} data={assembly} />;
