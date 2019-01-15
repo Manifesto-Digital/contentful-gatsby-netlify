@@ -7,6 +7,7 @@ import Assemblies from '../components/assemblies';
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
+import FeedbackModal from '../components/feedback-modal';
 
 const AdvicePage = ({ data }) => {
   const { assemblies, title, bodyCopy } = data.contentfulPageAssemblyAdvicePage;
@@ -18,6 +19,7 @@ const AdvicePage = ({ data }) => {
         <TwoThirds>
           {bodyCopy && <RichText richText={bodyCopy} />}
           <Assemblies assemblies={assemblies} />
+          <FeedbackModal />
         </TwoThirds>
       </Container>
     </Layout>
