@@ -8,6 +8,7 @@ import Banner from '../banner';
 import ShareBlock from '../share-block';
 import InlineCallOut from '../inline-callout';
 import LinkBox from '../link-box';
+import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
 
@@ -58,6 +59,10 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicLinkBox') {
         return <LinkBox key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicRelatedAdvice') {
+        return <RelatedAdvice key={id} data={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicShareBlock') {

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
-import theme from '../theme/variables';
 import RichText from '../rich-text';
 import { Wrapper, VideoWrapper, BottomText } from './styles';
 
@@ -24,7 +23,7 @@ const VideoEmbed = ({ data }) => {
   };
 
   return (
-    <Wrapper theme={theme} removeMarginBottom={removeMarginBottom}>
+    <Wrapper removeMarginBottom={removeMarginBottom}>
       <h3>{title}</h3>
       <VideoWrapper>
         <ReactPlayer
