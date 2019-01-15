@@ -21,6 +21,7 @@ Button.propTypes = {
   bg: PropTypes.string.isRequired,
   icon: PropTypes.string,
   iconColour: PropTypes.string,
+  type: PropTypes.string,
   fullWidth: PropTypes.bool,
   children: PropTypes.node,
 };
