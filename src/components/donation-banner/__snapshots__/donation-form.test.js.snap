@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c2 {
+  position: relative;
+}
+
+.c4 {
+  display: inline-block;
+  background-size: 15px 15px;
+  width: auto;
+  margin-bottom: 0;
+  padding: 10px;
+  padding-left: 30px;
+  max-width: 10em;
+}
+
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c3 {
+  left: 12px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 0.875rem;
+}
+
+.c1 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c6 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c5 {
+  margin-left: 10px;
+}
+
+@media (min-width:40.0625em) {
+  .c0 {
+    -webkit-flex: 0 1 40%;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+    margin-bottom: 0;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+}
+
+<form
+  action="https://donate.shelter.org.uk/b"
+  className="c0"
+  method="GET"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    name="cid"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="263"
+  />
+  <input
+    name="free_amount"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="1"
+  />
+  <input
+    name="amount"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="3000"
+  />
+  <input
+    name="reserved_appeal_code"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value=""
+  />
+  <input
+    name="frequency"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="once"
+  />
+  <label
+    className="c1"
+    htmlFor="amount-holder"
+  >
+    Donate
+  </label>
+  <div
+    className="c2"
+  >
+    <span
+      className="c3"
+    >
+      £
+    </span>
+    <input
+      className="c4"
+      id="amount-holder"
+      name="amount-holder"
+      onBlur={[Function]}
+      onChange={[Function]}
+      pattern="[0-9]*"
+      placeholder="30"
+      type="number"
+      value=""
+    />
+  </div>
+  <button
+    className="c5 c6"
+    type="submit"
+  >
+    Donate
+  </button>
+</form>
+`;

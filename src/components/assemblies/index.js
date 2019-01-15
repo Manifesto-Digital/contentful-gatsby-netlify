@@ -9,6 +9,7 @@ import AdviceSearchBox from '../advice-search-box';
 import InlineCallOut from '../inline-callout';
 import LinkBox from '../link-box';
 import VideoEmbed from '../video';
+import DonationBanner from '../donation-banner';
 
 const Assemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -37,6 +38,10 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicBanner') {
         return <Banner key={id} banner={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicDonationBanner') {
+        return <DonationBanner key={id} banner={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicInlineCallout') {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 // Used to hide item from view but readable for screen readers
 export const VisuallyHidden = styled.span`
   padding: 0;

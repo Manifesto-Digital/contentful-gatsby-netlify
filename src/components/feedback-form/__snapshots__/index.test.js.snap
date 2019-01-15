@@ -16,7 +16,6 @@ exports[`renders correctly 1`] = `
   background-color: white;
   display: block;
   background-size: 15px 15px;
-  outline: none;
   width: 100%;
   margin-bottom: 20px;
   padding: 10px;
