@@ -1,6 +1,7 @@
 import React from 'react';
 import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
 import DonationForm from './donation-form';
+import Button from '../button';
 
 it('renders correctly', () => {
   snapshotComponent(<DonationForm />);
@@ -82,4 +83,10 @@ it('shows the placeholder based on prop', () => {
   expect(
     wrapper.find('input[name="amount-holder"]').props().placeholder
   ).toEqual(mockDefaultValue.toString());
+});
+
+it('sets button colour based on bg prop', () => {
+  const wrapper = mountWithTheme(<DonationForm buttonBg="donate" />);
+
+  expect(wrapper.find(Button).prop('bg')).toBe('donate');
 });

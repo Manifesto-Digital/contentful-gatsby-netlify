@@ -2,8 +2,8 @@ import React from 'react';
 import Slider from 'rc-slider/lib/Slider';
 import DonateHero from '.';
 import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
-import { StyledDonateButton } from './styles';
-// import serialiseForm from 'form-serialize';
+import { StyledDonateButton, StyledCollapsableArea } from './styles';
+import DonationForm from '../donation-banner/donation-form';
 
 const createImage = (type, amount) => ({
   src: `${type}-${amount}-foo`,
@@ -33,15 +33,6 @@ const expectAmount = (wrapper, { value, description, image }) => {
   // REVIEW: Maybe make this more specific?
   expect(wrapper.text()).toEqual(expect.stringContaining(description));
 };
-
-// const serialiseGetForm = form => {
-//   if(form.method.toLowerCase() !== 'get') throw new Error('Form must have method GET');
-
-//   const queryString = serialiseForm(form);
-//   const action = form.getAttribute('action');
-
-//   return queryString ? `${action}?${queryString}` : action;
-// }
 
 describe('error handling', () => {
   it('errors if default amount is not valid (once)', () => {
@@ -125,6 +116,35 @@ it('switches background image and description when changing slider', () => {
     description: 'Donate £1 once.',
     image: expectedImage,
   });
+});
+
+it('renders a donation form', () => {
+  const wrapper = mountWithTheme(
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
+  );
+
+  expect(wrapper.find(DonationForm)).toHaveLength(1);
+});
+
+it('starts with donation form collapsed', () => {
+  const wrapper = mountWithTheme(
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
+  );
+
+  expect(wrapper.find(StyledCollapsableArea).prop('collapsed')).toBe(true);
+});
+
+it('expands donation form when clicking "Choose your own amount"', () => {
+  const wrapper = mountWithTheme(
+    <DonateHero monthly={createTab('monthly', 2)} once={createTab('once', 3)} />
+  );
+
+  wrapper
+    .find({ children: 'Choose your own amount' })
+    .first()
+    .simulate('click');
+
+  expect(wrapper.find(StyledCollapsableArea).prop('collapsed')).toBe(false);
 });
 
 describe('submission', () => {

@@ -11,7 +11,11 @@ import { VisuallyHidden } from '../styled/accessibility';
 import { InlineForm } from './styles';
 import Button from '../button';
 
-const DonationForm = ({ defaultDonationValue }) => {
+const DonationForm = ({
+  defaultDonationValue,
+  buttonBg = 'white outline',
+  className,
+}) => {
   const defaultValue = defaultDonationValue || 30;
   const defaultPennyValue = defaultValue * 100;
 
@@ -56,6 +60,7 @@ const DonationForm = ({ defaultDonationValue }) => {
               onSubmit={submitForm}
               action="https://donate.shelter.org.uk/b"
               method="GET"
+              className={className}
             >
               <Field type="hidden" name="cid" />
               <Field type="hidden" name="free_amount" />
@@ -78,7 +83,7 @@ const DonationForm = ({ defaultDonationValue }) => {
                   />
                 )}
               />
-              <Button bg="white outline" type="submit">
+              <Button bg={buttonBg} type="submit">
                 Donate
               </Button>
             </InlineForm>
@@ -91,6 +96,7 @@ const DonationForm = ({ defaultDonationValue }) => {
 
 DonationForm.propTypes = {
   placeholder: PropTypes.number,
+  className: PropTypes.string,
 };
 
 export default DonationForm;

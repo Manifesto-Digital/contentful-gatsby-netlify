@@ -4,7 +4,7 @@ import { removeListStyles } from '../styled/utils';
 import CTA from '../cta';
 
 export const StyledDonateHero = styled.section`
-  height: 32rem;
+  height: 34rem;
   position: relative;
   overflow: hidden;
 `;
@@ -56,4 +56,10 @@ export const StyledDonateButton = styled(CTA).attrs({
 
 export const StyledDescription = styled.p`
   margin-bottom: ${props => props.theme.spacing.large};
+`;
+
+export const StyledCollapsableArea = styled.div`
+  max-height: ${props => (props.collapsed ? '0' : '5rem')};
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
 `;

@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c0 {
-  height: 32rem;
+  height: 34rem;
   position: relative;
   overflow: hidden;
 }
@@ -89,6 +89,13 @@ exports[`renders correctly 1`] = `
   margin-bottom: 40px;
 }
 
+.c13 {
+  max-height: 0;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
+}
+
 .c12 {
   padding: 0;
   border: none;
@@ -104,6 +111,85 @@ exports[`renders correctly 1`] = `
 
 .c12:hover {
   color: #ea232d;
+}
+
+.c16 {
+  position: relative;
+}
+
+.c18 {
+  display: inline-block;
+  background-size: 15px 15px;
+  width: auto;
+  margin-bottom: 0;
+  padding: 10px;
+  padding-left: 30px;
+  max-width: 10em;
+}
+
+.c18::-webkit-outer-spin-button,
+.c18::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c17 {
+  left: 12px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 0.875rem;
+}
+
+.c15 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c20 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14 .c19 {
+  margin-left: 10px;
+}
+
+@media (min-width:40.0625em) {
+  .c14 {
+    -webkit-flex: 0 1 40%;
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%;
+    margin-bottom: 0;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
 }
 
 <section
@@ -370,9 +456,89 @@ exports[`renders correctly 1`] = `
             </a>
             <button
               className="c12"
+              onClick={[Function]}
             >
               Choose your own amount
             </button>
+            <div
+              className="c13"
+            >
+              <form
+                action="https://donate.shelter.org.uk/b"
+                className="c14"
+                method="GET"
+                onReset={[Function]}
+                onSubmit={[Function]}
+              >
+                <input
+                  name="cid"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="263"
+                />
+                <input
+                  name="free_amount"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="1"
+                />
+                <input
+                  name="amount"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="3000"
+                />
+                <input
+                  name="reserved_appeal_code"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value=""
+                />
+                <input
+                  name="frequency"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="once"
+                />
+                <label
+                  className="c15"
+                  htmlFor="amount-holder"
+                >
+                  Donate
+                </label>
+                <div
+                  className="c16"
+                >
+                  <span
+                    className="c17"
+                  >
+                    £
+                  </span>
+                  <input
+                    className="c18"
+                    id="amount-holder"
+                    name="amount-holder"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    pattern="[0-9]*"
+                    placeholder="30"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <button
+                  className="c19 c20"
+                  type="submit"
+                >
+                  Donate
+                </button>
+              </form>
+            </div>
           </section>
         </div>
         <div
