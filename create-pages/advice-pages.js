@@ -18,7 +18,7 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
       component: advicePageTemplate,
       context: {
         slug: nodeData.slug,
-        subpages: subPages, // So we do not have to query for this again
+        subpages: subPages, // So we do not have to query for this again in the template
       },
     });
 
