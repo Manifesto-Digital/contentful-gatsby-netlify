@@ -6,5 +6,7 @@ export const ShareBlockFragment = graphql`
     internal {
       type
     }
+    headerText
+    shareType
   }
 `;
