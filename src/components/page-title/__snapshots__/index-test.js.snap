@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c1 {
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  >
+    Mock title
+  </h1>
+</div>
+`;

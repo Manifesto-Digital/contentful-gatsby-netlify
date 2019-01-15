@@ -28,7 +28,6 @@ export const ButtonText = styled.p`
 export const ButtonSVG = styled(SVG)`
   display: block;
   fill: ${props => props.theme.palette.white};
-  float: right;
   flex-shrink: 0;
   width: 20px;
   height: 20px;

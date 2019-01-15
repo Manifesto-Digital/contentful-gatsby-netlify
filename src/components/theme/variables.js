@@ -47,6 +47,7 @@ theme.headers = {
 
 theme.fontsize = {
   small: '0.875rem', // 14px
+  standard: '1rem', // 16px
 };
 
 theme.boxshadow = {
@@ -54,8 +55,9 @@ theme.boxshadow = {
 };
 
 theme.spacing = {
-  standard: '20px',
   small: '10px',
+  standard: '20px',
+  medium: '30px',
   large: '40px',
 };
 export default theme;
