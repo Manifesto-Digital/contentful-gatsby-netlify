@@ -19,43 +19,44 @@ const ShareBlock = ({ data }) => {
     <>
       {headerText && <h3>{headerText}</h3>}
       <Wrapper>
-        {shareType.map((type, i) => (
-          <Fragment key={i}>
-            {type === 'Print' && (
-              <Inner>
-                <ShareLink
-                  as="button"
-                  onClick={() => window.print()}
-                  onKeyDown={event => {
-                    if (event.keycode === 13) window.print();
-                  }}
-                  type="button"
-                  tabIndex="0"
-                >
-                  <Icon icon="print" />
-                  Print this article
-                </ShareLink>
-              </Inner>
-            )}
-            {url[type] && type !== 'Print' && (
-              <Inner>
-                <Location>
-                  {({ location }) => (
-                    <ShareLink
-                      href={`${url[type]}${location.href}`}
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <Icon icon={consistentString(type)} />
-                      {type === 'Email' ? 'Email' : 'Share'}
-                      {' this article'}
-                    </ShareLink>
-                  )}
-                </Location>
-              </Inner>
-            )}
-          </Fragment>
-        ))}
+        {shareType &&
+          shareType.map((type, i) => (
+            <Fragment key={i}>
+              {type === 'Print' && (
+                <Inner>
+                  <ShareLink
+                    as="button"
+                    onClick={() => window.print()}
+                    onKeyDown={event => {
+                      if (event.keycode === 13) window.print();
+                    }}
+                    type="button"
+                    tabIndex="0"
+                  >
+                    <Icon icon="print" />
+                    Print this article
+                  </ShareLink>
+                </Inner>
+              )}
+              {url[type] && type !== 'Print' && (
+                <Inner>
+                  <Location>
+                    {({ location }) => (
+                      <ShareLink
+                        href={`${url[type]}${location.href}`}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <Icon icon={consistentString(type)} />
+                        {type === 'Email' ? 'Email' : 'Share'}
+                        {' this article'}
+                      </ShareLink>
+                    )}
+                  </Location>
+                </Inner>
+              )}
+            </Fragment>
+          ))}
       </Wrapper>
     </>
   );
