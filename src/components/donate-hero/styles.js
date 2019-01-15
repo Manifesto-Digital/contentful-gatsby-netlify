@@ -2,22 +2,34 @@ import styled from 'styled-components';
 import { Tab, TabList } from 'react-tabs';
 import { removeListStyles } from '../styled/utils';
 import CTA from '../cta';
+import { breakpoint } from '../theme/breakpoint';
+import { Container } from '../styled/containers';
+import LinkButton from '../link-button';
 
 export const StyledDonateHero = styled.section`
-  height: 34rem;
+  ${breakpoint.gt.desktop`
+    height: 34rem;
+  `}
   position: relative;
   overflow: hidden;
 `;
 
 export const StyledImage = styled.img`
-  position: absolute;
+  ${breakpoint.gt.desktop`
+    position: absolute;
+    height: 100%;
+    // TODO: Make this work in IE11
+    object-fit: cover;
+  `}
   width: 100%;
 `;
 
 export const StyledSliderBox = styled.div`
-  width: 70%;
+  ${breakpoint.gt.desktop`
+    width: 70%;
+    margin-top: 3rem;
+  `}
   background: ${props => props.theme.palette.grey15};
-  margin-top: 3rem;
   position: relative;
 `;
 
@@ -62,4 +74,16 @@ export const StyledCollapsableArea = styled.div`
   max-height: ${props => (props.collapsed ? '0' : '5rem')};
   transition: max-height 0.2s ease-in-out;
   overflow: hidden;
+`;
+
+export const StyledContainer = styled(Container)`
+  ${breakpoint.lt.desktop`
+    padding: 0;
+    max-width: none;
+  `}
+`;
+
+export const OwnAmountButton = styled(LinkButton)`
+  display: block;
+  margin-bottom: ${props => props.theme.spacing.standard};
 `;

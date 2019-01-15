@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Components
-import DonationForm from './donation-form';
 // Styles
 import { Container } from '../styled/containers';
-import { Banner, Wrapper, Header } from './styles';
+import { Banner, Wrapper, Header, StyledDonationForm } from './styles';
 
 const DonationBanner = ({ banner }) => {
   const { headerText, removeMarginBottom, donationInputDefaultValue } = banner;
@@ -14,7 +12,9 @@ const DonationBanner = ({ banner }) => {
       <Container>
         <Wrapper>
           <Header>{headerText}</Header>
-          <DonationForm defaultDonationValue={donationInputDefaultValue} />
+          <StyledDonationForm
+            defaultDonationValue={donationInputDefaultValue}
+          />
         </Wrapper>
       </Container>
     </Banner>

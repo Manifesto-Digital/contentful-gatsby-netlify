@@ -33,7 +33,7 @@ export const ButtonSVG = styled(SVG)`
   width: 20px;
   height: 20px;
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     width: 25px;
     height: 25px;
   `}

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Tabs, TabPanel } from 'react-tabs';
 import PropTypes from 'prop-types';
 import { StyledSlider, markStyle } from './slider';
-import { Container } from '../styled/containers';
 import { donation } from '../../variables';
 import {
   StyledDonateHero,
@@ -15,8 +14,9 @@ import {
   StyledDonateButton,
   StyledDescription,
   StyledCollapsableArea,
+  StyledContainer,
+  OwnAmountButton,
 } from './styles';
-import LinkButton from '../link-button';
 import DonationForm from '../donation-banner/donation-form';
 
 const tabIds = ['once', 'monthly'];
@@ -81,7 +81,7 @@ const DonateHero = props => {
     <StyledDonateHero>
       <StyledImage {...selectedAmount.image} />
 
-      <Container>
+      <StyledContainer>
         <StyledSliderBox>
           <Tabs onSelect={index => setSelectedTabId(tabIds[index])}>
             <StyledTabList>
@@ -122,13 +122,13 @@ const DonateHero = props => {
                       Donate £{currentValue}
                     </StyledDonateButton>
 
-                    <LinkButton
+                    <OwnAmountButton
                       onClick={() =>
                         setCollapsed(oldCollapsed => !oldCollapsed)
                       }
                     >
                       Choose your own amount
-                    </LinkButton>
+                    </OwnAmountButton>
 
                     <StyledCollapsableArea collapsed={collapsed}>
                       <DonationForm buttonBg="donate" />
@@ -139,7 +139,7 @@ const DonateHero = props => {
             })}
           </Tabs>
         </StyledSliderBox>
-      </Container>
+      </StyledContainer>
     </StyledDonateHero>
   );
 };

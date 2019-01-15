@@ -10,7 +10,7 @@ export const HeroNoCard = styled.section`
   padding-top: 350px;
   margin-bottom: ${props => props.theme.spacing.large};
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     padding-top: 60vh;
 `};
 `;
@@ -21,10 +21,10 @@ export const HeroWithCard = styled.section`
   overflow: hidden;
   margin-bottom: ${props => props.theme.spacing.large};
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     padding-top: 3em;
   `}
-  ${breakpoint.desktop`
+  ${breakpoint.gt.desktop`
     padding-top: 10em;
   `}
 `;
@@ -44,7 +44,7 @@ export const CenteredMedia = styled.div`
     height: 350px;
     max-width: none;
 
-    ${breakpoint.tablet`
+    ${breakpoint.gt.tablet`
         height: auto;
     `};
   }
@@ -53,7 +53,7 @@ export const CenteredMedia = styled.div`
 export const WithCardMedia = styled.div`
   img {
     min-width: 100%;
-    ${breakpoint.tablet`
+    ${breakpoint.gt.tablet`
       height: auto;
       ${absoluteCenter};
     `};
@@ -81,14 +81,14 @@ export const CardContent = styled.div`
   width: 100%;
   background: hsla(0, 0%, 100%, 0.9);
 
-  ${breakpoint.tablet` 
+  ${breakpoint.gt.tablet` 
     float: ${props => (props.position === 'right' ? 'right' : 'left')};
     margin-bottom: 3em;
     width: 65%;
     padding-bottom: 1em;
   `};
 
-  ${breakpoint.desktop`
+  ${breakpoint.gt.desktop`
     width: 55%;
     margin-bottom: 7em;
   `};
