@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 import Icon from './icon';
 import { consistentString } from '../../utils/content-formatting';
-import { Wrapper, Inner, PrintButton, ShareLink } from './styles';
+import { Wrapper, Inner, ShareLink } from './styles';
 
 const ShareBlock = ({ data }) => {
   const { headerText, shareType } = data;
@@ -17,13 +17,14 @@ const ShareBlock = ({ data }) => {
 
   return (
     <>
-      <h3>{headerText}</h3>
+      {headerText && <h3>{headerText}</h3>}
       <Wrapper>
         {shareType.map((type, i) => (
           <Fragment key={i}>
-            {type === 'Print' ? (
+            {type === 'Print' && (
               <Inner>
-                <PrintButton
+                <ShareLink
+                  as="button"
                   onClick={() => window.print()}
                   onKeyDown={event => {
                     if (event.keycode === 13) window.print();
@@ -33,9 +34,10 @@ const ShareBlock = ({ data }) => {
                 >
                   <Icon icon="print" />
                   Print this article
-                </PrintButton>
+                </ShareLink>
               </Inner>
-            ) : (
+            )}
+            {url[type] && type !== 'Print' && (
               <Inner>
                 <Location>
                   {({ location }) => (
