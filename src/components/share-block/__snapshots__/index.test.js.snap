@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Header Text 1`] = `
+Array [
+  <h3>
+    Yes it renders
+  </h3>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  border: 2px solid #0b0b89;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c2 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  color: #4d63b5;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover {
+  color: #ea232d;
+}
+
+.c2:hover {
+  color: #ea232d;
+}
+
+.c2:hover svg {
+  fill: #ea232d;
+}
+
+.c3 {
+  display: block;
+  margin-right: 20px;
+  fill: #0b0b89;
+}
+
+.c3 svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width:40.0625em) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0 30px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    width: auto;
+    padding: 30px 0;
+  }
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <button
+        className="c2"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="isvg loading c3"
+        />
+        Print this article
+      </button>
+    </div>
+    <div
+      className="c1"
+    >
+      <a
+        className="c2"
+        href="mailto:?&subject=Shelter&body=http://localhost:8000/"
+        rel="noopener"
+        target="_blank"
+      >
+        <span
+          className="isvg loading c3"
+        />
+        Email
+         this article
+      </a>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders a share block with links 1`] = `
+Array [
+  <h3>
+    Yes it renders
+  </h3>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  border: 2px solid #0b0b89;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c2 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  color: #4d63b5;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover {
+  color: #ea232d;
+}
+
+.c2:hover {
+  color: #ea232d;
+}
+
+.c2:hover svg {
+  fill: #ea232d;
+}
+
+.c3 {
+  display: block;
+  margin-right: 20px;
+  fill: #0b0b89;
+}
+
+.c3 svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width:40.0625em) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0 30px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    width: auto;
+    padding: 30px 0;
+  }
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <button
+        className="c2"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="isvg loading c3"
+        />
+        Print this article
+      </button>
+    </div>
+    <div
+      className="c1"
+    >
+      <a
+        className="c2"
+        href="mailto:?&subject=Shelter&body=http://localhost:8000/"
+        rel="noopener"
+        target="_blank"
+      >
+        <span
+          className="isvg loading c3"
+        />
+        Email
+         this article
+      </a>
+    </div>
+  </div>,
+]
+`;
