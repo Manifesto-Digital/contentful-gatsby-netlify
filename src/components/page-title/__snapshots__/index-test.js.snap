@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
 
 .c1 {
   margin-bottom: 40px;
+  padding-top: 20px;
 }
 
 <div
