@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const TwoThirds = styled.div`
   max-width: 100%;
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     max-width: 66%;
   `}
 `;

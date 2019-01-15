@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   padding: 0 ${props => props.theme.spacing.standard};
   border: 2px solid ${props => props.theme.palette.royalBlue};
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     flex-direction: row;
     padding: 0 ${props => props.theme.spacing.medium};
   `}
@@ -32,7 +32,7 @@ export const ShareLink = styled.a`
   padding: ${props => props.theme.spacing.standard} 0;
   text-decoration: none;
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     width: auto;
     padding: ${props => props.theme.spacing.medium} 0;
   `}

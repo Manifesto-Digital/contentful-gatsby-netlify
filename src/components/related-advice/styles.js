@@ -17,7 +17,7 @@ export const ListWrapper = styled.div`
   flex-direction: column;
   width: 100%;
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     flex-direction: row;
     flex-wrap: wrap;
   `};
@@ -36,7 +36,7 @@ export const ListItem = styled.a`
   font-weight: 400;
   text-decoration: none;
 
-  ${breakpoint.tablet`
+  ${breakpoint.gt.tablet`
     flex: 0 0 calc(${props => 100 / props.columns}% - ${props =>
     props.theme.spacing.standard});
   `};
