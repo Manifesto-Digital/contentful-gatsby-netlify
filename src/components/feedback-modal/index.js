@@ -27,8 +27,8 @@ const FeedbackModal = ({ heading, linkText }) => {
 };
 
 FeedbackModal.propTypes = {
-  linkText: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired,
+  linkText: PropTypes.string,
+  heading: PropTypes.string,
 };
 
 export default FeedbackModal;

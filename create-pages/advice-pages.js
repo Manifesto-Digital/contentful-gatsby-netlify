@@ -34,7 +34,6 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
   const advicePages = await getAdvicePages(graphql);
 
   if (advicePages.errors) {
-    console.error('error', advicePages.errors);
     throw Error(advicePages.errors);
   }
 
