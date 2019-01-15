@@ -30,3 +30,33 @@ exports[`renders correctly when full width 1`] = `
   className="c0"
 />
 `;
+
+exports[`renders correctly with an icon 1`] = `
+.c0 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #4d63b5;
+  border: none;
+  color: #fff;
+}
+
+.c1 {
+  fill: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: top;
+  margin-top: -2px;
+}
+
+<button
+  className="c0"
+>
+  <span
+    className="isvg loading c1"
+  />
+  text here
+</button>
+`;
