@@ -9,7 +9,7 @@ const RelatedAdvice = ({ data }) => {
   return (
     <Container>
       <Wrapper>
-        <Title>{headerText}</Title>
+        <Title>{headerText || 'Related advice'}</Title>
         <ListWrapper>
           {links.map((link, i) => (
             <ListItem key={i} columns={columns} href={link.slug}>

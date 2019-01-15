@@ -7,7 +7,7 @@ import { createFactory, createInternalLink } from '../../utils/test-factories';
 
 export const createRelatedAdvice = createFactory({
   headerText: 'What an amazing banner',
-  itemsPerRow: 3,
+  columns: 3,
   links: [createInternalLink(), createInternalLink(), createInternalLink()],
 });
 
@@ -15,6 +15,18 @@ it('renders correctly', () => {
   const mockData = createRelatedAdvice();
 
   snapshotComponent(<RelatedAdvice data={mockData} />);
+});
+
+it('displays the correct number of columns (2)', () => {
+  const mockData = createRelatedAdvice({ columns: 2 });
+  const wrapper = shallow(<RelatedAdvice data={mockData} />);
+  expect(wrapper.find(ListItem)).toHaveLength(3);
+});
+
+it('displays the correct number of columns (3)', () => {
+  const mockData = createRelatedAdvice({ columns: 3 });
+  const wrapper = shallow(<RelatedAdvice data={mockData} />);
+  expect(wrapper.find(ListItem)).toHaveLength(3);
 });
 
 it('displays the correct header text', () => {
@@ -26,14 +38,14 @@ it('displays the correct header text', () => {
 });
 
 it('sets the number of links per row', () => {
-  const mockData = createRelatedAdvice({ itemsPerRow: 3 });
+  const mockData = createRelatedAdvice({ columns: 3 });
   const wrapper = shallow(<RelatedAdvice data={mockData} />);
   expect(
     wrapper
       .find(ListItem)
       .at(0)
-      .prop('rowCount')
-  ).toBe(mockData.itemsPerRow);
+      .prop('columns')
+  ).toBe(mockData.columns);
 });
 
 it('displays link and title correctly', () => {
