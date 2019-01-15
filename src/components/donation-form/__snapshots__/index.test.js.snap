@@ -67,19 +67,6 @@ exports[`renders correctly 1`] = `
   margin-left: 10px;
 }
 
-@media (min-width:40.0625em) {
-  .c0 {
-    -webkit-flex: 0 1 40%;
-    -ms-flex: 0 1 40%;
-    flex: 0 1 40%;
-    margin-bottom: 0;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-  }
-}
-
 <form
   action="https://donate.shelter.org.uk/b"
   className="c0"

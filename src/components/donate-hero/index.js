@@ -17,7 +17,7 @@ import {
   StyledContainer,
   OwnAmountButton,
 } from './styles';
-import DonationForm from '../donation-banner/donation-form';
+import DonationForm from '../donation-form';
 
 const tabIds = ['once', 'monthly'];
 

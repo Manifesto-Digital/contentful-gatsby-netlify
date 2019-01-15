@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
-import Button from '../button';
-import DonationForm from './donation-form';
+import DonationForm from '../donation-form';
 
 export const Banner = styled.section`
   padding: ${props => props.theme.spacing.standard} 0;
@@ -26,14 +25,6 @@ export const Header = styled.h3`
     flex: 0 1 50%;
     margin-bottom: 0;
   `};
-`;
-
-export const InlineForm = styled.form`
-  display: flex;
-
-  ${Button} {
-    margin-left: ${props => props.theme.spacing.small};
-  }
 `;
 
 export const StyledDonationForm = styled(DonationForm)`

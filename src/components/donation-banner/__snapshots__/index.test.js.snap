@@ -1,11 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c6 {
+.c1 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c7 {
   position: relative;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   background-size: 15px 15px;
   width: auto;
@@ -15,13 +21,13 @@ exports[`renders correctly 1`] = `
   max-width: 10em;
 }
 
-.c8::-webkit-outer-spin-button,
-.c8::-webkit-inner-spin-button {
+.c9::-webkit-outer-spin-button,
+.c9::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c7 {
+.c8 {
   left: 12px;
   position: absolute;
   top: 50%;
@@ -32,7 +38,7 @@ exports[`renders correctly 1`] = `
   font-size: 0.875rem;
 }
 
-.c5 {
+.c6 {
   padding: 0;
   margin: 0;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -46,7 +52,7 @@ exports[`renders correctly 1`] = `
   white-space: nowrap;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   text-align: center;
   padding: 10px 1em;
@@ -54,6 +60,17 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 .c10 {
+  margin-left: 10px;
 }
 
 .c0 {
@@ -65,23 +82,6 @@ exports[`renders correctly 1`] = `
 .c3 {
   color: #fff;
   margin-bottom: 20px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c4 .c9 {
-  margin-left: 10px;
-}
-
-.c1 {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 @media (min-width:40.0625em) {
@@ -139,7 +139,7 @@ exports[`renders correctly 1`] = `
       </h3>
       <form
         action="https://donate.shelter.org.uk/b"
-        className="c4"
+        className="c4 c5"
         method="GET"
         onReset={[Function]}
         onSubmit={[Function]}
@@ -180,21 +180,21 @@ exports[`renders correctly 1`] = `
           value="once"
         />
         <label
-          className="c5"
+          className="c6"
           htmlFor="amount-holder"
         >
           Donate
         </label>
         <div
-          className="c6"
+          className="c7"
         >
           <span
-            className="c7"
+            className="c8"
           >
             £
           </span>
           <input
-            className="c8"
+            className="c9"
             id="amount-holder"
             name="amount-holder"
             onBlur={[Function]}
@@ -206,7 +206,7 @@ exports[`renders correctly 1`] = `
           />
         </div>
         <button
-          className="c9 c10"
+          className="c10 c11"
           type="submit"
         >
           Donate

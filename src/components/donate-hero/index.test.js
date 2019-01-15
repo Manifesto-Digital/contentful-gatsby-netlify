@@ -3,7 +3,7 @@ import Slider from 'rc-slider/lib/Slider';
 import DonateHero from '.';
 import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
 import { StyledDonateButton, StyledCollapsableArea } from './styles';
-import DonationForm from '../donation-banner/donation-form';
+import DonationForm from '../donation-form';
 
 const createImage = (type, amount) => ({
   src: `${type}-${amount}-foo`,

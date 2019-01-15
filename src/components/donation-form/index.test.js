@@ -1,6 +1,6 @@
 import React from 'react';
 import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
-import DonationForm from './donation-form';
+import DonationForm from '.';
 import Button from '../button';
 
 it('renders correctly', () => {
