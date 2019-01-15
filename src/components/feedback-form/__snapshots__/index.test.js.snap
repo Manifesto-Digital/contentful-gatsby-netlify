@@ -42,7 +42,6 @@ exports[`renders correctly 1`] = `
   <mock-recaptcha />
   <button
     className="c1"
-    type="submit"
   >
     Submit
   </button>
