@@ -21,10 +21,11 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
       component: advicePageTemplate,
       context: {
         slug: nodeData.slug,
-        subpages: subPages,
+        subpages: subPages, // So we do not have to query for this again
       },
     });
 
+    // If there are deeper levels of subpages
     if (nodeData.subPages) {
       nodeData.subPages.pages.forEach(subNode => {
         shelterCreatePage(subNode, subPages);
