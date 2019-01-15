@@ -1,7 +1,11 @@
 import React from 'react';
 import Slider from 'rc-slider/lib/Slider';
 import DonateHero from '.';
-import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
+import {
+  mountWithTheme,
+  snapshotComponent,
+  expectRenderError,
+} from '../../../__tests__/helpers';
 import { StyledDonateButton, StyledCollapsableArea } from './styles';
 import DonationForm from '../donation-form';
 
@@ -30,34 +34,27 @@ const expectAmount = (wrapper, { value, description, image }) => {
   expect(wrapper.find('img').props()).toMatchObject(image);
   expect(wrapper.find(Slider).prop('value')).toBe(value);
   expect(wrapper.find(StyledDonateButton).text()).toBe(`Donate £${value}`);
-  // REVIEW: Maybe make this more specific?
   expect(wrapper.text()).toEqual(expect.stringContaining(description));
 };
 
 describe('error handling', () => {
   it('errors if default amount is not valid (once)', () => {
-    expect(() => {
-      mountWithTheme(
-        <DonateHero
-          monthly={createTab('monthly', 3)}
-          once={createTab('once', 10)}
-        />
-      );
-    }).toThrowErrorMatchingInlineSnapshot(
-      `"Invalid default once amount of £10. The default amount must correspond to one of the specified amounts."`
+    expectRenderError(
+      <DonateHero
+        monthly={createTab('monthly', 3)}
+        once={createTab('once', 10)}
+      />,
+      'Invalid default once amount of £10. The default amount must correspond to one of the specified amounts.'
     );
   });
 
   it('errors if default amount is not valid (monthly)', () => {
-    expect(() => {
-      mountWithTheme(
-        <DonateHero
-          monthly={createTab('monthly', 10)}
-          once={createTab('once', 3)}
-        />
-      );
-    }).toThrowErrorMatchingInlineSnapshot(
-      `"Invalid default monthly amount of £10. The default amount must correspond to one of the specified amounts."`
+    expectRenderError(
+      <DonateHero
+        monthly={createTab('monthly', 10)}
+        once={createTab('once', 3)}
+      />,
+      'Invalid default monthly amount of £10. The default amount must correspond to one of the specified amounts.'
     );
   });
 });

@@ -73,8 +73,6 @@ const DonateHero = props => {
 
   const selectedAmount = selectedTab.amounts[values[selectedTabId]];
 
-  // TODO: Supress error boundary warnings. See https://github.com/facebook/react/issues/11098
-  // REVIEW: Possibly make this conditionally run during SSR.
   validateDefaultAmounts(props);
 
   return (
@@ -162,7 +160,7 @@ const tabPropTypes = PropTypes.shape({
 
 DonateHero.propTypes = {
   monthly: tabPropTypes.isRequired,
-  single: tabPropTypes.isRequired,
+  once: tabPropTypes.isRequired,
 };
 
 export default DonateHero;

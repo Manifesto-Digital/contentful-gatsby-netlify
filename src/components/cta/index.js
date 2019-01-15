@@ -40,7 +40,7 @@ CTA.fromCMS = ({ buttonText, ctaColour, internalLink, externalUrl, icon }) => ({
 });
 
 CTA.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   bg: PropTypes.oneOf(['red', 'donate', 'blue', 'black', 'white outline'])
     .isRequired,
   internalLink: PropTypes.shape({
