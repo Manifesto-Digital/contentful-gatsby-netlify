@@ -18,7 +18,7 @@ const AdvicePage = ({ data }) => {
       <Container>
         <TwoThirds>
           {bodyCopy && <RichText richText={bodyCopy} />}
-          <Assemblies assemblies={assemblies} />
+          <Assemblies assemblies={assemblies} insideContainer />
           <FeedbackModal />
         </TwoThirds>
       </Container>
@@ -57,6 +57,7 @@ export const advicePageQuery = graphql`
           ...DownloadBannerAssemblyFragment
           ...LinkBoxFragment
           ...DonationBanner
+          ...RelatedAdviceFragment
         }
       }
     }

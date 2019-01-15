@@ -4,8 +4,9 @@ import { Location } from '@reach/router';
 import Icon from './icon';
 import { consistentString } from '../../utils/content-formatting';
 import { Wrapper, Inner, ShareLink } from './styles';
+import { Container } from '../styled/containers';
 
-const ShareBlock = ({ data }) => {
+const ShareBlock = ({ data, insideContainer }) => {
   const { headerText, shareType } = data;
   const url = {
     Print: 'printer',
@@ -16,7 +17,7 @@ const ShareBlock = ({ data }) => {
   };
 
   return (
-    <>
+    <Container padding={!insideContainer}>
       {headerText && <h3>{headerText}</h3>}
       <Wrapper>
         {shareType &&
@@ -58,7 +59,7 @@ const ShareBlock = ({ data }) => {
             </Fragment>
           ))}
       </Wrapper>
-    </>
+    </Container>
   );
 };
 
@@ -67,6 +68,10 @@ ShareBlock.propTypes = {
     headerText: PropTypes.string.isRequired,
     shareType: PropTypes.array.isRequired,
   }),
+  insideContainer: PropTypes.bool,
 };
 
+ShareBlock.defaultProps = {
+  insideContainer: false,
+};
 export default ShareBlock;

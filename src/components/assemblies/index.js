@@ -12,7 +12,7 @@ import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
 
-const Assemblies = ({ assemblies }) => {
+const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
 
   const AssembliesLoop = () =>
@@ -66,7 +66,13 @@ const Assemblies = ({ assemblies }) => {
       }
 
       if (internal.type === 'ContentfulTopicShareBlock') {
-        return <ShareBlock key={id} data={assembly} />;
+        return (
+          <ShareBlock
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       return null;
@@ -88,6 +94,10 @@ Assemblies.propTypes = {
       }),
     })
   ),
+  insideContainer: PropTypes.bool,
 };
 
+Assemblies.defaultProps = {
+  insideContainer: false,
+};
 export default Assemblies;
