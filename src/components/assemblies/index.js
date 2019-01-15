@@ -6,6 +6,7 @@ import DownloadBanner from '../download-banner';
 import ContentGrid from '../content-grid';
 import Banner from '../banner';
 import AdviceSearchBox from '../advice-search-box';
+import ShareBlock from '../share-block';
 import InlineCallOut from '../inline-callout';
 import LinkBox from '../link-box';
 import VideoEmbed from '../video';
@@ -62,6 +63,9 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicAdviceSearchBox') {
         return <AdviceSearchBox key={id} data={assembly} />;
+      }
+      if (internal.type === 'ContentfulTopicShareBlock') {
+        return <ShareBlock key={id} data={assembly} />;
       }
 
       return null;

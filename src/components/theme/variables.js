@@ -53,8 +53,9 @@ theme.boxshadow = {
 };
 
 theme.spacing = {
-  standard: '20px',
   small: '10px',
+  standard: '20px',
+  medium: '30px',
   large: '40px',
 };
 export default theme;
