@@ -9,47 +9,29 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
    *
    * @param CreatePage
    *   The gatsby create pages function
-   * @param subPages
-   *   An array of sub page data
    */
-  function shelterCreatePage(nodeData, subPages) {
+  function shelterCreatePage(nodeData) {
+    console.log('\x1b[31m', 'creating', nodeData, '\x1b[0m');
+
     gatsbyCreatePage({
       path: nodeData.slug,
       component: advicePageTemplate,
       context: {
         slug: nodeData.slug,
-        subpages: subPages, // So we do not have to query for this again
       },
     });
-
-    // If there are deeper levels of subpages
-    if (nodeData.subPages) {
-      nodeData.subPages.pages.forEach(subNode => {
-        shelterCreatePage(subNode, subPages);
-      });
-    }
   }
 
   // Create pages
   const advicePages = await getAdvicePages(graphql);
 
   if (advicePages.errors) {
-    console.error('error', advicePages.errors);
     throw Error(advicePages.errors);
   }
 
   // Create pages
   advicePages.data.allContentfulPageAssemblyAdvicePage.edges.forEach(edge => {
-    if (edge.node.subPages) {
-      // Add the parent page info into the subPages array so that we can access in template
-      edge.node.subPages.pages.unshift({
-        id: edge.node.id,
-        slug: edge.node.slug,
-        title: edge.node.title,
-        subPages: null,
-      });
-    }
-    shelterCreatePage(edge.node, edge.node.subPages);
+    shelterCreatePage(edge.node);
   });
 }
 module.exports = createAdvicePages;
