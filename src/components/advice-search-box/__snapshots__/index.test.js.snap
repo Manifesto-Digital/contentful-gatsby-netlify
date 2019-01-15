@@ -25,8 +25,7 @@ exports[`renders correctly 1`] = `
   background-color: white;
   display: block;
   background-size: 15px 15px;
-  outline: none;
-  width: 100%;
+  width: auto;
   margin-bottom: 20px;
   padding: 10px;
 }
@@ -109,6 +108,7 @@ exports[`renders correctly 1`] = `
     />
     <button
       className="c4"
+      type="submit"
     >
       <span
         className="isvg loading c5"
