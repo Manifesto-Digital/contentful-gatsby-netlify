@@ -1,5 +1,5 @@
 import React from 'react';
-import Download from './../../assets/svg/icons/download-light.svg';
+import Download from '../../assets/svg/icons/download-light.svg';
 import { snapshotComponent } from '../../../__tests__/helpers';
 import Button from '.';
 
