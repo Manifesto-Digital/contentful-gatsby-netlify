@@ -4,13 +4,28 @@ exports[`renders correctly 1`] = `
 .c8 {
   position: relative;
   padding-top: 45px;
-  margin-bottom: calc(40px + 10px);
+  margin-bottom: calc( 40px + 10px );
 }
 
 .c2 {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.c11 {
+  display: inline-block;
+}
+
+.c10 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  width: 100%;
 }
 
 .c0 {
@@ -67,13 +82,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c9 {
-  display: inline-block;
-  padding: 10px 1em;
-  font-weight: normal;
-  background-color: #12b9bf;
-  border: none;
-  color: #fff;
-  width: 100%;
   margin-bottom: 40px;
 }
 
@@ -81,7 +89,7 @@ exports[`renders correctly 1`] = `
   margin-bottom: 40px;
 }
 
-.c10 {
+.c12 {
   padding: 0;
   border: none;
   font: inherit;
@@ -94,7 +102,7 @@ exports[`renders correctly 1`] = `
   font-weight: 700;
 }
 
-.c10:hover {
+.c12:hover {
   color: #ea232d;
 }
 
@@ -349,16 +357,19 @@ exports[`renders correctly 1`] = `
                 </span>
               </div>
             </div>
-            <button
-              className="c9"
-              onClick={[Function]}
-              type="button"
+            <a
+              className="c9 c10"
+              href="https://donate.shelter.org.uk/?cid=263&amount=300&frequency=once"
             >
-              Donate £
-              3
-            </button>
+              <span
+                className="c11"
+              >
+                Donate £
+                3
+              </span>
+            </a>
             <button
-              className="c10"
+              className="c12"
             >
               Choose your own amount
             </button>

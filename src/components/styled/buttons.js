@@ -2,6 +2,7 @@ import { css } from 'styled-components';
 
 export const buttonStyles = css`
   display: inline-block;
+  text-align: center;
   padding: ${props => props.theme.spacing.small} 1em;
   font-weight: normal;
   background-color: ${props =>
@@ -22,6 +23,8 @@ export const buttonStyles = css`
     (props.bg === 'blue' && props.theme.palette.white) ||
     (props.bg === 'donate' && props.theme.palette.white) ||
     (props.bg === 'white outline' && props.theme.palette.white)};
+
+  ${props => props.fullWidth && 'width: 100%'};
 `;
 
 /**

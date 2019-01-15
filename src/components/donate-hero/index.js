@@ -50,12 +50,9 @@ const getMarks = (tab, activeValue) => {
   return { marks, min, max };
 };
 
-const goToDonatePage = (amount, frequency) => {
-  window.location.assign(
-    `https://donate.shelter.org.uk/?cid=263&amount=${amount *
-      100}&frequency=${frequency}`
-  );
-};
+const getDonateUrl = (amount, frequency) =>
+  `https://donate.shelter.org.uk/?cid=263&amount=${amount *
+    100}&frequency=${frequency}`;
 
 const DonateHero = props => {
   const [selectedTabId, setSelectedTabId] = useState('once');
@@ -114,8 +111,7 @@ const DonateHero = props => {
                       }
                     />
                     <StyledDonateButton
-                      type="button"
-                      onClick={() => goToDonatePage(currentValue, tabId)}
+                      externalUrl={getDonateUrl(currentValue, tabId)}
                     >
                       Donate £{currentValue}
                     </StyledDonateButton>

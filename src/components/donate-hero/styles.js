@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Tab, TabList } from 'react-tabs';
 import { removeListStyles } from '../styled/utils';
-import Button from '../button';
+import CTA from '../cta';
 
 export const StyledDonateHero = styled.section`
   height: 32rem;
@@ -47,9 +47,9 @@ export const StyledTabContent = styled.section`
   padding: ${props => props.theme.spacing.large};
 `;
 
-export const StyledDonateButton = styled(Button).attrs({
+export const StyledDonateButton = styled(CTA).attrs({
   bg: 'donate',
-  fullWidth: 'true',
+  fullWidth: true,
 })`
   margin-bottom: ${props => props.theme.spacing.large};
 `;

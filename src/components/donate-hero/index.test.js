@@ -53,7 +53,7 @@ describe('error handling', () => {
         />
       );
     }).toThrowErrorMatchingInlineSnapshot(
-      `"Invalid default single amount of £10. The default amount must correspond to one of the specified amounts."`
+      `"Invalid default once amount of £10. The default amount must correspond to one of the specified amounts."`
     );
   });
 
@@ -128,10 +128,6 @@ it('switches background image and description when changing slider', () => {
 });
 
 describe('submission', () => {
-  beforeAll(() => {
-    jest.spyOn(window.location, 'assign');
-  });
-
   it('submits default amount to correct url', () => {
     const wrapper = mountWithTheme(
       <DonateHero
@@ -140,9 +136,8 @@ describe('submission', () => {
       />
     );
 
-    wrapper.find(StyledDonateButton).simulate('click');
-
-    expect(window.location.assign).toHaveBeenLastCalledWith(
+    expect(wrapper.find(StyledDonateButton).getDOMNode()).toHaveProperty(
+      'href',
       'https://donate.shelter.org.uk/?cid=263&amount=300&frequency=once'
     );
   });

@@ -4,7 +4,6 @@ import { buttonStyles } from '../styled/buttons';
 
 const Button = styled.button`
   ${buttonStyles};
-  ${props => props.fullWidth && 'width: 100%'};
 `;
 
 Button.propTypes = {
