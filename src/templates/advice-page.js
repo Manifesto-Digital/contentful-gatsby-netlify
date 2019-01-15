@@ -6,15 +6,17 @@ import Layout from '../components/layout';
 import Assemblies from '../components/assemblies';
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
+import RichText from '../components/rich-text';
 
 const AdvicePage = ({ data }) => {
-  const { assemblies, title } = data.contentfulPageAssemblyAdvicePage;
+  const { assemblies, title, bodyCopy } = data.contentfulPageAssemblyAdvicePage;
 
   return (
     <Layout>
       <PageTitle title={title} />
       <Container>
         <TwoThirds>
+          {bodyCopy && <RichText richText={bodyCopy} />}
           <Assemblies assemblies={assemblies} />
         </TwoThirds>
       </Container>
@@ -34,6 +36,15 @@ export const advicePageQuery = graphql`
   query advicePageTemplateQuery($slug: String!) {
     contentfulPageAssemblyAdvicePage(slug: { eq: $slug }) {
       title
+      bodyCopy {
+        id
+        internal {
+          type
+        }
+        childContentfulRichText {
+          html
+        }
+      }
       assemblies {
         ... on Node {
           ...CtaAssemblyFragment
