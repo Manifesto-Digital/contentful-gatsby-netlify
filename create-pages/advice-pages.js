@@ -6,12 +6,9 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
 
   /**
    * Creates pages from the contentful query.
-   * @param gatsbyCreatePage
+   *
+   * @param CreatePage
    *   The gatsby create pages function
-   * @param pageTemplate
-   *   The page template to use
-   * @param nodeData
-   *   The node data returned by the query
    * @param subPages
    *   An array of sub page data
    */
