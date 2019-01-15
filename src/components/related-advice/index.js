@@ -4,10 +4,10 @@ import { Container } from '../styled/containers';
 import { Title, Wrapper, ListWrapper, ListItem, ArrowSVG } from './styles';
 import AngleRight from '../../assets/svg/icons/angle-right.svg';
 
-const RelatedAdvice = ({ data }) => {
+const RelatedAdvice = ({ data, insideContainer }) => {
   const { headerText, columns, links } = data;
   return (
-    <Container>
+    <Container padding={!insideContainer}>
       <Wrapper>
         <Title>{headerText || 'Related advice'}</Title>
         <ListWrapper>
@@ -35,6 +35,10 @@ RelatedAdvice.propTypes = {
       })
     ),
   }),
+  insideContainer: PropTypes.bool,
 };
 
+RelatedAdvice.defaultProps = {
+  insideContainer: false,
+};
 export default RelatedAdvice;

@@ -58,6 +58,7 @@ export const advicePageQuery = graphql`
           ...LinkBoxFragment
           ...DonationBanner
           ...RelatedAdviceFragment
+          ...ShareBlockFragment
         }
       }
     }

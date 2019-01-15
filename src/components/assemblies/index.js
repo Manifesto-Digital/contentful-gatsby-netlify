@@ -46,11 +46,23 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       }
 
       if (internal.type === 'ContentfulTopicInlineCallout') {
-        return <InlineCallOut key={id} content={assembly} />;
+        return (
+          <InlineCallOut
+            key={id}
+            content={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       if (internal.type === 'ContentfulTopicVideoEmbed') {
-        return <VideoEmbed key={id} data={assembly} />;
+        return (
+          <VideoEmbed
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       if (internal.type === 'ContentfulAssemblyDownloadBanner') {
@@ -62,7 +74,13 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       }
 
       if (internal.type === 'ContentfulTopicRelatedAdvice') {
-        return <RelatedAdvice key={id} data={assembly} />;
+        return (
+          <RelatedAdvice
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       if (internal.type === 'ContentfulTopicShareBlock') {
