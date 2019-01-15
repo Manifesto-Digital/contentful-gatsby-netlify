@@ -17,18 +17,6 @@ it('renders correctly', () => {
   snapshotComponent(<RelatedAdvice data={mockData} />);
 });
 
-it('displays the correct number of columns (2)', () => {
-  const mockData = createRelatedAdvice({ columns: 2 });
-  const wrapper = shallow(<RelatedAdvice data={mockData} />);
-  expect(wrapper.find(ListItem)).toHaveLength(3);
-});
-
-it('displays the correct number of columns (3)', () => {
-  const mockData = createRelatedAdvice({ columns: 3 });
-  const wrapper = shallow(<RelatedAdvice data={mockData} />);
-  expect(wrapper.find(ListItem)).toHaveLength(3);
-});
-
 it('displays the correct header text', () => {
   const mockData = createRelatedAdvice({
     headerText: 'Test header text',

@@ -11,12 +11,13 @@ const RelatedAdvice = ({ data }) => {
       <Wrapper>
         <Title>{headerText || 'Related advice'}</Title>
         <ListWrapper>
-          {links.map((link, i) => (
-            <ListItem key={i} columns={columns} href={link.slug}>
-              {link.title}
-              <ArrowSVG src={AngleRight} cacheGetRequests />
-            </ListItem>
-          ))}
+          {links &&
+            links.map((link, i) => (
+              <ListItem key={i} columns={columns} href={link.slug}>
+                {link.title}
+                <ArrowSVG src={AngleRight} cacheGetRequests />
+              </ListItem>
+            ))}
         </ListWrapper>
       </Wrapper>
     </Container>
