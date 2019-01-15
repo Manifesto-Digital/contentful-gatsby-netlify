@@ -11,8 +11,6 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
    *   The gatsby create pages function
    */
   function shelterCreatePage(nodeData) {
-    console.log('\x1b[31m', 'creating', nodeData, '\x1b[0m');
-
     gatsbyCreatePage({
       path: nodeData.slug,
       component: advicePageTemplate,
