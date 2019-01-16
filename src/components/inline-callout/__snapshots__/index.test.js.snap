@@ -1,7 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with icon chosen in cms 1`] = `
+.c1 {
+  position: relative;
+  clear: both;
+  background: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 1em;
+  border-left: 4px solid;
+  border-color: #ea232d;
+}
+
+.c3 {
+  display: inline-block;
+}
+
+.c3 > :last-child {
+  margin-bottom: 0;
+}
+
+.c2 {
+  fill: #212122;
+  width: 30px;
+  height: 30px;
+  margin-right: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.c2 + div {
+  width: calc(100% - 3em);
+}
+
 .c0 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      className="isvg loading c2"
+    />
+    <div
+      className="c3"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders correctly with no options chosen in cms 1`] = `
+.c1 {
   position: relative;
   clear: both;
   background: #f7f7f7;
@@ -19,53 +78,10 @@ exports[`renders correctly with icon chosen in cms 1`] = `
   margin-bottom: 0;
 }
 
-.c1 {
-  fill: #212122;
-  width: 30px;
-  height: 30px;
-  margin-right: 1em;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.c1 + div {
-  width: calc(100% - 3em);
-}
-
-<div
-  className="c0"
->
-  <span
-    className="isvg loading c1"
-  />
-  <div
-    className="c2"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`renders correctly with no options chosen in cms 1`] = `
 .c0 {
-  position: relative;
-  clear: both;
-  background: #f7f7f7;
-  padding: 20px;
-  margin-bottom: 1em;
-  border-left: 4px solid;
-  border-color: #ea232d;
-}
-
-.c1 {
-  display: inline-block;
-}
-
-.c1 > :last-child {
-  margin-bottom: 0;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 <div
@@ -73,11 +89,15 @@ exports[`renders correctly with no options chosen in cms 1`] = `
 >
   <div
     className="c1"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+  >
+    <div
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;

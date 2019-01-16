@@ -6,18 +6,21 @@ import { consistentString } from '../../utils/content-formatting';
 import Icon from './icon';
 // Styles
 import { InlineBanner, TextWrapper } from './styles';
+import { Container } from '../styled/containers';
 
-const InlineCallOut = ({ content }) => {
+const InlineCallOut = ({ content, insideContainer }) => {
   const { icon, borderColour, bannerColour } = content;
   const callOutText = content.content;
   return (
-    <InlineBanner
-      borderCol={consistentString(borderColour)}
-      bannerCol={consistentString(bannerColour)}
-    >
-      <Icon icon={consistentString(icon)} />
-      <TextWrapper richText={callOutText} />
-    </InlineBanner>
+    <Container padding={!insideContainer}>
+      <InlineBanner
+        borderCol={consistentString(borderColour)}
+        bannerCol={consistentString(bannerColour)}
+      >
+        <Icon icon={consistentString(icon)} />
+        <TextWrapper richText={callOutText} />
+      </InlineBanner>
+    </Container>
   );
 };
 
@@ -28,6 +31,10 @@ InlineCallOut.propTypes = {
     borderColour: PropTypes.string,
     bannerColour: PropTypes.string,
   }),
+  insideContainer: PropTypes.bool,
 };
 
+InlineCallOut.defaultProps = {
+  insideContainer: false,
+};
 export default InlineCallOut;

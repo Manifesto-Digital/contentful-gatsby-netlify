@@ -5,11 +5,14 @@ import CTABanner from '../cta-banner';
 import DownloadBanner from '../download-banner';
 import ContentGrid from '../content-grid';
 import Banner from '../banner';
+import ShareBlock from '../share-block';
 import InlineCallOut from '../inline-callout';
 import LinkBox from '../link-box';
+import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
+import DonationBanner from '../donation-banner';
 
-const Assemblies = ({ assemblies }) => {
+const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
 
   const AssembliesLoop = () =>
@@ -38,12 +41,28 @@ const Assemblies = ({ assemblies }) => {
         return <Banner key={id} banner={assembly} />;
       }
 
+      if (internal.type === 'ContentfulTopicDonationBanner') {
+        return <DonationBanner key={id} banner={assembly} />;
+      }
+
       if (internal.type === 'ContentfulTopicInlineCallout') {
-        return <InlineCallOut key={id} content={assembly} />;
+        return (
+          <InlineCallOut
+            key={id}
+            content={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       if (internal.type === 'ContentfulTopicVideoEmbed') {
-        return <VideoEmbed key={id} data={assembly} />;
+        return (
+          <VideoEmbed
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       if (internal.type === 'ContentfulAssemblyDownloadBanner') {
@@ -52,6 +71,26 @@ const Assemblies = ({ assemblies }) => {
 
       if (internal.type === 'ContentfulTopicLinkBox') {
         return <LinkBox key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicRelatedAdvice') {
+        return (
+          <RelatedAdvice
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
+      }
+
+      if (internal.type === 'ContentfulTopicShareBlock') {
+        return (
+          <ShareBlock
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       return null;
@@ -73,6 +112,10 @@ Assemblies.propTypes = {
       }),
     })
   ),
+  insideContainer: PropTypes.bool,
 };
 
+Assemblies.defaultProps = {
+  insideContainer: false,
+};
 export default Assemblies;
