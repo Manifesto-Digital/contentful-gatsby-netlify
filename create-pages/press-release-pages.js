@@ -26,7 +26,7 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   const pressReleasePages = await getPressReleasePages(graphql);
 
   if (pressReleasePages.errors) {
-    throw Error(advicePages.errors);
+    throw Error(pressReleasePages.errors);
   }
 
   // Create pages
