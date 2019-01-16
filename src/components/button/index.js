@@ -1,29 +1,14 @@
-import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { buttonStyles } from '../styled/buttons';
 
-import { DefaultButton, IconHolder } from './styles';
-
-const Button = ({
-  bg,
-  icon,
-  iconColour,
-  fullWidth,
-  type = 'button',
-  children,
-}) => (
-  <DefaultButton bg={bg} fullWidth={fullWidth} type={type}>
-    {icon && <IconHolder src={icon} iconColour={iconColour} />}
-    {children}
-  </DefaultButton>
-);
+const Button = styled.button`
+  ${buttonStyles};
+  ${props => props.fullWidth && 'width: 100%'};
+`;
 
 Button.propTypes = {
   bg: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-  iconColour: PropTypes.string,
-  type: PropTypes.string,
-  fullWidth: PropTypes.bool,
-  children: PropTypes.node,
 };
 
 export default Button;

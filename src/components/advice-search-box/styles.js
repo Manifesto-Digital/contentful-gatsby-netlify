@@ -9,21 +9,18 @@ export const AdviceSearchForm = styled.form`
 `;
 
 export const SearchInput = styled(TextInput)`
-  margin-bottom: 1em;
+  margin-bottom: ${props => props.theme.spacing.small};
+  width: 100%;
   ${breakpoint.tablet`
         display: inline-block;
         width: 75%;
-        margin-right: 2em;
+        margin-right: ${props => props.theme.spacing.small};
     `};
 `;
 
 export const SearchButton = styled(Button)`
-  background: ${props => props.theme.palette.sanMarinoBlue};
-  position: relative;
   width: auto;
   padding: ${props => props.theme.spacing.small};
-  color: ${props => props.theme.palette.white};
-  display: block;
   ${breakpoint.tablet`
         display: inline-block;
     `};

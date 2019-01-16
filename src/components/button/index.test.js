@@ -10,11 +10,3 @@ it('renders correctly', () => {
 it('renders correctly when full width', () => {
   snapshotComponent(<Button bg="donate" fullWidth />);
 });
-
-it('renders correctly with an icon', () => {
-  snapshotComponent(
-    <Button bg="blue" icon={Download}>
-      text here
-    </Button>
-  );
-});
