@@ -12,7 +12,7 @@ import {
 } from './styles';
 
 const ContentCard = ({ data }) => {
-  const { featuredImage, title, summaryText } = data;
+  const { featuredImage, title, summaryText, slug } = data;
 
   return (
     <Card>
@@ -22,7 +22,7 @@ const ContentCard = ({ data }) => {
       </ImageContainer>
       <SummaryText>{summaryText}</SummaryText>
       <HoverShadow />
-      <Link href="https://england.shelter.org.uk/" />
+      <Link href={slug} />
     </Card>
   );
 };
