@@ -6,10 +6,6 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0
     ${props => (props.padding === false ? 0 : props.theme.spacing.standard)};
-  background: ${props =>
-    (props.bg === 'offWhite' && props.theme.palette.offWhite) ||
-    (props.bg === 'white' && props.theme.palette.white) ||
-    'transparent'};
 `;
 
 export const TwoThirds = styled.div`
