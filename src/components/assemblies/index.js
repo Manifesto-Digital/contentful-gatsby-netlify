@@ -12,6 +12,7 @@ import LinkBox from '../link-box';
 import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
+import Form from '../form';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -101,6 +102,19 @@ const Assemblies = ({ assemblies, insideContainer }) => {
             data={assembly}
             insideContainer={insideContainer}
           />
+        );
+      }
+
+      if (internal.type === 'ContentfulAssemblyForm') {
+        return (
+          <Form
+            key={id}
+            submitUrl={assembly.submitUrl}
+            sourceCode={assembly.sourceCode}
+            submitCallToAction={assembly.submitCallToAction}
+          >
+            Form
+          </Form>
         );
       }
 
