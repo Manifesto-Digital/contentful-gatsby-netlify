@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { consistentString } from '../../utils/content-formatting';
 import ContentCard from '../content-card';
+import RichText from '../rich-text';
 // Styles
 import { BannerBackground, HeaderText, CardRow } from './styles';
 
 const ContentCardBanner = ({ data }) => {
   const { bannerColour, header, contentCards } = data;
-  // Have to remove empty <p> added by rich text field
-  const headerText = header.childContentfulRichText.html.replace('<p></p>', '');
 
   return (
     <BannerBackground bannerColour={consistentString(bannerColour)}>
-      {/* Have to dangerouslySetInnerHTML because of rich text field */}
-      <HeaderText dangerouslySetInnerHTML={{ __html: headerText }} />
+      <HeaderText as={RichText} richText={header} />
       <CardRow>
         {contentCards.map(contentCard => (
           <ContentCard data={contentCard} />

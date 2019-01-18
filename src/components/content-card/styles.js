@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { breakpoint } from '../theme/breakpoint';
 
 // On hover, we animate the opacity of a second box shadow instead of the properties of the original for a smoother experience on older devices
 export const HoverShadow = styled.div`
@@ -24,10 +23,6 @@ export const Card = styled.div`
   &:hover ${HoverShadow} {
     opacity: 1;
   }
-
-  ${breakpoint.desktop`
-    margin: ${props => props.theme.spacing.small};
-  `};
 `;
 
 export const ImageContainer = styled.div`
@@ -48,7 +43,7 @@ export const CardTitle = styled.div`
   font-size: ${props => props.theme.fontsize.small};
   color: #fff;
   max-width: 100%;
-  padding: 5px 10px;
+  padding: 5px ${props => props.theme.spacing.small};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -58,7 +53,10 @@ export const CardTitle = styled.div`
 `;
 
 export const SummaryText = styled.div`
-  padding: 15px 10px 10px 10px;
+  padding: ${props => props.theme.spacing.small};
+  // The 15px is required in this particular instance as the title overlaps this area
+  padding-top: 15px;
+  color: ${props => props.theme.palette.sanMarinoBlue};
 `;
 
 export const Link = styled.a`

@@ -13,7 +13,7 @@ import {
 
 const ContentCard = ({ data }) => {
   const { featuredImage, cropImageFrom, title, summaryText, slug } = data;
-  console.log(data);
+
   return (
     <Card>
       <ImageContainer>
