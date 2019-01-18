@@ -32,17 +32,7 @@ export const Card = styled.div`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  height: 150px;
   position: relative;
-  ${breakpoint.tablet`
-    height: 250px;
-  `};
-  ${breakpoint.desktop`
-    height: 150px;
-  `};
-  ${breakpoint.desktopWide`
-    height: 200px;
-  `};
 `;
 
 export const FeaturedImage = styled.div`

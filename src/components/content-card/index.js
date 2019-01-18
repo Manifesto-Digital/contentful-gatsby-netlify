@@ -12,18 +12,18 @@ import {
 } from './styles';
 
 const ContentCard = ({ data }) => {
-  const { featuredImage, title, summaryText, slug } = data;
-
+  const { featuredImage, cropImageFrom, title, summaryText, slug } = data;
+  console.log(data);
   return (
     <Card>
       <ImageContainer>
         <ResponsiveImage
           mobileW={400}
-          mobileH={200}
-          desktopW={400}
-          desktopH={200}
+          mobileH={300}
+          desktopW={600}
+          desktopH={300}
           fit="fill"
-          focusArea="left"
+          focusArea={cropImageFrom}
           image={featuredImage}
         />
         <CardTitle>{title}</CardTitle>

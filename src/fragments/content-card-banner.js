@@ -25,6 +25,7 @@ export const ContentCardBannerFragment = graphql`
           fileName
         }
       }
+      cropImageFrom
       summaryText
     }
   }
