@@ -7,11 +7,12 @@ import { BannerBackground, HeaderText, CardRow } from './styles';
 
 const ContentCardBanner = ({ data }) => {
   const { bannerColour, header, contentCards } = data;
-  const headerText = header.childContentfulRichText.html;
-  console.log(data);
+  // Have to remove empty <p> added by rich text field
+  const headerText = header.childContentfulRichText.html.replace('<p></p>', '');
 
   return (
     <BannerBackground bannerColour={consistentString(bannerColour)}>
+      {/* Have to dangerouslySetInnerHTML because of rich text field */}
       <HeaderText dangerouslySetInnerHTML={{ __html: headerText }} />
       <CardRow>
         {contentCards.map(contentCard => (
