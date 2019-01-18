@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ResponsiveImage from '../image/responsive.js';
 // Styles
 import {
   Card,
   ImageContainer,
-  FeaturedImage,
   CardTitle,
   SummaryText,
   HoverShadow,
@@ -17,7 +17,15 @@ const ContentCard = ({ data }) => {
   return (
     <Card>
       <ImageContainer>
-        <FeaturedImage url={featuredImage.file.url} />
+        <ResponsiveImage
+          mobileW={400}
+          mobileH={200}
+          desktopW={400}
+          desktopH={200}
+          fit="fill"
+          focusArea="left"
+          image={featuredImage}
+        />
         <CardTitle>{title}</CardTitle>
       </ImageContainer>
       <SummaryText>{summaryText}</SummaryText>
