@@ -18,16 +18,15 @@ export const Card = styled.div`
   border-radius: 4px;
   box-shadow: ${props => props.theme.boxshadow.small};
   background: ${props => props.theme.palette.white};
-  margin: ${props => props.theme.spacing.standard};
+  margin: ${props => props.theme.spacing.small};
   position: relative;
 
   &:hover ${HoverShadow} {
     opacity: 1;
   }
 
-  ${breakpoint.tablet`
-    &:first-child { margin-right: 0; }
-    &:last-child { margin-left: 0; }
+  ${breakpoint.desktop`
+    margin: ${props => props.theme.spacing.small};
   `};
 `;
 
@@ -35,6 +34,12 @@ export const ImageContainer = styled.div`
   width: 100%;
   height: 150px;
   position: relative;
+  ${breakpoint.tablet`
+    height: 250px;
+  `};
+  ${breakpoint.desktop`
+    height: 150px;
+  `};
   ${breakpoint.desktopWide`
     height: 200px;
   `};

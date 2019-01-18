@@ -15,8 +15,11 @@ export const HeaderText = styled.div`
 `;
 
 export const CardRow = styled.div`
-  ${breakpoint.tablet`
-    display: flex;
+  // Some padding has to be on parent to stop firefox margin error on contents
+  padding: ${props => props.theme.spacing.small};
+  display: flex;
+  flex-flow: column nowrap;
+  ${breakpoint.desktop`
     flex-flow: row nowrap;
   `};
 `;
