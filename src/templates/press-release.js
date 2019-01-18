@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import dayjs from 'dayjs';
 // Components
 import Layout from '../components/layout';
-import { Container, TwoThirds } from '../components/styled/containers';
+import {
+  Container,
+  TwoThirds,
+  SideBar,
+  ContentWithSideBar,
+} from '../components/styled/containers';
+import MediaContact from '../components/media-contact';
+import PaddedBox from '../components/padded-box';
+
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 
@@ -12,18 +21,42 @@ const PressReleasePage = ({ data }) => {
     title,
     bodyCopy,
     notesToEditor,
+    datePosted,
+    showContactSideBar,
   } = data.contentfulPageAssemblyPressReleasePage;
+
+  const formattedDate = dayjs(datePosted)
+    .format('DD MMM YYYY')
+    .toString();
 
   return (
     <Layout>
       <article>
-        <PageTitle title={title} />
-        <Container>
-          <TwoThirds>{bodyCopy && <RichText richText={bodyCopy} />}</TwoThirds>
-          <TwoThirds>
-            <h3>Notes to editor</h3>
-            {notesToEditor && <RichText richText={notesToEditor} />}
+        <Container padding={false}>
+          <TwoThirds padding={false}>
+            <PageTitle title={title} />
           </TwoThirds>
+          <ContentWithSideBar>
+            <TwoThirds>
+              <p>
+                <strong>Published {formattedDate}</strong>
+              </p>
+
+              <RichText richText={bodyCopy} />
+
+              {notesToEditor && (
+                <PaddedBox>
+                  <h3>Notes to editors:</h3>
+                  <RichText richText={notesToEditor} />
+                </PaddedBox>
+              )}
+            </TwoThirds>
+            {showContactSideBar && (
+              <SideBar>
+                <MediaContact />
+              </SideBar>
+            )}
+          </ContentWithSideBar>
         </Container>
       </article>
     </Layout>
