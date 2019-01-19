@@ -6,23 +6,68 @@ import { Field, Formik } from 'formik';
 import { Container } from '../styled/containers';
 import { FormFieldWrapper } from '../forms/field-wrapper/styles';
 import Button from '../button';
-// Styles
+import FormField from '../forms/form-field';
+import FormFieldset from '../forms/fieldset';
 
-const ContentForm = ({ submitUrl, sourceCode, submitCallToAction }) => {
-  console.log('FORM');
+const ContentForm = ({
+  submitUrl,
+  sourceCode,
+  submitCallToAction,
+  formFields,
+}) => {
+  const initialValues = {
+    sourcecode: sourceCode,
+  };
+
+  const ContentFormGetInitialValues = (fields, values) => {
+    fields.forEach(field => {
+      if (field.internal.type === 'ContentfulTopicFormField') {
+        if (field.defaultValue) {
+          values[`${field.machineName}`] = field.defaultValue;
+        }
+      }
+
+      if (field.internal.type === 'ContentfulTopicFormFieldset') {
+        ContentFormGetInitialValues(field.formFields, values);
+      }
+    });
+  };
+
+  const ContentFormFields = ({ formField }) => {
+    if (formField.internal.type === 'ContentfulTopicFormFieldset') {
+      return (
+        <FormFieldset
+          legend={formField.fieldsetLegend}
+          description={formField.fieldsetDescription.fieldsetDescription}
+        >
+          {formField.formFields.map((formFieldsetField, key) => (
+            <FormField key={key} field={formFieldsetField} />
+          ))}
+        </FormFieldset>
+      );
+    }
+
+    return <FormField key={formField.id} field={formField} />;
+  };
+
+  ContentFormGetInitialValues(formFields, initialValues);
+
+  ContentFormFields.propTypes = {
+    formField: PropTypes.object,
+  };
 
   return (
     <Container>
-      <Formik
-        initialValues={{
-          sourcecode: sourceCode,
-        }}
-      >
+      <Formik initialValues={initialValues}>
         <form action={submitUrl} method="GET">
-          Form
+          {formFields.map(formField => (
+            <ContentFormFields key={formField.id} formField={formField} />
+          ))}
           <Field type="hidden" name="sourcecode" />
           <FormFieldWrapper>
-            <Button type="submit">{submitCallToAction}</Button>
+            <Button bg="red" type="submit">
+              {submitCallToAction}
+            </Button>
           </FormFieldWrapper>
         </form>
       </Formik>
@@ -34,6 +79,7 @@ ContentForm.propTypes = {
   submitUrl: PropTypes.string,
   sourceCode: PropTypes.string,
   submitCallToAction: PropTypes.string,
+  formFields: PropTypes.array,
 };
 
 export default ContentForm;

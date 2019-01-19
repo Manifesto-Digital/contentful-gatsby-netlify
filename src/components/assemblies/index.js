@@ -106,12 +106,16 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       }
 
       if (internal.type === 'ContentfulAssemblyForm') {
+        const formFields = Array.isArray(assembly.formFields)
+          ? assembly.formFields
+          : [];
         return (
           <Form
             key={id}
             submitUrl={assembly.submitUrl}
             sourceCode={assembly.sourceCode}
             submitCallToAction={assembly.submitCallToAction}
+            formFields={formFields}
           >
             Form
           </Form>
