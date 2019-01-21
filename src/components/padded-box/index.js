@@ -21,6 +21,10 @@ const getStyles = ({
 
 const PaddedBox = styled.div`
   ${getStyles}
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export default PaddedBox;
