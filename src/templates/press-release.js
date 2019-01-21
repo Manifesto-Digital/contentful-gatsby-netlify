@@ -33,6 +33,34 @@ const PressReleasePage = ({ data }) => {
     .format('DD MMM YYYY')
     .toString();
 
+  let relatedFiles =
+    data.contentfulPageAssemblyPressReleasePage.downloads || null;
+
+  if (relatedFiles) {
+    relatedFiles = relatedFiles[0].files;
+  }
+
+  const DownloadsList = ({ files }) => {
+    /* eslint-disable  react/no-danger */
+    const list = {
+      __html: files
+        .map(
+          item =>
+            `<li><a href="${item.file.url}" title="${item.title}">${
+              item.title
+            }</a></li>`
+        )
+        .join(''),
+    };
+    /* eslint-disable  react/no-danger */
+    return (
+      <>
+        <h3>Downloads</h3>
+        <ul dangerouslySetInnerHTML={list} />
+      </>
+    );
+  };
+
   return (
     <Layout>
       <article>
@@ -55,9 +83,11 @@ const PressReleasePage = ({ data }) => {
                 </PaddedBox>
               )}
             </TwoThirds>
+
             {showContactSideBar && (
               <SideBar>
                 <MediaContact />
+                {relatedFiles && <DownloadsList files={relatedFiles} />}
               </SideBar>
             )}
           </ContentWithSideBar>
@@ -90,6 +120,16 @@ export const pressReleasePageQuery = graphql`
       notesToEditor {
         childContentfulRichText {
           html
+        }
+      }
+      downloads {
+        files {
+          title
+          file {
+            url
+            fileName
+            contentType
+          }
         }
       }
     }

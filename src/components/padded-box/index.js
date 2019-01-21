@@ -12,6 +12,8 @@ const getStyles = ({
       shadow === false ? 0 : props.theme.boxshadow.small};
     border-radius: ${props =>
       shadow === false ? 0 : props.theme.borderradius.small};
+    margin-bottom: ${props =>
+      props.removeMarginBottom ? '0' : props.theme.spacing.medium};
   `;
 
   return styles;

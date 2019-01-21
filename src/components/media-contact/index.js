@@ -31,12 +31,12 @@ const MediaContact = () => (
           </a>{' '}
           {data.contentfulTopicMediaContactDetails.officeOpeningHours}
         </p>
-        <parent>
+        <p>
           <a href={`tel:${data.alternativePhone}`}>
             {data.contentfulTopicMediaContactDetails.alternativePhone}
           </a>{' '}
           at any other time
-        </parent>
+        </p>
         <p>
           or you can{' '}
           <a
