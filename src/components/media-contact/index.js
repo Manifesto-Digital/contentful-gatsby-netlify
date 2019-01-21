@@ -17,39 +17,32 @@ const MediaContact = () => (
         }
       }
     `}
-    render={data => (
-      <PaddedBox as="aside" bg="grey10">
-        <h3>{data.contentfulTopicMediaContactDetails.title}</h3>
-        <p>
-          Call us:{' '}
-          <a
-            href={`tel:${
-              data.contentfulTopicMediaContactDetails.officePhoneNumber
-            }`}
-          >
-            {data.contentfulTopicMediaContactDetails.officePhoneNumber}
-          </a>{' '}
-          {data.contentfulTopicMediaContactDetails.officeOpeningHours}
-        </p>
-        <p>
-          <a href={`tel:${data.alternativePhone}`}>
-            {data.contentfulTopicMediaContactDetails.alternativePhone}
-          </a>{' '}
-          at any other time
-        </p>
-        <p>
-          or you can{' '}
-          <a
-            href={`mailto:${
-              data.contentfulTopicMediaContactDetails.emailAddress
-            }`}
-          >
-            {' '}
-            email us
-          </a>
-        </p>
-      </PaddedBox>
-    )}
+    render={data => {
+      const {
+        title,
+        officePhoneNumber,
+        officeOpeningHours,
+        alternativePhone,
+        emailAddress,
+      } = data.contentfulTopicMediaContactDetails;
+      return (
+        <PaddedBox as="aside" bg="grey10">
+          <h3>{title}</h3>
+          <p>
+            Call us:{' '}
+            <a href={`tel:${officePhoneNumber}`}>{officePhoneNumber}</a>{' '}
+            {officeOpeningHours}
+          </p>
+          <p>
+            <a href={`tel:${alternativePhone}`}>{alternativePhone}</a> at any
+            other time
+          </p>
+          <p>
+            or you can <a href={`mailto:${emailAddress}`}> email us</a>
+          </p>
+        </PaddedBox>
+      );
+    }}
   />
 );
 
