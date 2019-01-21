@@ -9,6 +9,10 @@ exports[`renders correctly with defaults 1`] = `
   margin-bottom: 30px;
 }
 
+.c0 > :last-child {
+  margin-bottom: 0;
+}
+
 <div
   className="c0"
 />
