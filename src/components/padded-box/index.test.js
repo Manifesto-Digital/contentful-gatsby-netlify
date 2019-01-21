@@ -13,16 +13,20 @@ it('renders correctly with defaults', () => {
 });
 
 it('changes based on supplied props', () => {
-  const wrapper = renderWithTheme(<PaddedBox bg="grey45" padding="large" />);
+  const wrapper = renderWithTheme(
+    <PaddedBox bg="grey45" padding="large" removeMarginBottom />
+  );
   expect(wrapper.toJSON()).toHaveStyleRule('padding', theme.spacing.large);
   expect(wrapper.toJSON()).toHaveStyleRule(
     'background-color',
     theme.palette.grey45
   );
+  expect(wrapper.toJSON()).toHaveStyleRule('margin-bottom', '0');
 
   const wrapper2 = renderWithTheme(
     <PaddedBox bg="sanMarinoBlue" padding="small" />
   );
+
   expect(wrapper2.toJSON()).toHaveStyleRule('padding', theme.spacing.small);
   expect(wrapper2.toJSON()).toHaveStyleRule(
     'background-color',
