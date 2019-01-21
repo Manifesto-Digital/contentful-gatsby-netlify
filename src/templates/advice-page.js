@@ -14,14 +14,16 @@ const AdvicePage = ({ data }) => {
 
   return (
     <Layout>
-      <PageTitle title={title} />
-      <Container>
-        <TwoThirds>
-          {bodyCopy && <RichText richText={bodyCopy} />}
-          <Assemblies assemblies={assemblies} insideContainer />
-          <FeedbackModal />
-        </TwoThirds>
-      </Container>
+      <article>
+        <PageTitle title={title} />
+        <Container>
+          <TwoThirds>
+            {bodyCopy && <RichText richText={bodyCopy} />}
+            <Assemblies assemblies={assemblies} insideContainer />
+            <FeedbackModal />
+          </TwoThirds>
+        </Container>
+      </article>
     </Layout>
   );
 };
