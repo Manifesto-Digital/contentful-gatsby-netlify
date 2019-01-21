@@ -8,8 +8,7 @@ import { donation } from '../../variables';
 import DonationInput from '../forms/donation-input';
 // Styles
 import { VisuallyHidden } from '../styled/accessibility';
-import { InlineForm } from './styles';
-import Button from '../button';
+import { InlineForm, StyledButton } from './styles';
 
 const DonationForm = ({ defaultDonationValue }) => {
   const defaultValue = defaultDonationValue || 30;
@@ -78,9 +77,9 @@ const DonationForm = ({ defaultDonationValue }) => {
                   />
                 )}
               />
-              <Button bg="white outline" type="submit">
+              <StyledButton bg="white outline" type="submit">
                 Donate
-              </Button>
+              </StyledButton>
             </InlineForm>
           )}
         </Formik>

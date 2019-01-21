@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Field, Formik } from 'formik';
 import * as Yup from 'yup';
-
+import MagGlass from '../../assets/svg/icons/search-light.svg';
 import { AdviceSearchForm, SearchInput, SearchButton } from './styles';
 
 import { VisuallyHidden } from '../styled/accessibility';
@@ -13,9 +13,7 @@ const AdviceSearchBox = ({ data }) => {
 
   return (
     <Formik
-      initialValues={{
-        collection: `shelter-${country}`,
-      }}
+      initialValues={{ collection: `shelter-${country}` }}
       validationSchema={Yup.object({
         query: Yup.string(),
       })}
@@ -58,7 +56,7 @@ const AdviceSearchBox = ({ data }) => {
               value="Advice"
             />
 
-            <SearchButton name="Search" type="submit" bg="blue">
+            <SearchButton name="Search" type="submit" bg="blue" icon={MagGlass}>
               Search
             </SearchButton>
           </fieldset>
