@@ -1,6 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c5 {
+  display: inline-block;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #4d63b5;
+  border: none;
+  color: #fff;
+}
+
+.c6 {
+  fill: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: top;
+  margin-top: -2px;
+}
+
 .c3 {
   border: 1px solid #d9d9d9;
   background-color: white;
@@ -22,12 +41,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c4 {
-  display: inline-block;
-  padding: 10px 1em;
-  font-weight: normal;
-  background-color: #4d63b5;
-  border: none;
-  color: #fff;
   width: auto;
   padding: 10px;
 }
@@ -106,10 +119,12 @@ exports[`renders correctly 1`] = `
       value="Advice"
     />
     <button
-      className="c4"
-      name="Search"
+      className="c4 c5"
       type="submit"
     >
+      <span
+        className="isvg loading c6"
+      />
       Search
     </button>
   </fieldset>
