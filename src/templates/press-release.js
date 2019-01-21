@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import dayjs from 'dayjs';
+import styled from 'styled-components';
 // Components
 import Layout from '../components/layout';
 import {
@@ -12,9 +13,12 @@ import {
 } from '../components/styled/containers';
 import MediaContact from '../components/media-contact';
 import PaddedBox from '../components/padded-box';
-
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
+
+const PublishedDate = styled.p`
+  color: ${props => props.theme.palette.grey45};
+`;
 
 const PressReleasePage = ({ data }) => {
   const {
@@ -38,9 +42,9 @@ const PressReleasePage = ({ data }) => {
           </TwoThirds>
           <ContentWithSideBar>
             <TwoThirds>
-              <p>
+              <PublishedDate colour="grey45">
                 <strong>Published {formattedDate}</strong>
-              </p>
+              </PublishedDate>
 
               <RichText richText={bodyCopy} />
 
