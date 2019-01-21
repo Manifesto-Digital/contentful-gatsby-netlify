@@ -7,6 +7,42 @@ exports[`renders correctly 1`] = `
   padding: 0 20px;
 }
 
+.c11 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 .c10 {
+  margin-left: props => props.theme.spacing.small;
+}
+
+.c0 {
+  padding: 20px 0;
+  background-color: #12b9bf;
+  margin-bottom: 40px;
+}
+
+.c3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.c4 .c10 {
+  margin-left: 10px;
+}
+
 .c7 {
   position: relative;
 }
@@ -50,38 +86,6 @@ exports[`renders correctly 1`] = `
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-}
-
-.c11 {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 1em;
-  font-weight: normal;
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c5 .c10 {
-  margin-left: 10px;
-}
-
-.c0 {
-  padding: 20px 0;
-  background-color: #12b9bf;
-  margin-bottom: 40px;
-}
-
-.c3 {
-  color: #fff;
-  margin-bottom: 20px;
 }
 
 @media (min-width:40.0625em) {
@@ -140,6 +144,8 @@ exports[`renders correctly 1`] = `
       <form
         action="https://donate.shelter.org.uk/b"
         className="c4 c5"
+        id={null}
+        inline={1}
         method="GET"
         onReset={[Function]}
         onSubmit={[Function]}

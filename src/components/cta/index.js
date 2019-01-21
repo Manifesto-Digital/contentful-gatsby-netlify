@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { consistentString } from '../../utils/content-formatting';
 // Components
 import Image from '../image';
 // Styles
@@ -17,7 +18,7 @@ const CTA = ({
   <StyledLinkHandler
     externalUrl={externalUrl}
     internalLink={internalLink}
-    bg={bg}
+    bg={consistentString(bg)}
     className={className}
     fullWidth={fullWidth}
   >

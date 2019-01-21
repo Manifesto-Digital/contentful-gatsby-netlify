@@ -23,7 +23,7 @@ export const FileImage = styled.div`
   max-width: 90px;
   margin-right: ${props => props.theme.spacing.standard};
 
-  ${breakpoint.gt.mobileLand`
+  ${breakpoint.mobileLand`
     display: block;
   `};
 `;

@@ -35,7 +35,7 @@ theme.fonts = {
 };
 
 theme.sizes = {
-  maxWidth: '1100px',
+  container: '960px',
 };
 
 theme.headers = {

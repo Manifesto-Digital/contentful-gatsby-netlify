@@ -1,36 +1,43 @@
 import styled from 'styled-components';
 import { Tab, TabList } from 'react-tabs';
 import { removeListStyles } from '../styled/utils';
-import CTA from '../cta';
+import Button from '../button';
 import { breakpoint } from '../theme/breakpoint';
 import { Container } from '../styled/containers';
 import LinkButton from '../link-button';
 
-export const StyledDonateHero = styled.section`
-  ${breakpoint.gt.desktop`
-    height: 34rem;
-  `}
+export const Hero = styled.section`
   position: relative;
   overflow: hidden;
-`;
 
-export const StyledImage = styled.img`
-  ${breakpoint.gt.desktop`
-    position: absolute;
-    height: 100%;
-    // TODO: Make this work in IE11
-    object-fit: cover;
+  ${breakpoint.desktop`
+    height: 34rem;
   `}
-  width: 100%;
 `;
 
-export const StyledSliderBox = styled.div`
-  ${breakpoint.gt.desktop`
+export const Image = styled.img`
+  width: 100%;
+
+  ${breakpoint.desktop`
+    position: absolute;
+      display:block;
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      top: 0;
+      margin:auto;
+  `}
+`;
+
+export const SliderBox = styled.div`
+  background: ${props => props.theme.palette.grey15};
+  position: relative;
+
+  ${breakpoint.desktop`
     width: 70%;
     margin-top: 3rem;
   `}
-  background: ${props => props.theme.palette.grey15};
-  position: relative;
 `;
 
 export const StyledTabList = styled(TabList)`
@@ -55,35 +62,38 @@ export const StyledTab = styled(Tab).attrs({
   }
 `;
 
-export const StyledTabContent = styled.section`
+export const TabContent = styled.section`
   padding: ${props => props.theme.spacing.large};
 `;
 
-export const StyledDonateButton = styled(CTA).attrs({
-  bg: 'donate',
-  fullWidth: true,
-})`
+export const StyledDonateButton = styled(Button)`
   margin-bottom: ${props => props.theme.spacing.large};
 `;
 
-export const StyledDescription = styled.p`
+export const Description = styled.p`
   margin-bottom: ${props => props.theme.spacing.large};
 `;
 
-export const StyledCollapsableArea = styled.div`
+export const CollapsableArea = styled.div`
   max-height: ${props => (props.collapsed ? '0' : '5rem')};
   transition: max-height 0.2s ease-in-out;
   overflow: hidden;
 `;
 
 export const StyledContainer = styled(Container)`
-  ${breakpoint.lt.desktop`
-    padding: 0;
-    max-width: none;
+  padding: 0;
+
+  ${breakpoint.desktop`
+    padding: 0
+    ${props => (props.padding === false ? 0 : props.theme.spacing.standard)};
   `}
 `;
 
 export const OwnAmountButton = styled(LinkButton)`
   display: block;
   margin-bottom: ${props => props.theme.spacing.standard};
+`;
+
+export const OwnAmountSubmit = styled(Button)`
+  margin-left: ${props => props.theme.spacing.small};
 `;

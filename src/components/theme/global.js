@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
         font-size:16px;
         scroll-behavior: smooth !important;
-        ${breakpoint.gt.tablet`
+        ${breakpoint.tablet`
             font-size:  115%;
         `};
     }
@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-size:  ${props => props.theme.headers.h2};
-        ${breakpoint.gt.tablet`
+        ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h1};
             line-height: 1.15;
         `};
@@ -48,13 +48,13 @@ export const GlobalStyle = createGlobalStyle`
 
     h2 {
         font-size:  ${props => props.theme.headers.h3};
-        ${breakpoint.gt.tablet`
+        ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h2};
         `};
     }
     h3 {
         font-size:  ${props => props.theme.headers.h4};
-        ${breakpoint.gt.tablet`
+        ${breakpoint.tablet`
             font-size:  ${props => props.theme.headers.h3};
         `};
     }

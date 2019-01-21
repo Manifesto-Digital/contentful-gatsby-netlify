@@ -52,3 +52,5 @@ export const StyledSlider = styled(Slider).attrs({
     ${props => props.theme.spacing.large} + ${handleOverflow}px
   );
 `;
+
+export const OwnAmountButton = styled.button``;

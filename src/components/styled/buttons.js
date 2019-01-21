@@ -10,10 +10,10 @@ export const buttonStyles = css`
     (props.bg === 'black' && props.theme.palette.black) ||
     (props.bg === 'blue' && props.theme.palette.sanMarinoBlue) ||
     (props.bg === 'donate' && props.theme.palette.donate) ||
-    (props.bg === 'white outline' && 'transparent')};
+    (props.bg === 'white-outline' && 'transparent')};
 
   border: ${props =>
-    props.bg === 'white outline'
+    props.bg === 'white-outline'
       ? `1px solid ${props.theme.palette.white}`
       : 'none'};
 
@@ -22,7 +22,7 @@ export const buttonStyles = css`
     (props.bg === 'black' && props.theme.palette.white) ||
     (props.bg === 'blue' && props.theme.palette.white) ||
     (props.bg === 'donate' && props.theme.palette.white) ||
-    (props.bg === 'white outline' && props.theme.palette.white)};
+    (props.bg === 'white-outline' && props.theme.palette.white)};
 
   ${props => props.fullWidth && 'width: 100%'};
 `;
