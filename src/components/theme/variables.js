@@ -61,5 +61,6 @@ theme.spacing = {
   standard: '20px',
   medium: '30px',
   large: '40px',
+  xl: '60px',
 };
 export default theme;

@@ -12,16 +12,17 @@ export const Hero = styled.section`
   margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.desktop`
-    height: 34rem;
+    height: 625px;
   `}
 `;
 
 export const ImageWrapper = styled.div`
-  max-height: 15rem;
+  max-height: 200px;
 
   ${breakpoint.tablet`
-      max-height: 20rem;
-    `};
+    max-height: 300px;
+  `};
+
   ${breakpoint.desktop`
     max-height: none;
   `}
@@ -47,7 +48,7 @@ export const SliderBox = styled.div`
 
   ${breakpoint.desktop`
     width: 70%;
-    margin-top: 3rem;
+    margin-top: ${props => props.theme.spacing.xl};
   `}
 `;
 
@@ -91,7 +92,7 @@ export const Description = styled.p`
 `;
 
 export const CollapsableArea = styled.div`
-  max-height: ${props => (props.collapsed ? '0' : '5rem')};
+  max-height: ${props => (props.collapsed ? '0' : '50px')};
   transition: max-height 0.2s ease-in-out;
   overflow: hidden;
 `;
