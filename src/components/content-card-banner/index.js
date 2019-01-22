@@ -8,11 +8,12 @@ import { BannerBackground, HeaderText, CardRow } from './styles';
 
 const ContentCardBanner = ({ data }) => {
   const { bannerColour, header, contentCards } = data;
+  if (contentCards && contentCards.length < 2) return null;
 
   return (
     <BannerBackground bannerColour={consistentString(bannerColour)}>
       <HeaderText as={RichText} richText={header} />
-      <CardRow>
+      <CardRow items={contentCards.length}>
         {contentCards.map(contentCard => (
           <ContentCard data={contentCard} />
         ))}

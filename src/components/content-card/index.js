@@ -20,7 +20,7 @@ const ContentCard = ({ data }) => {
         <ResponsiveImage
           mobileW={400}
           mobileH={300}
-          desktopW={600}
+          desktopW={700}
           desktopH={300}
           fit="fill"
           focusArea={cropImageFrom}

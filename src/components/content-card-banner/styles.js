@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
+import { Card } from '../content-card/styles';
 
 export const BannerBackground = styled.section`
   background-color: ${props =>
@@ -19,7 +20,34 @@ export const CardRow = styled.div`
   padding: ${props => props.theme.spacing.small};
   display: flex;
   flex-flow: column nowrap;
-  ${breakpoint.desktop`
-    flex-flow: row nowrap;
+  ${breakpoint.tablet`
+    flex-flow: row wrap;
   `};
+
+  ${Card} {
+    ${breakpoint.tablet`
+      ${props =>
+        props.items === 2 &&
+        css`
+          ${breakpoint.desktopWide`
+          &:first-child { margin-left: 20vw; }
+          &:last-child { margin-right: 20vw; }
+        `};
+        `}
+
+      ${props => props.items === 3 && css``}
+
+      ${props =>
+        props.items === 4 &&
+        css`
+          flex: 0 auto;
+          width: calc(50% - 20px);
+        `}
+    `};
+
+    ${breakpoint.desktop`
+      width: auto;
+      flex: 1;
+    `};
+  }
 `;
