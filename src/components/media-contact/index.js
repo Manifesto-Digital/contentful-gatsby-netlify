@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PaddedBox from '../padded-box';
 
-const MediaContact = () => (
+const MediaContact = innerColour => (
   <StaticQuery
     query={graphql`
       query details {
@@ -25,8 +25,13 @@ const MediaContact = () => (
         alternativePhone,
         emailAddress,
       } = data.contentfulTopicMediaContactDetails;
+
+      const boxColour = innerColour.innerColour
+        ? innerColour.innerColour
+        : 'grey10';
+
       return (
-        <PaddedBox as="aside" bg="grey10">
+        <PaddedBox as="aside" bg={boxColour}>
           <h3>{title}</h3>
           <p>
             Call us:{' '}
