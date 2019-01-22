@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c1 {
-  max-height: 15rem;
+  max-height: 200px;
 }
 
 .c4 {
@@ -179,13 +179,13 @@ exports[`renders correctly 1`] = `
 
 @media (min-width:62em) {
   .c0 {
-    height: 34rem;
+    height: 625px;
   }
 }
 
 @media (min-width:40.0625em) {
   .c1 {
-    max-height: 20rem;
+    max-height: 300px;
   }
 }
 
@@ -212,7 +212,7 @@ exports[`renders correctly 1`] = `
 @media (min-width:62em) {
   .c4 {
     width: 70%;
-    margin-top: 3rem;
+    margin-top: 60px;
   }
 }
 
