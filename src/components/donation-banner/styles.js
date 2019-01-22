@@ -35,8 +35,8 @@ export const InlineForm = styled.form`
     margin-bottom: 0;
     justify-content: flex-end;
   `};
+`;
 
-  ${Button} {
-    margin-left: ${props => props.theme.spacing.small};
-  }
+export const StyledButton = styled(Button)`
+  margin-left: ${props => props.theme.spacing.small};
 `;

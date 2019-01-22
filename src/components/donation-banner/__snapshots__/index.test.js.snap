@@ -73,7 +73,7 @@ exports[`renders correctly 1`] = `
   display: flex;
 }
 
-.c4 .c9 {
+.c9 {
   margin-left: 10px;
 }
 
