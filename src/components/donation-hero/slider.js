@@ -48,6 +48,8 @@ export const StyledSlider = styled(Slider).attrs({
 })`
   position: relative;
   padding-top: ${markHeight + handleOverflow}px;
+  margin-left: ${props => props.theme.spacing.small};
+  margin-right: ${props => props.theme.spacing.small};
   margin-bottom: calc(
     ${props => props.theme.spacing.large} + ${handleOverflow}px
   );

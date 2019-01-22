@@ -13,6 +13,7 @@ import DonationHero from '.';
 
 // Default props
 export const createDonationHero = createFactory({
+  heading: 'Your donations make a difference',
   singleAmount1: 10,
   singleDescription1:
     'Just £10 could pay for two web chats providing essential housing advice.',

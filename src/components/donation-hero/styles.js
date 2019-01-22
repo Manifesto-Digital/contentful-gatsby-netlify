@@ -15,19 +15,28 @@ export const Hero = styled.section`
   `}
 `;
 
-export const Image = styled.img`
-  width: 100%;
+export const ImageWrapper = styled.div`
+  max-height: 15rem;
 
+  ${breakpoint.tablet`
+      max-height: 20rem;
+    `};
+  ${breakpoint.desktop`
+    max-height: none;
+  `}
+`;
+
+export const Image = styled.img`
   ${breakpoint.desktop`
     position: absolute;
-      display:block;
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      top: 0;
-      margin:auto;
-  `}
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+  `};
 `;
 
 export const SliderBox = styled.div`
@@ -63,15 +72,20 @@ export const StyledTab = styled(Tab).attrs({
 `;
 
 export const TabContent = styled.section`
-  padding: ${props => props.theme.spacing.large};
+  padding: ${props => props.theme.spacing.standard};
+
+  ${breakpoint.tablet`
+    padding: ${props => props.theme.spacing.large};
+
+  `};
 `;
 
 export const StyledDonateButton = styled(Button)`
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${props => props.theme.spacing.standard};
 `;
 
 export const Description = styled.p`
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${props => props.theme.spacing.standard};
 `;
 
 export const CollapsableArea = styled.div`

@@ -18,6 +18,7 @@ import {
   StyledDonateButton,
   Description,
   StyledContainer,
+  ImageWrapper,
 } from './styles';
 import { VisuallyHidden } from '../styled/accessibility';
 
@@ -48,7 +49,7 @@ const getMarks = (activeTab, activeAmount) => {
 
 const DonateHero = ({ content }) => {
   const formattedValues = formatDonationContent(content);
-
+  const { heading } = content;
   const tabIds = ['single', 'monthly'];
 
   // State for tab single / monthly
@@ -85,23 +86,25 @@ const DonateHero = ({ content }) => {
 
   return (
     <Hero>
-      {tabIds.map(tabId =>
-        formattedValues[tabId].map((option, i) => {
-          if (tabId === selectedTabId && option.amount === activeAmount) {
-            return (
-              <Image
-                as={ResponsiveImage}
-                key={i}
-                image={activeImage}
-                mobileW={700}
-                desktopW={1500}
-                progressive
-              />
-            );
-          }
-          return null;
-        })
-      )}
+      <ImageWrapper>
+        {tabIds.map(tabId =>
+          formattedValues[tabId].map((option, i) => {
+            if (tabId === selectedTabId && option.amount === activeAmount) {
+              return (
+                <Image
+                  as={ResponsiveImage}
+                  key={i}
+                  image={activeImage}
+                  mobileW={700}
+                  desktopW={1500}
+                  progressive
+                />
+              );
+            }
+            return null;
+          })
+        )}
+      </ImageWrapper>
 
       <StyledContainer>
         <SliderBox>
@@ -118,7 +121,7 @@ const DonateHero = ({ content }) => {
               return (
                 <TabPanel key={tabId}>
                   <TabContent>
-                    <h2>Your donations make a difference</h2>
+                    <h2>{heading}</h2>
                     <Description>{activeDescription}</Description>
                     <DonationForm
                       defaultDonationValue={activeOption[selectedTabId].amount}
@@ -167,6 +170,7 @@ const DonateHero = ({ content }) => {
 
 DonateHero.propTypes = {
   content: PropTypes.shape({
+    heading: PropTypes.string.isRequired,
     singleAmount1: PropTypes.number.isRequired,
     singleDescription1: PropTypes.string.isRequired,
     singleImage1: PropTypes.object.isRequired,

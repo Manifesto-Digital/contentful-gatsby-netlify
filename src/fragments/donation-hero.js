@@ -6,6 +6,7 @@ export const DonationHeroFragment = graphql`
     internal {
       type
     }
+    heading
     singleAmount1
     singleDescription1
     singleImage1 {
