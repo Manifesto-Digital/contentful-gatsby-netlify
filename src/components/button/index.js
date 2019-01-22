@@ -17,7 +17,7 @@ const Button = ({
     fullWidth={fullWidth}
     type={type}
   >
-    {icon && <IconHolder src={icon} iconColour={iconColour} />}
+    {icon && <IconHolder src={icon} iconColour={iconColour} cacheGetRequests />}
     {children}
   </DefaultButton>
 );
