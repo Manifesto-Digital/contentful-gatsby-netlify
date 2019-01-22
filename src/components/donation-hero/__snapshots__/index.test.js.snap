@@ -25,6 +25,7 @@ exports[`renders correctly 1`] = `
 .c0 {
   position: relative;
   overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .c1 {
@@ -439,7 +440,7 @@ exports[`renders correctly 1`] = `
                       "backgroundColor": "white",
                       "border": "1px solid #d9d9d9",
                       "borderRadius": "50%",
-                      "boxShadow": "inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb",
+                      "boxShadow": "0 1.5px 4px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.06);",
                       "height": 30,
                       "left": "28.57142857142857%",
                       "marginLeft": -15,
