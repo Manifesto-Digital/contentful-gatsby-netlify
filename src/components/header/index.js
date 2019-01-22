@@ -1,130 +1,91 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import { Overlay } from '../styled/overlay';
 import LogoSVG from '../../assets/svg/icons/logo.svg';
 import MenuSVG from '../../assets/svg/icons/menu.svg';
-import CloseSVG from '../../assets/svg/icons/close.svg';
+import Navigation from '../navigation';
+
 import useToggle from '../../utils/useToggle';
 import {
   HeaderWrapper,
   HeaderBar,
   LogoWrapper,
   Logo,
-  MenuControl,
+  Open,
   StyledMenuSVG,
-  MenuWrapper,
 } from './styles';
+
+const navigationQuery = graphql`
+  query navigationItemsQuery {
+    allContentfulAssemblyNavigationMenu(
+      filter: { id: { eq: "e230d8b8-4ee6-5d4c-bf25-57af664d12d7" } }
+    ) {
+      edges {
+        node {
+          id
+          name
+          internal {
+            type
+          }
+          navigationItems {
+            id
+            internal {
+              type
+            }
+            navigationLink {
+              ... on ContentfulPageAssemblyContentPage {
+                title
+                slug
+              }
+            }
+            subNavigationItems {
+              ... on ContentfulPageAssemblyPressReleasePage {
+                title
+                slug
+              }
+              ... on ContentfulPageAssemblyContentPage {
+                title
+                slug
+              }
+              ... on ContentfulPageAssemblyAdvicePage {
+                title
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Header = () => {
   const [isOpen, openState] = useToggle(false);
-  return (
-    <>
-      <HeaderWrapper>
-        <HeaderBar>
-          <LogoWrapper>
-            <Logo src={LogoSVG} cacheGetRequests />
-          </LogoWrapper>
-          <MenuControl type="button" onClick={openState} active={isOpen}>
-            <StyledMenuSVG src={MenuSVG} />
-          </MenuControl>
-        </HeaderBar>
-      </HeaderWrapper>
-      <MenuWrapper active={isOpen}>
-        <MenuControl type="button" onClick={openState} active={isOpen}>
-          <StyledMenuSVG src={CloseSVG} />
-        </MenuControl>
-        <ul className="row unbulleted ">
-          <li>
-            <a
-              href="https://england.shelter.org.uk/housing_advice"
-              id="test-24462"
-            >
-              Housing advice
-            </a>
-            <ul className="unbulleted subnav js-subnavbar">
-              <div className="row">
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/homelessness">
-                    Homelessness
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/private_renting">
-                    Private renting
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/tenancy_deposits">
-                    Tenancy deposits
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/benefits">
-                    Benefits
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/council_housing_association">
-                    Council housing
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/eviction">
-                    Eviction
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/repairs">
-                    Repairs
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/money_problems_and_energy_costs">
-                    Energy costs
-                  </a>
-                </li>
-                <li className="js-subnav js-active">
-                  <a href="https://england.shelter.org.uk/housing_advice/repossession">
-                    Repossession
-                  </a>
-                </li>
-              </div>
-            </ul>
-          </li>
-          <li>
-            <a
-              href="https://england.shelter.org.uk/get_help"
-              id="js-main-nav-get-help"
-            >
-              Get help
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://england.shelter.org.uk/support_us"
-              id="test-1169133"
-            >
-              Support us
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://england.shelter.org.uk/what_we_do"
-              id="test-1385719"
-            >
-              What we do
-            </a>
-          </li>
 
-          <li className="secondary">
-            <a href="https://england.shelter.org.uk/professional_resources">
-              Professionals
-            </a>
-          </li>
-          <li className="secondary">
-            <a href="http://scotland.shelter.org.uk">Scotland</a>
-          </li>
-        </ul>
-      </MenuWrapper>
-    </>
+  return (
+    <StaticQuery
+      query={navigationQuery}
+      render={data => (
+        <>
+          <HeaderWrapper>
+            <HeaderBar>
+              <LogoWrapper>
+                <Logo src={LogoSVG} cacheGetRequests />
+              </LogoWrapper>
+              <Open type="button" onClick={openState} active={isOpen}>
+                <StyledMenuSVG src={MenuSVG} />
+              </Open>
+            </HeaderBar>
+          </HeaderWrapper>
+          <Navigation
+            data={data.allContentfulAssemblyNavigationMenu.edges[0].node}
+            active={isOpen}
+            openState={openState}
+          />
+          <Overlay active={isOpen} />
+        </>
+      )}
+    />
   );
 };
 

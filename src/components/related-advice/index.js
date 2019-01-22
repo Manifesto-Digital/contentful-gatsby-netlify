@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '../styled/containers';
 import { Title, Wrapper, ListWrapper, ListItem, ArrowSVG } from './styles';
-import AngleRight from '../../assets/svg/icons/angle-right.svg';
+import AngleRight from '../../assets/svg/icons/chevron-right-light.svg';
 
 const RelatedAdvice = ({ data, insideContainer }) => {
   const { headerText, columns, links } = data;

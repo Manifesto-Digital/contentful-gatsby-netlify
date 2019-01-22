@@ -24,7 +24,7 @@ theme.palette = {
   success: '#62b33c',
   successLight: '#e6f8e7',
 
-  overlay: 'rgba(43,46,56,.9)',
+  overlay: 'rgba(43, 46, 56, 0.7)',
 };
 
 theme.fonts = {
@@ -45,7 +45,7 @@ theme.headers = {
 };
 
 theme.fontsize = {
-  small: '0.875rem', // 14px
+  small: '0.775rem', // 14px
   standard: '1rem', // 16px
 };
 
