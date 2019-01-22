@@ -26,19 +26,12 @@ export const CardRow = styled.div`
 
   ${Card} {
     ${breakpoint.tablet`
-      ${props =>
-        props.items === 2 &&
-        css`
-          ${breakpoint.desktopWide`
-          &:first-child { margin-left: 20vw; }
-          &:last-child { margin-right: 20vw; }
-        `};
-        `}
+      ${({ items }) => items === 2 && css``}
 
-      ${props => props.items === 3 && css``}
+      ${({ items }) => items === 3 && css``}
 
-      ${props =>
-        props.items === 4 &&
+      ${({ items }) =>
+        items === 4 &&
         css`
           flex: 0 auto;
           width: calc(50% - 20px);
