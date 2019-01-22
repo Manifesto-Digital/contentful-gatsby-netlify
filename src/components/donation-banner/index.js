@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 // Styles
 import { Container } from '../styled/containers';
-import { Banner, Wrapper, Header, StyledDonationForm } from './styles';
+import {
+  Banner,
+  StyledButton,
+  Wrapper,
+  Header,
+  StyledDonationFormHandler,
+} from './styles';
 // Components
 import DonationInput from '../forms/donation-input';
 // Styles
 import { VisuallyHidden } from '../styled/accessibility';
-import Button from '../button';
 
 const DonationBanner = ({ banner }) => {
   const { headerText, removeMarginBottom, donationInputDefaultValue } = banner;
@@ -18,7 +23,7 @@ const DonationBanner = ({ banner }) => {
       <Container>
         <Wrapper>
           <Header>{headerText}</Header>
-          <StyledDonationForm
+          <StyledDonationFormHandler
             defaultDonationValue={donationInputDefaultValue}
             render={({ handleAmountChange, setFieldValue, defaultValue }) => (
               <>
@@ -38,9 +43,9 @@ const DonationBanner = ({ banner }) => {
                     />
                   )}
                 />
-                <Button bg="white-outline" type="submit">
+                <StyledButton bg="white-outline" type="submit">
                   Donate
-                </Button>
+                </StyledButton>
               </>
             )}
           />

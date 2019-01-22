@@ -36,6 +36,7 @@ export const Image = styled.img`
     bottom: 0;
     top: 0;
     margin: auto;
+    width: 100%;
   `};
 `;
 

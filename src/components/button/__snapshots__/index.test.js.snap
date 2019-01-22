@@ -13,6 +13,7 @@ exports[`renders correctly 1`] = `
 
 <button
   className="c0"
+  type="button"
 />
 `;
 
@@ -30,5 +31,6 @@ exports[`renders correctly when full width 1`] = `
 
 <button
   className="c0"
+  type="button"
 />
 `;

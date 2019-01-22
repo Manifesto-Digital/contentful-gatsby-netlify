@@ -8,10 +8,6 @@ exports[`renders correctly 1`] = `
   display: flex;
 }
 
-.c0 .c1 {
-  margin-left: props => props.theme.spacing.small;
-}
-
 <form
   action="https://donate.shelter.org.uk/b"
   className="c0"
