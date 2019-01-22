@@ -9,6 +9,7 @@ import LinkButton from '../link-button';
 export const Hero = styled.section`
   position: relative;
   overflow: hidden;
+  margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.desktop`
     height: 34rem;

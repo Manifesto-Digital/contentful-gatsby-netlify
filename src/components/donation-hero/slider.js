@@ -18,19 +18,19 @@ export const markStyle = isActive => ({
   ...(isActive ? { fontWeight: 'bold', fontSize: '1.25em' } : {}),
 });
 
-export const StyledSlider = styled(Slider).attrs({
+export const StyledSlider = styled(Slider).attrs(props => ({
   railStyle: {
     position: 'absolute',
     width: '100%',
     height: railHeight,
-    backgroundColor: '#bdbec0',
+    backgroundColor: props.theme.palette.grey25,
     borderRadius: railHeight / 2,
   },
   trackStyle: {
     position: 'absolute',
     width: '100%',
     height: railHeight,
-    backgroundColor: '#5a5a5a',
+    backgroundColor: props.theme.palette.grey80,
     borderRadius: railHeight / 2,
   },
   handleStyle: {
@@ -39,13 +39,12 @@ export const StyledSlider = styled(Slider).attrs({
     height: handleSize,
     borderRadius: '50%',
     backgroundColor: 'white',
-    border: '1px solid #d9d9d9',
-    boxShadow:
-      'inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb',
+    border: `1px solid ${props.theme.palette.grey15}`,
+    boxShadow: props.theme.boxshadow.small,
     marginLeft: -(handleSize / 2),
     marginTop: -handleOverflow,
   },
-})`
+}))`
   position: relative;
   padding-top: ${markHeight + handleOverflow}px;
   margin-left: ${props => props.theme.spacing.small};
