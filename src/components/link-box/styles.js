@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   padding: ${props => props.theme.spacing.standard};
   background: ${props => props.theme.palette.white};
   box-shadow: ${props => props.theme.boxshadow.small};
-  border-radius: 3px;
+  border-radius: ${props => props.theme.borderradius.small};
 `;
 
 export const ListWrapper = styled.div`

@@ -37,6 +37,10 @@ theme.sizes = {
   maxWidth: '1100px',
 };
 
+theme.borderradius = {
+  small: '3px',
+};
+
 theme.headers = {
   h1: '2.35em',
   h2: '1.8em',
@@ -50,7 +54,7 @@ theme.fontsize = {
 };
 
 theme.boxshadow = {
-  small: '0 1.5px 4px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.06);',
+  small: '0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06)',
 };
 
 theme.spacing = {
