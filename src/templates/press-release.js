@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import dayjs from 'dayjs';
+
 import styled from 'styled-components';
+
+import { dateAsString } from '../utils/dates';
 // Components
 import Layout from '../components/layout';
 import {
@@ -29,9 +31,7 @@ const PressReleasePage = ({ data }) => {
     showContactSideBar,
   } = data.contentfulPageAssemblyPressReleasePage;
 
-  const formattedDate = dayjs(datePosted)
-    .format('DD MMM YYYY')
-    .toString();
+  const formattedDate = dateAsString(datePosted, 'DD MMM YYYY');
 
   let relatedFiles =
     data.contentfulPageAssemblyPressReleasePage.downloads || null;
@@ -71,7 +71,7 @@ const PressReleasePage = ({ data }) => {
           <ContentWithSideBar>
             <TwoThirds>
               <PublishedDate colour="grey45">
-                <strong>Published {formattedDate}</strong>
+                <strong>Posted {formattedDate}</strong>
               </PublishedDate>
 
               <RichText richText={bodyCopy} />

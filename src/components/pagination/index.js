@@ -1,34 +1,49 @@
 import React from 'react';
+import styled from 'styled-components';
+// import PropTypes from 'prop-types';
+
+import LinkHandler from '../link-handler';
+
+import { VisuallyHidden } from '../styled/accessibility';
+
+const ButtonWrapper = styled(LinkHandler)``;
+
+const PaginationButton = () => (
+  <ButtonWrapper>
+    <VisuallyHidden>Go to </VisuallyHidden>1
+  </ButtonWrapper>
+);
+
+const Items = props => (
+  <li>
+    <LinkHandler internalLink={props}>
+      <VisuallyHidden>page </VisuallyHidden>1
+    </LinkHandler>
+  </li>
+);
 
 const Pagination = () => (
-  <div>
-    <a href="">
-      <i className="fa fa-chevron-left" aria-hidden="true" />
-      Previous
-    </a>
+  <nav aria-label="pagination">
     <ul>
-      <li>1</li>
       <li>
-        <a href="http://media.shelter.org.uk/press_releases?result_1239648_result_page=2">
-          2
-        </a>
+        <PaginationButton goTo="previous" />
       </li>
+
+      <Items number={6} />
+
       <li>
-        <a href="http://media.shelter.org.uk/press_releases?result_1239648_result_page=3">
-          3
-        </a>
-      </li>
-      <li>
-        <a href="http://media.shelter.org.uk/press_releases?result_1239648_result_page=4">
-          4
-        </a>
+        <PaginationButton goTo="next" />
       </li>
     </ul>
-    <a href="http://media.shelter.org.uk/press_releases?result_1239648_result_page=2">
-      <i className="fa fa-chevron-right" aria-hidden="true" />
-      Next
-    </a>
-  </div>
+  </nav>
 );
+
+// Items.propTypes = {
+//   props: PropTypes.object,
+// };
+
+// PaginationButton.propTypes = {
+//   goTo: PropTypes.string,
+// };
 
 export default Pagination;

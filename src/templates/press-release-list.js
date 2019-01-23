@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
+import SVG from 'react-inlinesvg';
 
+import LinkHandler from '../components/link-handler';
+import { dateAsString } from '../utils/dates';
+
+import ArrowRight from '../assets/svg/icons/angle-right.svg';
 import Layout from '../components/layout';
 import {
   Container,
@@ -22,7 +28,7 @@ const PressItem = styled(PaddedBox)`
   position: relative;
 `;
 
-const CoveringLink = styled.a`
+const CoveringLink = styled(LinkHandler)`
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -36,27 +42,56 @@ const PostedDate = styled.p`
   color: ${props => props.theme.palette.grey45};
 `;
 
-const Item = () => (
-  <PressItem shadow bg="white">
-    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et
-      imperdiet nisi, nec rutrum diam. Aliquam rutrum bibendum luctus.
-    </p>
-    <CoveringLink
-      aria-hidden="true"
-      href="/320,000-people-in-britain-are-now-homeless,-as-numbers-keep-rising"
-    >
-      link text
-    </CoveringLink>
-    <PostedDate>
-      <strong>date</strong>
-    </PostedDate>
-  </PressItem>
-);
+const ArrowIcon = styled(SVG)``;
 
-const PressReleaseTemplate = data => {
+const IconHolder = styled.div`
+  border-bottom-right-radius: ${props => props.theme.borderradius.small};
+  background: ${props => props.theme.palette.grey45};
+  color: ${props => props.theme.palette.white};
+  padding-top: 3px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    margin: 0 auto;
+  }
+`;
+
+const Item = props => {
+  const { title, datePosted } = props;
+  return (
+    <PressItem shadow bg="white">
+      <h3>{title}</h3>
+      <p>
+        TODO: add metadata description here.
+        <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
+        molestie lacus. Nulla ac mauris nunc.{' '}
+      </p>
+      <CoveringLink aria-hidden="true" internalLink={props}>
+        {title}
+      </CoveringLink>
+
+      <IconHolder aria-hidden="true">
+        <ArrowIcon src={ArrowRight} alt=" " cacheGetRequests />
+      </IconHolder>
+
+      <PostedDate>
+        <strong>Posted on {dateAsString(datePosted, 'DD MMM YYYY')}</strong>
+      </PostedDate>
+    </PressItem>
+  );
+};
+
+const PressReleaseTemplate = ({ data, pageContext }) => {
   const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
+
+  console.log(pageContext);
 
   return (
     <Layout>
@@ -74,11 +109,11 @@ const PressReleaseTemplate = data => {
         <Container>
           <ContentWithSideBar>
             <TwoThirds>
-              {posts.map(({ node }) => {
-                return <div key={node.id}>{node.title}</div>;
-              })}
+              {posts.map(({ node }) => (
+                <Item key={node.id} {...node} />
+              ))}
 
-              <Pagination />
+              <Pagination data={pageContext} />
             </TwoThirds>
 
             <SideBar>
@@ -89,6 +124,16 @@ const PressReleaseTemplate = data => {
       </PressReleaseList>
     </Layout>
   );
+};
+
+PressReleaseTemplate.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object,
+};
+
+Item.propTypes = {
+  title: PropTypes.string,
+  datePosted: PropTypes.string,
 };
 
 export default PressReleaseTemplate;
@@ -105,6 +150,7 @@ export const pressReleasePageQuery = graphql`
           id
           title
           datePosted
+          slug
         }
       }
     }
