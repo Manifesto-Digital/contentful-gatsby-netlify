@@ -43,7 +43,7 @@ export const CardTitle = styled.div`
   font-size: ${props => props.theme.fontsize.small};
   color: #fff;
   max-width: 100%;
-  padding: 5px ${props => props.theme.spacing.small};
+  padding: 5px ${props => props.theme.spacing.standard};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,10 +53,12 @@ export const CardTitle = styled.div`
 `;
 
 export const SummaryText = styled.div`
-  padding: ${props => props.theme.spacing.small};
+  padding: ${props => props.theme.spacing.small}
+    ${props => props.theme.spacing.standard};
   // The 15px is required in this particular instance as the title overlaps this area
   padding-top: 15px;
   color: ${props => props.theme.palette.sanMarinoBlue};
+  font-size: ${props => props.theme.fontsize.small};
 `;
 
 export const Link = styled.a`

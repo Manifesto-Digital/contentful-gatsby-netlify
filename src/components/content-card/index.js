@@ -18,10 +18,10 @@ const ContentCard = ({ data }) => {
     <Card>
       <ImageContainer>
         <ResponsiveImage
-          mobileW={400}
-          mobileH={300}
-          desktopW={700}
-          desktopH={300}
+          mobileW={600}
+          mobileH={350}
+          desktopW={600}
+          desktopH={350}
           fit="fill"
           focusArea={cropImageFrom}
           image={featuredImage}
