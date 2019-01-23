@@ -73,12 +73,12 @@ exports[`renders correctly 1`] = `
   display: flex;
 }
 
-.c4 .c9 {
+.c9 {
   margin-left: 10px;
 }
 
 .c1 {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }

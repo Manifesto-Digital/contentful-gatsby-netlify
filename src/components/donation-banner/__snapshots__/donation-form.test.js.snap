@@ -62,7 +62,7 @@ exports[`renders correctly 1`] = `
   display: flex;
 }
 
-.c0 .c5 {
+.c5 {
   margin-left: 10px;
 }
 

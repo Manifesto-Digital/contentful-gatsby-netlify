@@ -37,6 +37,10 @@ theme.sizes = {
   maxWidth: '1100px',
 };
 
+theme.borderradius = {
+  small: '3px',
+};
+
 theme.headers = {
   h1: '2.35em',
   h2: '1.8em',
