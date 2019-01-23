@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import {
@@ -55,7 +56,8 @@ const Item = () => (
 );
 
 const PressReleaseTemplate = data => {
-  console.log(data);
+  const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
+
   return (
     <Layout>
       <Container>
@@ -72,9 +74,9 @@ const PressReleaseTemplate = data => {
         <Container>
           <ContentWithSideBar>
             <TwoThirds>
-              <Item />
-              <Item />
-              <Item />
+              {posts.map(({ node }) => {
+                return <div key={node.id}>{node.title}</div>;
+              })}
 
               <Pagination />
             </TwoThirds>
@@ -90,3 +92,21 @@ const PressReleaseTemplate = data => {
 };
 
 export default PressReleaseTemplate;
+
+export const pressReleasePageQuery = graphql`
+  query pressReleaseQuery2($skip: Int!, $limit: Int!) {
+    allContentfulPageAssemblyPressReleasePage(
+      limit: $limit
+      skip: $skip
+      sort: { fields: [datePosted], order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          title
+          datePosted
+        }
+      }
+    }
+  }
+`;
