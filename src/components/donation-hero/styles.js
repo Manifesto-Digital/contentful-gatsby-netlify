@@ -12,7 +12,7 @@ export const Hero = styled.section`
   margin-bottom: ${props => props.theme.spacing.large};
 
   ${breakpoint.desktop`
-    height: 625px;
+    height: 660px;
   `}
 `;
 
@@ -47,7 +47,7 @@ export const SliderBox = styled.div`
   position: relative;
 
   ${breakpoint.desktop`
-    width: 70%;
+    width: 55%;
     margin-top: ${props => props.theme.spacing.xl};
   `}
 `;
@@ -75,10 +75,17 @@ export const StyledTab = styled(Tab).attrs({
 `;
 
 export const TabContent = styled.section`
-  padding: ${props => props.theme.spacing.standard};
+  padding: ${props =>
+    `${props.theme.spacing.standard} ${props.theme.spacing.standard}  ${
+      props.theme.spacing.small
+    } ${props.theme.spacing.standard}`};
 
   ${breakpoint.tablet`
-    padding: ${props => props.theme.spacing.large};
+  padding: ${props =>
+    `${props.theme.spacing.large} ${props.theme.spacing.large}  ${
+      props.theme.spacing.standard
+    } ${props.theme.spacing.large}`};
+
 
   `};
 `;
@@ -89,6 +96,9 @@ export const StyledDonateButton = styled(Button)`
 
 export const Description = styled.p`
   margin-bottom: ${props => props.theme.spacing.standard};
+  ${breakpoint.desktop`
+    min-height: 3em;
+  `}
 `;
 
 export const CollapsableArea = styled.div`
