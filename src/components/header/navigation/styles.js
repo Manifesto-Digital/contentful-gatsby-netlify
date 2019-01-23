@@ -44,7 +44,7 @@ export const Menus = styled.div`
   `}
 `;
 
-export const MenuWrap = styled.nav`
+export const Menu = styled.nav`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -63,7 +63,7 @@ export const ItemLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const AdditionalMenu = styled(MenuWrap)`
+export const AdditionalMenu = styled(Menu)`
   ${ItemLink} {
     border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
     &:last-child {
@@ -82,7 +82,7 @@ export const AdditionalMenu = styled(MenuWrap)`
   `}
 `;
 
-export const ItemWrap = styled.div`
+export const Item = styled.div`
   display: flex;
   width: 100%;
 
@@ -91,7 +91,7 @@ export const ItemWrap = styled.div`
   `}
 `;
 
-export const SubMenuWrap = styled(MenuWrap)`
+export const SubMenu = styled(Menu)`
   display: ${({ active }) => (active ? 'flex' : 'none')};
   margin-left: ${({ theme }) => theme.spacing.small};
   border: none;

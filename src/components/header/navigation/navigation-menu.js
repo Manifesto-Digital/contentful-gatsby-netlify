@@ -2,35 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { SubNavButton, ArrowSVG } from './styles-icon';
-import { MenuWrap, SubMenuWrap, ItemLink, ItemWrap } from './styles';
+import { Menu, SubMenu, ItemLink, Item } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
 const NavigationMenu = ({ data, id, menuOpen, setActiveMenu }) => {
   const { menuLabel, navigationLink, subNavigationItems } = data;
 
   return (
-    <MenuWrap>
+    <Menu>
       {navigationLink &&
         navigationLink.map((navLink, i) => (
-          <ItemWrap key={i}>
+          <Item key={i}>
             <ItemLink to={navLink.slug}>{menuLabel || navLink.title}</ItemLink>
             {subNavigationItems && (
               <SubNavButton onClick={() => setActiveMenu(id)} type="button">
                 <ArrowSVG src={AngleRight} cacheGetRequests />
               </SubNavButton>
             )}
-          </ItemWrap>
+          </Item>
         ))}
       {subNavigationItems && (
-        <SubMenuWrap active={menuOpen}>
+        <SubMenu active={menuOpen}>
           {subNavigationItems.map((item, i) => (
             <ItemLink key={i} to={item.slug}>
               {item.title}
             </ItemLink>
           ))}
-        </SubMenuWrap>
+        </SubMenu>
       )}
-    </MenuWrap>
+    </Menu>
   );
 };
 
