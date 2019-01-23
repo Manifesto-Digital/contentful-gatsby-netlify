@@ -72,7 +72,6 @@ exports[`renders Header Text 1`] = `
 }
 
 .c0 {
-  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -210,7 +209,6 @@ exports[`renders a share block with links 1`] = `
 }
 
 .c0 {
-  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }

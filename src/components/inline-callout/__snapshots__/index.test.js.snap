@@ -33,7 +33,6 @@ exports[`renders correctly with icon chosen in cms 1`] = `
 }
 
 .c0 {
-  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -79,7 +78,6 @@ exports[`renders correctly with no options chosen in cms 1`] = `
 }
 
 .c0 {
-  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
