@@ -14,7 +14,6 @@ import SubpagePagination from '../components/advice-page/subpage-pagination';
 const AdvicePage = ({ data, pageContext }) => {
   const { assemblies, title, bodyCopy } = data.contentfulPageAssemblyAdvicePage;
   const { subpages, slug } = pageContext;
-  console.log('pagecontext', pageContext);
 
   return (
     <Layout>

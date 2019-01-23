@@ -55,7 +55,7 @@ it('shows only next if previous not possible', () => {
   expect(wrapper.find(LinkHandler).props().type).toEqual('next');
 });
 
-it('shows only previous if previous not possible', () => {
+it('shows only previous if next not possible', () => {
   const mockData = createSubPagePagination();
   const subpagesLength = mockData.pages.length;
   const wrapper = mountWithTheme(
