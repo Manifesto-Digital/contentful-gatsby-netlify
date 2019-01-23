@@ -17,7 +17,7 @@ export const Card = styled.div`
   border-radius: 4px;
   box-shadow: ${props => props.theme.boxshadow.small};
   background: ${props => props.theme.palette.white};
-  margin: ${props => props.theme.spacing.small};
+  margin-bottom: ${props => props.theme.spacing.standard};
   position: relative;
 
   &:hover ${HoverShadow} {

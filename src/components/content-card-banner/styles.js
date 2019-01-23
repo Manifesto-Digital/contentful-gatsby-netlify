@@ -11,36 +11,59 @@ export const BannerBackground = styled.section`
 
 export const HeaderText = styled.div`
   padding-top: ${props => props.theme.spacing.standard};
-  padding-right: ${props => props.theme.spacing.standard};
-  padding-left: ${props => props.theme.spacing.standard};
 `;
 
 export const CardRow = styled.div`
-  // Some padding has to be on parent to stop firefox margin error on contents
-  padding: ${props => props.theme.spacing.small};
   display: flex;
   flex-flow: column nowrap;
   ${breakpoint.tablet`
     flex-flow: row wrap;
   `};
 
+  // Handle spacing for different layouts of cards at tablet
   ${Card} {
     ${breakpoint.tablet`
-      ${({ items }) => items === 2 && css``}
+      ${({ items }) =>
+        items === 2 &&
+        css`
+          margin-right: ${props => props.theme.spacing.standard};
+          &:last-child {
+            margin-right: 0;
+          }
+        `}
 
-      ${({ items }) => items === 3 && css``}
+      ${({ items }) =>
+        items === 3 &&
+        css`
+          margin-right: ${props => props.theme.spacing.standard};
+          &:last-child {
+            margin-right: 0;
+          }
+        `}
 
       ${({ items }) =>
         items === 4 &&
         css`
           flex: 0 auto;
-          width: calc(50% - 20px);
+          width: calc(50% - 10px);
+
+          &:first-child,
+          &:nth-child(3) {
+            margin-right: ${props => props.theme.spacing.standard};
+          }
         `}
     `};
 
+    // Reset and standardise spacing at desktop
     ${breakpoint.desktop`
       width: auto;
       flex: 1;
+      margin-right: ${props => props.theme.spacing.standard};
+      margin-bottom: ${props => props.theme.spacing.standard};
+
+      &:last-child {
+        margin-right: 0;
+      }
     `};
   }
 `;
