@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Container = styled.div`
-  max-width: 960px;
+  max-width: ${props => props.theme.sizes.maxWidth};
   margin: 0 auto;
   padding: 0
     ${props => (props.padding === false ? 0 : props.theme.spacing.standard)};
