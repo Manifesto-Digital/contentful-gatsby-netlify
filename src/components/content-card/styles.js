@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ResponsiveImage from '../image/responsive.js';
 
 // On hover, we animate the opacity of a second box shadow instead of the properties of the original for a smoother experience on older devices
 export const HoverShadow = styled.div`
@@ -30,12 +31,9 @@ export const ImageContainer = styled.div`
   position: relative;
 `;
 
-export const FeaturedImage = styled.div`
-  background-image: url(${props => props.url});
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: top center;
+export const CardImage = styled(ResponsiveImage)`
+  border-radius: 4px 4px 0 0;
+  opacity: 0.5;
 `;
 
 export const CardTitle = styled.div`

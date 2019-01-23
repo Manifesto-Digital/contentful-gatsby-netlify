@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ResponsiveImage from '../image/responsive.js';
 // Styles
 import {
   Card,
   ImageContainer,
   CardTitle,
+  CardImage,
   SummaryText,
   HoverShadow,
   Link,
@@ -17,7 +17,7 @@ const ContentCard = ({ data }) => {
   return (
     <Card>
       <ImageContainer>
-        <ResponsiveImage
+        <CardImage
           mobileW={600}
           mobileH={350}
           desktopW={600}
