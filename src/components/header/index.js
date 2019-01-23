@@ -11,7 +11,7 @@ import {
   LogoWrapper,
   Logo,
   Open,
-  StyledMenuSVG,
+  BurgerIcon,
 } from './styles';
 
 const navigationQuery = graphql`
@@ -83,7 +83,7 @@ const Header = () => {
                 <Logo src={LogoSVG} cacheGetRequests />
               </LogoWrapper>
               <Open type="button" onClick={openState} active={isOpen}>
-                <StyledMenuSVG src={MenuSVG} />
+                <BurgerIcon src={MenuSVG} />
               </Open>
             </HeaderBar>
           </HeaderWrapper>

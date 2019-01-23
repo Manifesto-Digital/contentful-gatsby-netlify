@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NavigationMenu from './navigation-menu';
 
-import { Close, StyledMenuSVG } from './styles-icon';
+import { Close, MenuSVG } from './styles-icons';
 import { Wrapper, Menus, AdditionalMenu, ItemLink } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
@@ -21,7 +21,7 @@ const Navigation = ({ data, active, openState }) => {
   return (
     <Wrapper active={active} ariaHidden={active}>
       <Close type="button" onClick={openState} active={active}>
-        <StyledMenuSVG src={CloseSVG} />
+        <MenuSVG src={CloseSVG} />
       </Close>
       <Menus>
         {navigationItems &&

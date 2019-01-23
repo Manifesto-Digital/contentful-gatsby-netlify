@@ -3,6 +3,30 @@ import SVG from 'react-inlinesvg';
 import { buttonReset } from '../styled/buttons';
 import { breakpoint } from '../theme/breakpoint';
 
+export const Logo = styled(SVG)`
+  display: block;
+  width: 115px;
+`;
+
+export const Open = styled.button`
+  ${buttonReset}
+  display: flex;
+  justify-content: center;
+  width: 45px;
+  height: 50px;
+  padding: 0;
+  margin-left: auto;
+
+  ${breakpoint.desktop`
+    display: none;
+  `}
+`;
+
+export const BurgerIcon = styled(SVG)`
+  display: block;
+  width: 20px;
+`;
+
 export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
@@ -34,28 +58,4 @@ export const LogoWrapper = styled.a`
   ${breakpoint.desktop`
     padding: ${({ theme }) => theme.spacing.standard};
   `}
-`;
-
-export const Logo = styled(SVG)`
-  display: block;
-  width: 115px;
-`;
-
-export const Open = styled.button`
-  ${buttonReset}
-  display: flex;
-  justify-content: center;
-  width: 45px;
-  height: 50px;
-  padding: 0;
-  margin-left: auto;
-
-  ${breakpoint.desktop`
-    display: none;
-  `}
-`;
-
-export const StyledMenuSVG = styled(SVG)`
-  display: block;
-  width: 20px;
 `;

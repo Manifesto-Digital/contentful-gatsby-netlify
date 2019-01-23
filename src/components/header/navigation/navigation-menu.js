@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { SubNavButton, ArrowSVG } from './styles-icon';
+import { SubNavButton, ArrowSVG } from './styles-icons';
 import { Menu, SubMenu, ItemLink, Item } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 

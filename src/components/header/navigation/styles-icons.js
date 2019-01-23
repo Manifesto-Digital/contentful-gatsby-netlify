@@ -8,7 +8,8 @@ export const Close = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
+  width: 45px;
+  height: 50px;
   padding: 0;
   margin-left: auto;
   cursor: pointer;
@@ -28,7 +29,7 @@ export const SubNavButton = styled(Close)`
   `}
 `;
 
-export const StyledMenuSVG = styled(SVG)`
+export const MenuSVG = styled(SVG)`
   display: block;
   width: 20px;
 `;
