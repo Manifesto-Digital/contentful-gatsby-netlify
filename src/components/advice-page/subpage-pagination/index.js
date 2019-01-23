@@ -23,7 +23,7 @@ const SubpagePagination = ({ subpages, activeSlug }) => {
 
   return (
     <Container>
-      <TwoThirds>
+      <TwoThirds padding={false}>
         <Wrapper>
           {hasPrev && (
             <PaginationLink

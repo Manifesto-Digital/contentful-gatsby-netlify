@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import MenuList from './menu-list';
 // Styles
 import { MenuNav } from './styles';
-import { Container } from '../../styled/containers';
 
 const SubpageMenu = ({ subpages, activeSlug }) => {
   if (!subpages) return null;
@@ -12,14 +11,12 @@ const SubpageMenu = ({ subpages, activeSlug }) => {
   const { title, pages } = subpages;
 
   return (
-    <Container>
-      <aside>
-        <MenuNav>
-          {title && <h4>{title}</h4>}
-          <MenuList items={pages} activeSlug={activeSlug} />
-        </MenuNav>
-      </aside>
-    </Container>
+    <aside>
+      <MenuNav>
+        {title && <h4>{title}</h4>}
+        <MenuList items={pages} activeSlug={activeSlug} />
+      </MenuNav>
+    </aside>
   );
 };
 
