@@ -1,8 +1,6 @@
 import React from 'react';
 import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
 import DonationFormHandler from '.';
-import Button from '../button';
-import { createFactory } from '../../utils/test-factories';
 
 // Default props
 // eslint-disable-next-line react/prop-types
