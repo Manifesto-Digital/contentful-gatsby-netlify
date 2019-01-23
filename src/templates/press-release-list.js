@@ -90,9 +90,6 @@ const Item = props => {
 
 const PressReleaseTemplate = ({ data, pageContext }) => {
   const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
-
-  console.log(pageContext);
-
   return (
     <Layout>
       <Container>
@@ -113,7 +110,7 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
                 <Item key={node.id} {...node} />
               ))}
 
-              <Pagination data={pageContext} />
+              <Pagination {...pageContext} />
             </TwoThirds>
 
             <SideBar>

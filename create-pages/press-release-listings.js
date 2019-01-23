@@ -33,6 +33,8 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
       },
     });
   });
