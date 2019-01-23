@@ -5,8 +5,8 @@ import { SubNavButton, ArrowSVG } from './styles-icons';
 import { Menu, SubMenu, ItemLink, Item } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
-const NavigationMenu = ({ data, id, menuOpen, setActiveMenu }) => {
-  const { menuLabel, navigationLink, subNavigationItems } = data;
+const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
+  const { menuLabel, navigationLink, subNavigationItems } = pageData;
 
   return (
     <Menu>
@@ -35,7 +35,7 @@ const NavigationMenu = ({ data, id, menuOpen, setActiveMenu }) => {
 };
 
 NavigationMenu.propTypes = {
-  data: PropTypes.shape({
+  pageData: PropTypes.shape({
     navigationLink: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,

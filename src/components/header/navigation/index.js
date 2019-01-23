@@ -6,9 +6,9 @@ import { Close, MenuSVG } from './styles-icons';
 import { Wrapper, Menus, AdditionalMenu, ItemLink } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
-const Navigation = ({ data, active, openState }) => {
+const Navigation = ({ pageData, active, openState }) => {
   const [activeMenu, setActiveMenu] = useState('');
-  const { navigationItems, additionalLink } = data;
+  const { navigationItems, additionalLink } = pageData;
 
   const updateActiveMenu = id => {
     if (id === activeMenu) {
@@ -29,7 +29,7 @@ const Navigation = ({ data, active, openState }) => {
             <NavigationMenu
               key={i}
               id={item.id}
-              data={item}
+              pageData={item}
               menuOpen={activeMenu === item.id}
               setActiveMenu={updateActiveMenu}
             />
@@ -50,7 +50,7 @@ const Navigation = ({ data, active, openState }) => {
 Navigation.propTypes = {
   active: PropTypes.bool.isRequired,
   openState: PropTypes.func,
-  data: PropTypes.shape({
+  pageData: PropTypes.shape({
     navigationItems: PropTypes.array,
   }),
 };

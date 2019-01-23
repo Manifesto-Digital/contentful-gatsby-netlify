@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c3 {
+  display: block;
+  width: 115px;
+}
+
+.c4 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 45px;
+  height: 50px;
+  padding: 0;
+  margin-left: auto;
+}
+
+.c5 {
+  display: block;
+  width: 20px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  background: #e5e5e5;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px;
+  background: #ea232d;
+}
+
+@media (min-width:62em) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c2 {
+    padding: 20px;
+  }
+}
+
+<header
+  className="c0"
+>
+  <header
+    className="c1"
+  >
+    <a
+      className="c2"
+      href="/"
+    >
+      <span
+        className="isvg loading c3"
+      />
+    </a>
+    <button
+      className="c4"
+      type="button"
+    >
+      <span
+        className="isvg loading c5"
+      />
+    </button>
+  </header>
+</header>
+`;

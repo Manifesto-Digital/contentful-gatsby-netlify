@@ -20,7 +20,7 @@ exports[`renders correct styles: overlay 1`] = `
  left: 0px;
  right: 0px;
  bottom: 0px;
- background-color: rgba(43, 46, 56, 0.9);
+ background-color: rgba(43, 46, 56, 0.7);
  align-items: center;
  justify-content: center;
 "

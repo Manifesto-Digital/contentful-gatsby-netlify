@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Navigation from './navigation';
 import { Overlay } from '../styled/overlay';
@@ -69,34 +70,39 @@ const navigationQuery = graphql`
   }
 `;
 
-const Header = () => {
+export const PureHeader = ({ pageData }) => {
   const [isOpen, openState] = useToggle(false);
-
   return (
-    <StaticQuery
-      query={navigationQuery}
-      render={data => (
-        <>
-          <HeaderWrapper>
-            <HeaderBar>
-              <LogoWrapper href="/">
-                <Logo src={LogoSVG} cacheGetRequests />
-              </LogoWrapper>
-              <Open type="button" onClick={openState} active={isOpen}>
-                <BurgerIcon src={MenuSVG} />
-              </Open>
-            </HeaderBar>
-          </HeaderWrapper>
-          <Navigation
-            data={data.allContentfulAssemblyNavigationMenu.edges[0].node}
-            active={isOpen}
-            openState={openState}
-          />
-          <Overlay active={isOpen} />
-        </>
-      )}
-    />
+    <>
+      <HeaderWrapper>
+        <HeaderBar>
+          <LogoWrapper href="/">
+            <Logo src={LogoSVG} cacheGetRequests />
+          </LogoWrapper>
+          <Open type="button" onClick={openState} active={isOpen}>
+            <BurgerIcon src={MenuSVG} cacheGetRequests />
+          </Open>
+        </HeaderBar>
+      </HeaderWrapper>
+      <Navigation pageData={pageData} active={isOpen} openState={openState} />
+      <Overlay active={isOpen} />
+    </>
   );
+};
+
+const Header = () => (
+  <StaticQuery
+    query={navigationQuery}
+    render={data => (
+      <PureHeader
+        pageData={data.allContentfulAssemblyNavigationMenu.edges[0].node}
+      />
+    )}
+  />
+);
+
+PureHeader.propTypes = {
+  pageData: PropTypes.object.isRequired,
 };
 
 export default Header;
