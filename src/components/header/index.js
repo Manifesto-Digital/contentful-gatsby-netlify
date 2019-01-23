@@ -1,10 +1,9 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import Navigation from './navigation';
 import { Overlay } from '../styled/overlay';
 import LogoSVG from '../../assets/svg/icons/logo.svg';
 import MenuSVG from '../../assets/svg/icons/menu.svg';
-import Navigation from '../navigation';
-
 import useToggle from '../../utils/useToggle';
 import {
   HeaderWrapper,
@@ -32,6 +31,7 @@ const navigationQuery = graphql`
             internal {
               type
             }
+            menuLabel
             navigationLink {
               ... on ContentfulPageAssemblyContentPage {
                 title
@@ -53,6 +53,16 @@ const navigationQuery = graphql`
               }
             }
           }
+          additionalLink {
+            id
+            internal {
+              type
+            }
+            ... on ContentfulPageAssemblyContentPage {
+              title
+              slug
+            }
+          }
         }
       }
     }
@@ -69,7 +79,7 @@ const Header = () => {
         <>
           <HeaderWrapper>
             <HeaderBar>
-              <LogoWrapper>
+              <LogoWrapper href="/">
                 <Logo src={LogoSVG} cacheGetRequests />
               </LogoWrapper>
               <Open type="button" onClick={openState} active={isOpen}>

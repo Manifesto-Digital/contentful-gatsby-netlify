@@ -1,0 +1,134 @@
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { breakpoint } from '../../theme/breakpoint';
+
+export const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 65%;
+  height: 100%;
+  background: ${({ theme }) => theme.palette.white};
+  box-shadow: ${({ theme }) => theme.boxshadow.menu};
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  transform: ${({ active }) => (active ? 'translateX(0)' : null)};
+  overflow-y: scroll;
+
+  ${breakpoint.desktop`
+    position: relative;
+    width:100%;
+    background: ${({ theme }) => theme.palette.grey10};
+    box-shadow: none;
+    transform: translateX(0);
+    overflow-y: initial;
+  `}
+`;
+
+export const Menus = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 ${({ theme }) => theme.spacing.standard}
+    ${({ theme }) => theme.spacing.standard};
+
+  ${breakpoint.desktop`
+    flex-direction: row;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: ${({ theme }) => theme.spacing.small} ${({ theme }) =>
+    theme.spacing.standard}
+  `}
+`;
+
+export const MenuWrap = styled.nav`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+
+  ${breakpoint.desktop`
+    width: auto;
+    margin-right: ${({ theme }) => theme.spacing.standard};
+  `}
+`;
+
+export const ItemLink = styled(Link)`
+  padding: ${({ theme }) => theme.spacing.small} 0;
+  color: ${({ theme }) => theme.palette.black};
+  font-size: ${({ theme }) => theme.fontsize.small};
+  text-decoration: none;
+`;
+
+export const AdditionalMenu = styled(MenuWrap)`
+  ${ItemLink} {
+    border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+    &:last-child {
+      border: none;
+    }
+  }
+
+  ${breakpoint.desktop`
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: 0;
+      ${ItemLink} {
+        margin-left: ${({ theme }) => theme.spacing.standard};
+        border:none;
+      }
+  `}
+`;
+
+export const ItemWrap = styled.div`
+  display: flex;
+  width: 100%;
+
+  ${breakpoint.desktop`
+    margin-right: auto;
+  `}
+`;
+
+export const SubMenuWrap = styled(MenuWrap)`
+  display: ${({ active }) => (active ? 'flex' : 'none')};
+  margin-left: ${({ theme }) => theme.spacing.small};
+  border: none;
+
+  ${breakpoint.desktop`
+    position: absolute;
+    top: 52px;
+    right: 0;
+    left: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background: ${({ theme }) => theme.palette.grey10};
+    padding: ${({ theme }) => theme.spacing.small} ${({ theme }) =>
+    theme.spacing.small}
+  `}
+
+  ${ItemLink} {
+    border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+
+    ${breakpoint.desktop`
+      flex: 0 0 calc(${100 / 3}% - 10px);
+      margin-left: ${({ theme }) => theme.spacing.small};
+      padding: ${({ theme }) => theme.spacing.small};
+    `}
+
+    &:hover {
+      ${breakpoint.desktop`
+        background: ${({ theme }) => theme.palette.black};
+        color: ${({ theme }) => theme.palette.white};
+      `}
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+`;

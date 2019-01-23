@@ -51,6 +51,7 @@ theme.fontsize = {
 
 theme.boxshadow = {
   small: '0 1.5px 4px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.06);',
+  menu: '-1px 0 14px rgba(0, 0, 0, 0.5);',
 };
 
 theme.spacing = {
