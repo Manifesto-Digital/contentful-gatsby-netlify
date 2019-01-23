@@ -17,7 +17,7 @@ const AdvicePage = ({ data }) => {
       <article>
         <PageTitle title={title} />
         <Container>
-          <TwoThirds>
+          <TwoThirds padding={false}>
             {bodyCopy && <RichText richText={bodyCopy} />}
             <Assemblies assemblies={assemblies} insideContainer />
             <FeedbackModal />
