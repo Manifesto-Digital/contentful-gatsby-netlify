@@ -8,7 +8,6 @@ import { Container } from '../../styled/containers';
 
 const SubpageMenu = ({ subpages, activeSlug }) => {
   if (!subpages) return null;
-  console.log('subpages', subpages);
 
   const { title, pages } = subpages;
 

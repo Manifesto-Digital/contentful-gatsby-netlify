@@ -25,13 +25,6 @@ const getAdvicePages = async graphql =>
                 id
                 slug
                 title
-                subPages {
-                  pages {
-                    id
-                    slug
-                    title
-                  }
-                }
               }
             }
           }

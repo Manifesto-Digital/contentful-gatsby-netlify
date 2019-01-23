@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.c3 span {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.c6 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.c6 span {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 1.4rem;
+  margin: 0 0 0.4em;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 1.4rem;
+  margin: 0 0 0.4em;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #f7f7f7;
+}
+
+.c5 svg {
+  display: block;
+  width: 35px;
+  height: 40px;
+}
+
+.c0 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c1 {
+  max-width: 100%;
+}
+
+@media (min-width:40.0625em) {
+  .c1 {
+    max-width: 66%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <Link
+        className="c3"
+        to="Advice page 2"
+      >
+        <div
+          className="c4"
+          type="prev"
+        >
+          Prev
+          <span
+            className="isvg loading c5"
+          />
+        </div>
+        <span>
+          Advice guide test
+        </span>
+      </Link>
+      <Link
+        className="c6"
+        to="Advice page 4"
+      >
+        <div
+          className="c7"
+          type="next"
+        >
+          Next
+          <span
+            className="isvg loading c5"
+          />
+        </div>
+        <span>
+          Advice guide test
+        </span>
+      </Link>
+    </div>
+  </div>
+</div>
+`;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Components
 import MenuList from './menu-list';
+import LinkHandler from '../../link-handler';
 
 const MenuItem = ({ item, activeSlug }) => {
   const itemSlug = item.slug;
@@ -11,7 +12,7 @@ const MenuItem = ({ item, activeSlug }) => {
     if (activeSlug === itemSlug) {
       return <>{title}</>;
     }
-    return <a href={itemSlug}>{title}</a>;
+    return <LinkHandler internalLink={item}>{title}</LinkHandler>;
   };
 
   if (subPages) {

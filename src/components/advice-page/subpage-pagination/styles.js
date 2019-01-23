@@ -22,6 +22,9 @@ export const DirectionIcon = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+  margin-bottom: ${props => props.theme.spacing.large};
+  padding-bottom: ${props => props.theme.spacing.large};
+  border-bottom: 2px solid ${props => props.theme.palette.offWhite};
 `;
 
 export const StyledSVG = styled(SVG)`
