@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Header Text 1`] = `
-Array [
-  <h3>
-    Yes it renders
-  </h3>,
-  .c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,7 +19,7 @@ Array [
   border: 2px solid #0b0b89;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -31,7 +27,7 @@ Array [
   width: 100%;
 }
 
-.c2 {
+.c3 {
   padding: 0;
   border: none;
   font: inherit;
@@ -52,31 +48,37 @@ Array [
   text-decoration: none;
 }
 
-.c2:hover {
+.c3:hover {
   color: #ea232d;
 }
 
-.c2:hover {
+.c3:hover {
   color: #ea232d;
 }
 
-.c2:hover svg {
+.c3:hover svg {
   fill: #ea232d;
 }
 
-.c3 {
+.c4 {
   display: block;
   margin-right: 20px;
   fill: #0b0b89;
 }
 
-.c3 svg {
+.c4 svg {
   width: 30px;
   height: 30px;
 }
 
+.c0 {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 @media (min-width:40.0625em) {
-  .c0 {
+  .c1 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -85,57 +87,59 @@ Array [
 }
 
 @media (min-width:40.0625em) {
-  .c2 {
+  .c3 {
     width: auto;
     padding: 30px 0;
   }
 }
 
 <div
-    className="c0"
+  className="c0"
+>
+  <h3>
+    Yes it renders
+  </h3>
+  <div
+    className="c1"
   >
     <div
-      className="c1"
+      className="c2"
     >
       <button
-        className="c2"
+        className="c3"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex="0"
         type="button"
       >
         <span
-          className="isvg loading c3"
+          className="isvg loading c4"
         />
         Print this article
       </button>
     </div>
     <div
-      className="c1"
+      className="c2"
     >
       <a
-        className="c2"
+        className="c3"
         href="mailto:?&subject=Shelter&body=http://localhost:8000/"
         rel="noopener"
         target="_blank"
       >
         <span
-          className="isvg loading c3"
+          className="isvg loading c4"
         />
         Email
          this article
       </a>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`renders a share block with links 1`] = `
-Array [
-  <h3>
-    Yes it renders
-  </h3>,
-  .c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,7 +157,7 @@ Array [
   border: 2px solid #0b0b89;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -161,7 +165,7 @@ Array [
   width: 100%;
 }
 
-.c2 {
+.c3 {
   padding: 0;
   border: none;
   font: inherit;
@@ -182,31 +186,37 @@ Array [
   text-decoration: none;
 }
 
-.c2:hover {
+.c3:hover {
   color: #ea232d;
 }
 
-.c2:hover {
+.c3:hover {
   color: #ea232d;
 }
 
-.c2:hover svg {
+.c3:hover svg {
   fill: #ea232d;
 }
 
-.c3 {
+.c4 {
   display: block;
   margin-right: 20px;
   fill: #0b0b89;
 }
 
-.c3 svg {
+.c4 svg {
   width: 30px;
   height: 30px;
 }
 
+.c0 {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 @media (min-width:40.0625em) {
-  .c0 {
+  .c1 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -215,47 +225,53 @@ Array [
 }
 
 @media (min-width:40.0625em) {
-  .c2 {
+  .c3 {
     width: auto;
     padding: 30px 0;
   }
 }
 
 <div
-    className="c0"
+  className="c0"
+>
+  <h3>
+    Yes it renders
+  </h3>
+  <div
+    className="c1"
   >
     <div
-      className="c1"
+      className="c2"
     >
       <button
-        className="c2"
+        className="c3"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex="0"
         type="button"
       >
         <span
-          className="isvg loading c3"
+          className="isvg loading c4"
         />
         Print this article
       </button>
     </div>
     <div
-      className="c1"
+      className="c2"
     >
       <a
-        className="c2"
+        className="c3"
         href="mailto:?&subject=Shelter&body=http://localhost:8000/"
         rel="noopener"
         target="_blank"
       >
         <span
-          className="isvg loading c3"
+          className="isvg loading c4"
         />
         Email
          this article
       </a>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

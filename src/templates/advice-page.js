@@ -17,16 +17,18 @@ const AdvicePage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <PageTitle title={title} />
-      <Container>
-        <SubpageMenu subpages={subpages} activeSlug={slug} />
-        <TwoThirds>
-          {bodyCopy && <RichText richText={bodyCopy} />}
-          <Assemblies assemblies={assemblies} />
-          <FeedbackModal />
-        </TwoThirds>
-      </Container>
-      <SubpagePagination subpages={subpages} activeSlug={slug} />
+      <article>
+        <PageTitle title={title} />
+        <Container>
+          <SubpageMenu subpages={subpages} activeSlug={slug} />
+          <TwoThirds>
+            {bodyCopy && <RichText richText={bodyCopy} />}
+            <Assemblies assemblies={assemblies} />
+            <FeedbackModal />
+          </TwoThirds>
+        </Container>
+        <SubpagePagination subpages={subpages} activeSlug={slug} />
+      </article>
     </Layout>
   );
 };
@@ -63,6 +65,8 @@ export const advicePageQuery = graphql`
           ...DownloadBannerAssemblyFragment
           ...LinkBoxFragment
           ...DonationBanner
+          ...RelatedAdviceFragment
+          ...ShareBlockFragment
         }
       }
     }
