@@ -1,134 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly 1`] = `
-Array [
-  .c3 {
-  display: block;
-  width: 95px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 52px;
-  padding: 15px;
-  background: #ea232d;
-}
-
-.c4 {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 45px;
-  height: 50px;
-  padding: 0;
-  margin-left: auto;
-}
-
-.c5 {
-  display: block;
-  width: 20px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  background: #e5e5e5;
-}
-
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  max-width: 1150px;
-  width: 100%;
-  background: #e5e5e5;
-}
-
-@media (min-width:62em) {
-  .c3 {
-    width: 115px;
-  }
-}
-
-@media (min-width:62em) {
-  .c2 {
-    height: 68px;
-    padding: 20px 25px;
-  }
-}
-
-@media (min-width:62em) {
-  .c4 {
-    display: none;
-  }
-}
-
-@media (min-width:62em) {
-  .c1 {
-    padding: 0 20px;
-  }
-}
-
-<header
-    className="c0"
-  >
-    <header
-      className="c1"
-    >
-      <a
-        className="c2"
-        href="/"
-      >
-        <span
-          className="isvg loading c3"
-        />
-      </a>
-      <button
-        className="c4"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="isvg loading c5"
-        />
-      </button>
-    </header>
-  </header>,
-  .c1 {
   padding: 0;
   border: none;
   font: inherit;
@@ -208,9 +81,9 @@ Array [
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0,0,0.3,1);
   -webkit-transition: transform 0.3s cubic-bezier(0,0,0.3,1);
   transition: transform 0.3s cubic-bezier(0,0,0.3,1);
-  -webkit-transform: translateX(120%);
-  -ms-transform: translateX(120%);
-  transform: translateX(120%);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
   overflow-y: scroll;
 }
 
@@ -430,74 +303,50 @@ Array [
 }
 
 <div
-    className="c0"
+  className="c0"
+>
+  <button
+    className="c1"
+    type="button"
   >
-    <button
-      className="c1"
-      onClick={[Function]}
-      type="button"
+    <span
+      className="isvg loading c2"
+    />
+  </button>
+  <div
+    className="c3"
+  >
+    <nav
+      className="c4"
     >
-      <span
-        className="isvg loading c2"
-      />
-    </button>
-    <div
-      className="c3"
-    >
-      <nav
-        className="c4"
+      <div
+        className="c5"
       >
-        <div
-          className="c5"
+        <Link
+          className="c6 c7"
+          to="tobys-page"
         >
-          <Link
-            className="c6 c7"
-            to="tobys-page"
-          >
-            Housing Advice
-          </Link>
-          <button
-            className="c8"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="isvg loading c9"
-            />
-          </button>
-        </div>
-        <nav
-          className="c10"
+          Housing Advice
+        </Link>
+        <button
+          className="c8"
+          onClick={[Function]}
+          type="button"
         >
-          <Link
-            className="c6 c7"
-            to="320,000-people-in-britain-are-now-homeless"
-          >
-            320,000 people in Britain are now homeless
-          </Link>
-          <Link
-            className="c6 c7"
-            to="tobys-page"
-          >
-            Tobys Page
-          </Link>
-          <Link
-            className="c6 c7"
-            to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
-          >
-            Shelter Manchester to hold vigil for lost homeless people
-          </Link>
-          <Link
-            className="c6 c7"
-            to="shelter-demo-page"
-          >
-            Shelter Demo Page
-          </Link>
-        </nav>
-      </nav>
+          <span
+            className="isvg loading c9"
+          />
+        </button>
+      </div>
       <nav
-        className="c11"
+        className="c10"
       >
+        <Link
+          className="c6 c7"
+          to="320,000-people-in-britain-are-now-homeless"
+        >
+          320,000 people in Britain are now homeless
+        </Link>
         <Link
           className="c6 c7"
           to="tobys-page"
@@ -506,39 +355,34 @@ Array [
         </Link>
         <Link
           className="c6 c7"
-          to="https://scotland.shelter.org.uk/"
+          to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
         >
-          Scotland
+          Shelter Manchester to hold vigil for lost homeless people
+        </Link>
+        <Link
+          className="c6 c7"
+          to="shelter-demo-page"
+        >
+          Shelter Demo Page
         </Link>
       </nav>
-    </div>
-  </div>,
-  .c0 {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  background: rgba(43,46,56,0.7);
-  pointer-events: none;
-  opacity: 0;
-  -webkit-transition: 0.2s ease-in opacity;
-  transition: 0.2s ease-in opacity;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    display: none;
-    position: relative;
-    width: 100%;
-    background: #e5e5e5;
-  }
-}
-
-<div
-    className="c0"
-  />,
-]
+    </nav>
+    <nav
+      className="c11"
+    >
+      <Link
+        className="c6 c7"
+        to="tobys-page"
+      >
+        Tobys Page
+      </Link>
+      <Link
+        className="c6 c7"
+        to="https://scotland.shelter.org.uk/"
+      >
+        Scotland
+      </Link>
+    </nav>
+  </div>
+</div>
 `;

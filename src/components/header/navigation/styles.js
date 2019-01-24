@@ -12,9 +12,9 @@ export const Wrapper = styled.div`
   height: 100%;
   background: ${({ theme }) => theme.palette.white};
   box-shadow: ${({ theme }) => theme.boxshadow.menu};
-  transform: translateX(120%);
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
-  transform: ${({ active }) => (active ? 'translateX(0)' : null)};
+  transform: ${({ active }) =>
+    active ? 'translateX(0)' : ' translateX(120%)'};
   overflow-y: scroll;
 
   ${breakpoint.desktop`
@@ -23,7 +23,19 @@ export const Wrapper = styled.div`
     background: ${({ theme }) => theme.palette.grey10};
     box-shadow: none;
     transform: translateX(0);
-    overflow-y: initial;
+    overflow-y: visible;
+  `}
+`;
+
+export const Menu = styled.nav`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+
+  ${breakpoint.desktop`
+    width: auto;
+    margin-right: ${({ theme }) => theme.spacing.standard};
   `}
 `;
 
@@ -37,22 +49,9 @@ export const Menus = styled.div`
 
   ${breakpoint.desktop`
     flex-direction: row;
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto;
-    padding: ${({ theme }) => theme.spacing.small} ${({ theme }) =>
-    theme.spacing.standard}
-  `}
-`;
-
-export const Menu = styled.nav`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
-
-  ${breakpoint.desktop`
-    width: auto;
-    margin-right: ${({ theme }) => theme.spacing.standard};
+    padding: 5px ${({ theme }) => theme.spacing.standard}
   `}
 `;
 
@@ -84,7 +83,9 @@ export const AdditionalMenu = styled(Menu)`
 
 export const Item = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
+  height: 40px;
 
   ${breakpoint.desktop`
     margin-right: auto;
@@ -106,7 +107,7 @@ export const SubMenu = styled(Menu)`
     width: 100%;
     height: auto;
     margin: 0;
-    background: ${({ theme }) => theme.palette.grey10};
+    background: ${({ theme }) => theme.palette.grey15};
     padding: ${({ theme }) => theme.spacing.small} ${({ theme }) =>
     theme.spacing.small}
   `}
@@ -115,9 +116,11 @@ export const SubMenu = styled(Menu)`
     border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
 
     ${breakpoint.desktop`
-      flex: 0 0 calc(${100 / 3}% - 10px);
+      flex: 0 1 calc(${100 / 3}% - 10px);
+      width: 32%;
       margin-left: ${({ theme }) => theme.spacing.small};
       padding: ${({ theme }) => theme.spacing.small};
+      border: none;
     `}
 
     &:hover {

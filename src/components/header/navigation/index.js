@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import NavigationMenu from './navigation-menu';
+import NavigationMenu from './navigation';
 
 import { Close, MenuSVG } from './styles-icons';
 import { Wrapper, Menus, AdditionalMenu, ItemLink } from './styles';
@@ -9,6 +9,7 @@ import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 const Navigation = ({ pageData, active, openState }) => {
   const [activeMenu, setActiveMenu] = useState('');
   const { navigationItems, additionalLink } = pageData;
+  console.log(pageData);
 
   const updateActiveMenu = id => {
     if (id === activeMenu) {

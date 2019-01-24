@@ -9,7 +9,7 @@ export const Close = styled.button`
   justify-content: center;
   align-items: center;
   width: 45px;
-  height: 50px;
+  height: 40px;
   padding: 0;
   margin-left: auto;
   cursor: pointer;

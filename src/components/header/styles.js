@@ -5,7 +5,25 @@ import { breakpoint } from '../theme/breakpoint';
 
 export const Logo = styled(SVG)`
   display: block;
-  width: 115px;
+  width: 95px;
+
+  ${breakpoint.desktop`
+    width: 115px;
+  `}
+`;
+
+export const LogoWrapper = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 15px;
+  background: ${({ theme }) => theme.palette.primary};
+
+  ${breakpoint.desktop`
+    height: 68px;
+    padding: ${({ theme }) => theme.spacing.standard} 25px;
+  `}
 `;
 
 export const Open = styled.button`
@@ -37,25 +55,12 @@ export const HeaderWrapper = styled.header`
 export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-between;
-  max-width: 1100px;
+  max-width: 1150px;
   width: 100%;
-  margin: 0 auto;
   background: ${({ theme }) => theme.palette.grey10};
 
   ${breakpoint.desktop`
     padding: 0
-    ${({ padding, theme }) => (padding === false ? 0 : theme.spacing.standard)};
-  `}
-`;
-
-export const LogoWrapper = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing.small};
-  background: ${({ theme }) => theme.palette.primary};
-
-  ${breakpoint.desktop`
-    padding: ${({ theme }) => theme.spacing.standard};
+    ${({ theme }) => theme.spacing.standard};
   `}
 `;

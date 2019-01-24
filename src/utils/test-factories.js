@@ -45,3 +45,41 @@ export const createFile = createFactory({
     },
   },
 });
+
+export const createHeaderNavigation = createFactory({
+  id: 'e230d8b8-4ee6-5d4c-bf25-57af664d12d7',
+  name: 'Assembly - Primary Navigation',
+  additionalLink: [
+    {
+      id: 'e41df6b6-52e2-52db-93c7-9d7ecef7fcd4',
+      title: 'Tobys Page',
+      slug: 'tobys-page',
+    },
+  ],
+  menuLabel: 'What we do',
+  navigationItems: [
+    {
+      id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
+      menuLabel: 'Housing Advice',
+      navigationLink: [{ title: 'Tobys Page', slug: 'tobys-page' }],
+      subNavigationItems: [
+        {
+          slug: '320,000-people-in-britain-are-now-homeless',
+          title: '320,000 people in Britain are now homeless',
+        },
+        {
+          title: 'Tobys Page',
+          slug: 'tobys-page',
+        },
+        {
+          title: 'Shelter Manchester to hold vigil for lost homeless people',
+          slug: 'shelter-manchester-to-hold-vigil-for-lost-homeless-people',
+        },
+        {
+          title: 'Shelter Demo Page',
+          slug: 'shelter-demo-page',
+        },
+      ],
+    },
+  ],
+});
