@@ -65,11 +65,9 @@ const PressReleasePage = ({ data }) => {
     <Layout>
       <article>
         <Container padding={false}>
-          <TwoThirds padding={false}>
-            <PageTitle title={title} />
-          </TwoThirds>
+          <PageTitle title={title} twoThirds />
           <ContentWithSideBar>
-            <TwoThirds>
+            <TwoThirds padding>
               <PublishedDate colour="grey45">
                 <strong>Posted {formattedDate}</strong>
               </PublishedDate>

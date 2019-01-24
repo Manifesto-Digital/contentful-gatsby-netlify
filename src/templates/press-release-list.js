@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import SVG from 'react-inlinesvg';
-
-import LinkHandler from '../components/link-handler';
-import { dateAsString } from '../utils/dates';
-
-import ArrowRight from '../assets/svg/icons/angle-right.svg';
+import Item from '../components/press-releases/list-item';
 import Layout from '../components/layout';
 import {
   Container,
@@ -15,7 +10,6 @@ import {
   SideBar,
   ContentWithSideBar,
 } from '../components/styled/containers';
-import PaddedBox from '../components/padded-box';
 import MediaContact from '../components/media-contact';
 import Pagination from '../components/pagination';
 
@@ -24,72 +18,10 @@ const PressReleaseList = styled.div`
   padding-top: ${props => props.theme.spacing.large};
 `;
 
-const PressItem = styled(PaddedBox)`
-  position: relative;
-`;
-
-const CoveringLink = styled(LinkHandler)`
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-`;
-
-const PostedDate = styled.p`
-  color: ${props => props.theme.palette.grey45};
-`;
-
-const ArrowIcon = styled(SVG)``;
-
-const IconHolder = styled.div`
-  border-bottom-right-radius: ${props => props.theme.borderradius.small};
-  background: ${props => props.theme.palette.grey45};
-  color: ${props => props.theme.palette.white};
-  padding-top: 3px;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
-
-  svg {
-    width: 22px;
-    height: 22px;
-    display: block;
-    margin: 0 auto;
-  }
-`;
-
-const Item = props => {
-  const { title, datePosted } = props;
-  return (
-    <PressItem shadow bg="white">
-      <h3>{title}</h3>
-      <p>
-        TODO: add metadata description here.
-        <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
-        molestie lacus. Nulla ac mauris nunc.{' '}
-      </p>
-      <CoveringLink aria-hidden="true" internalLink={props}>
-        {title}
-      </CoveringLink>
-
-      <IconHolder aria-hidden="true">
-        <ArrowIcon src={ArrowRight} alt=" " cacheGetRequests />
-      </IconHolder>
-
-      <PostedDate>
-        <strong>Posted on {dateAsString(datePosted, 'DD MMM YYYY')}</strong>
-      </PostedDate>
-    </PressItem>
-  );
-};
-
 const PressReleaseTemplate = ({ data, pageContext }) => {
   const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
+  console.log('data', data);
+
   return (
     <Layout>
       <Container>
@@ -107,10 +39,10 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
           <ContentWithSideBar>
             <TwoThirds>
               {posts.map(({ node }) => (
-                <Item key={node.id} {...node} />
+                <Item key={node.id} pressRelease={node} />
               ))}
 
-              <Pagination {...pageContext} />
+              <Pagination pageContext={pageContext} slug="press-releases" />
             </TwoThirds>
 
             <SideBar>
@@ -148,6 +80,9 @@ export const pressReleasePageQuery = graphql`
           title
           datePosted
           slug
+          pageInformation {
+            ...PageInformationFragment
+          }
         }
       }
     }
