@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const MenuNav = styled.nav`
   margin-bottom: ${props => props.theme.spacing.large};
+
+  a {
+    text-decoration: none;
+  }
 `;
