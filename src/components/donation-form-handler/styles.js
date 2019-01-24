@@ -1,0 +1,9 @@
+import styled from 'styled-components';
+
+export const StyledForm = styled.form`
+  ${({ inline }) =>
+    inline &&
+    `
+      display: flex;
+    `};
+`;

@@ -8,7 +8,10 @@ theme.palette = {
   offWhite: '#f7f7f7',
   grey10: '#e5e5e5',
   grey15: '#d9d9d9',
+  grey25: '#bdbec0',
   grey45: '#8c8c8c',
+  grey60: '#999',
+  grey80: '#5a5a5a',
   black: '#212122',
   // Blues
   sanMarinoBlue: '#4d63b5',
@@ -35,6 +38,7 @@ theme.fonts = {
 
 theme.sizes = {
   maxWidth: '1100px',
+  container: '960px',
 };
 
 theme.borderradius = {
@@ -63,5 +67,6 @@ theme.spacing = {
   standard: '20px',
   medium: '30px',
   large: '40px',
+  xl: '60px',
 };
 export default theme;

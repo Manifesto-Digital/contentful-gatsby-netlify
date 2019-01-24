@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 .c0 {
   display: inline-block;
+  text-align: center;
   padding: 10px 1em;
   font-weight: normal;
   background-color: #12b9bf;
@@ -19,6 +20,7 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly when full width 1`] = `
 .c0 {
   display: inline-block;
+  text-align: center;
   padding: 10px 1em;
   font-weight: normal;
   background-color: #12b9bf;

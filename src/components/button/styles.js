@@ -4,7 +4,6 @@ import { buttonStyles } from '../styled/buttons';
 
 export const DefaultButton = styled.button`
   ${buttonStyles};
-  ${props => props.fullWidth && 'width: 100%'};
 `;
 
 export const IconHolder = styled(SVG)`
