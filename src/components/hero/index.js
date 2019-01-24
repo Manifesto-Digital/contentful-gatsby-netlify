@@ -3,19 +3,24 @@ import PropTypes from 'prop-types';
 // Components
 import HeroWithCard from './hero-with-card';
 import HeroNoCard from './hero-no-card';
+import DonationHero from '../donation-hero';
 
 const Hero = ({ content }) => {
-  const { __typename: types } = content;
+  const { type } = content.internal;
 
-  return (
-    <>
-      {types === 'ContentfulTopicHeroWithCard' ? (
-        <HeroWithCard content={content} />
-      ) : (
-        <HeroNoCard content={content} />
-      )}
-    </>
-  );
+  if (type === 'ContentfulTopicHeroWithCard') {
+    return <HeroWithCard content={content} />;
+  }
+
+  if (type === 'ContentfulTopicHeroNoCard') {
+    return <HeroNoCard content={content} />;
+  }
+
+  if (type === 'ContentfulTopicDonationHero') {
+    return <DonationHero content={content} />;
+  }
+
+  return null;
 };
 
 Hero.propTypes = {

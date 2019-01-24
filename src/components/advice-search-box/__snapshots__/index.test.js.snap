@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 .c5 {
   display: inline-block;
+  text-align: center;
   padding: 10px 1em;
   font-weight: normal;
   background-color: #4d63b5;
