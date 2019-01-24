@@ -1,0 +1,679 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c12 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+.c20 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+}
+
+.c0 {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.c1 {
+  max-height: 200px;
+}
+
+.c4 {
+  background: #d9d9d9;
+  position: relative;
+}
+
+.c5 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 > li {
+  margin: 0;
+}
+
+.c6 {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.c6:not(.is-selected) {
+  background: #f7f7f7;
+  color: #999;
+}
+
+.c6:hover {
+  color: #ea232d;
+}
+
+.c7 {
+  padding: 20px 20px 10px 20px;
+}
+
+.c11 {
+  margin-bottom: 20px;
+}
+
+.c8 {
+  margin-bottom: 20px;
+}
+
+.c14 {
+  max-height: 0;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.c3 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding: 0;
+}
+
+.c13 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  color: #4d63b5;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.c13:hover {
+  color: #ea232d;
+}
+
+.c19 {
+  margin-left: 10px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c10 {
+  position: relative;
+  padding-top: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: calc( 40px + 10px );
+}
+
+.c16 {
+  position: relative;
+}
+
+.c18 {
+  display: inline-block;
+  background-size: 15px 15px;
+  width: auto;
+  margin-bottom: 0;
+  padding: 10px;
+  padding-left: 30px;
+  max-width: 10em;
+}
+
+.c18::-webkit-outer-spin-button,
+.c18::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c17 {
+  left: 12px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 0.775rem;
+}
+
+.c9 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    height: 660px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c1 {
+    max-height: 300px;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
+    max-height: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c2 {
+    position: absolute;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width:62em) {
+  .c4 {
+    width: 55%;
+    margin-top: 60px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c7 {
+    padding: 40px 40px 20px 40px;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 {
+    min-height: 3em;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    padding: 0 20px;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <img
+      alt="Collection hero"
+      className="c2"
+      src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&fl=progressive&w=1500"
+      srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&fl=progressive&w=700 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&fl=progressive&w=1500"
+    />
+  </div>
+  <div
+    className="c3"
+  >
+    <div
+      className="c4"
+    >
+      <div
+        className="react-tabs"
+        data-tabs={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <ul
+          className="c5"
+          role="tablist"
+        >
+          <li
+            aria-controls="react-tabs-1"
+            aria-disabled="false"
+            aria-selected="true"
+            className="c6 is-selected"
+            id="react-tabs-0"
+            role="tab"
+            tabIndex="0"
+          >
+            Give once
+          </li>
+          <li
+            aria-controls="react-tabs-3"
+            aria-disabled="false"
+            aria-selected="false"
+            className="c6"
+            id="react-tabs-2"
+            role="tab"
+            tabIndex={null}
+          >
+            Give monthly
+          </li>
+        </ul>
+        <div
+          aria-labelledby="react-tabs-0"
+          className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+          id="react-tabs-1"
+          role="tabpanel"
+        >
+          <section
+            className="c7"
+          >
+            <h2>
+              Your donations make a difference
+            </h2>
+            <p
+              className="c8"
+            >
+              Giving £30 could pay for a face-to-face advice session with a Shelter adviser.
+            </p>
+            <form
+              action="https://donate.shelter.org.uk/b"
+              className=""
+              id="donation-hero-form"
+              inline={0}
+              method="GET"
+              onReset={[Function]}
+              onSubmit={[Function]}
+            >
+              <input
+                name="cid"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="hidden"
+                value="263"
+              />
+              <input
+                name="free_amount"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="hidden"
+                value="1"
+              />
+              <input
+                name="amount"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="hidden"
+                value="3000"
+              />
+              <input
+                name="reserved_appeal_code"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="hidden"
+                value=""
+              />
+              <input
+                name="frequency"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="hidden"
+                value="once"
+              />
+              <label
+                className="c9"
+                htmlFor="amount-holder"
+              >
+                Donate
+              </label>
+              <div
+                className="rc-slider rc-slider-with-marks c10"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="rc-slider-rail"
+                  style={
+                    Object {
+                      "backgroundColor": "#bdbec0",
+                      "borderRadius": 5,
+                      "height": 10,
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  className="rc-slider-track"
+                  style={
+                    Object {
+                      "backgroundColor": "#5a5a5a",
+                      "borderRadius": 5,
+                      "height": 10,
+                      "left": "0%",
+                      "position": "absolute",
+                      "width": "28.57142857142857%",
+                    }
+                  }
+                />
+                <div
+                  className="rc-slider-step"
+                >
+                  <span
+                    className="rc-slider-dot rc-slider-dot-active"
+                    style={
+                      Object {
+                        "left": "0%",
+                      }
+                    }
+                  />
+                  <span
+                    className="rc-slider-dot rc-slider-dot-active"
+                    style={
+                      Object {
+                        "left": "14.285714285714285%",
+                      }
+                    }
+                  />
+                  <span
+                    className="rc-slider-dot rc-slider-dot-active"
+                    style={
+                      Object {
+                        "left": "28.57142857142857%",
+                      }
+                    }
+                  />
+                  <span
+                    className="rc-slider-dot"
+                    style={
+                      Object {
+                        "left": "57.14285714285714%",
+                      }
+                    }
+                  />
+                  <span
+                    className="rc-slider-dot"
+                    style={
+                      Object {
+                        "left": "100%",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  aria-disabled={false}
+                  aria-valuemax={80}
+                  aria-valuemin={10}
+                  aria-valuenow={30}
+                  className="rc-slider-handle"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  role="slider"
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "border": "1px solid #d9d9d9",
+                      "borderRadius": "50%",
+                      "boxShadow": "0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06)",
+                      "height": 30,
+                      "left": "28.57142857142857%",
+                      "marginLeft": -15,
+                      "marginTop": -10,
+                      "position": "absolute",
+                      "width": 30,
+                    }
+                  }
+                  tabIndex={0}
+                />
+                <div
+                  className="rc-slider-mark"
+                >
+                  <span
+                    className="rc-slider-mark-text rc-slider-mark-text-active"
+                    onMouseDown={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "left": "0%",
+                        "lineHeight": "35px",
+                        "marginLeft": "-11.25%",
+                        "position": "absolute",
+                        "textAlign": "center",
+                        "top": 0,
+                        "verticalAlign": "middle",
+                        "width": "22.5%",
+                      }
+                    }
+                  >
+                    £10
+                  </span>
+                  <span
+                    className="rc-slider-mark-text rc-slider-mark-text-active"
+                    onMouseDown={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "left": "14.285714285714285%",
+                        "lineHeight": "35px",
+                        "marginLeft": "-11.25%",
+                        "position": "absolute",
+                        "textAlign": "center",
+                        "top": 0,
+                        "verticalAlign": "middle",
+                        "width": "22.5%",
+                      }
+                    }
+                  >
+                    £20
+                  </span>
+                  <span
+                    className="rc-slider-mark-text rc-slider-mark-text-active"
+                    onMouseDown={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "fontSize": "1.25em",
+                        "fontWeight": "bold",
+                        "left": "28.57142857142857%",
+                        "lineHeight": "35px",
+                        "marginLeft": "-11.25%",
+                        "position": "absolute",
+                        "textAlign": "center",
+                        "top": 0,
+                        "verticalAlign": "middle",
+                        "width": "22.5%",
+                      }
+                    }
+                  >
+                    £30
+                  </span>
+                  <span
+                    className="rc-slider-mark-text"
+                    onMouseDown={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "left": "57.14285714285714%",
+                        "lineHeight": "35px",
+                        "marginLeft": "-11.25%",
+                        "position": "absolute",
+                        "textAlign": "center",
+                        "top": 0,
+                        "verticalAlign": "middle",
+                        "width": "22.5%",
+                      }
+                    }
+                  >
+                    £50
+                  </span>
+                  <span
+                    className="rc-slider-mark-text"
+                    onMouseDown={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "left": "100%",
+                        "lineHeight": "35px",
+                        "marginLeft": "-11.25%",
+                        "position": "absolute",
+                        "textAlign": "center",
+                        "top": 0,
+                        "verticalAlign": "middle",
+                        "width": "22.5%",
+                      }
+                    }
+                  >
+                    £80
+                  </span>
+                </div>
+              </div>
+              <button
+                className="c11 c12"
+                type="submit"
+              >
+                Donate £
+                30
+              </button>
+            </form>
+            <button
+              className="c13"
+              onClick={[Function]}
+            >
+              Choose your own amount
+            </button>
+            <div
+              className="c14"
+            >
+              <form
+                action="https://donate.shelter.org.uk/b"
+                className="c15"
+                id="donation-hero-own-amount-form"
+                inline={1}
+                method="GET"
+                onReset={[Function]}
+                onSubmit={[Function]}
+              >
+                <input
+                  name="cid"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="263"
+                />
+                <input
+                  name="free_amount"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="1"
+                />
+                <input
+                  name="amount"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="3000"
+                />
+                <input
+                  name="reserved_appeal_code"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value=""
+                />
+                <input
+                  name="frequency"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="hidden"
+                  value="once"
+                />
+                <label
+                  className="c9"
+                  htmlFor="amount-holder-other-amount"
+                >
+                  Donate
+                </label>
+                <div
+                  className="c16"
+                >
+                  <span
+                    className="c17"
+                  >
+                    £
+                  </span>
+                  <input
+                    className="c18"
+                    id="amount-holder-other-amount"
+                    name="amount-holder"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    pattern="[0-9]*"
+                    placeholder="30"
+                    type="number"
+                    value=""
+                  />
+                </div>
+                <button
+                  className="c19 c20"
+                  type="submit"
+                >
+                  Donate
+                </button>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div
+          aria-labelledby="react-tabs-2"
+          className="react-tabs__tab-panel"
+          id="react-tabs-3"
+          role="tabpanel"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

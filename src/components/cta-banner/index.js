@@ -13,7 +13,7 @@ const CTABanner = ({ cta, headerText, bannerColour, removeMarginBottom }) => (
   >
     <Container>
       <Header bannerColour={bannerColour.toLowerCase()}>{headerText}</Header>
-      <CTA cta={cta} />
+      <CTA {...CTA.fromCMS(cta)} />
     </Container>
   </Banner>
 );

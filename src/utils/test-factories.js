@@ -83,3 +83,10 @@ export const createHeaderNavigation = createFactory({
     },
   ],
 });
+
+export const createSubpage = createFactory({
+  id: '27757b6a-db0e-5aca-8db2-8f3e736b5341',
+  slug: 'advice-guide-test',
+  title: 'Advice guide test',
+  subPages: null,
+});

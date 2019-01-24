@@ -1,9 +1,25 @@
 import React from 'react';
 import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
-import DonationForm from './donation-form';
+import DonationFormHandler from '.';
+
+// Default props
+// eslint-disable-next-line react/prop-types
+function FormExample({ handleAmountChange, setFieldValue, defaultValue }) {
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder={defaultValue.toString()}
+        name="amount-holder"
+        onChange={e => handleAmountChange(e, setFieldValue)}
+      />
+      <input type="submit" value="submit" />
+    </div>
+  );
+}
 
 it('renders correctly', () => {
-  snapshotComponent(<DonationForm />);
+  snapshotComponent(<DonationFormHandler render={FormExample} />);
 });
 
 it('has all the necessary fields', () => {
@@ -15,20 +31,21 @@ it('has all the necessary fields', () => {
     'frequency',
     'amount-holder',
   ];
-  const wrapper = mountWithTheme(<DonationForm />);
+
+  const wrapper = mountWithTheme(<DonationFormHandler render={FormExample} />);
   fieldNames.forEach(name => {
     expect(wrapper.find(`input[name="${name}"]`)).toHaveLength(1);
   });
 });
 
 it('has a default value set in amount field', () => {
-  const wrapper = mountWithTheme(<DonationForm />);
+  const wrapper = mountWithTheme(<DonationFormHandler render={FormExample} />);
   const hiddenInput = wrapper.find('input[name="amount"]');
   expect(parseInt(hiddenInput.props().value)).toBeGreaterThan(0);
 });
 
 it('updates the hidden amount field when visible donation amount field changes', () => {
-  const wrapper = mountWithTheme(<DonationForm />);
+  const wrapper = mountWithTheme(<DonationFormHandler render={FormExample} />);
   const visibleInput = wrapper.find('input[name="amount-holder"]');
 
   visibleInput.simulate('change', { target: { value: '25' } });
@@ -41,8 +58,12 @@ it('updates the hidden amount field when visible donation amount field changes',
 it('reverts to default value when visible input has no value', () => {
   const mockDefaultValue = 20;
   const wrapper = mountWithTheme(
-    <DonationForm defaultDonationValue={mockDefaultValue} />
+    <DonationFormHandler
+      defaultDonationValue={mockDefaultValue}
+      render={FormExample}
+    />
   );
+
   const visibleInput = wrapper.find('input[name="amount-holder"]');
   // Give visible input value then remove
   visibleInput.simulate('change', { target: { value: '25' } });
@@ -56,30 +77,43 @@ it('reverts to default value when visible input has no value', () => {
 });
 
 it('has the correct form method', () => {
-  const wrapper = mountWithTheme(<DonationForm />);
+  const wrapper = mountWithTheme(<DonationFormHandler render={FormExample} />);
   // Check method is GET
   expect(wrapper.find('form').props().method).toEqual('GET');
 });
 
 it('has the correct form action', () => {
-  const wrapper = mountWithTheme(<DonationForm />);
+  const wrapper = mountWithTheme(<DonationFormHandler render={FormExample} />);
   // Check the action URL is correct
   expect(wrapper.find('form').props().action).toEqual(
     'https://donate.shelter.org.uk/b'
   );
 });
 
-it('has submit button', () => {
-  const wrapper = mountWithTheme(<DonationForm />);
-  expect(wrapper.find('button[type="submit"]')).toHaveLength(1);
-});
-
 it('shows the placeholder based on prop', () => {
   const mockDefaultValue = 30;
   const wrapper = mountWithTheme(
-    <DonationForm defaultDonationValue={mockDefaultValue} />
+    <DonationFormHandler
+      defaultDonationValue={mockDefaultValue}
+      render={FormExample}
+    />
   );
+
   expect(
     wrapper.find('input[name="amount-holder"]').props().placeholder
   ).toEqual(mockDefaultValue.toString());
+});
+
+it('defaults frequency to single', () => {
+  const wrapper = mountWithTheme(<DonationFormHandler render={FormExample} />);
+  expect(wrapper.find(`input[name="frequency"]`).props().value).toEqual('once');
+});
+
+it('will set frequency to regular if passed in props', () => {
+  const wrapper = mountWithTheme(
+    <DonationFormHandler frequency="regular" render={FormExample} />
+  );
+  expect(wrapper.find(`input[name="frequency"]`).props().value).toEqual(
+    'regular'
+  );
 });

@@ -9,7 +9,6 @@ import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 const Navigation = ({ pageData, active, openState }) => {
   const [activeMenu, setActiveMenu] = useState('');
   const { navigationItems, additionalLink } = pageData;
-  console.log(pageData);
 
   const updateActiveMenu = id => {
     if (id === activeMenu) {
