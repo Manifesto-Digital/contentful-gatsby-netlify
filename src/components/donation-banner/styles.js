@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
+import DonationFormHandler from '../donation-form-handler';
 import Button from '../button';
 
 export const Banner = styled.section`
@@ -27,16 +28,14 @@ export const Header = styled.h3`
   `};
 `;
 
-export const InlineForm = styled.form`
-  display: flex;
-
+export const StyledDonationFormHandler = styled(DonationFormHandler)`
   ${breakpoint.tablet`
     flex: 0 1 40%;
     margin-bottom: 0;
     justify-content: flex-end;
   `};
+`;
 
-  ${Button} {
-    margin-left: ${props => props.theme.spacing.small};
-  }
+export const StyledButton = styled(Button)`
+  margin-left: ${props => props.theme.spacing.small};
 `;

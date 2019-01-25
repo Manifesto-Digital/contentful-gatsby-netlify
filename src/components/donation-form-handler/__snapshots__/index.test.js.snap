@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<form
+  action="https://donate.shelter.org.uk/b"
+  className="c0"
+  id={null}
+  inline={1}
+  method="GET"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    name="cid"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="263"
+  />
+  <input
+    name="free_amount"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="1"
+  />
+  <input
+    name="amount"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="3000"
+  />
+  <input
+    name="reserved_appeal_code"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value=""
+  />
+  <input
+    name="frequency"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="hidden"
+    value="once"
+  />
+  <div>
+    <input
+      name="amount-holder"
+      onChange={[Function]}
+      placeholder="30"
+      type="text"
+    />
+    <input
+      type="submit"
+      value="submit"
+    />
+  </div>
+</form>
+`;

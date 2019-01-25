@@ -8,20 +8,27 @@ import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 import FeedbackModal from '../components/feedback-modal';
+import SubpageMenu from '../components/advice-page/subpage-menu';
+import SubpagePagination from '../components/advice-page/subpage-pagination';
 
-const AdvicePage = ({ data }) => {
+const AdvicePage = ({ data, pageContext }) => {
   const { assemblies, title, bodyCopy } = data.contentfulPageAssemblyAdvicePage;
+  const { subpages, slug } = pageContext;
 
   return (
     <Layout>
-      <PageTitle title={title} />
-      <Container>
-        <TwoThirds>
-          {bodyCopy && <RichText richText={bodyCopy} />}
-          <Assemblies assemblies={assemblies} insideContainer />
-          <FeedbackModal />
-        </TwoThirds>
-      </Container>
+      <article>
+        <PageTitle title={title} />
+        <Container>
+          <SubpageMenu subpages={subpages} activeSlug={slug} />
+          <TwoThirds padding={false}>
+            {bodyCopy && <RichText richText={bodyCopy} />}
+            <Assemblies assemblies={assemblies} insideContainer />
+            <FeedbackModal />
+          </TwoThirds>
+        </Container>
+        <SubpagePagination subpages={subpages} activeSlug={slug} />
+      </article>
     </Layout>
   );
 };
@@ -30,6 +37,7 @@ AdvicePage.propTypes = {
   data: PropTypes.shape({
     contentfulPageAssemblyAdvicePage: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default AdvicePage;

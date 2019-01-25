@@ -8,7 +8,10 @@ theme.palette = {
   offWhite: '#f7f7f7',
   grey10: '#e5e5e5',
   grey15: '#d9d9d9',
+  grey25: '#bdbec0',
   grey45: '#8c8c8c',
+  grey60: '#999',
+  grey80: '#5a5a5a',
   black: '#212122',
   // Blues
   sanMarinoBlue: '#4d63b5',
@@ -35,6 +38,11 @@ theme.fonts = {
 
 theme.sizes = {
   maxWidth: '1100px',
+  container: '960px',
+};
+
+theme.borderradius = {
+  small: '3px',
 };
 
 theme.headers = {
@@ -47,11 +55,12 @@ theme.headers = {
 theme.fontsize = {
   small: '0.875rem', // 14px
   standard: '1rem', // 16px
+  larger: '1.4rem',
 };
 
 theme.boxshadow = {
-  small: '0 1.5px 4px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.06);',
   standard: '0 2.5px 6px rgba(0,0,0,0.16), 0 2.5px 6px rgba(0,0,0,0.13);',
+  small: '0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06)',
 };
 
 theme.spacing = {
@@ -59,5 +68,6 @@ theme.spacing = {
   standard: '20px',
   medium: '30px',
   large: '40px',
+  xl: '60px',
 };
 export default theme;

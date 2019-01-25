@@ -1,4 +1,4 @@
-const { MARKS } = require('@contentful/rich-text-types');
+const { MARKS, BLOCKS } = require('@contentful/rich-text-types');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -55,6 +55,7 @@ module.exports = {
           process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN ||
           process.env.ctfl_accessToken,
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
+        environment: process.env.GATSBY_CONTENTFUL_ENVIRONMENT || 'master',
       },
     },
     'gatsby-plugin-offline',
@@ -69,6 +70,25 @@ module.exports = {
       resolve: '@contentful/gatsby-transformer-contentful-richtext',
       options: {
         renderOptions: {
+          /*
+           * Defines custom html string for each node type like heading, embedded entries etc..
+           */
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+              const url = node.data.target.fields.file['en-GB'].url;
+              const file = url.substring(url.lastIndexOf('/') + 1);
+
+              if (file.match(/\.(jpeg|jpg|gif|png)$/)) {
+                return `<img
+                  class='embedded-in-richtext'
+                  data-BLOCKS.EMBEDDED_ASSET
+                  src="${node.data.target.fields.file['en-GB'].url}"
+                  alt="${node.data.target.fields.description['en-GB']}"
+                />`;
+              }
+            },
+          },
+
           /*
            * Defines custom html string for each mark type like bold, italic etc..
            */

@@ -16,7 +16,15 @@ const TextInput = ({ field, form, ...rest }) => (
 );
 
 TextInput.propTypes = {
-  type: PropTypes.oneOf(['textarea', 'text', 'url', 'email', 'number', 'tel']),
+  type: PropTypes.oneOf([
+    'textarea',
+    'text',
+    'url',
+    'email',
+    'number',
+    'tel',
+    'search',
+  ]),
   field: PropTypes.object,
   inline: PropTypes.bool,
   noMargin: PropTypes.bool,

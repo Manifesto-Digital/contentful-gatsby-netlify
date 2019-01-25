@@ -10,6 +10,7 @@ const ResponsiveImage = ({
   progressive,
   mobileH,
   desktopH,
+  className,
 }) => {
   if (!mobileW || !desktopW || !file) return null;
 
@@ -22,6 +23,7 @@ const ResponsiveImage = ({
 
   return (
     <img
+      className={className}
       srcSet={`${baseUrl}${mobileSize} 480w,
         ${baseUrl}${desktopSize}`}
       src={`${baseUrl}${desktopSize}`}
@@ -39,6 +41,7 @@ ResponsiveImage.propTypes = {
   fit: PropTypes.string,
   focusArea: PropTypes.string,
   progressive: PropTypes.bool,
+  className: PropTypes.string,
   image: PropTypes.shape({
     description: PropTypes.string.isRequired,
     title: PropTypes.string,

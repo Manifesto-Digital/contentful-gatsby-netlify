@@ -1,5 +1,9 @@
 import React from 'react';
-import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
+import {
+  snapshotComponent,
+  mountWithTheme,
+  changeInput,
+} from '../../../__tests__/helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
 import { sendForm } from '../forms/send';
@@ -24,16 +28,6 @@ const verifyCaptcha = () => {
 };
 
 const nextTick = () => new Promise(resolve => process.nextTick(resolve));
-
-const changeInput = (wrapper, value) => {
-  const input = wrapper.getDOMNode();
-  input.value = value;
-
-  wrapper.simulate('change', {
-    target: input,
-    currentTarget: input,
-  });
-};
 
 const submitForm = wrapper => {
   wrapper.simulate('submit');

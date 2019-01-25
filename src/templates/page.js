@@ -42,31 +42,9 @@ export const pageQuery = graphql`
     contentfulPageAssemblyContentPage(slug: { eq: $slug }) {
       title
       heroContent {
-        __typename
-        ... on ContentfulTopicHeroNoCard {
-          id
-          title
-          subtitle
-          blackText
-          image {
-            ...ImageFragment
-          }
-        }
-        ... on ContentfulTopicHeroWithCard {
-          id
-          title
-          subtitle
-          cardPosition
-          image {
-            ...ImageFragment
-          }
-          linkText
-          internalLink {
-            id
-            slug
-          }
-          externalUrl
-        }
+        ...HeroNoCardFragment
+        ...DonationHeroFragment
+        ...HeroWithCardFragment
       }
       bodyCopy {
         id
@@ -85,6 +63,7 @@ export const pageQuery = graphql`
           ...InlineCallout
           ...VideoTopicFragment
           ...DownloadBannerAssemblyFragment
+          ...AdviceSearchBoxTopicFragment
           ...ShareBlockFragment
           ...LinkBoxFragment
           ...RelatedAdviceFragment

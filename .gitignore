@@ -11,4 +11,5 @@ public/*
 .idea
 .env.*
 .env.development
+.env.production
 .netlify/state.json

@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 import { getQueryParams } from '../../utils/query-params';
 import { donation } from '../../variables';
-// Components
-import DonationInput from '../forms/donation-input';
 // Styles
-import { VisuallyHidden } from '../styled/accessibility';
-import { InlineForm } from './styles';
-import Button from '../button';
+import { StyledForm } from './styles';
 
-const DonationForm = ({ defaultDonationValue }) => {
+const DonationFormHandler = ({
+  defaultDonationValue,
+  className,
+  render,
+  frequency,
+  inline,
+  id,
+}) => {
   const defaultValue = defaultDonationValue || 30;
   const defaultPennyValue = defaultValue * 100;
 
@@ -21,12 +24,18 @@ const DonationForm = ({ defaultDonationValue }) => {
   };
 
   // When the visible field updates, we also update the hidden amount field to the value in pence
-  const handleAmountChange = (e, setFieldValue) => {
-    const amountValue = e.target.value;
-    const amountHolderName = e.target.name;
+  const handleAmountChange = (e, setFieldValue, value = null) => {
+    // Necessary as RC slider in the donation hero doesn't pass event on change
+    // so we have to explicitly pass through name and value
+    let amountValue;
+    if (e) {
+      amountValue = e.target.value;
+    } else {
+      amountValue = value;
+    }
 
     // Update this field as normal
-    setFieldValue(amountHolderName, amountValue);
+    setFieldValue('amount-holder', amountValue);
 
     // Also update the actual hidden amount field if an amount has been set
     if (amountValue) {
@@ -41,47 +50,33 @@ const DonationForm = ({ defaultDonationValue }) => {
     <Location>
       {({ location }) => (
         <Formik
+          onSubmit={() => {}} // Required to prevent submission error
           initialValues={{
             cid: donation.defaultEnglandCampaignId,
             free_amount: '1',
             'amount-holder': '',
             amount: defaultPennyValue.toString(),
             reserved_appeal_code: getReservedAppealCode(location),
-            frequency: 'once',
+            frequency,
           }}
         >
           {({ submitForm, setFieldValue }) => (
-            <InlineForm
+            <StyledForm
+              inline={inline ? 1 : 0}
               as={Form}
               onSubmit={submitForm}
               action="https://donate.shelter.org.uk/b"
               method="GET"
+              className={className}
+              id={id || null}
             >
               <Field type="hidden" name="cid" />
               <Field type="hidden" name="free_amount" />
               <Field type="hidden" name="amount" />
               <Field type="hidden" name="reserved_appeal_code" />
               <Field type="hidden" name="frequency" />
-              <VisuallyHidden as="label" htmlFor="amount-holder">
-                Donate
-              </VisuallyHidden>
-              <Field
-                name="amount-holder"
-                render={props => (
-                  <DonationInput
-                    noMargin
-                    inline
-                    placeholder={defaultValue.toString()}
-                    {...props}
-                    id="amount-holder"
-                    onChange={e => handleAmountChange(e, setFieldValue)}
-                  />
-                )}
-              />
-              <Button bg="white outline" type="submit">
-                Donate
-              </Button>
-            </InlineForm>
+              {render({ handleAmountChange, setFieldValue, defaultValue })}
+            </StyledForm>
           )}
         </Formik>
       )}
@@ -89,8 +84,18 @@ const DonationForm = ({ defaultDonationValue }) => {
   );
 };
 
-DonationForm.propTypes = {
-  placeholder: PropTypes.number,
+DonationFormHandler.propTypes = {
+  className: PropTypes.string,
+  defaultDonationValue: PropTypes.number,
+  render: PropTypes.func.isRequired,
+  frequency: PropTypes.oneOf(['once', 'regular']),
+  inline: PropTypes.bool,
+  id: PropTypes.string,
 };
 
-export default DonationForm;
+DonationFormHandler.defaultProps = {
+  frequency: 'once',
+  inline: true,
+};
+
+export default DonationFormHandler;
