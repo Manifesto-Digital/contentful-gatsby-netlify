@@ -7,15 +7,15 @@ import {
   CardTitle,
   CardImage,
   SummaryText,
-  HoverShadow,
-  Link,
 } from './styles';
 
 const ContentCard = ({ data }) => {
-  const { featuredImage, cropImageFrom, title, summaryText, slug } = data;
+  const { title, slug, summaryText, featuredImage, cropImageFrom } = data;
+
+  console.log(featuredImage);
 
   return (
-    <Card>
+    <Card to={slug}>
       <ImageContainer>
         <CardImage
           mobileW={600}
@@ -29,15 +29,23 @@ const ContentCard = ({ data }) => {
         <CardTitle>{title}</CardTitle>
       </ImageContainer>
       <SummaryText>{summaryText}</SummaryText>
-      <HoverShadow />
-      <Link href={slug} />
     </Card>
   );
 };
 
 ContentCard.propTypes = {
   data: PropTypes.shape({
-    html: PropTypes.string,
+    title: PropTypes.string,
+    slug: PropTypes.string,
+    summaryText: PropTypes.string,
+    featuredImage: PropTypes.shape({
+      description: PropTypes.string,
+      file: PropTypes.shape({
+        fileName: PropTypes.string,
+        url: PropTypes.string,
+      }),
+    }),
+    cropImageFrom: PropTypes.string,
   }),
 };
 

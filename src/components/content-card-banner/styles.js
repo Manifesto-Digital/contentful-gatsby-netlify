@@ -3,13 +3,13 @@ import { breakpoint } from '../theme/breakpoint';
 import { Card } from '../content-card/styles';
 
 export const BannerBackground = styled.section`
-  background-color: ${props =>
+  background: ${props =>
     (props.bannerColour === 'white' && props.theme.palette.white) ||
     (props.bannerColour === 'grey' && props.theme.palette.grey10)};
   };
 `;
 
-export const HeaderText = styled.div`
+export const HeaderText = styled.h2`
   padding-top: ${props => props.theme.spacing.standard};
 `;
 
@@ -20,7 +20,6 @@ export const CardRow = styled.div`
     flex-flow: row wrap;
   `};
 
-  // Handle spacing for different layouts of cards at tablet
   ${Card} {
     ${breakpoint.tablet`
       ${({ items }) =>

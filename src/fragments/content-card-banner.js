@@ -14,19 +14,21 @@ export const ContentCardBannerFragment = graphql`
     }
     bannerColour
     contentCards {
-      id
-      slug
-      title
-      featuredImage {
+      ... on ContentfulPageAssemblyContentPage {
         id
-        description
-        file {
-          url
-          fileName
+        slug
+        title
+        summaryText
+        cropImageFrom
+        featuredImage {
+          id
+          description
+          file {
+            url
+            fileName
+          }
         }
       }
-      cropImageFrom
-      summaryText
     }
   }
 `;

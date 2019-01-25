@@ -9,6 +9,7 @@ import { BannerBackground, HeaderText, CardRow } from './styles';
 
 const ContentCardBanner = ({ data }) => {
   const { bannerColour, header, contentCards } = data;
+
   if (contentCards && contentCards.length < 2) return null;
 
   return (
@@ -16,8 +17,8 @@ const ContentCardBanner = ({ data }) => {
       <Container>
         <HeaderText as={RichText} richText={header} />
         <CardRow items={contentCards.length}>
-          {contentCards.map(contentCard => (
-            <ContentCard data={contentCard} />
+          {contentCards.map((contentCard, i) => (
+            <ContentCard key={i} data={contentCard} />
           ))}
         </CardRow>
       </Container>
@@ -33,6 +34,7 @@ ContentCardBanner.propTypes = {
         html: PropTypes.string,
       }),
     }),
+    contentCards: PropTypes.array.isRequired,
   }),
 };
 
