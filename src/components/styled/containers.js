@@ -30,7 +30,6 @@ export const ContentWithSideBar = styled.div`
 
 export const SideBar = styled.div`
   max-width: 100%;
-  margin-top: ${props => props.theme.spacing.standard};
 
   ${breakpoint.tablet`
     padding-left: ${props => props.theme.spacing.standard};

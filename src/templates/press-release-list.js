@@ -11,6 +11,7 @@ import {
   ContentWithSideBar,
 } from '../components/styled/containers';
 import MediaContact from '../components/media-contact';
+import PageTitle from '../components/page-title';
 import Pagination from '../components/pagination';
 
 const PressReleaseList = styled.div`
@@ -20,19 +21,13 @@ const PressReleaseList = styled.div`
 
 const PressReleaseTemplate = ({ data, pageContext }) => {
   const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
-  console.log('data', data);
-
+  const { title, subHeading } = pageContext;
   return (
     <Layout>
-      <Container>
-        <TwoThirds>
-          <h1>Press releases and statements</h1>
-          <p>
-            For more information about any of our press releases, please contact
-            our Media team.
-          </p>
-        </TwoThirds>
-      </Container>
+      <PageTitle twoThirds paddingBottom>
+        <h1>{title}</h1>
+        <p>{subHeading}</p>
+      </PageTitle>
 
       <PressReleaseList>
         <Container>
@@ -41,7 +36,6 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
               {posts.map(({ node }) => (
                 <Item key={node.id} pressRelease={node} />
               ))}
-
               <Pagination pageContext={pageContext} slug="press-releases" />
             </TwoThirds>
 
@@ -57,7 +51,14 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
 
 PressReleaseTemplate.propTypes = {
   data: PropTypes.object,
-  pageContext: PropTypes.object,
+  pageContext: PropTypes.shape({
+    currentPage: PropTypes.number,
+    limit: PropTypes.number,
+    numPages: PropTypes.number,
+    skip: PropTypes.number,
+    title: PropTypes.string.isRequired,
+    subHeading: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 Item.propTypes = {

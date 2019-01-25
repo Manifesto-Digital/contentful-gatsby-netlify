@@ -1,5 +1,8 @@
 const path = require('path');
 const { getPressReleasePages } = require('../queries/press-release-page');
+const {
+  getPressReleaseListingsPages,
+} = require('../queries/press-release-listings-page');
 
 async function createPressReleasePages(graphql, gatsbyCreatePage) {
   const pressReleasePageTemplate = path.resolve(
@@ -31,6 +34,15 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   });
 
   // Create press release list pages
+
+  // Grab the page for content to use in listings page
+  // Filtered by contentful_id in query to only return one
+  const pressReleaseListingsPages = await getPressReleaseListingsPages(graphql);
+  const pressReleaseListingPage =
+    pressReleaseListingsPages.data
+      .allContentfulPageAssemblyPressReleaseListingsPage.edges[0].node;
+  const { title, subHeading } = pressReleaseListingPage;
+
   const postsPerPage = 2; // deliberately low for testing purposes
   const numPages = Math.ceil(pressReleases.length / postsPerPage);
 
@@ -39,6 +51,8 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
       path: i === 0 ? `/press-releases` : `/press-releases/${i + 1}`,
       component: pressReleaseListingPageTemplate,
       context: {
+        title,
+        subHeading,
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,

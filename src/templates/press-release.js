@@ -64,8 +64,10 @@ const PressReleasePage = ({ data }) => {
   return (
     <Layout>
       <article>
+        <PageTitle twoThirds>
+          <h1>{title}</h1>
+        </PageTitle>
         <Container padding={false}>
-          <PageTitle title={title} twoThirds />
           <ContentWithSideBar>
             <TwoThirds padding>
               <PublishedDate colour="grey45">
