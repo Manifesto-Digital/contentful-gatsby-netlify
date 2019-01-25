@@ -8,6 +8,7 @@ import { FormFieldWrapper } from '../forms/field-wrapper/styles';
 import Button from '../button';
 import FormField from '../forms/form-field';
 import FormFieldset from '../forms/fieldset';
+import Recaptcha from '../forms/recaptcha';
 
 const ContentForm = ({
   submitUrl,
@@ -64,6 +65,7 @@ const ContentForm = ({
             <ContentFormFields key={formField.id} formField={formField} />
           ))}
           <Field type="hidden" name="sourcecode" />
+          <Recaptcha />
           <FormFieldWrapper>
             <Button bg="red" type="submit">
               {submitCallToAction}

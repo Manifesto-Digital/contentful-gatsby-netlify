@@ -28,7 +28,16 @@ const AddressInput = ({ field }) => (
 );
 
 AddressInput.propTypes = {
-  field: PropTypes.object,
+  field: {
+    defaultValue: PropTypes.string,
+    fieldType: PropTypes.string,
+    fieldLabel: PropTypes.string,
+    machineName: PropTypes.string,
+    placeholder: PropTypes.string,
+    required: PropTypes.string,
+    toolTip: PropTypes.string,
+    valueOptions: PropTypes.array,
+  },
 };
 
 export default AddressInput;
