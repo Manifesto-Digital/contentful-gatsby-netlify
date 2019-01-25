@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-family: ${props => props.theme.fonts.primary};
         color: ${props => props.theme.palette.black};
+        word-break: break-all;
     }
 
     h1,

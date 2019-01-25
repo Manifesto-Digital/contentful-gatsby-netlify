@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SVG from 'react-inlinesvg';
 import { dateAsString } from '../../../utils/dates';
 import ArrowRight from '../../../assets/svg/icons/chevron-right.svg';
 import { LongTextRequired } from '../../../prop-types';
-// Components
-import LinkHandler from '../../link-handler';
 // Styles
 import {
   PressItem,
@@ -28,9 +25,6 @@ const Item = ({ pressRelease }) => {
     <PressItem shadow bg="white">
       <h3>{title}</h3>
       {shortDescription && <p>{shortDescription}</p>}
-      <CoveringLink aria-hidden="true" internalLink={pressRelease}>
-        <VisuallyHidden>{title}</VisuallyHidden>
-      </CoveringLink>
 
       <IconHolder aria-hidden="true">
         <ArrowIcon src={ArrowRight} alt=" " cacheGetRequests />
@@ -39,6 +33,10 @@ const Item = ({ pressRelease }) => {
       <PostedDate>
         <strong>Posted on {dateAsString(datePosted, 'DD MMM YYYY')}</strong>
       </PostedDate>
+
+      <CoveringLink aria-hidden="true" internalLink={pressRelease}>
+        <VisuallyHidden>{title}</VisuallyHidden>
+      </CoveringLink>
     </PressItem>
   );
 };

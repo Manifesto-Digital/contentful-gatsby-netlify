@@ -15,16 +15,17 @@ export const TwoThirds = styled.div`
 
   ${breakpoint.tablet`
     max-width: 66%;
-  `}
+  `};
 `;
 
 export const ContentWithSideBar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   ${breakpoint.tablet`
     flex-direction: row;
-  `}
+  `};
 `;
 
 export const SideBar = styled.div`
@@ -32,8 +33,12 @@ export const SideBar = styled.div`
   margin-top: ${props => props.theme.spacing.standard};
 
   ${breakpoint.tablet`
+    padding-left: ${props => props.theme.spacing.standard};
+  `};
+
+  ${breakpoint.desktop`
     max-width: 32%;
     margin-top: 0;
     padding-left: ${props => props.theme.spacing.xl};
-  `}
+  `};
 `;

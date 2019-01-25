@@ -6,17 +6,11 @@ import ArrowLeft from '../../assets/svg/icons/chevron-left.svg';
 import { VisuallyHidden } from '../styled/accessibility';
 import { UnorderedList, ListItem, SVGIcon, Link } from './styles';
 
-/*
- * Working with this as a guide:
- * https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
- */
 const Pagination = ({ pageContext: { currentPage, numPages }, slug }) => {
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
-  const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString();
-  const nextPage = (currentPage + 1).toString();
-
   const pagesArray = Array.from({ length: numPages }, (_i, i) => i);
+
   // If there are not 3 previous then start slice from 0
   const previous3Pages = pagesArray.slice(
     currentPage - 3 >= 0 ? currentPage - 3 : 0,
@@ -24,19 +18,18 @@ const Pagination = ({ pageContext: { currentPage, numPages }, slug }) => {
   );
   const next3Pages = pagesArray.slice(currentPage, currentPage + 3);
 
-  // If page 1 then no need for the slug to be appended with /1
+  // Make sure we don't generate a link of /0 or /1
   const generateInternalLink = i => {
-    if (i === 1) return { slug };
+    if (i < 2) return { slug };
     return { slug: `${slug}/${i}` };
   };
   return (
     <nav aria-label="pagination">
       <UnorderedList>
-        <ListItem key="pagination-prev">
+        <ListItem key="pagination-prev" previous>
           <Link
             disabled={isFirst}
             internalLink={generateInternalLink(currentPage - 1)}
-            rel="next"
           >
             <VisuallyHidden>Previous Page</VisuallyHidden>
             <SVGIcon src={ArrowLeft} />
@@ -64,7 +57,7 @@ const Pagination = ({ pageContext: { currentPage, numPages }, slug }) => {
           <Link
             disabled={isLast}
             internalLink={generateInternalLink(currentPage + 1)}
-            rel="next"
+            next
           >
             <VisuallyHidden>Next Page</VisuallyHidden>
             <SVGIcon src={ArrowRight} />
