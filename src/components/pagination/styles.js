@@ -6,6 +6,7 @@ export const UnorderedList = styled.ul`
   display: flex;
   justify-content: center;
   padding-left: 0;
+  flex-wrap: wrap;
 `;
 export const ListItem = styled.li`
   list-style: none;
