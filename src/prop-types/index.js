@@ -5,3 +5,9 @@ export const richTextPropTypes = {
     html: PropTypes.string,
   }),
 };
+
+export const LongTextRequired = PropTypes.shape({
+  internal: PropTypes.shape({
+    content: PropTypes.string.isRequired,
+  }),
+}).isRequired;
