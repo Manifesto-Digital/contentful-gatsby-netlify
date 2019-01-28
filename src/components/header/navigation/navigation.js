@@ -13,7 +13,9 @@ const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
       {navigationLink &&
         navigationLink.map((navLink, i) => (
           <Item key={i}>
-            <ItemLink to={navLink.slug}>{menuLabel || navLink.title}</ItemLink>
+            <ItemLink internalLink={navLink}>
+              {menuLabel || navLink.title}
+            </ItemLink>
             {subNavigationItems && (
               <SubNavButton type="button" onClick={() => setActiveMenu(id)}>
                 <ArrowSVG src={AngleRight} cacheGetRequests />
@@ -24,7 +26,7 @@ const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
       {subNavigationItems && (
         <SubMenu active={menuOpen}>
           {subNavigationItems.map((item, i) => (
-            <ItemLink key={i} to={item.slug}>
+            <ItemLink key={i} internalLink={item}>
               {item.title}
             </ItemLink>
           ))}

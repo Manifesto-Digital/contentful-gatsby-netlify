@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import { breakpoint } from '../../theme/breakpoint';
+import LinkHandler from '../../link-handler';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -56,7 +56,7 @@ export const Menus = styled.div`
   `}
 `;
 
-export const ItemLink = styled(Link)`
+export const ItemLink = styled(LinkHandler)`
   padding: ${({ theme }) => theme.spacing.small} 0;
   color: ${({ theme }) => theme.palette.black};
   font-size: ${({ theme }) => theme.fontsize.small};
