@@ -13,9 +13,10 @@ const Pagination = ({ pageContext: { currentPage, numPages }, slug }) => {
 
   // If there are not 3 previous then start slice from 0
   const previous3Pages = pagesArray.slice(
-    currentPage - 3 >= 0 ? currentPage - 3 : 0,
+    currentPage - 4 >= 0 ? currentPage - 4 : 0,
     currentPage - 1
   );
+
   const next3Pages = pagesArray.slice(currentPage, currentPage + 3);
 
   // Make sure we don't generate a link of /0 or /1

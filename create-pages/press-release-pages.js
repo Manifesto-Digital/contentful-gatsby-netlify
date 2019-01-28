@@ -43,7 +43,7 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
       .allContentfulPageAssemblyPressReleaseListingsPage.edges[0].node;
   const { title, subHeading } = pressReleaseListingPage;
 
-  const postsPerPage = 2; // deliberately low for testing purposes
+  const postsPerPage = 1; // deliberately low for testing purposes,
   const numPages = Math.ceil(pressReleases.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
