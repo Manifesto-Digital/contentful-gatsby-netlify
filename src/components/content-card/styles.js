@@ -39,8 +39,10 @@ export const CardTitle = styled.div`
 `;
 
 export const SummaryText = styled.div`
-  padding: 15px ${props => props.theme.spacing.standard}
-    ${props => props.theme.spacing.small};
+  padding-top: 15px;
+  padding-right: ${props => props.theme.spacing.standard};
+  padding-bottom: ${props => props.theme.spacing.small};
+  padding-left: ${props => props.theme.spacing.standard};
   color: ${props => props.theme.palette.sanMarinoBlue};
   font-size: ${props => props.theme.fontsize.small};
 `;
