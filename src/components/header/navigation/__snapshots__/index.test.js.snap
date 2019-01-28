@@ -371,20 +371,7 @@ exports[`Renders correctly 1`] = `
     </nav>
     <nav
       className="c11"
-    >
-      <Link
-        className="c6 c7"
-        to="tobys-page"
-      >
-        Tobys Page
-      </Link>
-      <Link
-        className="c6 c7"
-        to="https://scotland.shelter.org.uk/"
-      >
-        Scotland
-      </Link>
-    </nav>
+    />
   </div>
 </div>
 `;

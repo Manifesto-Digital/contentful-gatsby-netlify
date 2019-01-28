@@ -26,7 +26,7 @@ test('Should populate a menu item correctly', () => {
   const mockData = createHeaderNavigation({
     id: 'e230d8b8-4ee6-5d4c-bf25-57af664d12d7',
     menuLabel: 'What we do',
-    navigationLink: [{ title: 'Tobys Page', slug: 'tobys-page' }],
+    navigationLink: [{ slug: 'tobys-page' }],
   });
   const wrapper = mountWithTheme(
     <NavigationMenu pageData={mockData} id={mockData.id} />
@@ -43,8 +43,8 @@ test('Should populate a menu item correctly', () => {
     wrapper
       .find(ItemLink)
       .at(0)
-      .props().to
-  ).toBe(mockData.navigationLink[0].slug);
+      .props().internalLink
+  ).toBe(mockData.navigationLink[0]);
 });
 
 test('Should populate a sub-menu', () => {
