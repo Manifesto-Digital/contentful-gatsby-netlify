@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 
-export const H1 = styled.h1`
-  margin-bottom: ${props => props.theme.spacing.large};
-  padding-top: ${props => props.theme.spacing.standard};
+export const Wrapper = styled.div`
+  padding-bottom: ${props =>
+    props.paddingBottom ? props.theme.spacing.large : 0};
+
+  h1 {
+    margin-bottom: ${props => props.theme.spacing.standard};
+    padding-top: ${props => props.theme.spacing.large};
+  }
+
+  p:last-of-type {
+    margin-bottom: ${props => (props.paddingBottom ? 0 : null)};
+  }
 `;
