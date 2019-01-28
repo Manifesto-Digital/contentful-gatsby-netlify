@@ -18,10 +18,12 @@ const AdvicePage = ({ data, pageContext }) => {
   return (
     <Layout>
       <article>
-        <PageTitle title={title} />
+        <PageTitle>
+          <h1>{title}</h1>
+        </PageTitle>
         <Container>
           <SubpageMenu subpages={subpages} activeSlug={slug} />
-          <TwoThirds padding={false}>
+          <TwoThirds>
             {bodyCopy && <RichText richText={bodyCopy} />}
             <Assemblies assemblies={assemblies} insideContainer />
             <FeedbackModal />

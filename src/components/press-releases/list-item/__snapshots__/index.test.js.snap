@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.c0 > :last-child {
+  margin-bottom: 0;
+}
+
+.c3 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.c2 {
+  color: #8c8c8c;
+}
+
+.c1 {
+  border-bottom-right-radius: 3px;
+  background: #8c8c8c;
+  color: #fff;
+  padding-top: 3px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+}
+
+.c1 svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin: 0 auto;
+}
+
+.c4 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    320,000 people in Britain are now homeless, as numbers keep rising
+  </h3>
+  <p>
+    Nam commodo suscipit quam. Etiam iaculis nunc ac metus. Ut a nisl id ante tempus hendrerit. Etiam ultricies nisi vel augue. Donec mollis hendrerit risus. Nam commodo suscipit quam. Etiam iaculis nunc ac metus. Ut a nisl id ante tempus hendrerit. Etiam ultricies nisi vel augue. Donec mollis hendrerit risus.
+  </p>
+  <div
+    aria-hidden="true"
+    className="c1"
+  >
+    <span
+      className="isvg loading "
+    />
+  </div>
+  <p
+    className="c2"
+  >
+    <strong>
+      Posted on 
+      16 May 2018
+    </strong>
+  </p>
+  <Link
+    className="c3"
+    to="test-slug"
+  >
+    <span
+      className="c4"
+    >
+      320,000 people in Britain are now homeless, as numbers keep rising
+    </span>
+  </Link>
+</div>
+`;
