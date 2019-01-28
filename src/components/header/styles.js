@@ -8,7 +8,7 @@ export const Logo = styled(SVG)`
   display: block;
   width: 95px;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     width: 115px;
   `}
 `;
@@ -21,7 +21,7 @@ export const LogoWrapper = styled(Link)`
   padding: 15px;
   background: ${({ theme }) => theme.palette.primary};
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     height: 68px;
     padding: ${({ theme }) => theme.spacing.standard} 25px;
   `}
@@ -36,7 +36,7 @@ export const MobileMenuOpen = styled.button`
   padding: 0;
   margin-left: auto;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     display: none;
   `}
 `;
@@ -60,7 +60,7 @@ export const HeaderBar = styled.header`
   width: 100%;
   background: ${({ theme }) => theme.palette.grey10};
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     padding: 0
     ${({ theme }) => theme.spacing.standard};
   `}

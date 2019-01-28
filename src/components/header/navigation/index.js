@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import NavigationMenu from './navigation';
 
 import { MobileMenuClose, MenuSVG } from './styles-icons';
-import { Wrapper, Menus, AdditionalMenu, ItemLink } from './styles';
+import {
+  Wrapper,
+  Menus,
+  MenuList,
+  AdditionalMenu,
+  Item,
+  ItemLink,
+} from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
 const Navigation = ({ pageData, active, openState }) => {
@@ -23,23 +30,32 @@ const Navigation = ({ pageData, active, openState }) => {
       <MobileMenuClose type="button" onClick={openState} active={active}>
         <MenuSVG src={CloseSVG} />
       </MobileMenuClose>
-      <Menus>
-        {navigationItems &&
-          navigationItems.map((item, i) => (
-            <NavigationMenu
-              key={i}
-              id={item.id}
-              pageData={item}
-              menuOpen={activeMenu === item.id}
-              setActiveMenu={updateActiveMenu}
-            />
-          ))}
+      <Menus role="navigation" aria-label="Main menu">
+        {navigationItems && (
+          <MenuList role="menubar" aria-hidden="false">
+            {navigationItems.map((item, i) => (
+              <NavigationMenu
+                key={i}
+                id={item.id}
+                pageData={item}
+                menuOpen={activeMenu === item.id}
+                setActiveMenu={updateActiveMenu}
+              />
+            ))}
+          </MenuList>
+        )}
         {additionalLink && (
-          <AdditionalMenu>
-            <ItemLink to={additionalLink[0].slug}>
-              {additionalLink[0].menuLabel || additionalLink[0].title}
-            </ItemLink>
-            <ItemLink to="https://scotland.shelter.org.uk/">Scotland</ItemLink>
+          <AdditionalMenu role="navigation" aria-label="Secondary menu">
+            <Item>
+              <ItemLink internalLink={additionalLink[0]}>
+                {additionalLink[0].menuLabel || additionalLink[0].title}
+              </ItemLink>
+            </Item>
+            <Item>
+              <ItemLink internalLink="https://scotland.shelter.org.uk/">
+                Scotland
+              </ItemLink>
+            </Item>
           </AdditionalMenu>
         )}
       </Menus>

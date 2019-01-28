@@ -14,18 +14,26 @@ export const MobileMenuClose = styled.button`
   margin-left: auto;
   cursor: pointer;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     display: none;
   `}
 `;
 
 export const SubNavButton = styled(MobileMenuClose)`
   height: auto;
-  margin-left: 10px;
   width: 25px;
+  margin-left: 5px;
 
-  ${breakpoint.tabletWide`
+  svg {
+    width: 15px;
+  }
+
+  ${breakpoint.desktop`
     display: flex;
+
+    svg {
+      width: auto;
+    }
   `}
 `;
 

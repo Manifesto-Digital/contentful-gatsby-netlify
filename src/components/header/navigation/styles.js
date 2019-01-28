@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     active ? 'translateX(0)' : ' translateX(120%)'};
   overflow-y: scroll;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     position: relative;
     width:100%;
     background: ${({ theme }) => theme.palette.grey10};
@@ -28,79 +28,94 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const Menu = styled.nav`
+export const MenuList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
+    flex-direction: row;
     width: auto;
     margin-right: ${({ theme }) => theme.spacing.standard};
   `}
 `;
 
-export const Menus = styled.div`
+export const Menus = styled.nav`
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0
-    ${({ theme }) => `${theme.spacing.standard} ${theme.spacing.standard}`};
+  padding: 0;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     flex-direction: row;
     max-width: ${({ theme }) => theme.sizes.maxWidth};
     margin: 0 auto;
-    padding: 5px ${({ theme }) => theme.spacing.standard}
+    padding: 0 ${({ theme }) => theme.spacing.small};
+  `}
+`;
+
+export const Item = styled.li`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding: ${({ topLevel, theme }) =>
+    topLevel ? `0` : `${theme.spacing.small}}`};
+  border-bottom: ${({ topLevel, theme }) =>
+    topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
+
+  ${MenuList} {
+    padding: 5px ${({ theme }) => theme.spacing.small};
+  }
+
+  ${breakpoint.desktop`
+    margin-right: auto;
+     padding: ${({ topLevel, theme }) =>
+       topLevel ? `0` : `${theme.spacing.small}}`};
   `}
 `;
 
 export const ItemLink = styled(LinkHandler)`
-  padding: ${({ theme }) => theme.spacing.small} 0;
   color: ${({ theme }) => theme.palette.black};
   font-size: ${({ theme }) => theme.fontsize.small};
   text-decoration: none;
 `;
 
-export const AdditionalMenu = styled(Menu)`
-  ${ItemLink} {
-    border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+export const AdditionalMenu = styled(MenuList)`
+  padding: 0 ${({ theme }) => theme.spacing.small};
+  ${Item} {
+    padding: 15px ${({ theme }) => theme.spacing.small};
     &:last-child {
       border: none;
+      ${breakpoint.desktop`
+        margin-left: ${({ theme }) => theme.spacing.standard};
+      `}
     }
   }
-
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     flex-direction: row;
+    min-width: 200px;
     margin-left: auto;
     margin-right: 0;
       ${ItemLink} {
-        margin-left: ${({ theme }) => theme.spacing.standard};
         border:none;
       }
   `}
 `;
 
-export const Item = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-
-  ${breakpoint.tabletWide`
-    margin-right: auto;
-  `}
-`;
-
-export const SubMenu = styled(Menu)`
+export const SubMenu = styled.ul`
   display: ${({ active }) => (active ? 'flex' : 'none')};
-  margin-left: ${({ theme }) => theme.spacing.small};
+  flex-direction: column;
+  padding: 0 ${({ theme }) => theme.spacing.small};
   border: none;
+  list-style: none;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     position: absolute;
-    top: 52px;
+    top: 58px;
     right: 0;
     left: 0;
     flex-direction: row;
@@ -113,26 +128,24 @@ export const SubMenu = styled(Menu)`
     theme.spacing.small}
   `}
 
-  ${ItemLink} {
-    border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
-
-    ${breakpoint.tabletWide`
+  ${Item} {
+    &:last-child {
+      border: none;
+    }
+    ${breakpoint.desktop`
       flex: 0 1 calc(${100 / 3}% - 10px);
       width: 32%;
       margin-left: ${({ theme }) => theme.spacing.small};
-      padding: ${({ theme }) => theme.spacing.small};
       border: none;
     `}
 
     &:hover {
-      ${breakpoint.tabletWide`
-        background: ${({ theme }) => theme.palette.black};
-        color: ${({ theme }) => theme.palette.white};
+      ${breakpoint.desktop`
+          background: ${({ theme }) => theme.palette.black};
+        ${ItemLink} {
+          color: ${({ theme }) => theme.palette.white};
+        }
       `}
-    }
-
-    &:last-child {
-      border: none;
     }
   }
 `;

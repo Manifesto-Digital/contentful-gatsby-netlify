@@ -14,7 +14,7 @@ export const Overlay = styled.div`
   opacity: ${({ active }) => (active ? '1' : '0')};
   transition: 0.2s ease-in opacity;
 
-  ${breakpoint.tabletWide`
+  ${breakpoint.desktop`
     display: none;
     position: relative;
     width: 100%;

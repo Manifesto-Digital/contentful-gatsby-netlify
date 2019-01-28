@@ -78,26 +78,26 @@ Array [
   background: #e5e5e5;
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c3 {
     width: 115px;
   }
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c2 {
     height: 68px;
     padding: 20px 25px;
   }
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c4 {
     display: none;
   }
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c1 {
     padding: 0 20px;
   }
@@ -154,7 +154,7 @@ Array [
   cursor: pointer;
 }
 
-.c8 {
+.c11 {
   padding: 0;
   border: none;
   font: inherit;
@@ -179,8 +179,12 @@ Array [
   margin-left: auto;
   cursor: pointer;
   height: auto;
-  margin-left: 10px;
   width: 25px;
+  margin-left: 5px;
+}
+
+.c11 svg {
+  width: 15px;
 }
 
 .c2 {
@@ -188,7 +192,7 @@ Array [
   width: 20px;
 }
 
-.c9 {
+.c12 {
   display: block;
   fill: #212122;
   width: 20px;
@@ -214,7 +218,7 @@ Array [
   overflow-y: scroll;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -223,7 +227,9 @@ Array [
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  border-bottom: 1px solid #e5e5e5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -236,38 +242,10 @@ Array [
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px 20px;
+  padding: 0;
 }
 
 .c7 {
-  padding: 10px 0;
-  color: #212122;
-  font-size: 0.775rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.c11 .c6 {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.c11 .c6:last-child {
-  border: none;
-}
-
-.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -276,11 +254,41 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
-  height: 40px;
+  margin-bottom: 0;
+  padding: 0;
+  border-bottom: none;
+}
+
+.c7 .c4 {
+  padding: 5px 10px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c8 .c4 {
+  padding: 5px 10px;
 }
 
 .c10 {
+  color: #212122;
+  font-size: 0.775rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -289,42 +297,60 @@ Array [
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  border-bottom: 1px solid #e5e5e5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 0 10px;
+}
+
+.c14 .c6 {
+  padding: 15px 10px;
+}
+
+.c14 .c6:last-child {
+  border: none;
+}
+
+.c13 {
   display: none;
-  margin-left: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 10px;
+  border: none;
+  list-style: none;
+}
+
+.c13 .c6:last-child {
   border: none;
 }
 
-.c10 .c6 {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.c10 .c6:last-child {
-  border: none;
-}
-
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c1 {
     display: none;
   }
 }
 
-@media (min-width:46.3125em) {
-  .c8 {
+@media (min-width:62em) {
+  .c11 {
     display: none;
   }
 }
 
-@media (min-width:46.3125em) {
-  .c8 {
+@media (min-width:62em) {
+  .c11 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
+
+  .c11 svg {
+    width: auto;
+  }
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c0 {
     position: relative;
     width: 100%;
@@ -339,63 +365,76 @@ Array [
   }
 }
 
-@media (min-width:46.3125em) {
-  .c4 {
+@media (min-width:62em) {
+  .c5 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c3 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 5px 20px;
+    padding: 0 10px;
   }
 }
 
-@media (min-width:46.3125em) {
-  .c11 {
+@media (min-width:62em) {
+  .c7 {
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 {
+    margin-right: auto;
+    padding: 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:46.3125em) {
-  .c11 {
+@media (min-width:62em) {
+  .c14 .c6:last-child {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+    min-width: 200px;
     margin-left: auto;
     margin-right: 0;
   }
 
-  .c11 .c6 {
-    margin-left: 20px;
+  .c14 .c9 {
     border: none;
   }
 }
 
-@media (min-width:46.3125em) {
-  .c5 {
-    margin-right: auto;
-  }
-}
-
-@media (min-width:46.3125em) {
-  .c10 {
-    width: auto;
-    margin-right: 20px;
-  }
-}
-
-@media (min-width:46.3125em) {
-  .c10 {
+@media (min-width:62em) {
+  .c13 {
     position: absolute;
-    top: 52px;
+    top: 58px;
     right: 0;
     left: 0;
     -webkit-flex-direction: row;
@@ -412,21 +451,23 @@ Array [
   }
 }
 
-@media (min-width:46.3125em) {
-  .c10 .c6 {
+@media (min-width:62em) {
+  .c13 .c6 {
     -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
     -ms-flex: 0 1 calc(33.333333333333336% - 10px);
     flex: 0 1 calc(33.333333333333336% - 10px);
     width: 32%;
     margin-left: 10px;
-    padding: 10px;
     border: none;
   }
 }
 
-@media (min-width:46.3125em) {
-  .c10 .c6:hover {
+@media (min-width:62em) {
+  .c13 .c6:hover {
     background: #212122;
+  }
+
+  .c13 .c6:hover .c9 {
     color: #fff;
   }
 }
@@ -443,64 +484,118 @@ Array [
         className="isvg loading c2"
       />
     </button>
-    <div
+    <nav
+      aria-label="Main menu"
       className="c3"
+      role="navigation"
     >
-      <nav
-        className="c4"
+      <ul
+        aria-hidden="false"
+        className="c4 c5"
+        role="menubar"
       >
-        <div
-          className="c5"
+        <li
+          className="c6 c7"
+        >
+          <ul
+            className="c4 c5"
+          >
+            <li
+              aria-haspopup={true}
+              className="c6 c8"
+              role="menuitem"
+            >
+              <Link
+                className="c9 c10"
+                to="tobys-page"
+              >
+                Housing Advice
+              </Link>
+              <button
+                className="c11"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="isvg loading c12"
+                />
+              </button>
+            </li>
+            <ul
+              aria-hidden="true"
+              className="c13"
+              role="menu"
+            >
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="320,000-people-in-britain-are-now-homeless"
+                >
+                  320,000 people in Britain are now homeless
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="tobys-page"
+                >
+                  Tobys Page
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+                >
+                  Shelter Manchester to hold vigil for lost homeless people
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="shelter-demo-page"
+                >
+                  Shelter Demo Page
+                </Link>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+      <ul
+        aria-label="Secondary menu"
+        className="c4 c14"
+        role="navigation"
+      >
+        <li
+          className="c6 c8"
         >
           <Link
-            className="c6 c7"
-            to="tobys-page"
-          >
-            Housing Advice
-          </Link>
-          <button
-            className="c8"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="isvg loading c9"
-            />
-          </button>
-        </div>
-        <nav
-          className="c10"
-        >
-          <Link
-            className="c6 c7"
-            to="320,000-people-in-britain-are-now-homeless"
-          >
-            320,000 people in Britain are now homeless
-          </Link>
-          <Link
-            className="c6 c7"
+            className="c9 c10"
             to="tobys-page"
           >
             Tobys Page
           </Link>
+        </li>
+        <li
+          className="c6 c8"
+        >
           <Link
-            className="c6 c7"
-            to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+            className="c9 c10"
           >
-            Shelter Manchester to hold vigil for lost homeless people
+            Scotland
           </Link>
-          <Link
-            className="c6 c7"
-            to="shelter-demo-page"
-          >
-            Shelter Demo Page
-          </Link>
-        </nav>
-      </nav>
-      <nav
-        className="c11"
-      />
-    </div>
+        </li>
+      </ul>
+    </nav>
   </div>,
   .c0 {
   display: block;
@@ -517,7 +612,7 @@ Array [
   transition: 0.2s ease-in opacity;
 }
 
-@media (min-width:46.3125em) {
+@media (min-width:62em) {
   .c0 {
     display: none;
     position: relative;
