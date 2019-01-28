@@ -530,7 +530,7 @@ Array [
   transition: 0.2s ease-in opacity;
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c0 {
     display: none;
     position: relative;
