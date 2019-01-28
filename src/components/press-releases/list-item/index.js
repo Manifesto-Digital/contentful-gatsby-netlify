@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { dateAsString } from '../../../utils/dates';
-import ArrowRight from '../../../assets/svg/icons/chevron-right.svg';
+import ArrowRight from '../../../assets/svg/icons/chevron-right-light.svg';
 import { LongTextRequired } from '../../../prop-types';
 // Styles
 import {

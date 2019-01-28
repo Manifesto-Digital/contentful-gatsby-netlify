@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ArrowRight from '../../assets/svg/icons/chevron-right.svg';
-import ArrowLeft from '../../assets/svg/icons/chevron-left.svg';
+import ArrowRight from '../../assets/svg/icons/chevron-right-light.svg';
+import ArrowLeft from '../../assets/svg/icons/chevron-left-light.svg';
 // Styles
 import { VisuallyHidden } from '../styled/accessibility';
 import { UnorderedList, ListItem, SVGIcon, Link } from './styles';
