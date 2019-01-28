@@ -10,9 +10,20 @@ import {
 } from './styles';
 
 const ContentCard = ({ data }) => {
-  const { title, slug, summaryText, featuredImage, cropImageFrom } = data;
+  const {
+    title,
+    slug,
+    summaryText,
+    featuredImage,
+    pageInformation = null,
+    cropImageFrom,
+  } = data;
 
-  console.log(featuredImage);
+  // Fallback until all images are set in pageInformation field
+  const image =
+    pageInformation && pageInformation.pageThumbnail
+      ? pageInformation.pageThumbnail
+      : featuredImage;
 
   return (
     <Card to={slug}>
@@ -24,7 +35,7 @@ const ContentCard = ({ data }) => {
           desktopH={350}
           fit="fill"
           focusArea={cropImageFrom}
-          image={featuredImage}
+          image={image}
         />
         <CardTitle>{title}</CardTitle>
       </ImageContainer>

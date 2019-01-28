@@ -28,6 +28,16 @@ export const ContentCardBannerFragment = graphql`
             fileName
           }
         }
+        pageInformation {
+          pageThumbnail {
+            id
+            description
+            file {
+              url
+              fileName
+            }
+          }
+        }
       }
     }
   }
