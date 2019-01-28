@@ -73,31 +73,31 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  max-width: 1150px;
+  max-width: 1140px;
   width: 100%;
   background: #e5e5e5;
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c3 {
     width: 115px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c2 {
     height: 68px;
     padding: 20px 25px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c4 {
     display: none;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c1 {
     padding: 0 20px;
   }
@@ -109,14 +109,14 @@ Array [
     <header
       className="c1"
     >
-      <a
+      <Link
         className="c2"
-        href="/"
+        to="/"
       >
         <span
           className="isvg loading c3"
         />
-      </a>
+      </Link>
       <button
         className="c4"
         onClick={[Function]}
@@ -201,7 +201,7 @@ Array [
   right: 0;
   bottom: 0;
   z-index: 10;
-  width: 65%;
+  width: 80%;
   height: 100%;
   background: #fff;
   box-shadow: -1px 0 14px rgba(0,0,0,0.5);
@@ -303,19 +303,19 @@ Array [
   border: none;
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c1 {
     display: none;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c8 {
     display: none;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -324,12 +324,14 @@ Array [
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c0 {
     position: relative;
     width: 100%;
     background: #e5e5e5;
     box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
@@ -337,32 +339,32 @@ Array [
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c4 {
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c3 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    max-width: 1150px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 5px 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c11 {
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c11 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -377,20 +379,20 @@ Array [
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c5 {
     margin-right: auto;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 {
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 {
     position: absolute;
     top: 52px;
@@ -410,7 +412,7 @@ Array [
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 .c6 {
     -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
     -ms-flex: 0 1 calc(33.333333333333336% - 10px);
@@ -422,7 +424,7 @@ Array [
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 .c6:hover {
     background: #212122;
     color: #fff;

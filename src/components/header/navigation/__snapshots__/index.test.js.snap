@@ -74,7 +74,7 @@ exports[`Renders correctly 1`] = `
   right: 0;
   bottom: 0;
   z-index: 10;
-  width: 65%;
+  width: 80%;
   height: 100%;
   background: #fff;
   box-shadow: -1px 0 14px rgba(0,0,0,0.5);
@@ -176,19 +176,19 @@ exports[`Renders correctly 1`] = `
   border: none;
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c1 {
     display: none;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c8 {
     display: none;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c8 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -197,12 +197,14 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c0 {
     position: relative;
     width: 100%;
     background: #e5e5e5;
     box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
@@ -210,32 +212,32 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c4 {
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c3 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    max-width: 1150px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 5px 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c11 {
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c11 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -250,20 +252,20 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c5 {
     margin-right: auto;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 {
     width: auto;
     margin-right: 20px;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 {
     position: absolute;
     top: 52px;
@@ -283,7 +285,7 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 .c6 {
     -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
     -ms-flex: 0 1 calc(33.333333333333336% - 10px);
@@ -295,7 +297,7 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:46.3125em) {
   .c10 .c6:hover {
     background: #212122;
     color: #fff;
