@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
+import { Link } from 'gatsby';
 import { buttonReset } from '../styled/buttons';
 import { breakpoint } from '../theme/breakpoint';
 
@@ -7,12 +8,12 @@ export const Logo = styled(SVG)`
   display: block;
   width: 95px;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     width: 115px;
   `}
 `;
 
-export const LogoWrapper = styled.a`
+export const LogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,13 +21,13 @@ export const LogoWrapper = styled.a`
   padding: 15px;
   background: ${({ theme }) => theme.palette.primary};
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     height: 68px;
     padding: ${({ theme }) => theme.spacing.standard} 25px;
   `}
 `;
 
-export const Open = styled.button`
+export const MobileMenuOpen = styled.button`
   ${buttonReset}
   display: flex;
   justify-content: center;
@@ -35,7 +36,7 @@ export const Open = styled.button`
   padding: 0;
   margin-left: auto;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     display: none;
   `}
 `;
@@ -55,11 +56,11 @@ export const HeaderWrapper = styled.header`
 export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-between;
-  max-width: 1150px;
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
   width: 100%;
   background: ${({ theme }) => theme.palette.grey10};
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     padding: 0
     ${({ theme }) => theme.spacing.standard};
   `}

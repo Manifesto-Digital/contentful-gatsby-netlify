@@ -3,7 +3,7 @@ import SVG from 'react-inlinesvg';
 import { buttonReset } from '../../styled/buttons';
 import { breakpoint } from '../../theme/breakpoint';
 
-export const Close = styled.button`
+export const MobileMenuClose = styled.button`
   ${buttonReset}
   display: flex;
   justify-content: center;
@@ -14,17 +14,17 @@ export const Close = styled.button`
   margin-left: auto;
   cursor: pointer;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     display: none;
   `}
 `;
 
-export const SubNavButton = styled(Close)`
+export const SubNavButton = styled(MobileMenuClose)`
   height: auto;
   margin-left: 10px;
   width: 25px;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     display: flex;
   `}
 `;

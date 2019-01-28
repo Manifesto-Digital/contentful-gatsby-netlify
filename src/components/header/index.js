@@ -11,7 +11,7 @@ import {
   HeaderBar,
   LogoWrapper,
   Logo,
-  Open,
+  MobileMenuOpen,
   BurgerIcon,
 } from './styles';
 
@@ -76,12 +76,12 @@ export const PureHeader = ({ pageData }) => {
     <>
       <HeaderWrapper>
         <HeaderBar>
-          <LogoWrapper href="/">
+          <LogoWrapper to="/">
             <Logo src={LogoSVG} cacheGetRequests />
           </LogoWrapper>
-          <Open type="button" onClick={openState} active={isOpen}>
+          <MobileMenuOpen type="button" onClick={openState} active={isOpen}>
             <BurgerIcon src={MenuSVG} cacheGetRequests />
-          </Open>
+          </MobileMenuOpen>
         </HeaderBar>
       </HeaderWrapper>
       <Navigation pageData={pageData} active={isOpen} openState={openState} />

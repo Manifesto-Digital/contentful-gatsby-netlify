@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   right: 0;
   bottom: 0;
   z-index: 10;
-  width: 65%;
+  width: 80%;
   height: 100%;
   background: ${({ theme }) => theme.palette.white};
   box-shadow: ${({ theme }) => theme.boxshadow.menu};
@@ -17,11 +17,12 @@ export const Wrapper = styled.div`
     active ? 'translateX(0)' : ' translateX(120%)'};
   overflow-y: scroll;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     position: relative;
     width:100%;
     background: ${({ theme }) => theme.palette.grey10};
     box-shadow: none;
+    transition: none;
     transform: translateX(0);
     overflow-y: visible;
   `}
@@ -33,7 +34,7 @@ export const Menu = styled.nav`
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     width: auto;
     margin-right: ${({ theme }) => theme.spacing.standard};
   `}
@@ -44,12 +45,12 @@ export const Menus = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 ${({ theme }) => theme.spacing.standard}
-    ${({ theme }) => theme.spacing.standard};
+  padding: 0
+    ${({ theme }) => `${theme.spacing.standard} ${theme.spacing.standard}`};
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     flex-direction: row;
-    max-width: 1150px;
+    max-width: ${({ theme }) => theme.sizes.maxWidth};
     margin: 0 auto;
     padding: 5px ${({ theme }) => theme.spacing.standard}
   `}
@@ -70,7 +71,7 @@ export const AdditionalMenu = styled(Menu)`
     }
   }
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     flex-direction: row;
     margin-left: auto;
     margin-right: 0;
@@ -87,7 +88,7 @@ export const Item = styled.div`
   width: 100%;
   height: 40px;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     margin-right: auto;
   `}
 `;
@@ -97,7 +98,7 @@ export const SubMenu = styled(Menu)`
   margin-left: ${({ theme }) => theme.spacing.small};
   border: none;
 
-  ${breakpoint.desktop`
+  ${breakpoint.tabletWide`
     position: absolute;
     top: 52px;
     right: 0;
@@ -115,7 +116,7 @@ export const SubMenu = styled(Menu)`
   ${ItemLink} {
     border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
 
-    ${breakpoint.desktop`
+    ${breakpoint.tabletWide`
       flex: 0 1 calc(${100 / 3}% - 10px);
       width: 32%;
       margin-left: ${({ theme }) => theme.spacing.small};
@@ -124,7 +125,7 @@ export const SubMenu = styled(Menu)`
     `}
 
     &:hover {
-      ${breakpoint.desktop`
+      ${breakpoint.tabletWide`
         background: ${({ theme }) => theme.palette.black};
         color: ${({ theme }) => theme.palette.white};
       `}

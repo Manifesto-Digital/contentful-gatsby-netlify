@@ -3,6 +3,7 @@ import { css } from 'styled-components';
 const sizes = {
   desktopWide: 1170,
   desktop: 992,
+  tabletWide: 741,
   tablet: 641,
   mobileLand: 512,
   mobile: 359,

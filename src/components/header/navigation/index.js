@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NavigationMenu from './navigation';
 
-import { Close, MenuSVG } from './styles-icons';
+import { MobileMenuClose, MenuSVG } from './styles-icons';
 import { Wrapper, Menus, AdditionalMenu, ItemLink } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
@@ -20,9 +20,9 @@ const Navigation = ({ pageData, active, openState }) => {
 
   return (
     <Wrapper active={active} ariaHidden={active}>
-      <Close type="button" onClick={openState} active={active}>
+      <MobileMenuClose type="button" onClick={openState} active={active}>
         <MenuSVG src={CloseSVG} />
-      </Close>
+      </MobileMenuClose>
       <Menus>
         {navigationItems &&
           navigationItems.map((item, i) => (

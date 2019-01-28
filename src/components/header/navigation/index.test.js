@@ -7,7 +7,7 @@ import {
 import { createHeaderNavigation } from '../../../utils/test-factories';
 import Navigation from './index';
 import NavigationMenu from './navigation';
-import { Close, SubNavButton } from './styles-icons';
+import { MobileMenuClose, SubNavButton } from './styles-icons';
 import { ItemLink, SubMenu } from './styles';
 
 it('Renders correctly', () => {
@@ -19,7 +19,7 @@ it('Displays close button', () => {
   const mockData = createHeaderNavigation();
   const wrapper = mountWithTheme(<Navigation pageData={mockData} active />);
 
-  expect(wrapper.find(Close)).toHaveLength(1);
+  expect(wrapper.find(MobileMenuClose)).toHaveLength(1);
 });
 
 test('Should populate a menu item correctly', () => {
