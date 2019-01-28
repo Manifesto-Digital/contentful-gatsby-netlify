@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import { resetIdCounter } from 'react-tabs';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -16,4 +17,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
       src="https://www.google.com/recaptcha/api.js"
     />,
   ]);
+
+  resetIdCounter();
 };
