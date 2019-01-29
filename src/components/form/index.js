@@ -28,11 +28,11 @@ const ContentForm = ({
             console.log(`Will submit form to ${submitUrl} with values`, e);
           }}
         >
-          {({ values, setFieldValue }) => (
+          {({ setFieldValue }) => (
             <Form noValidate>
               <Field type="hidden" name="sourcecode" hidden />
               {formFields
-                .filter(field => field.fieldType !== 'Address')
+                .filter(field => field.fieldType !== 'Address') // Temp
                 .map(formField => (
                   <FormFieldType
                     key={formField.id}
