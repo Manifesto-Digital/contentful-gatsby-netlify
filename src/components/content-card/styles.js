@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import LinkHandler from '../link-handler';
 import ResponsiveImage from '../image/responsive.js';
 
-export const Card = styled(Link)`
+export const Card = styled.div`
   position: relative;
   flex: 1;
   margin-bottom: ${props => props.theme.spacing.standard};
   background: ${props => props.theme.palette.white};
-  border-radius: 4px;
+  border-radius: ${props => props.theme.borderradius.small};
   box-shadow: ${props => props.theme.boxshadow.small};
   text-decoration: none;
 
@@ -17,33 +17,42 @@ export const Card = styled(Link)`
 `;
 
 export const CardImage = styled(ResponsiveImage)`
-  border-radius: 4px 4px 0 0;
+  border-radius: ${props => props.theme.borderradius.small}
+    ${props => props.theme.borderradius.small} 0;
 `;
 
-export const ImageContainer = styled.div`
+export const Wrapper = styled.div`
   position: relative;
-  width: 100%;
 `;
 
-export const CardTitle = styled.div`
+export const CardTitle = styled.h3`
   position: absolute;
-  left: 0;
-  bottom: -10px;
+  margin-bottom: 0;
+  top: -20px;
   max-width: 100%;
   padding: 5px ${props => props.theme.spacing.standard};
   background-color: ${props => props.theme.palette.primary};
   color: ${props => props.theme.palette.white};
-  font-size: ${props => props.theme.fontsize.small};
+  font-size: 16px;
+  font-weight: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 `;
 
-export const SummaryText = styled.div`
-  padding-top: 15px;
-  padding-right: ${props => props.theme.spacing.standard};
-  padding-bottom: ${props => props.theme.spacing.small};
-  padding-left: ${props => props.theme.spacing.standard};
+export const SummaryText = styled(LinkHandler)`
+  padding: ${props => props.theme.spacing.standard};
   color: ${props => props.theme.palette.sanMarinoBlue};
-  font-size: ${props => props.theme.fontsize.small};
+  text-decoration: none;
+  display: block;
+`;
+
+export const CoveringLink = styled(LinkHandler)`
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
 `;

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 // Styles
 import {
   Card,
-  ImageContainer,
+  CoveringLink,
   CardTitle,
   CardImage,
   SummaryText,
+  Wrapper,
 } from './styles';
 
 const ContentCard = ({ data }) => {
@@ -18,6 +19,9 @@ const ContentCard = ({ data }) => {
     pageInformation = null,
     cropImageFrom,
   } = data;
+
+  const cardLink = {};
+  cardLink.slug = slug;
 
   // Fallback until all images are set in pageInformation field
   const image =
@@ -32,20 +36,25 @@ const ContentCard = ({ data }) => {
       : summaryText;
 
   return (
-    <Card to={slug}>
-      <ImageContainer>
-        <CardImage
-          mobileW={600}
-          mobileH={350}
-          desktopW={600}
-          desktopH={350}
-          fit="fill"
-          focusArea={cropImageFrom}
-          image={image}
-        />
+    <Card>
+      <CardImage
+        mobileW={600}
+        mobileH={350}
+        desktopW={600}
+        desktopH={350}
+        fit="fill"
+        focusArea={cropImageFrom}
+        image={image}
+        presentational
+      />
+      <Wrapper>
         <CardTitle>{title}</CardTitle>
-      </ImageContainer>
-      <SummaryText>{description}</SummaryText>
+        <SummaryText internalLink={cardLink}>{description}</SummaryText>
+      </Wrapper>
+
+      <CoveringLink tabindex="-1" aria-hidden="true" internalLink={cardLink}>
+        {description}
+      </CoveringLink>
     </Card>
   );
 };
@@ -63,6 +72,11 @@ ContentCard.propTypes = {
       }),
     }),
     cropImageFrom: PropTypes.string,
+
+    pageInformation: PropTypes.shape({
+      shortDescription: PropTypes.object,
+      pageThumbnail: PropTypes.object,
+    }),
   }),
 };
 
