@@ -11,6 +11,7 @@ const ResponsiveImage = ({
   mobileH,
   desktopH,
   className,
+  presentational = false,
 }) => {
   if (!mobileW || !desktopW || !file) return null;
 
@@ -27,7 +28,7 @@ const ResponsiveImage = ({
       srcSet={`${baseUrl}${mobileSize} 480w,
         ${baseUrl}${desktopSize}`}
       src={`${baseUrl}${desktopSize}`}
-      alt={`${description}`}
+      alt={`${!presentational ? description : ''}`}
     />
   );
 };
@@ -42,6 +43,7 @@ ResponsiveImage.propTypes = {
   focusArea: PropTypes.string,
   progressive: PropTypes.bool,
   className: PropTypes.string,
+  presentational: PropTypes.bool,
   image: PropTypes.shape({
     description: PropTypes.string.isRequired,
     title: PropTypes.string,
