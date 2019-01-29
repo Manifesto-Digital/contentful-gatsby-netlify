@@ -1,0 +1,632 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+Array [
+  .c3 {
+  display: block;
+  width: 95px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 52px;
+  padding: 15px;
+  background: #ea232d;
+}
+
+.c4 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 45px;
+  height: 50px;
+  padding: 0;
+  margin-left: auto;
+}
+
+.c5 {
+  display: block;
+  width: 20px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 1140px;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+@media (min-width:62em) {
+  .c3 {
+    width: 115px;
+  }
+}
+
+@media (min-width:62em) {
+  .c2 {
+    height: 68px;
+    padding: 20px 25px;
+  }
+}
+
+@media (min-width:62em) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
+    padding: 0 20px;
+  }
+}
+
+<header
+    className="c0"
+  >
+    <header
+      className="c1"
+    >
+      <Link
+        className="c2"
+        to="/"
+      >
+        <span
+          className="isvg loading c3"
+        />
+      </Link>
+      <button
+        aria-expanded={false}
+        className="c4"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="isvg loading c5"
+        />
+      </button>
+    </header>
+  </header>,
+  .c1 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.c11 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+  height: auto;
+  width: 25px;
+  margin-left: 5px;
+}
+
+.c11 svg {
+  width: 15px;
+}
+
+.c2 {
+  display: block;
+  width: 20px;
+}
+
+.c12 {
+  display: block;
+  fill: #212122;
+  width: 20px;
+  cursor: pointer;
+}
+
+.c0 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 80%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -1px 0 14px rgba(0,0,0,0.5);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transition: transform 0.3s cubic-bezier(0,0,0.3,1);
+  transition: transform 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transform: translateX(120%);
+  -ms-transform: translateX(120%);
+  transform: translateX(120%);
+  overflow-y: scroll;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0;
+  border-bottom: none;
+}
+
+.c7 .c4 {
+  padding: 5px 10px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c8 .c4 {
+  padding: 5px 10px;
+}
+
+.c10 {
+  color: #212122;
+  font-size: 0.775rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 0 10px;
+}
+
+.c14 .c6 {
+  padding: 15px 10px;
+}
+
+.c14 .c6:last-child {
+  border: none;
+}
+
+.c13 {
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 10px;
+  border: none;
+  list-style: none;
+}
+
+.c13 .c6:last-child {
+  border: none;
+}
+
+@media (min-width:62em) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c11 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c11 svg {
+    width: auto;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    position: relative;
+    width: 100%;
+    background: #e5e5e5;
+    box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    overflow-y: visible;
+  }
+}
+
+@media (min-width:62em) {
+  .c5 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: auto;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 {
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 {
+    margin-right: auto;
+    padding: 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: auto;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 .c6:last-child {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .c14 .c9 {
+    border: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    left: 0;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background: #d9d9d9;
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 .c6 {
+    -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
+    -ms-flex: 0 1 calc(33.333333333333336% - 10px);
+    flex: 0 1 calc(33.333333333333336% - 10px);
+    width: 32%;
+    margin-left: 10px;
+    border: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 .c6:hover {
+    background: #212122;
+  }
+
+  .c13 .c6:hover .c9 {
+    color: #fff;
+  }
+}
+
+<div
+    className="c0"
+  >
+    <button
+      aria-expanded={false}
+      className="c1"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="isvg loading c2"
+      />
+    </button>
+    <nav
+      aria-label="Main menu"
+      className="c3"
+      role="navigation"
+    >
+      <ul
+        aria-hidden="false"
+        className="c4 c5"
+        role="menubar"
+      >
+        <li
+          className="c6 c7"
+        >
+          <ul
+            className="c4 c5"
+          >
+            <li
+              aria-haspopup={true}
+              className="c6 c8"
+              role="menuitem"
+            >
+              <Link
+                className="c9 c10"
+                to="tobys-page"
+              >
+                Housing Advice
+              </Link>
+              <button
+                aria-expanded={false}
+                className="c11"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="isvg loading c12"
+                />
+              </button>
+            </li>
+            <ul
+              aria-expanded={false}
+              aria-hidden={true}
+              className="c13"
+              role="menu"
+            >
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="320,000-people-in-britain-are-now-homeless"
+                >
+                  320,000 people in Britain are now homeless
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="tobys-page"
+                >
+                  Tobys Page
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+                >
+                  Shelter Manchester to hold vigil for lost homeless people
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="shelter-demo-page"
+                >
+                  Shelter Demo Page
+                </Link>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+      <ul
+        aria-label="Secondary menu"
+        className="c4 c14"
+        role="navigation"
+      >
+        <li
+          className="c6 c8"
+        >
+          <Link
+            className="c9 c10"
+            to="tobys-page"
+          >
+            Tobys Page
+          </Link>
+        </li>
+        <li
+          className="c6 c8"
+        >
+          <Link
+            className="c9 c10"
+          >
+            Scotland
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </div>,
+  .c0 {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(43,46,56,0.7);
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in opacity;
+  transition: 0.2s ease-in opacity;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    display: none;
+    position: relative;
+    width: 100%;
+    background: #e5e5e5;
+  }
+}
+
+<div
+    className="c0"
+  />,
+]
+`;
