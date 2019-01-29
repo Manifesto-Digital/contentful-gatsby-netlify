@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import {
+  snapshotComponent,
+  mountWithTheme,
+} from '../../../__tests__/helpers/index';
 import AdviceSearchBox from './index';
 import { createFactory } from '../../utils/test-factories';
 
@@ -20,11 +23,6 @@ it('displays the correct header text', () => {
   const mockData = createAdviceSearch({
     headerText: 'Search our housing advice',
   });
-  const wrapper = shallow(<AdviceSearchBox data={mockData} />);
-  expect(
-    wrapper
-      .dive()
-      .find('h3')
-      .text()
-  ).toBe(mockData.headerText);
+  const wrapper = mountWithTheme(<AdviceSearchBox data={mockData} />);
+  expect(wrapper.find('h3').text()).toBe(mockData.headerText);
 });

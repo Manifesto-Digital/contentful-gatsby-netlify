@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
   text-align: center;
   padding: 10px 1em;
@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
-.c6 {
+.c7 {
   fill: #fff;
   display: inline-block;
   width: 20px;
@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
   margin-top: -2px;
 }
 
-.c3 {
+.c4 {
   border: 1px solid #d9d9d9;
   background-color: white;
   display: block;
@@ -31,22 +31,29 @@ exports[`renders correctly 1`] = `
   padding: 10px;
 }
 
-.c0 {
+.c1 {
   padding: 20px;
   background-color: #f7f7f7;
+  margin-bottom: 20px;
 }
 
-.c2 {
+.c3 {
   margin-bottom: 10px;
   width: 100%;
 }
 
-.c4 {
+.c5 {
   width: auto;
   padding: 10px;
 }
 
-.c1 {
+.c0 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c2 {
   padding: 0;
   margin: 0;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -61,7 +68,7 @@ exports[`renders correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c2 {
+  .c3 {
     display: inline-block;
     width: 75%;
     margin-right: 10px;
@@ -69,65 +76,69 @@ exports[`renders correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c4 {
+  .c5 {
     display: inline-block;
   }
 }
 
-<form
-  action="https://england.shelter.org.uk/search"
+<div
   className="c0"
-  method="GET"
-  onReset={[Function]}
-  onSubmit={[Function]}
 >
-  <fieldset>
-    <h3>
-      Search our housing advice
-    </h3>
-    <legend
-      className="c1"
-    >
-      Search our website by keyword
-    </legend>
-    <label
-      className="c1"
-      htmlFor="searchTerm"
-    >
-      Enter your search term
-    </label>
-    <input
-      className="c2 c3"
-      id="searchTerm"
-      name="query"
-      onBlur={[Function]}
-      onChange={[Function]}
-      placeholder="Search topics"
-      type="search"
-    />
-    <input
-      name="collection"
-      onBlur={[Function]}
-      onChange={[Function]}
-      type="hidden"
-      value="shelter-england"
-    />
-    <input
-      name="type"
-      onBlur={[Function]}
-      onChange={[Function]}
-      type="hidden"
-      value="Advice"
-    />
-    <button
-      className="c4 c5"
-      type="submit"
-    >
-      <span
-        className="isvg loading c6"
+  <form
+    action="https://england.shelter.org.uk/search"
+    className="c1"
+    method="GET"
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <h3>
+        Search our housing advice
+      </h3>
+      <legend
+        className="c2"
+      >
+        Search our website by keyword
+      </legend>
+      <label
+        className="c2"
+        htmlFor="searchTerm"
+      >
+        Enter your search term
+      </label>
+      <input
+        className="c3 c4"
+        id="searchTerm"
+        name="query"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Search topics"
+        type="search"
       />
-      Search
-    </button>
-  </fieldset>
-</form>
+      <input
+        name="collection"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="hidden"
+        value="shelter-england"
+      />
+      <input
+        name="type"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="hidden"
+        value="Advice"
+      />
+      <button
+        className="c5 c6"
+        type="submit"
+      >
+        <span
+          className="isvg loading c7"
+        />
+        Search
+      </button>
+    </fieldset>
+  </form>
+</div>
 `;
