@@ -372,7 +372,6 @@ Array [
     -ms-flex-direction: row;
     flex-direction: row;
     width: auto;
-    margin-right: 20px;
   }
 }
 
@@ -388,14 +387,26 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c7 {
+  .c7 .c4 {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 .c4 {
     margin-right: auto;
     padding: 0;
   }
 }
 
 @media (min-width:62em) {
-  .c8 {
+  .c8 .c4 {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 .c4 {
     margin-right: auto;
     padding: 10px;
   }
@@ -407,7 +418,6 @@ Array [
     -ms-flex-direction: row;
     flex-direction: row;
     width: auto;
-    margin-right: 20px;
   }
 }
 
@@ -435,7 +445,7 @@ Array [
 @media (min-width:62em) {
   .c13 {
     position: absolute;
-    top: 58px;
+    top: 52px;
     right: 0;
     left: 0;
     -webkit-flex-direction: row;
@@ -618,15 +628,15 @@ Array [
 
 @media (min-width:62em) {
   .c0 {
-    display: none;
-    position: relative;
     width: 100%;
-    background: #e5e5e5;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
 <div
     className="c0"
+    onClick={[Function]}
   />,
 ]
 `;

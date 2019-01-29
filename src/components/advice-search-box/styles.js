@@ -6,6 +6,7 @@ import TextInput from '../forms/text-input';
 export const AdviceSearchForm = styled.form`
   padding: ${props => props.theme.spacing.standard};
   background-color: ${props => props.theme.palette.offWhite};
+  margin-bottom: ${props => props.theme.spacing.standard};
 `;
 
 export const SearchInput = styled(TextInput)`
