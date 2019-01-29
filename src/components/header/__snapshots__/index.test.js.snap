@@ -118,6 +118,7 @@ Array [
         />
       </Link>
       <button
+        aria-expanded={false}
         className="c4"
         onClick={[Function]}
         type="button"
@@ -476,6 +477,7 @@ Array [
     className="c0"
   >
     <button
+      aria-expanded={false}
       className="c1"
       onClick={[Function]}
       type="button"
@@ -512,6 +514,7 @@ Array [
                 Housing Advice
               </Link>
               <button
+                aria-expanded={false}
                 className="c11"
                 onClick={[Function]}
                 type="button"
@@ -522,7 +525,8 @@ Array [
               </button>
             </li>
             <ul
-              aria-hidden="true"
+              aria-expanded={false}
+              aria-hidden={true}
               className="c13"
               role="menu"
             >

@@ -349,6 +349,7 @@ exports[`Renders correctly 1`] = `
   className="c0"
 >
   <button
+    aria-expanded={true}
     className="c1"
     type="button"
   >
@@ -384,6 +385,7 @@ exports[`Renders correctly 1`] = `
               Housing Advice
             </Link>
             <button
+              aria-expanded={false}
               className="c11"
               onClick={[Function]}
               type="button"
@@ -394,7 +396,8 @@ exports[`Renders correctly 1`] = `
             </button>
           </li>
           <ul
-            aria-hidden="true"
+            aria-expanded={false}
+            aria-hidden={true}
             className="c13"
             role="menu"
           >
