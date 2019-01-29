@@ -66,7 +66,6 @@ export const Item = styled.li`
     topLevel ? `0` : `${theme.spacing.small}}`};
   border-bottom: ${({ topLevel, theme }) =>
     topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
-
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};
   }
