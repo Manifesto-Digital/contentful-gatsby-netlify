@@ -1,5 +1,4 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 import { Card } from './styles';
 import { createFactory } from '../../utils/test-factories';
