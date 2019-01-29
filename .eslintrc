@@ -83,6 +83,22 @@
         "aspects": ["invalidHref"]
       }
     ],
-    "curly": [2, "multi-line"]
+    "curly": [2, "multi-line"],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": ["label"],
+        "labelAttributes": ["htmlFor"],
+        "controlComponents": ["input", "Input"]
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ]
   }
 }

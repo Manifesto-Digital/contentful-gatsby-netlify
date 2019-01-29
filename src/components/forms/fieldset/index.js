@@ -1,32 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Fieldset, Description } from './styles';
 
-/**
- * @param {import('formik').FieldProps} props
- */
-class FormFieldset extends React.Component {
-  render() {
-    const { children, legend, description } = this.props;
-    let legendElement = null;
-    let descriptionElement = null;
-
-    if (legend) {
-      legendElement = <legend>{legend}</legend>;
-    }
-
-    if (description) {
-      descriptionElement = <div>{description}</div>;
-    }
-
-    return (
-      <fieldset>
-        {legendElement}
-        {children}
-        {descriptionElement}
-      </fieldset>
-    );
-  }
-}
+const FormFieldset = ({ children, legend, description }) => (
+  <Fieldset>
+    {legend && <legend>{legend}</legend>}
+    {children}
+    {description && <Description>{description}</Description>}
+  </Fieldset>
+);
 
 FormFieldset.propTypes = {
   children: PropTypes.array,

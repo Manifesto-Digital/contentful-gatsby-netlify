@@ -7,13 +7,13 @@ import FormFieldset from '../fieldset';
  * @param {import('formik').FieldProps} props
  */
 const AddressInput = ({ field }) => (
-  <FormFieldset egend={field.name} description="">
+  <FormFieldset legend={field.name} description="">
     <Field
       name={`[${field.machineName}][line_one]`}
       required={field.required}
       placeholder="Street"
     />
-    <Field name={`[${field.machineName}][line_one]`} placeholder="Street" />
+    <Field name={`[${field.machineName}][line_two]`} placeholder="Street" />
     <Field
       name={`[${field.machineName}][town]`}
       required={field.required}
@@ -34,7 +34,7 @@ AddressInput.propTypes = {
     fieldLabel: PropTypes.string,
     machineName: PropTypes.string,
     placeholder: PropTypes.string,
-    required: PropTypes.string,
+    required: PropTypes.bool,
     toolTip: PropTypes.string,
     valueOptions: PropTypes.array,
   },

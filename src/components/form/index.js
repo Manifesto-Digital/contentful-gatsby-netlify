@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field, Formik } from 'formik';
-
+import { Form, Field, Formik } from 'formik';
+import { getInitialValues, getValidationSchema } from './helpers';
 // Components
 import { Container } from '../styled/containers';
-import { FormFieldWrapper } from '../forms/field-wrapper/styles';
 import Button from '../button';
-import FormField from '../forms/form-field';
-import FormFieldset from '../forms/fieldset';
+import FormFieldType from './field-type';
 import Recaptcha from '../forms/recaptcha';
+import TextInput from '../forms/text-input';
+// Styles
+import { FormWrapper, FormFieldWrapper } from './styles';
 
 const ContentForm = ({
   submitUrl,
@@ -16,64 +17,47 @@ const ContentForm = ({
   submitCallToAction,
   formFields,
 }) => {
-  const initialValues = {
-    sourcecode: sourceCode,
-  };
-
-  const ContentFormGetInitialValues = (fields, values) => {
-    fields.forEach(field => {
-      if (field.internal.type === 'ContentfulTopicFormField') {
-        if (field.defaultValue) {
-          values[`${field.machineName}`] = field.defaultValue;
-        }
-      }
-
-      if (field.internal.type === 'ContentfulTopicFormFieldset') {
-        ContentFormGetInitialValues(field.formFields, values);
-      }
-    });
-  };
-
-  const ContentFormFields = ({ formField }) => {
-    if (formField.internal.type === 'ContentfulTopicFormFieldset') {
-      return (
-        <FormFieldset
-          legend={formField.fieldsetLegend}
-          description={formField.fieldsetDescription.fieldsetDescription}
-        >
-          {formField.formFields.map((formFieldsetField, key) => (
-            <FormField key={key} field={formFieldsetField} />
-          ))}
-        </FormFieldset>
-      );
-    }
-
-    return <FormField key={formField.id} field={formField} />;
-  };
-
-  ContentFormGetInitialValues(formFields, initialValues);
-
-  ContentFormFields.propTypes = {
-    formField: PropTypes.object,
-  };
+  const hiddenInitialValues = { sourceCode };
+  console.log('woaooaofoa', getInitialValues(formFields, hiddenInitialValues));
 
   return (
-    <Container>
-      <Formik initialValues={initialValues}>
-        <form action={submitUrl} method="GET">
-          {formFields.map(formField => (
-            <ContentFormFields key={formField.id} formField={formField} />
-          ))}
-          <Field type="hidden" name="sourcecode" />
-          <Recaptcha />
-          <FormFieldWrapper>
-            <Button bg="red" type="submit">
-              {submitCallToAction}
-            </Button>
-          </FormFieldWrapper>
-        </form>
-      </Formik>
-    </Container>
+    <FormWrapper>
+      <Container>
+        <Formik
+          initialValues={getInitialValues(formFields, hiddenInitialValues)}
+          validationSchema={getValidationSchema(formFields)}
+          onSubmit={e => {
+            console.log('woooooo', e);
+          }}
+        >
+          {({ values, setFieldValue }) => {
+            console.log('values', values);
+            return (
+              <Form noValidate>
+                <Field type="hidden" name="sourcecode" hidden />
+                {formFields
+                  .filter(field => field.fieldType !== 'Address')
+                  .map(formField => (
+                    <FormFieldType
+                      key={formField.id}
+                      setFieldValue={setFieldValue}
+                      formField={formField}
+                    />
+                  ))}
+
+                {/* <Recaptcha /> */}
+
+                <FormFieldWrapper>
+                  <Button bg="red" type="submit">
+                    {submitCallToAction}
+                  </Button>
+                </FormFieldWrapper>
+              </Form>
+            );
+          }}
+        </Formik>
+      </Container>
+    </FormWrapper>
   );
 };
 

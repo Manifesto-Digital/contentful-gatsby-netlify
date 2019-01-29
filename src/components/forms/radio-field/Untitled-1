@@ -1,0 +1,94 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Field } from 'formik';
+import CheckboxField from './checkbox-field';
+import FormFieldset from '../fieldset';
+// Styles
+import { FieldWrapper } from '../form-field/styles';
+
+/**
+ * @param {import('formik').FieldProps} props
+ */
+const CheckboxInput = ({ field }) => {
+  if (!Array.isArray(field.valueOptions)) {
+    return null;
+  }
+
+  console.log('field checkboxxxxxx', field);
+
+  const optionLength = field.valueOptions.length;
+  const multiple = optionLength > 1;
+
+  const handleChange = event => {
+    const target = event.currentTarget;
+    console.log('handling change firing', event);
+
+    // const valueArray = [...this.props.value] || [];
+
+    // if (target.checked) {
+    //   valueArray.push(target.id);
+    // } else {
+    //   valueArray.splice(valueArray.indexOf(target.id), 1);
+    // }
+
+    // props.onChange(this.props.id, valueArray);
+  };
+  if (multiple) {
+    return (
+      <FieldWrapper as="fieldset">
+        {field.valueOptions.map((valueOption, i) => (
+          <Field
+            name={field.machineName}
+            render={({ form }) => {
+              console.log('vlah', form);
+              return (
+                <CheckboxField
+                  key={i}
+                  id={
+                    multiple ? `${field.machineName}-${i}` : field.machineName
+                  }
+                  name={multiple ? `${field.machineName}` : field.machineName}
+                  required={field.required}
+                  value={valueOption.value}
+                  label={valueOption.label}
+                  setFieldValue={form.setFieldValue}
+                  currentValues={form.values}
+                />
+              );
+            }}
+          />
+        ))}
+      </FieldWrapper>
+    );
+  }
+
+  return (
+    <FieldWrapper>
+      {field.valueOptions.map((valueOption, i) => (
+        <Field
+          component={CheckboxField}
+          name={field.machineName}
+          id={field.machineName}
+          required={field.required}
+          value={valueOption.value}
+          label={valueOption.label}
+        />
+      ))}
+    </FieldWrapper>
+  );
+};
+
+CheckboxInput.propTypes = {
+  field: {
+    defaultValue: PropTypes.string,
+    fieldType: PropTypes.string,
+    fieldLabel: PropTypes.string,
+    machineName: PropTypes.string,
+    placeholder: PropTypes.string,
+    required: PropTypes.bool,
+    toolTip: PropTypes.string,
+    valueOptions: PropTypes.array,
+  },
+};
+
+export default CheckboxInput;

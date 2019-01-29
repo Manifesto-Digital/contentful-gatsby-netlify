@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'formik';
+import { FieldWrapper } from '../form-field/styles';
 
 /**
  * @param {import('formik').FieldProps} props
  */
-const SelectInput = ({ field }) => {
+const SelectInput = ({ field, ...rest }) => {
   if (!Array.isArray(field.valueOptions)) {
     return null;
   }
 
+  console.log('selectfield', field);
+
   const SelectOption = ({ label, value }) => (
-    <option value={value}>{label}</option>
+    <option value={value} selected>
+      {label}
+    </option>
   );
 
   SelectOption.propTypes = {
@@ -19,30 +25,27 @@ const SelectInput = ({ field }) => {
   };
 
   return (
-    <select name={field.machineName} required={field.required}>
-      {field.valueOptions.map((optionValue, key) => (
-        <SelectOption
-          key={key}
-          value={optionValue.value}
-          label={optionValue.label}
-          defaultValue={field.defaultValue}
-        />
-      ))}
-    </select>
+    <FieldWrapper>
+      <Field component="select" name={field.machineName}>
+        {field.valueOptions.map((optionValue, i) => (
+          <option value={optionValue.value}>{optionValue.label}</option>
+        ))}
+      </Field>
+    </FieldWrapper>
   );
 };
 
 SelectInput.propTypes = {
-  field: {
+  field: PropTypes.shape({
     defaultValue: PropTypes.string,
     fieldType: PropTypes.string,
     fieldLabel: PropTypes.string,
     machineName: PropTypes.string,
     placeholder: PropTypes.string,
-    required: PropTypes.string,
+    required: PropTypes.bool,
     toolTip: PropTypes.string,
     valueOptions: PropTypes.array,
-  },
+  }),
 };
 
 export default SelectInput;
