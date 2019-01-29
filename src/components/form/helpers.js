@@ -15,7 +15,7 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
 
     if (field.fieldType === 'Address') return; // Temporary
 
-    // Set default value to be the inital value for form
+    // Set default value to be the initial value for form
     if (field.internal.type === 'ContentfulTopicFormField') {
       initialValues[field.machineName] = field.defaultValue || '';
     }
