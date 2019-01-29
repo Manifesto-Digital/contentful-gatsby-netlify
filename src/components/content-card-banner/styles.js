@@ -6,7 +6,6 @@ export const BannerBackground = styled.section`
   background: ${props =>
     (props.bannerColour === 'white' && props.theme.palette.white) ||
     (props.bannerColour === 'grey' && props.theme.palette.grey10)};
-  };
 `;
 
 export const HeaderText = styled.h2`
@@ -18,42 +17,22 @@ export const CardRow = styled.div`
   flex-flow: column nowrap;
   ${breakpoint.tablet`
     flex-flow: row wrap;
+    justify-content: space-between;
   `};
 
   ${Card} {
     ${breakpoint.tablet`
+    
       ${({ items }) =>
-        items === 2 &&
+        items &&
         css`
-          margin-right: ${props => props.theme.spacing.standard};
-          &:last-child {
-            margin-right: 0;
-          }
-        `}
-
-      ${({ items }) =>
-        items === 3 &&
-        css`
-          margin-right: ${props => props.theme.spacing.standard};
-          &:last-child {
-            margin-right: 0;
-          }
-        `}
-
-      ${({ items }) =>
-        items === 4 &&
-        css`
-          flex: 0 auto;
-          width: calc(50% - 10px);
-
-          &:first-child,
-          &:nth-child(3) {
-            margin-right: ${props => props.theme.spacing.standard};
-          }
+          flex-grow: 0;
+          flex-basis: calc(
+            ${100 / items}% - ${props => props.theme.spacing.small}
+          );
         `}
     `};
 
-    // Reset and standardise spacing at desktop
     ${breakpoint.desktop`
       width: auto;
       flex: 1;
