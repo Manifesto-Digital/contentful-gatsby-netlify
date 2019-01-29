@@ -1,17 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
-import ContentCard from './index';
+import { snapshotComponent } from '../../../__tests__/helpers/index';
 import { Card } from './styles';
-import {
-  createFactory,
-  createInternalLink,
-  createImage,
-} from '../../utils/test-factories';
-// import { createContentCard } from '../content-card/index.test';
+import { createFactory } from '../../utils/test-factories';
 
 // Default prop values
 export const createContentCard = createFactory({
