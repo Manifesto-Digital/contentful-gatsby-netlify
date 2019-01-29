@@ -36,6 +36,7 @@ export const CardTitle = styled.div`
   font-size: ${props => props.theme.fontsize.small};
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const SummaryText = styled.div`

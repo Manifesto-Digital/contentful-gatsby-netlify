@@ -25,6 +25,12 @@ const ContentCard = ({ data }) => {
       ? pageInformation.pageThumbnail
       : featuredImage;
 
+  // Fallback until all descriptions are set in pageInformation field
+  const description =
+    pageInformation && pageInformation.shortDescription.shortDescription
+      ? pageInformation.shortDescription.shortDescription
+      : summaryText;
+
   return (
     <Card to={slug}>
       <ImageContainer>
@@ -39,7 +45,7 @@ const ContentCard = ({ data }) => {
         />
         <CardTitle>{title}</CardTitle>
       </ImageContainer>
-      <SummaryText>{summaryText}</SummaryText>
+      <SummaryText>{description}</SummaryText>
     </Card>
   );
 };

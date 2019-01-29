@@ -29,6 +29,9 @@ export const ContentCardBannerFragment = graphql`
           }
         }
         pageInformation {
+          shortDescription {
+            shortDescription
+          }
           pageThumbnail {
             id
             description
