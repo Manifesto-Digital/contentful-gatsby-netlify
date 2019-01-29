@@ -11,13 +11,14 @@ export const Overlay = styled.div`
   z-index: 5;
   background: ${({ theme }) => theme.palette.overlay};
   pointer-events: ${({ active }) => (active ? 'all' : 'none')};
+
   opacity: ${({ active }) => (active ? '1' : '0')};
+
   transition: 0.2s ease-in opacity;
 
   ${breakpoint.desktop`
-    display: none;
-    position: relative;
     width: 100%;
-    background: ${({ theme }) => theme.palette.grey10};
+    opacity: 0;
+    pointer-events: ${({ subMenuActive }) => (subMenuActive ? 'all' : 'none')};
   `}
 `;
