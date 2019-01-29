@@ -64,6 +64,7 @@ export const advicePageQuery = graphql`
           ...BannerTopicFragment
           ...InlineCallout
           ...VideoTopicFragment
+          ...AdviceSearchBoxTopicFragment
           ...DownloadBannerAssemblyFragment
           ...LinkBoxFragment
           ...DonationBanner

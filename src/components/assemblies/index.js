@@ -76,7 +76,13 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       }
 
       if (internal.type === 'ContentfulTopicAdviceSearchBox') {
-        return <AdviceSearchBox key={id} data={assembly} />;
+        return (
+          <AdviceSearchBox
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       if (internal.type === 'ContentfulTopicRelatedAdvice') {
