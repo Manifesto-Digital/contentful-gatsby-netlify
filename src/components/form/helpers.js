@@ -8,16 +8,16 @@ const isMultipleCheckbox = field =>
 
 export const getInitialValues = (fields, hiddenInitialValues) => {
   const initialValues = hiddenInitialValues;
+
+  // Loop through all fields to build an object to store initial values to pass to formik
   fields.forEach(field => {
     if (!field.fieldType) return;
 
-    if (field.fieldType === 'Address') return;
+    if (field.fieldType === 'Address') return; // Temporary
+
+    // Set default value to be the inital value for form
     if (field.internal.type === 'ContentfulTopicFormField') {
-      if (field.defaultValue) {
-        initialValues[field.machineName] = field.defaultValue;
-      } else {
-        initialValues[field.machineName] = '';
-      }
+      initialValues[field.machineName] = field.defaultValue || '';
     }
     // Multiple checkboxes require an array of values
     if (isMultipleCheckbox(field)) {
@@ -25,6 +25,7 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
         ? [field.defaultValue]
         : [];
     }
+
     if (field.internal.type === 'ContentfulTopicFormFieldset') {
       getInitialValues(field.formFields);
     }
@@ -35,13 +36,15 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
 export const getValidationSchema = formFields => {
   const validationSchema = {};
 
+  // Loop through all form fields and build a Yup validationSchema object for formik
   formFields.forEach(field => {
     if (!field.fieldType) return;
     const fieldType = consistentString(field.fieldType);
-    if (field.fieldType === 'address') return;
+    if (field.fieldType === 'address') return; // Temporary
     const fieldName = field.machineName;
 
     let validationType;
+    // Apply a validation type to each field
     if (isMultipleCheckbox(field)) validationType = Yup.array();
     else if (fieldType === 'phone-number') {
       validationType = Yup.number().typeError('Please provide a valid number');
@@ -49,6 +52,7 @@ export const getValidationSchema = formFields => {
       validationType = Yup.string().email('Please provide a valid email');
     } else validationType = Yup.string();
 
+    // Add required validation if specified
     if (field.required) validationType = validationType.required('Required');
 
     validationSchema[fieldName] = validationType;

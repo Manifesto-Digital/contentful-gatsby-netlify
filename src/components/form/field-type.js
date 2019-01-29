@@ -7,7 +7,7 @@ import FormField from '../forms/form-field';
  * If the field is a fieldset (group of fields) then wrap with the form fieldset
  * component and render the fields in the group
  *
- * @param {field.formik} param0
+ * @param {field.formik} param
  */
 const FormFieldType = ({ formField }) => {
   if (formField.internal.type === 'ContentfulTopicFormFieldset') {
