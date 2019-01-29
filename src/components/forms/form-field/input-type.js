@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import { isTextField, getTextInputType } from './helpers';
 import { consistentString } from '../../../utils/content-formatting';
-import AddressInput from '../address-input';
+// import AddressInput from '../address-input';
 import CheckboxField from '../checkbox-field';
 import RadioField from '../radio-field';
 import SelectInput from '../select-input';

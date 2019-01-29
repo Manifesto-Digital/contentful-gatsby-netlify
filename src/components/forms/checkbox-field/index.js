@@ -76,7 +76,6 @@ const CheckboxField = ({ field }) => {
           name={field.machineName}
           render={({ field: fieldValues, form }) => {
             const checkboxValue = form.values[field.machineName];
-            console.log('fielddddddadd', form, form.errors, form.touched);
             return (
               <CheckboxInput
                 id={field.machineName}

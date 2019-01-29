@@ -34,27 +34,24 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
 
 export const getValidationSchema = formFields => {
   const validationSchema = {};
-  const requiredMessage = 'Required';
 
   formFields.forEach(field => {
     if (!field.fieldType) return;
-
-    if (field.fieldType === 'Address') return;
+    const fieldType = consistentString(field.fieldType);
+    if (field.fieldType === 'address') return;
     const fieldName = field.machineName;
 
-    if (isMultipleCheckbox(field)) {
-      if (field.required) {
-        validationSchema[fieldName] = Yup.array().required(requiredMessage);
-      } else {
-        validationSchema[fieldName] = Yup.array();
-      }
-    } else if (field.required) {
-      console.log('requireeeeed', field);
+    let validationType;
+    if (isMultipleCheckbox(field)) validationType = Yup.array();
+    else if (fieldType === 'phone-number') {
+      validationType = Yup.number().typeError('Please provide a valid number');
+    } else if (fieldType === 'email') {
+      validationType = Yup.string().email('Please provide a valid email');
+    } else validationType = Yup.string();
 
-      validationSchema[fieldName] = Yup.string().required(requiredMessage);
-    } else {
-      validationSchema[fieldName] = Yup.string();
-    }
+    if (field.required) validationType = validationType.required('Required');
+
+    validationSchema[fieldName] = validationType;
   });
 
   return Yup.object().shape(validationSchema);

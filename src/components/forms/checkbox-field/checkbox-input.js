@@ -15,31 +15,27 @@ const CheckboxInput = ({
   touched,
   errors,
   submitCount,
-}) => {
-  console.log('errrrrrros', errors);
-
-  return (
-    <div>
-      <Input
-        onBlur={onBlur}
-        type="checkbox"
-        name={name}
-        required={required}
-        value={value}
-        id={id}
-        onChange={handleChange}
-        checked={checked}
-      />
-      <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
-      <ErrorMessage
-        touched={touched}
-        errors={errors}
-        submitCount={submitCount}
-        name={name}
-      />
-    </div>
-  );
-};
+}) => (
+  <div>
+    <Input
+      onBlur={onBlur}
+      type="checkbox"
+      name={name}
+      required={required}
+      value={value}
+      id={id}
+      onChange={handleChange}
+      checked={checked}
+    />
+    <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
+    <ErrorMessage
+      touched={touched}
+      errors={errors}
+      submitCount={submitCount}
+      name={name}
+    />
+  </div>
+);
 
 CheckboxInput.propTypes = {
   name: PropTypes.string,

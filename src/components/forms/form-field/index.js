@@ -7,17 +7,13 @@ import { Label } from '../../styled/label';
 /**
  * @param {import('formik').FieldProps} props
  */
-const FormField = ({ field }) => {
-  console.log('');
-
-  return (
-    <>
-      <Label htmlFor={field.machineName}>{field.fieldLabel}</Label>
-      <InputType field={field} />
-      <Tooltip field={field} />
-    </>
-  );
-};
+const FormField = ({ field }) => (
+  <>
+    <Label htmlFor={field.machineName}>{field.fieldLabel}</Label>
+    <InputType field={field} />
+    <Tooltip field={field} />
+  </>
+);
 
 FormField.propTypes = {
   field: PropTypes.object,

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// import React from 'react';
+// import PropTypes from 'prop-types';
 
-const ToolTip = ({ field }) =>
+const ToolTip = () =>
   // if (typeof field.toolTip !== 'undefined' && field.toolTip) {
   //   return <div>{field.toolTip}</div>;
   // }
@@ -9,7 +9,7 @@ const ToolTip = ({ field }) =>
   null;
 
 ToolTip.propTypes = {
-  field: PropTypes.object,
+  // field: PropTypes.object,
 };
 
 export default ToolTip;

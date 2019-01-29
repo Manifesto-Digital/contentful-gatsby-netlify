@@ -11,8 +11,6 @@ const SelectInput = ({ field, ...rest }) => {
     return null;
   }
 
-  console.log('selectfield', field);
-
   const SelectOption = ({ label, value }) => (
     <option value={value} selected>
       {label}
@@ -28,7 +26,9 @@ const SelectInput = ({ field, ...rest }) => {
     <FieldWrapper>
       <Field component="select" name={field.machineName}>
         {field.valueOptions.map((optionValue, i) => (
-          <option value={optionValue.value}>{optionValue.label}</option>
+          <option value={optionValue.value} key={i}>
+            {optionValue.label}
+          </option>
         ))}
       </Field>
     </FieldWrapper>

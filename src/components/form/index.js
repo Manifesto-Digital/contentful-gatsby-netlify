@@ -7,7 +7,6 @@ import { Container } from '../styled/containers';
 import Button from '../button';
 import FormFieldType from './field-type';
 import Recaptcha from '../forms/recaptcha';
-import TextInput from '../forms/text-input';
 // Styles
 import { FormWrapper, FormFieldWrapper } from './styles';
 
@@ -18,7 +17,6 @@ const ContentForm = ({
   formFields,
 }) => {
   const hiddenInitialValues = { sourceCode };
-  console.log('woaooaofoa', getInitialValues(formFields, hiddenInitialValues));
 
   return (
     <FormWrapper>
@@ -27,34 +25,31 @@ const ContentForm = ({
           initialValues={getInitialValues(formFields, hiddenInitialValues)}
           validationSchema={getValidationSchema(formFields)}
           onSubmit={e => {
-            console.log('woooooo', e);
+            console.log(`Will submit form to ${submitUrl} with values`, e);
           }}
         >
-          {({ values, setFieldValue }) => {
-            console.log('values', values);
-            return (
-              <Form noValidate>
-                <Field type="hidden" name="sourcecode" hidden />
-                {formFields
-                  .filter(field => field.fieldType !== 'Address')
-                  .map(formField => (
-                    <FormFieldType
-                      key={formField.id}
-                      setFieldValue={setFieldValue}
-                      formField={formField}
-                    />
-                  ))}
+          {({ values, setFieldValue }) => (
+            <Form noValidate>
+              <Field type="hidden" name="sourcecode" hidden />
+              {formFields
+                .filter(field => field.fieldType !== 'Address')
+                .map(formField => (
+                  <FormFieldType
+                    key={formField.id}
+                    setFieldValue={setFieldValue}
+                    formField={formField}
+                  />
+                ))}
 
-                {/* <Recaptcha /> */}
+              <Recaptcha />
 
-                <FormFieldWrapper>
-                  <Button bg="red" type="submit">
-                    {submitCallToAction}
-                  </Button>
-                </FormFieldWrapper>
-              </Form>
-            );
-          }}
+              <FormFieldWrapper>
+                <Button bg="red" type="submit">
+                  {submitCallToAction}
+                </Button>
+              </FormFieldWrapper>
+            </Form>
+          )}
         </Formik>
       </Container>
     </FormWrapper>
