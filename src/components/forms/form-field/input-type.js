@@ -33,18 +33,15 @@ const FieldInputField = ({ field }) => {
     return (
       <Field
         name={field.machineName}
-        render={props => {
-          console.log(props);
-          return (
-            <TextInput
-              type={getTextInputType(fieldType)}
-              name={field.machineName}
-              placeholder={field.placeholder}
-              fullWidth
-              {...props}
-            />
-          );
-        }}
+        render={props => (
+          <TextInput
+            type={getTextInputType(fieldType)}
+            name={field.machineName}
+            placeholder={field.placeholder}
+            fullWidth
+            {...props}
+          />
+        )}
       />
     );
   }
