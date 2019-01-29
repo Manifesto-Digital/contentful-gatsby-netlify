@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Navigation from './navigation';
-import { Overlay } from '../styled/overlay';
 import LogoSVG from '../../assets/svg/icons/logo.svg';
 import MenuSVG from '../../assets/svg/icons/menu.svg';
 import useToggle from '../../utils/useToggle';
@@ -90,7 +89,6 @@ export const PureHeader = ({ pageData }) => {
         </HeaderBar>
       </HeaderWrapper>
       <Navigation pageData={pageData} active={isOpen} openState={openState} />
-      <Overlay active={isOpen} />
     </>
   );
 };

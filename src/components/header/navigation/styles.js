@@ -39,7 +39,6 @@ export const MenuList = styled.ul`
   ${breakpoint.desktop`
     flex-direction: row;
     width: auto;
-    margin-right: ${({ theme }) => theme.spacing.standard};
   `}
 `;
 
@@ -68,7 +67,9 @@ export const Item = styled.li`
     topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};
-  }
+    ${breakpoint.desktop`
+      padding:5px 0;
+    `}
 
   ${breakpoint.desktop`
     margin-right: auto;
@@ -114,7 +115,7 @@ export const SubMenu = styled.ul`
 
   ${breakpoint.desktop`
     position: absolute;
-    top: 58px;
+    top: 52px;
     right: 0;
     left: 0;
     flex-direction: row;
