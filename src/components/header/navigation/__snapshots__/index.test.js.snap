@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly 1`] = `
-.c1 {
+Array [
+  .c1 {
   padding: 0;
   border: none;
   font: inherit;
@@ -356,130 +357,158 @@ exports[`Renders correctly 1`] = `
 }
 
 <div
-  className="c0"
->
-  <button
-    aria-expanded={true}
-    className="c1"
-    type="button"
+    className="c0"
   >
-    <span
-      className="isvg loading c2"
-    />
-  </button>
-  <nav
-    aria-label="Main menu"
-    className="c3"
-    role="navigation"
-  >
-    <ul
-      aria-hidden="false"
-      className="c4 c5"
-      role="menubar"
+    <button
+      aria-expanded={true}
+      className="c1"
+      type="button"
     >
-      <li
-        className="c6 c7"
+      <span
+        className="isvg loading c2"
+      />
+    </button>
+    <nav
+      aria-label="Main menu"
+      className="c3"
+      role="navigation"
+    >
+      <ul
+        aria-hidden="false"
+        className="c4 c5"
+        role="menubar"
       >
-        <ul
-          className="c4 c5"
+        <li
+          className="c6 c7"
         >
-          <li
-            aria-haspopup={true}
-            className="c6 c8"
-            role="menuitem"
-          >
-            <Link
-              className="c9 c10"
-              to="tobys-page"
-            >
-              Housing Advice
-            </Link>
-            <button
-              aria-expanded={false}
-              className="c11"
-              onClick={[Function]}
-              type="button"
-            >
-              <span
-                className="isvg loading c12"
-              />
-            </button>
-          </li>
           <ul
-            aria-expanded={false}
-            aria-hidden={true}
-            className="c13"
-            role="menu"
+            className="c4 c5"
           >
             <li
+              aria-haspopup={true}
               className="c6 c8"
-            >
-              <Link
-                className="c9 c10"
-                to="320,000-people-in-britain-are-now-homeless"
-              >
-                320,000 people in Britain are now homeless
-              </Link>
-            </li>
-            <li
-              className="c6 c8"
+              role="menuitem"
             >
               <Link
                 className="c9 c10"
                 to="tobys-page"
               >
-                Tobys Page
+                Housing Advice
               </Link>
-            </li>
-            <li
-              className="c6 c8"
-            >
-              <Link
-                className="c9 c10"
-                to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+              <button
+                aria-expanded={false}
+                className="c11"
+                onClick={[Function]}
+                type="button"
               >
-                Shelter Manchester to hold vigil for lost homeless people
-              </Link>
+                <span
+                  className="isvg loading c12"
+                />
+              </button>
             </li>
-            <li
-              className="c6 c8"
+            <ul
+              aria-expanded={false}
+              aria-hidden={true}
+              className="c13"
+              role="menu"
             >
-              <Link
-                className="c9 c10"
-                to="shelter-demo-page"
+              <li
+                className="c6 c8"
               >
-                Shelter Demo Page
-              </Link>
-            </li>
+                <Link
+                  className="c9 c10"
+                  to="320,000-people-in-britain-are-now-homeless"
+                >
+                  320,000 people in Britain are now homeless
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="tobys-page"
+                >
+                  Tobys Page
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+                >
+                  Shelter Manchester to hold vigil for lost homeless people
+                </Link>
+              </li>
+              <li
+                className="c6 c8"
+              >
+                <Link
+                  className="c9 c10"
+                  to="shelter-demo-page"
+                >
+                  Shelter Demo Page
+                </Link>
+              </li>
+            </ul>
           </ul>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      aria-label="Secondary menu"
-      className="c4 c14"
-      role="navigation"
-    >
-      <li
-        className="c6 c8"
+        </li>
+      </ul>
+      <ul
+        aria-label="Secondary menu"
+        className="c4 c14"
+        role="navigation"
       >
-        <Link
-          className="c9 c10"
-          to="tobys-page"
+        <li
+          className="c6 c8"
         >
-          Tobys Page
-        </Link>
-      </li>
-      <li
-        className="c6 c8"
-      >
-        <Link
-          className="c9 c10"
+          <Link
+            className="c9 c10"
+            to="tobys-page"
+          >
+            Tobys Page
+          </Link>
+        </li>
+        <li
+          className="c6 c8"
         >
-          Scotland
-        </Link>
-      </li>
-    </ul>
-  </nav>
-</div>
+          <Link
+            className="c9 c10"
+          >
+            Scotland
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </div>,
+  .c0 {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(43,46,56,0.7);
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: 0.2s ease-in opacity;
+  transition: 0.2s ease-in opacity;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+<div
+    className="c0"
+    onClick={[Function]}
+  />,
+]
 `;

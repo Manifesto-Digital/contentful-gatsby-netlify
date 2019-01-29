@@ -628,15 +628,15 @@ Array [
 
 @media (min-width:62em) {
   .c0 {
-    display: none;
-    position: relative;
     width: 100%;
-    background: #e5e5e5;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
 <div
     className="c0"
+    onClick={[Function]}
   />,
 ]
 `;
