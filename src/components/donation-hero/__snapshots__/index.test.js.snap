@@ -88,7 +88,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c3 {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
   padding: 0;
@@ -160,7 +160,7 @@ exports[`renders correctly 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 1;
-  font-size: 0.875rem;
+  font-size: 0.775rem;
 }
 
 .c9 {

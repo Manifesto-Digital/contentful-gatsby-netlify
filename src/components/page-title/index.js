@@ -1,17 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Components
-import { Container } from '../styled/containers';
-import { H1 } from './styles.js';
+import { Container, TwoThirds } from '../styled/containers';
+import { Wrapper } from './styles.js';
 
-const PageTitle = ({ title }) => (
-  <Container>
-    <H1>{title}</H1>
-  </Container>
+const PageTitle = ({ children, twoThirds, paddingBottom }) => (
+  <Wrapper paddingBottom={paddingBottom}>
+    {twoThirds ? (
+      <Container>
+        <TwoThirds>{children}</TwoThirds>
+      </Container>
+    ) : (
+      <Container>{children}</Container>
+    )}
+  </Wrapper>
 );
 
 PageTitle.propTypes = {
-  title: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
+  twoThirds: PropTypes.bool,
+  paddingBottom: PropTypes.bool,
+};
+
+PageTitle.defaultProps = {
+  paddingBottom: false,
 };
 
 export default PageTitle;

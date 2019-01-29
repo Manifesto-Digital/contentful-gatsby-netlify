@@ -27,7 +27,7 @@ theme.palette = {
   success: '#62b33c',
   successLight: '#e6f8e7',
 
-  overlay: 'rgba(43,46,56,.9)',
+  overlay: 'rgba(43, 46, 56, 0.7)',
 };
 
 theme.fonts = {
@@ -37,7 +37,7 @@ theme.fonts = {
 };
 
 theme.sizes = {
-  maxWidth: '1100px',
+  maxWidth: '1140px',
   container: '960px',
 };
 
@@ -53,13 +53,14 @@ theme.headers = {
 };
 
 theme.fontsize = {
-  small: '0.875rem', // 14px
+  small: '0.775rem', // 14px
   standard: '1rem', // 16px
   larger: '1.4rem',
 };
 
 theme.boxshadow = {
   small: '0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06)',
+  menu: '-1px 0 14px rgba(0, 0, 0, 0.5);',
 };
 
 theme.spacing = {

@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 1;
-  font-size: 0.875rem;
+  font-size: 0.775rem;
 }
 
 <div

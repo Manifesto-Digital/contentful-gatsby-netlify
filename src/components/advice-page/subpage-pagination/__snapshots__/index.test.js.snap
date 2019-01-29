@@ -74,13 +74,14 @@ exports[`renders correctly 1`] = `
 }
 
 .c0 {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .c1 {
   max-width: 100%;
+  width: 100%;
   padding: 0 0;
 }
 

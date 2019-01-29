@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LeftArrow from '../../../assets/svg/icons/angle-left.svg';
-import RightArrow from '../../../assets/svg/icons/angle-right.svg';
+import LeftArrow from '../../../assets/svg/icons/angle-left-light.svg';
+import RightArrow from '../../../assets/svg/icons/angle-right-light.svg';
 // Components
 import LinkHandler from '../../link-handler';
 // Styles
