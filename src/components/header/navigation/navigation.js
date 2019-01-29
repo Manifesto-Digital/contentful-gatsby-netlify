@@ -18,14 +18,23 @@ const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
                 {menuLabel || navLink.title}
               </ItemLink>
               {subNavigationItems && (
-                <SubNavButton type="button" onClick={() => setActiveMenu(id)}>
+                <SubNavButton
+                  type="button"
+                  onClick={() => setActiveMenu(id)}
+                  aria-expanded={menuOpen}
+                >
                   <ArrowSVG src={AngleRight} cacheGetRequests />
                 </SubNavButton>
               )}
             </Item>
           ))}
         {subNavigationItems && (
-          <SubMenu active={menuOpen} aria-hidden="true" role="menu">
+          <SubMenu
+            active={menuOpen}
+            aria-expanded={menuOpen}
+            aria-hidden={!menuOpen}
+            role="menu"
+          >
             {subNavigationItems.map((item, i) => (
               <Item>
                 <ItemLink key={i} internalLink={item} tabindex="-1">

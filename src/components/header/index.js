@@ -79,7 +79,12 @@ export const PureHeader = ({ pageData }) => {
           <LogoWrapper to="/">
             <Logo src={LogoSVG} cacheGetRequests />
           </LogoWrapper>
-          <MobileMenuOpen type="button" onClick={openState} active={isOpen}>
+          <MobileMenuOpen
+            type="button"
+            onClick={openState}
+            active={isOpen}
+            aria-expanded={isOpen}
+          >
             <BurgerIcon src={MenuSVG} cacheGetRequests />
           </MobileMenuOpen>
         </HeaderBar>

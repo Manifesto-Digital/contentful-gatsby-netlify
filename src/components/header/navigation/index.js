@@ -27,7 +27,12 @@ const Navigation = ({ pageData, active, openState }) => {
 
   return (
     <Wrapper active={active} ariaHidden={active}>
-      <MobileMenuClose type="button" onClick={openState} active={active}>
+      <MobileMenuClose
+        type="button"
+        onClick={openState}
+        active={active}
+        aria-expanded={active}
+      >
         <MenuSVG src={CloseSVG} />
       </MobileMenuClose>
       <Menus role="navigation" aria-label="Main menu">
