@@ -32,16 +32,5 @@ export const CardRow = styled.div`
           );
         `}
     `};
-
-    ${breakpoint.desktop`
-      width: auto;
-      flex: 1;
-      margin-right: ${props => props.theme.spacing.standard};
-      margin-bottom: ${props => props.theme.spacing.standard};
-
-      &:last-child {
-        margin-right: 0;
-      }
-    `};
   }
 `;
