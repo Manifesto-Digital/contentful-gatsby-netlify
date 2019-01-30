@@ -72,6 +72,7 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c2"
+        disabled={true}
         to="test-slug"
       >
         <span
@@ -124,6 +125,8 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c6"
+        disabled={false}
+        next={true}
         to="test-slug/2"
       >
         <span

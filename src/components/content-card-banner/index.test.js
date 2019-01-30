@@ -1,21 +1,37 @@
 import React from 'react';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
-import { BannerBackground } from './styles';
-import { createFactory } from '../../utils/test-factories';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
+import {
+  snapshotComponent,
+  mountWithTheme,
+} from '../../../__tests__/helpers/index';
+import ContentCardBanner from './index';
+import { BannerBackground, CardRow } from './styles';
+import { Card } from '../content-card/styles';
+import { createContentCardBanner } from '../../utils/test-factories';
 
 // Default prop values
-export const createContentCardBanner = createFactory({
-  bannerColour: 'Grey',
-  header: 'Join our cause <a href="https://www.google.co.uk">now</a>',
-});
 
 it('renders correctly', () => {
-  const mockData = createContentCardBanner();
+  const mockBanner = createContentCardBanner();
+  snapshotComponent(<ContentCardBanner data={mockBanner} />);
+});
 
-  snapshotComponent(
-    <BannerBackground
-      bannerColour={mockData.bannerColour}
-      header={mockData.header}
-    />
+hidePascalCaseWarning();
+
+it('Shows a background colour correctly', () => {
+  const mockBanner = createContentCardBanner({ bannerColor: 'grey' });
+  const wrapper = mountWithTheme(<ContentCardBanner data={mockBanner} />);
+  expect(wrapper.find(BannerBackground).props().bannerColour).toEqual(
+    mockBanner.bannerColour
   );
+  expect(wrapper.find(BannerBackground)).toHaveStyleRule(
+    'background',
+    '#e5e5e5'
+  );
+});
+
+test('Should pass the correct item count', () => {
+  const mockCardData = createContentCardBanner();
+  const wrapper = mountWithTheme(<ContentCardBanner data={mockCardData} />);
+  expect(wrapper.find(CardRow).props().items).toEqual(2);
 });

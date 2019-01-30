@@ -48,11 +48,11 @@ const ContentCard = ({ data }) => {
         presentational
       />
       <Wrapper>
-        <CardTitle>{title}</CardTitle>
+        {title && <CardTitle>{title}</CardTitle>}
         <SummaryText internalLink={cardLink}>{description}</SummaryText>
       </Wrapper>
 
-      <CoveringLink tabindex="-1" aria-hidden="true" internalLink={cardLink}>
+      <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
         {description}
       </CoveringLink>
     </Card>
@@ -69,14 +69,13 @@ ContentCard.propTypes = {
       file: PropTypes.shape({
         fileName: PropTypes.string,
         url: PropTypes.string,
-      }),
-    }),
+      }).isRequired,
+    }).isRequired,
     cropImageFrom: PropTypes.string,
-
     pageInformation: PropTypes.shape({
       shortDescription: PropTypes.object,
       pageThumbnail: PropTypes.object,
-    }),
+    }).isRequired,
   }),
 };
 

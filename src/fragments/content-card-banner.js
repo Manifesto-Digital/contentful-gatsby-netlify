@@ -13,6 +13,7 @@ export const ContentCardBannerFragment = graphql`
       }
     }
     bannerColour
+    bannerFlow
     contentCards {
       ... on ContentfulPageAssemblyContentPage {
         id

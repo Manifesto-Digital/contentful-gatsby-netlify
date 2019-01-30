@@ -2,16 +2,6 @@ import styled, { css } from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 import { Card } from '../content-card/styles';
 
-export const BannerBackground = styled.section`
-  background: ${props =>
-    (props.bannerColour === 'white' && props.theme.palette.white) ||
-    (props.bannerColour === 'grey' && props.theme.palette.grey10)};
-`;
-
-export const HeaderText = styled.h2`
-  padding-top: ${props => props.theme.spacing.standard};
-`;
-
 export const CardRow = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -22,15 +12,36 @@ export const CardRow = styled.div`
 
   ${Card} {
     ${breakpoint.tablet`
-    
       ${({ items }) =>
         items &&
         css`
-          flex-grow: 0;
-          flex-basis: calc(
-            ${100 / items}% - ${props => props.theme.spacing.small}
-          );
+          flex: 0 1 calc(${Math.floor(100 / items)}% - 12px);
+          width: calc(${Math.floor(100 / items)}% - 12px);
         `}
     `};
+  }
+`;
+
+export const BannerBackground = styled.section`
+  background: ${props =>
+    (props.bannerColour === 'white' && props.theme.palette.white) ||
+    (props.bannerColour === 'grey' && props.theme.palette.grey10)};
+
+  ${CardRow} {
+    ${Card} {
+      flex: ${props => props.bannerFlow === 'vertical' && '0 1 100%'};
+      width: ${props => props.bannerFlow === 'vertical' && '100%'};
+      max-width: ${props =>
+        props.bannerFlow === 'vertical' ? '600px' : 'auto'};
+    }
+  }
+`;
+
+export const HeaderText = styled.h2`
+  margin-bottom: ${props => props.theme.spacing.medium};
+  padding-top: ${props => props.theme.spacing.standard};
+
+  a {
+    text-decoration: none;
   }
 `;

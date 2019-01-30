@@ -1,28 +1,34 @@
 import React from 'react';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
-import { Card } from './styles';
-import { createFactory } from '../../utils/test-factories';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
+import {
+  snapshotComponent,
+  mountWithTheme,
+} from '../../../__tests__/helpers/index';
+import ContentCard from './index';
+import { Card, CardTitle } from './styles';
+import { createContentCards } from '../../utils/test-factories';
 
 // Default prop values
-export const createContentCard = createFactory({
-  featuredImage:
-    '//images.ctfassets.net/6sxvmndnpn0s/1HUDqhTjFiaQ8cm4mAQGaE/70317d8a3ff040ddf9c613105cdac1e0/Vertical_rush_hero.jpg',
-  cropImageFrom: 'Top_Right',
-  title: 'Shelter Demo Page',
-  summaryText: 'Lorem ipsum dolor sit amet, consectetur',
-  slug: 'shelter-demo-page',
-});
+
+export const createContentCard = createContentCards();
 
 it('renders correctly', () => {
-  const mockData = createContentCard();
+  const mockCardData = createContentCard;
+  snapshotComponent(<ContentCard data={mockCardData} />);
+});
 
-  snapshotComponent(
-    <Card
-      featuredImage={mockData.featuredImage}
-      cropImageFrom={mockData.cropImageFrom}
-      title={mockData.title}
-      summaryText={mockData.summaryText}
-      slug={mockData.slug}
-    />
+hidePascalCaseWarning();
+
+test('Should display a title correctly', () => {
+  const mockCardData = createContentCard;
+  const wrapper = mountWithTheme(<ContentCard data={mockCardData} />);
+  expect(wrapper.find(CardTitle).text()).toBe(mockCardData.title);
+});
+
+test('Should display an image correctly', () => {
+  const mockCardData = createContentCard;
+  const wrapper = mountWithTheme(<ContentCard data={mockCardData} />);
+  expect(wrapper.find('img').prop('src')).toContain(
+    mockCardData.pageInformation.pageThumbnail.file.url
   );
 });

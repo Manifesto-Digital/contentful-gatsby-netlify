@@ -4,7 +4,6 @@ import ResponsiveImage from '../image/responsive.js';
 
 export const Card = styled.div`
   position: relative;
-  flex: 1;
   margin-bottom: ${props => props.theme.spacing.standard};
   background: ${props => props.theme.palette.white};
   border-radius: ${props => props.theme.borderradius.small};
@@ -27,9 +26,9 @@ export const Wrapper = styled.div`
 
 export const CardTitle = styled.h3`
   position: absolute;
-  margin-bottom: 0;
   top: -20px;
   max-width: 100%;
+  margin-bottom: 0;
   padding: 5px ${props => props.theme.spacing.standard};
   background-color: ${props => props.theme.palette.primary};
   color: ${props => props.theme.palette.white};
@@ -41,18 +40,18 @@ export const CardTitle = styled.h3`
 `;
 
 export const SummaryText = styled(LinkHandler)`
+  display: block;
   padding: ${props => props.theme.spacing.standard};
   color: ${props => props.theme.palette.sanMarinoBlue};
   text-decoration: none;
-  display: block;
 `;
 
 export const CoveringLink = styled(LinkHandler)`
+  position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
   z-index: 0;
+  opacity: 0;
 `;

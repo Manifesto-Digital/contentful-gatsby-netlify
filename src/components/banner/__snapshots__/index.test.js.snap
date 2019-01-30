@@ -33,6 +33,7 @@ exports[`renders correctly 1`] = `
       What an amazing banner
     </h2>
     <Link
+      bg="red"
       className="c3"
       to="internal-link-slug"
     >

@@ -8,12 +8,15 @@ import { Container } from '../styled/containers';
 import { BannerBackground, HeaderText, CardRow } from './styles';
 
 const ContentCardBanner = ({ data }) => {
-  const { bannerColour, header, contentCards } = data;
+  const { header, bannerColour, bannerFlow, contentCards } = data;
 
   if (contentCards && contentCards.length < 2) return null;
 
   return (
-    <BannerBackground bannerColour={consistentString(bannerColour)}>
+    <BannerBackground
+      bannerColour={consistentString(bannerColour)}
+      bannerFlow={consistentString(bannerFlow)}
+    >
       <Container>
         <HeaderText as={RichText} richText={header} />
         <CardRow items={contentCards.length}>
@@ -28,13 +31,14 @@ const ContentCardBanner = ({ data }) => {
 
 ContentCardBanner.propTypes = {
   data: PropTypes.shape({
-    bannerColour: PropTypes.oneOf(['White', 'Grey']).isRequired,
+    bannerColour: PropTypes.oneOf(['white', 'grey']).isRequired,
+    bannerFlow: PropTypes.oneOf(['vertical', 'horizontal']).isRequired,
     header: PropTypes.shape({
       childContentfulRichText: PropTypes.shape({
         html: PropTypes.string,
       }),
     }),
-    contentCards: PropTypes.array.isRequired,
+    contentCards: PropTypes.array,
   }),
 };
 
