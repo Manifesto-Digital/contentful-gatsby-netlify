@@ -7,16 +7,10 @@ import { Link } from 'gatsby';
  * Internal link uses Gatsby Link
  *
  */
-const LinkHandler = ({
-  internalLink,
-  externalUrl,
-  className,
-  children,
-  ...props
-}) => {
+const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
   if (internalLink) {
     return (
-      <Link to={internalLink.slug} className={className} {...props}>
+      <Link to={internalLink.slug} className={className}>
         {children}
       </Link>
     );
