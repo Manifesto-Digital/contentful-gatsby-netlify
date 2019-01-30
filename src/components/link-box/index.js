@@ -11,11 +11,12 @@ const LinkBox = ({ data }) => {
       <Wrapper>
         <h2>{headerText}</h2>
         <ListWrapper>
-          {links.map((link, i) => (
-            <ListItem key={i} rowCount={itemsPerRow}>
-              <Link to={link.slug}>{link.title}</Link>
-            </ListItem>
-          ))}
+          {links &&
+            links.map((link, i) => (
+              <ListItem key={i} rowCount={itemsPerRow}>
+                <Link to={link.slug}>{link.title}</Link>
+              </ListItem>
+            ))}
         </ListWrapper>
       </Wrapper>
     </Container>
