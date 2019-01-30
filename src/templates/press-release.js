@@ -61,6 +61,10 @@ const PressReleasePage = ({ data }) => {
     );
   };
 
+  DownloadsList.propTypes = {
+    files: PropTypes.array,
+  };
+
   return (
     <Layout>
       <article>
