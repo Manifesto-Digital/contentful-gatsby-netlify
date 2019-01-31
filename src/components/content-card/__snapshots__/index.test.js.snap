@@ -82,9 +82,7 @@ exports[`renders correctly 1`] = `
     </Link>
   </div>
   <Link
-    aria-hidden="true"
     className="c5"
-    tabIndex="-1"
     to="shelter-demo-page"
   >
     A short description for Callams test page

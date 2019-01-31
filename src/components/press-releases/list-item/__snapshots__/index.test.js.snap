@@ -86,7 +86,6 @@ exports[`renders correctly 1`] = `
     </strong>
   </p>
   <Link
-    aria-hidden="true"
     className="c3"
     to="test-slug"
   >

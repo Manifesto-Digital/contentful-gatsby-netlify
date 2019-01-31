@@ -103,7 +103,6 @@ exports[`renders correctly 1`] = `
       <Link
         className="c3"
         to="Advice page 2"
-        type="prev"
       >
         <div
           className="c4"
@@ -121,7 +120,6 @@ exports[`renders correctly 1`] = `
       <Link
         className="c6"
         to="Advice page 4"
-        type="next"
       >
         <div
           className="c7"

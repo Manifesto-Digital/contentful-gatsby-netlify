@@ -74,6 +74,7 @@ exports[`renders correctly 1`] = `
 
 .c0 {
   background: #e5e5e5;
+  padding: 30px 0;
 }
 
 .c0 .c3 .c5 {
@@ -154,9 +155,7 @@ exports[`renders correctly 1`] = `
           </Link>
         </div>
         <Link
-          aria-hidden="true"
           className="c11"
-          tabIndex="-1"
           to="shelter-demo-page"
         >
           A short description for Callams test page
@@ -188,9 +187,7 @@ exports[`renders correctly 1`] = `
           </Link>
         </div>
         <Link
-          aria-hidden="true"
           className="c11"
-          tabIndex="-1"
           to="shelter-demo-page"
         >
           A short description for Callams test page

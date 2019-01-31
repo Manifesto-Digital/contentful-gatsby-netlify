@@ -417,7 +417,6 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  tabindex="-1"
                   to="320,000-people-in-britain-are-now-homeless"
                 >
                   320,000 people in Britain are now homeless
@@ -428,7 +427,6 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  tabindex="-1"
                   to="tobys-page"
                 >
                   Tobys Page
@@ -439,7 +437,6 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  tabindex="-1"
                   to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
                 >
                   Shelter Manchester to hold vigil for lost homeless people
@@ -450,7 +447,6 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  tabindex="-1"
                   to="shelter-demo-page"
                 >
                   Shelter Demo Page

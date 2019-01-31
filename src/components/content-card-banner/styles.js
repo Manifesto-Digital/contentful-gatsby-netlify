@@ -26,6 +26,7 @@ export const BannerBackground = styled.section`
   background: ${props =>
     (props.bannerColour === 'white' && props.theme.palette.white) ||
     (props.bannerColour === 'grey' && props.theme.palette.grey10)};
+  padding: ${props => props.theme.spacing.medium} 0;
 
   ${CardRow} {
     ${Card} {
