@@ -30,6 +30,14 @@ it('Shows a background colour correctly', () => {
   );
 });
 
+it('Passes an orientation', () => {
+  const mockBanner = createContentCardBanner({ bannerFlow: 'horizontal' });
+  const wrapper = mountWithTheme(<ContentCardBanner data={mockBanner} />);
+  expect(wrapper.find(BannerBackground).props().bannerFlow).toEqual(
+    mockBanner.bannerFlow
+  );
+});
+
 test('Should pass the correct item count', () => {
   const mockCardData = createContentCardBanner();
   const wrapper = mountWithTheme(<ContentCardBanner data={mockCardData} />);
