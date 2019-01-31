@@ -59,6 +59,7 @@ theme.fontsize = {
 };
 
 theme.boxshadow = {
+  standard: '0 2.5px 6px rgba(0,0,0,0.16), 0 2.5px 6px rgba(0,0,0,0.13);',
   small: '0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06)',
   menu: '-1px 0 14px rgba(0, 0, 0, 0.5);',
 };

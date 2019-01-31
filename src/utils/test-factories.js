@@ -90,3 +90,38 @@ export const createSubpage = createFactory({
   title: 'Advice guide test',
   subPages: null,
 });
+
+export const createContentCards = createFactory({
+  cropImageFrom: 'Center',
+  featuredImage: {
+    description: 'Collection hero',
+    file: {
+      fileName: 'collection-hero.jpg',
+      url:
+        '//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg',
+    },
+  },
+  pageInformation: {
+    pageThumbnail: {
+      description: 'Telli Afrik and family',
+      file: {
+        url:
+          '//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg',
+        fileName: 'Telli Afrik and family - Steve Franck.jpg',
+      },
+    },
+    shortDescription: {
+      shortDescription: 'A short description for Callams test page',
+    },
+  },
+  slug: 'shelter-demo-page',
+  summaryText: 'Lorem ipsum dolor sit amet, consectetur',
+  title: 'Shelter Demo Page',
+});
+
+export const createContentCardBanner = createFactory({
+  header: createChildContentfulRichText(),
+  bannerColour: 'grey',
+  bannerFlow: 'horizontal',
+  contentCards: [createContentCards(), createContentCards()],
+});
