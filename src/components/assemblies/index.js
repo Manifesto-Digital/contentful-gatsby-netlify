@@ -12,6 +12,7 @@ import LinkBox from '../link-box';
 import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
+import ContentCardBanner from '../content-card-banner';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -102,6 +103,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
             insideContainer={insideContainer}
           />
         );
+      }
+
+      if (internal.type === 'ContentfulTopicContentCardsBanner') {
+        return <ContentCardBanner key={id} data={assembly} />;
       }
 
       return null;

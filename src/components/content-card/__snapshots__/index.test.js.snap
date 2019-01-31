@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  position: relative;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:hover {
+  box-shadow: 0 2.5px 6px rgba(0,0,0,0.16),0 2.5px 6px rgba(0,0,0,0.13);
+}
+
+.c1 {
+  border-radius: 3px 3px 0;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c3 {
+  position: absolute;
+  top: -20px;
+  max-width: 100%;
+  margin-bottom: 0;
+  padding: 5px 20px;
+  background-color: #ea232d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c4 {
+  display: block;
+  padding: 20px;
+  color: #4d63b5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+<div
+  className="c0"
+>
+  <img
+    alt=""
+    className="c1"
+    src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=Center&w=600&h=350"
+    srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=Center&w=600&h=350 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=Center&w=600&h=350"
+  />
+  <div
+    className="c2"
+  >
+    <h3
+      className="c3"
+    >
+      Shelter Demo Page
+    </h3>
+    <Link
+      className="c4"
+      to="shelter-demo-page"
+    >
+      A short description for Callams test page
+    </Link>
+  </div>
+  <Link
+    className="c5"
+    to="shelter-demo-page"
+  >
+    A short description for Callams test page
+  </Link>
+</div>
+`;
