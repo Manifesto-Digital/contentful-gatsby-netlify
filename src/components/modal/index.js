@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import { defaultStyles, StyledCloseButton } from './styles';
 
 /**
  * A version of react-modal that is styled with our custom styles
  */
-export default function Modal({ children, ...otherProps }) {
+function Modal({ children, ...otherProps }) {
   return (
     <ReactModal
       {...otherProps}
@@ -21,3 +22,9 @@ export default function Modal({ children, ...otherProps }) {
     </ReactModal>
   );
 }
+
+Modal.propTypes = {
+  children: PropTypes.func,
+};
+
+export default Modal;
