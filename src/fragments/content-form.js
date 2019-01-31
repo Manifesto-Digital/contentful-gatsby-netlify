@@ -9,6 +9,14 @@ export const AssemblyFormFragment = graphql`
     submitUrl
     sourceCode
     submitCallToAction
+    redirectAfterSubmission {
+      slug
+    }
+    thankYouMessage {
+      childContentfulRichText {
+        html
+      }
+    }
     formFields {
       ... on Node {
         ...FormFieldFragment

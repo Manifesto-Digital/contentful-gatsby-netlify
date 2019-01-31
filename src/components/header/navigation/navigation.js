@@ -36,8 +36,8 @@ const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
             role="menu"
           >
             {subNavigationItems.map((item, i) => (
-              <Item>
-                <ItemLink key={i} internalLink={item} tabindex="-1">
+              <Item key={i}>
+                <ItemLink internalLink={item} tabindex="-1">
                   {item.title}
                 </ItemLink>
               </Item>

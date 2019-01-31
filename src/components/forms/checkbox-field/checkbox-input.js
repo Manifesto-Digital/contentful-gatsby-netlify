@@ -48,7 +48,7 @@ CheckboxInput.propTypes = {
   checked: PropTypes.bool,
   touched: PropTypes.object,
   errors: PropTypes.object,
-  submitCount: PropTypes.object,
+  submitCount: PropTypes.number,
 };
 
 export default CheckboxInput;

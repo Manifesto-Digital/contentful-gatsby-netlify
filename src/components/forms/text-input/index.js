@@ -37,6 +37,7 @@ TextInput.propTypes = {
   inline: PropTypes.bool,
   noMargin: PropTypes.bool,
   fullWidth: PropTypes.bool,
+  placeholder: PropTypes.string,
   form: PropTypes.shape({
     errors: PropTypes.object,
     touched: PropTypes.object,

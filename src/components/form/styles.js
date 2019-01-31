@@ -5,9 +5,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormFieldWrapper = styled.div`
-  margin: 0 0 0.8em;
-
-  &:last-of-type {
-    margin: 0;
-  }
+  margin: 0 0 ${props => props.theme.spacing.standard};
 `;
+
+export const ThankYouMessage = styled.p``;

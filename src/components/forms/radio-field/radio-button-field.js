@@ -48,7 +48,7 @@ RadioField.propTypes = {
   onBlur: PropTypes.func.isRequired,
   touched: PropTypes.object,
   errors: PropTypes.object,
-  submitCount: PropTypes.object,
+  submitCount: PropTypes.number,
 };
 
 export default RadioField;

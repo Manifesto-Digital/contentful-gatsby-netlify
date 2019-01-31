@@ -14,7 +14,7 @@ const createProps = (name, error, touched) => ({
   },
 });
 
-['text', 'number', 'tel'].forEach(type => {
+['text', 'number', 'tel', 'email'].forEach(type => {
   it(`renders type as ${type}`, () => {
     const props = createProps('foo', undefined, false);
 

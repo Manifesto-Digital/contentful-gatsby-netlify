@@ -13,8 +13,6 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
   fields.forEach(field => {
     if (!field.fieldType) return;
 
-    if (field.fieldType === 'Address') return; // Temporary
-
     // Set default value to be the initial value for form
     if (field.internal.type === 'ContentfulTopicFormField') {
       initialValues[field.machineName] = field.defaultValue || '';
@@ -40,7 +38,7 @@ export const getValidationSchema = formFields => {
   formFields.forEach(field => {
     if (!field.fieldType) return;
     const fieldType = consistentString(field.fieldType);
-    if (field.fieldType === 'address') return; // Temporary
+
     const fieldName = field.machineName;
 
     let validationType;

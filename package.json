@@ -68,6 +68,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "refresh": "rm -rf .cache && gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
     "test-watch": "jest --watch",
