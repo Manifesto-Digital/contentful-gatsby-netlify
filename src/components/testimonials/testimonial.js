@@ -9,12 +9,12 @@ import {
 } from './styles';
 
 const Testimonial = ({ id, data }) => {
-  const { image, text, author } = data;
+  const { image, text, author, boxBackground } = data;
 
   return (
     <TestimonialContainer>
       <Image image={image} />
-      <TestimonialTextContainer>
+      <TestimonialTextContainer bg={boxBackground}>
         <RichText richText={text} />
         <TestimonialAuthor>&mdash; {author}</TestimonialAuthor>
       </TestimonialTextContainer>

@@ -14,8 +14,8 @@ export const TestimonialTextContainer = styled.div`
   margin: auto;
   width: 90%;
   background-color: ${props =>
-    (props.bg === 'grey' && props.theme.palette.grey10) ||
-    props.theme.palette.white};
+    (props.bg === 'Grey' && props.theme.palette.grey10) ||
+    (props.bg === 'White' && props.theme.palette.white)};
   padding: 2em;
 
   ${breakpoint.mobile`

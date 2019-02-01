@@ -15,5 +15,6 @@ export const Testimonials = graphql`
       }
     }
     author
+    boxBackground
   }
 `;
