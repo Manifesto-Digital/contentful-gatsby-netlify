@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
-export const TestimonialContainer = styled.div`
+export const Container = styled.div`
   position: relative;
   margin-bottom: 10em;
 `;
 
-export const TestimonialTextContainer = styled.div`
+export const TextContainer = styled.div`
   position: absolute;
   bottom: -75%;
   left: 0;
@@ -27,7 +27,7 @@ export const TestimonialTextContainer = styled.div`
   `};
 `;
 
-export const TestimonialAuthor = styled.span`
+export const Author = styled.span`
   color: ${props => props.theme.palette.primary};
   font-style: italic;
 `;

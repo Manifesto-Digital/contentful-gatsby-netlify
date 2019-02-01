@@ -2,23 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../image';
 import RichText from '../rich-text';
-import {
-  TestimonialContainer,
-  TestimonialTextContainer,
-  TestimonialAuthor,
-} from './styles';
+import { Container, TextContainer, Author } from './styles';
 
 const Testimonial = ({ id, data }) => {
   const { image, text, author, boxBackground } = data;
 
   return (
-    <TestimonialContainer>
+    <Container>
       <Image image={image} />
-      <TestimonialTextContainer bg={boxBackground}>
+      <TextContainer bg={boxBackground}>
         <RichText richText={text} />
-        <TestimonialAuthor>&mdash; {author}</TestimonialAuthor>
-      </TestimonialTextContainer>
-    </TestimonialContainer>
+        <Author>&mdash; {author}</Author>
+      </TextContainer>
+    </Container>
   );
 };
 
