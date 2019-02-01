@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a single testimonial correctly 1`] = `
+.c0 {
+  position: relative;
+  margin-bottom: 10em;
+}
+
+.c2 {
+  position: absolute;
+  bottom: -75%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  background-color: #fff;
+  padding: 2em;
+}
+
+.c3 {
+  color: #ea232d;
+  font-style: italic;
+}
+
+@media (min-width:40.0625em) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c1 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+@media (min-width:22.4375em) {
+  .c2 {
+    bottom: -50%;
+  }
+}
+
+@media (min-width:32em) {
+  .c2 {
+    bottom: -25%;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    position: static;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-transform: translateX(2em);
+    -ms-transform: translateX(2em);
+    transform: translateX(2em);
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    order={2}
+  >
+    <img
+      alt="Collection hero"
+      src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+    />
+  </div>
+  <div
+    className="c2"
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+        }
+      }
+    />
+    <span
+      className="c3"
+    >
+      — 
+      Owen, London
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders testimonials correctly 1`] = `
+.c0 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c1 {
+  position: relative;
+  margin-bottom: 10em;
+}
+
+.c3 {
+  position: absolute;
+  bottom: -75%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  background-color: #fff;
+  padding: 2em;
+}
+
+.c6 {
+  position: absolute;
+  bottom: -75%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  background-color: #fff;
+  padding: 2em;
+}
+
+.c4 {
+  color: #ea232d;
+  font-style: italic;
+}
+
+@media (min-width:40.0625em) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c5 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+@media (min-width:22.4375em) {
+  .c3 {
+    bottom: -50%;
+  }
+}
+
+@media (min-width:32em) {
+  .c3 {
+    bottom: -25%;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
+    position: static;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-transform: translateX(-2em);
+    -ms-transform: translateX(-2em);
+    transform: translateX(-2em);
+  }
+}
+
+@media (min-width:22.4375em) {
+  .c6 {
+    bottom: -50%;
+  }
+}
+
+@media (min-width:32em) {
+  .c6 {
+    bottom: -25%;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c6 {
+    position: static;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-transform: translateX(2em);
+    -ms-transform: translateX(2em);
+    transform: translateX(2em);
+  }
+}
+
+<div
+  className="c0"
+>
+  <h2>
+    Testimonials about this cool component
+  </h2>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      order={0}
+    >
+      <img
+        alt="Collection hero"
+        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+      />
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+          }
+        }
+      />
+      <span
+        className="c4"
+      >
+        — 
+        Owen, London
+      </span>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c5"
+      order={2}
+    >
+      <img
+        alt="Collection hero"
+        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+      />
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+          }
+        }
+      />
+      <span
+        className="c4"
+      >
+        — 
+        Owen, London
+      </span>
+    </div>
+  </div>
+</div>
+`;
