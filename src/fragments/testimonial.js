@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-export const Testimonials = graphql`
+export const TestimonialTopicFragment = graphql`
   fragment TestimonialTopicFragment on ContentfulTopicTestimonial {
     id
     internal {
