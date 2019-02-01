@@ -4,18 +4,16 @@ import Image from '../image';
 import RichText from '../rich-text';
 import { Container, ImageContainer, TextContainer, Author } from './styles';
 
-const Testimonial = ({ id, data }) => {
+const Testimonial = ({ loopIndex, data }) => {
   const { image, text, author, boxBackground } = data;
 
+  console.log(image);
   return (
     <Container>
-      <ImageContainer order={id % 2 === 0 ? 0 : 2}>
+      <ImageContainer loopIndex={loopIndex}>
         <Image image={image} />
       </ImageContainer>
-      <TextContainer
-        bg={boxBackground}
-        translate={id % 2 === 0 ? 'translateX(-2em)' : 'translateX(2em)'}
-      >
+      <TextContainer bg={boxBackground} loopIndex={loopIndex}>
         <RichText richText={text} />
         <Author>&mdash; {author}</Author>
       </TextContainer>
@@ -24,11 +22,12 @@ const Testimonial = ({ id, data }) => {
 };
 
 Testimonial.propTypes = {
-  id: PropTypes.number,
+  loopIndex: PropTypes.number,
   data: PropTypes.shape({
     image: PropTypes.object.isRequired,
     text: PropTypes.object.isRequired,
     author: PropTypes.string,
+    boxBackground: PropTypes.oneOf(['White', 'Grey']),
   }),
 };
 

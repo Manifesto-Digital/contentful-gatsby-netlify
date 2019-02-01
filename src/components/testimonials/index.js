@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import { Container } from '../styled/containers';
 import Testimonial from './testimonial';
 
-const Testimonials = ({ data }) => {
+const Testimonials = ({ data, insideContainer }) => {
   const { headerText, testimonials } = data;
 
   return (
-    <Container>
+    <Container padding={!insideContainer}>
       <h2>{headerText}</h2>
-      <>
-        {testimonials.map((testimonial, key) => (
-          <Testimonial data={testimonial} id={key} />
-        ))}
-      </>
+
+      {testimonials.map((testimonial, i) => (
+        <Testimonial data={testimonial} loopIndex={i} />
+      ))}
     </Container>
   );
 };
@@ -21,8 +20,9 @@ const Testimonials = ({ data }) => {
 Testimonials.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
-    testimonials: PropTypes.array,
+    testimonials: PropTypes.array.isRequired,
   }),
+  insideContainer: PropTypes.bool,
 };
 
 export default Testimonials;
