@@ -2,7 +2,6 @@ import React from 'react';
 import {
   snapshotComponent,
   mountWithTheme,
-  expectRenderError,
 } from '../../../__tests__/helpers/index';
 import {
   createFactory,
@@ -18,11 +17,15 @@ export const createTestimonial = createFactory({
   text: createChildContentfulRichText(),
   author: 'Owen, London',
   boxBackground: 'White',
+  loopIndex: 0,
 });
 
 export const createTestimonials = createFactory({
   headerText: 'Testimonials about this cool component',
-  testimonials: [createTestimonial(), createTestimonial()],
+  testimonials: [
+    createTestimonial({ loopIndex: 0 }),
+    createTestimonial({ loopIndex: 1 }),
+  ],
 });
 
 it('renders testimonials correctly', () => {
@@ -40,8 +43,7 @@ it('renders a single testimonial correctly', () => {
 it('displays the correct testimonial author', () => {
   const mockData = createTestimonial({ author: 'my mock author' });
   const wrapper = mountWithTheme(<Testimonial data={mockData} />);
-
-  expect(wrapper.find(Author).text()).toBe(`— ${mockData.author}`);
+  expect(wrapper.find(Author).text()).toContain(mockData.author);
 });
 
 it('passes the correct order value to the image container', () => {
@@ -51,15 +53,18 @@ it('passes the correct order value to the image container', () => {
   expect(
     wrapper
       .find(Testimonial)
-      .first()
+      .at(0)
       .find(ImageContainer)
-      .prop('order')
-  ).toBe(0);
+  ).toHaveStyleRule('order', '0', {
+    media: '(min-width: 40.0625em)',
+  });
+
   expect(
     wrapper
       .find(Testimonial)
       .at(1)
       .find(ImageContainer)
-      .prop('order')
-  ).toBe(2);
+  ).toHaveStyleRule('order', '2', {
+    media: '(min-width: 40.0625em)',
+  });
 });

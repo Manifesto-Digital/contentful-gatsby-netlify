@@ -84,7 +84,6 @@ exports[`renders a single testimonial correctly 1`] = `
 >
   <div
     className="c1"
-    order={2}
   >
     <img
       alt="Collection hero"
@@ -261,7 +260,6 @@ exports[`renders testimonials correctly 1`] = `
   >
     <div
       className="c2"
-      order={0}
     >
       <img
         alt="Collection hero"
@@ -291,7 +289,6 @@ exports[`renders testimonials correctly 1`] = `
   >
     <div
       className="c5"
-      order={2}
     >
       <img
         alt="Collection hero"
