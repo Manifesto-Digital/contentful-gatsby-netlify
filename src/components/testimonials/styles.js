@@ -4,6 +4,20 @@ import { breakpoint } from '../theme/breakpoint';
 export const Container = styled.div`
   position: relative;
   margin-bottom: 10em;
+
+  ${breakpoint.tablet`
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  `};
+`;
+
+export const ImageContainer = styled.div`
+  ${breakpoint.tablet`
+    flex-grow: 1;
+    flex-basis: 50%;
+    order: ${props => props.order};
+  `};
 `;
 
 export const TextContainer = styled.div`
@@ -24,6 +38,13 @@ export const TextContainer = styled.div`
 
   ${breakpoint.mobileLand`
     bottom: -25%;
+  `};
+
+  ${breakpoint.tablet`
+    position: static;
+    flex-grow: 1;
+    flex-basis: 50%;
+    transform: ${props => props.translate}
   `};
 `;
 
