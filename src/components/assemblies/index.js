@@ -13,6 +13,7 @@ import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
 import ContentCardBanner from '../content-card-banner';
+import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -107,6 +108,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicContentCardsBanner') {
         return <ContentCardBanner key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
+        return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
       return null;
