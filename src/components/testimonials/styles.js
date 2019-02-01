@@ -16,7 +16,7 @@ export const ImageContainer = styled.div`
   ${breakpoint.tablet`
     flex-grow: 1;
     flex-basis: 50%;
-    order: ${props => props.order};
+    order: ${({ loopIndex }) => (loopIndex % 2 === 0 ? 0 : 2)};
   `};
 `;
 
@@ -44,7 +44,8 @@ export const TextContainer = styled.div`
     position: static;
     flex-grow: 1;
     flex-basis: 50%;
-    transform: ${props => props.translate}
+    transform: ${({ loopIndex }) =>
+      loopIndex % 2 === 0 ? 'translateX(-2em)' : 'translateX(2em)'}
   `};
 `;
 
