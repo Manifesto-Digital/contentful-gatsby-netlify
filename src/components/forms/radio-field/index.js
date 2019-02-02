@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
-import RadioButtonField from './radio-button-field';
+import RadioButtonInput from './radio-button-input';
 import { FieldWrapper } from '../form-field/styles';
 
-const RadioInput = ({ field }) => {
+const RadioField = ({ field }) => {
   if (!Array.isArray(field.valueOptions)) {
     return null;
   }
@@ -21,7 +21,7 @@ const RadioInput = ({ field }) => {
             const radioButtonValue = form.values[field.machineName];
 
             return (
-              <RadioButtonField
+              <RadioButtonInput
                 id={
                   multipleOptions
                     ? `${field.machineName}-${i + 1}`
@@ -45,7 +45,7 @@ const RadioInput = ({ field }) => {
   );
 };
 
-RadioInput.propTypes = {
+RadioField.propTypes = {
   field: PropTypes.shape({
     defaultValue: PropTypes.string,
     fieldType: PropTypes.string,
@@ -63,4 +63,4 @@ RadioInput.propTypes = {
   }),
 };
 
-export default RadioInput;
+export default RadioField;

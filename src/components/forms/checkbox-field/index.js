@@ -15,7 +15,8 @@ const CheckboxField = ({ field }) => {
   const multiple = optionLength > 1;
 
   const handleChange = (e, setFieldValue, currentValue) => {
-    const target = e.currentTarget;
+    const { target } = e;
+
     // The value passed to the form is an array of values
     if (multiple) {
       const valueArray = currentValue || [];
@@ -25,6 +26,7 @@ const CheckboxField = ({ field }) => {
       } else {
         valueArray.splice(valueArray.indexOf(target.value), 1);
       }
+
       return setFieldValue(field.machineName, valueArray);
     }
 
@@ -45,6 +47,7 @@ const CheckboxField = ({ field }) => {
             name={field.machineName}
             render={({ field: fieldValues, form }) => {
               const checkboxValue = form.values[field.machineName];
+
               return (
                 <CheckboxInput
                   id={`${field.machineName}-${i + 1}`}

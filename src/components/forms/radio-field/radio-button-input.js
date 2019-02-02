@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import ErrorMessage from '../error-message';
 import { Input, InputWrapper, Label } from './styles';
 
-const RadioField = ({
+const RadioInput = ({
   name,
   required,
   value,
@@ -38,7 +38,7 @@ const RadioField = ({
   </InputWrapper>
 );
 
-RadioField.propTypes = {
+RadioInput.propTypes = {
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
   value: PropTypes.string.isRequired,
@@ -51,4 +51,4 @@ RadioField.propTypes = {
   submitCount: PropTypes.number,
 };
 
-export default RadioField;
+export default RadioInput;

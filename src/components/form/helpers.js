@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import { consistentString } from '../../utils/content-formatting';
+import { sendEvent } from '../../utils/analytics';
 
 const isMultipleCheckbox = field =>
   consistentString(field.fieldType) === 'checkboxes' &&
@@ -19,9 +20,14 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
     }
     // Multiple checkboxes require an array of values
     if (isMultipleCheckbox(field)) {
-      initialValues[field.machineName] = field.defaultValue
-        ? [field.defaultValue]
-        : [];
+      if (
+        // Check if default value exists as an option
+        field.valueOptions.some(option => option.value === field.defaultValue)
+      ) {
+        initialValues[field.machineName] = [field.defaultValue];
+      } else {
+        initialValues[field.machineName] = [];
+      }
     }
 
     if (field.internal.type === 'ContentfulTopicFormFieldset') {
@@ -57,4 +63,45 @@ export const getValidationSchema = formFields => {
   });
 
   return Yup.object().shape(validationSchema);
+};
+
+export const sendAnalyticsSubmissionEvent = (
+  formValues,
+  formFields,
+  hiddenInitialValues
+) => {
+  // Get any fields that are marked to send to analytics and set bool
+  const fieldsToSend = formFields.reduce((acc, field) => {
+    if (!field.valueOptions) return acc;
+    if (!field.valueOptions.some(option => option.sendToAnalytics)) return acc;
+
+    if (field.valueOptions.length === 1) {
+      // If only one option
+      const option = field.valueOptions[0];
+      const valueBool = formFields[field.machineName] === option.value;
+      acc[option.value] = valueBool;
+    } else {
+      // If multiple options check if the option was selected
+      field.valueOptions.forEach(option => {
+        if (option.sendToAnalytics) {
+          // Check if the field had a value
+          const valueBool = formValues[field.machineName].includes(
+            option.value
+          );
+
+          acc[option.value] = valueBool;
+          return acc;
+        }
+      });
+    }
+    return acc;
+  }, {});
+
+  const analyticsObejctToSend = {
+    event: 'formSubmitted',
+    ...hiddenInitialValues,
+    ...fieldsToSend,
+  };
+
+  sendEvent(analyticsObejctToSend);
 };

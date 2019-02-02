@@ -8,7 +8,10 @@ export const AssemblyFormFragment = graphql`
     }
     submitUrl
     sourceCode
+    formId
+    formHeader
     submitCallToAction
+    backgroundColour
     redirectAfterSubmission {
       slug
     }
@@ -40,6 +43,7 @@ export const AssemblyFormFragment = graphql`
     valueOptions {
       value
       label
+      sendToAnalytics
     }
   }
 
