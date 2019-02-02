@@ -1,10 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'gatsby';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import LinkHandler from '../link-handler';
+import {
+  snapshotComponent,
+  mountWithTheme,
+} from '../../../__tests__/helpers/index';
 import LinkBox from './index';
 import { ListItem } from './styles';
 import { createFactory, createInternalLink } from '../../utils/test-factories';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
 
 export const createLinkBox = createFactory({
   headerText: 'What an amazing banner',
@@ -42,6 +47,8 @@ it('sets the number of links per row', () => {
   ).toBe(mockData.itemsPerRow);
 });
 
+hidePascalCaseWarning();
+
 it('displays link and title correctly', () => {
   const mockData = createLinkBox({
     link: [
@@ -51,7 +58,7 @@ it('displays link and title correctly', () => {
       },
     ],
   });
-  const wrapper = shallow(<LinkBox data={mockData} />);
+  const wrapper = mountWithTheme(<LinkBox data={mockData} />);
 
   expect(
     wrapper
@@ -65,5 +72,5 @@ it('displays link and title correctly', () => {
       .find(Link)
       .at(0)
       .prop('to')
-  ).toBe(mockData.links[0].slug);
+  ).toContain(mockData.links[0].slug);
 });

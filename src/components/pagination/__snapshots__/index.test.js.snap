@@ -72,7 +72,7 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c2"
-        to="test-slug"
+        to="/test-slug"
       >
         <span
           className="c3"
@@ -94,7 +94,7 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c6"
-        to="test-slug/2"
+        to="/test-slug/2"
       >
         2
       </Link>
@@ -104,7 +104,7 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c6"
-        to="test-slug/3"
+        to="/test-slug/3"
       >
         3
       </Link>
@@ -114,7 +114,7 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c6"
-        to="test-slug/4"
+        to="/test-slug/4"
       >
         4
       </Link>
@@ -124,7 +124,7 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c6"
-        to="test-slug/2"
+        to="/test-slug/2"
       >
         <span
           className="c3"
