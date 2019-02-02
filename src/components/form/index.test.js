@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Formik, Field } from 'formik';
 import ContentForm from '.';
-import Form from './form';
 import FormField from '../forms/form-field';
 import { createFactory } from '../../utils/test-factories';
 import { getInitialValues, getValidationSchema } from './helpers';
