@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from '../image';
+import ResponsiveImage from '../image/responsive';
 import RichText from '../rich-text';
 import { Wrapper, ImageWrapper, TextWrapper, Author } from './styles';
 
@@ -12,7 +12,7 @@ const Testimonial = ({ data, loopIndex }) => {
   return (
     <Wrapper>
       <ImageWrapper loopIndex={loopIndex}>
-        <Image image={image} />
+        <ResponsiveImage image={image} mobileW={550} desktopW={550} />
       </ImageWrapper>
       <TextWrapper bg={backgroundColour} loopIndex={loopIndex}>
         <RichText richText={text} />
