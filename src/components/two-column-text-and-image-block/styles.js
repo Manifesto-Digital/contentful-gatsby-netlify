@@ -7,23 +7,23 @@ export const OuterContainer = styled.div`
   padding: 2em;
 
   background: ${props =>
-    (props.colour === 'White' && props.theme.palette.white) ||
-    (props.colour === 'Black' && props.theme.palette.black) ||
-    (props.colour === 'Grey' && props.theme.palette.grey10) ||
+    (props.backgroundColour === 'White' && props.theme.palette.white) ||
+    (props.backgroundColour === 'Black' && props.theme.palette.black) ||
+    (props.backgroundColour === 'Grey' && props.theme.palette.grey10) ||
     props.theme.palette.white};
 `;
 
 export const Row = styled(Container)`
   background: ${props =>
-    (props.colour === 'White' && props.theme.palette.white) ||
-    (props.colour === 'Black' && props.theme.palette.black) ||
-    (props.colour === 'Grey' && props.theme.palette.grey10) ||
+    (props.backgroundColour === 'White' && props.theme.palette.white) ||
+    (props.backgroundColour === 'Black' && props.theme.palette.black) ||
+    (props.backgroundColour === 'Grey' && props.theme.palette.grey10) ||
     props.theme.palette.white};
 `;
 
 export const HeaderText = styled.h2`
   color: ${props =>
-    (props.colour === 'Black' && props.theme.palette.white) ||
+    (props.backgroundColour === 'Black' && props.theme.palette.white) ||
     props.theme.palette.black};
 `;
 
@@ -60,6 +60,6 @@ export const ContentSemi = styled.div`
 
 export const TextWrapper = styled(RichText)`
   color: ${props =>
-    (props.colour === 'Black' && props.theme.palette.white) ||
+    (props.backgroundColour === 'Black' && props.theme.palette.white) ||
     props.theme.palette.black};
 `;

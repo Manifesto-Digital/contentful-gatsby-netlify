@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Image from '../image';
+import InlineCallOut from '../inline-callout';
+import { richTextPropTypes } from '../../prop-types';
+
 // Styles
 import {
   OuterContainer,
@@ -9,9 +13,6 @@ import {
   ContentSemi,
   TextWrapper,
 } from './styles';
-/* import RichText from '../rich-text'; */
-import Image from '../image';
-import InlineCallOut from '../inline-callout';
 
 const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const {
@@ -20,16 +21,24 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
     leftColumnCalloutBanners,
     rightColumnImage,
     rightColumnCalloutBanners,
-    theme,
+    theme: backgroundColour,
   } = data;
 
   return (
-    <OuterContainer colour={theme} padding={!insideContainer}>
-      <Row colour={theme}>
+    <OuterContainer
+      backgroundColour={backgroundColour}
+      padding={!insideContainer}
+    >
+      <Row backgroundColour={backgroundColour}>
         <FlexContainer>
           <ContentSemi>
-            <HeaderText colour={theme}>{headerText}</HeaderText>
-            <TextWrapper colour={theme} richText={leftColumnRichText} />
+            <HeaderText backgroundColour={backgroundColour}>
+              {headerText}
+            </HeaderText>
+            <TextWrapper
+              backgroundColour={backgroundColour}
+              richText={leftColumnRichText}
+            />
             {leftColumnCalloutBanners &&
               leftColumnCalloutBanners.map(calloutBanner => (
                 <InlineCallOut
@@ -60,10 +69,11 @@ TwoColumnTextAndImageBlock.propTypes = {
     headerText: PropTypes.string.isRequired,
     childContentfulTopicTwoColumnTextAndImageBlockLeftColumnTextRichTextNode:
       PropTypes.object.isRequired,
+    leftColumnRichText: PropTypes.shape(richTextPropTypes).isRequired,
     leftColumnCalloutBanners: PropTypes.array,
     rightColumnImage: PropTypes.object,
     rightColumnCalloutBanners: PropTypes.array,
-    theme: PropTypes.string.isRequired, // TODO: Maybe change this to "backgroundColour" and change "string" to "oneOf([])" with the current options
+    backgroundColour: PropTypes.oneOf(['White', 'Black', 'Grey']).isRequired,
   }),
   insideContainer: PropTypes.bool,
 };
