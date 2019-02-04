@@ -7,8 +7,6 @@ import { Wrapper, ImageWrapper, TextWrapper, Author } from './styles';
 const Testimonial = ({ data, loopIndex }) => {
   const { image, text, author, backgroundColour } = data;
 
-  console.log(loopIndex);
-
   return (
     <Wrapper>
       <ImageWrapper loopIndex={loopIndex}>
