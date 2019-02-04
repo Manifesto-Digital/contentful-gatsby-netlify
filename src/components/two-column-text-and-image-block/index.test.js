@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 import TwoColumnTextAndImageBlock from './index';
-import { BlockContent, HeaderText } from './styles';
+import { OuterContainer, HeaderText } from './styles';
 import { createFactory } from '../../utils/test-factories';
 import RichText from '../rich-text';
 
@@ -41,5 +41,5 @@ it('displays the correct theme colour', () => {
   const mockData = createTwoColumnTextAndImageBlock({ theme: 'Grey' });
 
   const wrapper = shallow(<TwoColumnTextAndImageBlock data={mockData} />);
-  expect(wrapper.find(BlockContent).theme).toBe(mockData.theme);
+  expect(wrapper.find(OuterContainer).theme).toBe(mockData.theme);
 });
