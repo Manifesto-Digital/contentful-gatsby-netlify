@@ -70,7 +70,9 @@ exports[`renders a single testimonial correctly 1`] = `
   >
     <img
       alt="Collection hero"
-      src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+      src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+      srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
     />
   </div>
   <div
@@ -112,6 +114,14 @@ exports[`renders testimonials correctly 1`] = `
   margin: -2em auto 0;
 }
 
+.c6 {
+  position: relative;
+  width: 90%;
+  background-color: #fff;
+  padding: 2em;
+  margin: -2em auto 0;
+}
+
 .c4 {
   color: #ea232d;
   font-style: italic;
@@ -140,6 +150,21 @@ exports[`renders testimonials correctly 1`] = `
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c5 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
@@ -148,6 +173,21 @@ exports[`renders testimonials correctly 1`] = `
 
 @media (min-width:40.0625em) {
   .c3 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    margin: 0;
+    margin-left: -2em;
+    margin-right: 2em;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c6 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -175,7 +215,9 @@ exports[`renders testimonials correctly 1`] = `
     >
       <img
         alt="Collection hero"
-        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+        srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
       />
     </div>
     <div
@@ -200,15 +242,17 @@ exports[`renders testimonials correctly 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c5"
     >
       <img
         alt="Collection hero"
-        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+        srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
       />
     </div>
     <div
-      className="c3"
+      className="c6"
     >
       <div
         dangerouslySetInnerHTML={
