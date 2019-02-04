@@ -4,16 +4,17 @@ import Image from '../image';
 import RichText from '../rich-text';
 import { Wrapper, ImageWrapper, TextWrapper, Author } from './styles';
 
-const Testimonial = ({ key, data }) => {
+const Testimonial = ({ data, loopIndex }) => {
   const { image, text, author, backgroundColour } = data;
 
-  console.log(image);
+  console.log(loopIndex);
+
   return (
     <Wrapper>
-      <ImageWrapper loopIndex={key}>
+      <ImageWrapper loopIndex={loopIndex}>
         <Image image={image} />
       </ImageWrapper>
-      <TextWrapper bg={backgroundColour} loopIndex={key}>
+      <TextWrapper bg={backgroundColour} loopIndex={loopIndex}>
         <RichText richText={text} />
         <Author>&mdash; {author}</Author>
       </TextWrapper>

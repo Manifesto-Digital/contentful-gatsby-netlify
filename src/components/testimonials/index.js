@@ -11,7 +11,7 @@ const Testimonials = ({ data, insideContainer }) => {
       <h2>{headerText}</h2>
 
       {testimonials.map((testimonial, i) => (
-        <Testimonial data={testimonial} key={i} />
+        <Testimonial data={testimonial} loopIndex={i} key={i} />
       ))}
     </Container>
   );
