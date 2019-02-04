@@ -96,22 +96,8 @@ exports[`renders a single testimonial correctly 1`] = `
 `;
 
 exports[`renders testimonials correctly 1`] = `
-.c0 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .c1 {
   margin-bottom: 2em;
-}
-
-.c3 {
-  position: relative;
-  width: 90%;
-  background-color: #fff;
-  padding: 2em;
-  margin: -2em auto 0;
 }
 
 .c6 {
@@ -122,9 +108,23 @@ exports[`renders testimonials correctly 1`] = `
   margin: -2em auto 0;
 }
 
+.c3 {
+  position: relative;
+  width: 90%;
+  background-color: #fff;
+  padding: 2em;
+  margin: -2em auto 0;
+}
+
 .c4 {
   color: #ea232d;
   font-style: italic;
+}
+
+.c0 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 @media (min-width:40.0625em) {
@@ -138,21 +138,6 @@ exports[`renders testimonials correctly 1`] = `
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-  }
-}
-
-@media (min-width:40.0625em) {
-  .c2 {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 50%;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
   }
 }
 
@@ -172,7 +157,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c3 {
+  .c2 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -180,9 +165,9 @@ exports[`renders testimonials correctly 1`] = `
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
-    margin: 0;
-    margin-left: -2em;
-    margin-right: 2em;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
   }
 }
 
@@ -198,6 +183,21 @@ exports[`renders testimonials correctly 1`] = `
     margin: 0;
     margin-left: 2em;
     margin-right: -2em;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    margin: 0;
+    margin-left: -2em;
+    margin-right: 2em;
   }
 }
 

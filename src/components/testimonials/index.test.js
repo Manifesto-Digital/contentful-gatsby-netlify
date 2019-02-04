@@ -3,22 +3,11 @@ import {
   snapshotComponent,
   mountWithTheme,
 } from '../../../__tests__/helpers/index';
-import {
-  createFactory,
-  createImage,
-  createChildContentfulRichText,
-} from '../../utils/test-factories';
+import { createFactory } from '../../utils/test-factories';
+import { createTestimonial } from './testimonial.test';
 import Testimonials from './index';
 import Testimonial from './testimonial';
-import { ImageWrapper, Author } from './styles';
-
-export const createTestimonial = createFactory({
-  image: createImage(),
-  text: createChildContentfulRichText(),
-  author: 'Owen, London',
-  backgroundColour: 'White',
-  loopIndex: 0,
-});
+import { ImageWrapper } from './styles';
 
 export const createTestimonials = createFactory({
   headerText: 'Testimonials about this cool component',
@@ -32,18 +21,6 @@ it('renders testimonials correctly', () => {
   const mockData = createTestimonials();
 
   snapshotComponent(<Testimonials data={mockData} />);
-});
-
-it('renders a single testimonial correctly', () => {
-  const mockData = createTestimonial();
-
-  snapshotComponent(<Testimonial data={mockData} />);
-});
-
-it('displays the correct testimonial author', () => {
-  const mockData = createTestimonial({ author: 'my mock author' });
-  const wrapper = mountWithTheme(<Testimonial data={mockData} />);
-  expect(wrapper.find(Author).text()).toContain(mockData.author);
 });
 
 it('passes the correct order value to the image wrapper', () => {
