@@ -13,7 +13,7 @@ import {
 import Image from '../image';
 import InlineCallOut from '../inline-callout';
 
-const TwoColumnTextAndImageBlock = ({ data }) => {
+const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const {
     headerText,
     childContentfulTopicTwoColumnTextAndImageBlockLeftColumnTextRichTextNode: leftColumnRichText,
@@ -23,10 +23,8 @@ const TwoColumnTextAndImageBlock = ({ data }) => {
     theme,
   } = data;
 
-  console.log(data);
-
   return (
-    <OuterContainer colour={theme}>
+    <OuterContainer colour={theme} padding={!insideContainer}>
       <Row colour={theme}>
         <FlexContainer>
           <ContentSemi>
@@ -34,14 +32,20 @@ const TwoColumnTextAndImageBlock = ({ data }) => {
             <TextWrapper colour={theme} richText={leftColumnRichText} />
             {leftColumnCalloutBanners &&
               leftColumnCalloutBanners.map(calloutBanner => (
-                <InlineCallOut content={calloutBanner} />
+                <InlineCallOut
+                  content={calloutBanner}
+                  insideContainer={!insideContainer}
+                />
               ))}
           </ContentSemi>
           <ContentSemi>
             {rightColumnImage && <Image image={rightColumnImage} />}
             {rightColumnCalloutBanners &&
               rightColumnCalloutBanners.map(calloutBanner => (
-                <InlineCallOut content={calloutBanner} />
+                <InlineCallOut
+                  content={calloutBanner}
+                  insideContainer={!insideContainer}
+                />
               ))}
           </ContentSemi>
         </FlexContainer>
@@ -59,8 +63,13 @@ TwoColumnTextAndImageBlock.propTypes = {
     leftColumnCalloutBanners: PropTypes.array,
     rightColumnImage: PropTypes.object,
     rightColumnCalloutBanners: PropTypes.array,
-    theme: PropTypes.string.isRequired,
+    theme: PropTypes.string.isRequired, // TODO: Maybe change this to "backgroundColour" and change "string" to "oneOf([])" with the current options
   }),
+  insideContainer: PropTypes.bool,
+};
+
+TwoColumnTextAndImageBlock.defaultProps = {
+  insideContainer: false,
 };
 
 export default TwoColumnTextAndImageBlock;

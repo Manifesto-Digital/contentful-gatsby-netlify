@@ -16,9 +16,7 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
       }
     }
     leftColumnCalloutBanners {
-      ... on ContentfulTopicInlineCallout {
-        ...InlineCallout
-      }
+      ...InlineCallout
     }
 
     rightColumnImage {
@@ -29,9 +27,7 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
       description
     }
     rightColumnCalloutBanners {
-      ... on ContentfulTopicInlineCallout {
-        ...InlineCallout
-      }
+      ...InlineCallout
     }
 
     theme
