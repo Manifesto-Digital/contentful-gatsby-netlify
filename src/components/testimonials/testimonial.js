@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../image';
 import RichText from '../rich-text';
-import { Container, ImageContainer, TextContainer, Author } from './styles';
+import { Wrapper, ImageWrapper, TextWrapper, Author } from './styles';
 
-const Testimonial = ({ loopIndex, data }) => {
+const Testimonial = ({ key, data }) => {
   const { image, text, author, backgroundColour } = data;
 
   console.log(image);
   return (
-    <Container>
-      <ImageContainer loopIndex={loopIndex}>
+    <Wrapper>
+      <ImageWrapper loopIndex={key}>
         <Image image={image} />
-      </ImageContainer>
-      <TextContainer bg={backgroundColour} loopIndex={loopIndex}>
+      </ImageWrapper>
+      <TextWrapper bg={backgroundColour} loopIndex={key}>
         <RichText richText={text} />
         <Author>&mdash; {author}</Author>
-      </TextContainer>
-    </Container>
+      </TextWrapper>
+    </Wrapper>
   );
 };
 

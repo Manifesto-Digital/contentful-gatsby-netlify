@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   margin-bottom: 2em;
 
   ${breakpoint.tablet`
@@ -11,7 +11,7 @@ export const Container = styled.div`
   `};
 `;
 
-export const ImageContainer = styled.div`
+export const ImageWrapper = styled.div`
   ${breakpoint.tablet`
     flex-grow: 1;
     flex-basis: 50%;
@@ -19,7 +19,7 @@ export const ImageContainer = styled.div`
   `};
 `;
 
-export const TextContainer = styled.div`
+export const TextWrapper = styled.div`
   position: relative;
   width: 90%;
   background-color: ${props =>

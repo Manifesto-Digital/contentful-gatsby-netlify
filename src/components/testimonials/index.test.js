@@ -10,7 +10,7 @@ import {
 } from '../../utils/test-factories';
 import Testimonials from './index';
 import Testimonial from './testimonial';
-import { ImageContainer, Author } from './styles';
+import { ImageWrapper, Author } from './styles';
 
 export const createTestimonial = createFactory({
   image: createImage(),
@@ -46,7 +46,7 @@ it('displays the correct testimonial author', () => {
   expect(wrapper.find(Author).text()).toContain(mockData.author);
 });
 
-it('passes the correct order value to the image container', () => {
+it('passes the correct order value to the image wrapper', () => {
   const mockData = createTestimonials();
   const wrapper = mountWithTheme(<Testimonials data={mockData} />);
 
@@ -54,7 +54,7 @@ it('passes the correct order value to the image container', () => {
     wrapper
       .find(Testimonial)
       .at(0)
-      .find(ImageContainer)
+      .find(ImageWrapper)
   ).toHaveStyleRule('order', '0', {
     media: '(min-width: 40.0625em)',
   });
@@ -63,7 +63,7 @@ it('passes the correct order value to the image container', () => {
     wrapper
       .find(Testimonial)
       .at(1)
-      .find(ImageContainer)
+      .find(ImageWrapper)
   ).toHaveStyleRule('order', '2', {
     media: '(min-width: 40.0625em)',
   });
