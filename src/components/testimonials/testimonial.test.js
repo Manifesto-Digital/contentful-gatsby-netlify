@@ -30,3 +30,9 @@ it('displays the correct testimonial author', () => {
   const wrapper = mountWithTheme(<Testimonial data={mockData} />);
   expect(wrapper.find(Author).text()).toContain(mockData.author);
 });
+
+it('displays the specified image correctly', () => {
+  const mockData = createTestimonial();
+  const wrapper = mountWithTheme(<Testimonial data={mockData} />);
+  expect(wrapper.find('img').prop('src')).toContain(mockData.image.file.url);
+});
