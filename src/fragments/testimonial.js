@@ -15,6 +15,6 @@ export const TestimonialTopicFragment = graphql`
       }
     }
     author
-    boxBackground
+    backgroundColour
   }
 `;

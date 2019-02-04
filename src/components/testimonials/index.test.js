@@ -16,7 +16,7 @@ export const createTestimonial = createFactory({
   image: createImage(),
   text: createChildContentfulRichText(),
   author: 'Owen, London',
-  boxBackground: 'White',
+  backgroundColour: 'White',
   loopIndex: 0,
 });
 

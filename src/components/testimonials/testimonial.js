@@ -5,7 +5,7 @@ import RichText from '../rich-text';
 import { Container, ImageContainer, TextContainer, Author } from './styles';
 
 const Testimonial = ({ loopIndex, data }) => {
-  const { image, text, author, boxBackground } = data;
+  const { image, text, author, backgroundColour } = data;
 
   console.log(image);
   return (
@@ -13,7 +13,7 @@ const Testimonial = ({ loopIndex, data }) => {
       <ImageContainer loopIndex={loopIndex}>
         <Image image={image} />
       </ImageContainer>
-      <TextContainer bg={boxBackground} loopIndex={loopIndex}>
+      <TextContainer bg={backgroundColour} loopIndex={loopIndex}>
         <RichText richText={text} />
         <Author>&mdash; {author}</Author>
       </TextContainer>
@@ -27,7 +27,7 @@ Testimonial.propTypes = {
     image: PropTypes.object.isRequired,
     text: PropTypes.object.isRequired,
     author: PropTypes.string,
-    boxBackground: PropTypes.oneOf(['White', 'Grey']),
+    backgroundColour: PropTypes.oneOf(['White', 'Grey']),
   }),
 };
 
