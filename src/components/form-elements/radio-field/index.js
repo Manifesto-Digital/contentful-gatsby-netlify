@@ -5,9 +5,8 @@ import RadioButtonInput from './radio-button-input';
 import { FieldWrapper } from '../form-field/styles';
 
 const RadioField = ({ field }) => {
-  if (!Array.isArray(field.valueOptions)) {
-    return null;
-  }
+  if (!field.valueOptions || field.valueOptions.length < 1) return null;
+
   const optionLength = field.valueOptions.length;
   const multipleOptions = optionLength > 1;
 

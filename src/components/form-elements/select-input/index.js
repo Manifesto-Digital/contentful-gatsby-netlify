@@ -7,9 +7,7 @@ import { FieldWrapper } from '../form-field/styles';
  * @param {import('formik').FieldProps} props
  */
 const SelectInput = ({ field, ...rest }) => {
-  if (!Array.isArray(field.valueOptions)) {
-    return null;
-  }
+  if (!field.valueOptions || field.valueOptions.length < 1) return null;
 
   const SelectOption = ({ label, value }) => (
     <option value={value} selected>

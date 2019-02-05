@@ -11,14 +11,16 @@ import FormField from '../form-elements/form-field';
  */
 const FormFieldType = ({ formField }) => {
   if (formField.internal.type === 'ContentfulTopicFormFieldset') {
+    const { fieldsetLegend, fieldsetDescription, formFields } = formField;
     return (
       <FormFieldset
-        legend={formField.fieldsetLegend}
-        description={formField.fieldsetDescription.fieldsetDescription}
+        legend={fieldsetLegend}
+        description={fieldsetDescription.fieldsetDescription}
       >
-        {formField.formFields.map((formFieldsetField, key) => (
-          <FormField key={key} field={formFieldsetField} />
-        ))}
+        {formFields &&
+          formFields.map((formFieldsetField, key) => (
+            <FormField key={key} field={formFieldsetField} />
+          ))}
       </FormFieldset>
     );
   }

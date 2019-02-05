@@ -7,9 +7,7 @@ import CheckboxInput from './checkbox-input';
 import { FieldWrapper } from '../form-field/styles';
 
 const CheckboxField = ({ field }) => {
-  if (!Array.isArray(field.valueOptions)) {
-    return null;
-  }
+  if (!field.valueOptions || field.valueOptions.length < 1) return null;
 
   const optionLength = field.valueOptions.length;
   const multiple = optionLength > 1;
