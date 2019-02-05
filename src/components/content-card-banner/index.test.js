@@ -6,7 +6,6 @@ import {
 } from '../../../__tests__/helpers/index';
 import ContentCardBanner from './index';
 import { BannerBackground, CardRow } from './styles';
-import { Card } from '../content-card/styles';
 import { createContentCardBanner } from '../../utils/test-factories';
 
 // Default prop values

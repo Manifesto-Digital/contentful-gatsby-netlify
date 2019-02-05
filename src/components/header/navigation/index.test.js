@@ -9,11 +9,14 @@ import Navigation from './index';
 import NavigationMenu from './navigation';
 import { MobileMenuClose, SubNavButton } from './styles-icons';
 import { ItemLink, SubMenu } from './styles';
+import { hidePascalCaseWarning } from '../../../utils/test-mocks';
 
 it('Renders correctly', () => {
   const mockData = createHeaderNavigation();
   snapshotComponent(<Navigation pageData={mockData} active />);
 });
+
+hidePascalCaseWarning();
 
 it('Displays close button', () => {
   const mockData = createHeaderNavigation();
@@ -26,7 +29,7 @@ test('Should populate a menu item correctly', () => {
   const mockData = createHeaderNavigation({
     id: 'e230d8b8-4ee6-5d4c-bf25-57af664d12d7',
     menuLabel: 'What we do',
-    navigationLink: [{ slug: 'tobys-page' }],
+    navigationLink: [{ slug: 'test-page', title: 'test-page' }],
   });
   const wrapper = mountWithTheme(
     <NavigationMenu pageData={mockData} id={mockData.id} />

@@ -11,6 +11,7 @@ import {
   createInternalLink,
   createImage,
 } from '../../utils/test-factories';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
 
 // Default props
 export const createCTA = createFactory({
@@ -25,6 +26,8 @@ it('renders correctly', () => {
 
   snapshotComponent(<CTA {...CTA.fromCMS(mockData)} />);
 });
+
+hidePascalCaseWarning();
 
 it('displays the correct text', () => {
   const mockData = createCTA({ buttonText: 'Mock button text' });
