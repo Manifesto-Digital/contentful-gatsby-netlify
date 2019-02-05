@@ -14,6 +14,8 @@ import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
 import Form from '../form';
 import ContentCardBanner from '../content-card-banner';
+import Testimonials from '../testimonials';
+import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -115,6 +117,20 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       }
       if (internal.type === 'ContentfulTopicContentCardsBanner') {
         return <ContentCardBanner key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulAssemblyTestimonials') {
+        return (
+          <Testimonials
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
+      }
+
+      if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
+        return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
       return null;
