@@ -30,8 +30,6 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
 
   const backgroundColour = consistentString(data.backgroundColour);
 
-  console.log(backgroundColour);
-
   return (
     <OuterContainer
       backgroundColour={backgroundColour}
