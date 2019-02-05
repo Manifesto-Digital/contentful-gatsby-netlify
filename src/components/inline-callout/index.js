@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { richTextPropTypes } from '../../prop-types';
 import { consistentString } from '../../utils/content-formatting';
 // Components
-import Icon from './icon';
+import icons from '../styled/icons';
 // Styles
-import { InlineBanner, TextWrapper } from './styles';
+import { InlineBanner, TextWrapper, BannerSVG } from './styles';
 import { Container } from '../styled/containers';
 
 const InlineCallOut = ({ content, insideContainer }) => {
@@ -17,7 +17,7 @@ const InlineCallOut = ({ content, insideContainer }) => {
         borderCol={consistentString(borderColour)}
         bannerCol={consistentString(bannerColour)}
       >
-        <Icon icon={consistentString(icon)} />
+        <BannerSVG src={icons(consistentString(icon))} />
         <TextWrapper richText={callOutText} />
       </InlineBanner>
     </Container>
