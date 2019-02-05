@@ -70,6 +70,7 @@ export const pageQuery = graphql`
           ...DonationBanner
           ...ContentCardBannerFragment
           ...TestimonialsAssemblyFragment
+          ...TwoColumnTextAndImageBlockFragment
         }
       }
     }

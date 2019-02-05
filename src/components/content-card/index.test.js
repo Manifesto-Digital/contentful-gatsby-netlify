@@ -5,7 +5,7 @@ import {
   mountWithTheme,
 } from '../../../__tests__/helpers/index';
 import ContentCard from './index';
-import { Card, CardTitle } from './styles';
+import { CardTitle } from './styles';
 import { createContentCards } from '../../utils/test-factories';
 
 // Default prop values
