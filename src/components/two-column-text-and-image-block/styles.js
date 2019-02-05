@@ -1,29 +1,20 @@
 import styled from 'styled-components';
 import RichText from '../rich-text';
-import { Container } from '../styled/containers';
 import { breakpoint } from '../theme/breakpoint';
 
 export const OuterContainer = styled.div`
-  padding: 2em;
+  padding: ${props => props.theme.spacing.large} 0;
 
   background: ${props =>
-    (props.backgroundColour === 'White' && props.theme.palette.white) ||
-    (props.backgroundColour === 'Black' && props.theme.palette.black) ||
-    (props.backgroundColour === 'Grey' && props.theme.palette.grey10) ||
-    props.theme.palette.white};
-`;
-
-export const Row = styled(Container)`
-  background: ${props =>
-    (props.backgroundColour === 'White' && props.theme.palette.white) ||
-    (props.backgroundColour === 'Black' && props.theme.palette.black) ||
-    (props.backgroundColour === 'Grey' && props.theme.palette.grey10) ||
+    (props.backgroundColour === 'white' && props.theme.palette.white) ||
+    (props.backgroundColour === 'black' && props.theme.palette.black) ||
+    (props.backgroundColour === 'grey' && props.theme.palette.grey10) ||
     props.theme.palette.white};
 `;
 
 export const HeaderText = styled.h2`
   color: ${props =>
-    (props.backgroundColour === 'Black' && props.theme.palette.white) ||
+    (props.backgroundColour === 'black' && props.theme.palette.white) ||
     props.theme.palette.black};
 `;
 
@@ -60,6 +51,6 @@ export const ContentSemi = styled.div`
 
 export const TextWrapper = styled(RichText)`
   color: ${props =>
-    (props.backgroundColour === 'Black' && props.theme.palette.white) ||
+    (props.backgroundColour === 'black' && props.theme.palette.white) ||
     props.theme.palette.black};
 `;

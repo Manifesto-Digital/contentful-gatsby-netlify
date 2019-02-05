@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Image from '../image';
 import InlineCallOut from '../inline-callout';
 import { richTextPropTypes } from '../../prop-types';
+import { Container } from '../styled/containers';
+import { consistentString } from '../../utils/content-formatting';
 
 // Styles
 import {
   OuterContainer,
-  Row,
   HeaderText,
   FlexContainer,
   ContentSemi,
@@ -17,19 +18,24 @@ import {
 const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const {
     headerText,
-    childContentfulTopicTwoColumnTextAndImageBlockLeftColumnTextRichTextNode: leftColumnRichText,
+    leftColumnText,
     leftColumnCalloutBanners,
     rightColumnImage,
     rightColumnCalloutBanners,
-    theme: backgroundColour,
   } = data;
+
+  if (!headerText || !leftColumnText) {
+    return null;
+  }
+
+  const backgroundColour = consistentString(data.theme);
 
   return (
     <OuterContainer
       backgroundColour={backgroundColour}
       padding={!insideContainer}
     >
-      <Row backgroundColour={backgroundColour}>
+      <Container>
         <FlexContainer>
           <ContentSemi>
             <HeaderText backgroundColour={backgroundColour}>
@@ -37,7 +43,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
             </HeaderText>
             <TextWrapper
               backgroundColour={backgroundColour}
-              richText={leftColumnRichText}
+              richText={leftColumnText}
             />
             {leftColumnCalloutBanners &&
               leftColumnCalloutBanners.map(calloutBanner => (
@@ -58,18 +64,15 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
               ))}
           </ContentSemi>
         </FlexContainer>
-      </Row>
+      </Container>
     </OuterContainer>
   );
 };
 
-// TODO: There seems to be a better way of handling RichText in here (eg "leftColumnRichText: PropTypes.shape(richTextPropTypes).isRequired")
 TwoColumnTextAndImageBlock.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string.isRequired,
-    childContentfulTopicTwoColumnTextAndImageBlockLeftColumnTextRichTextNode:
-      PropTypes.object.isRequired,
-    leftColumnRichText: PropTypes.shape(richTextPropTypes).isRequired,
+    leftColumnText: PropTypes.shape(richTextPropTypes).isRequired,
     leftColumnCalloutBanners: PropTypes.array,
     rightColumnImage: PropTypes.object,
     rightColumnCalloutBanners: PropTypes.array,

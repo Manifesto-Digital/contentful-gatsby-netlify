@@ -10,7 +10,7 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
 
     headerText
 
-    childContentfulTopicTwoColumnTextAndImageBlockLeftColumnTextRichTextNode {
+    leftColumnText {
       childContentfulRichText {
         html
       }

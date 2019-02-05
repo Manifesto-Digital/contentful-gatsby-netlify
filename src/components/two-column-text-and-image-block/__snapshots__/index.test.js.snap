@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c0 {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.c4 {
+  color: #212122;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 {
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.c3 img {
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+.c5 {
+  color: #212122;
+}
+
+@media (min-width:62em) {
+  .c3 {
+    -webkit-flex: 0.5;
+    -ms-flex: 0.5;
+    flex: 0.5;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+
+  .c3:nth-child(2n) {
+    -webkit-flex: 0.4;
+    -ms-flex: 0.4;
+    flex: 0.4;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+
+  .c3 img {
+    display: block;
+    margin: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h2
+          className="c4"
+        >
+          Mock header
+        </h2>
+        <div
+          className="c5"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+            }
+          }
+        />
+      </div>
+      <div
+        className="c3"
+      >
+        <img
+          alt="Collection hero"
+          src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
