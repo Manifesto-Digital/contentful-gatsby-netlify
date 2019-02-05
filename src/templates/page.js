@@ -69,6 +69,8 @@ export const pageQuery = graphql`
           ...RelatedAdviceFragment
           ...DonationBanner
           ...ContentCardBannerFragment
+          ...CardWithIconFragment
+          ...CardsWithIconFragment
         }
       }
     }
