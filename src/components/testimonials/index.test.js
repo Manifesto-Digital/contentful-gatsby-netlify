@@ -8,6 +8,7 @@ import { createTestimonial } from './testimonial.test';
 import Testimonials from './index';
 import Testimonial from './testimonial';
 import { ImageWrapper } from './styles';
+import { sizes, emSize } from '../theme/breakpoint';
 
 export const createTestimonials = createFactory({
   headerText: 'Testimonials about this cool component',
@@ -33,7 +34,7 @@ it('passes the correct order value to the image wrapper', () => {
       .at(0)
       .find(ImageWrapper)
   ).toHaveStyleRule('order', '0', {
-    media: '(min-width: 40.0625em)',
+    media: `(min-width: ${emSize(sizes.tablet)})`,
   });
 
   expect(
@@ -42,6 +43,6 @@ it('passes the correct order value to the image wrapper', () => {
       .at(1)
       .find(ImageWrapper)
   ).toHaveStyleRule('order', '2', {
-    media: '(min-width: 40.0625em)',
+    media: `(min-width: ${emSize(sizes.tablet)})`,
   });
 });
