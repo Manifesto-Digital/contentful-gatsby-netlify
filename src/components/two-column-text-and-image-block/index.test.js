@@ -5,7 +5,7 @@ import {
   mountWithTheme,
 } from '../../../__tests__/helpers/index';
 import TwoColumnTextAndImageBlock from './index';
-import { OuterContainer, TextWrapper, HeaderText } from './styles';
+import { Wrapper, TextWrapper, HeaderText } from './styles';
 import {
   createFactory,
   createChildContentfulRichText,
@@ -59,7 +59,7 @@ it('displays the correct theme colour', () => {
   const wrapper = mountWithTheme(
     <TwoColumnTextAndImageBlock data={mockData} />
   );
-  expect(wrapper.find(OuterContainer)).toHaveStyleRule(
+  expect(wrapper.find(Wrapper)).toHaveStyleRule(
     'background-color',
     theme.palette.grey10
   );
