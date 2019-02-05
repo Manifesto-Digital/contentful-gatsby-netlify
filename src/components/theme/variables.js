@@ -28,6 +28,7 @@ theme.palette = {
   successLight: '#e6f8e7',
 
   overlay: 'rgba(43, 46, 56, 0.7)',
+  overlayLight: 'rgba(255, 255, 255, 0.9)',
 };
 
 theme.fonts = {

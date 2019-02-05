@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
-import { Card } from '../content-card/styles';
+import { Card, Wrapper, SummaryText } from '../content-card/styles';
+import RightArrow from '../../assets/svg/icons/angle-right-light.svg';
 
 export const CardRow = styled.div`
   display: flex;
@@ -28,14 +29,71 @@ export const BannerBackground = styled.section`
     (props.bannerColour === 'grey' && props.theme.palette.grey10)};
   padding: ${props => props.theme.spacing.medium} 0;
 
-  ${CardRow} {
     ${Card} {
-      flex: ${props => props.bannerFlow === 'vertical' && '0 1 100%'};
-      width: ${props => props.bannerFlow === 'vertical' && '100%'};
-      max-width: ${props =>
-        props.bannerFlow === 'vertical' ? '600px' : 'auto'};
+      /* vertical */
+      ${({ bannerFlow }) =>
+        bannerFlow === 'vertical' &&
+        css`
+          flex: 0 1 100%;
+          width: 100%;
+          max-width: 600px;
+        `}
+
+      /* grid */
+      ${({ bannerFlow }) =>
+        bannerFlow === 'grid' &&
+        css`
+          flex: 0 1 100%;
+          width: 100%;
+          ${breakpoint.tablet`
+            flex: 0 1 50%;
+            width: 50%;
+            margin-bottom: 0;
+          `}
+        `}
     }
-  }
+
+    ${Wrapper} {
+      ${({ bannerFlow }) =>
+        bannerFlow === 'grid' &&
+        css`
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          margin-right: ${props => props.theme.spacing.standard};
+          background: ${({ theme }) => theme.palette.overlayLight};
+        `}
+    }
+
+    ${SummaryText} {
+      ${({ bannerFlow }) =>
+        bannerFlow === 'grid' &&
+        css`
+        padding-right: 35px;
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+          }
+
+          &::before {
+            bottom: 2px;
+            right: 2px;
+            width: 25px;
+            height: 25px;
+            background: ${({ theme }) => theme.palette.grey25};
+          }
+
+          &::after {
+            bottom: 2px;
+            right: 2px;
+            width: 25px;
+            height: 25px;
+            color : white;
+            background: url(${RightArrow}) center center no-repeat;
+            filter: invert(100%);
+        `}
+    }
 `;
 
 export const HeaderText = styled.h2`

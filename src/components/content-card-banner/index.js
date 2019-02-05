@@ -31,8 +31,8 @@ const ContentCardBanner = ({ data }) => {
 
 ContentCardBanner.propTypes = {
   data: PropTypes.shape({
-    bannerColour: PropTypes.oneOf(['white', 'grey']).isRequired,
-    bannerFlow: PropTypes.oneOf(['vertical', 'horizontal']).isRequired,
+    bannerColour: PropTypes.oneOf(['White', 'Grey']).isRequired,
+    bannerFlow: PropTypes.oneOf(['Vertical', 'Horizontal', 'Grid']).isRequired,
     header: PropTypes.shape({
       childContentfulRichText: PropTypes.shape({
         html: PropTypes.string,
