@@ -5,7 +5,7 @@ import { breakpoint } from '../theme/breakpoint';
 export const OuterContainer = styled.div`
   padding: ${props => props.theme.spacing.large} 0;
 
-  background: ${props =>
+  background-color: ${props =>
     (props.backgroundColour === 'white' && props.theme.palette.white) ||
     (props.backgroundColour === 'black' && props.theme.palette.black) ||
     (props.backgroundColour === 'grey' && props.theme.palette.grey10) ||

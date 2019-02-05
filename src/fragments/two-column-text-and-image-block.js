@@ -30,6 +30,6 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
       ...InlineCallout
     }
 
-    theme
+    backgroundColour
   }
 `;

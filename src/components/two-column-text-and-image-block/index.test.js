@@ -1,21 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import {
+  snapshotComponent,
+  mountWithTheme,
+} from '../../../__tests__/helpers/index';
 import TwoColumnTextAndImageBlock from './index';
-import { TextWrapper, HeaderText } from './styles';
+import { OuterContainer, TextWrapper, HeaderText } from './styles';
 import {
   createFactory,
   createChildContentfulRichText,
   createImage,
 } from '../../utils/test-factories';
-import RichText from '../rich-text';
+import theme from '../theme/variables';
 
 // Default props
 export const createTwoColumnTextAndImageBlock = createFactory({
   headerText: 'Mock header',
   leftColumnText: createChildContentfulRichText(),
   rightColumnImage: createImage(),
-  theme: 'white',
+  backgroundColour: 'White',
 });
 
 it('renders correctly', () => {
@@ -35,19 +38,50 @@ it('displays the correct header text', () => {
 
 it('displays the correct left column text', () => {
   const mockData = createTwoColumnTextAndImageBlock({
-    leftColumnText: 'Test left column text',
+    leftColumnText: {
+      childContentfulRichText: {
+        html: 'Test left column text',
+      },
+    },
   });
 
   const wrapper = shallow(<TwoColumnTextAndImageBlock data={mockData} />);
-  console.log(wrapper.find(TextWrapper).props());
-  // expect(wrapper.find(TextWrapper).text()).toBe(mockData.leftColumnText);
+  expect(wrapper.find(TextWrapper).prop('richText')).toBe(
+    mockData.leftColumnText
+  );
 });
 
-/*
 it('displays the correct theme colour', () => {
-  const mockData = createTwoColumnTextAndImageBlock({ theme: 'Grey' });
+  const mockData = createTwoColumnTextAndImageBlock({
+    backgroundColour: 'Grey',
+  });
 
-  const wrapper = shallow(<TwoColumnTextAndImageBlock data={mockData} />);
-  expect(wrapper.find(OuterContainer).theme).toBe(mockData.theme);
+  const wrapper = mountWithTheme(
+    <TwoColumnTextAndImageBlock data={mockData} />
+  );
+  expect(wrapper.find(OuterContainer)).toHaveStyleRule(
+    'background-color',
+    theme.palette.grey10
+  );
 });
-*/
+
+it('Should display an image correctly', () => {
+  const mockData = createTwoColumnTextAndImageBlock({
+    rightColumnImage: {
+      description: 'Collection hero',
+      title: 'collection-hero',
+      file: {
+        url:
+          '//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg',
+        fileName: 'collection-hero.jpg',
+      },
+    },
+  });
+
+  const wrapper = mountWithTheme(
+    <TwoColumnTextAndImageBlock data={mockData} />
+  );
+  expect(wrapper.find('img').prop('src')).toContain(
+    mockData.rightColumnImage.file.url
+  );
+});

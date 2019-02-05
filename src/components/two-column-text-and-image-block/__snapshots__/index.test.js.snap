@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
 
 .c0 {
   padding: 40px 0;
-  background: #fff;
+  background-color: #fff;
 }
 
 .c4 {

@@ -28,7 +28,9 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
     return null;
   }
 
-  const backgroundColour = consistentString(data.theme);
+  const backgroundColour = consistentString(data.backgroundColour);
+
+  console.log(backgroundColour);
 
   return (
     <OuterContainer
