@@ -6,6 +6,10 @@ import Testimonial from './testimonial';
 const Testimonials = ({ data, insideContainer }) => {
   const { headerText, testimonials } = data;
 
+  if (testimonials === null || testimonials.length === 0) {
+    return null;
+  }
+
   return (
     <Container padding={!insideContainer}>
       <h2>{headerText}</h2>
