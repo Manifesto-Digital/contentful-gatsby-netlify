@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FormFieldset from '../forms/fieldset';
-import FormField from '../forms/form-field';
+import FormFieldset from '../form-elements/fieldset';
+import FormField from '../form-elements/form-field';
 
 /**
  * If the field is a fieldset (group of fields) then wrap with the form fieldset

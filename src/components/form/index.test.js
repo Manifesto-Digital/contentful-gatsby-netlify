@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentForm from '.';
-import FormField from '../forms/form-field';
+import FormField from '../form-elements/form-field';
 import { createFactory } from '../../utils/test-factories';
 import {
   selectField,

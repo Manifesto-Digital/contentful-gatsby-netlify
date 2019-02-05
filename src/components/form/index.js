@@ -12,7 +12,7 @@ import {
 import { Container } from '../styled/containers';
 import Button from '../button';
 import FormFieldType from './field-type';
-import Recaptcha from '../forms/recaptcha';
+import Recaptcha from '../form-elements/recaptcha';
 import InlineCallout from '../inline-callout';
 // Styles
 import { ModuleWrapper, FormWrapper, FormFieldWrapper } from './styles';
