@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import RichText from '../rich-text';
 import { breakpoint } from '../theme/breakpoint';
 
-export const OuterContainer = styled.div`
+export const Wrapper = styled.div`
   padding: ${props => props.theme.spacing.large} 0;
 
   background-color: ${props =>

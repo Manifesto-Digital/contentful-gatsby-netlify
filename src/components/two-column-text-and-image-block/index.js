@@ -8,7 +8,7 @@ import { consistentString } from '../../utils/content-formatting';
 
 // Styles
 import {
-  OuterContainer,
+  Wrapper,
   HeaderText,
   FlexContainer,
   ContentSemi,
@@ -31,10 +31,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const backgroundColour = consistentString(data.backgroundColour);
 
   return (
-    <OuterContainer
-      backgroundColour={backgroundColour}
-      padding={!insideContainer}
-    >
+    <Wrapper backgroundColour={backgroundColour} padding={!insideContainer}>
       <Container>
         <FlexContainer>
           <ContentSemi>
@@ -65,7 +62,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
           </ContentSemi>
         </FlexContainer>
       </Container>
-    </OuterContainer>
+    </Wrapper>
   );
 };
 
