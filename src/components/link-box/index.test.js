@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'gatsby';
-import LinkHandler from '../link-handler';
 import {
   snapshotComponent,
   mountWithTheme,

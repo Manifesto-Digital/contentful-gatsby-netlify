@@ -1,10 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { Formik, Field } from 'formik';
 import ContentForm from '.';
 import FormField from '../forms/form-field';
 import { createFactory } from '../../utils/test-factories';
-import { getInitialValues, getValidationSchema } from './helpers';
 import {
   selectField,
   textField,
@@ -16,7 +13,7 @@ import {
   numberTextField,
   numericTextField,
 } from '../../utils/test-form-factories';
-import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
+import { mountWithTheme } from '../../../__tests__/helpers';
 
 export const createFormProps = createFactory({
   backgroundColour: 'Grey',

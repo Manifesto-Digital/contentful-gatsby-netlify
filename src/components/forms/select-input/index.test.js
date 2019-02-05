@@ -1,8 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SelectInput from '.';
-import { mountWithTheme } from '../../../../__tests__/helpers';
-import { FormikWrapper } from '../../../utils/test-form-wrapper';
 import { selectField } from '../../../utils/test-form-factories';
 import { createFactory } from '../../../utils/test-factories';
 

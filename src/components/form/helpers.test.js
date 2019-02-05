@@ -23,7 +23,7 @@ it('generates the initial values object from form fields', () => {
   };
   const initialValues = getInitialValues(formFields, hiddenInitialValues);
 
-  formFields.forEach((field, i) => {
+  formFields.forEach(field => {
     expect(initialValues[field.machineName]).toContain(
       field.defaultValue || ''
     );
