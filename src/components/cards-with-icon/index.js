@@ -1,28 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardWithIcon from '../card-with-icon/index';
+import { Container } from '../styled/containers';
 
 // Styles
-import {
-  CardsContainer,
-  // Row,
-} from './styles';
+import { FlexWrapper } from './styles';
 
 const CardsWithIcon = ({ data, insideContainer }) => {
   const { cards } = data;
 
-  // TODO: Add container styling
   return (
-    <CardsContainer>
-      {cards &&
-        cards.map((card, i) => (
-          <CardWithIcon
-            key={i}
-            data={card}
-            insideContainer={!insideContainer}
-          />
-        ))}
-    </CardsContainer>
+    <Container>
+      <FlexWrapper>
+        {cards &&
+          cards.map((card, i) => (
+            <CardWithIcon
+              key={i}
+              data={card}
+              insideContainer={!insideContainer}
+            />
+          ))}
+      </FlexWrapper>
+    </Container>
   );
 };
 

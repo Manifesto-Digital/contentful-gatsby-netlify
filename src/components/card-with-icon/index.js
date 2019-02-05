@@ -28,8 +28,6 @@ const CardWithIcon = ({ data, insideContainer }) => {
       {icon && <Icon icon={consistentString(icon)} />}
       <TitleText>{titleText}</TitleText>
       <SubText>{subText}</SubText>
-      {/* TODO: Ask how to apply margins to the CTA element */}
-      {/* TODO: Ask why the CTA currently fades text on hover */}
       <CardCTA {...CTA.fromCMS(ctaData)} />
     </CardContainer>
   );

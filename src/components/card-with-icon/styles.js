@@ -55,6 +55,6 @@ export const SubText = styled.p`
 `;
 
 export const CardCTA = styled(CTA)`
-  /* TODO: Find a way to align the CTA at the bottom of the container */
   width: 90%;
+  margin-top: auto;
 `;
