@@ -14,6 +14,8 @@ async function createContentPages(graphql, gatsbyCreatePage) {
 
   // Create pages
   pages.data.allContentfulPageAssemblyContentPage.edges.forEach(edge => {
+    if (!edge.slug) return;
+
     gatsbyCreatePage({
       path: edge.node.slug,
       component: contentPageTemplate,
