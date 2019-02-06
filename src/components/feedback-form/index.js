@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Form, Field, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import Recaptcha from '../forms/recaptcha';
+import Recaptcha from '../form-elements/recaptcha';
 import Button from '../button/index';
-import { sendForm } from '../forms/send';
-import TextInput from '../forms/text-input';
+import { sendForm } from '../form/send';
+import TextInput from '../form-elements/text-input';
 import LinkButton from '../link-button';
 
 const FeedbackForm = ({ heading }) => {

@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <Link
-  to="internal-link-slug"
+  to="/internal-link-slug"
 >
   Button text
 </Link>

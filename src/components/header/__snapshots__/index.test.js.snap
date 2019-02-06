@@ -519,7 +519,7 @@ Array [
             >
               <Link
                 className="c9 c10"
-                to="tobys-page"
+                to="/tobys-page"
               >
                 Housing Advice
               </Link>
@@ -545,7 +545,7 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  to="320,000-people-in-britain-are-now-homeless"
+                  to="/320,000-people-in-britain-are-now-homeless"
                 >
                   320,000 people in Britain are now homeless
                 </Link>
@@ -555,7 +555,7 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  to="tobys-page"
+                  to="/tobys-page"
                 >
                   Tobys Page
                 </Link>
@@ -565,7 +565,7 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  to="shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+                  to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
                 >
                   Shelter Manchester to hold vigil for lost homeless people
                 </Link>
@@ -575,7 +575,7 @@ Array [
               >
                 <Link
                   className="c9 c10"
-                  to="shelter-demo-page"
+                  to="/shelter-demo-page"
                 >
                   Shelter Demo Page
                 </Link>
@@ -594,7 +594,7 @@ Array [
         >
           <Link
             className="c9 c10"
-            to="tobys-page"
+            to="/tobys-page"
           >
             Tobys Page
           </Link>
@@ -602,11 +602,12 @@ Array [
         <li
           className="c6 c8"
         >
-          <Link
+          <a
             className="c9 c10"
+            href="https://scotland.shelter.org.uk/"
           >
             Scotland
-          </Link>
+          </a>
         </li>
       </ul>
     </nav>

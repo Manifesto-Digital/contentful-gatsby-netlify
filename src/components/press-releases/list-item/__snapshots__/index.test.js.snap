@@ -87,7 +87,7 @@ exports[`renders correctly 1`] = `
   </p>
   <Link
     className="c3"
-    to="test-slug"
+    to="/test-slug"
   >
     <span
       className="c4"

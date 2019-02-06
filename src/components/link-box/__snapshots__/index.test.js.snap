@@ -81,7 +81,7 @@ exports[`renders correctly 1`] = `
         className="c3"
       >
         <Link
-          to="internal-link-slug"
+          to="/internal-link-slug"
         >
           Test Page Title
         </Link>
@@ -90,7 +90,7 @@ exports[`renders correctly 1`] = `
         className="c3"
       >
         <Link
-          to="internal-link-slug"
+          to="/internal-link-slug"
         >
           Test Page Title
         </Link>
@@ -99,7 +99,7 @@ exports[`renders correctly 1`] = `
         className="c3"
       >
         <Link
-          to="internal-link-slug"
+          to="/internal-link-slug"
         >
           Test Page Title
         </Link>
@@ -108,7 +108,7 @@ exports[`renders correctly 1`] = `
         className="c3"
       >
         <Link
-          to="internal-link-slug"
+          to="/internal-link-slug"
         >
           Test Page Title
         </Link>

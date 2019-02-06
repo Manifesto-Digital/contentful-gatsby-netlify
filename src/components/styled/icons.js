@@ -14,6 +14,10 @@ import GoodieBags from '../../assets/svg/icons/challenge-event/goodie-bags.svg';
 import PostRaceCelebration from '../../assets/svg/icons/challenge-event/post-race-celebration.svg';
 import SportsMassage from '../../assets/svg/icons/challenge-event/sports-massage.svg';
 import TechnicalRunningTop from '../../assets/svg/icons/challenge-event/technical-running-top.svg';
+import ClipboardChecklist from '../../assets/svg/icons/clipboard-checklist-light.svg';
+import FundingGoalMeter from '../../assets/svg/icons/funding-goal-meter-light.svg';
+import Lightbulb from '../../assets/svg/icons/lightbulb-light.svg';
+import MapUnfolded from '../../assets/svg/icons/map-unfolded-light.svg';
 
 const icons = {
   'speech-bubble': SpeechBubble,
@@ -32,6 +36,10 @@ const icons = {
   'post-race-celebration': PostRaceCelebration,
   'sports-massage': SportsMassage,
   'technical-running-top': TechnicalRunningTop,
+  'clipboard-checklist': ClipboardChecklist,
+  'funding-goal-meter': FundingGoalMeter,
+  lightbulb: Lightbulb,
+  'map-unfolded': MapUnfolded,
   'no-icon': null,
   default: null,
 };

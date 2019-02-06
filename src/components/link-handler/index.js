@@ -10,7 +10,7 @@ import { Link } from 'gatsby';
 const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
   if (internalLink) {
     return (
-      <Link to={internalLink.slug} className={className}>
+      <Link to={`/${internalLink.slug}`} className={className}>
         {children}
       </Link>
     );

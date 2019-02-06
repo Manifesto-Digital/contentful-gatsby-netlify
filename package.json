@@ -69,9 +69,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "refresh": "rm -rf .cache && gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
-    "test-watch": "jest --watch",
+    "test-watch": "jest --watch --verbose",
     "lint": "./node_modules/.bin/eslint src && prettier --list-different '**/*.js'",
     "deploy": "yarn test && yarn lint && git push",
     "mock-deploy-build": "rm -rf ./node_modules/* && yarn install && yarn test && yarn lint && gatsby build",

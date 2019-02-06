@@ -59,7 +59,7 @@ const Navigation = ({ pageData, active, openState }) => {
                 </ItemLink>
               </Item>
               <Item>
-                <ItemLink internalLink="https://scotland.shelter.org.uk/">
+                <ItemLink externalUrl="https://scotland.shelter.org.uk/">
                   Scotland
                 </ItemLink>
               </Item>

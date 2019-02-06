@@ -8,11 +8,12 @@ import icons from '../styled/icons';
 import { InlineBanner, TextWrapper, BannerSVG } from './styles';
 import { Container } from '../styled/containers';
 
-const InlineCallOut = ({ content, insideContainer }) => {
+const InlineCallOut = ({ content, insideContainer, forwardedRef }) => {
   const { icon, borderColour, bannerColour } = content;
   const callOutText = content.content;
+
   return (
-    <Container padding={!insideContainer}>
+    <Container padding={!insideContainer} ref={forwardedRef}>
       <InlineBanner
         borderCol={consistentString(borderColour)}
         bannerCol={consistentString(bannerColour)}
@@ -32,9 +33,11 @@ InlineCallOut.propTypes = {
     bannerColour: PropTypes.string,
   }),
   insideContainer: PropTypes.bool,
+  forwardedRef: PropTypes.object,
 };
 
 InlineCallOut.defaultProps = {
   insideContainer: false,
 };
+
 export default InlineCallOut;
