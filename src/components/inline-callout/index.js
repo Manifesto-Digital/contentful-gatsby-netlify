@@ -18,7 +18,7 @@ const InlineCallOut = ({ content, insideContainer, forwardedRef }) => {
         borderCol={consistentString(borderColour)}
         bannerCol={consistentString(bannerColour)}
       >
-        <BannerSVG src={iconSrc(consistentString(icon))} />
+        <BannerSVG src={iconSrc(icon)} />
         <TextWrapper richText={callOutText} />
       </InlineBanner>
     </Container>
