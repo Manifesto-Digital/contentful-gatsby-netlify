@@ -68,7 +68,7 @@ const ContentCard = ({ data, bannerFlow }) => {
 };
 
 ContentCard.propTypes = {
-  bannerFlow: PropTypes.oneOf(['Vertical', 'Horizontal', 'Grid']).isRequired,
+  bannerFlow: PropTypes.oneOf(['vertical', 'horizontal', 'grid']),
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
