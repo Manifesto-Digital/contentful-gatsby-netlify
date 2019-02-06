@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { richTextPropTypes } from '../../prop-types';
 import { consistentString } from '../../utils/content-formatting';
 // Components
-import icons from '../styled/icons';
+import iconSrc from '../styled/iconSrc';
 // Styles
 import { InlineBanner, TextWrapper, BannerSVG } from './styles';
 import { Container } from '../styled/containers';
@@ -18,7 +18,7 @@ const InlineCallOut = ({ content, insideContainer, forwardedRef }) => {
         borderCol={consistentString(borderColour)}
         bannerCol={consistentString(bannerColour)}
       >
-        <BannerSVG src={icons(consistentString(icon))} />
+        <BannerSVG src={iconSrc(consistentString(icon))} />
         <TextWrapper richText={callOutText} />
       </InlineBanner>
     </Container>
