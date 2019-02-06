@@ -65,17 +65,19 @@ export const Item = styled.li`
     topLevel ? `0` : `${theme.spacing.small}}`};
   border-bottom: ${({ topLevel, theme }) =>
     topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
+
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};
     ${breakpoint.desktop`
       padding:5px 0;
     `}
 
-  ${breakpoint.desktop`
+    ${breakpoint.desktop`
     margin-right: auto;
      padding: ${({ topLevel, theme }) =>
-       topLevel ? `0` : `${theme.spacing.small}}`};
+       topLevel ? `0` : `${theme.spacing.small}`};
   `}
+  }
 `;
 
 export const ItemLink = styled(LinkHandler)`

@@ -6,11 +6,11 @@ import {
 } from '../../../__tests__/helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
-import { sendForm } from '../forms/send';
-import Recaptcha from '../forms/recaptcha';
+import { sendForm } from '../form/send';
+import Recaptcha from '../form-elements/recaptcha';
 
-jest.mock('../forms/send');
-jest.mock('../forms/recaptcha');
+jest.mock('../form/send');
+jest.mock('../form-elements/recaptcha');
 
 afterEach(() => {
   sendForm.mockClear();

@@ -24,7 +24,7 @@ function Modal({ children, ...otherProps }) {
 }
 
 Modal.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
 };
 
 export default Modal;

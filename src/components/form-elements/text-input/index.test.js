@@ -4,6 +4,7 @@ import {
   mountWithTheme,
   snapshotComponent,
 } from '../../../../__tests__/helpers';
+import { StyledInput } from './styles';
 
 const createProps = (name, error, touched) => ({
   field: { name },
@@ -13,13 +14,13 @@ const createProps = (name, error, touched) => ({
   },
 });
 
-['text', 'number', 'tel'].forEach(type => {
+['text', 'number', 'tel', 'email'].forEach(type => {
   it(`renders type as ${type}`, () => {
     const props = createProps('foo', undefined, false);
 
     const wrapper = mountWithTheme(<TextInput type={type} {...props} />);
 
-    expect(wrapper.getDOMNode().getAttribute('type')).toBe(type);
+    expect(wrapper.find(StyledInput).props().type).toBe(type);
   });
 });
 
@@ -50,6 +51,5 @@ it('renders as textarea if type is textarea', () => {
   const props = createProps('foo', 'Field is required', true);
 
   const wrapper = mountWithTheme(<TextInput type="textarea" {...props} />);
-
-  expect(wrapper.getDOMNode().nodeName).toBe('TEXTAREA');
+  expect(wrapper.find(StyledInput).props().type).toBe('textarea');
 });

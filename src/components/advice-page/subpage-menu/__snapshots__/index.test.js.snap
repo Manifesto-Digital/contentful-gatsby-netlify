@@ -20,14 +20,14 @@ exports[`renders correctly 1`] = `
     <ol>
       <li>
         <Link
-          to="Advice page 1"
+          to="/advice-page-1"
         >
           Advice guide test
         </Link>
       </li>
       <li>
         <Link
-          to="Advice page 2"
+          to="/advice-page-2"
         >
           Advice guide test
         </Link>
@@ -37,7 +37,7 @@ exports[`renders correctly 1`] = `
       </li>
       <li>
         <Link
-          to="Advice page 4"
+          to="/advice-page-4"
         >
           Advice guide test
         </Link>

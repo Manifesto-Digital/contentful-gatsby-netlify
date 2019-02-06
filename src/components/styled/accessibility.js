@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // Used to hide item from view but readable for screen readers
-export const VisuallyHidden = styled.span`
+export const visibilityStyles = css`
   padding: 0;
   margin: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -10,4 +10,8 @@ export const VisuallyHidden = styled.span`
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
+`;
+
+export const VisuallyHidden = styled.span`
+  ${visibilityStyles};
 `;

@@ -40,7 +40,7 @@ it('displays the correct internal link', () => {
   );
 
   expect(wrapper.find(Link).prop('to')).toBe(
-    getInternalLink(mockData.internalLink.slug)
+    `/${getInternalLink(mockData.internalLink.slug)}`
   );
 });
 
