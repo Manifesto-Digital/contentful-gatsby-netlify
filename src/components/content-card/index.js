@@ -53,7 +53,6 @@ const ContentCard = ({ data, bannerFlow }) => {
         {title && <CardTitle>{title}</CardTitle>}
         <SummaryText internalLink={cardLink}>
           {description}
-          {console.log(bannerFlow)}
           {bannerFlow === 'grid' && (
             <ArrowSVG src={RightArrow} cacheGetRequests />
           )}
