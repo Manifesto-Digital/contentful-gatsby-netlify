@@ -19,6 +19,8 @@ import FundingGoalMeter from '../../assets/svg/icons/funding-goal-meter-light.sv
 import Lightbulb from '../../assets/svg/icons/lightbulb-light.svg';
 import MapUnfolded from '../../assets/svg/icons/map-unfolded-light.svg';
 
+import { consistentString } from '../../utils/content-formatting';
+
 const iconList = {
   'speech-bubble': SpeechBubble,
   envelope: Envelope,
@@ -46,13 +48,15 @@ const iconList = {
 
 // returns the src of an svg icon from the above icon list
 const iconSrc = icon => {
-  if (iconList[icon] === undefined) {
+  const iconKey = consistentString(icon);
+
+  if (iconList[iconKey] === undefined) {
     throw new Error(
       'No matching icon was found. Is it set as an option in the CMS? Has it been imported and included in the object above?'
     );
   }
 
-  const chosenIcon = iconList[icon] || null;
+  const chosenIcon = iconList[iconKey] || null;
 
   if (!chosenIcon) return null;
 

@@ -7,7 +7,6 @@ import { createFactory } from '../../utils/test-factories';
 import ChallengeEventIcons from './index';
 import { Wrapper, IconWrapper } from './styles';
 import iconSrc from '../styled/iconSrc';
-import { consistentString } from '../../utils/content-formatting';
 
 export const createChallengeEventIcons = createFactory({
   headerText: 'This is a list of cool perks',
@@ -46,11 +45,11 @@ it('displays the correct icon based on what is passed in the eventIcons array', 
       .find(IconWrapper)
       .at(0)
       .prop('src')
-  ).toBe(iconSrc(consistentString('Goodie Bags')));
+  ).toBe(iconSrc('Goodie Bags'));
   expect(
     wrapper
       .find(IconWrapper)
       .at(1)
       .prop('src')
-  ).toBe(iconSrc(consistentString('Post-Race Celebration')));
+  ).toBe(iconSrc('Post-Race Celebration'));
 });
