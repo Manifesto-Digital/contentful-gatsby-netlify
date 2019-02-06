@@ -32,8 +32,17 @@ export const Perk = styled.div`
   ${breakpoint.tablet`
     width: auto;
     margin-bottom: 0;
+    padding: ${({ theme }) => theme.spacing.small};
     flex-wrap: wrap;
     text-align: center;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
   `};
 `;
 
