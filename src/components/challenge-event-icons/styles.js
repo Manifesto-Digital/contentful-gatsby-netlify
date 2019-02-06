@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
+import { breakpoint } from '../theme/breakpoint';
 
 export const Wrapper = styled.div`
   padding: ${({ theme }) => theme.spacing.large} 0;
@@ -12,6 +13,10 @@ export const PerksList = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  ${breakpoint.tablet`
+    flex-wrap: nowrap;
+  `};
 `;
 
 export const Perk = styled.div`
@@ -23,9 +28,31 @@ export const Perk = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
+
+  ${breakpoint.tablet`
+    width: auto;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    text-align: center;
+  `};
 `;
 
 export const IconWrapper = styled(SVG)`
   width: 15%;
   margin-right: ${({ theme }) => theme.spacing.small};
+
+  ${breakpoint.tablet`
+    width: 75%;
+    margin: 0 auto;
+  `};
+`;
+
+export const Caption = styled.div`
+  ${breakpoint.tablet`
+    font-size: ${({ theme }) => theme.fontsize.small};
+  `};
+
+  ${breakpoint.desktop`
+    font-size: ${({ theme }) => theme.fontsize.standard};
+  `};
 `;

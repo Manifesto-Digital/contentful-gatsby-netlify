@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '../styled/containers';
-import { Wrapper, PerksList, Perk, IconWrapper } from './styles';
+import { Wrapper, PerksList, Perk, IconWrapper, Caption } from './styles';
 import { consistentString } from '../../utils/content-formatting';
 import iconSrc from '../styled/iconSrc';
 
@@ -17,7 +17,7 @@ const ChallengeEventIcons = ({ data, insideContainer }) => {
           {eventIcons.map((eventIcon, key) => (
             <Perk key={key}>
               <IconWrapper src={iconSrc(consistentString(eventIcon))} />
-              <div>{eventIcon}</div>
+              <Caption>{eventIcon}</Caption>
             </Perk>
           ))}
         </PerksList>
