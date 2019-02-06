@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { richTextPropTypes } from '../../prop-types';
 import { consistentString } from '../../utils/content-formatting';
 // Components
-import iconSrc from '../styled/iconSrc';
+import iconSrc from '../../utils/iconSrc';
 // Styles
 import { InlineBanner, TextWrapper, BannerSVG } from './styles';
 import { Container } from '../styled/containers';

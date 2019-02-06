@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '../styled/containers';
 import { Wrapper, PerksList, Perk, IconWrapper, Caption } from './styles';
-import iconSrc from '../styled/iconSrc';
+import iconSrc from '../../utils/iconSrc';
 import { consistentString } from '../../utils/content-formatting';
 
 const Perks = ({ data, insideContainer }) => {

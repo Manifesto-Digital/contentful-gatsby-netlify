@@ -6,7 +6,7 @@ import {
 import { createFactory } from '../../utils/test-factories';
 import Perks from './index';
 import { Wrapper, IconWrapper } from './styles';
-import iconSrc from '../styled/iconSrc';
+import iconSrc from '../../utils/iconSrc';
 
 export const createPerks = createFactory({
   headerText: 'This is a list of cool perks',
