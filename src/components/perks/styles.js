@@ -5,7 +5,7 @@ import { breakpoint } from '../theme/breakpoint';
 export const Wrapper = styled.div`
   padding: ${({ theme }) => theme.spacing.large} 0;
   background-color: ${({ bg, theme }) =>
-    (bg === 'Black' && '#000000') || (bg === 'Grey' && theme.palette.grey90)};
+    (bg === 'black' && '#000000') || (bg === 'grey' && theme.palette.grey90)};
   color: ${({ theme }) => theme.palette.white};
 `;
 
@@ -40,7 +40,6 @@ export const Perk = styled.div`
 export const IconWrapper = styled(SVG)`
   width: 15%;
   margin-right: ${({ theme }) => theme.spacing.small};
-
   ${breakpoint.tablet`
     width: 75%;
     margin: 0 auto;
