@@ -4,11 +4,11 @@ import {
   mountWithTheme,
 } from '../../../__tests__/helpers/index';
 import { createFactory } from '../../utils/test-factories';
-import ChallengeEventIcons from './index';
+import Perks from './index';
 import { Wrapper, IconWrapper } from './styles';
 import iconSrc from '../styled/iconSrc';
 
-export const createChallengeEventIcons = createFactory({
+export const createPerks = createFactory({
   headerText: 'This is a list of cool perks',
   theme: 'Black',
   eventIcons: [
@@ -21,24 +21,24 @@ export const createChallengeEventIcons = createFactory({
 });
 
 it('renders correctly', () => {
-  const mockData = createChallengeEventIcons();
+  const mockData = createPerks();
 
-  snapshotComponent(<ChallengeEventIcons data={mockData} />);
+  snapshotComponent(<Perks data={mockData} />);
 });
 
 it('displays the correct background colour based on the prop passed', () => {
-  const mockData = createChallengeEventIcons({ theme: 'Black' });
-  const wrapper = mountWithTheme(<ChallengeEventIcons data={mockData} />);
+  const mockData = createPerks({ theme: 'Black' });
+  const wrapper = mountWithTheme(<Perks data={mockData} />);
 
   expect(wrapper.find(Wrapper)).toHaveStyleRule('background-color', '#000000');
 });
 
 it('displays the correct icon based on what is passed in the eventIcons array', () => {
-  const mockData = createChallengeEventIcons({
+  const mockData = createPerks({
     eventIcons: ['Goodie Bags', 'Post-Race Celebration'],
   });
 
-  const wrapper = mountWithTheme(<ChallengeEventIcons data={mockData} />);
+  const wrapper = mountWithTheme(<Perks data={mockData} />);
 
   expect(
     wrapper

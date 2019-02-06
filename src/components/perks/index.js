@@ -4,7 +4,7 @@ import { Container } from '../styled/containers';
 import { Wrapper, PerksList, Perk, IconWrapper, Caption } from './styles';
 import iconSrc from '../styled/iconSrc';
 
-const ChallengeEventIcons = ({ data, insideContainer }) => {
+const Perks = ({ data, insideContainer }) => {
   const { headerText, theme, eventIcons } = data;
 
   return (
@@ -25,7 +25,7 @@ const ChallengeEventIcons = ({ data, insideContainer }) => {
   );
 };
 
-ChallengeEventIcons.propTypes = {
+Perks.propTypes = {
   data: PropTypes.shape({
     headerText: PropTypes.string,
     theme: PropTypes.oneOf(['Grey', 'Black']),
@@ -34,4 +34,4 @@ ChallengeEventIcons.propTypes = {
   insideContainer: PropTypes.bool,
 };
 
-export default ChallengeEventIcons;
+export default Perks;

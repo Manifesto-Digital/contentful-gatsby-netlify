@@ -14,7 +14,7 @@ import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
 import Form from '../form';
 import ContentCardBanner from '../content-card-banner';
-import ChallengeEventIcons from '../challenge-event-icons';
+import Perks from '../perks';
 import Testimonials from '../testimonials';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 
@@ -120,13 +120,9 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         return <ContentCardBanner key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicFullWidthChallengeEventIconBlock') {
+      if (internal.type === 'ContentfulTopicChallengeEventPerksList') {
         return (
-          <ChallengeEventIcons
-            key={id}
-            data={assembly}
-            insideContainer={insideContainer}
-          />
+          <Perks key={id} data={assembly} insideContainer={insideContainer} />
         );
       }
 
