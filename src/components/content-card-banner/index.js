@@ -21,7 +21,11 @@ const ContentCardBanner = ({ data }) => {
         <HeaderText as={RichText} richText={header} />
         <CardRow items={contentCards.length}>
           {contentCards.map((contentCard, i) => (
-            <ContentCard key={i} data={contentCard} />
+            <ContentCard
+              key={i}
+              data={contentCard}
+              bannerFlow={consistentString(bannerFlow)}
+            />
           ))}
         </CardRow>
       </Container>

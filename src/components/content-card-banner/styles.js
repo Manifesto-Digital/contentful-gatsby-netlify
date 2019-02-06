@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
-import { Card, Wrapper, SummaryText } from '../content-card/styles';
-import RightArrow from '../../assets/svg/icons/angle-right-light.svg';
+import { Card, Wrapper, SummaryText, CardImage } from '../content-card/styles';
 
 export const CardRow = styled.div`
   display: flex;
@@ -34,7 +33,7 @@ export const BannerBackground = styled.section`
       ${({ bannerFlow }) =>
         bannerFlow === 'vertical' &&
         css`
-          flex: 0 1 100%;
+          flex: 1 1 100%;
           width: 100%;
           max-width: 600px;
         `}
@@ -45,53 +44,38 @@ export const BannerBackground = styled.section`
         css`
           flex: 0 1 100%;
           width: 100%;
+
+          ${Wrapper} {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin-right: ${props => props.theme.spacing.standard};
+            background: ${({ theme }) => theme.palette.overlayLight};
+          }
+
+          ${CardImage} {
+            border-radius: 0;
+          }
+
+          ${SummaryText} {
+            padding-right: 35px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              bottom: 2px;
+              right: 2px;
+              width: 25px;
+              height: 25px;
+              background: ${({ theme }) => theme.palette.grey25};
+            }
+          }
+
           ${breakpoint.tablet`
-            flex: 0 1 50%;
+            flex: 1 1 50%;
             width: 50%;
             margin-bottom: 0;
           `}
-        `}
-    }
-
-    ${Wrapper} {
-      ${({ bannerFlow }) =>
-        bannerFlow === 'grid' &&
-        css`
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          margin-right: ${props => props.theme.spacing.standard};
-          background: ${({ theme }) => theme.palette.overlayLight};
-        `}
-    }
-
-    ${SummaryText} {
-      ${({ bannerFlow }) =>
-        bannerFlow === 'grid' &&
-        css`
-        padding-right: 35px;
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-          }
-
-          &::before {
-            bottom: 2px;
-            right: 2px;
-            width: 25px;
-            height: 25px;
-            background: ${({ theme }) => theme.palette.grey25};
-          }
-
-          &::after {
-            bottom: 2px;
-            right: 2px;
-            width: 25px;
-            height: 25px;
-            color : white;
-            background: url(${RightArrow}) center center no-repeat;
-            filter: invert(100%);
         `}
     }
 `;

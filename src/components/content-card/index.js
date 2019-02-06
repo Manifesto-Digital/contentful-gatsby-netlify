@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RightArrow from '../../assets/svg/icons/angle-right-light.svg';
 // Styles
 import {
   Card,
@@ -8,9 +9,10 @@ import {
   CardImage,
   SummaryText,
   Wrapper,
+  ArrowSVG,
 } from './styles';
 
-const ContentCard = ({ data }) => {
+const ContentCard = ({ data, bannerFlow }) => {
   const {
     title,
     slug,
@@ -49,7 +51,13 @@ const ContentCard = ({ data }) => {
       />
       <Wrapper>
         {title && <CardTitle>{title}</CardTitle>}
-        <SummaryText internalLink={cardLink}>{description}</SummaryText>
+        <SummaryText internalLink={cardLink}>
+          {description}
+          {console.log(bannerFlow)}
+          {bannerFlow === 'grid' && (
+            <ArrowSVG src={RightArrow} cacheGetRequests />
+          )}
+        </SummaryText>
       </Wrapper>
 
       <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
@@ -60,6 +68,7 @@ const ContentCard = ({ data }) => {
 };
 
 ContentCard.propTypes = {
+  bannerFlow: PropTypes.oneOf(['Vertical', 'Horizontal', 'Grid']).isRequired,
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
