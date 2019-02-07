@@ -10,11 +10,14 @@ import { PureHeader } from './index';
 import { Overlay } from '../styled/overlay';
 import { MobileMenuOpen } from './styles';
 import { Wrapper } from './navigation/styles';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
 
 it('Renders correctly', () => {
   const mockData = createHeaderNavigation();
   snapshotComponent(<PureHeader pageData={mockData} />);
 });
+
+hidePascalCaseWarning();
 
 it('Displays burger icon on mobile devices', () => {
   const mockData = createHeaderNavigation();

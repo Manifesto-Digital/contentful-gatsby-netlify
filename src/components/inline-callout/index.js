@@ -8,16 +8,17 @@ import Icon from './icon';
 import { InlineBanner, TextWrapper } from './styles';
 import { Container } from '../styled/containers';
 
-const InlineCallOut = ({ content, insideContainer }) => {
+const InlineCallOut = ({ content, insideContainer, forwardedRef }) => {
   const { icon, borderColour, bannerColour } = content;
   const callOutText = content.content;
+
   return (
-    <Container padding={!insideContainer}>
+    <Container padding={!insideContainer} ref={forwardedRef}>
       <InlineBanner
         borderCol={consistentString(borderColour)}
         bannerCol={consistentString(bannerColour)}
       >
-        <Icon icon={consistentString(icon)} />
+        {icon && <Icon icon={consistentString(icon)} />}
         <TextWrapper richText={callOutText} />
       </InlineBanner>
     </Container>
@@ -32,9 +33,11 @@ InlineCallOut.propTypes = {
     bannerColour: PropTypes.string,
   }),
   insideContainer: PropTypes.bool,
+  forwardedRef: PropTypes.object,
 };
 
 InlineCallOut.defaultProps = {
   insideContainer: false,
 };
+
 export default InlineCallOut;

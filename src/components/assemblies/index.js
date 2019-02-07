@@ -12,7 +12,10 @@ import LinkBox from '../link-box';
 import RelatedAdvice from '../related-advice';
 import VideoEmbed from '../video';
 import DonationBanner from '../donation-banner';
+import Form from '../form';
 import ContentCardBanner from '../content-card-banner';
+import Testimonials from '../testimonials';
+import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardWithIcon from '../card-with-icon';
 import CardsWithIcon from '../cards-with-icon';
 
@@ -107,8 +110,30 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
+      if (internal.type === 'ContentfulAssemblyForm') {
+        return (
+          <Form key={id} data={assembly}>
+            Form
+          </Form>
+        );
+      }
       if (internal.type === 'ContentfulTopicContentCardsBanner') {
         return <ContentCardBanner key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulAssemblyTestimonials') {
+        return (
+          <Testimonials
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
+      }
+
+
+      if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
+        return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicCardWithIcon') {

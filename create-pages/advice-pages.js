@@ -35,18 +35,20 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  advicePages.data.allContentfulPageAssemblyAdvicePage.edges.forEach(edge => {
-    if (edge.node.subPages) {
-      // Add the parent page info into the subPages array so that we can access in template
-      edge.node.subPages.pages.unshift({
-        id: edge.node.id,
-        slug: edge.node.slug,
-        title: edge.node.title,
-        subPages: null,
-      });
+  advicePages.data.allContentfulPageAssemblyAdvicePage.edges.forEach(
+    ({ node }) => {
+      if (!node.slug) return;
+      if (node.subPages) {
+        // Add the parent page info into the subPages array so that we can access in template
+        node.subPages.pages.unshift({
+          id: node.id,
+          slug: node.slug,
+          title: node.title,
+          subPages: null,
+        });
+      }
+      shelterCreatePage(node, node.subPages);
     }
-
-    shelterCreatePage(edge.node, edge.node.subPages);
-  });
+  );
 }
 module.exports = createAdvicePages;

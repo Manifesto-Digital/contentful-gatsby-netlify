@@ -8,6 +8,10 @@ import OpenBook from '../../assets/svg/icons/book-open-light.svg';
 import Exclamation from '../../assets/svg/icons/exclamation-circle-light.svg';
 import Telephone from '../../assets/svg/icons/phone-light.svg';
 import MapMarker from '../../assets/svg/icons/map-marker-alt-light.svg';
+import ClipboardChecklist from '../../assets/svg/icons/clipboard-checklist-light.svg';
+import FundingGoalMeter from '../../assets/svg/icons/funding-goal-meter-light.svg';
+import Lightbulb from '../../assets/svg/icons/lightbulb-light.svg';
+import MapUnfolded from '../../assets/svg/icons/map-unfolded-light.svg';
 
 import { BannerSVG } from './styles';
 
@@ -20,6 +24,10 @@ const icons = {
   'exclamation-mark': Exclamation,
   telephone: Telephone,
   'map-marker': MapMarker,
+  'clipboard-checklist': ClipboardChecklist,
+  'funding-goal-meter': FundingGoalMeter,
+  lightbulb: Lightbulb,
+  'map-unfolded': MapUnfolded,
   'no-icon': null,
   default: null,
 };

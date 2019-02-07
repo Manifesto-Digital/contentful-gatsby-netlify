@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import DonationForm from '../donation-form-handler';
-import DonationInput from '../forms/donation-input';
+import DonationInput from '../form-elements/donation-input';
 // Styles
 import { CollapsableArea, OwnAmountButton, OwnAmountSubmit } from './styles';
 import Button from '../button';

@@ -76,14 +76,14 @@ exports[`renders correctly 1`] = `
     </h3>
     <Link
       className="c4"
-      to="shelter-demo-page"
+      to="/shelter-demo-page"
     >
       A short description for Callams test page
     </Link>
   </div>
   <Link
     className="c5"
-    to="shelter-demo-page"
+    to="/shelter-demo-page"
   >
     A short description for Callams test page
   </Link>

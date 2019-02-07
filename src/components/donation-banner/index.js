@@ -11,7 +11,7 @@ import {
   StyledDonationFormHandler,
 } from './styles';
 // Components
-import DonationInput from '../forms/donation-input';
+import DonationInput from '../form-elements/donation-input';
 // Styles
 import { VisuallyHidden } from '../styled/accessibility';
 

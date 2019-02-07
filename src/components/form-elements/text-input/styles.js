@@ -30,3 +30,8 @@ export const StyledInput = styled.input`
   ${getStyles};
   ${inputStyles}
 `;
+
+export const InputWrapper = styled.div`
+  margin-bottom: ${props =>
+    props.noMargin ? '0' : props.theme.spacing.standard};
+`;

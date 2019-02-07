@@ -9,7 +9,6 @@ exports[`renders correctly 1`] = `
   display: block;
   background-size: 15px 15px;
   width: auto;
-  margin-bottom: 20px;
   padding: 10px;
   padding-left: 30px;
   max-width: 10em;

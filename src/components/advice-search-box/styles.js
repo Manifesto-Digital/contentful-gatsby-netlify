@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Button from '../button';
 import { breakpoint } from '../theme/breakpoint';
-import TextInput from '../forms/text-input';
+import TextInput from '../form-elements/text-input';
 
 export const AdviceSearchForm = styled.form`
   padding: ${props => props.theme.spacing.standard};

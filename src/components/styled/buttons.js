@@ -6,6 +6,7 @@ export const buttonStyles = css`
   padding: ${props => props.theme.spacing.small} 1em;
   font-weight: normal;
   background-color: ${props =>
+    (props.disabled && props.theme.palette.grey60) ||
     (props.bg === 'red' && props.theme.palette.primary) ||
     (props.bg === 'black' && props.theme.palette.black) ||
     (props.bg === 'blue' && props.theme.palette.sanMarinoBlue) ||
