@@ -48,10 +48,14 @@ export const Perk = styled.div`
 
 export const IconWrapper = styled(SVG)`
   width: 15%;
-  margin-right: ${({ theme }) => theme.spacing.small};
+  margin-right: ${({ theme }) => theme.spacing.standard};
   ${breakpoint.tablet`
     width: 75%;
-    margin: 0 auto;
+    margin: 0 auto ${({ theme }) => theme.spacing.standard};
+
+    svg {
+      max-height: 65px;
+    }
   `};
 `;
 

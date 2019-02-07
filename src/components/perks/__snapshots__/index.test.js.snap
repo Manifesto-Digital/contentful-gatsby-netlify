@@ -46,7 +46,7 @@ exports[`renders correctly 1`] = `
 
 .c4 {
   width: 15%;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 @media (min-width:40.0625em) {
@@ -80,7 +80,11 @@ exports[`renders correctly 1`] = `
 @media (min-width:40.0625em) {
   .c4 {
     width: 75%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
+  }
+
+  .c4 svg {
+    max-height: 65px;
   }
 }
 
