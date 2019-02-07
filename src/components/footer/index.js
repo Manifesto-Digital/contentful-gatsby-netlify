@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 import LogoSVG from '../../assets/svg/icons/logo.svg';
 import Icon from '../share-block/icon';
 import { consistentString } from '../../utils/content-formatting';
 import { Container } from '../styled/containers';
+import NavigationMenu from './navigation';
 import {
   Wrapper,
   Top,
@@ -16,126 +19,107 @@ import {
   Logo,
 } from './styles';
 
-const Footer = () => (
-  <Wrapper>
-    <Top>
-      <Container>
-        <Menus>
-          <Social>
-            <Icon icon={consistentString('facebook')} />
-            <Icon icon={consistentString('twitter')} />
-            <Icon icon={consistentString('linkedin')} />
-          </Social>
-          <ul className="footer-nav--primary unbulleted">
-            <li>
-              <a href="https://england.shelter.org.uk/what_we_do">What we do</a>
-              <ul className="unbulleted">
-                <li>
-                  <a href="https://england.shelter.org.uk/what_we_do/our_impact">
-                    How we make a difference
-                  </a>
-                </li>
-                <li>
-                  <a href="./?a=1152552">Our vision</a>
-                </li>
-                <li>
-                  <a href="//media.shelter.org.uk/">Media</a>
-                </li>
-                <li>
-                  <a href="//england.shelter.org.uk/professional_resources/shelter_training">
-                    Shelter Training
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul className="footer-nav--primary unbulleted">
-            <li>
-              <a href="//england.shelter.org.uk/support_us">Support us</a>
-              <ul className="unbulleted">
-                <li>
-                  <a href="//england.shelter.org.uk/support_us/campaigns">
-                    Campaign with us
-                  </a>
-                </li>
-                <li>
-                  <a href="//england.shelter.org.uk/support_us/volunteer">
-                    Volunteer
-                  </a>
-                </li>
-                <li>
-                  <a href="https://england.shelter.org.uk/what_we_do/work_with_shelter">
-                    Jobs
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul className="footer-nav--primary unbulleted">
-            <li>
-              <a href="//england.shelter.org.uk/contact_us">
-                Help with our site
-              </a>
-              <ul className="unbulleted">
-                <li>
-                  <a href="//england.shelter.org.uk/contact_us/legal_disclaimer_and_copyright">
-                    Legal
-                  </a>
-                </li>
-                <li>
-                  <a href="//england.shelter.org.uk/contact_us/privacy">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a href="//england.shelter.org.uk/contact_us/cookies">
-                    Cookies
-                  </a>
-                </li>
-                <li>
-                  <a href="//england.shelter.org.uk/contact_us">Feedback</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul className="footer-nav--primary unbulleted">
-            <li>
-              <a href="//england.shelter.org.uk/get_help">Get help</a>
-              <ul className="unbulleted">
-                <li>
-                  <a href="//england.shelter.org.uk/contact_us">
-                    Supporter and corporate contacts
-                  </a>
-                </li>
+const footerQuery = graphql`
+  query footerItemsQuery {
+    allContentfulAssemblyFooter(
+      filter: { id: { eq: "212aa2ec-1643-592c-8ebe-d267f9250a11" } }
+    ) {
+      edges {
+        node {
+          id
+          name
+          shareType
+          footerText {
+            id
+            childContentfulRichText {
+              html
+            }
+          }
+          navigationItems {
+            id
+            internal {
+              type
+            }
+            menuLabel
+            navigationLink {
+              ... on ContentfulPageAssemblyContentPage {
+                title
+                slug
+              }
+            }
+            subNavigationItems {
+              ... on ContentfulPageAssemblyPressReleasePage {
+                title
+                slug
+              }
+              ... on ContentfulPageAssemblyContentPage {
+                title
+                slug
+              }
+              ... on ContentfulPageAssemblyAdvicePage {
+                title
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
-                <li>
-                  <a href="//england.shelter.org.uk/donate/mobile_giving_terms_and_conditions">
-                    Manage mobile subscriptions
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </Menus>
-      </Container>
-    </Top>
-    <Bottom>
-      <Angle />
-      <Container>
-        <BottomInner>
-          <Text>
-            Shelter, the National Campaign for Homeless People Limited. Charity
-            number: 263710 (England and Wales), SC002327 (Scotland). Company
-            number: 1‌038133. 88 Old Street, London, EC1V 9HU. Authorised and
-            regulated by the Financial Conduct Authority.
-          </Text>
-          <LogoWrapper to="/">
-            <Logo src={LogoSVG} cacheGetRequests />
-          </LogoWrapper>
-        </BottomInner>
-      </Container>
-    </Bottom>
-  </Wrapper>
+export const PureFooter = ({ pageData }) => {
+  const { footerText, shareType, navigationItems } = pageData;
+  return (
+    <Wrapper>
+      <Top>
+        <Container>
+          <Menus>
+            <Social>
+              {shareType &&
+                shareType.map((type, i) => (
+                  <Icon key={i} icon={consistentString(type)} />
+                ))}
+            </Social>
+            <Menus role="navigation" aria-label="Footer menu">
+              {navigationItems &&
+                navigationItems.map((item, i) => (
+                  <NavigationMenu key={i} id={item.id} pageData={item} />
+                ))}
+            </Menus>
+          </Menus>
+        </Container>
+      </Top>
+      <Bottom>
+        <Angle />
+        <Container>
+          <BottomInner>
+            <Text
+              dangerouslySetInnerHTML={{
+                __html: footerText.childContentfulRichText.html,
+              }}
+            />
+            <LogoWrapper to="/">
+              <Logo src={LogoSVG} cacheGetRequests />
+            </LogoWrapper>
+          </BottomInner>
+        </Container>
+      </Bottom>
+    </Wrapper>
+  );
+};
+
+const Footer = () => (
+  <StaticQuery
+    query={footerQuery}
+    render={data => (
+      <PureFooter pageData={data.allContentfulAssemblyFooter.edges[0].node} />
+    )}
+  />
 );
+
+PureFooter.propTypes = {
+  pageData: PropTypes.object.isRequired,
+};
 
 export default Footer;

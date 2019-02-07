@@ -3,6 +3,7 @@ import SVG from 'react-inlinesvg';
 import { Link } from 'gatsby';
 import { breakpoint } from '../theme/breakpoint';
 import { StyledSVG } from '../share-block/styles';
+import LinkHandler from '../link-handler';
 
 export const Logo = styled(SVG)`
   display: block;
@@ -35,6 +36,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.palette.black};
+  margin-top: ${({ theme }) => theme.spacing.xl};
+  padding-top: ${({ theme }) => theme.spacing.xl};
 `;
 
 export const Top = styled.div`
@@ -47,7 +50,7 @@ export const Top = styled.div`
 
 export const Social = styled.div`
   display: flex;
-  width: 100%;
+
   margin-bottom: ${({ theme }) => theme.spacing.xl};
   ${StyledSVG} {
     color: ${({ theme }) => theme.palette.white};
@@ -61,27 +64,12 @@ export const Menus = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: ${({ theme }) => theme.spacing.xl} 0;
   font-size: ${({ theme }) => theme.fontsize.small};
 
-  ${breakpoint.tablet`
+  ${breakpoint.desktop`
    flex-direction: row;
    flex-wrap: unset;
    `}
-
-  ul {
-    width: 100%;
-    list-style: none;
-    padding-left: 0;
-
-    ${breakpoint.tablet`
-      width: 50%;
-    `}
-
-    ${breakpoint.desktop`
-      width: 100%;
-    `}
-  }
 
   a {
     color: ${({ theme }) => theme.palette.white};
@@ -92,9 +80,40 @@ export const Menus = styled.nav`
   }
 `;
 
+export const MenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  ${breakpoint.desktop`
+    width: auto;
+    padding: 0 0 0 ${({ theme }) => theme.spacing.standard};
+  `}
+`;
+
+export const ItemLink = styled(LinkHandler)`
+  color: ${({ theme }) => theme.palette.black};
+  font-size: ${({ theme }) => theme.fontsize.small};
+  text-decoration: none;
+`;
+
+export const Item = styled.li`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+
+  > ${MenuList} > li:first-child {
+    margin-bottom: ${({ theme }) => theme.spacing.medium};
+  }
+`;
+
 export const Angle = styled.div`
   position: absolute;
-  right: 102%;
+  right: 93%;
   z-index: 0;
   display: none;
   width: 0;
@@ -110,6 +129,7 @@ export const Angle = styled.div`
 
 export const Bottom = styled.div`
   position: relative;
+  margin-top: ${({ theme }) => theme.spacing.xl};
   padding: ${({ theme }) => theme.spacing.standard} 0;
   background: ${({ theme }) => theme.palette.primary};
   overflow: hidden;

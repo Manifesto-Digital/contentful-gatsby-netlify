@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+.c2 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c14 {
+  display: block;
+  width: 150px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 52px;
+  padding: 15px;
+  background: #ea232d;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #212122;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 > div {
+  width: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.c4 .c15 {
+  color: #fff;
+  fill: #fff;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 0.775rem;
+}
+
+.c3 a {
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 a:hover {
+  color: #ea232d;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  color: #212122;
+  font-size: 0.775rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.c5 > .c6 > li:first-child {
+  margin-bottom: 30px;
+}
+
+.c10 {
+  position: absolute;
+  right: 93%;
+  z-index: 0;
+  display: none;
+  width: 0;
+  border-color: #212122;
+  border-style: solid;
+  border-width: 100px 150px 0;
+  -webkit-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+}
+
+.c9 {
+  position: relative;
+  margin-top: 60px;
+  padding: 20px 0;
+  background: #ea232d;
+  overflow: hidden;
+}
+
+.c11 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  color: #fff;
+  font-size: 0.6rem;
+}
+
+.c12 {
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  width: 100%;
+  text-align: left;
+}
+
+@media (min-width:62em) {
+  .c14 {
+    width: 150px;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 {
+    height: 68px;
+    padding: 20px 25px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: unset;
+    -ms-flex-wrap: unset;
+    flex-wrap: unset;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 {
+    width: auto;
+    padding: 0 0 0 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c10 {
+    display: block;
+  }
+}
+
+@media (min-width:62em) {
+  .c11 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c12 {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    width: 50%;
+    max-width: 340px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <nav
+        className="c3"
+      >
+        <div
+          className="c4"
+        />
+        <nav
+          aria-label="Footer menu"
+          className="c3"
+          role="navigation"
+        >
+          <li
+            className="c5"
+          >
+            <ul
+              className="c6 c7"
+            >
+              <li
+                aria-haspopup={true}
+                className="c5"
+                role="menuitem"
+              >
+                <Link
+                  className="c8"
+                  to="/tobys-page"
+                >
+                  Housing Advice
+                </Link>
+              </li>
+              <li
+                className="c5"
+              >
+                <Link
+                  className="c8"
+                  to="/320,000-people-in-britain-are-now-homeless"
+                >
+                  320,000 people in Britain are now homeless
+                </Link>
+              </li>
+              <li
+                className="c5"
+              >
+                <Link
+                  className="c8"
+                  to="/tobys-page"
+                >
+                  Tobys Page
+                </Link>
+              </li>
+              <li
+                className="c5"
+              >
+                <Link
+                  className="c8"
+                  to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
+                >
+                  Shelter Manchester to hold vigil for lost homeless people
+                </Link>
+              </li>
+              <li
+                className="c5"
+              >
+                <Link
+                  className="c8"
+                  to="/shelter-demo-page"
+                >
+                  Shelter Demo Page
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </nav>
+      </nav>
+    </div>
+  </div>
+  <div
+    className="c9"
+  >
+    <div
+      className="c10"
+    />
+    <div
+      className="c2"
+    >
+      <div
+        className="c11"
+      >
+        <div
+          className="c12"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+            }
+          }
+        />
+        <Link
+          className="c13"
+          to="/"
+        >
+          <span
+            className="isvg loading c14"
+          />
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+`;
