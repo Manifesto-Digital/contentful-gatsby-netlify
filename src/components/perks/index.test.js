@@ -10,7 +10,7 @@ import iconSrc from '../../utils/iconSrc';
 
 export const createPerks = createFactory({
   headerText: 'This is a list of cool perks',
-  theme: 'Black',
+  backgroundColour: 'Black',
   eventIcons: [
     'Technical Running Top',
     "Finisher's Medal",

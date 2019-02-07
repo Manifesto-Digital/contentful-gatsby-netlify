@@ -8,7 +8,7 @@ export const PerksListFragment = graphql`
     }
 
     headerText
-    theme
+    backgroundColour
     eventIcons
   }
 `;
