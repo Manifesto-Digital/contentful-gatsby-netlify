@@ -10,5 +10,6 @@ export const PerksListFragment = graphql`
     headerText
     backgroundColour
     eventIcons
+    removeBottomMargin
   }
 `;

@@ -18,6 +18,7 @@ export const createPerks = createFactory({
     'Goodie Bags',
     'Post-Race Celebration',
   ],
+  removeBottomMargin: true,
 });
 
 it('renders correctly', () => {

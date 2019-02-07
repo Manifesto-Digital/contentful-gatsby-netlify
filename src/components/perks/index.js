@@ -6,12 +6,15 @@ import iconSrc from '../../utils/iconSrc';
 import { consistentString } from '../../utils/content-formatting';
 
 const Perks = ({ data, insideContainer }) => {
-  const { headerText, backgroundColour, eventIcons } = data;
+  const { headerText, backgroundColour, eventIcons, removeBottomMargin } = data;
 
   if (!eventIcons || eventIcons.length === 0) return null;
 
   return (
-    <Wrapper bg={consistentString(backgroundColour)}>
+    <Wrapper
+      bg={consistentString(backgroundColour)}
+      removeBottomMargin={removeBottomMargin}
+    >
       <Container padding={!insideContainer}>
         {headerText !== null && <h2>{headerText}</h2>}
 
