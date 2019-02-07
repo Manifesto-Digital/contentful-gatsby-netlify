@@ -8,19 +8,12 @@ import { consistentString } from '../../utils/content-formatting';
 import { CardContainer, TitleText, SubText, CardCTA } from './styles';
 
 const CardWithIcon = ({ data, insideContainer }) => {
-  const {
-    icon,
-    titleText,
-    subText,
-    ctaText,
-    ctaLink: { slug: ctaLink },
-  } = data;
+  const { icon, titleText, subText, ctaText, ctaLink } = data;
 
   const ctaData = {
     buttonText: ctaText,
     ctaColour: 'Red',
-    internalLink: '',
-    externalUrl: ctaLink,
+    internalLink: ctaLink,
   };
 
   return (
@@ -39,7 +32,10 @@ CardWithIcon.propTypes = {
     titleText: PropTypes.string.isRequired,
     subText: PropTypes.string,
     ctaText: PropTypes.string.isRequired,
-    ctaLink: PropTypes.string.isRequired,
+    ctaLink: PropTypes.shape({
+      id: PropTypes.string,
+      slug: PropTypes.string,
+    }),
   }),
   insideContainer: PropTypes.bool,
 };

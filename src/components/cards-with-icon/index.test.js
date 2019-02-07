@@ -6,13 +6,10 @@ import CardsWithIcon from './index';
 
 // Default props
 export const createCardsWithIcon = createFactory({
-  cards: {
-    createCardWithIcon,
-  },
+  cards: [createCardWithIcon()],
 });
 
 it('renders correctly', () => {
   const mockData = createCardsWithIcon();
-
   snapshotComponent(<CardsWithIcon data={mockData} />);
 });

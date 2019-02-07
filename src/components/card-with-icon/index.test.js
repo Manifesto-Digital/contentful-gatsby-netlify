@@ -1,33 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent } from '../../../__tests__/helpers/index';
+import { TitleText, SubText, CardCTA } from './styles';
+import { createFactory } from '../../utils/test-factories';
 import CardWithIcon from './index';
-import { TitleText, SubText } from './styles';
-import CTA from '../cta/index';
-import { createFactory, createImage } from '../../utils/test-factories';
 
 // Default props
 export const createCardWithIcon = createFactory({
-  icon: createImage(),
+  icon: 'Phone',
   titleText: 'Title text',
   subText: 'Sub text',
   ctaText: 'Click me',
-  ctaLink: 'https://example.com',
+  ctaLink: { slug: 'https://example.com' },
 });
 
 it('renders correctly', () => {
   const mockData = createCardWithIcon();
-
   snapshotComponent(<CardWithIcon data={mockData} />);
 });
 
 it('displays the correct icon', () => {
-  const mockData = createCardWithIcon({ icon: createImage() });
-  const wrapper = mountWithTheme(<CardWithIcon data={mockData} />);
-  expect(wrapper.find('img').prop('src')).toBe(mockData.icon.file.url);
+  const mockData = createCardWithIcon({ icon: 'Phone' });
+  snapshotComponent(<CardWithIcon data={mockData} />);
 });
 
 it('displays the correct title text', () => {
@@ -39,19 +33,19 @@ it('displays the correct title text', () => {
 it('displays the correct sub text', () => {
   const mockData = createCardWithIcon({ subText: 'Test sub text' });
   const wrapper = shallow(<CardWithIcon data={mockData} />);
-  expect(wrapper.find(SubText).text()).toBe(mockData.titleText);
+  expect(wrapper.find(SubText).text()).toBe(mockData.subText);
 });
 
 it('displays the correct cta text', () => {
-  const mockData = createCardWithIcon({ ctaText: 'Test cta text' });
+  const mockData = createCardWithIcon({ ctaText: 'Test CTA text' });
   const wrapper = shallow(<CardWithIcon data={mockData} />);
-  // TODO: Test that this works
-  expect(wrapper.find(CTA).prop('buttonText')).toBe(mockData.titleText);
+  expect(wrapper.find(CardCTA).prop('children')).toBe(mockData.ctaText);
 });
 
-it('displays the correct cta link', () => {
-  const mockData = createCardWithIcon({ subText: 'Test cya link' });
+it('displays the correct internal cta link', () => {
+  const mockData = createCardWithIcon({
+    ctaLink: { slug: 'https://internal-test-example.com' },
+  });
   const wrapper = shallow(<CardWithIcon data={mockData} />);
-  // TODO: Test that this works
-  expect(wrapper.find(CTA).prop('externalUrl')).toBe(mockData.titleText);
+  expect(wrapper.find(CardCTA).prop('internalLink')).toBe(mockData.ctaLink);
 });

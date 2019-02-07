@@ -4,7 +4,6 @@ import CTA from '../cta';
 import { breakpoint } from '../theme/breakpoint';
 
 export const CardContainer = styled.div`
-  width: 100%;
   flex: auto;
   padding: ${props => props.theme.spacing.medium};
   text-align: center;
@@ -12,7 +11,7 @@ export const CardContainer = styled.div`
   margin: ${props => props.theme.spacing.standard} 0 0 0;
   box-shadow: ${props => props.theme.boxshadow.small};
   border-radius: ${props => props.theme.borderradius.small};
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -30,7 +29,7 @@ export const CardContainer = styled.div`
     flex: 1;
     margin: ${props =>
       props.insideContainer === true
-        ? `0 0 0 ${props.theme.spacing.small}`
+        ? `0 0 0 ${props.theme.spacing.medium}`
         : 0};
 
     &:fist-child {

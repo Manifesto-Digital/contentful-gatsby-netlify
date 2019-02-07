@@ -27,7 +27,7 @@ const CardsWithIcon = ({ data, insideContainer }) => {
 
 CardsWithIcon.propTypes = {
   data: PropTypes.shape({
-    cards: PropTypes.arrayOf(CardWithIcon).isRequired,
+    cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   }),
   insideContainer: PropTypes.bool,
 };
