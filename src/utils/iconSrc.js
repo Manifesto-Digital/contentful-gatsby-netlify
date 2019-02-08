@@ -56,11 +56,9 @@ const iconSrc = icon => {
     );
   }
 
-  const chosenIcon = iconList[iconKey] || null;
+  const chosenIcon = iconList[iconKey];
 
-  if (!chosenIcon) return null;
-
-  return chosenIcon;
+  if (chosenIcon) return chosenIcon;
 };
 
 export default iconSrc;
