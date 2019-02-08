@@ -10,8 +10,10 @@ export const CtaAssemblyFragment = graphql`
     bannerColour
     ctaHeaderText
     cta {
-      ...ctaStandardFragment
-      ...ctaWithIconFragment
+      ... on Node {
+        ...ctaStandardFragment
+        ...ctaWithIconFragment
+      }
     }
   }
 `;
