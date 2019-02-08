@@ -10,15 +10,33 @@ const client = contentful.createClient({
   accessToken: process.env.access_token,
 });
 
-client.getContentTypes().then(contentTypes => {
-  const generateRedirects = async () => {
-    for (const contentType of contentTypes.items) {
-      let contentTypeId = contentType.sys.id;
-      fs.appendFileSync(
-        `${__dirname}/../public/_redirects`,
-        `${contentTypeId} data to append \n`
-      );
-    }
-  };
-  generateRedirects();
-});
+client
+  .getEntries({
+    content_type: 'pageAssemblyContentPage',
+  })
+  .then(Entries => {
+    const generateRedirects = async () => {
+      fs.truncate(`${__dirname}/../public/_redirects`, 0, () => {
+        console.log('redirects emptied');
+        fs.writeFile(
+          `${__dirname}/../public/_redirects`,
+          '#auto generated redirects \n\n',
+          () => {
+            console.log('header added');
+            let i = 1;
+
+            for (const entry of Entries.items) {
+              console.log(`${entry.fields.slug} added`);
+              let slug = entry.fields.slug;
+              fs.appendFileSync(
+                `${__dirname}/../public/_redirects`,
+                `/this-should-redirect${i}              /${slug} \n`
+              );
+              i++;
+            }
+          }
+        );
+      });
+    };
+    generateRedirects();
+  });
