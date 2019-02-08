@@ -35,7 +35,9 @@
     "react-recaptcha": "^2.3.10",
     "react-tabs": "^3.0.0",
     "styled-components": "^4.1.1",
-    "yup": "^0.26.6"
+    "yup": "^0.26.6",
+    "contentful": "^7.1.0",
+    "contentful-cli": "^0.18.0"
   },
   "keywords": [
     "gatsby"

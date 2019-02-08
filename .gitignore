@@ -13,3 +13,4 @@ public/*
 .env.development
 .env.production
 .netlify/state.json
+public/_redirects
