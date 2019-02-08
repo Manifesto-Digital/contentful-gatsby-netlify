@@ -16,26 +16,22 @@ client
   })
   .then(Entries => {
     const generateRedirects = async () => {
-      fs.truncate(`${__dirname}/../public/_redirects`, 0, () => {
+      const filepath = `${__dirname}/../public/_redirects`;
+      fs.truncate(filepath, 0, () => {
         console.log('redirects emptied');
-        fs.writeFile(
-          `${__dirname}/../public/_redirects`,
-          '#auto generated redirects \n\n',
-          () => {
-            console.log('header added');
-            let i = 1;
-
-            for (const entry of Entries.items) {
-              console.log(`${entry.fields.slug} added`);
-              let slug = entry.fields.slug;
-              fs.appendFileSync(
-                `${__dirname}/../public/_redirects`,
-                `/this-should-redirect${i}              /${slug} \n`
-              );
-              i++;
-            }
+        fs.writeFile(filepath, '#auto generated redirects \n\n', () => {
+          console.log('header added');
+          let i = 1;
+          for (const entry of Entries.items) {
+            console.log(`${entry.fields.slug} added`);
+            let slug = entry.fields.slug;
+            fs.appendFileSync(
+              filepath,
+              `/this-should-redirect${i}              /${slug} \n`
+            );
+            i++;
           }
-        );
+        });
       });
     };
     generateRedirects();
