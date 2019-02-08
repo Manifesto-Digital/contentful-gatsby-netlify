@@ -21,7 +21,7 @@ const Perks = ({ data, insideContainer }) => {
         <PerksList>
           {eventIcons.map((eventIcon, key) => (
             <Perk key={key}>
-              <IconWrapper src={iconSrc(eventIcon)} />
+              <IconWrapper src={iconSrc(eventIcon)} cacheGetRequests />
               <Caption>{eventIcon}</Caption>
             </Perk>
           ))}
