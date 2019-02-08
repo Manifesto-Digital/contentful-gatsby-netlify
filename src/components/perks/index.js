@@ -8,7 +8,7 @@ import { consistentString } from '../../utils/content-formatting';
 const Perks = ({ data, insideContainer }) => {
   const { headerText, backgroundColour, eventIcons, removeBottomMargin } = data;
 
-  if (!eventIcons || eventIcons.length === 0) return null;
+  if (!eventIcons || eventIcons.length === 0) return;
 
   return (
     <Wrapper
@@ -16,7 +16,7 @@ const Perks = ({ data, insideContainer }) => {
       removeBottomMargin={removeBottomMargin}
     >
       <Container padding={!insideContainer}>
-        {headerText !== null && <h2>{headerText}</h2>}
+        {headerText && <h2>{headerText}</h2>}
 
         <PerksList>
           {eventIcons.map((eventIcon, key) => (
