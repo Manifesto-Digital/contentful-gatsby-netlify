@@ -23,8 +23,10 @@ async function createEventsLandingPages(graphql, gatsbyCreatePage) {
         path: node.slug,
         component: eventsLandingPageTemplate,
         context: {
+          slug: node.slug,
           pageName: node.pageName,
           topTextSection: node.topTextSection,
+          featuredEvents: node.featuredEvents,
         },
       });
     }
