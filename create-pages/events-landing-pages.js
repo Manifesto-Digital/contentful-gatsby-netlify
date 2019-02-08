@@ -7,15 +7,15 @@ async function createEventsLandingPages(graphql, gatsbyCreatePage) {
   );
 
   // Create pages
-  const pages = await getEventsLandingPages(graphql);
+  const eventLandingPages = await getEventsLandingPages(graphql);
 
-  if (pages.errors) {
-    console.error(pages.errors);
-    throw Error(pages.errors);
+  if (eventLandingPages.errors) {
+    console.error(eventLandingPages.errors);
+    throw Error(eventLandingPages.errors);
   }
 
   // Create pages
-  pages.data.allContentfulPageAssemblyEventsLandingPage.edges.forEach(
+  eventLandingPages.data.allContentfulPageAssemblyEventsLandingPage.edges.forEach(
     ({ node }) => {
       if (!node.slug) return;
 

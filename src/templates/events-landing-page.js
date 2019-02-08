@@ -14,9 +14,7 @@ const EventsLandingPage = ({ data }) => {
   //   bodyCopy,
   //   heroContent,
   //   assemblies,
-  // } = data.allContentfulPageAssemblyEventsLandingPage;
-
-  console.log(data);
+  // } = data.contentfulPageAssemblyEventsLandingPage;
 
   return (
     <></>
@@ -34,7 +32,7 @@ const EventsLandingPage = ({ data }) => {
 
 EventsLandingPage.propTypes = {
   data: PropTypes.shape({
-    allContentfulPageAssemblyEventsLandingPage: PropTypes.object,
+    contentfulPageAssemblyEventsLandingPage: PropTypes.object,
   }),
 };
 
@@ -42,7 +40,7 @@ export default EventsLandingPage;
 
 export const eventsLandingPageQuery = graphql`
   query eventsLandingPageTemplateQuery($slug: String!) {
-    allContentfulPageAssemblyEventsLandingPage(slug: { eq: $slug }) {
+    contentfulPageAssemblyEventsLandingPage(slug: { eq: $slug }) {
       pageName
     }
   }
