@@ -5,6 +5,7 @@ import LogoSVG from '../../assets/svg/icons/logo.svg';
 import Icon from '../share-block/icon';
 import { consistentString } from '../../utils/content-formatting';
 import { Container } from '../styled/containers';
+import RichText from '../rich-text';
 import NavigationMenu from './navigation';
 import {
   Wrapper,
@@ -94,11 +95,7 @@ export const PureFooter = ({ pageData }) => {
         <Angle />
         <Container>
           <BottomInner>
-            <Text
-              dangerouslySetInnerHTML={{
-                __html: footerText.childContentfulRichText.html,
-              }}
-            />
+            <Text as={RichText} richText={footerText} />
             <LogoWrapper to="/">
               <Logo src={LogoSVG} cacheGetRequests />
             </LogoWrapper>
