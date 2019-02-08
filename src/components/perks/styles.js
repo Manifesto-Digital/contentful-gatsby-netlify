@@ -5,7 +5,8 @@ import { breakpoint } from '../theme/breakpoint';
 export const Wrapper = styled.div`
   padding: ${({ theme }) => theme.spacing.large} 0;
   background-color: ${({ bg, theme }) =>
-    (bg === 'black' && '#000000') || (bg === 'grey' && theme.palette.grey90)};
+    (bg === 'black' && theme.palette.pureBlack) ||
+    (bg === 'grey' && theme.palette.grey90)};
   color: ${({ theme }) => theme.palette.white};
   margin-bottom: ${({ theme, removeBottomMargin }) =>
     !removeBottomMargin && theme.spacing.standard};

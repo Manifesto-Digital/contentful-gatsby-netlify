@@ -14,6 +14,7 @@ theme.palette = {
   grey80: '#5a5a5a',
   grey90: '#363839',
   black: '#212122',
+  pureBlack: '#000000',
   // Blues
   sanMarinoBlue: '#4d63b5',
   royalBlue: '#0b0b89',
