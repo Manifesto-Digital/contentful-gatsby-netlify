@@ -70,14 +70,6 @@ export const Menus = styled.nav`
    flex-direction: row;
    flex-wrap: unset;
    `}
-
-  a {
-    color: ${({ theme }) => theme.palette.white};
-    text-decoration: none;
-    &:hover {
-      color: ${({ theme }) => theme.palette.primary};
-    }
-  }
 `;
 
 export const MenuList = styled.ul`
@@ -95,9 +87,11 @@ export const MenuList = styled.ul`
 `;
 
 export const ItemLink = styled(LinkHandler)`
-  color: ${({ theme }) => theme.palette.black};
   font-size: ${({ theme }) => theme.fontsize.small};
-  text-decoration: none;
+  color: ${({ theme }) => theme.palette.white};
+  &:hover {
+    color: ${({ theme }) => theme.palette.primary};
+  }
 `;
 
 export const Item = styled.li`
