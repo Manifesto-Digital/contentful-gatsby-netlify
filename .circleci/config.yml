@@ -37,5 +37,3 @@ jobs:
       - run: yarn lint
       # run tests!
       - run: yarn test
-      # generate redirects
-      - run: node ${working_directory}.circleci/redirects.js
