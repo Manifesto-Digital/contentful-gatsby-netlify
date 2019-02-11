@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardContent, CategoryCTA } from './styles';
-import ResponsiveImage from '../../image/responsive';
-import CTA from '../../cta';
+import ResponsiveImage from '../image/responsive';
+import CTA from '../cta';
 
 const EventCard = ({ data }) => {
   const {

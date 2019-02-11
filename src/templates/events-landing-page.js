@@ -7,7 +7,7 @@ import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
-import EventCard from '../components/events-landing-page/event-card';
+import EventCard from '../components/event-card';
 import {
   Wrapper,
   SectionTag,
