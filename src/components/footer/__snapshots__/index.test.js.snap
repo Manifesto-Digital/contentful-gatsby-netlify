@@ -88,16 +88,6 @@ exports[`Renders correctly 1`] = `
   font-size: 0.775rem;
 }
 
-.c3 a {
-  color: #fff;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c3 a:hover {
-  color: #ea232d;
-}
-
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -113,10 +103,12 @@ exports[`Renders correctly 1`] = `
 }
 
 .c8 {
-  color: #212122;
   font-size: 0.775rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  color: #fff;
+}
+
+.c8:hover {
+  color: #ea232d;
 }
 
 .c5 {
