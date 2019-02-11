@@ -3,3 +3,6 @@
 
 [context.deploy-preview]
     command = "node __netlify__/redirects.js && gatsby build"
+
+[context.uat]
+    command = "node __netlify__/redirects.js && gatsby build"
