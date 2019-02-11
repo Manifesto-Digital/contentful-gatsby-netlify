@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card, CardContent, CategoryCTA } from './styles';
 import ResponsiveImage from '../../image/responsive';
 import CTA from '../../cta';
 
@@ -14,20 +15,22 @@ const EventCard = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <Card>
       <ResponsiveImage
         mobileW={357}
         desktopW={454}
         image={event.thumbnailImage}
         description={event.eventName}
       />
-      <h3>{event.eventName}</h3>
-      <p>{cardText}</p>
-      <CTA bg="red" fullWidth internalLink={primaryCtaLink[0].slug}>
-        {primaryCtaText}
-      </CTA>
-      <a href={secondaryCtaLink.slug}>{secondaryCtaText}</a>
-    </div>
+      <CardContent>
+        <h3>{event.eventName}</h3>
+        <p>{cardText}</p>
+        <CTA bg="red" fullWidth externalUrl={primaryCtaLink[0].slug}>
+          {primaryCtaText}
+        </CTA>
+      </CardContent>
+      <CategoryCTA href={secondaryCtaLink.slug}>{secondaryCtaText}</CategoryCTA>
+    </Card>
   );
 };
 

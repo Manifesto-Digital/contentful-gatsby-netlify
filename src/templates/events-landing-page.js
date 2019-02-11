@@ -8,7 +8,11 @@ import RichText from '../components/rich-text';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import EventCard from '../components/events-landing-page/event-card';
-import { Wrapper, SectionTag } from '../components/events-landing-page/styles';
+import {
+  Wrapper,
+  SectionTag,
+  CardWrapper,
+} from '../components/events-landing-page/styles';
 
 const EventsLandingPage = ({ data }) => {
   const {
@@ -16,6 +20,8 @@ const EventsLandingPage = ({ data }) => {
     topTextSection,
     featuredEvents,
   } = data.contentfulPageAssemblyEventsLandingPage;
+
+  if (!featuredEvents || featuredEvents.length === 0) return;
 
   return (
     <Layout>
@@ -30,9 +36,11 @@ const EventsLandingPage = ({ data }) => {
           <Container>
             <TwoThirds>
               <SectionTag>Featured events</SectionTag>
-              {featuredEvents.map((featuredEvent, key) => (
-                <EventCard key={key} data={featuredEvent} />
-              ))}
+              <CardWrapper>
+                {featuredEvents.map((featuredEvent, key) => (
+                  <EventCard key={key} data={featuredEvent} />
+                ))}
+              </CardWrapper>
             </TwoThirds>
           </Container>
         </Wrapper>
