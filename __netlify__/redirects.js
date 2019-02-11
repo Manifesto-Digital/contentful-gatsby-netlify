@@ -4,6 +4,7 @@ require('dotenv').config({
 
 const contentful = require('contentful');
 const fs = require('fs');
+const fsPromises = require('fs').promises;
 
 const client = contentful.createClient({
   space: process.env.ctfl_spaceId,
@@ -17,23 +18,31 @@ client
   .then(Entries => {
     const generateRedirects = async () => {
       const filepath = `${__dirname}/../public/_redirects`;
-      fs.truncate(filepath, 0, () => {
+      try {
+        await fsPromises.truncate(filepath, 4);
         console.log('redirects emptied');
-        fs.writeFile(filepath, '#auto generated redirects \n\n', () => {
-          console.log('header added');
-          let i = 1; // for now we need this to generate unique urls
-          Object.keys(Entries.items).map(key => {
-            const { slug } = Entries.items[key].fields;
-            fs.appendFileSync(
+        await fsPromises.appendFile(filepath, '#auto generated redirects \n\n');
+        console.log('header added');
+        let i = 1; // for now we need this to generate unique urls
+        Object.keys(Entries.items).map(key => {
+          const writeRedirectsFile = async slug => {
+            await fsPromises.appendFile(
               filepath,
               `/this-should-redirect${i}              /${slug} \n`
             );
-            console.log(`${slug} added.`);
-            i += 1; // for now we need this to generate unique urls
-            return true;
-          });
+          };
+          const { slug } = Entries.items[key].fields;
+
+          writeRedirectsFile(slug);
+          console.log(`${slug} added.`);
+          i += 1; // for now we need this to generate unique urls
         });
-      });
+      } catch (error) {
+        console.log(error);
+      }
     };
     generateRedirects();
+  })
+  .catch(error => {
+    console.log(error);
   });
