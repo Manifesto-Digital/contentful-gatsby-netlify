@@ -1,7 +1,7 @@
 [context.production]
     command = "node __netlify__/redirects.js && gatsby build"
 
-[context.deploy-preview]
+[context.deploy-preview.production]
     command = "node __netlify__/redirects.js && gatsby build"
 
 [context.uat]
