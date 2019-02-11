@@ -22,15 +22,15 @@ client
         fs.writeFile(filepath, '#auto generated redirects \n\n', () => {
           console.log('header added');
           let i = 1;
-          for (const entry of Entries.items) {
-            console.log(`${entry.fields.slug} added`);
-            let slug = entry.fields.slug;
+          Object.keys(Entries.items).map(key => {
+            const { slug } = Entries.items[key].fields;
             fs.appendFileSync(
               filepath,
               `/this-should-redirect${i}              /${slug} \n`
             );
-            i++;
-          }
+            i += 1;
+            return true;
+          });
         });
       });
     };
