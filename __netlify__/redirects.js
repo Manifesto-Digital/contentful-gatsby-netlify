@@ -21,7 +21,7 @@ client
         console.log('redirects emptied');
         fs.writeFile(filepath, '#auto generated redirects \n\n', () => {
           console.log('header added');
-          let i = 1;
+          let i = 1; // for now we need this to generate unique urls
           Object.keys(Entries.items).map(key => {
             const { slug } = Entries.items[key].fields;
             fs.appendFileSync(
@@ -29,7 +29,7 @@ client
               `/this-should-redirect${i}              /${slug} \n`
             );
             console.log(`${slug} added.`);
-            i += 1;
+            i += 1; // for now we need this to generate unique urls
             return true;
           });
         });
