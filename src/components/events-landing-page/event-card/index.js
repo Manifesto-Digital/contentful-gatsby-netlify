@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ResponsiveImage from '../../image/responsive';
+import CTA from '../../cta';
 
 const EventCard = ({ data }) => {
   const {
@@ -11,7 +13,21 @@ const EventCard = ({ data }) => {
     bottomCTALink,
   } = data;
 
-  return <div>{event.eventName}</div>;
+  return (
+    <div>
+      <ResponsiveImage
+        mobileW={357}
+        desktopW={454}
+        image={event.thumbnailImage}
+      />
+      <h3>{event.eventName}</h3>
+      <p>Test content right here</p>
+      <CTA bg="red" fullWidth internalLink="/">
+        View event details
+      </CTA>
+      <div>More cool events</div>
+    </div>
+  );
 };
 
 EventCard.propTypes = {
