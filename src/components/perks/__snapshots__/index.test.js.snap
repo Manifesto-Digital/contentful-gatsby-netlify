@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c0 {
+  padding: 40px 0;
+  background-color: #000000;
+  color: #fff;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.c3:last-child {
+  margin-bottom: 0;
+}
+
+.c4 {
+  width: 15%;
+  margin-right: 20px;
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c3 {
+    width: auto;
+    margin-bottom: 0;
+    padding: 10px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .c3:first-child {
+    padding-left: 0;
+  }
+
+  .c3:last-child {
+    padding-right: 0;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c4 {
+    width: 75%;
+    margin: 0 auto 20px;
+  }
+
+  .c4 svg {
+    max-height: 65px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c5 {
+    font-size: 0.775rem;
+  }
+}
+
+@media (min-width:62em) {
+  .c5 {
+    font-size: 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h2>
+      This is a list of cool perks
+    </h2>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <span
+          className="isvg loading c4"
+        />
+        <div
+          className="c5"
+        >
+          Technical Running Top
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <span
+          className="isvg loading c4"
+        />
+        <div
+          className="c5"
+        >
+          Finisher's Medal
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <span
+          className="isvg loading c4"
+        />
+        <div
+          className="c5"
+        >
+          Free Bag Transfer
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <span
+          className="isvg loading c4"
+        />
+        <div
+          className="c5"
+        >
+          Goodie Bags
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <span
+          className="isvg loading c4"
+        />
+        <div
+          className="c5"
+        >
+          Post-Race Celebration
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -24,6 +24,7 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
 
   // Create single pages
   pressReleases.forEach(({ node }) => {
+    if (!node.slug) return;
     gatsbyCreatePage({
       path: node.slug,
       component: pressReleasePageTemplate,
