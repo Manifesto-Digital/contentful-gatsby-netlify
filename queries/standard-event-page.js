@@ -63,6 +63,12 @@ const getStandardEventPages = async graphql =>
             #modules { - Not sure what this will be yet
             #  ...Module
             #}
+            sidebarCards {
+              cards {
+                id
+                slug
+              }
+            }
           }
         }
       }
