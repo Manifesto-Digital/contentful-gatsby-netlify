@@ -31,7 +31,7 @@ const EventsLandingPage = ({ data }) => {
             <TwoThirds>
               <SectionTag>Featured events</SectionTag>
               {featuredEvents.map((featuredEvent, key) => (
-                <EventCard key={key} data={{ event: featuredEvent }} />
+                <EventCard key={key} data={featuredEvent} />
               ))}
             </TwoThirds>
           </Container>
@@ -59,11 +59,27 @@ export const eventsLandingPageQuery = graphql`
         }
       }
       featuredEvents {
-        eventName
-        thumbnailImage {
-          file {
-            url
+        event {
+          eventName
+          thumbnailImage {
+            file {
+              url
+            }
           }
+        }
+        cardText
+        primaryCtaText
+        primaryCtaLink {
+          ... on ContentfulPageAssemblyChallengeEvent {
+            slug
+          }
+          ... on ContentfulPageAssemblyStandardEvent {
+            slug
+          }
+        }
+        secondaryCtaText
+        secondaryCtaLink {
+          slug
         }
       }
     }

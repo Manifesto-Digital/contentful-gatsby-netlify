@@ -7,10 +7,10 @@ const EventCard = ({ data }) => {
   const {
     event,
     cardText,
-    primaryCTAText,
-    primaryCTALink,
-    bottomCTAText,
-    bottomCTALink,
+    primaryCtaText,
+    primaryCtaLink,
+    secondaryCtaText,
+    secondaryCtaLink,
   } = data;
 
   return (
@@ -19,13 +19,14 @@ const EventCard = ({ data }) => {
         mobileW={357}
         desktopW={454}
         image={event.thumbnailImage}
+        description={event.eventName}
       />
       <h3>{event.eventName}</h3>
-      <p>Test content right here</p>
-      <CTA bg="red" fullWidth internalLink="/">
-        View event details
+      <p>{cardText}</p>
+      <CTA bg="red" fullWidth internalLink={primaryCtaLink[0].slug}>
+        {primaryCtaText}
       </CTA>
-      <div>More cool events</div>
+      <a href={secondaryCtaLink.slug}>{secondaryCtaText}</a>
     </div>
   );
 };
@@ -34,10 +35,10 @@ EventCard.propTypes = {
   data: PropTypes.shape({
     event: PropTypes.object.isRequired,
     cardText: PropTypes.string.isRequired,
-    primaryCTAText: PropTypes.string.isRequired,
-    primaryCTALink: PropTypes.string.isRequired,
-    bottomCTAText: PropTypes.string.isRequired,
-    bottomCTALink: PropTypes.string.isRequired,
+    primaryCtaText: PropTypes.string.isRequired,
+    primaryCtaLink: PropTypes.array.isRequired,
+    secondaryCtaText: PropTypes.string.isRequired,
+    secondaryCtaLink: PropTypes.object.isRequired,
   }),
 };
 
