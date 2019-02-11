@@ -70,12 +70,25 @@ exports[`renders correctly with no options chosen in cms 1`] = `
   border-color: #ea232d;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
 }
 
-.c2 > :last-child {
+.c3 > :last-child {
   margin-bottom: 0;
+}
+
+.c2 {
+  fill: #212122;
+  width: 30px;
+  height: 30px;
+  margin-right: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.c2 + div {
+  width: calc(100% - 3em);
 }
 
 .c0 {
@@ -90,8 +103,11 @@ exports[`renders correctly with no options chosen in cms 1`] = `
   <div
     className="c1"
   >
+    <span
+      className="isvg failed c2"
+    />
     <div
-      className="c2"
+      className="c3"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

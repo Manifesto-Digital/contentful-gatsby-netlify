@@ -72,6 +72,7 @@ export const pageQuery = graphql`
           ...DonationBanner
           ...AssemblyFormFragment
           ...ContentCardBannerFragment
+          ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
         }
