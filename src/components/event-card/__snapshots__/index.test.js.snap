@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  background-color: #fff;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  -webkit-flex: 0 49%;
+  -ms-flex: 0 49%;
+  flex: 0 49%;
+  margin-bottom: 20px;
+}
+
+.c1 {
+  padding: 20px;
+}
+
+.c4 {
+  display: block;
+  background-color: #e5edfd;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.c3 {
+  display: inline-block;
+}
+
+.c2 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #ea232d;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <img
+    alt="Collection hero"
+    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=454"
+    srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=357 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=454"
+  />
+  <div
+    className="c1"
+  >
+    <h3>
+      My Event
+    </h3>
+    <p>
+      Description for my event
+    </p>
+    <a
+      className="c2"
+      href="//my-event"
+    >
+      <span
+        className="c3"
+      >
+        Register for event
+      </span>
+    </a>
+  </div>
+  <a
+    className="c4"
+    href="/event-categories"
+  >
+    Register for event
+  </a>
+</div>
+`;
