@@ -1,0 +1,5 @@
+[context.production]
+    command = "node __netlify__/redirects.js"
+
+[context.deploy-preview.production]
+    command = "node __netlify__/redirects.js"
