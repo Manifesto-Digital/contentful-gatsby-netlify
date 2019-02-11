@@ -12,7 +12,7 @@ const client = contentful.createClient({
 
 client
   .getEntries({
-    content_type: 'pageAssemblyContentPage',
+    content_type: 'repeaterTest',
   })
   .then(Entries => {
     const generateRedirects = async () => {
@@ -29,6 +29,21 @@ client
               `/this-should-redirect${i}              /${slug} \n`
             );
             console.log(`${slug} added.`);
+            console.log(Entries.items[key].fields.redirects);
+            if (Array.isArray(Entries.items[key].fields.redirects)) {
+              Entries.items[key].fields.redirects.map(redirect => {
+                if (redirect) {
+                  fs.appendFileSync(
+                    filepath,
+                    `/${redirect}              /${slug} \n`
+                  );
+                  console.log(`${redirect} added.`);
+                  return redirect;
+                }
+                console.log('null redirects');
+                return false;
+              });
+            }
             i += 1; // for now we need this to generate unique urls
             return true;
           });
