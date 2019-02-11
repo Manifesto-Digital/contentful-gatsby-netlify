@@ -35,7 +35,10 @@ export const addMarksToContent = content => {
 // If the field is not required and left empty, 'default' is returned
 export const consistentString = string => {
   if (string !== null) {
-    return string.replace(/\s+/g, '-').toLowerCase();
+    return string
+      .replace(/\s+/g, '-')
+      .replace(/'+/g, '')
+      .toLowerCase();
   }
 
   return 'default';
