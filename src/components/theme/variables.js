@@ -56,6 +56,7 @@ theme.fontsize = {
   small: '0.775rem', // 14px
   standard: '1rem', // 16px
   larger: '1.4rem',
+  hero: '4rem',
 };
 
 theme.boxshadow = {
