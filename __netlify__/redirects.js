@@ -28,6 +28,7 @@ client
               filepath,
               `/this-should-redirect${i}              /${slug} \n`
             );
+            console.log(`${slug} added.`);
             i += 1;
             return true;
           });
