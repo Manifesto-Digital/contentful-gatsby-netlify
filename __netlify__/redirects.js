@@ -6,8 +6,8 @@ const contentful = require('contentful');
 const fs = require('fs');
 
 const client = contentful.createClient({
-  space: process.env.space_id,
-  accessToken: process.env.access_token,
+  space: process.env.ctfl_spaceId,
+  accessToken: process.env.ctfl_accessToken,
 });
 
 client
