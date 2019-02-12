@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
+export const ModuleWrapper = styled.div`
+  margin-bottom: ${props => props.theme.spacing.large};
+`;
+
 export const Wrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.medium};
 

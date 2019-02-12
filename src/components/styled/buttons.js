@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const buttonStyles = css`
   display: inline-block;
@@ -38,4 +38,17 @@ export const buttonReset = css`
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+`;
+
+export const SignUpButton = styled.a`
+  ${buttonStyles};
+  border: 4px solid ${props => props.theme.palette.white};
+  color: ${props => props.theme.palette.white};
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    color: ${props => props.theme.palette.black};
+    background-color: ${props => props.theme.palette.white};
+  }
 `;

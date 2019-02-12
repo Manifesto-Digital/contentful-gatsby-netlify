@@ -12,9 +12,12 @@ theme.palette = {
   grey45: '#8c8c8c',
   grey60: '#999',
   grey80: '#5a5a5a',
+  grey90: '#363839',
   black: '#212122',
+  pureBlack: '#000000',
   // Blues
   sanMarinoBlue: '#4d63b5',
+  lightBlue: '#e5edfd',
   royalBlue: '#0b0b89',
   shelterBlue: '#65cfe9',
   // Social sharing
@@ -28,6 +31,7 @@ theme.palette = {
   successLight: '#e6f8e7',
 
   overlay: 'rgba(43, 46, 56, 0.7)',
+  overlayLight: 'rgba(255, 255, 255, 0.9)',
 };
 
 theme.fonts = {
@@ -53,9 +57,11 @@ theme.headers = {
 };
 
 theme.fontsize = {
+  tiny: '0.6rem', // 12px
   small: '0.775rem', // 14px
   standard: '1rem', // 16px
   larger: '1.4rem',
+  hero: '4rem',
 };
 
 theme.boxshadow = {
