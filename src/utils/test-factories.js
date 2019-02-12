@@ -94,14 +94,6 @@ export const createSubpage = createFactory({
 
 export const createContentCards = createFactory({
   cropImageFrom: 'Center',
-  featuredImage: {
-    description: 'Collection hero',
-    file: {
-      fileName: 'collection-hero.jpg',
-      url:
-        '//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg',
-    },
-  },
   pageInformation: {
     pageThumbnail: {
       description: 'Telli Afrik and family',
@@ -116,7 +108,6 @@ export const createContentCards = createFactory({
     },
   },
   slug: 'shelter-demo-page',
-  summaryText: 'Lorem ipsum dolor sit amet, consectetur',
   title: 'Shelter Demo Page',
 });
 

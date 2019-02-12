@@ -11,29 +11,18 @@ import {
 } from './styles';
 
 const ContentCard = ({ data }) => {
-  const {
-    title,
-    slug,
-    summaryText,
-    featuredImage,
-    pageInformation = null,
-    cropImageFrom,
-  } = data;
+  const { title, slug, pageInformation = null, cropImageFrom } = data;
 
   const cardLink = {};
   cardLink.slug = slug;
 
   // Fallback until all images are set in pageInformation field
-  const image =
-    pageInformation && pageInformation.pageThumbnail
-      ? pageInformation.pageThumbnail
-      : featuredImage;
+  const image = pageInformation.pageThumbnail;
 
   // Fallback until all descriptions are set in pageInformation field
-  const description =
-    pageInformation && pageInformation.shortDescription.shortDescription
-      ? pageInformation.shortDescription.shortDescription
-      : summaryText;
+  const description = pageInformation.shortDescription.shortDescription;
+
+  if (!image) return null;
 
   return (
     <Card>
@@ -63,14 +52,6 @@ ContentCard.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
-    summaryText: PropTypes.string,
-    featuredImage: PropTypes.shape({
-      description: PropTypes.string,
-      file: PropTypes.shape({
-        fileName: PropTypes.string,
-        url: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
     cropImageFrom: PropTypes.string,
     pageInformation: PropTypes.shape({
       shortDescription: PropTypes.object,
