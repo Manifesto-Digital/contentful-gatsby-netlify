@@ -17,6 +17,7 @@ theme.palette = {
   pureBlack: '#000000',
   // Blues
   sanMarinoBlue: '#4d63b5',
+  lightBlue: '#e5edfd',
   royalBlue: '#0b0b89',
   shelterBlue: '#65cfe9',
   // Social sharing
@@ -30,6 +31,7 @@ theme.palette = {
   successLight: '#e6f8e7',
 
   overlay: 'rgba(43, 46, 56, 0.7)',
+  overlayLight: 'rgba(255, 255, 255, 0.9)',
 };
 
 theme.fonts = {
