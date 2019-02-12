@@ -97,7 +97,7 @@ const ChallengeEventPage = ({ data }) => {
   }, [stickyBarPosition, bannerStuck]);
 
   return (
-    <Layout>
+    <Layout removeFooterMargin>
       <HeroVideo
         title={heroTitle}
         subtitle={heroSubtitle}
@@ -153,6 +153,7 @@ export const challengeEventPageQuery = graphql`
       bannerButtonText
       assemblies {
         ... on Node {
+          ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
         }

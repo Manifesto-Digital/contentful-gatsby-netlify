@@ -32,7 +32,8 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.palette.black};
-  margin-top: ${({ theme }) => theme.spacing.xl};
+  margin-top: ${({ theme, removeMarginTop }) =>
+    removeMarginTop ? '0' : theme.spacing.xl};
   padding-top: ${({ theme }) => theme.spacing.xl};
 `;
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 // Components
 import Testimonials from '../testimonials';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
+import Perks from '../perks';
 
 const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -12,6 +13,12 @@ const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
       // Make sure an id and name of component have been queried
       if (!assembly.id || !assembly.internal) return null;
       const { id, internal } = assembly;
+
+      if (internal.type === 'ContentfulTopicChallengeEventPerksList') {
+        return (
+          <Perks key={id} data={assembly} insideContainer={insideContainer} />
+        );
+      }
 
       if (internal.type === 'ContentfulAssemblyTestimonials') {
         return (
