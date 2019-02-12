@@ -8,10 +8,6 @@ import LinkHandler from '../link-handler';
 export const Logo = styled(SVG)`
   display: block;
   width: 150px;
-
-  ${breakpoint.desktop`
-    width: 150px;
-  `}
 `;
 
 export const LogoWrapper = styled(Link)`
@@ -82,7 +78,7 @@ export const MenuList = styled.ul`
 
   ${breakpoint.desktop`
     width: auto;
-    padding: 0 0 0 ${({ theme }) => theme.spacing.standard};
+    padding-left: ${({ theme }) => theme.spacing.standard};
   `}
 `;
 
