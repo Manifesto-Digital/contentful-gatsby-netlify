@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 const ContentCard = ({ data }) => {
-  const { title, slug, pageInformation = null, cropImageFrom } = data;
+  const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
   cardLink.slug = slug;
@@ -32,7 +32,7 @@ const ContentCard = ({ data }) => {
         desktopW={600}
         desktopH={350}
         fit="fill"
-        focusArea={cropImageFrom}
+        focusArea="center"
         image={image}
         presentational
       />
@@ -52,7 +52,6 @@ ContentCard.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
-    cropImageFrom: PropTypes.string,
     pageInformation: PropTypes.shape({
       shortDescription: PropTypes.object,
       pageThumbnail: PropTypes.object,

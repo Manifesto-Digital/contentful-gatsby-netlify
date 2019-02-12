@@ -93,7 +93,6 @@ export const createSubpage = createFactory({
 });
 
 export const createContentCards = createFactory({
-  cropImageFrom: 'Center',
   pageInformation: {
     pageThumbnail: {
       description: 'Telli Afrik and family',

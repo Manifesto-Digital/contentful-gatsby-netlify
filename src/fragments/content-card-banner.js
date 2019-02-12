@@ -19,7 +19,6 @@ export const ContentCardBannerFragment = graphql`
         id
         slug
         title
-        cropImageFrom
         pageInformation {
           shortDescription {
             shortDescription
