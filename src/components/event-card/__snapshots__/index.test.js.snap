@@ -4,18 +4,33 @@ exports[`renders correctly 1`] = `
 .c0 {
   background-color: #fff;
   box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
-  -webkit-flex: 0 49%;
-  -ms-flex: 0 49%;
-  flex: 0 49%;
+  -webkit-flex: 0 100%;
+  -ms-flex: 0 100%;
+  flex: 0 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
 .c1 {
+  -webkit-align-self: start;
+  -ms-flex-item-align: start;
+  align-self: start;
+}
+
+.c2 {
+  width: 100%;
   padding: 20px;
 }
 
-.c4 {
+.c5 {
   display: block;
+  width: 100%;
   background-color: #e5edfd;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -23,11 +38,11 @@ exports[`renders correctly 1`] = `
   padding: 10px;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   text-align: center;
   padding: 10px 1em;
@@ -38,17 +53,26 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
+@media (min-width:32em) {
+  .c0 {
+    -webkit-flex: 0 49%;
+    -ms-flex: 0 49%;
+    flex: 0 49%;
+  }
+}
+
 <div
   className="c0"
 >
   <img
     alt="Collection hero"
-    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=454"
-    srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=357 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=454"
+    className="c1"
+    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=512"
+    srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=512 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=512"
   />
   <div
-    className="c1"
+    className="c2"
   >
     <h3>
       My Event
@@ -56,22 +80,22 @@ exports[`renders correctly 1`] = `
     <p>
       Description for my event
     </p>
-    <a
-      className="c2"
-      href="//my-event"
+    <Link
+      className="c3"
+      to="/my-event"
     >
       <span
-        className="c3"
+        className="c4"
       >
         Register for event
       </span>
-    </a>
+    </Link>
   </div>
-  <a
-    className="c4"
-    href="/event-categories"
+  <Link
+    className="c5"
+    to="/event-categories"
   >
     Register for event
-  </a>
+  </Link>
 </div>
 `;

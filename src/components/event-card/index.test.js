@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { createFactory, createImage } from '../../utils/test-factories';
 import {
   snapshotComponent,
@@ -13,9 +14,9 @@ export const createEventCard = createFactory({
   },
   cardText: 'Description for my event',
   primaryCtaText: 'Register for event',
-  primaryCtaLink: [{ slug: '/my-event' }],
+  primaryCtaLink: [{ slug: 'my-event' }],
   secondaryCtaText: 'Register for event',
-  secondaryCtaLink: { slug: '/event-categories' },
+  secondaryCtaLink: { slug: 'event-categories' },
 });
 
 it('renders correctly', () => {
@@ -32,15 +33,24 @@ it('displays the specified image correctly', () => {
   );
 });
 
-it('sets the correct CTA link', () => {
+it('sets the correct CTA links', () => {
   const mockData = createEventCard({
     primaryCtaLink: [{ slug: 'my-test-slug' }],
+    secondaryCtaLink: { slug: 'my-second-test-slug' },
   });
   const wrapper = mountWithTheme(<EventCard data={mockData} />);
+
   expect(
     wrapper
-      .find('a')
+      .find(Link)
       .at(0)
-      .prop('href')
-  ).toEqual('/my-test-slug');
+      .prop('to')
+  ).toContain('my-test-slug');
+
+  expect(
+    wrapper
+      .find(Link)
+      .at(1)
+      .prop('to')
+  ).toContain('my-second-test-slug');
 });
