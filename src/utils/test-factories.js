@@ -124,8 +124,8 @@ export const createContentCards = createFactory({
 
 export const createContentCardBanner = createFactory({
   header: createChildContentfulRichText(),
-  bannerColour: 'grey',
-  bannerFlow: 'horizontal',
+  bannerColour: 'Grey',
+  bannerFlow: 'Horizontal',
   contentCards: [createContentCards(), createContentCards()],
 });
 

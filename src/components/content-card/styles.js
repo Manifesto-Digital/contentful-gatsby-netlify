@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SVG from 'react-inlinesvg';
 import LinkHandler from '../link-handler';
 import ResponsiveImage from '../image/responsive.js';
 
@@ -16,6 +17,7 @@ export const Card = styled.div`
 `;
 
 export const CardImage = styled(ResponsiveImage)`
+  width: 100%;
   border-radius: ${props => props.theme.borderradius.small}
     ${props => props.theme.borderradius.small} 0;
 `;
@@ -54,4 +56,18 @@ export const CoveringLink = styled(LinkHandler)`
   left: 0;
   z-index: 0;
   opacity: 0;
+`;
+
+export const ArrowSVG = styled(SVG)`
+  display: flex;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  color: ${props => props.theme.palette.white};
+
+  svg {
+    width: 100%;
+  }
 `;

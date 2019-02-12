@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RightArrow from '../../assets/svg/icons/angle-right-light.svg';
 // Styles
 import {
   Card,
@@ -8,9 +9,12 @@ import {
   CardImage,
   SummaryText,
   Wrapper,
+  ArrowSVG,
 } from './styles';
 
-const ContentCard = ({ data }) => {
+const isOdd = num => num % 2 === 1;
+
+const ContentCard = ({ data, bannerFlow, cardCount }) => {
   const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
@@ -29,8 +33,8 @@ const ContentCard = ({ data }) => {
       <CardImage
         mobileW={600}
         mobileH={350}
-        desktopW={600}
-        desktopH={350}
+        desktopW={isOdd(cardCount) && bannerFlow === 'grid' ? 1100 : 600}
+        desktopH={isOdd(cardCount) && bannerFlow === 'grid' ? 642 : 350}
         fit="fill"
         focusArea="center"
         image={image}
@@ -38,7 +42,12 @@ const ContentCard = ({ data }) => {
       />
       <Wrapper>
         {title && <CardTitle>{title}</CardTitle>}
-        <SummaryText internalLink={cardLink}>{description}</SummaryText>
+        <SummaryText internalLink={cardLink}>
+          {description}
+          {bannerFlow === 'grid' && (
+            <ArrowSVG src={RightArrow} cacheGetRequests />
+          )}
+        </SummaryText>
       </Wrapper>
       <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
         {description}
@@ -48,6 +57,8 @@ const ContentCard = ({ data }) => {
 };
 
 ContentCard.propTypes = {
+  bannerFlow: PropTypes.oneOf(['vertical', 'horizontal', 'grid']),
+  cardCount: PropTypes.number,
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
