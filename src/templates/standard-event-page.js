@@ -132,8 +132,8 @@ const Page = ({ data }) => {
                       {/* Button to show/hide the map modal */}
                       {displayMap && (
                         <MapButton
-                          onClick={mapModalDisplayState}
                           data-remodal-target="map"
+                          onClick={mapModalDisplayState}
                         >
                           Map
                         </MapButton>
@@ -279,36 +279,30 @@ const Page = ({ data }) => {
       {displayMap && (
         <MapModal displayMapModal={displayMapModal}>
           <div
-            className="remodal remodal-is-initialized remodal-is-closed"
-            data-remodal-id="map"
-            data-remodal-options="hashTracking: false, closeOnOutsideClick: true"
+            role="presentation"
+            className="map-modal__overlay"
+            onClick={mapModalDisplayState}
           >
-            <button
-              type="button"
-              data-remodal-action="close"
-              className="remodal-close"
-            />
             <div
-              className="map-container"
-              style={{
-                paddingBottom: '75%',
-                position: 'relative',
-                width: '100%',
-              }}
+              className="map-modal__content"
+              data-remodal-id="map"
+              data-remodal-options="hashTracking: false, closeOnOutsideClick: true"
             >
-              <iframe
-                title="map"
-                style={{
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  width: '100%',
-                  height: '100%',
-                }}
-                frameBorder="0"
-                src={mapFrameSrc}
-                allowFullScreen=""
+              <button
+                type="button"
+                className="map-modal__close"
+                onClick={mapModalDisplayState}
+                data-remodal-action="close"
               />
+              <div className="map-modal__inner">
+                <iframe
+                  className="map-modal__iframe"
+                  title="map"
+                  frameBorder="0"
+                  allowFullScreen
+                  src={mapFrameSrc}
+                />
+              </div>
             </div>
           </div>
         </MapModal>
@@ -393,14 +387,13 @@ const StyledButton = styled(Button)`
 `;
 
 const StyledSVG = styled(SVG)`
-  fill: ${props => props.iconColour || props.theme.palette.black};
-
-  display: inline-block;
   width: 20px;
   height: 20px;
+  margin-top: -2px;
   margin-right: 10px;
   vertical-align: top;
-  margin-top: -2px;
+  fill: ${props => props.iconColour || props.theme.palette.black};
+  display: inline-block;
 `;
 
 const MoneySpan = styled.span`
@@ -421,11 +414,74 @@ const MapButton = styled.a`
 `;
 
 const MapModal = styled.div`
-  width: 300px;
-  position: absolute;
-  top: 200px;
-  right: 50px;
   display: ${props => (props.displayMapModal ? 'block' : 'none')};
+
+  & .map-modal__overlay {
+    text-align: center;
+    overflow: auto;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: ${props => props.theme.palette.overlay};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .map-modal__content {
+    width: 400px;
+    background: ${props => props.theme.palette.offWhite};
+    padding: ${props => props.theme.spacing.medium};
+    position: relative;
+  }
+
+  & .map-modal__close {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: ${props => props.theme.palette.sanMarinoBlue};
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    overflow: visible;
+    display: block;
+
+    &:before {
+      width: 35px;
+      line-height: 35px;
+      content: 'x';
+      font-size: 25px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+  }
+
+  & .map-modal__inner {
+    padding-bottom: 75%;
+    position: relative;
+  }
+
+  & .map-modal__iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 // }
 
@@ -434,7 +490,6 @@ export default Page;
 export const standardEventPageQuery = graphql`
   query standardEventPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyStandardEvent(slug: { eq: $slug }) {
-      id
       slug
 
       # TODO: Change this to use the Event fragment when it's implemented

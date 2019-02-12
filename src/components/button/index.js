@@ -35,7 +35,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
-  onClick: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 export default Button;

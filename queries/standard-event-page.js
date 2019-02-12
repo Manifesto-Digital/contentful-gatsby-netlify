@@ -4,7 +4,6 @@ const getStandardEventPages = async graphql =>
       allContentfulPageAssemblyStandardEvent {
         edges {
           node {
-            id
             slug
             event {
               # TODO: Change this to use the Event fragment when it's implemented
