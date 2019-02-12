@@ -24,11 +24,13 @@ const EventCard = ({ data }) => {
       <CardContent>
         <h3>{event.eventName}</h3>
         <p>{cardText}</p>
-        <CTA bg="red" fullWidth externalUrl={`/${primaryCtaLink[0].slug}`}>
+        <CTA bg="red" fullWidth internalLink={{ slug: primaryCtaLink[0].slug }}>
           {primaryCtaText}
         </CTA>
       </CardContent>
-      <CategoryCTA href={secondaryCtaLink.slug}>{secondaryCtaText}</CategoryCTA>
+      <CategoryCTA internalLink={{ slug: secondaryCtaLink.slug }}>
+        {secondaryCtaText}
+      </CategoryCTA>
     </Card>
   );
 };

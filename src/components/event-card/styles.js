@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 import ResponsiveImage from '../image/responsive';
+import LinkHandler from '../link-handler';
 
 export const Card = styled.div`
   background-color: ${({ theme }) => theme.palette.white};
@@ -24,7 +25,7 @@ export const CardContent = styled.div`
   padding: ${({ theme }) => theme.spacing.standard};
 `;
 
-export const CategoryCTA = styled.a`
+export const CategoryCTA = styled(LinkHandler)`
   display: block;
   width: 100%;
   background-color: ${({ theme }) => theme.palette.lightBlue};
