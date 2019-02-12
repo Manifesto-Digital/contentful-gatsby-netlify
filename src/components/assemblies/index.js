@@ -138,7 +138,6 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-
       if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
@@ -166,11 +165,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       return null;
     });
 
-  return (
-    <>
-      <AssembliesLoop />
-    </>
-  );
+  return <AssembliesLoop />;
 };
 
 Assemblies.propTypes = {
