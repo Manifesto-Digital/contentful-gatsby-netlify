@@ -25,6 +25,8 @@ const ContentCardBanner = ({ data }) => {
               key={i}
               data={contentCard}
               bannerFlow={consistentString(bannerFlow)}
+              currentCardCount={i}
+              cardCount={contentCards.length}
             />
           ))}
         </CardRow>

@@ -12,7 +12,9 @@ import {
   ArrowSVG,
 } from './styles';
 
-const ContentCard = ({ data, bannerFlow }) => {
+const isOdd = num => num % 2 === 1;
+
+const ContentCard = ({ data, bannerFlow, cardCount }) => {
   const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
@@ -31,8 +33,8 @@ const ContentCard = ({ data, bannerFlow }) => {
       <CardImage
         mobileW={600}
         mobileH={350}
-        desktopW={600}
-        desktopH={350}
+        desktopW={isOdd(cardCount) && bannerFlow === 'grid' ? 1100 : 600}
+        desktopH={isOdd(cardCount) && bannerFlow === 'grid' ? 642 : 350}
         fit="fill"
         focusArea="center"
         image={image}
@@ -56,6 +58,7 @@ const ContentCard = ({ data, bannerFlow }) => {
 
 ContentCard.propTypes = {
   bannerFlow: PropTypes.oneOf(['vertical', 'horizontal', 'grid']),
+  cardCount: PropTypes.number,
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
