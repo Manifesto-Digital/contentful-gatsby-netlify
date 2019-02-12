@@ -17,8 +17,8 @@ const EventCard = ({ data }) => {
   return (
     <Card>
       <ResponsiveImage
-        mobileW={357}
-        desktopW={454}
+        mobileW={512}
+        desktopW={512}
         image={event.thumbnailImage}
         description={event.eventName}
       />
