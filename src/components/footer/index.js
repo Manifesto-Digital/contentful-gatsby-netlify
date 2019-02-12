@@ -71,10 +71,11 @@ const footerQuery = graphql`
   }
 `;
 
-export const PureFooter = ({ pageData }) => {
+export const PureFooter = ({ pageData, removeMarginTop }) => {
   const { footerText, shareType, navigationItems } = pageData;
+
   return (
-    <Wrapper>
+    <Wrapper removeMarginTop={removeMarginTop}>
       <Top>
         <Container>
           <Menus>
@@ -108,17 +109,25 @@ export const PureFooter = ({ pageData }) => {
   );
 };
 
-const Footer = () => (
+const Footer = ({ removeMarginTop }) => (
   <StaticQuery
     query={footerQuery}
     render={data => (
-      <PureFooter pageData={data.allContentfulAssemblyFooter.edges[0].node} />
+      <PureFooter
+        removeMarginTop={removeMarginTop}
+        pageData={data.allContentfulAssemblyFooter.edges[0].node}
+      />
     )}
   />
 );
 
+Footer.propTypes = {
+  removeMarginTop: PropTypes.bool,
+};
+
 PureFooter.propTypes = {
   pageData: PropTypes.object.isRequired,
+  removeMarginTop: PropTypes.bool,
 };
 
 export default Footer;
