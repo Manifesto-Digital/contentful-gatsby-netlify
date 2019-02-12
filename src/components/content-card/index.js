@@ -40,7 +40,6 @@ const ContentCard = ({ data }) => {
         {title && <CardTitle>{title}</CardTitle>}
         <SummaryText internalLink={cardLink}>{description}</SummaryText>
       </Wrapper>
-
       <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
         {description}
       </CoveringLink>
