@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c2 {
+  display: block;
+  background-size: 15px 15px;
+  width: auto;
+  padding: 10px;
+  padding-left: 30px;
+  max-width: 10em;
+}
+
+.c2::-webkit-outer-spin-button,
+.c2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c1 {
+  left: 12px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 0.775rem;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  >
+    £
+  </span>
+  <input
+    className="c2"
+    name="foo"
+    pattern="[0-9]*"
+    type="number"
+  />
+</div>
+`;

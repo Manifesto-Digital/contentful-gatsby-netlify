@@ -12,10 +12,10 @@ import LinkHandler from '../../link-handler';
 const createSubpageMenu = createFactory({
   title: 'An example of a advice guide',
   pages: [
-    createSubpage({ slug: 'Advice page 1' }),
-    createSubpage({ slug: 'Advice page 2' }),
-    createSubpage({ slug: 'Advice page 3' }),
-    createSubpage({ slug: 'Advice page 4' }),
+    createSubpage({ slug: 'advice-page-1' }),
+    createSubpage({ slug: 'advice-page-2' }),
+    createSubpage({ slug: 'advice-page-3' }),
+    createSubpage({ slug: 'advice-page-4' }),
   ],
 });
 

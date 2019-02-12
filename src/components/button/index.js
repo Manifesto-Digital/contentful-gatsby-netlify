@@ -10,12 +10,14 @@ const Button = ({
   type = 'button',
   children,
   className,
+  disabled,
 }) => (
   <DefaultButton
     bg={bg}
     className={className}
     fullWidth={fullWidth}
     type={type}
+    disabled={disabled}
   >
     {icon && <IconHolder src={icon} iconColour={iconColour} cacheGetRequests />}
     {children}
@@ -28,6 +30,7 @@ Button.propTypes = {
   iconColour: PropTypes.string,
   type: PropTypes.string,
   fullWidth: PropTypes.bool,
+  disabled: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
 };

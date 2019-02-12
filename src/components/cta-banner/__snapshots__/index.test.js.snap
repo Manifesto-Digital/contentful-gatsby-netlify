@@ -17,7 +17,7 @@ exports[`renders correctly 1`] = `
 
 <Link
   className="c0"
-  to="internal-link-slug"
+  to="/internal-link-slug"
 >
   <span
     className="c1"

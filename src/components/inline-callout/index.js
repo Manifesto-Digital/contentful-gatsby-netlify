@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 import { richTextPropTypes } from '../../prop-types';
 import { consistentString } from '../../utils/content-formatting';
 // Components
-import Icon from './icon';
+import iconSrc from '../../utils/iconSrc';
 // Styles
-import { InlineBanner, TextWrapper } from './styles';
+import { InlineBanner, TextWrapper, BannerSVG } from './styles';
 import { Container } from '../styled/containers';
 
-const InlineCallOut = ({ content, insideContainer }) => {
+const InlineCallOut = ({ content, insideContainer, forwardedRef }) => {
   const { icon, borderColour, bannerColour } = content;
   const callOutText = content.content;
+
   return (
-    <Container padding={!insideContainer}>
+    <Container padding={!insideContainer} ref={forwardedRef}>
       <InlineBanner
         borderCol={consistentString(borderColour)}
         bannerCol={consistentString(bannerColour)}
       >
-        <Icon icon={consistentString(icon)} />
+        <BannerSVG src={iconSrc(icon)} cacheGetRequests />
         <TextWrapper richText={callOutText} />
       </InlineBanner>
     </Container>
@@ -32,9 +33,11 @@ InlineCallOut.propTypes = {
     bannerColour: PropTypes.string,
   }),
   insideContainer: PropTypes.bool,
+  forwardedRef: PropTypes.object,
 };
 
 InlineCallOut.defaultProps = {
   insideContainer: false,
 };
+
 export default InlineCallOut;

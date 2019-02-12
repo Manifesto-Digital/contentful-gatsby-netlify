@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c1 {
+.c2 {
   display: inline-block;
   text-align: center;
   padding: 10px 1em;
@@ -12,14 +12,17 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
-.c0 {
+.c1 {
   border: 1px solid #d9d9d9;
   background-color: white;
   display: block;
   background-size: 15px 15px;
   width: 100%;
-  margin-bottom: 20px;
   padding: 10px;
+}
+
+.c0 {
+  margin-bottom: 20px;
 }
 
 <form
@@ -29,19 +32,23 @@ exports[`renders correctly 1`] = `
   <h3>
     My Heading
   </h3>
-  <textarea
-    autoFocus={true}
+  <div
     className="c0"
-    name="comment"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Your comment"
-    type="textarea"
-    value=""
-  />
+  >
+    <textarea
+      autoFocus={true}
+      className="c1"
+      name="comment"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Your comment"
+      type="textarea"
+      value=""
+    />
+  </div>
   <mock-recaptcha />
   <button
-    className="c1"
+    className="c2"
     type="submit"
   >
     Submit

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import LinkHandler from '../link-handler';
 import { Container } from '../styled/containers';
 import { Wrapper, ListWrapper, ListItem } from './styles';
 
@@ -11,11 +11,12 @@ const LinkBox = ({ data }) => {
       <Wrapper>
         <h2>{headerText}</h2>
         <ListWrapper>
-          {links.map((link, i) => (
-            <ListItem key={i} rowCount={itemsPerRow}>
-              <Link to={link.slug}>{link.title}</Link>
-            </ListItem>
-          ))}
+          {links &&
+            links.map((link, i) => (
+              <ListItem key={i} rowCount={itemsPerRow}>
+                <LinkHandler internalLink={link}>{link.title}</LinkHandler>
+              </ListItem>
+            ))}
         </ListWrapper>
       </Wrapper>
     </Container>
