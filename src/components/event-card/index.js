@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardContent, CategoryCTA } from './styles';
-import ResponsiveImage from '../image/responsive';
+import { Card, Thumbnail, CardContent, CategoryCTA } from './styles';
 import CTA from '../cta';
 
 const EventCard = ({ data }) => {
@@ -16,7 +15,7 @@ const EventCard = ({ data }) => {
 
   return (
     <Card>
-      <ResponsiveImage
+      <Thumbnail
         mobileW={512}
         desktopW={512}
         image={event.thumbnailImage}
