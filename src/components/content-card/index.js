@@ -13,29 +13,18 @@ import {
 } from './styles';
 
 const ContentCard = ({ data, bannerFlow }) => {
-  const {
-    title,
-    slug,
-    summaryText,
-    featuredImage,
-    pageInformation = null,
-    cropImageFrom,
-  } = data;
+  const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
   cardLink.slug = slug;
 
   // Fallback until all images are set in pageInformation field
-  const image =
-    pageInformation && pageInformation.pageThumbnail
-      ? pageInformation.pageThumbnail
-      : featuredImage;
+  const image = pageInformation.pageThumbnail;
 
   // Fallback until all descriptions are set in pageInformation field
-  const description =
-    pageInformation && pageInformation.shortDescription.shortDescription
-      ? pageInformation.shortDescription.shortDescription
-      : summaryText;
+  const description = pageInformation.shortDescription.shortDescription;
+
+  if (!image) return null;
 
   return (
     <Card>
@@ -45,7 +34,7 @@ const ContentCard = ({ data, bannerFlow }) => {
         desktopW={600}
         desktopH={350}
         fit="fill"
-        focusArea={cropImageFrom}
+        focusArea="center"
         image={image}
         presentational
       />
@@ -58,7 +47,6 @@ const ContentCard = ({ data, bannerFlow }) => {
           )}
         </SummaryText>
       </Wrapper>
-
       <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
         {description}
       </CoveringLink>
@@ -71,15 +59,6 @@ ContentCard.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
-    summaryText: PropTypes.string,
-    featuredImage: PropTypes.shape({
-      description: PropTypes.string,
-      file: PropTypes.shape({
-        fileName: PropTypes.string,
-        url: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
-    cropImageFrom: PropTypes.string,
     pageInformation: PropTypes.shape({
       shortDescription: PropTypes.object,
       pageThumbnail: PropTypes.object,

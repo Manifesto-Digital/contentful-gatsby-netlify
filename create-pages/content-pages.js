@@ -13,12 +13,14 @@ async function createContentPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  pages.data.allContentfulPageAssemblyContentPage.edges.forEach(edge => {
+  pages.data.allContentfulPageAssemblyContentPage.edges.forEach(({ node }) => {
+    if (!node.slug) return;
+
     gatsbyCreatePage({
-      path: edge.node.slug,
+      path: node.slug,
       component: contentPageTemplate,
       context: {
-        slug: edge.node.slug,
+        slug: node.slug,
       },
     });
   });
