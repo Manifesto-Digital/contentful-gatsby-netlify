@@ -15,7 +15,7 @@ const icons = {
 };
 
 const Icon = ({ icon }) => {
-  if (icons[icon] === undefined) {
+  if (!icons[icon]) {
     throw new Error(
       'No matching icon was found. Is it set as an option in the CMS? Has it been imported and included in the object above?'
     );
@@ -24,7 +24,7 @@ const Icon = ({ icon }) => {
   const chosenIcon = icons[icon] || null;
 
   if (!chosenIcon) return null;
-  return <CardSVG src={chosenIcon} />;
+  return <CardSVG src={chosenIcon} cacheGetRequests />;
 };
 
 Icon.propTypes = {

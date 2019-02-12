@@ -5,23 +5,26 @@ import CTA from '../cta';
 import { consistentString } from '../../utils/content-formatting';
 
 // Styles
-import { CardContainer, TitleText, SubText, CardCTA } from './styles';
+import { CardContainer, Wrapper, TitleText, SubText, CardCTA } from './styles';
 
 const CardWithIcon = ({ data, insideContainer }) => {
   const { icon, titleText, subText, ctaText, ctaLink } = data;
 
-  const ctaData = {
-    buttonText: ctaText,
-    ctaColour: 'Red',
-    internalLink: ctaLink,
-  };
-
   return (
     <CardContainer insideContainer={insideContainer}>
-      {icon && <Icon icon={consistentString(icon)} />}
-      <TitleText>{titleText}</TitleText>
-      <SubText>{subText}</SubText>
-      <CardCTA {...CTA.fromCMS(ctaData)} />
+      <Wrapper>
+        {icon && <Icon icon={consistentString(icon)} />}
+        <TitleText>{titleText}</TitleText>
+        <SubText>{subText}</SubText>
+        <CardCTA
+          {...CTA.fromCMS({
+            buttonText: ctaText,
+            ctaColour: 'Red',
+            internalLink: ctaLink,
+          })}
+          fullWidth
+        />
+      </Wrapper>
     </CardContainer>
   );
 };

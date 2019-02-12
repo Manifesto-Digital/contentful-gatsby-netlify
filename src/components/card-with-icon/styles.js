@@ -27,6 +27,7 @@ export const CardContainer = styled.div`
   ${breakpoint.desktop`
     width: auto;
     flex: 1;
+
     margin: ${props =>
       props.insideContainer === true
         ? `0 0 0 ${props.theme.spacing.medium}`
@@ -38,8 +39,11 @@ export const CardContainer = styled.div`
   `}
 `;
 
+export const Wrapper = styled.div``;
+
 export const CardSVG = styled(SVG)`
-  fill: ${props => props.theme.palette.black};
+  /* fill: ${props => props.theme.palette.black}; */
+  fill: ${({ theme }) => theme.palette.black};
   width: 40px;
   height: 40px;
   display: inline-block;
@@ -54,6 +58,5 @@ export const SubText = styled.p`
 `;
 
 export const CardCTA = styled(CTA)`
-  width: 90%;
   margin-top: auto;
 `;
