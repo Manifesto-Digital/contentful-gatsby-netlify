@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { dateAsString } from '../utils/dates';
 import Layout from '../components/layout';
 import HeroVideo from '../components/hero/hero-video';
 import StickyBanner from '../components/challenge-event/sticky-banner';
@@ -9,14 +10,16 @@ import ChallengeEventAssemblies from '../components/assemblies/challenge-event';
 const ChallengeEventPage = ({ data }) => {
   const {
     heroImage,
-    bannerText,
     bannerButtonText,
     backgroundVideo,
-    heroTitle,
-    heroSubtitle,
-    eventLink,
     assemblies,
+    event,
   } = data.contentfulPageAssemblyChallengeEvent;
+
+  // Grab the information from the event reference
+  const { eventName, displayLocation, registrationLink, distance } = event;
+  const date = dateAsString(event.eventSystemDate, 'DD MMM YYYY');
+  const bannerText = `${distance}\n${displayLocation}\n${date}`;
 
   const [bannerStuck, setBannerStuck] = useState(false);
   const [animateBanner, setAnimateBanner] = useState(false);
@@ -97,20 +100,21 @@ const ChallengeEventPage = ({ data }) => {
   return (
     <Layout removeFooterMargin>
       <HeroVideo
-        title={heroTitle}
-        subtitle={heroSubtitle}
+        title={eventName}
+        subtitle={displayLocation}
         video={backgroundVideo}
-        bannerText={bannerText.bannerText}
+        bannerText={bannerText}
         buttonText={bannerButtonText}
         image={heroImage}
-        eventLink={eventLink.eventLink}
+        eventLink={registrationLink.registrationLink}
         heroBannerRef={heroBannerRef}
       />
       <ChallengeEventAssemblies assemblies={assemblies} />
       <StickyBanner
-        title={heroTitle}
-        subtitle={heroSubtitle}
-        eventLink={eventLink.eventLink}
+        title={eventName}
+        subtitle={displayLocation}
+        eventLink={registrationLink.registrationLink}
+        bannerText={bannerText}
         buttonText={bannerButtonText}
         stickyBarRef={stickyBarRef}
         bannerStuck={bannerStuck}
@@ -131,22 +135,22 @@ export default ChallengeEventPage;
 export const challengeEventPageQuery = graphql`
   query challengeEventPageQuery($slug: String!) {
     contentfulPageAssemblyChallengeEvent(slug: { eq: $slug }) {
-      title
-      heroTitle
       heroImage {
         ...ImageFragment
-      }
-      heroSubtitle
-      eventLink {
-        eventLink
       }
       backgroundVideo {
         file {
           url
         }
       }
-      bannerText {
-        bannerText
+      event {
+        eventName
+        distance
+        displayLocation
+        eventSystemDate
+        registrationLink {
+          registrationLink
+        }
       }
       bannerButtonText
       assemblies {
