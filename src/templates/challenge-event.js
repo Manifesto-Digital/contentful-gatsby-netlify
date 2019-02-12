@@ -62,8 +62,6 @@ const ChallengeEventPage = ({ data }) => {
     } else if (scrollPosition > middleOfHeroBanner && !bannerWouldBeVisible) {
       if (lastScroll < scrollPosition) setAnimateBanner(true);
       setBannerStuck(true);
-    } else {
-      setBannerStuck(false);
     }
     lastScroll = scrollPosition;
   };
@@ -86,7 +84,7 @@ const ChallengeEventPage = ({ data }) => {
     return function cleanup() {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [stickyBarPosition]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleStickyBarScroll);
