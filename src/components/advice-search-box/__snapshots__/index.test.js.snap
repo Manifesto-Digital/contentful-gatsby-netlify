@@ -11,6 +11,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
+.c7:hover {
+  color: #fff;
+}
+
 .c8 {
   fill: #fff;
   display: inline-block;
