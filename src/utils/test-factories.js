@@ -82,6 +82,7 @@ export const createHeaderNavigation = createFactory({
       ],
     },
   ],
+  footerText: createChildContentfulRichText(),
 });
 
 export const createSubpage = createFactory({

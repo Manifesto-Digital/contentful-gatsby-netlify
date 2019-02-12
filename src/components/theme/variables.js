@@ -56,6 +56,7 @@ theme.headers = {
 };
 
 theme.fontsize = {
+  tiny: '0.6rem', // 12px
   small: '0.775rem', // 14px
   standard: '1rem', // 16px
   larger: '1.4rem',
