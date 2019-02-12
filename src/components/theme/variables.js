@@ -17,6 +17,7 @@ theme.palette = {
   pureBlack: '#000000',
   // Blues
   sanMarinoBlue: '#4d63b5',
+  lightBlue: '#e5edfd',
   royalBlue: '#0b0b89',
   shelterBlue: '#65cfe9',
   // Social sharing
