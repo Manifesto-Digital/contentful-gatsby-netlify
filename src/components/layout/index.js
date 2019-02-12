@@ -10,6 +10,7 @@ import theme from '../theme/variables';
 
 // Component
 import Header from '../header';
+import Footer from '../footer';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,6 +38,7 @@ const Layout = ({ children }) => (
           </Helmet>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
+          <Footer />
         </>
       </ThemeProvider>
     )}
