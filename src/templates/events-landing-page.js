@@ -7,12 +7,9 @@ import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
+import { SectionTag } from '../components/styled/tags';
 import EventCard from '../components/event-card';
-import {
-  Wrapper,
-  SectionTag,
-  CardWrapper,
-} from '../components/events-landing-page/styles';
+import { Wrapper, CardWrapper } from '../components/events-landing-page/styles';
 
 const EventsLandingPage = ({ data }) => {
   const {
