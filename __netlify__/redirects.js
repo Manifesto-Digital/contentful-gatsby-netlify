@@ -58,7 +58,10 @@ client
     };
 
     const writeStaticRedirectsFile = async staticRedirects => {
-      await fsPromises.appendFile(filepath, '# static redirects generated\n\n');
+      await fsPromises.appendFile(
+        filepath,
+        '\n\n# static redirects generated\n\n'
+      );
       await fsPromises.appendFile(filepath, staticRedirects);
     };
 
