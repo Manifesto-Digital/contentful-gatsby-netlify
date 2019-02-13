@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './styles';
 import ResponsiveImage from '../image/responsive';
+import LinkHandler from '../link-handler';
 
 const FeaturedEvent = ({ data }) => {
+  const { slug, mainCtaText, event } = data;
   const {
     eventName,
     displayLocation,
     eventDisplayDate,
     distance,
     thumbnailImage,
-  } = data;
+  } = event;
 
   return (
     <Wrapper>
@@ -25,6 +27,9 @@ const FeaturedEvent = ({ data }) => {
         <p>{displayLocation}</p>
         <p>{eventDisplayDate}</p>
         <p>{distance}</p>
+        <p>
+          <LinkHandler internalLink={{ slug }}>{mainCtaText}</LinkHandler>
+        </p>
       </div>
     </Wrapper>
   );
@@ -32,11 +37,9 @@ const FeaturedEvent = ({ data }) => {
 
 FeaturedEvent.propTypes = {
   data: PropTypes.shape({
-    eventName: PropTypes.string.isRequired,
-    displayLocation: PropTypes.string,
-    eventDisplayDate: PropTypes.string,
-    distance: PropTypes.string,
-    thumbnailImage: PropTypes.object.isRequired,
+    slug: PropTypes.string.isRequired,
+    mainCtaText: PropTypes.string.isRequired,
+    event: PropTypes.object,
   }),
 };
 

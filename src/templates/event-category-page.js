@@ -60,13 +60,17 @@ export const eventCategoryPageQuery = graphql`
         }
       }
       featuredEvent {
-        eventName
-        displayLocation
-        eventDisplayDate
-        distance
-        thumbnailImage {
-          file {
-            url
+        slug
+        mainCtaText
+        event {
+          eventName
+          displayLocation
+          eventDisplayDate
+          distance
+          thumbnailImage {
+            file {
+              url
+            }
           }
         }
       }
