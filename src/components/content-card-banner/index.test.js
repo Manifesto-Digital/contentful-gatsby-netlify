@@ -7,6 +7,7 @@ import {
 import ContentCardBanner from './index';
 import { BannerBackground, CardRow } from './styles';
 import { createContentCardBanner } from '../../utils/test-factories';
+import theme from '../theme/variables';
 
 // Default prop values
 
@@ -18,22 +19,12 @@ it('renders correctly', () => {
 hidePascalCaseWarning();
 
 it('Shows a background colour correctly', () => {
-  const mockBanner = createContentCardBanner({ bannerColor: 'grey' });
+  const mockBanner = createContentCardBanner({ bannerColor: 'Grey' });
   const wrapper = mountWithTheme(<ContentCardBanner data={mockBanner} />);
-  expect(wrapper.find(BannerBackground).props().bannerColour).toEqual(
-    mockBanner.bannerColour
-  );
+
   expect(wrapper.find(BannerBackground)).toHaveStyleRule(
     'background',
-    '#e5e5e5'
-  );
-});
-
-it('Passes an orientation', () => {
-  const mockBanner = createContentCardBanner({ bannerFlow: 'horizontal' });
-  const wrapper = mountWithTheme(<ContentCardBanner data={mockBanner} />);
-  expect(wrapper.find(BannerBackground).props().bannerFlow).toEqual(
-    mockBanner.bannerFlow
+    theme.palette.grey10
   );
 });
 

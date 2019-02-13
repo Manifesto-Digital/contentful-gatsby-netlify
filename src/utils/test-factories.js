@@ -25,6 +25,18 @@ export const createImage = createFactory({
   },
 });
 
+export const createVideo = createFactory({
+  id: 'ca8e4a9c-9491-5257-8e53-d3d74ae204a5',
+  title: 'Urban Rush hero',
+  description: 'Urban rush video',
+  file: {
+    url:
+      '//videos.ctfassets.net/6sxvmndnpn0s/5hlfsk9dwVVNBlbpWHSLvK/9f1d647e6332be389465c9d014a57a26/shelter-urban-rush.mp4',
+    fileName: 'shelter-urban-rush.mp4',
+    contentType: 'video/mp4',
+  },
+});
+
 export const createChildContentfulRichText = createFactory({
   childContentfulRichText: {
     html:
@@ -112,7 +124,11 @@ export const createContentCards = createFactory({
 
 export const createContentCardBanner = createFactory({
   header: createChildContentfulRichText(),
-  bannerColour: 'grey',
-  bannerFlow: 'horizontal',
+  bannerColour: 'Grey',
+  bannerFlow: 'Horizontal',
   contentCards: [createContentCards(), createContentCards()],
+});
+
+export const createRef = createFactory({
+  current: {},
 });

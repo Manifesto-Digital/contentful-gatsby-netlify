@@ -12,7 +12,7 @@ import theme from '../theme/variables';
 import Header from '../header';
 import Footer from '../footer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, removeFooterMargin }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -40,7 +40,7 @@ const Layout = ({ children }) => (
           <main role="main" id="main">
             {children}
           </main>
-          <Footer />
+          <Footer removeMarginTop={removeFooterMargin} />
         </>
       </ThemeProvider>
     )}
@@ -49,6 +49,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  removeFooterMargin: PropTypes.bool,
 };
 
 export default Layout;

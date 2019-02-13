@@ -31,6 +31,7 @@ theme.palette = {
   successLight: '#e6f8e7',
 
   overlay: 'rgba(43, 46, 56, 0.7)',
+  overlayLight: 'rgba(255, 255, 255, 0.9)',
 };
 
 theme.fonts = {
@@ -60,6 +61,7 @@ theme.fontsize = {
   small: '0.775rem', // 14px
   standard: '1rem', // 16px
   larger: '1.4rem',
+  hero: '4rem',
 };
 
 theme.boxshadow = {
