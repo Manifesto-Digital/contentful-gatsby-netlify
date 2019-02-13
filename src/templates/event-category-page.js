@@ -21,7 +21,13 @@ const EventCategoryPage = ({ data }) => {
   return (
     <Layout>
       <article>
-        <p>hello world</p>
+        <Container>
+          <TwoThirds>
+            <h1>{pageName}</h1>
+            {strapline && <h3>{strapline}</h3>}
+            {summary && <RichText richText={summary} />}
+          </TwoThirds>
+        </Container>
       </article>
     </Layout>
   );
