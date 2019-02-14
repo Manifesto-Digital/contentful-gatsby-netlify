@@ -1,12 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LinkHandler from '../link-handler';
+import ResponsiveImage from '../image/responsive';
 
 const EventListCard = ({ data }) => {
-  console.log(data);
   const { slug, event } = data;
-  const { eventName, displayLocation, eventDisplayDate } = event;
+  const {
+    eventName,
+    displayLocation,
+    eventDisplayDate,
+    thumbnailImage,
+  } = event;
 
-  return <div>Hello world</div>;
+  return (
+    <div>
+      <LinkHandler internalLink={slug}>
+        <ResponsiveImage
+          mobileW={500}
+          desktopW={500}
+          image={thumbnailImage}
+          description={eventName}
+        />
+        <div>{eventName}</div>
+        <div>{displayLocation}</div>
+        <div>{eventDisplayDate}</div>
+      </LinkHandler>
+    </div>
+  );
 };
 
 EventListCard.propTypes = {

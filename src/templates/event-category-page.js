@@ -101,6 +101,11 @@ export const eventCategoryPageQuery = graphql`
             eventName
             displayLocation
             eventDisplayDate
+            thumbnailImage {
+              file {
+                url
+              }
+            }
           }
         }
       }
@@ -116,6 +121,11 @@ export const eventCategoryPageQuery = graphql`
             eventName
             displayLocation
             eventDisplayDate
+            thumbnailImage {
+              file {
+                url
+              }
+            }
           }
         }
       }
