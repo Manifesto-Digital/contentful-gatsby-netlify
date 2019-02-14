@@ -306,6 +306,10 @@ Array [
   color: #fff;
 }
 
+.c10:hover {
+  color: #fff;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;

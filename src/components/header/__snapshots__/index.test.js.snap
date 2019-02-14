@@ -96,6 +96,10 @@ Array [
   color: #fff;
 }
 
+.c12:hover {
+  color: #fff;
+}
+
 .c13 {
   display: inline-block;
   text-align: center;
@@ -119,6 +123,10 @@ Array [
   margin-right: 10px;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c13:hover {
+  color: #fff;
 }
 
 .c13:hover {
@@ -680,6 +688,10 @@ Array [
   justify-content: center;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c10:hover {
+  color: #fff;
 }
 
 .c10:hover {
