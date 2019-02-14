@@ -40,10 +40,6 @@ client
         return true;
       });
     };
-    await generateRedirects().catch(error => {
-      console.log(error);
-      process.exit(1);
-    });
 
     const readFile = async () => {
       let fileHandle = null;
@@ -65,15 +61,14 @@ client
       await fsPromises.appendFile(filepath, staticRedirects);
     };
 
-    const fileContents = await readFile().catch(error => {
+    try {
+      await generateRedirects();
+      const fileContents = await readFile();
+      writeStaticRedirectsFile(fileContents);
+    } catch (error) {
       console.log(error);
       process.exit(1);
-    });
-
-    writeStaticRedirectsFile(fileContents).catch(error => {
-      console.log(error);
-      process.exit(1);
-    });
+    }
   })
   .catch(error => {
     console.log(error);
