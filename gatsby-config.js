@@ -56,7 +56,6 @@ module.exports = {
           process.env.ctfl_accessToken,
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
         environment: process.env.GATSBY_CONTENTFUL_ENVIRONMENT || 'master',
-        resolveLinks: false,
       },
     },
     'gatsby-plugin-offline',
@@ -76,15 +75,21 @@ module.exports = {
            */
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: node => {
-              const url = node.data.target.fields.file['en-GB'].url;
+              const imageObject = node.data.target.fields;
+              const { url } = node.data.target.fields.file['en-GB'];
               const file = url.substring(url.lastIndexOf('/') + 1);
-
+              const alt = Object.prototype.hasOwnProperty.call(
+                imageObject,
+                'description'
+              )
+                ? imageObject.description['en-GB']
+                : '';
               if (file.match(/\.(jpeg|jpg|gif|png)$/)) {
                 return `<img
                   class='embedded-in-richtext'
                   data-BLOCKS.EMBEDDED_ASSET
-                  src="${node.data.target.fields.file['en-GB'].url}"
-                  alt="${node.data.target.fields.description['en-GB']}"
+                  src="${url}"
+                  alt="${alt}"
                 />`;
               }
             },
