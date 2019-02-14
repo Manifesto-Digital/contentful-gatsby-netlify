@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
-import { Card } from '../content-card/styles';
+import { Card, Wrapper, SummaryText, CardImage } from '../content-card/styles';
 
 export const CardRow = styled.div`
   display: flex;
@@ -23,24 +23,69 @@ export const CardRow = styled.div`
 `;
 
 export const BannerBackground = styled.section`
+  margin-bottom: ${props => props.theme.spacing.standard};
   background: ${props =>
     (props.bannerColour === 'white' && props.theme.palette.white) ||
     (props.bannerColour === 'grey' && props.theme.palette.grey10)};
-  padding: ${props => props.theme.spacing.medium} 0;
 
-  ${CardRow} {
+  padding: ${props =>
+    props.bannerColour === 'grey' ? props.theme.spacing.medium : '0'}
+    0;
+
     ${Card} {
-      flex: ${props => props.bannerFlow === 'vertical' && '0 1 100%'};
-      width: ${props => props.bannerFlow === 'vertical' && '100%'};
-      max-width: ${props =>
-        props.bannerFlow === 'vertical' ? '600px' : 'auto'};
+      /* vertical */
+      ${({ bannerFlow }) =>
+        bannerFlow === 'vertical' &&
+        css`
+          flex: 1 1 100%;
+          width: 100%;
+          max-width: 600px;
+        `}
+
+      /* grid */
+      ${({ bannerFlow }) =>
+        bannerFlow === 'grid' &&
+        css`
+          flex: 0 1 100%;
+          width: 100%;
+
+          ${Wrapper} {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin-right: ${props => props.theme.spacing.standard};
+            background: ${({ theme }) => theme.palette.overlayLight};
+          }
+
+          ${CardImage} {
+            border-radius: 0;
+          }
+
+          ${SummaryText} {
+            padding-right: 35px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              bottom: 2px;
+              right: 2px;
+              width: 25px;
+              height: 25px;
+              background: ${({ theme }) => theme.palette.grey25};
+            }
+          }
+
+          ${breakpoint.tablet`
+            flex: 1 1 50%;
+            width: 50%;
+            margin-bottom: 0;
+          `}
+        `}
     }
-  }
 `;
 
 export const HeaderText = styled.h2`
   margin-bottom: ${props => props.theme.spacing.medium};
-  padding-top: ${props => props.theme.spacing.standard};
 
   a {
     text-decoration: none;

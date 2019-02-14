@@ -6,13 +6,15 @@ import Print from '../../assets/svg/printer.svg';
 import WhatsApp from '../../assets/svg/whatsapp.svg';
 import Facebook from '../../assets/svg/facebook.svg';
 import Twitter from '../../assets/svg/twitter.svg';
+import LinkedIn from '../../assets/svg/linkedin-in.svg';
 
 const icons = {
   print: Print,
   email: Email,
   whatsapp: WhatsApp,
-  twitter: Twitter,
   facebook: Facebook,
+  twitter: Twitter,
+  linkedin: LinkedIn,
 };
 
 const Icon = ({ icon }) => {
