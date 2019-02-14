@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkHandler from '../link-handler';
-import ResponsiveImage from '../image/responsive';
+import {
+  Card,
+  CardLink,
+  Thumbnail,
+  CardContent,
+  CardInfoList,
+  CardInfo,
+  InfoIcon,
+} from './styles';
+import iconSrc from '../../utils/iconSrc';
 
 const EventListCard = ({ data }) => {
   const { slug, event } = data;
@@ -13,19 +21,33 @@ const EventListCard = ({ data }) => {
   } = event;
 
   return (
-    <div>
-      <LinkHandler internalLink={slug}>
-        <ResponsiveImage
+    <CardLink internalLink={{ slug }}>
+      <Card>
+        <Thumbnail
           mobileW={500}
           desktopW={500}
           image={thumbnailImage}
           description={eventName}
         />
-        <div>{eventName}</div>
-        <div>{displayLocation}</div>
-        <div>{eventDisplayDate}</div>
-      </LinkHandler>
-    </div>
+        <CardContent>
+          <h3>{eventName}</h3>
+          <CardInfoList>
+            {displayLocation && (
+              <CardInfo>
+                <InfoIcon src={iconSrc('map-marker')} />
+                {displayLocation}
+              </CardInfo>
+            )}
+            {eventDisplayDate && (
+              <CardInfo>
+                <InfoIcon src={iconSrc('calendar')} />
+                {eventDisplayDate}
+              </CardInfo>
+            )}
+          </CardInfoList>
+        </CardContent>
+      </Card>
+    </CardLink>
   );
 };
 
