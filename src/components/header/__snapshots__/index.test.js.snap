@@ -2,7 +2,146 @@
 
 exports[`Renders correctly 1`] = `
 Array [
-  .c3 {
+  .c6 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5px;
+  font-size: 0.775rem;
+  width: 100%;
+  margin: 0 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.c8 {
+  display: block;
+  background-size: 15px 15px;
+  width: auto;
+  padding: 10px;
+  width: 100%;
+  margin-right: 1px;
+  background-color: #fff;
+  border: 0;
+}
+
+.c9 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+.c10 {
+  display: block;
+  width: 18px;
+  fill: #0b0b89;
+}
+
+.c12 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c12:hover {
+  color: #fff;
+}
+
+.c13 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 10px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13:hover {
+  color: #fff;
+}
+
+.c5 {
+  display: none;
+  height: 43px;
+}
+
+.c5 .c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c16 .c11 {
+  display: none;
+}
+
+.c3 {
   display: block;
   width: 95px;
 }
@@ -25,7 +164,7 @@ Array [
   background: #ea232d;
 }
 
-.c4 {
+.c14 {
   padding: 0;
   border: none;
   font: inherit;
@@ -46,7 +185,7 @@ Array [
   margin-left: auto;
 }
 
-.c5 {
+.c15 {
   display: block;
   width: 20px;
 }
@@ -73,9 +212,57 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 1140px;
   width: 100%;
   background: #e5e5e5;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:62em) {
+  .c7 {
+    width: auto;
+    border: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 {
+    min-width: 185px;
+  }
+}
+
+@media (min-width:62em) {
+  .c12 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 @media (min-width:62em) {
@@ -92,7 +279,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c4 {
+  .c14 {
     display: none;
   }
 }
@@ -117,16 +304,83 @@ Array [
           className="isvg loading c3"
         />
       </Link>
-      <button
-        aria-expanded={false}
+      <div
         className="c4"
-        onClick={[Function]}
-        type="button"
       >
-        <span
-          className="isvg loading c5"
-        />
-      </button>
+        <form
+          action="/search"
+          className="c5"
+          method="get"
+          role="search"
+        >
+          <legend
+            className="c6"
+          >
+            Search this site
+          </legend>
+          <div
+            className="c7"
+          >
+            <input
+              className="c8"
+              id="search"
+              name="search"
+              placeholder="Search this site..."
+              type="search"
+            />
+            <button
+              className="c9"
+              type="submit"
+            >
+              <span
+                className="isvg loading c10"
+              />
+            </button>
+          </div>
+          <Link
+            className="c11 c12"
+            to="/donate"
+          >
+            Donate
+            <legend
+              className="c6"
+            >
+              Donate
+            </legend>
+          </Link>
+        </form>
+        <Link
+          className="c11 c13"
+          to="/donate"
+        >
+          Donate
+          <legend
+            className="c6"
+          >
+            Donate
+          </legend>
+        </Link>
+        <button
+          aria-expanded={false}
+          className="c14"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="isvg loading c15"
+          />
+        </button>
+        <button
+          aria-expanded={false}
+          className="c14"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="isvg loading c15"
+          />
+        </button>
+      </div>
     </header>
   </header>,
   .c1 {
@@ -155,7 +409,7 @@ Array [
   cursor: pointer;
 }
 
-.c11 {
+.c19 {
   padding: 0;
   border: none;
   font: inherit;
@@ -184,7 +438,7 @@ Array [
   margin-left: 5px;
 }
 
-.c11 svg {
+.c19 svg {
   width: 15px;
 }
 
@@ -193,7 +447,7 @@ Array [
   width: 20px;
 }
 
-.c12 {
+.c20 {
   display: block;
   fill: #212122;
   width: 20px;
@@ -218,7 +472,7 @@ Array [
   overflow-y: scroll;
 }
 
-.c5 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -232,7 +486,7 @@ Array [
   padding: 0;
 }
 
-.c3 {
+.c11 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -245,7 +499,7 @@ Array [
   padding: 0;
 }
 
-.c7 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -259,11 +513,11 @@ Array [
   border-bottom: none;
 }
 
-.c7 .c4 {
+.c15 .c12 {
   padding: 5px 10px;
 }
 
-.c8 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -277,18 +531,18 @@ Array [
   border-bottom: 1px solid #e5e5e5;
 }
 
-.c8 .c4 {
+.c16 .c12 {
   padding: 5px 10px;
 }
 
-.c10 {
+.c18 {
   color: #212122;
   font-size: 0.775rem;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c14 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -303,15 +557,15 @@ Array [
   padding: 0 10px;
 }
 
-.c14 .c6 {
+.c22 .c14 {
   padding: 15px 10px;
 }
 
-.c14 .c6:last-child {
+.c22 .c14:last-child {
   border: none;
 }
 
-.c13 {
+.c21 {
   display: none;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -321,8 +575,134 @@ Array [
   list-style: none;
 }
 
-.c13 .c6:last-child {
+.c21 .c14:last-child {
   border: none;
+}
+
+.c23 {
+  display: block;
+  width: 100%;
+  max-width: 1140px;
+  height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.c23:focus {
+  height: auto;
+}
+
+.c4 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5px;
+  font-size: 0.775rem;
+  width: 100%;
+  margin: 0 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.c6 {
+  display: block;
+  background-size: 15px 15px;
+  width: auto;
+  padding: 10px;
+  width: 100%;
+  margin-right: 1px;
+  background-color: #fff;
+  border: 0;
+}
+
+.c7 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+.c8 {
+  display: block;
+  width: 18px;
+  fill: #0b0b89;
+}
+
+.c10 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c10:hover {
+  color: #fff;
+}
+
+.c24 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 43px;
+}
+
+.c3 .c9 {
+  display: none;
 }
 
 @media (min-width:62em) {
@@ -332,20 +712,20 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c11 {
+  .c19 {
     display: none;
   }
 }
 
 @media (min-width:62em) {
-  .c11 {
+  .c19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .c11 svg {
+  .c19 svg {
     width: auto;
   }
 }
@@ -366,7 +746,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c5 {
+  .c13 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -375,7 +755,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c3 {
+  .c11 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -386,33 +766,33 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c7 .c4 {
+  .c15 .c12 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c7 .c4 {
+  .c15 .c12 {
     margin-right: auto;
     padding: 0;
   }
 }
 
 @media (min-width:62em) {
-  .c8 .c4 {
+  .c16 .c12 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c8 .c4 {
+  .c16 .c12 {
     margin-right: auto;
     padding: 10px;
   }
 }
 
 @media (min-width:62em) {
-  .c14 {
+  .c22 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -421,13 +801,13 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c14 .c6:last-child {
+  .c22 .c14:last-child {
     margin-left: 20px;
   }
 }
 
 @media (min-width:62em) {
-  .c14 {
+  .c22 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -436,13 +816,13 @@ Array [
     margin-right: 0;
   }
 
-  .c14 .c9 {
+  .c22 .c17 {
     border: none;
   }
 }
 
 @media (min-width:62em) {
-  .c13 {
+  .c21 {
     position: absolute;
     top: 52px;
     right: 0;
@@ -462,7 +842,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c13 .c6 {
+  .c21 .c14 {
     -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
     -ms-flex: 0 1 calc(33.333333333333336% - 10px);
     flex: 0 1 calc(33.333333333333336% - 10px);
@@ -473,12 +853,40 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c13 .c6:hover {
+  .c21 .c14:hover {
     background: #212122;
   }
 
-  .c13 .c6:hover .c9 {
+  .c21 .c14:hover .c17 {
     color: #fff;
+  }
+}
+
+@media (min-width:62em) {
+  .c5 {
+    width: auto;
+    border: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c6 {
+    min-width: 185px;
+  }
+}
+
+@media (min-width:62em) {
+  .c10 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    display: none;
   }
 }
 
@@ -495,85 +903,127 @@ Array [
         className="isvg loading c2"
       />
     </button>
+    <form
+      action="/search"
+      className="c3"
+      method="get"
+      role="search"
+    >
+      <legend
+        className="c4"
+      >
+        Search this site
+      </legend>
+      <div
+        className="c5"
+      >
+        <input
+          className="c6"
+          id="search"
+          name="search"
+          placeholder="Search this site..."
+          type="search"
+        />
+        <button
+          className="c7"
+          type="submit"
+        >
+          <span
+            className="isvg loading c8"
+          />
+        </button>
+      </div>
+      <Link
+        className="c9 c10"
+        to="/donate"
+      >
+        Donate
+        <legend
+          className="c4"
+        >
+          Donate
+        </legend>
+      </Link>
+    </form>
     <nav
       aria-label="Main menu"
-      className="c3"
+      className="c11"
       role="navigation"
     >
       <ul
         aria-hidden="false"
-        className="c4 c5"
+        className="c12 c13"
         role="menubar"
       >
         <li
-          className="c6 c7"
+          className="c14 c15"
         >
           <ul
-            className="c4 c5"
+            className="c12 c13"
           >
             <li
               aria-haspopup={true}
-              className="c6 c8"
+              className="c14 c16"
               role="menuitem"
             >
               <Link
-                className="c9 c10"
+                className="c17 c18"
                 to="/tobys-page"
               >
                 Housing Advice
               </Link>
               <button
                 aria-expanded={false}
-                className="c11"
+                className="c19"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="isvg loading c12"
+                  className="isvg loading c20"
                 />
               </button>
             </li>
             <ul
               aria-expanded={false}
               aria-hidden={true}
-              className="c13"
+              className="c21"
               role="menu"
             >
               <li
-                className="c6 c8"
+                className="c14 c16"
               >
                 <Link
-                  className="c9 c10"
+                  className="c17 c18"
                   to="/320,000-people-in-britain-are-now-homeless"
                 >
                   320,000 people in Britain are now homeless
                 </Link>
               </li>
               <li
-                className="c6 c8"
+                className="c14 c16"
               >
                 <Link
-                  className="c9 c10"
+                  className="c17 c18"
                   to="/tobys-page"
                 >
                   Tobys Page
                 </Link>
               </li>
               <li
-                className="c6 c8"
+                className="c14 c16"
               >
                 <Link
-                  className="c9 c10"
+                  className="c17 c18"
                   to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
                 >
                   Shelter Manchester to hold vigil for lost homeless people
                 </Link>
               </li>
               <li
-                className="c6 c8"
+                className="c14 c16"
               >
                 <Link
-                  className="c9 c10"
+                  className="c17 c18"
                   to="/shelter-demo-page"
                 >
                   Shelter Demo Page
@@ -585,24 +1035,24 @@ Array [
       </ul>
       <ul
         aria-label="Secondary menu"
-        className="c4 c14"
+        className="c12 c22"
         role="navigation"
       >
         <li
-          className="c6 c8"
+          className="c14 c16"
         >
           <Link
-            className="c9 c10"
+            className="c17 c18"
             to="/tobys-page"
           >
             Tobys Page
           </Link>
         </li>
         <li
-          className="c6 c8"
+          className="c14 c16"
         >
           <a
-            className="c9 c10"
+            className="c17 c18"
             href="https://scotland.shelter.org.uk/"
           >
             Scotland
@@ -610,6 +1060,12 @@ Array [
         </li>
       </ul>
     </nav>
+    <a
+      className="c23"
+      href="#main"
+    >
+      Skip to main content
+    </a>
   </div>,
   .c0 {
   display: block;

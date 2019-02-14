@@ -24,14 +24,14 @@ it('Displays burger icon on mobile devices', () => {
   const wrapper = mountWithTheme(<PureHeader pageData={mockData} />);
 
   resizeWindow(760, 1024);
-  expect(wrapper.find(MobileMenuOpen)).toHaveLength(1);
+  expect(wrapper.find(MobileMenuOpen).at(1)).toHaveLength(1);
   expect(wrapper.find(MobileMenuOpen)).toHaveStyleRule('display', 'flex');
 });
 
 test('Should activate menu and display an overlay on button click', () => {
   const mockData = createHeaderNavigation();
   const wrapper = mountWithTheme(<PureHeader pageData={mockData} />);
-  const mockButton = wrapper.find(MobileMenuOpen);
+  const mockButton = wrapper.find(MobileMenuOpen).at(1);
 
   mockButton.simulate('click');
 

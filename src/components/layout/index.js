@@ -37,7 +37,9 @@ const Layout = ({ children, removeFooterMargin }) => (
             <html lang="en" />
           </Helmet>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
+          <main role="main" id="main">
+            {children}
+          </main>
           <Footer removeMarginTop={removeFooterMargin} />
         </>
       </ThemeProvider>
