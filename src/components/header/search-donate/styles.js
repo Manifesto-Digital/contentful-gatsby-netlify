@@ -23,8 +23,10 @@ export const InputWrap = styled.div`
 
 export const SearchInput = styled.input`
   ${inputStyles}
-  border: 0;
   width: 100%;
+  margin-right: 1px;
+  background-color: ${theme.palette.white};
+  border: 0;
 
   ${breakpoint.desktop`
       min-width: 185px;
@@ -51,10 +53,10 @@ export const DonateButton = styled(LinkHandler)`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: ${({ mobileOnly }) => mobileOnly && theme.spacing.small};
+  margin-right: ${({ MobileMenu }) => MobileMenu && theme.spacing.small};
   text-decoration: none;
   ${breakpoint.desktop`
-    display: ${({ mobileOnly }) => (mobileOnly ? 'none' : 'flex')};
+    display: ${({ MobileMenu }) => (MobileMenu ? 'none' : 'flex')};
   `}
 
   &:hover {

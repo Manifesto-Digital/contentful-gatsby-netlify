@@ -12,6 +12,7 @@ import {
   AdditionalMenu,
   Item,
   ItemLink,
+  SkipToContent,
 } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
@@ -77,6 +78,7 @@ const Navigation = ({
             </AdditionalMenu>
           )}
         </Menus>
+        <SkipToContent href="#main">Skip to main content</SkipToContent>
       </Wrapper>
       <Overlay
         active={active}

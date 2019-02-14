@@ -33,8 +33,10 @@ Array [
   background-size: 15px 15px;
   width: auto;
   padding: 10px;
-  border: 0;
   width: 100%;
+  margin-right: 1px;
+  background-color: #fff;
+  border: 0;
 }
 
 .c9 {
@@ -578,6 +580,19 @@ Array [
   border: none;
 }
 
+.c23 {
+  display: block;
+  width: 100%;
+  max-width: 1140px;
+  height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.c23:focus {
+  height: auto;
+}
+
 .c4 {
   padding: 0;
   margin: 0;
@@ -609,8 +624,10 @@ Array [
   background-size: 15px 15px;
   width: auto;
   padding: 10px;
-  border: 0;
   width: 100%;
+  margin-right: 1px;
+  background-color: #fff;
+  border: 0;
 }
 
 .c7 {
@@ -670,7 +687,7 @@ Array [
   color: #fff;
 }
 
-.c23 .c9 {
+.c24 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1044,6 +1061,12 @@ Array [
         </li>
       </ul>
     </nav>
+    <a
+      className="c23"
+      href="#main"
+    >
+      Skip to main content
+    </a>
   </div>,
   .c0 {
   display: block;

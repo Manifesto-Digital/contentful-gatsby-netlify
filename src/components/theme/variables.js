@@ -71,7 +71,6 @@ theme.boxshadow = {
 };
 
 theme.spacing = {
-  xs: '5px',
   small: '10px',
   standard: '20px',
   medium: '30px',

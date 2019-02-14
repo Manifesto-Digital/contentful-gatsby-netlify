@@ -87,7 +87,7 @@ export const PureHeader = ({ pageData }) => {
           <MenuControls>
             <SearchDonate resolution="desktop" />
             <DonateButton
-              mobileOnly
+              MobileMenu
               internalLink={{ slug: 'donate' }}
               bg="donate"
             >
