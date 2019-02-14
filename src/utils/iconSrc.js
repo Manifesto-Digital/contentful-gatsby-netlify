@@ -18,6 +18,8 @@ import ClipboardChecklist from '../assets/svg/icons/clipboard-checklist-light.sv
 import FundingGoalMeter from '../assets/svg/icons/funding-goal-meter-light.svg';
 import Lightbulb from '../assets/svg/icons/lightbulb-light.svg';
 import MapUnfolded from '../assets/svg/icons/map-unfolded-light.svg';
+import Trophy from '../assets/svg/icons/trophy-regular.svg';
+import Calendar from '../assets/svg/icons/calendar-alt-light.svg';
 
 import { consistentString } from './content-formatting';
 
@@ -42,6 +44,8 @@ const iconList = {
   'funding-goal-meter': FundingGoalMeter,
   lightbulb: Lightbulb,
   'map-unfolded': MapUnfolded,
+  calendar: Calendar,
+  trophy: Trophy,
   'no-icon': null,
   default: null,
 };

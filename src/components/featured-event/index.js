@@ -1,8 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './styles';
-import ResponsiveImage from '../image/responsive';
+import {
+  Wrapper,
+  Thumbnail,
+  ContentWrapper,
+  EventInfoList,
+  EventInfo,
+  EventIcon,
+} from './styles';
 import LinkHandler from '../link-handler';
+import { SectionTag } from '../styled/tags';
+import iconSrc from '../../utils/iconSrc';
 
 const FeaturedEvent = ({ data }) => {
   const { slug, mainCtaText, event } = data;
@@ -16,21 +24,31 @@ const FeaturedEvent = ({ data }) => {
 
   return (
     <Wrapper>
-      <ResponsiveImage
+      <SectionTag leftMargin>Featured event</SectionTag>
+      <Thumbnail
         mobileW="512"
-        desktopW="692"
+        desktopW="700"
         image={thumbnailImage}
         description={eventName}
       />
-      <div>
+      <ContentWrapper>
         <h2>{eventName}</h2>
-        <p>{displayLocation}</p>
-        <p>{eventDisplayDate}</p>
-        <p>{distance}</p>
-        <p>
-          <LinkHandler internalLink={{ slug }}>{mainCtaText}</LinkHandler>
-        </p>
-      </div>
+        <EventInfoList>
+          <EventInfo>
+            <EventIcon src={iconSrc('map-unfolded')} />
+            {displayLocation}
+          </EventInfo>
+          <EventInfo>
+            <EventIcon src={iconSrc('calendar')} />
+            {eventDisplayDate}
+          </EventInfo>
+          <EventInfo>
+            <EventIcon src={iconSrc('trophy')} />
+            {distance}
+          </EventInfo>
+        </EventInfoList>
+        <LinkHandler internalLink={{ slug }}>{mainCtaText}</LinkHandler>
+      </ContentWrapper>
     </Wrapper>
   );
 };

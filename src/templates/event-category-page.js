@@ -17,8 +17,6 @@ const EventCategoryPage = ({ data }) => {
     featuredEvent,
   } = data.contentfulPageAssemblyEventCategory;
 
-  console.log(featuredEvent);
-
   const events = data.allContentfulTopicEvent.edges;
 
   return (
