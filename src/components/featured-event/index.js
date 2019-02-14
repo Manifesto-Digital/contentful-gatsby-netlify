@@ -34,18 +34,24 @@ const FeaturedEvent = ({ data }) => {
       <ContentWrapper>
         <h2>{eventName}</h2>
         <EventInfoList>
-          <EventInfo>
-            <EventIcon src={iconSrc('map-marker')} />
-            {displayLocation}
-          </EventInfo>
-          <EventInfo>
-            <EventIcon src={iconSrc('calendar')} />
-            {eventDisplayDate}
-          </EventInfo>
-          <EventInfo>
-            <EventIcon src={iconSrc('trophy')} />
-            {distance}
-          </EventInfo>
+          {displayLocation && (
+            <EventInfo>
+              <EventIcon src={iconSrc('map-marker')} />
+              {displayLocation}
+            </EventInfo>
+          )}
+          {eventDisplayDate && (
+            <EventInfo>
+              <EventIcon src={iconSrc('calendar')} />
+              {eventDisplayDate}
+            </EventInfo>
+          )}
+          {distance && (
+            <EventInfo>
+              <EventIcon src={iconSrc('trophy')} />
+              {distance}
+            </EventInfo>
+          )}
         </EventInfoList>
         <LinkHandler internalLink={{ slug }}>{mainCtaText}</LinkHandler>
       </ContentWrapper>
