@@ -20,7 +20,10 @@ const EventCategoryPage = ({ data }) => {
     featuredEvent,
   } = data.contentfulPageAssemblyEventCategory;
 
-  const events = data.allContentfulTopicEvent.edges;
+  const events = data.allContentfulPageAssemblyStandardEvent.edges
+    .concat(data.allContentfulPageAssemblyChallengeEvent.edges)
+    .map(event => event.node)
+    .filter(event => event.slug !== featuredEvent[0].slug);
 
   return (
     <Layout>
@@ -88,12 +91,32 @@ export const eventCategoryPageQuery = graphql`
       }
     }
 
-    allContentfulTopicEvent(filter: { eventType: { eq: $type } }) {
+    allContentfulPageAssemblyStandardEvent(
+      filter: { event: { eventType: { eq: $type } } }
+    ) {
       edges {
         node {
-          eventName
-          displayLocation
-          eventDisplayDate
+          slug
+          event {
+            eventName
+            displayLocation
+            eventDisplayDate
+          }
+        }
+      }
+    }
+
+    allContentfulPageAssemblyChallengeEvent(
+      filter: { event: { eventType: { eq: $type } } }
+    ) {
+      edges {
+        node {
+          slug
+          event {
+            eventName
+            displayLocation
+            eventDisplayDate
+          }
         }
       }
     }

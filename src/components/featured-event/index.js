@@ -26,8 +26,8 @@ const FeaturedEvent = ({ data }) => {
     <Wrapper>
       <SectionTag leftMargin>Featured event</SectionTag>
       <Thumbnail
-        mobileW="512"
-        desktopW="700"
+        mobileW={512}
+        desktopW={700}
         image={thumbnailImage}
         description={eventName}
       />
@@ -57,7 +57,7 @@ FeaturedEvent.propTypes = {
   data: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     mainCtaText: PropTypes.string.isRequired,
-    event: PropTypes.object,
+    event: PropTypes.object.isRequired,
   }),
 };
 
