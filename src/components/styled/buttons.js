@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const buttonStyles = css`
   display: inline-block;
@@ -27,13 +27,14 @@ export const buttonStyles = css`
 
   ${props => props.fullWidth && 'width: 100%'};
 
-  &: hover
-    ${props =>
+  &:hover {
+    color: ${props =>
       (props.bg === 'red' && props.theme.palette.white) ||
       (props.bg === 'black' && props.theme.palette.white) ||
       (props.bg === 'blue' && props.theme.palette.white) ||
       (props.bg === 'donate' && props.theme.palette.white) ||
       (props.bg === 'white-outline' && props.theme.palette.white)};
+  }
 `;
 
 /**
@@ -46,4 +47,17 @@ export const buttonReset = css`
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+`;
+
+export const SignUpButton = styled.a`
+  ${buttonStyles};
+  border: 4px solid ${props => props.theme.palette.white};
+  color: ${props => props.theme.palette.white};
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    color: ${props => props.theme.palette.black};
+    background-color: ${props => props.theme.palette.white};
+  }
 `;

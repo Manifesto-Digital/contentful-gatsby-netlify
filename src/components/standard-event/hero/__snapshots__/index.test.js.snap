@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders event hero correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.c0 {
+  padding: 30px 0;
+  background-color: #fff;
+}
+
+.c9 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #ea232d;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+.c9:hover {
+  color: #fff;
+}
+
+.c3 {
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  margin-top: 20px;
+}
+
+.c3:nth-child(2n) {
+  margin-top: 0;
+}
+
+.c10 {
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  margin-top: 20px;
+}
+
+.c10:nth-child(2n) {
+  margin-top: 0;
+}
+
+.c4 {
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.c8 {
+  margin-top: auto;
+}
+
+.c5 {
+  width: 20px;
+  height: 20px;
+  margin-top: -2px;
+  margin-right: 10px;
+  vertical-align: top;
+  fill: #ea232d;
+  color: #ea232d;
+  display: inline-block;
+}
+
+.c7 {
+  font-weight: bold;
+  color: #ea232d;
+}
+
+.c6 {
+  margin-left: 10px;
+  padding: 5px;
+  background: #4d63b5;
+  color: white;
+  cursor: pointer;
+}
+
+.c6:hover {
+  color: white;
+}
+
+@media (min-width:62em) {
+  .c3 {
+    margin-top: 0;
+    -webkit-flex: 0.35;
+    -ms-flex: 0.35;
+    flex: 0.35;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c3:nth-child(2n) {
+    -webkit-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-align-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+  }
+}
+
+@media (min-width:62em) {
+  .c10 {
+    margin-top: 0;
+    -webkit-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c10:nth-child(2n) {
+    -webkit-flex: 0.60;
+    -ms-flex: 0.60;
+    flex: 0.60;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h1>
+          Brighton Half Marathon
+        </h1>
+        <ul
+          className="c4"
+        >
+          <li>
+            <span
+              className="isvg loading c5"
+            />
+            Brighton
+            <a
+              className="c6"
+              onClick={[Function]}
+            >
+              Map
+            </a>
+          </li>
+          <li>
+            <span
+              className="isvg loading c5"
+            />
+            24 February 2019
+          </li>
+          <li>
+            <span
+              className="isvg loading c5"
+            />
+            13.1 miles
+          </li>
+          <li>
+            Registration fee:
+             
+            <span
+              className="c7"
+            >
+              £
+              19
+            </span>
+          </li>
+          <li>
+            Sponsorship pledge: 
+            <span
+              className="c7"
+            >
+              £
+              199
+            </span>
+          </li>
+        </ul>
+        <button
+          className="c8 c9"
+          onClick={[Function]}
+          type="button"
+        >
+          Sold Out
+        </button>
+      </div>
+      <div
+        className="c10"
+      >
+        <img
+          alt="Collection hero"
+          src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

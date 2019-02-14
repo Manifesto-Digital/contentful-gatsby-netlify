@@ -96,19 +96,15 @@ exports[`renders a single testimonial correctly 1`] = `
 `;
 
 exports[`renders testimonials correctly 1`] = `
-.c1 {
+.c0 {
+  margin-bottom: 40px;
+}
+
+.c2 {
   margin-bottom: 30px;
 }
 
-.c6 {
-  position: relative;
-  width: 90%;
-  background-color: #fff;
-  padding: 30px;
-  margin: -30px auto 0;
-}
-
-.c3 {
+.c7 {
   position: relative;
   width: 90%;
   background-color: #fff;
@@ -117,18 +113,26 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 .c4 {
+  position: relative;
+  width: 90%;
+  background-color: #fff;
+  padding: 30px;
+  margin: -30px auto 0;
+}
+
+.c5 {
   color: #ea232d;
   font-style: italic;
 }
 
-.c0 {
+.c1 {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 @media (min-width:40.0625em) {
-  .c1 {
+  .c2 {
     margin-bottom: 0;
     display: -webkit-box;
     display: -webkit-flex;
@@ -142,7 +146,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c5 {
+  .c6 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -157,7 +161,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c2 {
+  .c3 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -172,7 +176,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c6 {
+  .c7 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -187,7 +191,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c3 {
+  .c4 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -204,69 +208,73 @@ exports[`renders testimonials correctly 1`] = `
 <div
   className="c0"
 >
-  <h2>
-    Testimonials about this cool component
-  </h2>
   <div
     className="c1"
   >
+    <h2>
+      Testimonials about this cool component
+    </h2>
     <div
       className="c2"
     >
-      <img
-        alt="Collection hero"
-        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
-        srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
-      />
-    </div>
-    <div
-      className="c3"
-    >
       <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
-      <span
+        className="c3"
+      >
+        <img
+          alt="Collection hero"
+          src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+          srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+        />
+      </div>
+      <div
         className="c4"
       >
-        — 
-        Owen, London
-      </span>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c5"
-    >
-      <img
-        alt="Collection hero"
-        src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
-        srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
-      />
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+            }
+          }
+        />
+        <span
+          className="c5"
+        >
+          — 
+          Owen, London
+        </span>
+      </div>
     </div>
     <div
-      className="c6"
+      className="c2"
     >
       <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
-      <span
-        className="c4"
+        className="c6"
       >
-        — 
-        Owen, London
-      </span>
+        <img
+          alt="Collection hero"
+          src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+          srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=550"
+        />
+      </div>
+      <div
+        className="c7"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+            }
+          }
+        />
+        <span
+          className="c5"
+        >
+          — 
+          Owen, London
+        </span>
+      </div>
     </div>
   </div>
 </div>

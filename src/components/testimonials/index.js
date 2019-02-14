@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from '../styled/containers';
 import Testimonial from './testimonial';
+import { Container } from '../styled/containers';
+import { ModuleWrapper } from './styles';
 
 const Testimonials = ({ data, insideContainer }) => {
   const { headerText, testimonials } = data;
@@ -11,13 +12,15 @@ const Testimonials = ({ data, insideContainer }) => {
   }
 
   return (
-    <Container padding={!insideContainer}>
-      <h2>{headerText}</h2>
+    <ModuleWrapper>
+      <Container padding={!insideContainer}>
+        <h2>{headerText}</h2>
 
-      {testimonials.map((testimonial, i) => (
-        <Testimonial data={testimonial} loopIndex={i} key={i} />
-      ))}
-    </Container>
+        {testimonials.map((testimonial, i) => (
+          <Testimonial data={testimonial} loopIndex={i} key={i} />
+        ))}
+      </Container>
+    </ModuleWrapper>
   );
 };
 

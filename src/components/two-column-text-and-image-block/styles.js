@@ -3,6 +3,7 @@ import RichText from '../rich-text';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Wrapper = styled.div`
+  margin-bottom: ${props => props.theme.spacing.large};
   padding: ${props => props.theme.spacing.large} 0;
 
   background-color: ${props =>
@@ -39,7 +40,6 @@ export const ContentSemi = styled.div`
 
     &:nth-child(2n) {
       flex: 0.4;
-      align-self: center;
     }
 
     & img {

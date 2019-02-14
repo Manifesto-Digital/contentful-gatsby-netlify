@@ -25,6 +25,18 @@ export const createImage = createFactory({
   },
 });
 
+export const createVideo = createFactory({
+  id: 'ca8e4a9c-9491-5257-8e53-d3d74ae204a5',
+  title: 'Urban Rush hero',
+  description: 'Urban rush video',
+  file: {
+    url:
+      '//videos.ctfassets.net/6sxvmndnpn0s/5hlfsk9dwVVNBlbpWHSLvK/9f1d647e6332be389465c9d014a57a26/shelter-urban-rush.mp4',
+    fileName: 'shelter-urban-rush.mp4',
+    contentType: 'video/mp4',
+  },
+});
+
 export const createChildContentfulRichText = createFactory({
   childContentfulRichText: {
     html:
@@ -82,6 +94,7 @@ export const createHeaderNavigation = createFactory({
       ],
     },
   ],
+  footerText: createChildContentfulRichText(),
 });
 
 export const createSubpage = createFactory({
@@ -92,15 +105,6 @@ export const createSubpage = createFactory({
 });
 
 export const createContentCards = createFactory({
-  cropImageFrom: 'Center',
-  featuredImage: {
-    description: 'Collection hero',
-    file: {
-      fileName: 'collection-hero.jpg',
-      url:
-        '//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg',
-    },
-  },
   pageInformation: {
     pageThumbnail: {
       description: 'Telli Afrik and family',
@@ -115,13 +119,36 @@ export const createContentCards = createFactory({
     },
   },
   slug: 'shelter-demo-page',
-  summaryText: 'Lorem ipsum dolor sit amet, consectetur',
   title: 'Shelter Demo Page',
 });
 
 export const createContentCardBanner = createFactory({
   header: createChildContentfulRichText(),
-  bannerColour: 'grey',
-  bannerFlow: 'horizontal',
+  bannerColour: 'Grey',
+  bannerFlow: 'Horizontal',
   contentCards: [createContentCards(), createContentCards()],
+});
+
+export const createTestRef = createFactory({
+  current: {},
+});
+
+export const createEvent = createFactory({
+  eventName: 'Brighton Half Marathon',
+  shortDescription:
+    'Run for charity with Team Shelter; half marathons, marathons and other distance running events all in the name of a good cause.',
+  thumbnailImage: createImage(),
+  eventType: 'Run',
+  eventStatus: 'Sold Out',
+  eventSystemDate: '2019-02-24',
+  eventDisplayDate: '24 February 2019',
+  distance: '13.1 miles',
+  registrationFee: 19,
+  pledge: 199,
+  eventLocation: {
+    lat: 50.8374204,
+    lon: -0.1061897,
+  },
+  displayLocation: 'Brighton',
+  notifiedTeamEmail: 'running@shelter.org.uk',
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RightArrow from '../../assets/svg/icons/angle-right-light.svg';
 // Styles
 import {
   Card,
@@ -8,50 +9,46 @@ import {
   CardImage,
   SummaryText,
   Wrapper,
+  ArrowSVG,
 } from './styles';
 
-const ContentCard = ({ data }) => {
-  const {
-    title,
-    slug,
-    summaryText,
-    featuredImage,
-    pageInformation = null,
-    cropImageFrom,
-  } = data;
+const isOdd = num => num % 2 === 1;
+
+const ContentCard = ({ data, bannerFlow, cardCount }) => {
+  const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
   cardLink.slug = slug;
 
   // Fallback until all images are set in pageInformation field
-  const image =
-    pageInformation && pageInformation.pageThumbnail
-      ? pageInformation.pageThumbnail
-      : featuredImage;
+  const image = pageInformation.pageThumbnail;
 
   // Fallback until all descriptions are set in pageInformation field
-  const description =
-    pageInformation && pageInformation.shortDescription.shortDescription
-      ? pageInformation.shortDescription.shortDescription
-      : summaryText;
+  const description = pageInformation.shortDescription.shortDescription;
+
+  if (!image) return null;
 
   return (
     <Card>
       <CardImage
         mobileW={600}
         mobileH={350}
-        desktopW={600}
-        desktopH={350}
+        desktopW={isOdd(cardCount) && bannerFlow === 'grid' ? 1100 : 600}
+        desktopH={isOdd(cardCount) && bannerFlow === 'grid' ? 642 : 350}
         fit="fill"
-        focusArea={cropImageFrom}
+        focusArea="center"
         image={image}
         presentational
       />
       <Wrapper>
         {title && <CardTitle>{title}</CardTitle>}
-        <SummaryText internalLink={cardLink}>{description}</SummaryText>
+        <SummaryText internalLink={cardLink}>
+          {description}
+          {bannerFlow === 'grid' && (
+            <ArrowSVG src={RightArrow} cacheGetRequests />
+          )}
+        </SummaryText>
       </Wrapper>
-
       <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
         {description}
       </CoveringLink>
@@ -60,18 +57,11 @@ const ContentCard = ({ data }) => {
 };
 
 ContentCard.propTypes = {
+  bannerFlow: PropTypes.oneOf(['vertical', 'horizontal', 'grid']),
+  cardCount: PropTypes.number,
   data: PropTypes.shape({
     title: PropTypes.string,
     slug: PropTypes.string,
-    summaryText: PropTypes.string,
-    featuredImage: PropTypes.shape({
-      description: PropTypes.string,
-      file: PropTypes.shape({
-        fileName: PropTypes.string,
-        url: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
-    cropImageFrom: PropTypes.string,
     pageInformation: PropTypes.shape({
       shortDescription: PropTypes.object,
       pageThumbnail: PropTypes.object,

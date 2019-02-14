@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  background-color: #fff;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  -webkit-flex: 0 100%;
+  -ms-flex: 0 100%;
+  flex: 0 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.c1 {
+  -webkit-align-self: start;
+  -ms-flex-item-align: start;
+  align-self: start;
+}
+
+.c2 {
+  width: 100%;
+  padding: 20px;
+}
+
+.c5 {
+  display: block;
+  width: 100%;
+  background-color: #e5edfd;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.c4 {
+  display: inline-block;
+}
+
+.c3 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #ea232d;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+.c3:hover {
+  color: #fff;
+}
+
+@media (min-width:32em) {
+  .c0 {
+    -webkit-flex: 0 49%;
+    -ms-flex: 0 49%;
+    flex: 0 49%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <img
+    alt="Collection hero"
+    className="c1"
+    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=512"
+    srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=512 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=512"
+  />
+  <div
+    className="c2"
+  >
+    <h3>
+      My Event
+    </h3>
+    <p>
+      Description for my event
+    </p>
+    <Link
+      className="c3"
+      to="/my-event"
+    >
+      <span
+        className="c4"
+      >
+        Register for event
+      </span>
+    </Link>
+  </div>
+  <Link
+    className="c5"
+    to="/event-categories"
+  >
+    Register for event
+  </Link>
+</div>
+`;

@@ -8,6 +8,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c0 {
+  margin-bottom: 40px;
   padding: 40px 0;
   background-color: #fff;
 }
@@ -62,9 +63,6 @@ exports[`renders correctly 1`] = `
     -webkit-flex: 0.4;
     -ms-flex: 0.4;
     flex: 0.4;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
   }
 
   .c3 img {
