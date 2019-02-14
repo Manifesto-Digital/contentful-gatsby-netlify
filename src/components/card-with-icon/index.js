@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CTA from '../cta';
 import iconSrc from '../../utils/iconSrc';
 // Styles
 import { CardContainer, TitleText, SubText, CardCTA, CardSVG } from './styles';
@@ -13,21 +12,17 @@ const CardWithIcon = ({ data, cardsCount }) => {
       {icon && <CardSVG src={iconSrc(icon)} />}
       <TitleText>{titleText}</TitleText>
       {subText && <SubText>{subText}</SubText>}
-      <CardCTA
-        {...CTA.fromCMS({
-          buttonText: ctaText,
-          ctaColour: 'Red',
-          internalLink: ctaLink,
-        })}
-        fullWidth
-      />
+      <CardCTA internalLink={ctaLink} bg="red" fullWidth>
+        {ctaText}
+      </CardCTA>
     </CardContainer>
   );
 };
 
 CardWithIcon.propTypes = {
   data: PropTypes.shape({
-    icon: PropTypes.oneOf(['Speech bubble', 'Phone', 'Map pin']).isRequired,
+    icon: PropTypes.oneOf(['Speech bubble', 'Telephone', 'Map Marker'])
+      .isRequired,
     titleText: PropTypes.string.isRequired,
     subText: PropTypes.string,
     ctaText: PropTypes.string.isRequired,
