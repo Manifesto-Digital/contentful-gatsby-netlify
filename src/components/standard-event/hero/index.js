@@ -13,7 +13,8 @@ import {
   Section,
 } from '../../styled/containers';
 import {
-  FlexColumn,
+  FlexHeroContent,
+  FlexHeroImage,
   UnbulletedList,
   MapButton,
   MoneySpan,
@@ -48,7 +49,7 @@ const EventHero = ({
       <Container>
         <FlexBetweenContainer>
           {/* Left column */}
-          <FlexColumn flexColumn1="0.35">
+          <FlexHeroContent>
             <h1>{event.eventName}</h1>
             <UnbulletedList>
               <li>
@@ -115,13 +116,13 @@ const EventHero = ({
                 {ctaText}
               </StyledButton>
             )}
-          </FlexColumn>
+          </FlexHeroContent>
 
           {/* Right column */}
-          <FlexColumn flexColumn2="0.60" alignColumn2="center">
+          <FlexHeroImage>
             {/* Event image */}
             {event.thumbnailImage && <Image image={event.thumbnailImage} />}
-          </FlexColumn>
+          </FlexHeroImage>
         </FlexBetweenContainer>
       </Container>
     </Section>

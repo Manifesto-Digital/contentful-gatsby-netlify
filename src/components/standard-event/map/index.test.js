@@ -7,6 +7,7 @@ import EventMap from '.';
 export const createEventMapProps = createFactory({});
 
 it('renders event map correctly', () => {
+  process.env.GOOGLE_MAP_API_KEY = 'test';
   snapshotComponent(
     <EventMap
       eventLocation={{

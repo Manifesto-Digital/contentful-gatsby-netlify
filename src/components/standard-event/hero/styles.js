@@ -4,25 +4,23 @@ import { breakpoint } from '../../theme/breakpoint';
 import CTA from '../../cta';
 import Button from '../../button';
 
-export const FlexColumn = styled.div`
+export const FlexHeroContent = styled.div`
   flex: auto;
   margin-top: ${props => props.theme.spacing.standard};
 
-  &:nth-child(2n) {
-    margin-top: 0;
-  }
-
   ${breakpoint.desktop`
     margin-top: 0;
-    flex: ${props => (props.flexColumn1 ? props.flexColumn1 : `auto`)};
+    flex: .35;
     flex-direction: column;
     display: flex;
+  `};
+`;
 
-    &:nth-child(2n) {
-      flex: ${props => (props.flexColumn2 ? props.flexColumn2 : `auto`)};
-      align-self: ${props =>
-        props.alignColumn2 ? props.alignColumn2 : `start`};
-    }
+export const FlexHeroImage = styled.div`
+  flex: auto;
+
+  ${breakpoint.desktop`
+    flex: .60;
   `};
 `;
 

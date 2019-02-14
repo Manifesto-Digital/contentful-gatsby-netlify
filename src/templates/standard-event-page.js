@@ -6,7 +6,6 @@ import { eventStatuses } from '../components/standard-event/data';
 // Components
 import EventHero from '../components/standard-event/hero';
 import Layout from '../components/layout';
-// Components
 import ContentForm from '../components/form';
 import RichText from '../components/rich-text';
 import Modal from '../components/modal';
