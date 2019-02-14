@@ -9,7 +9,7 @@ import theme from '../../theme/variables';
 
 export const InputWrap = styled.div`
   display: flex;
-  margin-right: ${theme.spacing.xs};
+  margin-right: 5px;
   font-size: ${theme.fontsize.small};
   width: 100%;
   margin: 0 ${theme.spacing.small};
