@@ -65,7 +65,9 @@
     "setupFiles": [
       "<rootDir>/loadershim.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js"
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ]
   },
   "scripts": {
     "build": "gatsby build",

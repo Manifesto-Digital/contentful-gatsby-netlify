@@ -27,7 +27,7 @@ export const buttonStyles = css`
 
   ${props => props.fullWidth && 'width: 100%'};
 
-  &: hover {
+  &:hover {
     color: ${props =>
       (props.bg === 'red' && props.theme.palette.white) ||
       (props.bg === 'black' && props.theme.palette.white) ||

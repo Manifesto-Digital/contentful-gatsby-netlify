@@ -21,15 +21,6 @@ exports[`displays the correct icon 1`] = `
 }
 
 .c0 {
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  padding: 30px;
-  text-align: center;
-  background: #f7f7f7;
-  margin: 20px;
-  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
-  border-radius: 3px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -41,10 +32,15 @@ exports[`displays the correct icon 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #f7f7f7;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .c0:hover {
@@ -68,15 +64,6 @@ exports[`displays the correct icon 1`] = `
 
 .c4 {
   margin-top: auto;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    width: auto;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
 }
 
 <div
@@ -129,15 +116,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c0 {
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  padding: 30px;
-  text-align: center;
-  background: #f7f7f7;
-  margin: 20px;
-  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
-  border-radius: 3px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -149,10 +127,15 @@ exports[`renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #f7f7f7;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .c0:hover {
@@ -176,15 +159,6 @@ exports[`renders correctly 1`] = `
 
 .c4 {
   margin-top: auto;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    width: auto;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
 }
 
 <div
@@ -237,15 +211,6 @@ exports[`renders correctly 2`] = `
 }
 
 .c2 {
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
-  padding: 30px;
-  text-align: center;
-  background: #f7f7f7;
-  margin: 20px;
-  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
-  border-radius: 3px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -257,10 +222,15 @@ exports[`renders correctly 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #f7f7f7;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .c2:hover {
@@ -306,12 +276,11 @@ exports[`renders correctly 2`] = `
   justify-content: space-between;
 }
 
-@media (min-width:62em) {
+@media (min-width:40.0625em) {
   .c2 {
-    width: auto;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    -webkit-flex-basis: 32.333%;
+    -ms-flex-preferred-size: 32.333%;
+    flex-basis: 32.333%;
   }
 }
 
@@ -321,6 +290,60 @@ exports[`renders correctly 2`] = `
   <div
     className="c1"
   >
+    <div
+      className="c2"
+    >
+      <span
+        className="isvg loading c3"
+      />
+      <h3
+        className="c4"
+      >
+        Title text
+      </h3>
+      <p
+        className="c5"
+      >
+        Sub text
+      </p>
+      <Link
+        className="c6 c7"
+        to="/https://example.com"
+      >
+        <span
+          className="c8"
+        >
+          Click me
+        </span>
+      </Link>
+    </div>
+    <div
+      className="c2"
+    >
+      <span
+        className="isvg loading c3"
+      />
+      <h3
+        className="c4"
+      >
+        Title text
+      </h3>
+      <p
+        className="c5"
+      >
+        Sub text
+      </p>
+      <Link
+        className="c6 c7"
+        to="/https://example.com"
+      >
+        <span
+          className="c8"
+        >
+          Click me
+        </span>
+      </Link>
+    </div>
     <div
       className="c2"
     >

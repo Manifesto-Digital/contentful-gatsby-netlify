@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
-export const CardsWithIconFragment = graphql`
-  fragment CardsWithIconFragment on ContentfulAssemblyCardsWithIcon {
+export const CardsWithIconsFragment = graphql`
+  fragment CardsWithIconsFragment on ContentfulAssemblyCardsWithIcon {
     id
     internal {
       type

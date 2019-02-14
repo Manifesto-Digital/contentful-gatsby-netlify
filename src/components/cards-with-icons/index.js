@@ -6,34 +6,30 @@ import { Container } from '../styled/containers';
 // Styles
 import { FlexWrapper } from './styles';
 
-const CardsWithIcon = ({ data, insideContainer }) => {
+const CardsWithIcons = ({ data, insideContainer }) => {
   const { cards } = data;
 
   return (
-    <Container>
+    <Container padding={!insideContainer}>
       <FlexWrapper>
         {cards &&
           cards.map((card, i) => (
-            <CardWithIcon
-              key={i}
-              data={card}
-              insideContainer={!insideContainer}
-            />
+            <CardWithIcon cardsCount={cards.length} key={i} data={card} />
           ))}
       </FlexWrapper>
     </Container>
   );
 };
 
-CardsWithIcon.propTypes = {
+CardsWithIcons.propTypes = {
   data: PropTypes.shape({
     cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   }),
   insideContainer: PropTypes.bool,
 };
 
-CardsWithIcon.defaultProps = {
+CardsWithIcons.defaultProps = {
   insideContainer: false,
 };
 
-export default CardsWithIcon;
+export default CardsWithIcons;

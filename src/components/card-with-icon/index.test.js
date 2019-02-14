@@ -7,7 +7,7 @@ import CardWithIcon from './index';
 
 // Default props
 export const createCardWithIcon = createFactory({
-  icon: 'Phone',
+  icon: 'Telephone',
   titleText: 'Title text',
   subText: 'Sub text',
   ctaText: 'Click me',
@@ -20,7 +20,7 @@ it('renders correctly', () => {
 });
 
 it('displays the correct icon', () => {
-  const mockData = createCardWithIcon({ icon: 'Phone' });
+  const mockData = createCardWithIcon({ icon: 'Telephone' });
   snapshotComponent(<CardWithIcon data={mockData} />);
 });
 

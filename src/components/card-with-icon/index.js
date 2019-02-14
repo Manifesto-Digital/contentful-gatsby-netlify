@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from './icon';
 import CTA from '../cta';
-import { consistentString } from '../../utils/content-formatting';
-
+import iconSrc from '../../utils/iconSrc';
 // Styles
-import { CardContainer, TitleText, SubText, CardCTA } from './styles';
+import { CardContainer, TitleText, SubText, CardCTA, CardSVG } from './styles';
 
-const CardWithIcon = ({ data, insideContainer }) => {
+const CardWithIcon = ({ data, cardsCount }) => {
   const { icon, titleText, subText, ctaText, ctaLink } = data;
 
   return (
-    <CardContainer insideContainer={insideContainer}>
-      {icon && <Icon icon={consistentString(icon)} />}
+    <CardContainer cardsCount={cardsCount}>
+      {icon && <CardSVG src={iconSrc(icon)} />}
       <TitleText>{titleText}</TitleText>
-      <SubText>{subText}</SubText>
+      {subText && <SubText>{subText}</SubText>}
       <CardCTA
         {...CTA.fromCMS({
           buttonText: ctaText,
@@ -38,11 +36,7 @@ CardWithIcon.propTypes = {
       slug: PropTypes.string,
     }),
   }),
-  insideContainer: PropTypes.bool,
-};
-
-CardWithIcon.defaultProps = {
-  insideContainer: false,
+  cardsCount: PropTypes.number,
 };
 
 export default CardWithIcon;
