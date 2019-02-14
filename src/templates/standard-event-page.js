@@ -57,8 +57,7 @@ const Page = ({ data }) => {
           toggleMapModal={toggleMapModal}
         />
 
-        <TwoColumnTextAndImageBlock data={twoColumn} />
-
+        {twoColumn && <TwoColumnTextAndImageBlock data={twoColumn} />}
         {bodyCopy && (
           <Container>
             <ContentWithSideBar>
