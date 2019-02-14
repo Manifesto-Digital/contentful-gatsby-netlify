@@ -56,8 +56,11 @@ export const EventInfo = styled.li`
 export const EventIcon = styled(SVG)`
   color: ${({ theme }) => theme.palette.primary};
   margin-right: ${({ theme }) => theme.spacing.small};
+  display: inline-block;
 
   svg {
+    height: ${({ theme }) => theme.fontsize.standard};
     width: ${({ theme }) => theme.fontsize.standard};
+
   }
 `;

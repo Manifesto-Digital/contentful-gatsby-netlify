@@ -35,7 +35,7 @@ const FeaturedEvent = ({ data }) => {
         <h2>{eventName}</h2>
         <EventInfoList>
           <EventInfo>
-            <EventIcon src={iconSrc('map-unfolded')} />
+            <EventIcon src={iconSrc('map-marker')} />
             {displayLocation}
           </EventInfo>
           <EventInfo>

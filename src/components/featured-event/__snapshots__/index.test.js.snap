@@ -36,9 +36,11 @@ exports[`renders correctly 1`] = `
 .c6 {
   color: #ea232d;
   margin-right: 10px;
+  display: inline-block;
 }
 
 .c6 svg {
+  height: 1rem;
   width: 1rem;
 }
 
