@@ -14,14 +14,12 @@ const ResponsiveImage = ({
   presentational = false,
 }) => {
   if (!mobileW || !desktopW || !file) return null;
-
   // Use the https://www.contentful.com/developers/docs/references/images-api/ to construct a mobile and desktop image
   const baseUrl = `${file.url}?fm=jpg${progressive ? `&fl=progressive` : ``}${
     fit ? `&fit=${fit}` : ``
   }${focusArea ? `&f=${focusArea}` : ``}`;
   const mobileSize = `&w=${mobileW}${mobileH ? `&h=${mobileH}` : ``}`;
   const desktopSize = `&w=${desktopW}${desktopH ? `&h=${desktopH}` : ``}`;
-
   return (
     <img
       className={className}
