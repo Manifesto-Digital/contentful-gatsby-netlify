@@ -9,7 +9,7 @@ const CardWithIcon = ({ data, cardsCount }) => {
 
   return (
     <CardContainer cardsCount={cardsCount}>
-      {icon && <CardSVG src={iconSrc(icon)} />}
+      {icon && <CardSVG src={iconSrc(icon)} cacheGetRequests />}
       <TitleText>{titleText}</TitleText>
       {subText && <SubText>{subText}</SubText>}
       <CardCTA internalLink={ctaLink} bg="red" fullWidth>
