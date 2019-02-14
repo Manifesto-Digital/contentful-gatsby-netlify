@@ -61,6 +61,5 @@ export const EventIcon = styled(SVG)`
   svg {
     height: ${({ theme }) => theme.fontsize.standard};
     width: ${({ theme }) => theme.fontsize.standard};
-
   }
 `;

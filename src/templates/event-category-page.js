@@ -5,9 +5,12 @@ import Layout from '../components/layout';
 // Components
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
+import FeaturedEvent from '../components/featured-event';
+import EventListCard from '../components/event-list-card';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
-import FeaturedEvent from '../components/featured-event';
+import { OtherEventsWrapper } from '../components/event-category-page/styles';
+import { SectionTag } from '../components/styled/tags';
 
 const EventCategoryPage = ({ data }) => {
   const {
@@ -33,6 +36,17 @@ const EventCategoryPage = ({ data }) => {
 
           <FeaturedEvent data={featuredEvent[0]} />
         </Container>
+
+        <OtherEventsWrapper>
+          <Container>
+            <SectionTag>Other events</SectionTag>
+            <TwoThirds>
+              {events.map((event, key) => (
+                <EventListCard data={event} key={key} />
+              ))}
+            </TwoThirds>
+          </Container>
+        </OtherEventsWrapper>
       </article>
     </Layout>
   );
