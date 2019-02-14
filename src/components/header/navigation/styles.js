@@ -151,3 +151,16 @@ export const SubMenu = styled.ul`
     }
   }
 `;
+
+export const SkipToContent = styled.a`
+  display: block;
+  width: 100%;
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+
+  &:focus {
+    height: auto;
+  }
+`;
