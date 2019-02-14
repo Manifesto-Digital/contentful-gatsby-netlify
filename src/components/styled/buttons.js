@@ -28,7 +28,12 @@ export const buttonStyles = css`
   ${props => props.fullWidth && 'width: 100%'};
 
   &:hover {
-    color: ${props => props.theme.palette.white};
+    color: ${props =>
+      (props.bg === 'red' && props.theme.palette.white) ||
+      (props.bg === 'black' && props.theme.palette.white) ||
+      (props.bg === 'blue' && props.theme.palette.white) ||
+      (props.bg === 'donate' && props.theme.palette.white) ||
+      (props.bg === 'white-outline' && props.theme.palette.white)};
   }
 `;
 
