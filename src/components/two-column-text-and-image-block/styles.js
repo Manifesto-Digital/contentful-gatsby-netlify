@@ -40,7 +40,6 @@ export const ContentSemi = styled.div`
 
     &:nth-child(2n) {
       flex: 0.4;
-      align-self: center;
     }
 
     & img {

@@ -1,13 +1,13 @@
 const path = require('path');
-const { getEventPages } = require('../queries/event-page');
+const { getChallengeEventPages } = require('../queries/challenge-event-page');
 
-async function createPressReleasePages(graphql, gatsbyCreatePage) {
+async function createChallengeEventPages(graphql, gatsbyCreatePage) {
   const challengeEventTemplate = path.resolve(
     'src/templates/challenge-event.js'
   );
 
   // Get press release pages
-  const eventPages = await getEventPages(graphql);
+  const eventPages = await getChallengeEventPages(graphql);
 
   if (eventPages.errors) {
     throw Error(eventPages.errors);
@@ -28,4 +28,4 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
     });
   });
 }
-module.exports = createPressReleasePages;
+module.exports = createChallengeEventPages;
