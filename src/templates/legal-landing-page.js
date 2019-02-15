@@ -9,11 +9,27 @@ import RichText from '../components/rich-text';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const LegalLandingPage = ({ data }) => {
-  const { pageName } = data.contentfulPageAssemblyLegalLandingPage;
+  const {
+    pageName,
+    subheader,
+    introductionText,
+    pageReference,
+    sideBarLinks,
+  } = data.contentfulPageAssemblyLegalLandingPage;
 
   return (
     <Layout>
-      <article>Hello World</article>
+      <article>
+        <PageTitle>
+          <h1>{pageName}</h1>
+          <div>{subheader}</div>
+        </PageTitle>
+        <Container>
+          <TwoThirds>
+            <RichText richText={introductionText} />
+          </TwoThirds>
+        </Container>
+      </article>
     </Layout>
   );
 };
@@ -30,6 +46,20 @@ export const eventsLandingPageQuery = graphql`
   query legalLandingPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
       pageName
+      subheader
+      introductionText {
+        childContentfulRichText {
+          html
+        }
+      }
+      pageReferences {
+        title
+        slug
+      }
+      sideBarLinks {
+        title
+        slug
+      }
     }
   }
 `;
