@@ -3,7 +3,7 @@ module.exports = function(migration) {
     'pageAssemblyContentPage'
   );
   pageAssemblyContentPage
-    .createField('redirects')
+    .createField('redirectsPageAssemblyContentPage')
     .name('Redirects')
     .type('Array')
     .localized(false)
