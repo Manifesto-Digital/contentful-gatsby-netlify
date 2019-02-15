@@ -23,12 +23,7 @@ const EventListCard = ({ data }) => {
   return (
     <CardLink internalLink={{ slug }}>
       <Card>
-        <Thumbnail
-          mobileW={280}
-          desktopW={250}
-          image={thumbnailImage}
-          description={eventName}
-        />
+        <Thumbnail image={thumbnailImage} />
         <CardContent>
           <h3>{eventName}</h3>
           <CardInfoList>

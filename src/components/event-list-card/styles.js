@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
 import { breakpoint } from '../theme/breakpoint';
 import LinkHandler from '../link-handler';
-import ResponsiveImage from '../image/responsive';
+import Image from '../image';
 
 export const CardLink = styled(LinkHandler)`
   text-decoration: none;
@@ -23,7 +23,7 @@ export const Card = styled.div`
   `};
 `;
 
-export const Thumbnail = styled(ResponsiveImage)`
+export const Thumbnail = styled(Image)`
   display: none;
 
   ${breakpoint.mobileLand`
