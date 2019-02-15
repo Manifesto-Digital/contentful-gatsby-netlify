@@ -17,6 +17,7 @@ import ContentCardBanner from '../content-card-banner';
 import Perks from '../perks';
 import Testimonials from '../testimonials';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
+import CardsWithIcons from '../cards-with-icons';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -140,14 +141,20 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
+      if (internal.type === 'ContentfulAssemblyCardsWithIcon') {
+        return (
+          <CardsWithIcons
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
+      }
+
       return null;
     });
 
-  return (
-    <>
-      <AssembliesLoop />
-    </>
-  );
+  return <AssembliesLoop />;
 };
 
 Assemblies.propTypes = {

@@ -53,6 +53,10 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
+.c3:hover {
+  color: #fff;
+}
+
 @media (min-width:32em) {
   .c0 {
     -webkit-flex: 0 49%;

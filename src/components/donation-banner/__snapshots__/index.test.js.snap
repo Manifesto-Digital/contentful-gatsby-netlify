@@ -24,6 +24,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
+.c11:hover {
+  color: #fff;
+}
+
 .c0 {
   padding: 20px 0;
   background-color: #12b9bf;

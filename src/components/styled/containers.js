@@ -37,3 +37,18 @@ export const SideBar = styled.div`
     padding-left: ${props => props.theme.spacing.xl};
   `};
 `;
+
+export const FlexBetweenContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+`;
+
+export const Section = styled.section`
+  padding: ${props => props.theme.spacing.medium} 0;
+  background-color: ${props =>
+    props.backgroundColour
+      ? props.backgroundColour
+      : props.theme.palette.white};
+`;
