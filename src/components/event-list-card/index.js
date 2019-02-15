@@ -25,26 +25,25 @@ const EventListCard = ({ data }) => {
   const date = eventDisplayDate || dateAsString(eventSystemDate, 'DD/M/YYYY');
 
   return (
-    <CardLink internalLink={{ slug }}>
-      <Card>
-        <Thumbnail image={thumbnailImage} />
-        <CardContent>
-          <h3>{eventName}</h3>
-          <CardInfoList>
-            {displayLocation && (
-              <CardInfo>
-                <InfoIcon src={iconSrc('map-marker')} />
-                {displayLocation}
-              </CardInfo>
-            )}
+    <Card>
+      <Thumbnail image={thumbnailImage} />
+      <CardContent>
+        <h3>{eventName}</h3>
+        <CardInfoList>
+          {displayLocation && (
             <CardInfo>
-              <InfoIcon src={iconSrc('calendar')} />
-              {date}
+              <InfoIcon src={iconSrc('map-marker')} />
+              {displayLocation}
             </CardInfo>
-          </CardInfoList>
-        </CardContent>
-      </Card>
-    </CardLink>
+          )}
+          <CardInfo>
+            <InfoIcon src={iconSrc('calendar')} />
+            {date}
+          </CardInfo>
+        </CardInfoList>
+      </CardContent>
+      <CardLink internalLink={{ slug }}>{eventName}</CardLink>
+    </Card>
   );
 };
 

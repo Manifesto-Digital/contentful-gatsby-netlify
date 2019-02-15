@@ -40,16 +40,18 @@ const EventCategoryPage = ({ data }) => {
           <FeaturedEvent data={featuredEvent[0]} />
         </Container>
 
-        <OtherEventsWrapper>
-          <Container>
-            <SectionTag>Other events</SectionTag>
-            <TwoThirds>
-              {events.map((event, key) => (
-                <EventListCard data={event} key={key} />
-              ))}
-            </TwoThirds>
-          </Container>
-        </OtherEventsWrapper>
+        {events && (
+          <OtherEventsWrapper>
+            <Container>
+              <SectionTag>Other events</SectionTag>
+              <TwoThirds>
+                {events.map((event, key) => (
+                  <EventListCard data={event} key={key} />
+                ))}
+              </TwoThirds>
+            </Container>
+          </OtherEventsWrapper>
+        )}
       </article>
     </Layout>
   );
