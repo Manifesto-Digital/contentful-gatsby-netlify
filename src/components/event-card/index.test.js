@@ -5,6 +5,7 @@ import {
   snapshotComponent,
   mountWithTheme,
 } from '../../../__tests__/helpers/index';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
 import EventCard from './index';
 
 export const createEventCard = createFactory({
@@ -18,6 +19,8 @@ export const createEventCard = createFactory({
   secondaryCtaText: 'Register for event',
   secondaryCtaLink: { slug: 'event-categories' },
 });
+
+hidePascalCaseWarning();
 
 it('renders correctly', () => {
   const mockData = createEventCard();

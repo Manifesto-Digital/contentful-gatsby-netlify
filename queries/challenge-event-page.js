@@ -8,7 +8,7 @@
  * The topic___sub_pages filter option is available as the only content model that the subpage can take is a Advice page assembly
  *
  */
-const getEventPages = async graphql =>
+const getChallengeEventPages = async graphql =>
   graphql(`
     {
       allContentfulPageAssemblyChallengeEvent {
@@ -21,4 +21,4 @@ const getEventPages = async graphql =>
       }
     }
   `);
-module.exports = { getEventPages };
+module.exports = { getChallengeEventPages };

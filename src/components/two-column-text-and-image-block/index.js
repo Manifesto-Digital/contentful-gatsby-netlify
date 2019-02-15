@@ -14,13 +14,16 @@ import {
   ContentSemi,
   TextWrapper,
 } from './styles';
+import CTA from '../cta';
 
 const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const {
     headerText,
     leftColumnText,
     leftColumnCalloutBanners,
+    rightColumnText,
     rightColumnImage,
+    rightColumnCta,
     rightColumnCalloutBanners,
   } = data;
 
@@ -52,7 +55,15 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
               ))}
           </ContentSemi>
           <ContentSemi>
+            {rightColumnText && (
+              <TextWrapper
+                backgroundColour={backgroundColour}
+                richText={rightColumnText}
+              />
+            )}
+            {rightColumnCta && <CTA {...CTA.fromCMS(rightColumnCta)} />}
             {rightColumnImage && <Image image={rightColumnImage} />}
+
             {rightColumnCalloutBanners &&
               rightColumnCalloutBanners.map(calloutBanner => (
                 <InlineCallOut
@@ -73,8 +84,10 @@ TwoColumnTextAndImageBlock.propTypes = {
     headerText: PropTypes.string.isRequired,
     leftColumnText: PropTypes.shape(richTextPropTypes).isRequired,
     leftColumnCalloutBanners: PropTypes.array,
+    rightColumnText: PropTypes.shape(richTextPropTypes).isRequired,
     rightColumnImage: PropTypes.object,
     rightColumnCalloutBanners: PropTypes.array,
+    rightColumnCta: PropTypes.object,
     backgroundColour: PropTypes.oneOf(['White', 'Black', 'Grey']).isRequired,
   }),
   insideContainer: PropTypes.bool,
