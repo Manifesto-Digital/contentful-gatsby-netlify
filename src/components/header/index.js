@@ -44,17 +44,19 @@ const navigationQuery = graphql`
               }
             }
             subNavigationItems {
-              ... on ContentfulPageAssemblyPressReleasePage {
-                title
-                slug
-              }
-              ... on ContentfulPageAssemblyContentPage {
-                title
-                slug
-              }
-              ... on ContentfulPageAssemblyAdvicePage {
-                title
-                slug
+              ... on Node {
+                ... on ContentfulPageAssemblyPressReleasePage {
+                  title
+                  slug
+                }
+                ... on ContentfulPageAssemblyContentPage {
+                  title
+                  slug
+                }
+                ... on ContentfulPageAssemblyAdvicePage {
+                  title
+                  slug
+                }
               }
             }
           }
