@@ -8,6 +8,8 @@ const RichText = ({ richText, className }) => {
     item.childContentfulRichText.html &&
     item.childContentfulRichText.html !== '<p></p>'; // gatsby-transformer-contentful-richtext still includes an empty p if an editor clears the rich text
 
+  if (!hasContent(richText)) return null;
+
   // Strip out empty <p> tag
   const newMarkup = richText.childContentfulRichText.html.replace(
     '<p></p>',
@@ -15,8 +17,6 @@ const RichText = ({ richText, className }) => {
   );
 
   const createMarkup = markupToRender => ({ __html: markupToRender });
-
-  if (!hasContent(richText)) return null;
 
   /* eslint-disable  react/no-danger */
   return (

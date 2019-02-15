@@ -56,6 +56,7 @@ export const HeaderWrapper = styled.header`
 export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   width: 100%;
   background: ${({ theme }) => theme.palette.grey10};
@@ -64,4 +65,8 @@ export const HeaderBar = styled.header`
     padding: 0
     ${({ theme }) => theme.spacing.standard};
   `}
+`;
+
+export const MenuControls = styled.div`
+  display: flex;
 `;
