@@ -15,6 +15,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
+.c0:hover {
+  color: #fff;
+}
+
 <Link
   className="c0"
   to="/internal-link-slug"
