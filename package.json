@@ -23,6 +23,7 @@
     "gatsby-plugin-svgr": "2.0.1",
     "gatsby-source-contentful": "^2.0.15",
     "gatsby-transformer-remark": "^2.1.12",
+    "google-map-react": "^1.1.2",
     "jest-styled-components": "^6.3.1",
     "prop-types": "^15.6.2",
     "rc-slider": "^8.6.4",
@@ -65,7 +66,9 @@
     "setupFiles": [
       "<rootDir>/loadershim.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js"
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ]
   },
   "scripts": {
     "build": "gatsby build",

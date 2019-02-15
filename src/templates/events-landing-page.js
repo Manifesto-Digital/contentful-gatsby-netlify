@@ -75,11 +75,13 @@ export const eventsLandingPageQuery = graphql`
         cardText
         primaryCtaText
         primaryCtaLink {
-          ... on ContentfulPageAssemblyChallengeEvent {
-            slug
-          }
-          ... on ContentfulPageAssemblyStandardEvent {
-            slug
+          ... on Node {
+            ... on ContentfulPageAssemblyChallengeEvent {
+              slug
+            }
+            ... on ContentfulPageAssemblyStandardEvent {
+              slug
+            }
           }
         }
         secondaryCtaText

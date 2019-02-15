@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`displays the correct icon 1`] = `
+.c6 {
+  display: inline-block;
+}
+
+.c5 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #ea232d;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+.c5:hover {
+  color: #fff;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #f7f7f7;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.c0:hover {
+  box-shadow: 0 2.5px 6px rgba(0,0,0,0.16),0 2.5px 6px rgba(0,0,0,0.13);
+}
+
+.c1 {
+  fill: #212122;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.c2 {
+  margin-top: 30px;
+}
+
+.c3 {
+  margin-top: 20px;
+}
+
+.c4 {
+  margin-top: auto;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="isvg loading c1"
+  />
+  <h3
+    className="c2"
+  >
+    Title text
+  </h3>
+  <p
+    className="c3"
+  >
+    Sub text
+  </p>
+  <Link
+    className="c4 c5"
+    to="/https://example.com"
+  >
+    <span
+      className="c6"
+    >
+      Click me
+    </span>
+  </Link>
+</div>
+`;
+
+exports[`renders correctly 1`] = `
+.c6 {
+  display: inline-block;
+}
+
+.c5 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #ea232d;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+.c5:hover {
+  color: #fff;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 20px;
+  text-align: center;
+  background: #f7f7f7;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.c0:hover {
+  box-shadow: 0 2.5px 6px rgba(0,0,0,0.16),0 2.5px 6px rgba(0,0,0,0.13);
+}
+
+.c1 {
+  fill: #212122;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.c2 {
+  margin-top: 30px;
+}
+
+.c3 {
+  margin-top: 20px;
+}
+
+.c4 {
+  margin-top: auto;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="isvg loading c1"
+  />
+  <h3
+    className="c2"
+  >
+    Title text
+  </h3>
+  <p
+    className="c3"
+  >
+    Sub text
+  </p>
+  <Link
+    className="c4 c5"
+    to="/https://example.com"
+  >
+    <span
+      className="c6"
+    >
+      Click me
+    </span>
+  </Link>
+</div>
+`;

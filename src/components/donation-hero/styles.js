@@ -111,8 +111,8 @@ export const StyledContainer = styled(Container)`
   padding: 0;
 
   ${breakpoint.desktop`
-    padding: 0
-    ${props => (props.padding === false ? 0 : props.theme.spacing.standard)};
+    padding: 0 ${props =>
+      props.padding === false ? 0 : props.theme.spacing.standard};
   `}
 `;
 

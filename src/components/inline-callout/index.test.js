@@ -10,7 +10,7 @@ import InlineCallOut from './index';
 // Default props
 export const createInlineBanner = createFactory({
   content: createChildContentfulRichText(),
-  icon: null,
+  icon: 'map-unfolded',
   borderColour: null,
   bannerColour: null,
 });

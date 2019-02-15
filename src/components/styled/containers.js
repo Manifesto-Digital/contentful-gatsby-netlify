@@ -11,9 +11,8 @@ export const Container = styled.div`
 export const TwoThirds = styled.div`
   max-width: 100%;
   width: 100%;
-  padding: 0 ${props => (props.padding ? props.theme.spacing.standard : 0)};
 
-  ${breakpoint.tablet`
+  ${breakpoint.desktop`
     max-width: 66%;
   `};
 `;
@@ -23,21 +22,33 @@ export const ContentWithSideBar = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  ${breakpoint.tablet`
+  ${breakpoint.desktop`
     flex-direction: row;
   `};
 `;
 
 export const SideBar = styled.div`
   max-width: 100%;
-
-  ${breakpoint.tablet`
-    padding-left: ${props => props.theme.spacing.standard};
-  `};
+  word-break: break-word;
 
   ${breakpoint.desktop`
     max-width: 32%;
     margin-top: 0;
     padding-left: ${props => props.theme.spacing.xl};
   `};
+`;
+
+export const FlexBetweenContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+`;
+
+export const Section = styled.section`
+  padding: ${props => props.theme.spacing.medium} 0;
+  background-color: ${props =>
+    props.backgroundColour
+      ? props.backgroundColour
+      : props.theme.palette.white};
 `;
