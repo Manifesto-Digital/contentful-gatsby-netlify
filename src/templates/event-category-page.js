@@ -81,6 +81,7 @@ export const eventCategoryPageQuery = graphql`
           eventName
           displayLocation
           eventDisplayDate
+          eventSystemDate
           distance
           thumbnailImage {
             file {
@@ -101,6 +102,7 @@ export const eventCategoryPageQuery = graphql`
             eventName
             displayLocation
             eventDisplayDate
+            eventSystemDate
             thumbnailImage {
               file {
                 url
@@ -121,6 +123,7 @@ export const eventCategoryPageQuery = graphql`
             eventName
             displayLocation
             eventDisplayDate
+            eventSystemDate
             thumbnailImage {
               file {
                 url

@@ -11,6 +11,7 @@ import {
 import LinkHandler from '../link-handler';
 import { SectionTag } from '../styled/tags';
 import iconSrc from '../../utils/iconSrc';
+import { dateAsString } from '../../utils/dates';
 
 const FeaturedEvent = ({ data }) => {
   const { slug, mainCtaText, event } = data;
@@ -18,9 +19,12 @@ const FeaturedEvent = ({ data }) => {
     eventName,
     displayLocation,
     eventDisplayDate,
+    eventSystemDate,
     distance,
     thumbnailImage,
   } = event;
+
+  const date = eventDisplayDate || dateAsString(eventSystemDate, 'DD/M/YYYY');
 
   return (
     <Wrapper>
@@ -40,12 +44,10 @@ const FeaturedEvent = ({ data }) => {
               {displayLocation}
             </EventInfo>
           )}
-          {eventDisplayDate && (
-            <EventInfo>
-              <EventIcon src={iconSrc('calendar')} />
-              {eventDisplayDate}
-            </EventInfo>
-          )}
+          <EventInfo>
+            <EventIcon src={iconSrc('calendar')} />
+            {date}
+          </EventInfo>
           {distance && (
             <EventInfo>
               <EventIcon src={iconSrc('trophy')} />

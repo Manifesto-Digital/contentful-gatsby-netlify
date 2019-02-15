@@ -10,6 +10,7 @@ import {
   InfoIcon,
 } from './styles';
 import iconSrc from '../../utils/iconSrc';
+import { dateAsString } from '../../utils/dates';
 
 const EventListCard = ({ data }) => {
   const { slug, event } = data;
@@ -17,8 +18,11 @@ const EventListCard = ({ data }) => {
     eventName,
     displayLocation,
     eventDisplayDate,
+    eventSystemDate,
     thumbnailImage,
   } = event;
+
+  const date = eventDisplayDate || dateAsString(eventSystemDate, 'DD/M/YYYY');
 
   return (
     <CardLink internalLink={{ slug }}>
@@ -33,12 +37,10 @@ const EventListCard = ({ data }) => {
                 {displayLocation}
               </CardInfo>
             )}
-            {eventDisplayDate && (
-              <CardInfo>
-                <InfoIcon src={iconSrc('calendar')} />
-                {eventDisplayDate}
-              </CardInfo>
-            )}
+            <CardInfo>
+              <InfoIcon src={iconSrc('calendar')} />
+              {date}
+            </CardInfo>
           </CardInfoList>
         </CardContent>
       </Card>
