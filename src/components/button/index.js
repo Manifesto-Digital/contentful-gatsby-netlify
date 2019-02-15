@@ -11,6 +11,7 @@ const Button = ({
   children,
   className,
   disabled,
+  onClick,
 }) => (
   <DefaultButton
     bg={bg}
@@ -18,6 +19,7 @@ const Button = ({
     fullWidth={fullWidth}
     type={type}
     disabled={disabled}
+    onClick={onClick}
   >
     {icon && <IconHolder src={icon} iconColour={iconColour} cacheGetRequests />}
     {children}
@@ -33,6 +35,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;

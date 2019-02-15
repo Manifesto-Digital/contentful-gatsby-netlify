@@ -11,6 +11,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
+.c0:hover {
+  color: #fff;
+}
+
 <button
   className="c0"
   type="button"
@@ -27,6 +31,10 @@ exports[`renders correctly when full width 1`] = `
   border: none;
   color: #fff;
   width: 100%;
+}
+
+.c0:hover {
+  color: #fff;
 }
 
 <button

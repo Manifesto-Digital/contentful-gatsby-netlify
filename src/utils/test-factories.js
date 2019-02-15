@@ -129,6 +129,26 @@ export const createContentCardBanner = createFactory({
   contentCards: [createContentCards(), createContentCards()],
 });
 
-export const createRef = createFactory({
+export const createTestRef = createFactory({
   current: {},
+});
+
+export const createEvent = createFactory({
+  eventName: 'Brighton Half Marathon',
+  shortDescription:
+    'Run for charity with Team Shelter; half marathons, marathons and other distance running events all in the name of a good cause.',
+  thumbnailImage: createImage(),
+  eventType: 'Run',
+  eventStatus: 'Sold Out',
+  eventSystemDate: '2019-02-24',
+  eventDisplayDate: '24 February 2019',
+  distance: '13.1 miles',
+  registrationFee: 19,
+  pledge: 199,
+  eventLocation: {
+    lat: 50.8374204,
+    lon: -0.1061897,
+  },
+  displayLocation: 'Brighton',
+  notifiedTeamEmail: 'running@shelter.org.uk',
 });

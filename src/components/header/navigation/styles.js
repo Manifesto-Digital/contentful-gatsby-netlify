@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
   width: 80%;
   height: 100%;
   background: ${({ theme }) => theme.palette.white};
@@ -15,6 +14,7 @@ export const Wrapper = styled.div`
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
   transform: ${({ active }) =>
     active ? 'translateX(0)' : ' translateX(120%)'};
+  z-index: ${({ active }) => (active ? '10' : null)};
   overflow-y: scroll;
 
   ${breakpoint.desktop`
@@ -149,5 +149,18 @@ export const SubMenu = styled.ul`
         }
       `}
     }
+  }
+`;
+
+export const SkipToContent = styled.a`
+  display: block;
+  width: 100%;
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+
+  &:focus {
+    height: auto;
   }
 `;
