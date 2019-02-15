@@ -15,6 +15,7 @@ const ChallengeEventPage = ({ data }) => {
     assemblies,
     event,
   } = data.contentfulPageAssemblyChallengeEvent;
+
   // Grab the information from the event reference
   const { eventName, displayLocation, registrationLink, distance } = event;
   const date = dateAsString(event.eventSystemDate, 'DD MMM YYYY');
