@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ResponsiveImage from './responsive';
 import theme from '../theme/variables';
+import { Container } from '../styled/containers';
 
 const Wrapper = styled(ResponsiveImage)`
   width: 100%;
@@ -11,12 +12,19 @@ const Wrapper = styled(ResponsiveImage)`
 `;
 
 const FullWidthImage = ({ data }) => (
-  <Wrapper
-    mobileW={600}
-    desktopW={1800}
-    removeMarginBottom={data.removeMarginBottom}
-    image={data.image}
-  />
+  <>
+    {data.header && (
+      <Container>
+        <h2>{data.header}</h2>
+      </Container>
+    )}
+    <Wrapper
+      mobileW={600}
+      desktopW={1800}
+      removeMarginBottom={data.removeMarginBottom}
+      image={data.image}
+    />
+  </>
 );
 
 FullWidthImage.propTypes = {
