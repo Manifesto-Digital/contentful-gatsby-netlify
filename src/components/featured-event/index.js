@@ -65,7 +65,14 @@ FeaturedEvent.propTypes = {
   data: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     mainCtaText: PropTypes.string.isRequired,
-    event: PropTypes.object.isRequired,
+    event: PropTypes.shape({
+      eventName: PropTypes.string.isRequired,
+      displayLocation: PropTypes.string,
+      eventDisplayDate: PropTypes.string,
+      eventSystemDate: PropTypes.string.isRequired,
+      distance: PropTypes.string,
+      thumbnailImage: PropTypes.object.isRequired,
+    }),
   }),
 };
 
