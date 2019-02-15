@@ -1,14 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c0 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #000000;
-  font-weight: normal;
+.c6 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
 }
 
-.c1 {
+.c0 {
   padding: 20px;
   margin-bottom: 20px;
   background-color: #fff;
@@ -18,40 +21,45 @@ exports[`renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
-.c2 {
+.c0:hover {
+  background-color: #f7f7f7;
+}
+
+.c1 {
   display: none;
 }
 
-.c4 {
+.c3 {
   padding: 0;
   list-style: none;
 }
 
-.c5 {
+.c4 {
   font-size: 0.775rem;
   margin: 0;
 }
 
-.c6 {
+.c5 {
   margin-right: 10px;
   display: inline-block;
 }
 
-.c6 svg {
+.c5 svg {
   height: 0.775rem;
   width: 0.775rem;
 }
 
 @media (min-width:32em) {
-  .c1 {
+  .c0 {
     padding: 10px;
   }
 }
 
 @media (min-width:32em) {
-  .c2 {
+  .c1 {
     display: block;
     -webkit-align-self: start;
     -ms-flex-item-align: start;
@@ -61,58 +69,57 @@ exports[`renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c2 {
+  .c1 {
     width: 35%;
   }
 }
 
 @media (min-width:32em) {
-  .c3 {
+  .c2 {
     margin-left: 20px;
   }
 }
 
-<Link
+<div
   className="c0"
-  to="/my-slug"
 >
-  <div
+  <img
+    alt="Collection hero"
     className="c1"
+    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+  />
+  <div
+    className="c2"
   >
-    <img
-      alt="Collection hero"
-      className="c2"
-      src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=250"
-      srcSet="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=280 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fm=jpg&w=250"
-    />
-    <div
+    <h3>
+      My Event
+    </h3>
+    <ul
       className="c3"
     >
-      <h3>
-        My Event
-      </h3>
-      <ul
+      <li
         className="c4"
       >
-        <li
-          className="c5"
-        >
-          <span
-            className="isvg loading c6"
-          />
-          round the corner
-        </li>
-        <li
-          className="c5"
-        >
-          <span
-            className="isvg loading c6"
-          />
-          Yesterday
-        </li>
-      </ul>
-    </div>
+        <span
+          className="isvg loading c5"
+        />
+        round the corner
+      </li>
+      <li
+        className="c4"
+      >
+        <span
+          className="isvg loading c5"
+        />
+        Yesterday
+      </li>
+    </ul>
   </div>
-</Link>
+  <Link
+    className="c6"
+    to="/my-slug"
+  >
+    My Event
+  </Link>
+</div>
 `;
