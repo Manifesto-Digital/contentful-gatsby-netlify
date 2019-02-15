@@ -9,7 +9,10 @@ import FeaturedEvent from '../components/featured-event';
 import EventListCard from '../components/event-list-card';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
-import { OtherEventsWrapper } from '../components/event-category-page/styles';
+import {
+  IntroWrapper,
+  OtherEventsWrapper,
+} from '../components/event-category-page/styles';
 import { SectionTag } from '../components/styled/tags';
 
 const EventCategoryPage = ({ data }) => {
@@ -32,10 +35,10 @@ const EventCategoryPage = ({ data }) => {
           <h1>{pageName}</h1>
         </PageTitle>
         <Container>
-          <TwoThirds>
+          <IntroWrapper>
             {strapline && <h3>{strapline}</h3>}
             {summary && <RichText richText={summary} />}
-          </TwoThirds>
+          </IntroWrapper>
 
           <FeaturedEvent data={featuredEvent[0]} />
         </Container>
