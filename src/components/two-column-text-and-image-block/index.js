@@ -48,6 +48,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
             {leftColumnCalloutBanners &&
               leftColumnCalloutBanners.map(calloutBanner => (
                 <InlineCallOut
+                  key={calloutBanner.id + 1}
                   content={calloutBanner}
                   insideContainer={!insideContainer}
                 />
@@ -66,6 +67,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
             {rightColumnCalloutBanners &&
               rightColumnCalloutBanners.map(calloutBanner => (
                 <InlineCallOut
+                  key={calloutBanner.id + 1}
                   content={calloutBanner}
                   insideContainer={!insideContainer}
                 />

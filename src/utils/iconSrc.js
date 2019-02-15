@@ -56,7 +56,7 @@ const iconSrc = icon => {
 
   if (iconList[iconKey] === undefined) {
     throw new Error(
-      'No matching icon was found. Is it set as an option in the CMS? Has it been imported and included in the object above?'
+      `No matching icon was found for ${icon}. Is it set as an option in the CMS? Has it been imported and included in the object above?`
     );
   }
 
