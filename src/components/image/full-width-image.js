@@ -6,7 +6,8 @@ import theme from '../theme/variables';
 
 const Wrapper = styled(ResponsiveImage)`
   width: 100%;
-  margin-bottom: ${props => (props.marginBottom ? theme.spacing.large : 0)};
+  margin-bottom: ${props =>
+    props.removeMarginBottom ? 0 : theme.spacing.large};
 `;
 
 const FullWidthImage = ({ data }) => (
@@ -21,7 +22,7 @@ const FullWidthImage = ({ data }) => (
 FullWidthImage.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
     removeMarginBottom: PropTypes.bool,
   }),
 };

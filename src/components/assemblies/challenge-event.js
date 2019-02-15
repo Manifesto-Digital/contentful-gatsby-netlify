@@ -36,7 +36,6 @@ const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
       }
 
       if (internal.type === 'ContentfulTopicFullWidthImage') {
-        console.log(assembly);
         return <FulllWidthImage key={id} data={assembly} />;
       }
 
