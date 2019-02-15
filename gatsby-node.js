@@ -3,7 +3,8 @@ const createContentPages = require('./create-pages/content-pages.js');
 const createPressReleasePages = require('./create-pages/press-release-pages.js');
 const createStandardEventPages = require('./create-pages/standard-event-pages.js');
 const createChallengeEventPages = require('./create-pages/challenge-event-pages.js');
-const createEventLandingPages = require('./create-pages/challenge-event-pages.js');
+const createEventLandingPages = require('./create-pages/events-landing-pages.js');
+const createLegalLandingPages = require('./create-pages/legal-landing-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -14,4 +15,5 @@ exports.createPages = async ({ graphql, actions }) => {
   createStandardEventPages(graphql, createPage);
   createChallengeEventPages(graphql, createPage);
   createEventLandingPages(graphql, createPage);
+  createLegalLandingPages(graphql, createPage);
 };
