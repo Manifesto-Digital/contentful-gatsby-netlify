@@ -17,6 +17,7 @@ import ContentCardBanner from '../content-card-banner';
 import Perks from '../perks';
 import Testimonials from '../testimonials';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
+import TableOfContents from '../table-of-contents';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -26,6 +27,8 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       // Make sure an id and name of component have been queried
       if (!assembly.id || !assembly.internal) return null;
       const { id, internal } = assembly;
+
+      console.log(internal.type);
 
       // CTA
       if (internal.type === 'ContentfulAssemblyCta') {
@@ -138,6 +141,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicTableOfContentsTopic') {
+        return <TableOfContents key={id} data={assembly} />;
       }
 
       return null;
