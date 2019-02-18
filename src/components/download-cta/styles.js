@@ -6,8 +6,7 @@ export const Button = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${props => props.theme.spacing.small}
-    ${props => props.theme.spacing.standard};
+  padding: ${({ theme }) => `${theme.spacing.small} ${theme.spacing.standard}`};
   background-color: ${props => props.theme.palette.grey45};
   color: ${props => props.theme.palette.white};
   text-decoration: none;
