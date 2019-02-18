@@ -14,7 +14,7 @@ import {
   ContentWithSideBar,
   SideBar,
 } from '../components/styled/containers';
-import { Wrapper } from '../components/legal-landing-page/styles';
+import { Wrapper, Subheader } from '../components/legal-landing-page/styles';
 
 const LegalLandingPage = ({ data }) => {
   const {
@@ -32,7 +32,7 @@ const LegalLandingPage = ({ data }) => {
       <article>
         <PageTitle>
           <h1>{pageName}</h1>
-          <div>{subheader}</div>
+          <Subheader>{subheader}</Subheader>
         </PageTitle>
         <Container>
           <TwoThirds>
