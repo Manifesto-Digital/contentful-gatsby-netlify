@@ -10,68 +10,74 @@ const TableOfContents = ({ data }) => {
     systemName,
     applicableRegions,
     openingStatement,
-    content,
+    tableOfContents,
   } = data.contentfulPageAssemblyTableOfContents;
-  const [topLinkArray, createTopLinkArray] = useState('');
-  const [bottomLinkArray, createBottomLinkArray] = useState('');
-  const [formattedContent, formatContent] = useState('');
 
-  const groomContent = (rawContent, tagName) => {
-    // add the RichText content to a temp div so we can search through DOM elements
-    const temp = document.createElement('div');
-    temp.innerHTML = rawContent;
+  const [contentWithReferences, createReferenceContent] = useState([]);
+  const [referenceList, updateReferenceList] = useState([]);
 
-    // get the tags
-    const tagsInContent = temp.getElementsByTagName('*');
-    const linksArray = [];
+  const formatRawText = text => {
+    const formattedContent = [];
+    let count = 0;
+    [...text].forEach(content => {
+      const richText = content.textContent.childContentfulRichText.html;
+      const formattedText = richText.replace(/[^[\]]+(?=])/g, function() {
+        count += 1;
+        return `<a href="#reference-${count}">${count}</a>`;
+      });
 
-    // For each matched tags, create an array of objects that link to our content
-    Object.keys(tagsInContent).forEach((key, i) => {
-      if (tagsInContent[key].tagName === tagName) {
-        const tagId = `${tagName === 'H2' ? 'title-' : 'reference-'}${i}`;
-        const link = {};
-        link.href = `#${tagId}`;
-        link.innerHTML = tagsInContent[key].innerHTML;
-        linksArray.push(link);
-        // give the href an ID to link to
-        tagsInContent[key].id = tagId;
-      }
+      formattedContent.push(formattedText);
     });
+    createReferenceContent(formattedContent);
+  };
 
-    formatContent(temp.innerHTML);
-
-    if (tagName === 'H2') {
-      createTopLinkArray(linksArray);
-      groomContent(temp.innerHTML, 'U');
-    } else {
-      createBottomLinkArray(linksArray);
-    }
+  const createReferences = text => {
+    const referenceArray = [];
+    [...text].forEach(content => {
+      const richText = content.textContent.childContentfulRichText.html;
+      const hasLink = richText.match(/[^[\]]+(?=])/g);
+      referenceArray.push(...hasLink);
+    });
+    updateReferenceList(referenceArray);
   };
 
   useEffect(() => {
-    groomContent(content.childContentfulRichText.html, 'H2');
-  }, [content]);
+    formatRawText(tableOfContents);
+    createReferences(tableOfContents);
+  }, [tableOfContents]);
 
   return (
     <Layout>
       <div>
-        {topLinkArray &&
-          topLinkArray.map((link, i) => (
-            <a href={link.href} key={i}>
-              {link.innerHTML}
-            </a>
-          ))}
         <h1>{systemName}</h1>
         <p>{applicableRegions}</p>
         <RichText richText={openingStatement} />
-        {formattedContent && (
-          <div dangerouslySetInnerHTML={{ __html: formattedContent }} />
-        )}
-        {bottomLinkArray &&
-          bottomLinkArray.map((link, i) => (
-            <a href={link.href} key={i}>
-              {link.innerHTML}
+        {tableOfContents &&
+          tableOfContents.map((item, i) => (
+            <a href={`#title-${i}`} title={item.title} key={i}>
+              <h2>{item.title}</h2>
             </a>
+          ))}
+
+        {tableOfContents &&
+          tableOfContents.map((item, i) => (
+            <div key={i}>
+              <h2 id={`title-${i}`} key={i}>
+                {item.title}
+              </h2>
+              <RichText
+                richText={{
+                  childContentfulRichText: { html: contentWithReferences[i] },
+                }}
+              />
+            </div>
+          ))}
+
+        {referenceList &&
+          referenceList.map((reference, i) => (
+            <div id={`reference-${i}`} key={i}>
+              {reference}
+            </div>
           ))}
       </div>
     </Layout>
@@ -102,9 +108,12 @@ export const tabelOfContentsPageQuery = graphql`
           html
         }
       }
-      content {
-        childContentfulRichText {
-          html
+      tableOfContents {
+        title
+        textContent {
+          childContentfulRichText {
+            html
+          }
         }
       }
     }
