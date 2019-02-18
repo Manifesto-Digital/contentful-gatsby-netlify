@@ -26,11 +26,15 @@ client
       await fsPromises.appendFile(filepath, '# auto generated redirects \n\n');
       console.log('header added');
       Object.keys(Entries.items).map(key => {
-        const { slug, redirects } = Entries.items[key].fields;
+        const { slug, redirectsPageAssemblyContentPage } = Entries.items[
+          key
+        ].fields;
 
-        if (Array.isArray(redirects)) {
-          Object.keys(redirects).map(redirectKey => {
-            const { url } = redirects[redirectKey].fields;
+        if (Array.isArray(redirectsPageAssemblyContentPage)) {
+          Object.keys(redirectsPageAssemblyContentPage).map(redirectKey => {
+            const { url } = redirectsPageAssemblyContentPage[
+              redirectKey
+            ].fields;
 
             const writeRedirectsFile = async () => {
               await fsPromises.appendFile(
@@ -73,6 +77,7 @@ client
     };
 
     try {
+      fs.closeSync(fs.openSync(filepath, 'a'));
       await generateRedirects();
       const fileContents = await readFile();
       writeStaticRedirectsFile(fileContents);
