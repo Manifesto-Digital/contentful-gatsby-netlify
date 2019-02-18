@@ -51,6 +51,7 @@ client
         return true;
       });
     };
+
     const readFile = async () => {
       let fileHandle = null;
       fileHandle = await fsPromises.open(filepathFixedRedirects, 'r+');
