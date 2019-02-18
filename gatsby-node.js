@@ -4,6 +4,7 @@ const createPressReleasePages = require('./create-pages/press-release-pages.js')
 const createStandardEventPages = require('./create-pages/standard-event-pages.js');
 const createChallengeEventPages = require('./create-pages/challenge-event-pages.js');
 const createEventLandingPages = require('./create-pages/challenge-event-pages.js');
+const createPolicyPage = require('./create-pages/policy-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -14,4 +15,5 @@ exports.createPages = async ({ graphql, actions }) => {
   createStandardEventPages(graphql, createPage);
   createChallengeEventPages(graphql, createPage);
   createEventLandingPages(graphql, createPage);
+  createPolicyPage(graphql, createPage);
 };
