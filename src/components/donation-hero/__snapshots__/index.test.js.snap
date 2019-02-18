@@ -12,6 +12,10 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
+.c12:hover {
+  color: #fff;
+}
+
 .c20 {
   display: inline-block;
   text-align: center;
@@ -19,6 +23,10 @@ exports[`renders correctly 1`] = `
   font-weight: normal;
   background-color: #12b9bf;
   border: none;
+  color: #fff;
+}
+
+.c20:hover {
   color: #fff;
 }
 

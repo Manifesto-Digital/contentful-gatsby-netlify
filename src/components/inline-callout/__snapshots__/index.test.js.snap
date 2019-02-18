@@ -104,7 +104,7 @@ exports[`renders correctly with no options chosen in cms 1`] = `
     className="c1"
   >
     <span
-      className="isvg failed c2"
+      className="isvg loading c2"
     />
     <div
       className="c3"
