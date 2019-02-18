@@ -9,14 +9,15 @@ const fsPromises = require('fs/promises');
 const client = contentful.createClient({
   space: process.env.ctfl_spaceId,
   accessToken: process.env.ctfl_accessToken,
+  environment: process.env.GATSBY_CONTENTFUL_ENVIRONMENT,
 });
-
+console.log(process.env.GATSBY_CONTENTFUL_ENVIRONMENT);
 const filepath = `${__dirname}/../public/_redirects`;
 const filepathFixedRedirects = `${__dirname}/fixed_redirects.txt`;
 
 client
   .getEntries({
-    content_type: 'repeaterTest',
+    content_type: 'pageAssemblyContentPage',
   })
   .then(async Entries => {
     const generateRedirects = async () => {
@@ -25,22 +26,31 @@ client
       await fsPromises.appendFile(filepath, '# auto generated redirects \n\n');
       console.log('header added');
       Object.keys(Entries.items).map(key => {
-        const { slug } = Entries.items[key].fields;
+        const { slug, redirects } = Entries.items[key].fields;
 
-        const writeRedirectsFile = async () => {
-          await fsPromises.appendFile(
-            filepath,
-            `/this-should-redirect${key}              /${slug} \n`
-          );
-        };
+        if (Array.isArray(redirects)) {
+          Object.keys(redirects).map(redirectKey => {
+            const { url } = redirects[redirectKey].fields;
 
-        writeRedirectsFile(slug);
+            const writeRedirectsFile = async () => {
+              await fsPromises.appendFile(
+                filepath,
+                `${url}              /${slug} \n`
+              );
+              return true;
+            };
 
-        console.log(`${slug} added.`);
+            writeRedirectsFile(slug);
+
+            console.log(`${slug} added.`);
+            return true;
+          });
+          return true;
+        }
+
         return true;
       });
     };
-
     const readFile = async () => {
       let fileHandle = null;
       fileHandle = await fsPromises.open(filepathFixedRedirects, 'r+');
@@ -49,7 +59,6 @@ client
       if (fileHandle) {
         await fileHandle.close();
       }
-      console.log(content);
       return content;
     };
 
@@ -59,6 +68,7 @@ client
         '\n\n# static redirects generated\n\n'
       );
       await fsPromises.appendFile(filepath, staticRedirects);
+      console.log('static redirects added');
     };
 
     try {
