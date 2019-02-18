@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Container, TwoThirds } from '../styled/containers';
 import { Wrapper } from './styles.js';
 
-const PageTitle = ({ children, twoThirds, paddingBottom }) => (
-  <Wrapper paddingBottom={paddingBottom}>
+const PageTitle = ({ children, twoThirds, paddingBottom, legal }) => (
+  <Wrapper paddingBottom={paddingBottom} legal>
     {twoThirds ? (
       <Container>
         <TwoThirds>{children}</TwoThirds>
@@ -20,6 +20,7 @@ PageTitle.propTypes = {
   children: PropTypes.object.isRequired,
   twoThirds: PropTypes.bool,
   paddingBottom: PropTypes.bool,
+  legal: PropTypes.bool,
 };
 
 PageTitle.defaultProps = {

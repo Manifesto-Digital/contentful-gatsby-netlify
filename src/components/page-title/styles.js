@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   padding-bottom: ${props =>
     props.paddingBottom ? props.theme.spacing.large : 0};
+  color: ${props => props.legal && 'red'};
 
   h1 {
     margin-bottom: ${props => props.theme.spacing.standard};
