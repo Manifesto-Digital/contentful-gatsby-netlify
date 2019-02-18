@@ -49,7 +49,7 @@ const LegalLandingPage = ({ data }) => {
                   ))}
               </TwoThirds>
               <SideBar maxWidth>
-                <LegalSideBar sideBarLinks={sideBarLinks} />
+                <LegalSideBar data={{ sideBarLinks }} />
               </SideBar>
             </ContentWithSideBar>
           </Container>

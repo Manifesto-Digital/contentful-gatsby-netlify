@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import PaddedBox from '../padded-box';
 import LinkHandler from '../link-handler';
 
-const LegalSideBar = ({ sideBarLinks }) => {
+const LegalSideBar = ({ data }) => {
+  const { sideBarLinks } = data;
   if (!sideBarLinks) return;
 
   return (
@@ -19,7 +20,9 @@ const LegalSideBar = ({ sideBarLinks }) => {
 };
 
 LegalSideBar.propTypes = {
-  sideBarLinks: PropTypes.array.isRequired,
+  data: PropTypes.shape({
+    sideBarLinks: PropTypes.array.isRequired,
+  }),
 };
 
 export default LegalSideBar;
