@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 import Item from '../components/press-releases/list-item';
+import LegalSideBar from '../components/legal-sidebar';
 // Styles
 import {
   Container,
@@ -23,6 +24,8 @@ const LegalLandingPage = ({ data }) => {
     pageReferences,
     sideBarLinks,
   } = data.contentfulPageAssemblyLegalLandingPage;
+
+  console.log(sideBarLinks);
 
   return (
     <Layout>
@@ -45,6 +48,9 @@ const LegalLandingPage = ({ data }) => {
                     <Item key={key} data={pageReference} />
                   ))}
               </TwoThirds>
+              <SideBar maxWidth>
+                <LegalSideBar sideBarLinks={sideBarLinks} />
+              </SideBar>
             </ContentWithSideBar>
           </Container>
         </Wrapper>
