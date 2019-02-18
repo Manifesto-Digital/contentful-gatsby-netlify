@@ -21,9 +21,9 @@ const TableOfContents = ({ data }) => {
     let count = 0;
     [...text].forEach(content => {
       const richText = content.textContent.childContentfulRichText.html;
-      const formattedText = richText.replace(/[^[\]]+(?=])/g, function() {
+      const formattedText = richText.replace(/\[+(.*?)\]+/g, function() {
         count += 1;
-        return `<a href="#reference-${count}">${count}</a>`;
+        return `<a id="source-${count}" href="#reference-${count}">[${count}]</a>`;
       });
 
       formattedContent.push(formattedText);
@@ -35,7 +35,7 @@ const TableOfContents = ({ data }) => {
     const referenceArray = [];
     [...text].forEach(content => {
       const richText = content.textContent.childContentfulRichText.html;
-      const hasLink = richText.match(/[^[\]]+(?=])/g);
+      const hasLink = richText.match(/\[+(.*?)\]+/g);
       referenceArray.push(...hasLink);
     });
     updateReferenceList(referenceArray);
@@ -75,8 +75,15 @@ const TableOfContents = ({ data }) => {
 
         {referenceList &&
           referenceList.map((reference, i) => (
-            <div id={`reference-${i}`} key={i}>
-              {reference}
+            <div key={i}>
+              <a
+                id={`reference-${i + 1}`}
+                href={`#source-${i + 1}`}
+                title={reference}
+              >
+                {`[${i + 1}]`}
+              </a>
+              <p> {reference}</p>
             </div>
           ))}
       </div>
