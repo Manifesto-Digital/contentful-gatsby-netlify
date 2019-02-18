@@ -5,15 +5,21 @@ import Layout from '../components/layout';
 // Components
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
+import Item from '../components/press-releases/list-item';
 // Styles
-import { Container, TwoThirds } from '../components/styled/containers';
+import {
+  Container,
+  TwoThirds,
+  ContentWithSideBar,
+  SideBar,
+} from '../components/styled/containers';
 
 const LegalLandingPage = ({ data }) => {
   const {
     pageName,
     subheader,
     introductionText,
-    pageReference,
+    pageReferences,
     sideBarLinks,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
@@ -29,6 +35,18 @@ const LegalLandingPage = ({ data }) => {
             <RichText richText={introductionText} />
           </TwoThirds>
         </Container>
+        <div>
+          <Container>
+            <ContentWithSideBar>
+              <TwoThirds>
+                {pageReferences &&
+                  pageReferences.map((pageReference, key) => (
+                    <Item key={key} data={pageReference} />
+                  ))}
+              </TwoThirds>
+            </ContentWithSideBar>
+          </Container>
+        </div>
       </article>
     </Layout>
   );
