@@ -13,6 +13,7 @@ import {
   ContentWithSideBar,
   SideBar,
 } from '../components/styled/containers';
+import { Wrapper } from '../components/legal-landing-page/styles';
 
 const LegalLandingPage = ({ data }) => {
   const {
@@ -35,7 +36,7 @@ const LegalLandingPage = ({ data }) => {
             <RichText richText={introductionText} />
           </TwoThirds>
         </Container>
-        <div>
+        <Wrapper>
           <Container>
             <ContentWithSideBar>
               <TwoThirds>
@@ -46,7 +47,7 @@ const LegalLandingPage = ({ data }) => {
               </TwoThirds>
             </ContentWithSideBar>
           </Container>
-        </div>
+        </Wrapper>
       </article>
     </Layout>
   );
