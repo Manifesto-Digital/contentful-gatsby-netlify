@@ -151,7 +151,7 @@
       yes: true,
     };
 
-    // // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
     console.log('Run migrations and update version entry');
     while ((migrationToRun = migrationsToRun.shift())) {
       let updateContentfulVersion = migrationToRun[0];
