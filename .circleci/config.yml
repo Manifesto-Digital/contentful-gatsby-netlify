@@ -44,6 +44,7 @@ jobs:
       - image: circleci/node:10.14
     steps:
       - checkout
+      - run: yarn install --frozen-lockfile
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
 
 workflows:
