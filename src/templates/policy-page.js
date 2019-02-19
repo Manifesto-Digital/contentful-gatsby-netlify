@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 // Components
 import PageTitle from '../components/page-title';
+import Policy from '../components/policy';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 
@@ -17,7 +18,9 @@ const PolicyPage = ({ data }) => {
           <h1>{pageName}</h1>
         </PageTitle>
         <Container>
-          <TwoThirds>Hello world</TwoThirds>
+          <TwoThirds>
+            <Policy data={policy[0]} />
+          </TwoThirds>
         </Container>
       </article>
     </Layout>
@@ -47,8 +50,14 @@ export const PolicyPageQuery = graphql`
           }
         }
         media {
+          title
           file {
             url
+            contentType
+            fileName
+            details {
+              size
+            }
           }
         }
       }
