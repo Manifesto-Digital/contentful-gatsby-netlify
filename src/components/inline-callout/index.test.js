@@ -6,6 +6,7 @@ import {
   createChildContentfulRichText,
 } from '../../utils/test-factories';
 import InlineCallOut from './index';
+import RichText from '../rich-text';
 
 // Default props
 export const createInlineBanner = createFactory({
@@ -17,7 +18,11 @@ export const createInlineBanner = createFactory({
 
 it('renders correctly with no options chosen in cms', () => {
   const mockData = createInlineBanner();
-  snapshotComponent(<InlineCallOut content={mockData} />);
+  snapshotComponent(
+    <InlineCallOut>
+      <RichText richtext={mockData.content} />
+    </InlineCallOut>
+  );
 });
 
 it('renders correctly with icon chosen in cms', () => {
@@ -25,5 +30,9 @@ it('renders correctly with icon chosen in cms', () => {
     icon: 'Open book',
   });
 
-  snapshotComponent(<InlineCallOut content={mockData} />);
+  snapshotComponent(
+    <InlineCallOut icon={mockData.icon}>
+      <RichText richtext={mockData.content} />
+    </InlineCallOut>
+  );
 });

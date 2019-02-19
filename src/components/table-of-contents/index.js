@@ -1,38 +1,88 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import RichText from '../rich-text';
-import {} from './styles';
+import { Table, TableList, Block, BlockContent, BlockTitle } from './styles';
+import { bracketsToLink } from '../../utils/link-formatting/bracketsToLink';
+import { bracketsToArray } from '../../utils/link-formatting/bracketsToArray';
+import InlineCallOut from '../inline-callout';
 
-const groomContent = content => {
-  // Find h2 tags, give them an id, create an array to build links from
-  const temp = document.createElement('div');
-  temp.innerHTML = content;
+export const TableOfContent = ({ data, updateReferenceList }) => {
+  const {
+    systemName,
+    applicableRegions,
+    openingStatement,
+    tableOfContents,
+  } = data;
 
-  const tagsInContent = temp.getElementsByTagName('*');
-  console.log(tagsInContent);
+  const [contentWithReferences, createReferenceContent] = useState([]);
 
-  // Find a tags, give them an index, create an array to build content from
-};
+  const convertBracketsToLink = text => {
+    const formattedContent = bracketsToLink(text);
+    createReferenceContent(formattedContent);
+  };
 
-const TableOfContents = ({ data }) => {
-  const { systemName, applicableRegions, openingStatement, content } = data;
+  const convertBracketsToArray = text => {
+    const referenceArray = bracketsToArray(text);
+    updateReferenceList(referenceArray);
+  };
+
+  useEffect(() => {
+    convertBracketsToLink(tableOfContents);
+    convertBracketsToArray(tableOfContents);
+  }, [tableOfContents]);
   return (
-    <div>
+    <>
       <h1>{systemName}</h1>
-      <p>{applicableRegions}</p>
-      <RichText richText={openingStatement} />
-      {groomContent(content.childContentfulRichText.html)}
-    </div>
+      {openingStatement && <RichText richText={openingStatement} />}
+      {tableOfContents && (
+        <Table>
+          <h3>Contents</h3>
+          <TableList>
+            {tableOfContents.map((item, i) => (
+              <li key={i}>
+                <a href={`#title-${i}`} title={item.title} key={i}>
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </TableList>
+        </Table>
+      )}
+      <InlineCallOut borderColour="red" insideContainer>
+        This content applies to <strong>{applicableRegions}</strong>
+      </InlineCallOut>
+      {tableOfContents && (
+        <Block>
+          {tableOfContents.map((item, i) => (
+            <BlockContent key={i}>
+              <BlockTitle id={`title-${i}`} key={i}>
+                {item.title}
+              </BlockTitle>
+              {contentWithReferences[i] && (
+                <RichText
+                  richText={{
+                    childContentfulRichText: {
+                      html: contentWithReferences[i],
+                    },
+                  }}
+                />
+              )}
+            </BlockContent>
+          ))}
+        </Block>
+      )}
+    </>
   );
 };
 
-TableOfContents.propTypes = {
+TableOfContent.propTypes = {
   data: PropTypes.shape({
     systemName: PropTypes.isRequired,
     applicableRegions: PropTypes.string,
     openingStatement: PropTypes.object,
     content: PropTypes.object,
   }),
+  updateReferenceList: PropTypes.func.isRequired,
 };
 
-export default TableOfContents;
+export default TableOfContent;

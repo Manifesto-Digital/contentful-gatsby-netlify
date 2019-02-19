@@ -16,8 +16,8 @@ import Form from '../form';
 import ContentCardBanner from '../content-card-banner';
 import Perks from '../perks';
 import Testimonials from '../testimonials';
+import RichText from '../rich-text';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
-import TableOfContents from '../table-of-contents';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -56,11 +56,9 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicInlineCallout') {
         return (
-          <InlineCallOut
-            key={id}
-            content={assembly}
-            insideContainer={insideContainer}
-          />
+          <InlineCallOut key={id} insideContainer={insideContainer}>
+            <RichText richtext={assembly} />
+          </InlineCallOut>
         );
       }
 
@@ -141,10 +139,6 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
-      }
-
-      if (internal.type === 'ContentfulTopicTableOfContentsTopic') {
-        return <TableOfContents key={id} data={assembly} />;
       }
 
       return null;

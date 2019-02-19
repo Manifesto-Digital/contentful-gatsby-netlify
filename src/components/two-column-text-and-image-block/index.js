@@ -14,6 +14,7 @@ import {
   ContentSemi,
   TextWrapper,
 } from './styles';
+import RichText from '../rich-text';
 
 const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const {
@@ -44,20 +45,18 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
             />
             {leftColumnCalloutBanners &&
               leftColumnCalloutBanners.map(calloutBanner => (
-                <InlineCallOut
-                  content={calloutBanner}
-                  insideContainer={!insideContainer}
-                />
+                <InlineCallOut insideContainer={!insideContainer}>
+                  <RichText richtext={calloutBanner} />
+                </InlineCallOut>
               ))}
           </ContentSemi>
           <ContentSemi>
             {rightColumnImage && <Image image={rightColumnImage} />}
             {rightColumnCalloutBanners &&
               rightColumnCalloutBanners.map(calloutBanner => (
-                <InlineCallOut
-                  content={calloutBanner}
-                  insideContainer={!insideContainer}
-                />
+                <InlineCallOut insideContainer={!insideContainer}>
+                  <RichText richtext={calloutBanner} />
+                </InlineCallOut>
               ))}
           </ContentSemi>
         </FlexContainer>
