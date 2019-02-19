@@ -7,10 +7,12 @@ import Button from '../button/index';
 import { sendForm } from '../form/send';
 import TextInput from '../form-elements/text-input';
 import LinkButton from '../link-button';
+import RadioInput from '../form-elements/radio-field/radio-button-input';
+import { Flex } from './styles';
+import RadioField from '../form-elements/radio-field';
 
 const FeedbackForm = ({ heading }) => {
   const [submissionState, setSubmissionState] = useState('pending');
-
   if (submissionState === 'success') {
     return (
       <>
@@ -32,11 +34,16 @@ const FeedbackForm = ({ heading }) => {
     );
   }
 
+  const [helpfulness, setHelpfullnessState] = useState('');
+
   return (
     <Formik
-      initialValues={{ comment: '' }}
+      initialValues={{ comment: '', scale: '', reason: '', helpful: '' }}
       validationSchema={Yup.object({
         comment: Yup.string().required(),
+        scale: Yup.number(),
+        helpful: Yup.string(),
+        reason: Yup.string(),
         recaptchaToken: Yup.string().required(),
       })}
       onSubmit={async values => {
@@ -48,33 +55,61 @@ const FeedbackForm = ({ heading }) => {
         }
       }}
     >
-      {({ setFieldValue }) => (
-        <Form>
-          <h3>{heading}</h3>
-          <Field
-            name="comment"
-            render={props => (
-              <TextInput
-                autoFocus
-                type="textarea"
-                placeholder="Your comment"
-                fullWidth
-                {...props}
-              />
-            )}
-          />
+      {({ setFieldValue, errors, touched, values }) => {
+        // If values.helpfullness equals
+        console.log('firing?', values);
+        return (
+          <Form>
+            <h3>{heading}</h3>
 
-          <Recaptcha
-            verifyCallback={token => {
-              setFieldValue('recaptchaToken', token);
-            }}
-          />
+            {/* Helpfulness Radio buttons */}
+            <RadioField
+              inline
+              onChange={() => console.log('is this firing?')}
+              field={{
+                machineName: 'helpfulness',
+                valueOptions: [
+                  {
+                    label: 'Yes',
+                    value: 'yes',
+                  },
+                  {
+                    label: 'No',
+                    value: 'no',
+                  },
+                  {
+                    label: 'Yes but',
+                    value: 'but',
+                  },
+                ],
+              }}
+            />
 
-          <Button type="submit" fullWidth bg="red">
-            Submit
-          </Button>
-        </Form>
-      )}
+            <Field
+              name="comment"
+              render={props => (
+                <TextInput
+                  autoFocus
+                  type="textarea"
+                  placeholder="Your comment"
+                  fullWidth
+                  {...props}
+                />
+              )}
+            />
+
+            <Recaptcha
+              verifyCallback={token => {
+                setFieldValue('recaptchaToken', token);
+              }}
+            />
+
+            <Button type="submit" fullWidth bg="red">
+              Submit
+            </Button>
+          </Form>
+        );
+      }}
     </Formik>
   );
 };
