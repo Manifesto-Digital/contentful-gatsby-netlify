@@ -37,7 +37,7 @@
 
     try {
       environment = await space.getEnvironment(ENVIRONMENT_ID);
-      if (ENVIRONMENT_ID == 'ci_develop') {
+      if (ENVIRONMENT_ID == 'CI_MIGRATION') {
         await environment.delete();
         console.log('Environment deleted');
       }
@@ -46,7 +46,7 @@
     }
 
     // ---------------------------------------------------------------------------
-    if (ENVIRONMENT_ID === 'ci_develop') {
+    if (ENVIRONMENT_ID === 'CI_MIGRATION') {
       console.log(`Creating environment ${ENVIRONMENT_ID}`);
       environment = await space.createEnvironmentWithId(ENVIRONMENT_ID, {
         name: ENVIRONMENT_ID,
