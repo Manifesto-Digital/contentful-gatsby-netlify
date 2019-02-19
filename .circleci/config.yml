@@ -37,17 +37,17 @@ jobs:
       - run: yarn lint
       # run tests!
       - run: yarn test
-      
-migrate:
-  steps:
-    - checkout
-    - run: node scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
+
+  migrate:
+    steps:
+      - checkout
+      - run: node scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
 
 workflows:
   version: 2
-    build_and_migrate:
-      jobs:
-        - migrate
-        - build:
-          requires:
-            - migrate
+  build-migrate:
+    jobs:
+      - migrate
+      - build:
+        requires:
+          - migrate
