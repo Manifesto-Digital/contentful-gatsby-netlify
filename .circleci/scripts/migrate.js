@@ -15,9 +15,7 @@
     const getVersionOfFile = file => file.split('_');
     const getFileOfVersion = version => version.join('_');
 
-    //
     // Configuration variables
-    //
     const [, , SPACE_ID, ENVIRONMENT_ID, CMA_ACCESS_TOKEN] = process.argv;
     const MIGRATIONS_DIR = path.join(__dirname, '..', '__migrations__');
 
