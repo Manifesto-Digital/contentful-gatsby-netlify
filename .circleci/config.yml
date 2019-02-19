@@ -39,6 +39,9 @@ jobs:
       - run: yarn test
 
   migrate:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.14
     steps:
       - checkout
       - run: node scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
