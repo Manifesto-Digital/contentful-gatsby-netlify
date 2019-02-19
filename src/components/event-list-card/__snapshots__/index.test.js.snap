@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c6 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+.c0 {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.c0:hover {
+  background-color: #f7f7f7;
+}
+
+.c1 {
+  display: none;
+}
+
+.c3 {
+  padding: 0;
+  list-style: none;
+}
+
+.c4 {
+  font-size: 0.775rem;
+  margin: 0;
+}
+
+.c5 {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.c5 svg {
+  height: 0.775rem;
+  width: 0.775rem;
+}
+
+@media (min-width:32em) {
+  .c0 {
+    padding: 10px;
+  }
+}
+
+@media (min-width:32em) {
+  .c1 {
+    display: block;
+    -webkit-align-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+    width: 50%;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
+    width: 35%;
+  }
+}
+
+@media (min-width:32em) {
+  .c2 {
+    margin-left: 20px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <img
+    alt="Collection hero"
+    className="c1"
+    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg"
+  />
+  <div
+    className="c2"
+  >
+    <h3>
+      My Event
+    </h3>
+    <ul
+      className="c3"
+    >
+      <li
+        className="c4"
+      >
+        <span
+          className="isvg loading c5"
+        />
+        round the corner
+      </li>
+      <li
+        className="c4"
+      >
+        <span
+          className="isvg loading c5"
+        />
+        Yesterday
+      </li>
+    </ul>
+  </div>
+  <Link
+    className="c6"
+    to="/my-slug"
+  >
+    My Event
+  </Link>
+</div>
+`;
