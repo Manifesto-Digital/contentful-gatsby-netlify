@@ -8,11 +8,18 @@ import PageTitle from '../components/page-title';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const PolicyPage = ({ data }) => {
-  const { pageName, slug, policy } = data.contentfulPageAssemblyPolicyPage;
+  const { pageName, policy } = data.contentfulPageAssemblyPolicyPage;
 
   return (
     <Layout>
-      <article>Hello world</article>
+      <article>
+        <PageTitle>
+          <h1>{pageName}</h1>
+        </PageTitle>
+        <Container>
+          <TwoThirds>Hello world</TwoThirds>
+        </Container>
+      </article>
     </Layout>
   );
 };
@@ -29,7 +36,6 @@ export const PolicyPageQuery = graphql`
   query PolicyPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyPolicyPage(slug: { eq: $slug }) {
       pageName
-      slug
       policy {
         policyName
         author
