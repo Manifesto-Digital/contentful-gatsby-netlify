@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Image = ({ image: { description, file } }) => {
+const Image = ({ image: { description, file }, className }) => {
   if (!file || !file.url) return;
-  return <img src={file.url} alt={description} />;
+  return <img src={file.url} alt={description} className={className} />;
 };
 
 Image.propTypes = {
@@ -16,6 +16,7 @@ Image.propTypes = {
       url: PropTypes.string.isRequired,
     }).isRequired,
   }),
+  className: PropTypes.string,
 };
 
 export default Image;

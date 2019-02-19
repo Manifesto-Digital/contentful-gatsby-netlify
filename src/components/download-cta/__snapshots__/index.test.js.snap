@@ -24,6 +24,7 @@ exports[`renders correctly 1`] = `
 .c0:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #fff;
 }
 
 .c2 {
