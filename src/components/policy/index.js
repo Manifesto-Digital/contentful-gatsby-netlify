@@ -2,23 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { dateAsString } from '../../utils/dates';
 import RichText from '../rich-text';
-import DownloadCTA from '../download-cta';
+import { PolicyCard, Detail, DocumentDownload } from './styles';
 
 const Policy = ({ data }) => {
   const { policyName, author, publishDate, displayDate, summary, media } = data;
 
   return (
-    <div>
-      <div>
-        <p>
-          <strong>By:</strong> {author} <strong>Published:</strong>{' '}
+    <>
+      <PolicyCard>
+        <Detail>
+          <strong>By:</strong> {author}
+        </Detail>
+        <Detail>
+          <strong>Published:</strong>{' '}
           {displayDate || dateAsString(publishDate, 'DD/MM/YYYY')}
-        </p>
+        </Detail>
         <h4>{policyName}</h4>
-        <DownloadCTA cta={{ buttonText: media[0].title, download: media[0] }} />
-      </div>
+        <DocumentDownload
+          cta={{ buttonText: media[0].title, download: media[0] }}
+        />
+      </PolicyCard>
       <RichText richText={summary} />
-    </div>
+    </>
   );
 };
 
