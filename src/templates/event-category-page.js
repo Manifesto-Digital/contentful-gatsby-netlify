@@ -42,7 +42,7 @@ const EventCategoryPage = ({ data }) => {
             {summary && <RichText richText={summary} />}
           </IntroWrapper>
 
-          <FeaturedEvent data={featuredEvent[0]} />
+          {featuredEvent && <FeaturedEvent data={featuredEvent[0]} />}
         </Container>
 
         {events && (
