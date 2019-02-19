@@ -25,6 +25,7 @@ Array [
 .c3:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #fff;
 }
 
 .c5 {
