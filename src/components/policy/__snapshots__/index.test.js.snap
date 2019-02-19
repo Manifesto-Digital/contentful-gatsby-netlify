@@ -29,7 +29,12 @@ Array [
 
 .c5 {
   font-size: 0.65em;
-  margin-bottom: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.c5:last-child {
+  margin-right: 0;
 }
 
 .c4 {
@@ -110,16 +115,19 @@ Array [
       href="//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf"
     >
       <div>
-        <p
+        <div
           className="c4"
         >
           Mock file title
-        </p>
-        <p
+        </div>
+        <div
           className="c5"
         >
           78.02 KB
-        </p>
+        </div>
+        <div
+          className="c5"
+        />
       </div>
       <span
         className="isvg loading c6"

@@ -28,7 +28,12 @@ exports[`renders correctly 1`] = `
 
 .c2 {
   font-size: 0.65em;
-  margin-bottom: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.c2:last-child {
+  margin-right: 0;
 }
 
 .c1 {
@@ -58,16 +63,19 @@ exports[`renders correctly 1`] = `
   href="//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf"
 >
   <div>
-    <p
+    <div
       className="c1"
     >
       Button text
-    </p>
-    <p
+    </div>
+    <div
       className="c2"
     >
       78.02 KB
-    </p>
+    </div>
+    <div
+      className="c2"
+    />
   </div>
   <span
     className="isvg loading c3"
