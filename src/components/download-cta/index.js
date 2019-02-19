@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatFilesize } from '../../utils/filesize-formatting';
+import { mimeTypeToString } from '../../utils/content-formatting';
 import DownloadSVG from '../../assets/svg/icons/download-light.svg';
 // Styles
-import { Button, Filesize, ButtonText, ButtonSVG } from './styles';
+import { Button, FileInfo, ButtonText, ButtonSVG } from './styles';
 
 const DownloadCTA = ({ cta, className }) => {
   const { buttonText, download } = cta;
@@ -12,7 +13,11 @@ const DownloadCTA = ({ cta, className }) => {
     <Button className={className} href={download.file.url} download>
       <div>
         <ButtonText>{buttonText}</ButtonText>
-        <Filesize>{formatFilesize(download.file.details.size)}</Filesize>
+        <FileInfo>{formatFilesize(download.file.details.size)}</FileInfo>
+        <FileInfo>
+          {download.file.contentType &&
+            mimeTypeToString(download.file.contentType)}
+        </FileInfo>
       </div>
       <ButtonSVG src={DownloadSVG} cacheGetRequests />
     </Button>
@@ -26,6 +31,7 @@ DownloadCTA.propTypes = {
       file: PropTypes.shape({
         fileName: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
+        contentType: PropTypes.string,
         details: PropTypes.shape({
           size: PropTypes.number.isRequired,
         }),

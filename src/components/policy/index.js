@@ -18,9 +18,11 @@ const Policy = ({ data }) => {
           {displayDate || dateAsString(publishDate, 'DD/MM/YYYY')}
         </Detail>
         <h4>{policyName}</h4>
-        <DocumentDownload
-          cta={{ buttonText: media[0].title, download: media[0] }}
-        />
+        {media && media.length && (
+          <DocumentDownload
+            cta={{ buttonText: media[0].title, download: media[0] }}
+          />
+        )}
       </PolicyCard>
       <RichText richText={summary} />
     </>
