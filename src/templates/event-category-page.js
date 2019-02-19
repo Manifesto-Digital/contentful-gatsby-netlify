@@ -26,7 +26,9 @@ const EventCategoryPage = ({ data }) => {
   const events = data.allContentfulPageAssemblyStandardEvent.edges
     .concat(data.allContentfulPageAssemblyChallengeEvent.edges)
     .map(event => event.node)
-    .filter(event => event.slug !== featuredEvent[0].slug);
+    .filter(event =>
+      featuredEvent ? event.slug !== featuredEvent[0].slug : true
+    );
 
   return (
     <Layout>
