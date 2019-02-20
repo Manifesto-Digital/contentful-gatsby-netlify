@@ -86,35 +86,32 @@ workflows:
       - build:
           requires:
             - migrate
-      - deploy-develop:
+      - approve-deployment:
           type: approval
           requires:
             - migrate
             - build
+      - deploy-develop:
+          requires:
+            - approve
           filters:
             branches:
               only: develop
       - deploy-test:
-          type: approval
           requires:
-            - migrate
-            - build
+            - approve
           filters:
             branches:
               only: test
       - deploy-uat:
-          type: approval
           requires:
-            - migrate
-            - build
+            - approve
           filters:
             branches:
               only: UAT
       - deploy-master:
-          type: approval
           requires:
-            - migrate
-            - build
+            - approve
           filters:
             branches:
               only: master
