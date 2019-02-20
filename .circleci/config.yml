@@ -83,7 +83,14 @@ workflows:
       - migrate:
           filters:
             branches:
-              only: test
+              only:
+                - develop
+                - master
+                - test
+                - UAT
+                - /^(?!pull\/).*$/
+              ignore:
+                - /^feature\/*/
       - build:
           requires:
             - migrate
@@ -95,6 +102,8 @@ workflows:
                 - test
                 - UAT
                 - /^(?!pull\/).*$/
+              ignore:
+                - /^feature\/*/
       - approve-deployment:
           type: approval
           requires:
