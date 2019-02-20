@@ -83,12 +83,7 @@ workflows:
       - migrate:
           filters:
             branches:
-              only:
-                - develop
-                - master
-                - test
-                - UAT
-                - /^(?!pull\/).*$/
+              only: test
       - build:
           requires:
             - migrate
