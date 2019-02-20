@@ -5,7 +5,7 @@ import RadioButtonInput from './radio-button-input';
 import { LayoutWrapper } from './styles';
 import { FieldWrapper } from '../form-field/styles';
 
-const RadioField = ({ field, inline, onChange }) => {
+const RadioField = ({ field, inline }) => {
   if (!field.valueOptions || field.valueOptions.length < 1) return null;
 
   const optionLength = field.valueOptions.length;
@@ -63,7 +63,6 @@ RadioField.propTypes = {
       })
     ).isRequired,
   }),
-  onChange: PropTypes.func,
   inline: PropTypes.bool,
 };
 
