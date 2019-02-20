@@ -40,12 +40,35 @@ jobs:
 
   migrate:
     docker:
-      # specify the version you desire here
       - image: circleci/node:10.14
     steps:
       - checkout
       - run: yarn install --frozen-lockfile
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
+
+  deploy-develop:
+    docker:
+      - image: circleci/node:10.14
+    steps:
+      - checkout
+      - run: yarn install --frozen-lockfile
+      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "develop" $MANAGEMENT_API_KEY
+
+  deploy-uat:
+    docker:
+      - image: circleci/node:10.14
+    steps:
+      - checkout
+      - run: yarn install --frozen-lockfile
+      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "UAT" $MANAGEMENT_API_KEY
+
+  deploy-master:
+    docker:
+      - image: circleci/node:10.14
+    steps:
+      - checkout
+      - run: yarn install --frozen-lockfile
+      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "master" $MANAGEMENT_API_KEY
 
 workflows:
   version: 2
@@ -55,3 +78,27 @@ workflows:
       - build:
           requires:
             - migrate
+      - deploy-develop:
+        type: approval
+        requires:
+          - migrate
+          - build
+        filters:
+          branches:
+            only: develop
+      - deploy-uat:
+        type: approval
+        requires:
+          - migrate
+          - build
+        filters:
+          branches:
+            only: UAT
+      - deploy-master:
+        type: approval
+        requires:
+          - migrate
+          - build
+        filters:
+          branches:
+            only: master

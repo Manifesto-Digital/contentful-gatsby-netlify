@@ -83,10 +83,10 @@ client
       writeStaticRedirectsFile(fileContents);
     } catch (error) {
       console.log(error);
-      process.exit(1);
+      process.exit(-1);
     }
   })
   .catch(error => {
     console.log(error);
-    process.exit(1);
+    process.exit(-1);
   });
