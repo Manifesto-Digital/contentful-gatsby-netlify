@@ -83,9 +83,25 @@ workflows:
   build-migrate:
     jobs:
       - migrate
+          filters:
+              branches:
+                only: 
+                  - develop
+                  - master
+                  - test
+                  - UAT
+                  - /^(?!pull\/).*$/
       - build:
           requires:
             - migrate
+          filters:
+              branches:
+                only: 
+                  - develop
+                  - master
+                  - test
+                  - UAT
+                  - /^(?!pull\/).*$/
       - approve-deployment:
           type: approval
           requires:
