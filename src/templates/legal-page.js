@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 // Components
 import Layout from '../components/layout';
+import LegalNavigation from '../components/legal/navigation';
 import PageTitle from '../components/page-title';
 import {
   Container,
@@ -12,7 +13,7 @@ import {
 } from '../components/styled/containers';
 
 const LegalPage = ({ data, pageContext }) => {
-  console.log('dataaaa', data, pageContext);
+  console.log('dataaaa', data, pageContext.legalHierarchy);
 
   return (
     <Layout>
@@ -21,12 +22,16 @@ const LegalPage = ({ data, pageContext }) => {
       </PageTitle>
       <Container>
         <ContentWithSideBar>
+          <SideBar left>
+            <LegalNavigation
+              hierarchy={pageContext.legalHierarchy}
+              currentPage={pageContext.page}
+            />
+            <h3>SIDEBAR</h3>
+          </SideBar>
           <TwoThirds>
             <h3>Main</h3>
           </TwoThirds>
-          <SideBar>
-            <h3>SIDEBAR</h3>
-          </SideBar>
         </ContentWithSideBar>
       </Container>
     </Layout>

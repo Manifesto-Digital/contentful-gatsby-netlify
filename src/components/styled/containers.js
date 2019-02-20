@@ -34,7 +34,8 @@ export const SideBar = styled.div`
   ${breakpoint.desktop`
     max-width: 32%;
     margin-top: 0;
-    padding-left: ${props => props.theme.spacing.xl};
+    padding-left: ${props => !props.left && props.theme.spacing.xl};
+    padding-right: ${props => props.left && props.theme.spacing.xl};
   `};
 `;
 
