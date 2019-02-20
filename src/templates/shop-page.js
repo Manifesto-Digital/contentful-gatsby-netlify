@@ -3,16 +3,36 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 // Components
+import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 // Styles
-import { Container } from '../components/styled/containers';
+import {
+  Container,
+  TwoThirds,
+  SideBar,
+  ContentWithSideBar,
+} from '../components/styled/containers';
 
 const Page = ({ data }) => {
   const { name, bodyCopy, shop, form } = data.contentfulPageAssemblyShopPage;
 
   return (
     <Layout>
-      <article>Hello world</article>
+      <article>
+        <PageTitle>
+          <h1>
+            {name} - {shop[0].type}
+          </h1>
+        </PageTitle>
+        <Container>
+          <ContentWithSideBar>
+            <TwoThirds>
+              <RichText richText={bodyCopy} />
+            </TwoThirds>
+            <SideBar>Hello world</SideBar>
+          </ContentWithSideBar>
+        </Container>
+      </article>
     </Layout>
   );
 };
