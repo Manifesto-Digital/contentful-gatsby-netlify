@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 // Components
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
+import ShopSidebar from '../components/shop-sidebar';
 // Styles
 import {
   Container,
@@ -20,16 +21,16 @@ const Page = ({ data }) => {
     <Layout>
       <article>
         <PageTitle>
-          <h1>
-            {name} - {shop[0].type}
-          </h1>
+          <h1>{name}</h1>
         </PageTitle>
         <Container>
           <ContentWithSideBar>
             <TwoThirds>
               <RichText richText={bodyCopy} />
             </TwoThirds>
-            <SideBar>Hello world</SideBar>
+            <SideBar>
+              <ShopSidebar data={shop[0]} />
+            </SideBar>
           </ContentWithSideBar>
         </Container>
       </article>
