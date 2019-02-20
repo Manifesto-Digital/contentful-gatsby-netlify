@@ -85,6 +85,7 @@ workflows:
             branches:
               only:
                 - test
+                - /pull/
               ignore:
                 - /^feature\/*/
       - build:
