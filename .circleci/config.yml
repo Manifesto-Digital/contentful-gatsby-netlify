@@ -84,11 +84,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
-                - master
                 - test
-                - UAT
-                - /^(?!pull\/).*$/
               ignore:
                 - /^feature\/*/
       - build:
@@ -97,11 +93,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
-                - master
                 - test
-                - UAT
-                - /^(?!pull\/).*$/
               ignore:
                 - /^feature\/*/
       - approve-deployment:
