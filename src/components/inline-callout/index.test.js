@@ -20,7 +20,7 @@ it('renders correctly with no options chosen in cms', () => {
   const mockData = createInlineBanner();
   snapshotComponent(
     <InlineCallOut>
-      <RichText richtext={mockData.content} />
+      <RichText richText={mockData.content} />
     </InlineCallOut>
   );
 });
@@ -32,7 +32,7 @@ it('renders correctly with icon chosen in cms', () => {
 
   snapshotComponent(
     <InlineCallOut icon={mockData.icon}>
-      <RichText richtext={mockData.content} />
+      <RichText richText={mockData.content} />
     </InlineCallOut>
   );
 });

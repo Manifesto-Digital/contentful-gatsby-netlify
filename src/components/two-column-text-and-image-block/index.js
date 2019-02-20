@@ -46,7 +46,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
             {leftColumnCalloutBanners &&
               leftColumnCalloutBanners.map(calloutBanner => (
                 <InlineCallOut insideContainer={!insideContainer}>
-                  <RichText richtext={calloutBanner} />
+                  <RichText richText={calloutBanner} />
                 </InlineCallOut>
               ))}
           </ContentSemi>
@@ -55,7 +55,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
             {rightColumnCalloutBanners &&
               rightColumnCalloutBanners.map(calloutBanner => (
                 <InlineCallOut insideContainer={!insideContainer}>
-                  <RichText richtext={calloutBanner} />
+                  <RichText richText={calloutBanner} />
                 </InlineCallOut>
               ))}
           </ContentSemi>

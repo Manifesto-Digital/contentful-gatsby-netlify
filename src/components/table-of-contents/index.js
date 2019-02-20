@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import RichText from '../rich-text';
 import { Table, TableList, Block, BlockContent, BlockTitle } from './styles';
-import { bracketsToLink } from '../../utils/link-formatting/bracketsToLink';
-import { bracketsToArray } from '../../utils/link-formatting/bracketsToArray';
+import { bracketsToLink } from '../../utils/rich-text-formatting/bracketsToLink';
+import { bracketsToArray } from '../../utils/rich-text-formatting/bracketsToArray';
 import InlineCallOut from '../inline-callout';
 
 export const TableOfContent = ({ data, updateReferenceList }) => {
@@ -82,7 +82,7 @@ TableOfContent.propTypes = {
     openingStatement: PropTypes.object,
     content: PropTypes.object,
   }),
-  updateReferenceList: PropTypes.func.isRequired,
+  updateReferenceList: PropTypes.func,
 };
 
 export default TableOfContent;

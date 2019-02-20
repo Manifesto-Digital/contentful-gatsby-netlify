@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  .c0 {
+  margin-bottom: 30px;
+}
+
+<h3
+    className="c0"
+  >
+    Footnotes
+  </h3>,
+  .c0 {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+  font-size: 0.775rem;
+}
+
+.c0 a {
+  margin-right: 10px;
+}
+
+.c0 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 p {
+  margin-bottom: 10px;
+}
+
+@media (min-width:40.0625em) {
+  .c0 {
+    margin-left: -30px;
+  }
+}
+
+<ul
+    className="c0"
+  >
+    <li>
+      <a
+        href="#source-1"
+        id="reference-1"
+        title="[s.3 Public Order Act 1986.]"
+      >
+        [1] 
+      </a>
+      <p>
+        s.3 Public Order Act 1986.
+      </p>
+    </li>
+    <li>
+      <a
+        href="#source-2"
+        id="reference-2"
+        title="[s.2 Public Order Act 1986.]"
+      >
+        [2] 
+      </a>
+      <p>
+        s.2 Public Order Act 1986.
+      </p>
+    </li>
+    <li>
+      <a
+        href="#source-3"
+        id="reference-3"
+        title="[s.2 Public Order Act 1986.]"
+      >
+        [3] 
+      </a>
+      <p>
+        s.2 Public Order Act 1986.
+      </p>
+    </li>
+    <li>
+      <a
+        href="#source-4"
+        id="reference-4"
+        title="[s.4A(1) Public Order Act 1986.]"
+      >
+        [4] 
+      </a>
+      <p>
+        s.4A(1) Public Order Act 1986.
+      </p>
+    </li>
+    <li>
+      <a
+        href="#source-5"
+        id="reference-5"
+        title="[s.24 Police and Criminal Evidence Act 1984]"
+      >
+        [5] 
+      </a>
+      <p>
+        s.24 Police and Criminal Evidence Act 1984
+      </p>
+    </li>
+    <li>
+      <a
+        href="#source-6"
+        id="reference-6"
+        title="[s.25 Police and Criminal Evidence Act 1984]"
+      >
+        [6] 
+      </a>
+      <p>
+        s.25 Police and Criminal Evidence Act 1984
+      </p>
+    </li>
+    <li>
+      <a
+        href="#source-7"
+        id="reference-7"
+        title="[s.1(3) Police and Criminal Evidence Act 1984.]"
+      >
+        [7] 
+      </a>
+      <p>
+        s.1(3) Police and Criminal Evidence Act 1984.
+      </p>
+    </li>
+  </ul>,
+]
+`;

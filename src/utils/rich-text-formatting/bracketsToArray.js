@@ -3,7 +3,7 @@ export const bracketsToArray = rawText => {
   [...rawText].forEach(content => {
     const richText = content.textContent.childContentfulRichText.html;
     const hasLink = richText.match(/\[+(.*?)\]+/g);
-    referenceArray.push(...hasLink);
+    if (hasLink) referenceArray.push(...hasLink);
   });
   return referenceArray;
 };

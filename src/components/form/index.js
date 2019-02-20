@@ -101,7 +101,7 @@ const ContentForm = ({ data }) => {
             borderColour="red"
             insideContainer
           >
-            <RichText richtext={thankYouMessage} />
+            <RichText richText={thankYouMessage} />
           </InlineCallout>
         )}
       </Container>

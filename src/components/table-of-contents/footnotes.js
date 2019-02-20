@@ -23,7 +23,7 @@ export const TableOfContentsFootNotes = ({ referenceList }) => (
 );
 
 TableOfContentsFootNotes.propTypes = {
-  referenceList: PropTypes.array.isRequired,
+  referenceList: PropTypes.array,
 };
 
 export default TableOfContentsFootNotes;

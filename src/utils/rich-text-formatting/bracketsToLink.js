@@ -7,8 +7,8 @@ export const bracketsToLink = rawText => {
       count += 1;
       return `&nbsp;<a id="source-${count}" href="#reference-${count}">[${count}]</a>&nbsp;`;
     });
-
-    formattedContent.push(formattedText);
+    if (formattedText) formattedContent.push(formattedText);
+    else formattedContent.push(richText);
   });
   return formattedContent;
 };
