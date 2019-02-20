@@ -93,25 +93,25 @@ workflows:
             - build
       - deploy-develop:
           requires:
-            - approve
+            - approve-deployment
           filters:
             branches:
               only: develop
       - deploy-test:
           requires:
-            - approve
+            - approve-deployment
           filters:
             branches:
               only: test
       - deploy-uat:
           requires:
-            - approve
+            - approve-deployment
           filters:
             branches:
               only: UAT
       - deploy-master:
           requires:
-            - approve
+            - approve-deployment
           filters:
             branches:
               only: master
