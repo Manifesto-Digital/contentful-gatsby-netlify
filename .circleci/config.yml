@@ -91,9 +91,16 @@ workflows:
           requires:
             - migrate
             - build
+          filters:
+            branches:
+              only:
+                - master
+                - test
+                - UAT
       - deploy-develop:
           requires:
-            - approve-deployment
+            - migrate
+            - build
           filters:
             branches:
               only: develop
