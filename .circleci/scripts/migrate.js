@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 (async () => {
   try {
     const { promisify } = require('util');
