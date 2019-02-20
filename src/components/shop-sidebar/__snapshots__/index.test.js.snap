@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding: 20px;
+  background-color: #e5e5e5;
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    Address
+  </h3>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+      }
+    }
+  />
+  <h3>
+    Parking
+  </h3>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+      }
+    }
+  />
+  <h3>
+    Disabled access
+  </h3>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+      }
+    }
+  />
+  <h3>
+    Opening times
+  </h3>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+      }
+    }
+  />
+  <h3>
+    Phone
+  </h3>
+  <p>
+    <a
+      href="tel:01234567890"
+    >
+      01234567890
+    </a>
+  </p>
+  <h3>
+    Email
+  </h3>
+  <p>
+    <a
+      href="mailto:email@shelter.org.uk"
+    >
+      email@shelter.org.uk
+    </a>
+  </p>
+</div>
+`;
