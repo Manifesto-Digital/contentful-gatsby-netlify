@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 import ShopSidebar from '../components/shop-sidebar';
+import Form from '../components/form';
 // Styles
 import {
   Container,
@@ -27,6 +28,7 @@ const Page = ({ data }) => {
           <ContentWithSideBar>
             <TwoThirds>
               <RichText richText={bodyCopy} />
+              <Form data={form[0]} />
             </TwoThirds>
             <SideBar>
               <ShopSidebar data={shop[0]} />
@@ -86,20 +88,7 @@ export const pageQuery = graphql`
         }
       }
       form {
-        formHeader
-        backgroundColour
-        formId
-        sourceCode
-        submitUrl
-        thankYouMessage {
-          childContentfulRichText {
-            html
-          }
-        }
-        submitCallToAction
-        formFields {
-          __typename
-        }
+        ...AssemblyFormFragment
       }
     }
   }
