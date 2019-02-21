@@ -39,7 +39,6 @@ it('renders multiple links correctly', () => {
   const wrapper = mountWithTheme(<LegalSideBar data={mockData} />);
 
   wrapper.find(Link).forEach((n, i) => {
-    console.log(i);
     expect(n.prop('to')).toContain(`test-slug-${i + 1}`);
   });
 });
