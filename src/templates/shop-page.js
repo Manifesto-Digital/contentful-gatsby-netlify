@@ -58,34 +58,7 @@ export const pageQuery = graphql`
         }
       }
       shop {
-        type
-        location {
-          lon
-          lat
-        }
-        displayAddress {
-          childContentfulRichText {
-            html
-          }
-        }
-        region
-        contactNumber
-        contactEmail
-        openingHours {
-          childContentfulRichText {
-            html
-          }
-        }
-        parkingInformation {
-          childContentfulRichText {
-            html
-          }
-        }
-        disabledAccessInformation {
-          childContentfulRichText {
-            html
-          }
-        }
+        ...ShopTopicFragment
       }
       form {
         ...AssemblyFormFragment
