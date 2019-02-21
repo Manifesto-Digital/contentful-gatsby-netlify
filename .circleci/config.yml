@@ -81,7 +81,6 @@ workflows:
       - test:
           requires:
             - build
-
       - approve-deployment:
           type: approval
           requires:
@@ -91,7 +90,6 @@ workflows:
             branches:
               only:
                 - master
-                - test
                 - UAT
       - deploy-develop:
           requires:
@@ -100,21 +98,3 @@ workflows:
           filters:
             branches:
               only: develop
-      - deploy-test:
-          requires:
-            - approve-deployment
-          filters:
-            branches:
-              only: test
-      - deploy-uat:
-          requires:
-            - approve-deployment
-          filters:
-            branches:
-              only: UAT
-      - deploy-master:
-          requires:
-            - approve-deployment
-          filters:
-            branches:
-              only: master
