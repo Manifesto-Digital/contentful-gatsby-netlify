@@ -158,6 +158,13 @@ export const challengeEventPageQuery = graphql`
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
+          ... on ContentfulTopicFullWidthImage {
+            internal {
+              type
+            }
+            id
+            ...FullWidthImageFragment
+          }
         }
       }
     }
