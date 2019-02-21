@@ -27,8 +27,6 @@ const verifyCaptcha = () => {
 const nextTick = () => new Promise(resolve => process.nextTick(resolve));
 
 const submitForm = wrapper => {
-  // const button = wrapper.find('button[type="submit"]').getDOMNode();
-
   act(() => {
     wrapper.find('button[type="submit"]').simulate('submit');
   });
