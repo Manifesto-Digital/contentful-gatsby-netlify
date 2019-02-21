@@ -5,7 +5,8 @@ import Layout from '../components/layout';
 // Components
 import RichText from '../components/rich-text';
 // Styles
-import { Container } from '../components/styled/containers';
+import { Container, TwoThirds } from '../components/styled/containers';
+import PageTitle from '../components/page-title';
 
 const ServicePage = ({ data }) => {
   const {
@@ -17,7 +18,19 @@ const ServicePage = ({ data }) => {
 
   return (
     <Layout>
-      <article>Hello world</article>
+      <article>
+        <PageTitle>
+          <h1>{title}</h1>
+        </PageTitle>
+        <Container>
+          <TwoThirds>
+            <RichText richText={mainBodyCopy} />
+            <h2>Contact</h2>
+            <h2>Opening times</h2>
+            <RichText richText={usefulInfoCopy} />
+          </TwoThirds>
+        </Container>
+      </article>
     </Layout>
   );
 };
