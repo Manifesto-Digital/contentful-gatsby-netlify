@@ -38,16 +38,8 @@ it('renders multiple links correctly', () => {
 
   const wrapper = mountWithTheme(<LegalSideBar data={mockData} />);
 
-  expect(
-    wrapper
-      .find(Link)
-      .at(0)
-      .prop('to')
-  ).toContain('test-slug-1');
-  expect(
-    wrapper
-      .find(Link)
-      .at(1)
-      .prop('to')
-  ).toContain('test-slug-2');
+  wrapper.find(Link).forEach((n, i) => {
+    console.log(i);
+    expect(n.prop('to')).toContain(`test-slug-${i + 1}`);
+  });
 });
