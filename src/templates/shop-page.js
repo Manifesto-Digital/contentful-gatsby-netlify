@@ -28,10 +28,10 @@ const Page = ({ data }) => {
           <ContentWithSideBar>
             <TwoThirds>
               <RichText richText={bodyCopy} />
-              <Form data={form[0]} />
+              <Form data={form} />
             </TwoThirds>
             <SideBar>
-              <ShopSidebar data={shop[0]} />
+              <ShopSidebar data={shop} />
             </SideBar>
           </ContentWithSideBar>
         </Container>
