@@ -4,43 +4,39 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:10.14
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
       - run: yarn install --frozen-lockfile
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
       # run lint!
       - run: yarn lint
       # run tests!
       - run: yarn test
 
-  migrate:
+  build:
     docker:
       - image: circleci/node:10.14
     steps:
       - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run: yarn install --frozen-lockfile
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
       - run: yarn build
@@ -81,15 +77,15 @@ workflows:
   version: 2
   build-migrate:
     jobs:
-      - migrate
-      - build:
+      - build
+      - test:
           requires:
-            - migrate
+            - build
 
       - approve-deployment:
           type: approval
           requires:
-            - migrate
+            - test
             - build
           filters:
             branches:
@@ -99,7 +95,7 @@ workflows:
                 - UAT
       - deploy-develop:
           requires:
-            - migrate
+            - test
             - build
           filters:
             branches:
