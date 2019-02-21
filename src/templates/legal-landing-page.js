@@ -25,8 +25,6 @@ const LegalLandingPage = ({ data }) => {
     sideBarLinks,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
-  console.log(sideBarLinks);
-
   return (
     <Layout>
       <article>
