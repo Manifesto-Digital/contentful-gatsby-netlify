@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import LinkHandler from '../link-handler';
 import { InfoWrapper, Close, InfoInside, InfoAddress } from './styles';
 
-const InfoWindow = ({ index, address, activeMarker, clearInfoWindow }) => (
-  <>
-    {address && (
+const InfoWindow = ({ index, address, activeMarker, clearInfoWindow }) => {
+  if (!address) return null;
+  return (
+    <>
       <InfoWrapper activeMarker={index === activeMarker}>
         <Close onClick={clearInfoWindow}>&times;</Close>
         <InfoInside>
@@ -18,9 +19,9 @@ const InfoWindow = ({ index, address, activeMarker, clearInfoWindow }) => (
           </LinkHandler>
         </InfoInside>
       </InfoWrapper>
-    )}
-  </>
-);
+    </>
+  );
+};
 
 InfoWindow.propTypes = {
   index: PropTypes.number.isRequired,

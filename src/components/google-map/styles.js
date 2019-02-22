@@ -61,12 +61,11 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  padding: 10px;
+  padding: ${theme.spacing.small};
   background: ${theme.palette.white};
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, 20%);
   transition: opacity 0.1s ease-in;
-  font-size: 14px;
   opacity: ${({ activeMarker }) => (activeMarker ? 1 : 0)};
   pointer-events: none;
   pointer-events: ${({ activeMarker }) => (activeMarker ? 'auto' : 'none')};
@@ -80,7 +79,6 @@ export const InfoInside = styled.div`
 `;
 
 export const InfoAddress = styled.div`
-  font-size: ${theme.fontsize.standard};
   margin-bottom: 5px;
 `;
 

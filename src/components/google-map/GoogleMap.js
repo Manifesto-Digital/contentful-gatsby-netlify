@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
 import { Wrapper } from './styles';
 
-const GoogleMap = ({ children, ...props }) => (
+const GoogleMap = ({ children }) => (
   <Wrapper>
     <GoogleMapReact
       bootstrapURLKeys={{
         key: process.env.MAP_KEY,
       }}
-      {...props}
+      defaultZoom={10}
+      defaultCenter={[34.0522, -118.2437]}
+      yesIWantToUseGoogleMapApiInternals
     >
       {children}
     </GoogleMapReact>
@@ -22,7 +24,6 @@ GoogleMap.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
-  defaultCenter: PropTypes.array.isRequired,
 };
 
 GoogleMap.defaultProps = {

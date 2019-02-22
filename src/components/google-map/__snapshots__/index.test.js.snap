@@ -1,25 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c0 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.c1 {
+Array [
+  <h2>
+    Topic - Google Map
+  </h2>,
+  .c0 {
   width: 100%;
   height: 400px;
 }
 
-<div
-  className="c0"
->
-  <h2>
-    Topic - Google Map
-  </h2>
-  <main
-    className="c1"
+<main
+    className="c0"
   >
     <div
       onClick={[Function]}
@@ -76,6 +68,6 @@ exports[`renders correctly 1`] = `
         />
       </div>
     </div>
-  </main>
-</div>
+  </main>,
+]
 `;

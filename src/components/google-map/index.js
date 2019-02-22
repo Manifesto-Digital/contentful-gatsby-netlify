@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from '../styled/containers';
 // components:
 import Marker from './Marker';
 import GoogleMap from './GoogleMap';
@@ -43,27 +42,16 @@ const Map = ({ data }) => {
     bindResizeListener(map, maps, bounds);
   };
 
-  const markerClick = target => {
-    updateActiveMarker(target);
-  };
-
-  const clearInfoWindow = () => {
-    updateActiveMarker(-1);
-  };
-
   useEffect(() => {
     updateLocation(locations);
   }, [locations]);
 
   return (
-    <Container>
-      <h2>{headerText}</h2>
+    <>
       {currentLocations && (
         <>
+          <h2>{headerText}</h2>
           <GoogleMap
-            defaultZoom={10}
-            defaultCenter={[34.0522, -118.2437]}
-            yesIWantToUseGoogleMapApiInternals
             onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
           >
             {currentLocations.map((place, i) => (
@@ -74,13 +62,13 @@ const Map = ({ data }) => {
                 text={place.address}
                 lat={place.location.lat}
                 lng={place.location.lon}
-                markerClick={e => markerClick(i, e)}
+                markerClick={e => updateActiveMarker(i, e)}
               >
                 <InfoWindow
                   index={i}
                   address={place.address}
                   activeMarker={activeMarker}
-                  clearInfoWindow={() => clearInfoWindow()}
+                  clearInfoWindow={() => updateActiveMarker(-1)}
                 />
               </Marker>
             ))}
@@ -100,7 +88,7 @@ const Map = ({ data }) => {
           )}
         </>
       )}
-    </Container>
+    </>
   );
 };
 
