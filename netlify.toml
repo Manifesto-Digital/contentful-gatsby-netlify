@@ -1,4 +1,4 @@
-[context.production.develop]
+[context.production]
     command = "node __netlify__/redirects.js $ctfl_spaceId $GATSBY_CONTENTFUL_ENVIRONMENT $ctfl_accessToken && gatsby build"
 
 [context.deploy-preview.production]
