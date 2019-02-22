@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Testimonials from '../testimonials';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import Perks from '../perks';
+import FullWidthImage from '../image/full-width-image';
 
 const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -32,6 +33,10 @@ const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicFullWidthImage') {
+        return <FullWidthImage key={id} data={assembly} />;
       }
 
       return null;
