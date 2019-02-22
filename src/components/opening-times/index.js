@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { consistentString } from '../../utils/content-formatting';
 import { dayOfTheWeek } from '../../utils/dates';
+import { TimeList, Time, Day, TimeVal } from './styles';
 
 const OpeningTimes = ({ data }) => {
   const {
@@ -15,50 +16,50 @@ const OpeningTimes = ({ data }) => {
   } = data;
 
   return (
-    <ul>
-      <li
+    <TimeList>
+      <Time
         closed={consistentString(mondayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Monday'}
       >
-        <div>Monday:</div> <div>{mondayOpeningTimes}</div>
-      </li>
-      <li
+        <Day>Monday:</Day> <TimeVal>{mondayOpeningTimes}</TimeVal>
+      </Time>
+      <Time
         closed={consistentString(tuesdayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Tuesday'}
       >
-        <div>Tuesday:</div> <div>{tuesdayOpeningTimes}</div>
-      </li>
-      <li
+        <Day>Tuesday:</Day> <TimeVal>{tuesdayOpeningTimes}</TimeVal>
+      </Time>
+      <Time
         closed={consistentString(wednesdayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Wednesday'}
       >
-        <div>Wednesday:</div> <div>{wednesdayOpeningTimes}</div>
-      </li>
-      <li
+        <Day>Wednesday:</Day> <TimeVal>{wednesdayOpeningTimes}</TimeVal>
+      </Time>
+      <Time
         closed={consistentString(thursdayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Thursday'}
       >
-        <div>Thursday:</div> <div>{thursdayOpeningTimes}</div>
-      </li>
-      <li
+        <Day>Thursday:</Day> <TimeVal>{thursdayOpeningTimes}</TimeVal>
+      </Time>
+      <Time
         closed={consistentString(fridayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Friday'}
       >
-        <div>Friday:</div> <div>{fridayOpeningTimes}</div>
-      </li>
-      <li
+        <Day>Friday:</Day> <TimeVal>{fridayOpeningTimes}</TimeVal>
+      </Time>
+      <Time
         closed={consistentString(saturdayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Saturday'}
       >
-        <div>Saturday:</div> <div>{saturdayOpeningTimes}</div>
-      </li>
-      <li
+        <Day>Saturday:</Day> <TimeVal>{saturdayOpeningTimes}</TimeVal>
+      </Time>
+      <Time
         closed={consistentString(sundayOpeningTimes) === 'closed'}
         today={dayOfTheWeek() === 'Sunday'}
       >
-        <div>Sunday:</div> <div>{sundayOpeningTimes}</div>
-      </li>
-    </ul>
+        <Day>Sunday:</Day> <TimeVal>{sundayOpeningTimes}</TimeVal>
+      </Time>
+    </TimeList>
   );
 };
 
