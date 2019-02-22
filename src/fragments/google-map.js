@@ -7,7 +7,6 @@ export const GoogleMapFragment = graphql`
       type
     }
     headerText
-    displaySearch
     locations {
       location {
         lon
