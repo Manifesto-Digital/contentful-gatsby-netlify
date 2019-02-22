@@ -77,7 +77,7 @@ const doRedirects = async () => {
     fs.closeSync(fs.openSync(filepath, 'a'));
     await generateRedirects(entries);
     const fileContents = await readFile();
-    writeStaticRedirectsFile(fileContents);
+    await writeStaticRedirectsFile(fileContents);
   } catch (error) {
     console.log(error);
     process.exit(-1);
