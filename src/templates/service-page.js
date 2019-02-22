@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 // Components
 import RichText from '../components/rich-text';
+import ContactCard from '../components/contact-card';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
@@ -26,6 +27,7 @@ const ServicePage = ({ data }) => {
           <TwoThirds>
             <RichText richText={mainBodyCopy} />
             <h2>Contact</h2>
+            <ContactCard data={service} />
             <h2>Opening times</h2>
             <RichText richText={usefulInfoCopy} />
           </TwoThirds>
