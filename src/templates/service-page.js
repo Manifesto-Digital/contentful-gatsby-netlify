@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 // Components
 import RichText from '../components/rich-text';
 import ContactCard from '../components/contact-card';
+import OpeningTimes from '../components/opening-times';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
@@ -29,6 +30,7 @@ const ServicePage = ({ data }) => {
             <h2>Contact</h2>
             <ContactCard data={service} />
             <h2>Opening times</h2>
+            <OpeningTimes data={service} />
             <RichText richText={usefulInfoCopy} />
           </TwoThirds>
         </Container>
