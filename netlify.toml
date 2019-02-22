@@ -1,3 +1,8 @@
+[context.production.develop]
+    command = "node __netlify__/redirects.js $ctfl_spaceId $GATSBY_CONTENTFUL_ENVIRONMENT $ctfl_accessToken && gatsby build"
+
+[context.deploy-preview.production]
+    command = "node __netlify__/redirects.js $ctfl_spaceId $GATSBY_CONTENTFUL_ENVIRONMENT $ctfl_accessToken && gatsby build"
 
 [context.uat]
     command = "node __netlify__/redirects.js && gatsby build"
