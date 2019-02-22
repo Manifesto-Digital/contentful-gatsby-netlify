@@ -17,7 +17,7 @@ import InlineCallout from '../inline-callout';
 // Styles
 import { ModuleWrapper, FormWrapper, FormFieldWrapper } from './styles';
 
-const ContentForm = ({ data }) => {
+const ContentForm = ({ data, insideContainer }) => {
   const {
     sourceCode,
     formId,
@@ -45,7 +45,7 @@ const ContentForm = ({ data }) => {
 
   return (
     <ModuleWrapper>
-      <Container>
+      <Container padding={!insideContainer}>
         <Formik
           initialValues={getInitialValues(formFields, {
             ...hiddenInitialValues,
@@ -121,6 +121,7 @@ ContentForm.propTypes = {
     formHeader: PropTypes.string,
     backgroundColour: PropTypes.oneOf(['Grey']),
   }),
+  insideContainer: PropTypes.bool,
 };
 
 export default ContentForm;
