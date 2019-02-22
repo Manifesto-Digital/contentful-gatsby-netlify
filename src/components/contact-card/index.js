@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SVG from 'react-inlinesvg';
+import LinkHandler from '../link-handler';
+import { CardWrapper, Card, Icon } from './styles';
 import iconSrc from '../../utils/iconSrc';
 
 const ContactCard = ({ data }) => {
@@ -12,24 +13,28 @@ const ContactCard = ({ data }) => {
   } = data;
 
   return (
-    <div>
-      <div>
+    <CardWrapper>
+      <Card>
+        <Icon src={iconSrc('telephone')} />
         <div>
-          <SVG src={iconSrc('telephone')} />
+          <div>{contactNumber1Text}</div>
+          <LinkHandler externalUrl={`tel:${contactNumber1}`}>
+            {contactNumber1}
+          </LinkHandler>
         </div>
-        <div>{contactNumber1Text}</div>
-        <div>{contactNumber1}</div>
-      </div>
+      </Card>
       {contactNumber2 && (
-        <div>
+        <Card>
+          <Icon src={iconSrc('telephone')} />
           <div>
-            <SVG src={iconSrc('telephone')} />
+            <div>{contactNumber2Text}</div>
+            <LinkHandler externalUrl={`tel:${contactNumber2}`}>
+              {contactNumber2}
+            </LinkHandler>
           </div>
-          <div>{contactNumber2Text}</div>
-          <div>{contactNumber2}</div>
-        </div>
+        </Card>
       )}
-    </div>
+    </CardWrapper>
   );
 };
 
