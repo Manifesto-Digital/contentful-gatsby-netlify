@@ -46,7 +46,7 @@ const LegalLandingPage = ({ data }) => {
                     <Item key={key} data={pageReference} />
                   ))}
               </TwoThirds>
-              <SideBar maxWidth>
+              <SideBar>
                 <LegalSideBar data={{ sideBarLinks }} />
               </SideBar>
             </ContentWithSideBar>
