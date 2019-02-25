@@ -3,13 +3,12 @@
 exports[`renders correct styles: content 1`] = `
 "display: block;
  position: relative;
- bottom: 40px;
- background: rgb(255, 255, 255);
- overflow: auto;
- border-radius: none;
- outline: none;
- padding: 40px;
- background-color: rgb(247, 247, 247);
+ background-color: rgb(255, 255, 255);
+ max-height: calc(100% - 40px);
+ max-width: calc(100% - 40px);
+ overflow: scroll;
+ padding: 20px;
+ z-index: 2;
 "
 `;
 

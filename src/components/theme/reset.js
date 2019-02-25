@@ -7,8 +7,8 @@ export const reset = `
 html {
     font-family: sans-serif;
     line-height: 1.15;
-    -webkit-text-size-adjust: 100 %;
-    -ms-text-size-adjust: 100 %;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
     -webkit-tap-highlight-color: transparent;
 }
@@ -100,12 +100,12 @@ b,
     font-weight: bolder;
 }
 small {
-    font-size: 80 %;
+    font-size: 80%;
 }
 sub,
     sup {
     position: relative;
-    font-size: 75 %;
+    font-size: 75%;
     line-height: 0;
     vertical-align: baseline;
 }
@@ -220,8 +220,8 @@ fieldset {
 }
 legend {
     display: block;
-    width: 100 %;
-    max-width: 100 %;
+    width: 100%;
+    max-width: 100%;
     padding: 0;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
