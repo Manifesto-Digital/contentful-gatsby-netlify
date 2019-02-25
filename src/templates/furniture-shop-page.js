@@ -6,6 +6,7 @@ import ShopHero from '../components/shop-furniture/hero';
 import CenteredSection from '../components/shop-furniture/centered-section';
 import ThreeColumn from '../components/shop-furniture/three-column';
 import ShopInfo from '../components/shop-furniture/shop-info';
+import ShopMap from '../components/shop-furniture/shop-map';
 import Layout from '../components/layout';
 
 const Page = ({ data }) => {
@@ -21,7 +22,6 @@ const Page = ({ data }) => {
     howDoesYourDonationHelp,
   } = data.contentfulPageAssemblyFurnitureShopPage;
 
-  console.log('shop', data);
   if (!shop) return null;
 
   return (
@@ -49,6 +49,7 @@ const Page = ({ data }) => {
         parking={shop.parkingInformation}
         disabledAccess={shop.disabledAccessInformation}
       />
+      <ShopMap shop={shop} />
     </Layout>
   );
 };

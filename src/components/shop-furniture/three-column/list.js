@@ -5,8 +5,6 @@ import iconSrc from '../../../utils/iconSrc';
 import { UnorderedList, ListItem, ListIcon } from './styles';
 
 const List = ({ items, type }) => {
-  console.log('items', items);
-
   const icon = type === 'yes' ? iconSrc('tick') : iconSrc('cross');
 
   return (

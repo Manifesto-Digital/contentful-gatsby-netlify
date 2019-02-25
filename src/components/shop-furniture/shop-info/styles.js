@@ -19,6 +19,10 @@ export const Flex25 = styled.div`
   margin-bottom: ${props => props.theme.spacing.standard};
   background: ${props => props.theme.palette.white};
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   ${breakpoint.mobileLand`
     flex-basis: calc(50% - ${props => props.theme.spacing.small})
   `};

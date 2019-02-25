@@ -17,29 +17,25 @@ const ShopHero = ({
   contactNumber,
   introductoryText,
   image,
-}) => {
-  console.log('woo', header, image);
-
-  return (
-    <Wrapper>
-      <Container>
-        <h1>{header}</h1>
-        <FlexWrapper>
-          <Content>
-            <h3>{subHeader}</h3>
-            <SubHeading>
-              Call us on: <span>{contactNumber}</span>
-            </SubHeading>
-            <p>{introductoryText}</p>
-          </Content>
-          <HeroImage>
-            <StyledImage image={image} />
-          </HeroImage>
-        </FlexWrapper>
-      </Container>
-    </Wrapper>
-  );
-};
+}) => (
+  <Wrapper>
+    <Container>
+      <h1>{header}</h1>
+      <FlexWrapper>
+        <Content>
+          <h3>{subHeader}</h3>
+          <SubHeading>
+            Call us on: <span>{contactNumber}</span>
+          </SubHeading>
+          <p>{introductoryText}</p>
+        </Content>
+        <HeroImage>
+          <StyledImage image={image} />
+        </HeroImage>
+      </FlexWrapper>
+    </Container>
+  </Wrapper>
+);
 
 ShopHero.propTypes = {
   header: PropTypes.string.isRequired,

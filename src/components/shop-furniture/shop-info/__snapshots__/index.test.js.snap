@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin-bottom: 40px;
+  padding: 60px 0;
+  background-color: #e5e5e5;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  width: 100%;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.c3:last-of-type {
+  margin-bottom: 0;
+}
+
+.c4 {
+  padding: 20px;
+  white-space: pre-line;
+}
+
+.c5 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.125em;
+}
+
+.c6 {
+  margin-right: 10px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.c6 svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width:32em) {
+  .c3 {
+    -webkit-flex-basis: calc(50% - 10px);
+    -ms-flex-preferred-size: calc(50% - 10px);
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: auto;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+
+  .c3:last-of-type {
+    margin-right: 0;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h3
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Address
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>51 Church Road 
+London
+SW13 9HH</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h3
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Opening hours
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p><strong>Mon to Sat</strong>: 10am to 6pm
+<strong>Sunday</strong>: 11am to 5pm</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h3
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Parking
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>No parking</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h3
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Disabled access
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>No disabled access</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
