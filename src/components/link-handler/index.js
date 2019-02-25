@@ -7,7 +7,13 @@ import { Link } from 'gatsby';
  * Internal link uses Gatsby Link
  *
  */
-const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
+const LinkHandler = ({
+  internalLink,
+  externalUrl,
+  className,
+  children,
+  newTab,
+}) => {
   if (internalLink) {
     return (
       <Link to={`/${internalLink.slug}`} className={className}>
@@ -17,7 +23,12 @@ const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
   }
   if (externalUrl) {
     return (
-      <a href={externalUrl} className={className}>
+      <a
+        href={externalUrl}
+        className={className}
+        rel="noopener"
+        target={newTab ? '_blank' : '_self'}
+      >
         {children}
       </a>
     );
@@ -36,6 +47,7 @@ LinkHandler.propTypes = {
     PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
+  newTab: PropTypes.bool,
 };
 
 export default LinkHandler;
