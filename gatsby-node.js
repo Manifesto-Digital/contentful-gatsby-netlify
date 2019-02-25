@@ -5,6 +5,7 @@ const createEventsLandingPages = require('./create-pages/events-landing-pages.js
 const createEventCategoryPages = require('./create-pages/event-category-pages.js');
 const createStandardEventPages = require('./create-pages/standard-event-pages.js');
 const createChallengeEventPages = require('./create-pages/challenge-event-pages.js');
+const createLegalLandingPages = require('./create-pages/legal-landing-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -16,4 +17,5 @@ exports.createPages = async ({ graphql, actions }) => {
   createEventCategoryPages(graphql, createPage);
   createStandardEventPages(graphql, createPage);
   createChallengeEventPages(graphql, createPage);
+  createLegalLandingPages(graphql, createPage);
 };
