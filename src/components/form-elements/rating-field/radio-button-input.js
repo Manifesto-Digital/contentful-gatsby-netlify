@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import ErrorMessage from '../error-message';
-import { Input, InputWrapper, Label } from './styles';
+import { InputWrapper, Label } from './styles';
 
 const RadioInput = ({
   name,
@@ -15,11 +15,9 @@ const RadioInput = ({
   touched,
   errors,
   submitCount,
-  marginRight,
 }) => (
-  <InputWrapper marginRight={marginRight}>
-    <Input
-      as={Field}
+  <InputWrapper>
+    <Field
       type="radio"
       name={name}
       required={required}
@@ -42,7 +40,7 @@ const RadioInput = ({
 RadioInput.propTypes = {
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
@@ -50,7 +48,6 @@ RadioInput.propTypes = {
   touched: PropTypes.object,
   errors: PropTypes.object,
   submitCount: PropTypes.number,
-  marginRight: PropTypes.bool,
 };
 
 export default RadioInput;
