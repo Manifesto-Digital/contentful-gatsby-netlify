@@ -30,8 +30,6 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       if (!assembly.id || !assembly.internal) return null;
       const { id, internal } = assembly;
 
-      console.log(internal.type);
-
       // CTA
       if (internal.type === 'ContentfulAssemblyCta') {
         return (
