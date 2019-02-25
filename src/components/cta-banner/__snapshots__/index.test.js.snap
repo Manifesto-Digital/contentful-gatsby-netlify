@@ -15,6 +15,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
+.c0:hover {
+  color: #fff;
+}
+
 <Link
   className="c0"
   to="/internal-link-slug"
@@ -39,6 +43,10 @@ exports[`renders correctly 2`] = `
   font-weight: normal;
   background-color: transparent;
   border: 1px solid #fff;
+  color: #fff;
+}
+
+.c3:hover {
   color: #fff;
 }
 
@@ -72,6 +80,8 @@ exports[`renders correctly 2`] = `
     <a
       className="c3"
       href="http://example.com"
+      rel="noopener"
+      target="_self"
     >
       <span
         className="c4"

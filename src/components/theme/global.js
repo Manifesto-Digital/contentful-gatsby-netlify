@@ -94,5 +94,8 @@ export const GlobalStyle = createGlobalStyle`
         top: 0;
     }
 
+    .embedded-in-richtext {
+        margin-bottom: ${props => props.theme.spacing.standard};
+    }
 
 `;

@@ -11,7 +11,7 @@ import RichText from '../rich-text';
 // Default props
 export const createInlineBanner = createFactory({
   content: createChildContentfulRichText(),
-  icon: null,
+  icon: 'map-unfolded',
   borderColour: null,
   bannerColour: null,
 });

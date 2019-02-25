@@ -7,9 +7,7 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
       type
     }
     systemName
-
     headerText
-
     leftColumnText {
       childContentfulRichText {
         html
@@ -18,7 +16,14 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
     leftColumnCalloutBanners {
       ...InlineCallout
     }
-
+    rightColumnText {
+      childContentfulRichText {
+        html
+      }
+    }
+    rightColumnCta {
+      ...ctaStandardFragment
+    }
     rightColumnImage {
       file {
         url
@@ -29,7 +34,6 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
     rightColumnCalloutBanners {
       ...InlineCallout
     }
-
     backgroundColour
   }
 `;

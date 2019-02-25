@@ -95,6 +95,10 @@ exports[`Renders correctly 1`] = `
   color: #fff;
 }
 
+.c7:hover {
+  color: #fff;
+}
+
 .c0 {
   display: none;
   height: 43px;

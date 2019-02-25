@@ -18,6 +18,8 @@ import Perks from '../perks';
 import Testimonials from '../testimonials';
 import RichText from '../rich-text';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
+import CardsWithIcons from '../cards-with-icons';
+import Map from '../google-map';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -141,14 +143,24 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
+      if (internal.type === 'ContentfulAssemblyCardsWithIcon') {
+        return (
+          <CardsWithIcons
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
+      }
+
+      if (internal.type === 'ContentfulTopicGoogleMap') {
+        return <Map key={id} data={assembly} />;
+      }
+
       return null;
     });
 
-  return (
-    <>
-      <AssembliesLoop />
-    </>
-  );
+  return <AssembliesLoop />;
 };
 
 Assemblies.propTypes = {

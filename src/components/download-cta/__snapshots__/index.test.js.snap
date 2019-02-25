@@ -15,6 +15,7 @@ exports[`renders correctly 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 10px 20px;
+  background-color: #8c8c8c;
   color: #fff;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -23,6 +24,7 @@ exports[`renders correctly 1`] = `
 .c0:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  color: #fff;
 }
 
 .c2 {

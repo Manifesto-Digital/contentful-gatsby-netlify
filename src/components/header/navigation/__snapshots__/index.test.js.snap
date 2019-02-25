@@ -78,7 +78,6 @@ Array [
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
   width: 80%;
   height: 100%;
   background: #fff;
@@ -89,6 +88,7 @@ Array [
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
+  z-index: 10;
   overflow-y: scroll;
 }
 
@@ -300,6 +300,10 @@ Array [
   justify-content: center;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c10:hover {
+  color: #fff;
 }
 
 .c10:hover {
@@ -667,6 +671,8 @@ Array [
           <a
             className="c17 c18"
             href="https://scotland.shelter.org.uk/"
+            rel="noopener"
+            target="_self"
           >
             Scotland
           </a>
