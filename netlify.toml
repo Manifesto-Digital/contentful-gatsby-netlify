@@ -1,0 +1,2 @@
+[context.deploy-preview.production]
+command = "echo 'running node' && node __netlify__/redirects.js ctfl_spaceId_PLACEHOLDER GATSBY_CONTENTFUL_ENVIRONMENT_PLACEHOLDER ctfl_accessToken_PLACEHOLDER && yarn build"
