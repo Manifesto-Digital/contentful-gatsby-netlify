@@ -19,7 +19,7 @@ const PolicyPage = ({ data }) => {
         </PageTitle>
         <Container>
           <TwoThirds>
-            <Policy data={policy[0]} />
+            <Policy data={policy} />
           </TwoThirds>
         </Container>
       </article>
