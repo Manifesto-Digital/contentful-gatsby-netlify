@@ -5,7 +5,7 @@ import LinkHandler from '../link-handler';
 
 const LegalSideBar = ({ data }) => {
   const { sideBarLinks } = data;
-  if (!sideBarLinks || sideBarLinks.length) return;
+  if (!sideBarLinks || sideBarLinks.length === 0) return null;
 
   return (
     <PaddedBox>
