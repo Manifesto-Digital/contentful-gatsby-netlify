@@ -29,7 +29,7 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
   useEffect(() => {
     convertBracketsToLink(tableOfContents);
     convertBracketsToArray(tableOfContents);
-  }, [tableOfContents]);
+  }, []);
   return (
     <>
       <h1>{systemName}</h1>
@@ -40,7 +40,7 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
           <TableList>
             {tableOfContents.map((item, i) => (
               <li key={i}>
-                <a href={`#title-${i}`} title={item.title} key={i}>
+                <a href={`#title-${i}`} title={item.title}>
                   {item.title}
                 </a>
               </li>
@@ -55,9 +55,7 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
         <Block>
           {tableOfContents.map((item, i) => (
             <BlockContent key={i}>
-              <BlockTitle id={`title-${i}`} key={i}>
-                {item.title}
-              </BlockTitle>
+              <BlockTitle id={`title-${i}`}>{item.title}</BlockTitle>
               {contentWithReferences[i] && (
                 <RichText
                   richText={{
