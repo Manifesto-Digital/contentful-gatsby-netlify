@@ -70,6 +70,7 @@ export const advicePageQuery = graphql`
           ...DonationBanner
           ...RelatedAdviceFragment
           ...ShareBlockFragment
+          ...GoogleMapFragment
         }
       }
     }
