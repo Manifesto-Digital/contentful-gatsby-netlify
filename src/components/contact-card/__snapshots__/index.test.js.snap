@@ -59,6 +59,8 @@ exports[`renders correctly 1`] = `
       </div>
       <a
         href="tel:01234567890"
+        rel="noopener"
+        target="_self"
       >
         01234567890
       </a>
@@ -76,6 +78,8 @@ exports[`renders correctly 1`] = `
       </div>
       <a
         href="tel:09876543210"
+        rel="noopener"
+        target="_self"
       >
         09876543210
       </a>
