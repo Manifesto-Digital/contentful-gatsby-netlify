@@ -80,6 +80,8 @@ exports[`renders correctly 2`] = `
     <a
       className="c3"
       href="http://example.com"
+      rel="noopener"
+      target="_self"
     >
       <span
         className="c4"
