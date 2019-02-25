@@ -13,6 +13,8 @@ const client = contentful.createClient({
 });
 const filepath = `${__dirname}/../public/_redirects`;
 const filepathFixedRedirects = `${__dirname}/fixed_redirects.txt`;
+console.log(filepath);
+console.log(filepathFixedRedirects);
 
 const doRedirects = async () => {
   const generateRedirects = async entries => {
