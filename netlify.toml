@@ -1,2 +1,2 @@
 [context.deploy-preview]
-command = "pwd && echo running node && node __netlify__/redirects.js ctfl_spaceId_PLACEHOLDER GATSBY_CONTENTFUL_ENVIRONMENT_PLACEHOLDER ctfl_accessToken_PLACEHOLDER && yarn build"
+command = "pwd && ls -al && echo running node && node __netlify__/redirects.js ctfl_spaceId_PLACEHOLDER GATSBY_CONTENTFUL_ENVIRONMENT_PLACEHOLDER ctfl_accessToken_PLACEHOLDER && yarn build"
