@@ -18,7 +18,7 @@ export const createPolicy = createFactory({
   publishDate: '2019-02-19',
   displayDate: 'February 2019',
   summary: createChildContentfulRichText(),
-  media: [createFile()],
+  media: createFile(),
 });
 
 it('renders correctly', () => {

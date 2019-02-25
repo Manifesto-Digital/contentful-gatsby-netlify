@@ -18,9 +18,9 @@ const Policy = ({ data }) => {
           {displayDate || dateAsString(publishDate, 'DD/MM/YYYY')}
         </Detail>
         <h4>{policyName}</h4>
-        {media && media.length && (
+        {media && (
           <DocumentDownload
-            cta={{ buttonText: media[0].title, download: media[0] }}
+            cta={{ buttonText: media.title, download: media }}
           />
         )}
       </PolicyCard>
@@ -36,7 +36,7 @@ Policy.propTypes = {
     publishDate: PropTypes.string.isRequired,
     displayDate: PropTypes.string,
     summary: PropTypes.object.isRequired,
-    media: PropTypes.array,
+    media: PropTypes.object,
   }),
 };
 
