@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { breakpoint } from '../../theme/breakpoint';
 
 export const Wrapper = styled.section`
-  padding: ${props => props.theme.spacing.large} 0;
+  padding: ${props => props.theme.spacing.xl} 0;
   background-color: ${props => props.theme.palette.grey10};
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${props => props.theme.spacing.xl};
 `;
 
 export const Content = styled.div`

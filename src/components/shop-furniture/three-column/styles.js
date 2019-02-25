@@ -3,7 +3,7 @@ import SVG from 'react-inlinesvg';
 import { breakpoint } from '../../theme/breakpoint';
 
 export const Wrapper = styled.section`
-  margin-bottom: ${props => props.theme.spacing.standard};
+  margin-bottom: ${props => props.theme.spacing.large};
 `;
 
 export const Flex = styled.div`

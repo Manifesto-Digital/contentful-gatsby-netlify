@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import ShopHero from '../components/shop-furniture/hero';
 import CenteredSection from '../components/shop-furniture/centered-section';
 import ThreeColumn from '../components/shop-furniture/three-column';
+import ShopInfo from '../components/shop-furniture/shop-info';
 import Layout from '../components/layout';
 
 const Page = ({ data }) => {
@@ -21,6 +22,7 @@ const Page = ({ data }) => {
   } = data.contentfulPageAssemblyFurnitureShopPage;
 
   console.log('shop', data);
+  if (!shop) return null;
 
   return (
     <Layout>
@@ -40,6 +42,12 @@ const Page = ({ data }) => {
         yesList={yesPleaseList}
         noList={noThanksList}
         donationHelpText={howDoesYourDonationHelp}
+      />
+      <ShopInfo
+        address={shop.displayAddress}
+        openingHours={shop.openingHours}
+        parking={shop.parkingInformation}
+        disabledAccess={shop.disabledAccessInformation}
       />
     </Layout>
   );

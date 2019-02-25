@@ -23,7 +23,7 @@ const List = ({ items, type }) => {
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
-  type: PropTypes.oneOf(['cross', 'tick']).isRequired,
+  type: PropTypes.oneOf(['yes', 'no']).isRequired,
 };
 
 export default List;

@@ -76,14 +76,7 @@ module.exports = {
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: node => {
               const imageObject = node.data.target.fields;
-              console.log(
-                '\x1b[31m',
-                'node',
-                node.data.target.fields.file['en-GB'],
-                '\x1b[0m'
-              );
-
-              const { url } = node.data.target.fields.file['en-GB'].url;
+              const { url } = node.data.target.fields.file['en-GB'];
               const file = url.substring(url.lastIndexOf('/') + 1);
               const alt = Object.prototype.hasOwnProperty.call(
                 imageObject,

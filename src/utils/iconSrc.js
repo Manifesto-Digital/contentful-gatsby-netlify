@@ -22,6 +22,9 @@ import Trophy from '../assets/svg/icons/trophy-regular.svg';
 import Calendar from '../assets/svg/icons/calendar-alt-light.svg';
 import Cross from '../assets/svg/icons/times-regular.svg';
 import Tick from '../assets/svg/icons/check-solid.svg';
+import Car from '../assets/svg/icons/car-regular.svg';
+import Wheelchair from '../assets/svg/icons/wheelchair-regular.svg';
+import Clock from '../assets/svg/icons/clock-regular.svg';
 
 import { consistentString } from './content-formatting';
 
@@ -50,6 +53,9 @@ const iconList = {
   trophy: Trophy,
   cross: Cross,
   tick: Tick,
+  car: Car,
+  wheelchair: Wheelchair,
+  clock: Clock,
   'no-icon': null,
   default: null,
 };
