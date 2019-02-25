@@ -76,6 +76,7 @@ export const pageQuery = graphql`
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
           ...CardsWithIconsFragment
+          ...GoogleMapFragment
         }
       }
     }
