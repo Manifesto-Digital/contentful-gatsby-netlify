@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import ReactModal from 'react-modal';
 import Modal from '.';
 import { mountWithTheme } from '../../../__tests__/helpers';
@@ -24,10 +25,12 @@ it('requests to close when clicking the close button', () => {
     <Modal isOpen onRequestClose={onRequestClose} />
   );
 
-  wrapper
-    .find(ReactModal)
-    .find('button[title="Close"]')
-    .simulate('click');
+  act(() => {
+    wrapper
+      .find(ReactModal)
+      .find('button[title="Close"]')
+      .simulate('click');
+  });
 
   expect(onRequestClose).toHaveBeenCalledTimes(1);
 });
