@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import { act } from 'react-dom/test-utils';
 import FeedbackModal from '.';
 import { mountWithTheme } from '../../../__tests__/helpers';
 
@@ -25,7 +26,9 @@ it('opens modal when link is clicked', () => {
   );
 
   try {
-    wrapper.find('button').simulate('click');
+    act(() => {
+      wrapper.find('button').simulate('click');
+    });
 
     expect(isModalOpen()).toBe(true);
   } finally {
@@ -53,11 +56,16 @@ it('closes modal when a close is requested', () => {
   );
 
   try {
-    wrapper.find('button').simulate('click');
+    act(() => {
+      wrapper.find('button').simulate('click');
+    });
 
-    const requestCloseHandler = wrapper.find(ReactModal).prop('onRequestClose');
-
-    requestCloseHandler();
+    act(() => {
+      const requestCloseHandler = wrapper
+        .find(ReactModal)
+        .prop('onRequestClose');
+      requestCloseHandler();
+    });
 
     expect(isModalOpen()).toBe(false);
   } finally {
@@ -72,7 +80,9 @@ it('displays heading in modal', () => {
   );
 
   try {
-    wrapper.find('button').simulate('click');
+    act(() => {
+      wrapper.find('button').simulate('click');
+    });
 
     const { content } = wrapper.find(ReactModal).instance().portal;
 

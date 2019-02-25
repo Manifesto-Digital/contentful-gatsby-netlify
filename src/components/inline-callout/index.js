@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { richTextPropTypes } from '../../prop-types';
 import { consistentString } from '../../utils/content-formatting';
 // Components
 import iconSrc from '../../utils/iconSrc';
@@ -8,32 +7,32 @@ import iconSrc from '../../utils/iconSrc';
 import { InlineBanner, TextWrapper, BannerSVG } from './styles';
 import { Container } from '../styled/containers';
 
-const InlineCallOut = ({ content, insideContainer, forwardedRef }) => {
-  const { icon, borderColour, bannerColour } = content;
-  const callOutText = content.content;
-
-  return (
-    <Container padding={!insideContainer} ref={forwardedRef}>
-      <InlineBanner
-        borderCol={consistentString(borderColour)}
-        bannerCol={consistentString(bannerColour)}
-      >
-        <BannerSVG src={iconSrc(icon)} cacheGetRequests />
-        <TextWrapper richText={callOutText} />
-      </InlineBanner>
-    </Container>
-  );
-};
+const InlineCallOut = ({
+  icon,
+  insideContainer,
+  forwardedRef,
+  borderColour,
+  bannerColour,
+  children,
+}) => (
+  <Container padding={!insideContainer} ref={forwardedRef}>
+    <InlineBanner
+      borderColour={consistentString(borderColour)}
+      bannerColour={consistentString(bannerColour)}
+    >
+      {icon && <BannerSVG src={iconSrc(icon)} cacheGetRequests />}
+      <TextWrapper>{children}</TextWrapper>
+    </InlineBanner>
+  </Container>
+);
 
 InlineCallOut.propTypes = {
-  content: PropTypes.shape({
-    content: PropTypes.shape(richTextPropTypes).isRequired,
-    icon: PropTypes.string,
-    borderColour: PropTypes.string,
-    bannerColour: PropTypes.string,
-  }),
+  icon: PropTypes.string,
+  borderColour: PropTypes.string,
+  bannerColour: PropTypes.string,
   insideContainer: PropTypes.bool,
   forwardedRef: PropTypes.object,
+  children: PropTypes.any,
 };
 
 InlineCallOut.defaultProps = {
