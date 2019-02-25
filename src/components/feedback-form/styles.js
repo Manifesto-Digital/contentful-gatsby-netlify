@@ -7,4 +7,8 @@ export const Flex = styled.div`
 
 export const StyledForm = styled(Form)`
   max-width: 550px;
+
+  select {
+    max-width: 100%;
+  }
 `;

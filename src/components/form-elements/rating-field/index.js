@@ -10,7 +10,7 @@ const RatingField = ({ name, fieldLabel }) => (
     {fieldLabel && <label htmlFor={name}>{fieldLabel()}</label>}
     <FieldWrapper as="fieldset">
       <LayoutWrapper>
-        {Array.from({ length: 11 }).map((valueOption, i) => (
+        {Array.from({ length: 11 }, (_, i) => (
           <Field
             key={i}
             name={name}
@@ -22,11 +22,11 @@ const RatingField = ({ name, fieldLabel }) => (
                   onBlur={fieldValues.onBlur}
                   name={name}
                   value={i}
-                  label={`${i}`}
+                  label={i.toString()}
                   errors={form.errors}
                   touched={form.touched}
                   submitCount={form.submitCount}
-                  checked={`${i}` === radioButtonValue}
+                  checked={i.toString() === radioButtonValue}
                 />
               );
             }}

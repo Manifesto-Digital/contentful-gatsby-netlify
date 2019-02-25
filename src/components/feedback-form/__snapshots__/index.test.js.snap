@@ -5,6 +5,10 @@ exports[`renders correctly 1`] = `
   max-width: 550px;
 }
 
+.c0 select {
+  max-width: 100%;
+}
+
 .c4 {
   margin-right: 10px;
   vertical-align: middle;
