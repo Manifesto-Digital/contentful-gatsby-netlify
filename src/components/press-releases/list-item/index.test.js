@@ -27,18 +27,16 @@ const createPageInformation = createFactory({
   title: '320,000 people in Britain are now homeless, as numbers keep rising',
 });
 const createItem = createFactory({
-  pressRelease: {
-    id: '70e53e54-dd49-5357-87ed-6f76611e510d',
-    title: '320,000 people in Britain are now homeless, as numbers keep rising',
-    slug: 'test-slug',
-    datePosted: '2018-05-16',
-    pageInformation: createPageInformation(),
-  },
+  id: '70e53e54-dd49-5357-87ed-6f76611e510d',
+  title: '320,000 people in Britain are now homeless, as numbers keep rising',
+  slug: 'test-slug',
+  datePosted: '2018-05-16',
+  pageInformation: createPageInformation(),
 });
 
 it('renders correctly', () => {
   const mockData = createItem();
-  snapshotComponent(<Item {...mockData} />);
+  snapshotComponent(<Item data={mockData} />);
 });
 
 it('renders the correct header', () => {
@@ -52,21 +50,19 @@ it('renders the correct header', () => {
     },
   });
 
-  const wrapper = shallow(<Item {...mockData} />);
-  expect(wrapper.find('h3').text()).toEqual(mockData.pressRelease.title);
+  const wrapper = shallow(<Item data={mockData} />);
+  expect(wrapper.find('h3').text()).toEqual(mockData.title);
 });
 
 hidePascalCaseWarning();
 it('renders a link', () => {
   const mockData = createItem({
-    pressRelease: {
-      title: 'new title',
-      id: '70e53e54-dd49-5357-87ed-6f76611e510d',
-      slug: 'test-slug',
-      datePosted: '2018-05-16',
-      pageInformation: createPageInformation(),
-    },
+    title: 'new title',
+    id: '70e53e54-dd49-5357-87ed-6f76611e510d',
+    slug: 'test-slug',
+    datePosted: '2018-05-16',
+    pageInformation: createPageInformation(),
   });
-  const wrapper = mountWithTheme(<Item {...mockData} />);
+  const wrapper = mountWithTheme(<Item data={mockData} />);
   expect(wrapper.find(Link)).toHaveLength(1);
 });

@@ -1,3 +1,3 @@
 export async function sendForm(...args) {
-  console.log(...args);
+  return console.log(...args);
 }
