@@ -48,7 +48,7 @@ Page.propTypes = {
 
 export default Page;
 
-export const pageQuery = graphql`
+export const shopPageQuery = graphql`
   query shopPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyShopPage(slug: { eq: $slug }) {
       name
