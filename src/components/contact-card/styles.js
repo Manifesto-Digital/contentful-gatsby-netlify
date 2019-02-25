@@ -28,5 +28,6 @@ export const Card = styled.div`
 
 export const Icon = styled(SVG)`
   width: 30px;
+  max-height: 50px;
   margin-right: ${({ theme }) => theme.spacing.standard};
 `;
