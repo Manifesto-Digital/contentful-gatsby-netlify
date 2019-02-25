@@ -6,11 +6,10 @@ const contentful = require('contentful');
 const fs = require('fs');
 const fsPromises = require('fs/promises');
 
-const [, , SPACE_ID, ENVIRONMENT_ID, ACCESS_TOKEN] = process.argv;
 const client = contentful.createClient({
-  space: SPACE_ID,
-  accessToken: ACCESS_TOKEN,
-  environment: ENVIRONMENT_ID,
+  space: process.env.ctfl_spaceId,
+  accessToken: process.env.ctfl_accessToken,
+  environment: process.env.GATSBY_CONTENTFUL_ENVIRONMENT,
 });
 console.log(process.env.GATSBY_CONTENTFUL_ENVIRONMENT);
 const filepath = `${__dirname}/../public/_redirects`;
