@@ -40,26 +40,7 @@ export const PolicyPageQuery = graphql`
     contentfulPageAssemblyPolicyPage(slug: { eq: $slug }) {
       pageName
       policy {
-        policyName
-        author
-        publishDate
-        displayDate
-        summary {
-          childContentfulRichText {
-            html
-          }
-        }
-        media {
-          title
-          file {
-            url
-            contentType
-            fileName
-            details {
-              size
-            }
-          }
-        }
+        ...PolicyFragment
       }
     }
   }

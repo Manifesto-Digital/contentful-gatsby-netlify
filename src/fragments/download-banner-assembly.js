@@ -18,17 +18,7 @@ export const DownloadBannerAssemblyFragment = graphql`
         }
       }
       download {
-        file {
-          url
-          details {
-            size
-            image {
-              width
-              height
-            }
-          }
-          fileName
-        }
+        ...DownloadableFileFragment
       }
     }
   }
