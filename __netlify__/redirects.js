@@ -15,6 +15,8 @@ const client = contentful.createClient({
 console.log(process.env.GATSBY_CONTENTFUL_ENVIRONMENT);
 const filepath = `${__dirname}/../public/_redirects`;
 const filepathFixedRedirects = `${__dirname}/fixed_redirects.txt`;
+console.log(filepath);
+console.log(filepathFixedRedirects);
 
 const doRedirects = async () => {
   const generateRedirects = async entries => {
