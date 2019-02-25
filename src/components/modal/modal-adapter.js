@@ -1,43 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Styles
-import { StyledModal, StyledCloseButton } from './styles';
+import ReactModal from 'react-modal';
+
 /**
  * A version of react-modal that is styled with our custom styles
+ * Gives us the ability to use media queries in the styles
  */
-function Modal({
+function ReactModalAdapter({
   children,
   isOpen,
-  modalClassName,
   className,
   onRequestClose,
   ...otherProps
 }) {
+  const contentClassName = `${className}__content`;
+  const overlayClassName = `${className}__overlay`;
   return (
-    <StyledModal
+    <ReactModal
       onRequestClose={onRequestClose}
       isOpen={isOpen}
       aria={{
         modal: true,
       }}
-      className={modalClassName}
+      className={contentClassName}
       portalClassName={className}
+      overlayClassName={overlayClassName}
       {...otherProps}
     >
-      <StyledCloseButton title="Close" onClick={onRequestClose}>
-        ✕
-      </StyledCloseButton>
       {children}
-    </StyledModal>
+    </ReactModal>
   );
 }
 
-Modal.propTypes = {
-  children: PropTypes.object,
+ReactModalAdapter.propTypes = {
+  children: PropTypes.array,
   onRequestClose: PropTypes.func,
   isOpen: PropTypes.bool,
-  modalClassName: PropTypes.string,
   className: PropTypes.string,
 };
 
-export default Modal;
+export default ReactModalAdapter;

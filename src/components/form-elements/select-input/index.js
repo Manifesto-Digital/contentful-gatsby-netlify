@@ -24,7 +24,11 @@ const SelectInput = ({ field, ...rest }) => {
     <FieldWrapper>
       <Field component="select" name={field.machineName}>
         {field.valueOptions.map((optionValue, i) => (
-          <option value={optionValue.value} key={i}>
+          <option
+            value={optionValue.value}
+            disabled={optionValue.disabled}
+            key={i}
+          >
             {optionValue.label}
           </option>
         ))}
@@ -38,12 +42,18 @@ SelectInput.propTypes = {
     defaultValue: PropTypes.string,
     fieldType: PropTypes.string,
     fieldLabel: PropTypes.string,
-    machineName: PropTypes.string,
+    machineName: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     toolTip: PropTypes.string,
-    valueOptions: PropTypes.array,
-  }),
+    valueOptions: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        disabled: PropTypes.bool,
+      })
+    ).isRequired,
+  }).isRequired,
 };
 
 export default SelectInput;

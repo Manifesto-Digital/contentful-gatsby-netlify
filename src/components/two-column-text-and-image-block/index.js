@@ -84,7 +84,7 @@ TwoColumnTextAndImageBlock.propTypes = {
     headerText: PropTypes.string.isRequired,
     leftColumnText: PropTypes.shape(richTextPropTypes).isRequired,
     leftColumnCalloutBanners: PropTypes.array,
-    rightColumnText: PropTypes.shape(richTextPropTypes).isRequired,
+    rightColumnText: PropTypes.shape(richTextPropTypes),
     rightColumnImage: PropTypes.object,
     rightColumnCalloutBanners: PropTypes.array,
     rightColumnCta: PropTypes.object,
