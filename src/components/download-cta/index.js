@@ -14,10 +14,9 @@ const DownloadCTA = ({ cta, className }) => {
       <div>
         <ButtonText>{buttonText}</ButtonText>
         <FileInfo>{formatFilesize(download.file.details.size)}</FileInfo>
-        <FileInfo>
-          {download.file.contentType &&
-            mimeTypeToString(download.file.contentType)}
-        </FileInfo>
+        {download.file.contentType && (
+          <FileInfo>mimeTypeToString(download.file.contentType)</FileInfo>
+        )}
       </div>
       <ButtonSVG src={DownloadSVG} cacheGetRequests />
     </Button>

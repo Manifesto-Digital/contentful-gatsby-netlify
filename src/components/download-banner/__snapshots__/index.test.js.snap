@@ -138,9 +138,6 @@ exports[`renders correctly 1`] = `
             >
               78.02 KB
             </div>
-            <div
-              className="c8"
-            />
           </div>
           <span
             className="isvg loading c9"
