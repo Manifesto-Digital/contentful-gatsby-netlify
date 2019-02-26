@@ -23,8 +23,8 @@ const ShopInfo = ({ address, openingHours, parking, disabledAccess }) => {
       <Container>
         <Flex>
           {information &&
-            information.map(item => (
-              <Flex25>
+            information.map((item, i) => (
+              <Flex25 key={i}>
                 <Content>
                   <Heading>
                     <Icon src={iconSrc(item.icon)} />
