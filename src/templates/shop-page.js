@@ -28,7 +28,7 @@ const Page = ({ data }) => {
           <ContentWithSideBar>
             <TwoThirds>
               <RichText richText={bodyCopy} />
-              <Form data={form} insideContainer />
+              {form && <Form data={form} insideContainer />}
             </TwoThirds>
             <SideBar>
               <ShopSidebar data={shop} />
