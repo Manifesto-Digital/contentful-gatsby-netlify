@@ -5,7 +5,7 @@ import { Container, TwoThirds } from '../styled/containers';
 import { Wrapper } from './styles.js';
 
 const PageTitle = ({ children, twoThirds, paddingBottom, legal }) => (
-  <Wrapper paddingBottom={paddingBottom} legal>
+  <Wrapper paddingBottom={paddingBottom} legal={legal}>
     {twoThirds ? (
       <Container>
         <TwoThirds>{children}</TwoThirds>

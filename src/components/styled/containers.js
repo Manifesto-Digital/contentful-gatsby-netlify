@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const TwoThirds = styled.div`
   max-width: 100%;
   width: 100%;
+  margin-left: ${({ right }) => right && 'auto'};
 
   ${breakpoint.desktop`
     max-width: 66%;
