@@ -10,6 +10,7 @@ import ContentForm from '../components/form';
 import RichText from '../components/rich-text';
 import Modal from '../components/modal';
 import EventMap from '../components/standard-event/map';
+import ContentCard from '../components/content-card';
 // Styles
 import {
   Container,
@@ -40,6 +41,19 @@ const Page = ({ data }) => {
     bodyCopy,
   } = data.contentfulPageAssemblyStandardEvent;
 
+  const sidebarCards = data.contentfulPageAssemblyStandardEvent.sidebarCards
+    ? data.contentfulPageAssemblyStandardEvent.sidebarCards.cards.map(card => ({
+        title: card.event.eventType,
+        slug: card.slug,
+        pageInformation: {
+          shortDescription: {
+            shortDescription: card.event.shortDescription,
+          },
+          pageThumbnail: card.event.thumbnailImage,
+        },
+      }))
+    : false;
+
   const { eventLocation } = event;
   const eventStatus = consistentString(event.eventStatus);
 
@@ -63,7 +77,12 @@ const Page = ({ data }) => {
               <TwoThirds>
                 <RichText richText={bodyCopy} />
               </TwoThirds>
-              <SideBar />
+              <SideBar>
+                {sidebarCards &&
+                  sidebarCards.map((sidebarCard, key) => (
+                    <ContentCard data={sidebarCard} key={key} />
+                  ))}
+              </SideBar>
             </ContentWithSideBar>
           </Container>
         )}
@@ -135,6 +154,20 @@ export const standardEventPageQuery = graphql`
       }
       waitingListForm {
         ...AssemblyFormFragment
+      }
+      sidebarCards {
+        cards {
+          slug
+          event {
+            eventType
+            shortDescription
+            thumbnailImage {
+              file {
+                url
+              }
+            }
+          }
+        }
       }
     }
   }
