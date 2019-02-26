@@ -8,7 +8,7 @@ const GoogleMap = ({ children, onGoogleApiLoaded }) => (
   <Wrapper>
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: process.env.MAP_KEY,
+        key: process.env.GOOGLE_MAP_API_KEY,
       }}
       defaultZoom={10}
       defaultCenter={[34.0522, -118.2437]}
