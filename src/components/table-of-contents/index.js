@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import RichText from '../rich-text';
-import { Table, TableList, Block, BlockContent, BlockTitle } from './styles';
+import {
+  Table,
+  TableList,
+  Block,
+  BlockContent,
+  BlockTitle,
+  OpeningStatement,
+} from './styles';
 import { bracketsToLink } from '../../utils/rich-text-formatting/bracketsToLink';
 import { bracketsToArray } from '../../utils/rich-text-formatting/bracketsToArray';
 import InlineCallOut from '../inline-callout';
+import PageTitle from '../page-title';
 
 export const TableOfContent = ({ data, updateReferenceList }) => {
-  const {
-    systemName,
-    applicableRegions,
-    openingStatement,
-    tableOfContents,
-  } = data;
+  const { title, applicableRegions, bodyCopy, tableOfContents } = data;
 
   const [contentWithReferences, createReferenceContent] = useState([]);
 
@@ -32,11 +35,16 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
   }, []);
   return (
     <>
-      <h1>{systemName}</h1>
-      {openingStatement && <RichText richText={openingStatement} />}
+      <PageTitle>
+        <h1>{title}</h1>
+      </PageTitle>
+      {bodyCopy && (
+        <OpeningStatement>
+          <RichText richText={bodyCopy} />
+        </OpeningStatement>
+      )}
       {tableOfContents && (
         <Table>
-          <h3>Contents</h3>
           <TableList>
             {tableOfContents.map((item, i) => (
               <li key={i}>

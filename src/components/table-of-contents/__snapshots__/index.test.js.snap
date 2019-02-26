@@ -2,33 +2,43 @@
 
 exports[`renders correctly 1`] = `
 Array [
-  <h1>
-    Offences involving violence
-  </h1>,
-  <div
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-      }
-    }
-  />,
-  .c0 {
-  margin-bottom: 5px;
-  padding: 20px;
-  background: #f7f7f7;
+  .c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.c1 {
-  padding-left: 0;
-  list-style: none;
+.c0 {
+  padding-bottom: 0;
+}
+
+.c0 h1 {
+  margin-bottom: 20px;
+  padding-top: 40px;
 }
 
 <div
     className="c0"
   >
-    <h3>
-      Contents
-    </h3>
+    <div
+      className="c1"
+    >
+      <h1 />
+    </div>
+  </div>,
+  .c0 {
+  margin-bottom: 5px;
+  padding: 20px;
+}
+
+.c1 {
+  padding-left: 20px;
+  list-style-type: square;
+}
+
+<div
+    className="c0"
+  >
     <ul
       className="c1"
     >
