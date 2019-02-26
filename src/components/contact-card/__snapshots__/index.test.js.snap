@@ -35,6 +35,10 @@ exports[`renders correctly 1`] = `
   margin-right: 20px;
 }
 
+.c3 {
+  margin-bottom: 0;
+}
+
 @media (min-width:40.0625em) {
   .c1 {
     -webkit-flex: 1;
@@ -55,9 +59,11 @@ exports[`renders correctly 1`] = `
       className="isvg loading c2"
     />
     <div>
-      <div>
+      <p
+        className="c3"
+      >
         Contact number 1
-      </div>
+      </p>
       <a
         href="tel:01234567890"
         rel="noopener"
@@ -74,9 +80,11 @@ exports[`renders correctly 1`] = `
       className="isvg loading c2"
     />
     <div>
-      <div>
+      <p
+        className="c3"
+      >
         Contact number 2
-      </div>
+      </p>
       <a
         href="tel:09876543210"
         rel="noopener"

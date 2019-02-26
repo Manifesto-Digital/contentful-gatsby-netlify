@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkHandler from '../link-handler';
-import { CardWrapper, Card, Icon } from './styles';
+import { CardWrapper, Card, Icon, NumberText } from './styles';
 import iconSrc from '../../utils/iconSrc';
 
 const ContactCard = ({ data }) => {
@@ -17,7 +17,7 @@ const ContactCard = ({ data }) => {
       <Card>
         <Icon src={iconSrc('telephone')} />
         <div>
-          <div>{contactNumber1Text}</div>
+          <NumberText>{contactNumber1Text}</NumberText>
           <LinkHandler externalUrl={`tel:${contactNumber1}`}>
             {contactNumber1}
           </LinkHandler>
@@ -27,7 +27,7 @@ const ContactCard = ({ data }) => {
         <Card>
           <Icon src={iconSrc('telephone')} />
           <div>
-            <div>{contactNumber2Text}</div>
+            <NumberText>{contactNumber2Text}</NumberText>
             <LinkHandler externalUrl={`tel:${contactNumber2}`}>
               {contactNumber2}
             </LinkHandler>

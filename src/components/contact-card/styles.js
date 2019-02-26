@@ -31,3 +31,7 @@ export const Icon = styled(SVG)`
   max-height: 50px;
   margin-right: ${({ theme }) => theme.spacing.standard};
 `;
+
+export const NumberText = styled.p`
+  margin-bottom: 0;
+`;
