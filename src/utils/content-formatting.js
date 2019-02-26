@@ -43,3 +43,19 @@ export const consistentString = string => {
 
   return 'default';
 };
+
+// Converts mime types to consistent filetype strings
+// If a filetypes is missing here, simply add it to the switch statement
+// See here for a list of possible mime types https://www.freeformatter.com/mime-types-list.html
+export const mimeTypeToString = mime => {
+  switch (mime) {
+    case 'application/pdf':
+      return 'PDF';
+    case 'image/jpeg':
+      return 'JPEG';
+    case 'image/png':
+      return 'PNG';
+    default:
+      return null;
+  }
+};
