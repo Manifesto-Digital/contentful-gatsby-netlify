@@ -6,12 +6,17 @@ import theme from '../theme/variables';
 export const Table = styled.div`
   margin-bottom: 5px;
   padding: ${theme.spacing.standard};
-  background: ${theme.palette.offWhite};
 `;
 
 export const TableList = styled.ul`
-  padding-left: 0;
-  list-style: none;
+  padding-left: ${theme.spacing.standard};
+  list-style-type: square;
+`;
+
+export const OpeningStatement = styled.div`
+  margin-bottom: ${theme.spacing.standard};
+  padding: ${theme.spacing.standard};
+  background: ${theme.palette.offWhite};
 `;
 
 export const Block = styled.div`
@@ -32,7 +37,7 @@ export const ReferenceList = styled.ul`
   list-style: none;
   font-size: ${theme.fontsize.small};
 
-  ${breakpoint.tablet`
+  ${breakpoint.desktop`
     margin-left: -${theme.spacing.medium};
   `};
 
@@ -47,6 +52,10 @@ export const ReferenceList = styled.ul`
   p {
     margin-bottom: ${theme.spacing.small};
   }
+`;
+
+export const SidebarInner = styled.div`
+  padding: ${theme.spacing.large} 0;
 `;
 
 export const FootNotes = styled.div`
