@@ -6,6 +6,8 @@ const createEventCategoryPages = require('./create-pages/event-category-pages.js
 const createStandardEventPages = require('./create-pages/standard-event-pages.js');
 const createChallengeEventPages = require('./create-pages/challenge-event-pages.js');
 const createPolicyPage = require('./create-pages/policy-pages.js');
+const createFurnitureShopPages = require('./create-pages/furniture-shop-pages.js');
+const createServicePages = require('./create-pages/service-pages.js');
 const createLegalLandingPages = require('./create-pages/legal-landing-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -19,5 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
   createStandardEventPages(graphql, createPage);
   createChallengeEventPages(graphql, createPage);
   createPolicyPage(graphql, createPage);
+  createFurnitureShopPages(graphql, createPage);
+  createServicePages(graphql, createPage);
   createLegalLandingPages(graphql, createPage);
 };

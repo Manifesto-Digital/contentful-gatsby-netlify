@@ -16,6 +16,7 @@ import Form from '../form';
 import ContentCardBanner from '../content-card-banner';
 import Perks from '../perks';
 import Testimonials from '../testimonials';
+import RichText from '../rich-text';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardsWithIcons from '../cards-with-icons';
 import Map from '../google-map';
@@ -55,11 +56,9 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicInlineCallout') {
         return (
-          <InlineCallOut
-            key={id}
-            content={assembly}
-            insideContainer={insideContainer}
-          />
+          <InlineCallOut key={id} insideContainer={insideContainer}>
+            <RichText richText={assembly} />
+          </InlineCallOut>
         );
       }
 
