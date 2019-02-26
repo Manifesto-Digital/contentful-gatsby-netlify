@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0;
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+
+.c0 > :last-child {
+  margin-bottom: 0;
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    Resources
+  </h3>
+  <Link
+    to="/legal-page"
+  >
+    Legal sidebar link
+  </Link>
+</div>
+`;
