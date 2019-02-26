@@ -13,8 +13,6 @@ import { IntroWrapper, OtherEventsWrapper } from './styles';
 import { SectionTag } from '../../components/styled/tags';
 
 const EventCategoryPage = ({ data }) => {
-  console.log('data', data);
-
   const {
     pageName,
     strapline,
@@ -28,8 +26,6 @@ const EventCategoryPage = ({ data }) => {
     .filter(event =>
       featuredEvent ? event.slug !== featuredEvent[0].slug : true
     );
-
-  console.log('event', events);
 
   return (
     <Layout>
