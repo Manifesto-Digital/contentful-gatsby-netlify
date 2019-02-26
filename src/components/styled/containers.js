@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const TwoThirds = styled.div`
   max-width: 100%;
   width: 100%;
+  margin-left: ${({ right }) => right && 'auto'};
 
   ${breakpoint.desktop`
     max-width: 66%;
@@ -35,7 +36,8 @@ export const SideBar = styled.div`
     max-width: 32%;
     width: 100%;
     margin-top: 0;
-    padding-left: ${props => props.theme.spacing.xl};
+    padding-left: ${props => !props.left && props.theme.spacing.xl};
+    padding-right: ${props => props.left && props.theme.spacing.xl};
   `};
 `;
 

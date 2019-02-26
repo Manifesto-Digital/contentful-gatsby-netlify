@@ -33,7 +33,7 @@ Array [
   margin-bottom: 10px;
 }
 
-@media (min-width:40.0625em) {
+@media (min-width:62em) {
   .c0 {
     margin-left: -30px;
   }
