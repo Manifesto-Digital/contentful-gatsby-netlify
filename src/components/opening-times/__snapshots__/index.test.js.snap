@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  list-style: none;
+  padding: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+@media (min-width:32em) {
+  .c3 {
+    -webkit-flex: 4;
+    -ms-flex: 4;
+    flex: 4;
+  }
+}
+
+<ul
+  className="c0"
+>
+  <li
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      Monday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+  <li
+    className="c4"
+  >
+    <div
+      className="c2"
+    >
+      Tuesday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+  <li
+    className="c4"
+  >
+    <div
+      className="c2"
+    >
+      Wednesday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+  <li
+    className="c4"
+  >
+    <div
+      className="c2"
+    >
+      Thursday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+  <li
+    className="c4"
+  >
+    <div
+      className="c2"
+    >
+      Friday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+  <li
+    className="c4"
+  >
+    <div
+      className="c2"
+    >
+      Saturday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+  <li
+    className="c4"
+  >
+    <div
+      className="c2"
+    >
+      Sunday
+      :
+    </div>
+     
+    <div
+      className="c3"
+    >
+      10am to 6pm
+    </div>
+  </li>
+</ul>
+`;
