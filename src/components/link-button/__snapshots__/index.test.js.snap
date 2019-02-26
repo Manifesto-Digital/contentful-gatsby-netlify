@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
   color: #4d63b5;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .c0:hover {

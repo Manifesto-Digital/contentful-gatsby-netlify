@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TwoThirds } from '../styled/containers';
+import { TwoThirds } from '../../components/styled/containers';
 
 export const IntroWrapper = styled(TwoThirds)`
   margin-bottom: ${({ theme }) => theme.spacing.xl};

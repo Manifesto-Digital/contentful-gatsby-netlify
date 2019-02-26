@@ -3,7 +3,7 @@ const { getEventCategoryPages } = require('../queries/event-category-page');
 
 async function createEventCategoryPages(graphql, gatsbyCreatePage) {
   const eventCategoryPageTemplate = path.resolve(
-    'src/templates/event-category-page.js'
+    'src/templates/event-category-page/index.js'
   );
 
   // Create pages
