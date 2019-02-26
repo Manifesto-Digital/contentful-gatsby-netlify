@@ -5,12 +5,12 @@ import GoogleMapReact from 'google-map-react';
 import { MapWrapper } from './styles';
 
 const EventMap = ({ eventLocation }) => {
-  if (!process.env.GOOGLE_MAP_API_KEY) return null;
+  // if (!process.env.GOOGLE_MAP_API_KEY) return null;
   return (
     <MapWrapper>
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: process.env.GOOGLE_MAP_API_KEY,
+          key: 'AIzaSyCp8IoFqy0SA8sGDYUy0Hbk8Ktdc46zcGE',
         }}
         defaultCenter={{ lat: eventLocation.lat, lng: eventLocation.lon }}
         defaultZoom={10}
