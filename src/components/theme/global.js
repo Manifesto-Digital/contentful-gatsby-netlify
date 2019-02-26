@@ -31,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     h5,
     h6 {
         font-family: ${props => props.theme.fonts.header};
+        font-weight: 500;
     }
 
     h1, h2, h3 {
@@ -93,7 +94,6 @@ export const GlobalStyle = createGlobalStyle`
         text-align: center;
         top: 0;
     }
-
     .embedded-in-richtext {
         margin-bottom: ${props => props.theme.spacing.standard};
     }

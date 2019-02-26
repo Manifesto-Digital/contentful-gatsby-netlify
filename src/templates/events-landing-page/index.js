@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 // Components
-import PageTitle from '../components/page-title';
-import RichText from '../components/rich-text';
+import PageTitle from '../../components/page-title';
+import RichText from '../../components/rich-text';
 // Styles
-import { Container, TwoThirds } from '../components/styled/containers';
-import { SectionTag } from '../components/styled/tags';
-import EventCard from '../components/event-card';
-import { Wrapper, CardWrapper } from '../components/events-landing-page/styles';
+import { Container, TwoThirds } from '../../components/styled/containers';
+import { SectionTag } from '../../components/styled/tags';
+import EventCard from '../../components/event-card';
+import { Wrapper, CardWrapper } from './styles';
 
 const EventsLandingPage = ({ data }) => {
   const {

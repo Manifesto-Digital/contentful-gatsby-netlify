@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 // Components
-import PageTitle from '../components/page-title';
-import RichText from '../components/rich-text';
-import FeaturedEvent from '../components/featured-event';
-import EventListCard from '../components/event-list-card';
+import PageTitle from '../../components/page-title';
+import RichText from '../../components/rich-text';
+import FeaturedEvent from '../../components/featured-event';
+import EventListCard from '../../components/event-list-card';
 // Styles
-import { Container, TwoThirds } from '../components/styled/containers';
-import {
-  IntroWrapper,
-  OtherEventsWrapper,
-} from '../components/event-category-page/styles';
-import { SectionTag } from '../components/styled/tags';
+import { Container, TwoThirds } from '../../components/styled/containers';
+import { IntroWrapper, OtherEventsWrapper } from './styles';
+import { SectionTag } from '../../components/styled/tags';
 
 const EventCategoryPage = ({ data }) => {
+  console.log('data', data);
+
   const {
     pageName,
     strapline,
@@ -29,6 +28,8 @@ const EventCategoryPage = ({ data }) => {
     .filter(event =>
       featuredEvent ? event.slug !== featuredEvent[0].slug : true
     );
+
+  console.log('event', events);
 
   return (
     <Layout>
