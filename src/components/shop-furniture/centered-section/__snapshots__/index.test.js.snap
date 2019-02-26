@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding: 60px 0;
+  background-color: #e5e5e5;
+  margin-bottom: 60px;
+}
+
+.c2 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.c2 > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.c3 {
+  color: #ea232d;
+}
+
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width:40.0625em) {
+  .c2 {
+    max-width: 66.666%;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <h2>
+        Mock header
+      </h2>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+          }
+        }
+      />
+      <p>
+        Call us on: 
+        <span
+          className="c3"
+        >
+          012345 67890
+        </span>
+      </p>
+    </div>
+  </div>
+</section>
+`;
