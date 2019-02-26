@@ -90,9 +90,7 @@ const EventHero = ({
                 {...CTA.fromCMS({
                   buttonText: ctaText,
                   ctaColour: 'Red',
-                  internalLink: {
-                    slug: ctaLink,
-                  },
+                  externalUrl: ctaLink,
                 })}
                 fullWidth
                 onClick={() => {

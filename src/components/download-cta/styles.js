@@ -16,12 +16,17 @@ export const Button = styled.a`
     color: ${props => props.theme.palette.white};
   }
 `;
-export const Filesize = styled.p`
+export const FileInfo = styled.div`
   font-size: 0.65em;
-  margin-bottom: 5px;
+  display: inline-block;
+  margin-right: ${({ theme }) => theme.spacing.small};
+
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
-export const ButtonText = styled.p`
+export const ButtonText = styled.div`
   margin-bottom: 5px;
 `;
 

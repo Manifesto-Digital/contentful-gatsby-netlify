@@ -37,7 +37,7 @@ exports[`renders Header Text 1`] = `
   color: #4d63b5;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: 700;
+  font-weight: 500;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -175,7 +175,7 @@ exports[`renders a share block with links 1`] = `
   color: #4d63b5;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: 700;
+  font-weight: 500;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

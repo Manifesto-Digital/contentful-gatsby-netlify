@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin-bottom: 40px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.c7 {
+  width: 100%;
+}
+
+.c4 {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.c5 {
+  position: relative;
+  list-style: none;
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+
+.c5:last-of-type {
+  margin-bottom: 0;
+}
+
+.c6 {
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.c6 svg {
+  width: 10px;
+}
+
+.c6 path {
+  fill: #ea232d;
+}
+
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width:32em) {
+  .c3 {
+    width: 50%;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    width: 25%;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 {
+    width: 50%;
+    padding-left: 20px;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h3>
+          Yes Please
+        </h3>
+        <ul
+          className="c4"
+        >
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Beds
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Cabinets
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Lights
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+             Electrical items
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Wardrobes
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Sofas
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+             Tables and more
+          </li>
+        </ul>
+      </div>
+      <div
+        className="c3"
+      >
+        <h3>
+          No thanks
+        </h3>
+        <ul
+          className="c4"
+        >
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Washing machines
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Dishwashers
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Electrical items containing water
+          </li>
+          <li
+            className="c5"
+          >
+            <span
+              className="isvg loading c6"
+            />
+            Upholstered items without a fire label
+          </li>
+        </ul>
+      </div>
+      <div
+        className="c7"
+      >
+        <h3>
+          How does your donation help?
+        </h3>
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

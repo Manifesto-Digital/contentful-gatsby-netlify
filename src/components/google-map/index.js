@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-// components:
 import Marker from './Marker';
 import GoogleMap from './GoogleMap';
 import InfoWindow from './InfoWindow';
 import LinkHandler from '../link-handler';
 import { MapIconAlt, Address } from './styles';
+import { Container } from '../styled/containers';
 import IconAlt from '../../assets/svg/icons/map-marker-alt-light.svg';
 
-const Map = ({ data }) => {
+const Map = ({ data, insideContainer }) => {
   const { headerText, locations } = data;
   const [currentLocations, updateLocation] = useState([]);
   const [activeMarker, updateActiveMarker] = useState(-1);
@@ -47,10 +46,10 @@ const Map = ({ data }) => {
   }, [locations]);
 
   return (
-    <>
+    <Container padding={!insideContainer}>
       {currentLocations && (
         <>
-          <h2>{headerText}</h2>
+          {headerText && <h2>{headerText}</h2>}
           <GoogleMap
             onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
           >
@@ -67,19 +66,20 @@ const Map = ({ data }) => {
                 <InfoWindow
                   index={i}
                   address={place.address}
+                  location={place.location}
                   activeMarker={activeMarker}
                   clearInfoWindow={() => updateActiveMarker(-1)}
                 />
               </Marker>
             ))}
           </GoogleMap>
-          {currentLocations.length === 1 && (
+          {currentLocations.length === 1 && currentLocations[0].address && (
             <Address>
               {IconAlt && <MapIconAlt src={IconAlt} cacheGetRequests />}
               <LinkHandler
                 externalUrl={`https://www.google.co.uk/maps?daddr=${
-                  currentLocations[0].address
-                }`}
+                  currentLocations[0].location.lat
+                }, ${currentLocations[0].location.lon}`}
                 newTab
               >
                 {currentLocations[0].address}
@@ -88,7 +88,7 @@ const Map = ({ data }) => {
           )}
         </>
       )}
-    </>
+    </Container>
   );
 };
 
@@ -96,8 +96,20 @@ Map.propTypes = {
   data: PropTypes.shape({
     displaySearch: PropTypes.bool,
     headerText: PropTypes.string,
-    locations: PropTypes.array,
+    locations: PropTypes.arrayOf(
+      PropTypes.shape({
+        address: PropTypes.string,
+        location: PropTypes.shape({
+          lat: PropTypes.number,
+          lng: PropTypes.number,
+        }),
+      })
+    ),
   }),
+  insideContainer: PropTypes.bool,
 };
 
+Map.defaultProps = {
+  insideContainer: false,
+};
 export default Map;

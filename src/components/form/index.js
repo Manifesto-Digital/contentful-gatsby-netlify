@@ -14,10 +14,11 @@ import Button from '../button';
 import FormFieldType from './field-type';
 import Recaptcha from '../form-elements/recaptcha';
 import InlineCallout from '../inline-callout';
+import RichText from '../rich-text';
 // Styles
 import { ModuleWrapper, FormWrapper, FormFieldWrapper } from './styles';
 
-const ContentForm = ({ data }) => {
+const ContentForm = ({ data, insideContainer }) => {
   const {
     sourceCode,
     formId,
@@ -45,7 +46,7 @@ const ContentForm = ({ data }) => {
 
   return (
     <ModuleWrapper>
-      <Container>
+      <Container padding={!insideContainer}>
         <Formik
           initialValues={getInitialValues(formFields, {
             ...hiddenInitialValues,
@@ -97,14 +98,11 @@ const ContentForm = ({ data }) => {
         {submitted && (
           <InlineCallout
             forwardedRef={thankYouMessageRef}
-            borderCol="red"
+            borderColour="red"
             insideContainer
-            content={{
-              content: thankYouMessage,
-              borderColour: 'red',
-              bannerColour: 'grey',
-            }}
-          />
+          >
+            <RichText richText={thankYouMessage} />
+          </InlineCallout>
         )}
       </Container>
     </ModuleWrapper>
@@ -121,6 +119,7 @@ ContentForm.propTypes = {
     formHeader: PropTypes.string,
     backgroundColour: PropTypes.oneOf(['Grey']),
   }),
+  insideContainer: PropTypes.bool,
 };
 
 export default ContentForm;
