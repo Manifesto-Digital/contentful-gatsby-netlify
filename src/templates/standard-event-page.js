@@ -71,23 +71,44 @@ const Page = ({ data }) => {
         {/* "Register Interest": Register interest form */}
         {eventStatus === eventStatuses.registerInterest &&
           registerInterestForm && (
-            <div ref={formRef}>
-              <ContentForm data={registerInterestForm} />
-            </div>
+            <Container>
+              <ContentWithSideBar>
+                <TwoThirds>
+                  <div ref={formRef}>
+                    <ContentForm insideContainer data={registerInterestForm} />
+                  </div>
+                </TwoThirds>
+                <SideBar />
+              </ContentWithSideBar>
+            </Container>
           )}
 
         {/* "Open": Sign up form */}
         {eventStatus === eventStatuses.open && signUpForm && (
-          <div ref={formRef}>
-            <ContentForm data={signUpForm} />
-          </div>
+          <Container>
+            <ContentWithSideBar>
+              <TwoThirds>
+                <div ref={formRef}>
+                  <ContentForm insideContainer data={signUpForm} />
+                </div>
+              </TwoThirds>
+              <SideBar />
+            </ContentWithSideBar>
+          </Container>
         )}
 
         {/* "Waiting List: Waiting list form */}
         {eventStatus === eventStatuses.waitingList && waitingListForm && (
-          <div ref={formRef}>
-            <ContentForm data={waitingListForm} />
-          </div>
+          <Container>
+            <ContentWithSideBar>
+              <TwoThirds>
+                <div ref={formRef}>
+                  <ContentForm insideContainer data={waitingListForm} />
+                </div>
+              </TwoThirds>
+              <SideBar />
+            </ContentWithSideBar>
+          </Container>
         )}
         {/* <Assemblies assemblies={modules} /> */}
       </article>

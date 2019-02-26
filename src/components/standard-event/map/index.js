@@ -4,20 +4,17 @@ import GoogleMapReact from 'google-map-react';
 // Styles
 import { MapWrapper } from './styles';
 
-const EventMap = ({ eventLocation }) => {
-  // if (!process.env.GOOGLE_MAP_API_KEY) return null;
-  return (
-    <MapWrapper>
-      <GoogleMapReact
-        bootstrapURLKeys={{
-          key: 'AIzaSyCp8IoFqy0SA8sGDYUy0Hbk8Ktdc46zcGE',
-        }}
-        defaultCenter={{ lat: eventLocation.lat, lng: eventLocation.lon }}
-        defaultZoom={10}
-      />
-    </MapWrapper>
-  );
-};
+const EventMap = ({ eventLocation }) => (
+  <MapWrapper>
+    <GoogleMapReact
+      bootstrapURLKeys={{
+        key: 'AIzaSyCp8IoFqy0SA8sGDYUy0Hbk8Ktdc46zcGE',
+      }}
+      defaultCenter={{ lat: eventLocation.lat, lng: eventLocation.lon }}
+      defaultZoom={10}
+    />
+  </MapWrapper>
+);
 
 EventMap.propTypes = {
   eventLocation: PropTypes.shape({
