@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-// components:
 import Marker from './Marker';
 import GoogleMap from './GoogleMap';
 import InfoWindow from './InfoWindow';
 import LinkHandler from '../link-handler';
 import { MapIconAlt, Address } from './styles';
+import { Container } from '../styled/containers';
 import IconAlt from '../../assets/svg/icons/map-marker-alt-light.svg';
 
-const Map = ({ data }) => {
+const Map = ({ data, insideContainer }) => {
   const { headerText, locations } = data;
   const [currentLocations, updateLocation] = useState([]);
   const [activeMarker, updateActiveMarker] = useState(-1);
@@ -47,7 +46,7 @@ const Map = ({ data }) => {
   }, [locations]);
 
   return (
-    <>
+    <Container padding={!insideContainer}>
       {currentLocations && (
         <>
           {headerText && <h2>{headerText}</h2>}
@@ -67,6 +66,7 @@ const Map = ({ data }) => {
                 <InfoWindow
                   index={i}
                   address={place.address}
+                  location={place.location}
                   activeMarker={activeMarker}
                   clearInfoWindow={() => updateActiveMarker(-1)}
                 />
@@ -88,7 +88,7 @@ const Map = ({ data }) => {
           )}
         </>
       )}
-    </>
+    </Container>
   );
 };
 
@@ -106,6 +106,10 @@ Map.propTypes = {
       })
     ),
   }),
+  insideContainer: PropTypes.bool,
 };
 
+Map.defaultProps = {
+  insideContainer: false,
+};
 export default Map;

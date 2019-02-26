@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import LinkHandler from '../link-handler';
 import { InfoWrapper, Close, InfoInside, InfoAddress } from './styles';
 
-const InfoWindow = ({ index, address, activeMarker, clearInfoWindow }) => {
+const InfoWindow = ({
+  index,
+  address,
+  activeMarker,
+  clearInfoWindow,
+  location,
+}) => {
   if (!address) return null;
   return (
     <>
@@ -12,7 +18,9 @@ const InfoWindow = ({ index, address, activeMarker, clearInfoWindow }) => {
         <InfoInside>
           <InfoAddress>{address}</InfoAddress>
           <LinkHandler
-            externalUrl={`https://www.google.co.uk/maps?daddr=${address}`}
+            externalUrl={`https://www.google.co.uk/maps?daddr=${
+              location.lat
+            }, ${location.lon}`}
             newTab
           >
             Directions
@@ -28,6 +36,10 @@ InfoWindow.propTypes = {
   address: PropTypes.string,
   activeMarker: PropTypes.number,
   clearInfoWindow: PropTypes.func,
+  location: PropTypes.shape({
+    lat: PropTypes.number,
+    lon: PropTypes.number,
+  }),
 };
 
 export default InfoWindow;
