@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Image = ({ image: { description, file }, className }) => {
+const Image = ({ image: { description, file }, className, width }) => {
   if (!file || !file.url) return;
-  return <img src={file.url} alt={description} className={className} />;
+  const url = width ? `${file.url}?w=${width}` : file.url;
+  return <img src={url} alt={description} className={className} />;
 };
 
 Image.propTypes = {
@@ -17,6 +18,7 @@ Image.propTypes = {
     }).isRequired,
   }),
   className: PropTypes.string,
+  width: PropTypes.number,
 };
 
 export default Image;

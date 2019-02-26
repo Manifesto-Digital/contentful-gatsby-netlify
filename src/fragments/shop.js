@@ -16,6 +16,7 @@ export const ShopTopicFragment = graphql`
         html
       }
     }
+    shortAddress
     region
     contactNumber
     contactEmail

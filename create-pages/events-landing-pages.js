@@ -3,7 +3,7 @@ const { getEventsLandingPages } = require('../queries/events-landing-page');
 
 async function createEventsLandingPages(graphql, gatsbyCreatePage) {
   const eventsLandingPageTemplate = path.resolve(
-    'src/templates/events-landing-page.js'
+    'src/templates/events-landing-page/index.js'
   );
 
   // Create pages
