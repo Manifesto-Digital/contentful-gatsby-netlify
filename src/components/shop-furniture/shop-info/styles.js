@@ -41,6 +41,10 @@ export const Flex25 = styled.div`
 export const Content = styled.div`
   padding: ${props => props.theme.spacing.standard};
   white-space: pre-line;
+
+  p {
+    margin-bottom: 0;
+  }
 `;
 
 export const Heading = styled.h3`

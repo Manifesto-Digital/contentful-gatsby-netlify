@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
 export const FlexWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   ${breakpoint.tablet`
     flex-wrap: nowrap;
