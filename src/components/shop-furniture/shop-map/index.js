@@ -6,6 +6,7 @@ import { Container } from '../../styled/containers';
 const ShopMap = ({ shop }) => (
   <Container>
     <Map
+      insideContainer
       data={{
         locations: [{ location: shop.location, address: shop.shortAddress }],
       }}
