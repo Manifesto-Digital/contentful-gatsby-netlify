@@ -50,7 +50,7 @@ const Map = ({ data }) => {
     <>
       {currentLocations && (
         <>
-          <h2>{headerText}</h2>
+          {headerText && <h2>{headerText}</h2>}
           <GoogleMap
             onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
           >
@@ -73,13 +73,13 @@ const Map = ({ data }) => {
               </Marker>
             ))}
           </GoogleMap>
-          {currentLocations.length === 1 && (
+          {currentLocations.length === 1 && currentLocations[0].address && (
             <Address>
               {IconAlt && <MapIconAlt src={IconAlt} cacheGetRequests />}
               <LinkHandler
                 externalUrl={`https://www.google.co.uk/maps?daddr=${
-                  currentLocations[0].address
-                }`}
+                  currentLocations[0].location.lat
+                }, ${currentLocations[0].location.lon}`}
                 newTab
               >
                 {currentLocations[0].address}
@@ -96,7 +96,15 @@ Map.propTypes = {
   data: PropTypes.shape({
     displaySearch: PropTypes.bool,
     headerText: PropTypes.string,
-    locations: PropTypes.array,
+    locations: PropTypes.arrayOf(
+      PropTypes.shape({
+        address: PropTypes.string,
+        location: PropTypes.shape({
+          lat: PropTypes.number,
+          lng: PropTypes.number,
+        }),
+      })
+    ),
   }),
 };
 
