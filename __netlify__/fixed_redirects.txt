@@ -1,0 +1,4 @@
+/fixed-redirect30              /sprint-2-demo-page 
+/fixed-redirect31              /shelter-sprint-5-demo 
+/fixed-redirect32              /section-21-eviction 
+/fixed-redirect33              /sams-test-page

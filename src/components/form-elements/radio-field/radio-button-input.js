@@ -15,8 +15,9 @@ const RadioInput = ({
   touched,
   errors,
   submitCount,
+  marginRight,
 }) => (
-  <InputWrapper>
+  <InputWrapper marginRight={marginRight}>
     <Input
       as={Field}
       type="radio"
@@ -49,6 +50,7 @@ RadioInput.propTypes = {
   touched: PropTypes.object,
   errors: PropTypes.object,
   submitCount: PropTypes.number,
+  marginRight: PropTypes.bool,
 };
 
 export default RadioInput;

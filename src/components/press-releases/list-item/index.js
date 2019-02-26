@@ -13,12 +13,12 @@ import {
 } from './styles';
 import { VisuallyHidden } from '../../styled/accessibility';
 
-const Item = ({ pressRelease }) => {
-  const { title, datePosted } = pressRelease;
+const Item = ({ data }) => {
+  const { title, datePosted } = data;
 
   // Still render list item with title if short description is not provided
-  const shortDescription = pressRelease.pageInformation
-    ? pressRelease.pageInformation.shortDescription.internal.content
+  const shortDescription = data.pageInformation
+    ? data.pageInformation.shortDescription.internal.content
     : null;
 
   return (
@@ -30,11 +30,13 @@ const Item = ({ pressRelease }) => {
         <ArrowIcon src={ArrowRight} alt=" " cacheGetRequests />
       </IconHolder>
 
-      <PostedDate>
-        <strong>Posted on {dateAsString(datePosted, 'DD MMM YYYY')}</strong>
-      </PostedDate>
+      {datePosted && (
+        <PostedDate>
+          <strong>Posted on {dateAsString(datePosted, 'DD MMM YYYY')}</strong>
+        </PostedDate>
+      )}
 
-      <CoveringLink aria-hidden="true" internalLink={pressRelease}>
+      <CoveringLink aria-hidden="true" internalLink={data}>
         <VisuallyHidden>{title}</VisuallyHidden>
       </CoveringLink>
     </PressItem>
@@ -42,11 +44,11 @@ const Item = ({ pressRelease }) => {
 };
 
 Item.propTypes = {
-  pressRelease: PropTypes.shape({
+  data: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    datePosted: PropTypes.string.isRequired,
+    datePosted: PropTypes.string,
     pageInformation: PropTypes.shape({
       shortDescription: LongTextRequired,
     }).isRequired,
