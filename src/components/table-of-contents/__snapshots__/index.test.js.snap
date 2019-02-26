@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <h1>
+    Offences involving violence
+  </h1>,
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+      }
+    }
+  />,
+  .c0 {
+  margin-bottom: 5px;
+  padding: 20px;
+  background: #f7f7f7;
+}
+
+.c1 {
+  padding-left: 0;
+  list-style: none;
+}
+
+<div
+    className="c0"
+  >
+    <h3>
+      Contents
+    </h3>
+    <ul
+      className="c1"
+    >
+      <li>
+        <a
+          href="#title-0"
+          title="Public Order Act 1986"
+        >
+          Public Order Act 1986
+        </a>
+      </li>
+      <li>
+        <a
+          href="#title-1"
+          title="Police and Criminal Evidence Act 1984"
+        >
+          Police and Criminal Evidence Act 1984
+        </a>
+      </li>
+    </ul>
+  </div>,
+  .c1 {
+  position: relative;
+  clear: both;
+  background: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 1em;
+  border-left: 4px solid;
+  border-color: #ea232d;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+.c2 > :last-child {
+  margin-bottom: 0;
+}
+
+.c0 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        This content applies to 
+        <strong>
+          England, Wales & Scotland
+        </strong>
+      </div>
+    </div>
+  </div>,
+  .c0 {
+  margin: 60px auto;
+}
+
+.c2 {
+  margin-bottom: 30px;
+}
+
+.c1 {
+  margin-bottom: 40px;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <h3
+        className="c2"
+        id="title-0"
+      >
+        Public Order Act 1986
+      </h3>
+    </div>
+    <div
+      className="c1"
+    >
+      <h3
+        className="c2"
+        id="title-1"
+      >
+        Police and Criminal Evidence Act 1984
+      </h3>
+    </div>
+  </div>,
+]
+`;
