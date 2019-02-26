@@ -1,29 +1,28 @@
 import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
-import RichText from '../rich-text';
 
 export const InlineBanner = styled.div`
   position: relative;
   clear: both;
   background: ${props =>
-    (props.bannerCol === 'default' && props.theme.palette.offWhite) ||
-    (props.bannerCol === 'grey' && props.theme.palette.offWhite) ||
-    (props.bannerCol === 'white' && props.theme.palette.white) ||
-    (props.bannerCol === 'transparent' && 'transparent')};
+    (props.bannerColour === 'default' && props.theme.palette.offWhite) ||
+    (props.bannerColour === 'grey' && props.theme.palette.offWhite) ||
+    (props.bannerColour === 'white' && props.theme.palette.white) ||
+    (props.bannerColour === 'transparent' && 'transparent')};
 
   padding: ${props => props.theme.spacing.standard};
   margin-bottom: 1em;
   border-left: 4px solid;
   border-color: ${props =>
-    (props.borderCol === 'default' && props.theme.palette.primary) ||
-    (props.borderCol === 'red' && props.theme.palette.primary) ||
-    (props.borderCol === 'grey' && props.theme.palette.grey45) ||
-    (props.borderCol === 'facebook-blue' && props.theme.palette.facebook) ||
-    (props.borderCol === 'twitter-blue' && props.theme.palette.twitter) ||
-    (props.borderCol === 'whatsapp-green' && props.theme.palette.whatsapp)};
+    (props.borderColour === 'default' && props.theme.palette.primary) ||
+    (props.borderColour === 'red' && props.theme.palette.primary) ||
+    (props.borderColour === 'grey' && props.theme.palette.grey45) ||
+    (props.borderColour === 'facebook-blue' && props.theme.palette.facebook) ||
+    (props.borderColour === 'twitter-blue' && props.theme.palette.twitter) ||
+    (props.borderColour === 'whatsapp-green' && props.theme.palette.whatsapp)};
 `;
 
-export const TextWrapper = styled(RichText)`
+export const TextWrapper = styled.div`
   display: inline-block;
   & > :last-child {
     margin-bottom: 0;

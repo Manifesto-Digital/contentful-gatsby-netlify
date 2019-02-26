@@ -34,7 +34,7 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
           <ContentWithSideBar>
             <TwoThirds>
               {posts.map(({ node }) => (
-                <Item key={node.id} pressRelease={node} />
+                <Item key={node.id} data={node} />
               ))}
               <Pagination pageContext={pageContext} slug="press-releases" />
             </TwoThirds>
