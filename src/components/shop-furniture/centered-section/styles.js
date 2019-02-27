@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { breakpoint } from '../../theme/breakpoint';
 
 export const Wrapper = styled.section`
-  padding: ${props => props.theme.spacing.xl} 0;
-  background-color: ${props => props.theme.palette.grey10};
-  margin-bottom: ${props => props.theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.xl} 0;
+  background-color: ${({ theme }) => theme.palette.grey10};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
 `;
 
 export const Content = styled.div`
@@ -21,5 +21,5 @@ export const Content = styled.div`
 `;
 
 export const Red = styled.span`
-  color: ${props => props.theme.palette.primary};
+  color: ${({ theme }) => theme.palette.primary};
 `;

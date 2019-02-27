@@ -4,11 +4,11 @@ import { breakpoint } from '../theme/breakpoint';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${props => props.theme.spacing.large} 0;
-  padding: ${props => props.theme.spacing.standard};
-  background: ${props => props.theme.palette.white};
-  box-shadow: ${props => props.theme.boxshadow.small};
-  border-radius: ${props => props.theme.borderradius.small};
+  margin: ${({ theme }) => theme.spacing.large} 0;
+  padding: ${({ theme }) => theme.spacing.standard};
+  background: ${({ theme }) => theme.palette.white};
+  box-shadow: ${({ theme }) => theme.boxshadow.small};
+  border-radius: ${({ theme }) => theme.borderradius.small};
 `;
 
 export const ListWrapper = styled.div`
@@ -23,16 +23,16 @@ export const ListWrapper = styled.div`
 `;
 
 export const ListItem = styled.div`
-  margin-bottom: ${props => props.theme.spacing.standard};
-  padding-right: ${props => props.theme.spacing.standard};
-  font-size: ${props => props.theme.fontsize.small};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  padding-right: ${({ theme }) => theme.spacing.standard};
+  font-size: ${({ theme }) => theme.fontsize.small};
   font-weight: 400;
   text-decoration: none;
   ${breakpoint.desktop`
-    flex: 0 0 ${props => 100 / props.rowCount}%;
+    flex: 0 0 ${({ rowCount }) => 100 / rowCount}%;
   `};
 
   &:hover {
-    color: ${props => props.theme.palette.primary};
+    color: ${({ theme }) => theme.palette.primary};
   }
 `;

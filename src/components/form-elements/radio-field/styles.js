@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
-  margin-right: ${props => props.theme.spacing.small};
+  margin-right: ${({ theme }) => theme.spacing.small};
   vertical-align: middle;
 `;
 
 export const InputWrapper = styled.div`
-  margin-bottom: ${props => props.theme.spacing.small};
-  margin-right: ${props =>
-    props.marginRight ? props.theme.spacing.small : null};
+  margin-bottom: ${({ theme }) => theme.spacing.small};
+  margin-right: ${({ marginRight, theme }) =>
+    marginRight ? theme.spacing.small : null};
 `;
 
 export const Label = styled.label`
@@ -18,5 +18,5 @@ export const Label = styled.label`
 `;
 
 export const LayoutWrapper = styled.div`
-  display: ${props => (props.inline ? 'flex' : 'block')};
+  display: ${({ inline }) => (inline ? 'flex' : 'block')};
 `;
