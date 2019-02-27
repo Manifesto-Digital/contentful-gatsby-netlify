@@ -4,10 +4,10 @@ import DonationFormHandler from '../donation-form-handler';
 import Button from '../button';
 
 export const Banner = styled.section`
-  padding: ${props => props.theme.spacing.standard} 0;
-  background-color: ${props => props.theme.palette.donate};
-  margin-bottom: ${props =>
-    props.removeMarginBottom ? '0' : props.theme.spacing.large};
+  padding: ${({ theme }) => theme.spacing.standard} 0;
+  background-color: ${({ theme }) => theme.palette.donate};
+  margin-bottom: ${({ removeMarginBottom, theme }) =>
+    removeMarginBottom ? '0' : theme.spacing.large};
 `;
 
 export const Wrapper = styled.section`
@@ -19,8 +19,8 @@ export const Wrapper = styled.section`
 `;
 
 export const Header = styled.h3`
-  color: ${props => props.theme.palette.white};
-  margin-bottom: ${props => props.theme.spacing.standard};
+  color: ${({ theme }) => theme.palette.white};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.tablet`
     flex: 0 1 50%;
@@ -37,5 +37,5 @@ export const StyledDonationFormHandler = styled(DonationFormHandler)`
 `;
 
 export const StyledButton = styled(Button)`
-  margin-left: ${props => props.theme.spacing.small};
+  margin-left: ${({ theme }) => theme.spacing.small};
 `;

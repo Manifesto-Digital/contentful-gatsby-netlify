@@ -4,22 +4,22 @@ import SVG from 'react-inlinesvg';
 export const InlineBanner = styled.div`
   position: relative;
   clear: both;
-  background: ${props =>
-    (props.bannerColour === 'default' && props.theme.palette.offWhite) ||
-    (props.bannerColour === 'grey' && props.theme.palette.offWhite) ||
-    (props.bannerColour === 'white' && props.theme.palette.white) ||
-    (props.bannerColour === 'transparent' && 'transparent')};
+  background: ${({ bannerColour, theme }) =>
+    (bannerColour === 'default' && theme.palette.offWhite) ||
+    (bannerColour === 'grey' && theme.palette.offWhite) ||
+    (bannerColour === 'white' && theme.palette.white) ||
+    (bannerColour === 'transparent' && 'transparent')};
 
-  padding: ${props => props.theme.spacing.standard};
+  padding: ${({ theme }) => theme.spacing.standard};
   margin-bottom: 1em;
   border-left: 4px solid;
-  border-color: ${props =>
-    (props.borderColour === 'default' && props.theme.palette.primary) ||
-    (props.borderColour === 'red' && props.theme.palette.primary) ||
-    (props.borderColour === 'grey' && props.theme.palette.grey45) ||
-    (props.borderColour === 'facebook-blue' && props.theme.palette.facebook) ||
-    (props.borderColour === 'twitter-blue' && props.theme.palette.twitter) ||
-    (props.borderColour === 'whatsapp-green' && props.theme.palette.whatsapp)};
+  border-color: ${({ borderColour, theme }) =>
+    (borderColour === 'default' && theme.palette.primary) ||
+    (borderColour === 'red' && theme.palette.primary) ||
+    (borderColour === 'grey' && theme.palette.grey45) ||
+    (borderColour === 'facebook-blue' && theme.palette.facebook) ||
+    (borderColour === 'twitter-blue' && theme.palette.twitter) ||
+    (borderColour === 'whatsapp-green' && theme.palette.whatsapp)};
 `;
 
 export const TextWrapper = styled.div`
@@ -30,7 +30,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const BannerSVG = styled(SVG)`
-  fill: ${props => props.theme.palette.black};
+  fill: ${({ theme }) => theme.palette.black};
   width: 30px;
   height: 30px;
   margin-right: 1em;

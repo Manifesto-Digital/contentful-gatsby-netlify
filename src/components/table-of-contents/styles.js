@@ -1,48 +1,46 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
-import theme from '../theme/variables';
-
 export const Table = styled.div`
   margin-bottom: 5px;
-  padding: ${theme.spacing.standard};
+  padding: ${({ theme }) => theme.spacing.standard};
 `;
 
 export const TableList = styled.ul`
-  padding-left: ${theme.spacing.standard};
+  padding-left: ${({ theme }) => theme.spacing.standard};
   list-style-type: square;
 `;
 
 export const OpeningStatement = styled.div`
-  margin-bottom: ${theme.spacing.standard};
-  padding: ${theme.spacing.standard};
-  background: ${theme.palette.offWhite};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  padding: ${({ theme }) => theme.spacing.standard};
+  background: ${({ theme }) => theme.palette.offWhite};
 `;
 
 export const Block = styled.div`
-  margin: ${theme.spacing.xl} auto;
+  margin: ${({ theme }) => theme.spacing.xl} auto;
 `;
 
 export const BlockTitle = styled.h3`
-  margin-bottom: ${theme.spacing.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
 `;
 
 export const BlockContent = styled.div`
-  margin-bottom: ${theme.spacing.large};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 `;
 
 export const ReferenceList = styled.ul`
   padding-left: 0;
   margin-left: 0;
   list-style: none;
-  font-size: ${theme.fontsize.small};
+  font-size: ${({ theme }) => theme.fontsize.small};
 
   ${breakpoint.desktop`
-    margin-left: -${theme.spacing.medium};
+    margin-left: -${({ theme }) => theme.spacing.medium};
   `};
 
   a {
-    margin-right: ${theme.spacing.small};
+    margin-right: ${({ theme }) => theme.spacing.small};
   }
 
   li {
@@ -50,19 +48,19 @@ export const ReferenceList = styled.ul`
   }
 
   p {
-    margin-bottom: ${theme.spacing.small};
+    margin-bottom: ${({ theme }) => theme.spacing.small};
   }
 `;
 
 export const SidebarInner = styled.div`
-  padding: ${theme.spacing.large} 0;
+  padding: ${({ theme }) => theme.spacing.large} 0;
 `;
 
 export const FootNotes = styled.div`
-  padding: ${theme.spacing.large} 0;
-  background: ${theme.palette.offWhite};
+  padding: ${({ theme }) => theme.spacing.large} 0;
+  background: ${({ theme }) => theme.palette.offWhite};
 `;
 
 export const FootNotesTitle = styled.h3`
-  margin-bottom: ${theme.spacing.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
 `;

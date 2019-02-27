@@ -3,13 +3,13 @@ import SVG from 'react-inlinesvg';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Title = styled.h2`
-  margin-bottom: ${props => props.theme.spacing.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${props => props.theme.spacing.large} 0;
+  margin: ${({ theme }) => theme.spacing.large} 0;
 `;
 
 export const ListWrapper = styled.div`
@@ -26,31 +26,31 @@ export const ListWrapper = styled.div`
 export const ListItem = styled.a`
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${props => props.theme.spacing.standard};
-  margin-right: ${props => props.theme.spacing.standard};
-  padding: ${props => props.theme.spacing.standard};
-  background: ${props => props.theme.palette.black};
-  border: 2px solid ${props => props.theme.palette.black};
-  color: ${props => props.theme.palette.white};
-  font-size: ${props => props.theme.fontsize.standard};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  margin-right: ${({ theme }) => theme.spacing.standard};
+  padding: ${({ theme }) => theme.spacing.standard};
+  background: ${({ theme }) => theme.palette.black};
+  border: 2px solid ${({ theme }) => theme.palette.black};
+  color: ${({ theme }) => theme.palette.white};
+  font-size: ${({ theme }) => theme.fontsize.standard};
   font-weight: 400;
   text-decoration: none;
 
   ${breakpoint.tablet`
-    flex: 0 0 calc(${props => 100 / props.columns}% - ${props =>
-    props.theme.spacing.standard});
+    flex: 0 0 calc(${({ columns }) => 100 / columns}% - ${({ theme }) =>
+    theme.spacing.standard});
   `};
 
   &:hover {
-    background: ${props => props.theme.palette.white};
-    color: ${props => props.theme.palette.black};
+    background: ${({ theme }) => theme.palette.white};
+    color: ${({ theme }) => theme.palette.black};
   }
 `;
 
 export const ArrowSVG = styled(SVG)`
   display: block;
   align-self: center;
-  fill: ${props => props.theme.palette.white};
+  fill: ${({ theme }) => theme.palette.white};
   flex-shrink: 0;
   width: 15px;
 `;

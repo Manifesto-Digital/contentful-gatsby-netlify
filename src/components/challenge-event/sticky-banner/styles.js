@@ -10,18 +10,18 @@ const fadeIn = keyframes`
 `;
 
 export const Banner = styled.div`
-  visibility: ${props => (props.visibility ? 'hidden' : 'visible')};
-  background-color: ${props => props.theme.palette.primary};
-  padding: ${props => props.theme.spacing.standard} 0;
+  visibility: ${({ visibility }) => (visibility ? 'hidden' : 'visible')};
+  background-color: ${({ theme }) => theme.palette.primary};
+  padding: ${({ theme }) => theme.spacing.standard} 0;
 `;
 
 export const BannerToStick = styled.div`
   position: fixed;
-  display: ${props => (props.bannerStuck ? 'block' : 'none')};
+  display: ${({ bannerStuck }) => (bannerStuck ? 'block' : 'none')};
   bottom: 0;
   width: 100%;
-  background-color: ${props => props.theme.palette.primary};
-  padding: ${props => props.theme.spacing.standard} 0;
+  background-color: ${({ theme }) => theme.palette.primary};
+  padding: ${({ theme }) => theme.spacing.standard} 0;
 
   ${({ bannerStuck, animateBanner }) =>
     bannerStuck &&
@@ -38,8 +38,8 @@ export const ContentContainer = styled.div`
   max-width: 440px;
   width: 100%;
   margin: 0 auto;
-  color: ${props => props.theme.palette.white};
-  padding: 0 ${props => props.theme.spacing.standard};
+  color: ${({ theme }) => theme.palette.white};
+  padding: 0 ${({ theme }) => theme.spacing.standard};
 `;
 
 export const EventName = styled.p`

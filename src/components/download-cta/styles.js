@@ -7,13 +7,13 @@ export const Button = styled.a`
   align-items: center;
   justify-content: space-between;
   padding: ${({ theme }) => `${theme.spacing.small} ${theme.spacing.standard}`};
-  background-color: ${props => props.theme.palette.grey45};
-  color: ${props => props.theme.palette.white};
+  background-color: ${({ theme }) => theme.palette.grey45};
+  color: ${({ theme }) => theme.palette.white};
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
-    color: ${props => props.theme.palette.white};
+    color: ${({ theme }) => theme.palette.white};
   }
 `;
 export const FileInfo = styled.div`
@@ -32,7 +32,7 @@ export const ButtonText = styled.div`
 
 export const ButtonSVG = styled(SVG)`
   display: block;
-  fill: ${props => props.theme.palette.white};
+  fill: ${({ theme }) => theme.palette.white};
   flex-shrink: 0;
   width: 20px;
   height: 20px;

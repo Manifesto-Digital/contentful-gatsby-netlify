@@ -3,7 +3,7 @@ import SVG from 'react-inlinesvg';
 import { breakpoint } from '../../theme/breakpoint';
 
 export const Wrapper = styled.section`
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 `;
 
 export const Flex = styled.div`
@@ -13,15 +13,15 @@ export const Flex = styled.div`
 
 export const Flex25 = styled.div`
   width: 100%;
-  margin-bottom: ${props => props.theme.spacing.standard};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.mobileLand`
         width: 50%;
-        padding-right: ${props => props.theme.spacing.standard};
+        padding-right: ${({ theme }) => theme.spacing.standard};
     `};
   ${breakpoint.desktop`
         width: 25%;
-        padding-right: ${props => props.theme.spacing.standard};
+        padding-right: ${({ theme }) => theme.spacing.standard};
     `};
 `;
 
@@ -30,7 +30,7 @@ export const Flex50 = styled.div`
 
   ${breakpoint.desktop`
         width: 50%;
-        padding-left: ${props => props.theme.spacing.standard};
+        padding-left: ${({ theme }) => theme.spacing.standard};
     `};
 `;
 
@@ -44,7 +44,7 @@ export const ListItem = styled.li`
   list-style: none;
   position: relative;
   margin-bottom: 5px;
-  padding-left: ${props => props.theme.spacing.standard};
+  padding-left: ${({ theme }) => theme.spacing.standard};
 
   &:last-of-type {
     margin-bottom: 0;
@@ -52,7 +52,7 @@ export const ListItem = styled.li`
 `;
 
 export const ListIcon = styled(SVG)`
-  margin-right: ${props => props.theme.spacing.small};
+  margin-right: ${({ theme }) => theme.spacing.small};
   position: absolute;
   top: 0;
   left: 0;
@@ -62,6 +62,6 @@ export const ListIcon = styled(SVG)`
   }
 
   path {
-    fill: ${props => props.theme.palette.primary};
+    fill: ${({ theme }) => theme.palette.primary};
   }
 `;

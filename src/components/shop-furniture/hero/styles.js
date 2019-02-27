@@ -3,8 +3,8 @@ import Image from '../../image';
 import { breakpoint } from '../../theme/breakpoint';
 
 export const Wrapper = styled.section`
-  padding-top: ${props => props.theme.spacing.large};
-  margin-bottom: ${props => props.theme.spacing.large};
+  padding-top: ${({ theme }) => theme.spacing.large};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 `;
 export const FlexWrapper = styled.div`
   display: flex;
@@ -18,14 +18,14 @@ export const FlexWrapper = styled.div`
 
 export const Content = styled.div`
   ${breakpoint.tablet`
-    padding-right: ${props => props.theme.spacing.standard};
+    padding-right: ${({ theme }) => theme.spacing.standard};
   `};
 `;
 export const SubHeading = styled.p`
-  font-size: ${props => props.theme.headers.h3};
+  font-size: ${({ theme }) => theme.headers.h3};
 
   span {
-    color: ${props => props.theme.palette.primary};
+    color: ${({ theme }) => theme.palette.primary};
   }
 `;
 
@@ -33,7 +33,7 @@ export const HeroImage = styled.div`
   flex-shrink: 0;
   ${breakpoint.tablet`
     width: 50%;
-    padding-left: ${props => props.theme.spacing.standard};
+    padding-left: ${({ theme }) => theme.spacing.standard};
   `};
   ${breakpoint.desktop`
     width: 30%;

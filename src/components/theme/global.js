@@ -19,8 +19,8 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
         margin: 0;
         padding: 0;
-        font-family: ${props => props.theme.fonts.primary};
-        color: ${props => props.theme.palette.black};
+        font-family: ${({ theme }) => theme.fonts.primary};
+        color: ${({ theme }) => theme.palette.black};
         overflow-x: hidden;
     }
 
@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     h4,
     h5,
     h6 {
-        font-family: ${props => props.theme.fonts.header};
+        font-family: ${({ theme }) => theme.fonts.header};
         font-weight: 500;
     }
 
@@ -41,23 +41,23 @@ export const GlobalStyle = createGlobalStyle`
 
 
     h1 {
-        font-size:  ${props => props.theme.headers.h2};
+        font-size:  ${({ theme }) => theme.headers.h2};
         ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h1};
+            font-size:  ${({ theme }) => theme.headers.h1};
             line-height: 1.15;
         `};
     }
 
     h2 {
-        font-size:  ${props => props.theme.headers.h3};
+        font-size:  ${({ theme }) => theme.headers.h3};
         ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h2};
+            font-size:  ${({ theme }) => theme.headers.h2};
         `};
     }
     h3 {
-        font-size:  ${props => props.theme.headers.h4};
+        font-size:  ${({ theme }) => theme.headers.h4};
         ${breakpoint.tablet`
-            font-size:  ${props => props.theme.headers.h3};
+            font-size:  ${({ theme }) => theme.headers.h3};
         `};
     }
 
@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     li {
         margin-bottom: .5rem;
     }
-    
+
     ol {
         list-style: none;
         padding-left: 0;
@@ -95,7 +95,7 @@ export const GlobalStyle = createGlobalStyle`
         top: 0;
     }
     .embedded-in-richtext {
-        margin-bottom: ${props => props.theme.spacing.standard};
+        margin-bottom: ${({ theme }) => theme.spacing.standard};
     }
 
     .ReactModal__Body--open {

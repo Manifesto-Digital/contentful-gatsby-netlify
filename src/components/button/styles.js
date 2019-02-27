@@ -7,9 +7,8 @@ export const DefaultButton = styled.button`
 `;
 
 export const IconHolder = styled(SVG)`
-  fill: ${props =>
-    (props.iconColour === 'black' && props.theme.palette.black) ||
-    props.theme.palette.white};
+  fill: ${({ iconColour, theme }) =>
+    (iconColour === 'black' && theme.palette.black) || theme.palette.white};
 
   display: inline-block;
   width: 20px;

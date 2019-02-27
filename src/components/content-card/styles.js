@@ -5,21 +5,21 @@ import ResponsiveImage from '../image/responsive.js';
 
 export const Card = styled.div`
   position: relative;
-  margin-bottom: ${props => props.theme.spacing.standard};
-  background: ${props => props.theme.palette.white};
-  border-radius: ${props => props.theme.borderradius.small};
-  box-shadow: ${props => props.theme.boxshadow.small};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  background: ${({ theme }) => theme.palette.white};
+  border-radius: ${({ theme }) => theme.borderradius.small};
+  box-shadow: ${({ theme }) => theme.boxshadow.small};
   text-decoration: none;
 
   &:hover {
-    box-shadow: ${props => props.theme.boxshadow.standard};
+    box-shadow: ${({ theme }) => theme.boxshadow.standard};
   }
 `;
 
 export const CardImage = styled(ResponsiveImage)`
   width: 100%;
-  border-radius: ${props => props.theme.borderradius.small}
-    ${props => props.theme.borderradius.small} 0;
+  border-radius: ${({ theme }) => theme.borderradius.small}
+    ${({ theme }) => theme.borderradius.small} 0;
 `;
 
 export const Wrapper = styled.div`
@@ -31,9 +31,9 @@ export const CardTitle = styled.h3`
   top: -20px;
   max-width: 100%;
   margin-bottom: 0;
-  padding: 5px ${props => props.theme.spacing.standard};
-  background-color: ${props => props.theme.palette.primary};
-  color: ${props => props.theme.palette.white};
+  padding: 5px ${({ theme }) => theme.spacing.standard};
+  background-color: ${({ theme }) => theme.palette.primary};
+  color: ${({ theme }) => theme.palette.white};
   font-size: 16px;
   font-weight: normal;
   text-overflow: ellipsis;
@@ -43,8 +43,8 @@ export const CardTitle = styled.h3`
 
 export const SummaryText = styled(LinkHandler)`
   display: block;
-  padding: ${props => props.theme.spacing.standard};
-  color: ${props => props.theme.palette.sanMarinoBlue};
+  padding: ${({ theme }) => theme.spacing.standard};
+  color: ${({ theme }) => theme.palette.sanMarinoBlue};
   text-decoration: none;
 `;
 
@@ -65,7 +65,7 @@ export const ArrowSVG = styled(SVG)`
   right: 2px;
   width: 25px;
   height: 25px;
-  color: ${props => props.theme.palette.white};
+  color: ${({ theme }) => theme.palette.white};
 
   svg {
     width: 100%;

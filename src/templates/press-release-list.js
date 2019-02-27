@@ -15,8 +15,8 @@ import PageTitle from '../components/page-title';
 import Pagination from '../components/pagination';
 
 const PressReleaseList = styled.div`
-  background: ${props => props.theme.palette.grey10};
-  padding-top: ${props => props.theme.spacing.large};
+  background: ${({ theme }) => theme.palette.grey10};
+  padding-top: ${({ theme }) => theme.spacing.large};
 `;
 
 const PressReleaseTemplate = ({ data, pageContext }) => {

@@ -5,13 +5,13 @@ export const CheckboxLabel = styled.label`
   display: block;
   padding-left: 15px;
   text-indent: -15px;
-  margin-bottom: ${props => props.theme.spacing.small};
+  margin-bottom: ${({ theme }) => theme.spacing.small};
   line-height: 1;
   position: relative;
 
   :before {
-    background: ${props => props.theme.palette.white};
-    border: 2px solid ${props => props.theme.palette.grey80};
+    background: ${({ theme }) => theme.palette.white};
+    border: 2px solid ${({ theme }) => theme.palette.grey80};
     content: '';
     display: inline-block;
     height: 20px;
@@ -40,16 +40,16 @@ export const Input = styled.input`
   ${visibilityStyles};
 
   :focus + label:before {
-    box-shadow: ${props => props.theme.boxshadow.small};
-    border-color: ${props => props.theme.palette.black};
+    box-shadow: ${({ theme }) => theme.boxshadow.small};
+    border-color: ${({ theme }) => theme.palette.black};
   }
 
   :checked + label:after {
     content: '';
     display: block;
     position: absolute;
-    border: solid ${props => props.theme.palette.black};
-    border-left: solid ${props => props.theme.palette.white};
+    border: solid ${({ theme }) => theme.palette.black};
+    border-left: solid ${({ theme }) => theme.palette.white};
     border-width: 0 2px 2px 0;
     height: 13px;
     left: 7px;

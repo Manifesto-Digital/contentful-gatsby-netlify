@@ -3,7 +3,7 @@ import ReactRecaptcha from 'react-recaptcha';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-  margin-bottom: ${props => props.theme.spacing.standard};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 `;
 
 const Recaptcha = props => {

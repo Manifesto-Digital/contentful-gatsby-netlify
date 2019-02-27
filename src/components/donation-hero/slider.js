@@ -18,19 +18,19 @@ export const markStyle = isActive => ({
   ...(isActive ? { fontWeight: 'bold', fontSize: '1.25em' } : {}),
 });
 
-export const StyledSlider = styled(Slider).attrs(props => ({
+export const StyledSlider = styled(Slider).attrs(({ theme }) => ({
   railStyle: {
     position: 'absolute',
     width: '100%',
     height: railHeight,
-    backgroundColor: props.theme.palette.grey25,
+    backgroundColor: theme.palette.grey25,
     borderRadius: railHeight / 2,
   },
   trackStyle: {
     position: 'absolute',
     width: '100%',
     height: railHeight,
-    backgroundColor: props.theme.palette.grey80,
+    backgroundColor: theme.palette.grey80,
     borderRadius: railHeight / 2,
   },
   handleStyle: {
@@ -39,18 +39,18 @@ export const StyledSlider = styled(Slider).attrs(props => ({
     height: handleSize,
     borderRadius: '50%',
     backgroundColor: 'white',
-    border: `1px solid ${props.theme.palette.grey15}`,
-    boxShadow: props.theme.boxshadow.small,
+    border: `1px solid ${theme.palette.grey15}`,
+    boxShadow: theme.boxshadow.small,
     marginLeft: -(handleSize / 2),
     marginTop: -handleOverflow,
   },
 }))`
   position: relative;
   padding-top: ${markHeight + handleOverflow}px;
-  margin-left: ${props => props.theme.spacing.small};
-  margin-right: ${props => props.theme.spacing.small};
+  margin-left: ${({ theme }) => theme.spacing.small};
+  margin-right: ${({ theme }) => theme.spacing.small};
   margin-bottom: calc(
-    ${props => props.theme.spacing.large} + ${handleOverflow}px
+    ${({ theme }) => theme.spacing.large} + ${handleOverflow}px
   );
 `;
 

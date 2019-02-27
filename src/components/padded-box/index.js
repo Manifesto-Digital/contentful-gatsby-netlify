@@ -6,14 +6,14 @@ const getStyles = ({
   shadow = false,
 }) => {
   const styles = css`
-    padding: ${props => props.theme.spacing[padding]};
-    background-color: ${props => props.theme.palette[bg]};
-    box-shadow: ${props =>
-      shadow === false ? 0 : props.theme.boxshadow.small};
-    border-radius: ${props =>
-      shadow === false ? 0 : props.theme.borderradius.small};
-    margin-bottom: ${props =>
-      props.removeMarginBottom ? '0' : props.theme.spacing.medium};
+    padding: ${({ theme }) => theme.spacing[padding]};
+    background-color: ${({ theme }) => theme.palette[bg]};
+    box-shadow: ${({ theme }) =>
+      shadow === false ? 0 : theme.boxshadow.small};
+    border-radius: ${({ theme }) =>
+      shadow === false ? 0 : theme.borderradius.small};
+    margin-bottom: ${({ removeMarginBottom, theme }) =>
+      removeMarginBottom ? '0' : theme.spacing.medium};
   `;
 
   return styles;
