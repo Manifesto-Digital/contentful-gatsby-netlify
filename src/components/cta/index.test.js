@@ -38,7 +38,7 @@ it('displays the correct text', () => {
 it('displays an icon if provided', () => {
   const mockData = createCTA({ icon: createImage() });
   const wrapper = mountWithTheme(<CTA {...CTA.fromCMS(mockData)} />);
-  expect(wrapper.find('img').prop('src')).toBe(mockData.icon.file.url);
+  expect(wrapper.find('img').prop('src')).toContain(mockData.icon.file.url);
 });
 
 it('displays width 100% if fullWidth is specified', () => {

@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "13.0.1",
+    "@nearform/gatsby-source-contentful": "^1.1.0",
     "@reach/router": "^1.2.1",
     "@svgr/webpack": "4.1.0",
     "babel-plugin-styled-components": "^1.8.0",
@@ -29,6 +30,7 @@
     "google-map-react": "1.1.2",
     "jest-styled-components": "^6.3.1",
     "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
     "rc-slider": "^8.6.4",
     "react": "16.8.1",
     "react-dom": "16.8.1",

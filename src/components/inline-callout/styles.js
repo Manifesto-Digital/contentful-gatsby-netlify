@@ -27,6 +27,9 @@ export const TextWrapper = styled.div`
   & > :last-child {
     margin-bottom: 0;
   }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 export const BannerSVG = styled(SVG)`

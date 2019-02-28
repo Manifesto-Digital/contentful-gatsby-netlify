@@ -78,6 +78,10 @@ Array [
   margin-bottom: 0;
 }
 
+.c2 p:last-of-type {
+  margin-bottom: 0;
+}
+
 .c0 {
   max-width: 1140px;
   margin: 0 auto;

@@ -47,12 +47,12 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
               richText={leftColumnText}
             />
             {leftColumnCalloutBanners &&
-              leftColumnCalloutBanners.map(calloutBanner => (
+              leftColumnCalloutBanners.map((calloutBanner, i) => (
                 <InlineCallOut
                   insideContainer={!insideContainer}
-                  key={calloutBanner.id + 1}
+                  key={calloutBanner.id + i}
                 >
-                  <RichText richText={calloutBanner} />
+                  <RichText richText={calloutBanner.content} />
                 </InlineCallOut>
               ))}
           </ContentSemi>
@@ -64,15 +64,17 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
               />
             )}
             {rightColumnCta && <CTA {...CTA.fromCMS(rightColumnCta)} />}
-            {rightColumnImage && <Image image={rightColumnImage} />}
+            {rightColumnImage && (
+              <Image image={rightColumnImage} width={1000} />
+            )}
 
             {rightColumnCalloutBanners &&
-              rightColumnCalloutBanners.map(calloutBanner => (
+              rightColumnCalloutBanners.map((calloutBanner, i) => (
                 <InlineCallOut
                   insideContainer={!insideContainer}
-                  key={calloutBanner.id + 1}
+                  key={calloutBanner.id + i}
                 >
-                  <RichText richText={calloutBanner} />
+                  <RichText richText={calloutBanner.content} />
                 </InlineCallOut>
               ))}
           </ContentSemi>

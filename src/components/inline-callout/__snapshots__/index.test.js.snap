@@ -19,6 +19,10 @@ exports[`renders correctly with icon chosen in cms 1`] = `
   margin-bottom: 0;
 }
 
+.c3 p:last-of-type {
+  margin-bottom: 0;
+}
+
 .c2 {
   fill: #212122;
   width: 30px;
@@ -78,6 +82,10 @@ exports[`renders correctly with no options chosen in cms 1`] = `
 }
 
 .c2 > :last-child {
+  margin-bottom: 0;
+}
+
+.c2 p:last-of-type {
   margin-bottom: 0;
 }
 
