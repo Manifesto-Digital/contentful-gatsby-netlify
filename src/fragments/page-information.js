@@ -6,6 +6,7 @@ export const PageInformationFragment = graphql`
     seoTitle
     seoDescription {
       internal {
+        content
         type
       }
     }
