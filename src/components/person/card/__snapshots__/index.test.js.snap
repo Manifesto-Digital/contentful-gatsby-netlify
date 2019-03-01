@@ -120,7 +120,7 @@ exports[`renders correctly 1`] = `
   <img
     alt="Collection hero"
     className="c1"
-    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fit=crop&h=500&w=500"
+    src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fit=fill&h=500&w=500"
   />
   <div
     className="c2"
