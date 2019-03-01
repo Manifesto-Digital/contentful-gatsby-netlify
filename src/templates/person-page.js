@@ -10,12 +10,9 @@ import { Container, TwoThirds } from '../components/styled/containers';
 const Page = ({ data }) => {
   const { title, person, quotation } = data.contentfulPageAssemblyPerson;
   const { jobTitle, photo, bio } = person;
-  const personList = data.contentfulPageAssemblyPerson
-    ? data.allContentfulTopicPerson.edges
+  const personList = data.allContentfulTopicPerson
+    ? data.allContentfulTopicPerson.edges.map(item => item.node)
     : null;
-
-  // Turn the array of nodes into an array of objects
-  const personListArray = personList.map(item => item.node);
 
   return (
     <Layout>
@@ -32,7 +29,7 @@ const Page = ({ data }) => {
               insideContainer
             />
             {bio && <p>{bio.internal.content}</p>}
-            <PersonCardList list={personListArray} insideContainer />
+            <PersonCardList list={personList} insideContainer />
           </TwoThirds>
         </Container>
       </article>
