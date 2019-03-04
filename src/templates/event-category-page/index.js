@@ -20,8 +20,13 @@ const EventCategoryPage = ({ data }) => {
     featuredEvent,
   } = data.contentfulPageAssemblyEventCategory;
 
-  const events = data.allContentfulPageAssemblyStandardEvent.edges
-    .concat(data.allContentfulPageAssemblyChallengeEvent.edges)
+  const standardEventPages =
+    data.allContentfulPageAssemblyStandardEvent.edges || [];
+  const challengeEventPages =
+    data.allContentfulPageAssemblyChallengeEvent.edges || [];
+
+  const events = standardEventPages
+    .concat(challengeEventPages)
     .map(event => event.node)
     .filter(event =>
       featuredEvent ? event.slug !== featuredEvent[0].slug : true
