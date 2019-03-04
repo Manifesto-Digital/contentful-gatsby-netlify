@@ -4,13 +4,13 @@ import { graphql } from 'gatsby';
 import useToggle from '../utils/useToggle';
 import { eventStatuses } from '../components/standard-event/data';
 // Components
+import SideBarAssemblies from '../components/assemblies/sidebar';
 import EventHero from '../components/standard-event/hero';
 import Layout from '../components/layout';
 import ContentForm from '../components/form';
 import RichText from '../components/rich-text';
 import Modal from '../components/modal';
 import EventMap from '../components/standard-event/map';
-import ContentCard from '../components/content-card';
 // Styles
 import {
   Container,
@@ -39,20 +39,8 @@ const Page = ({ data }) => {
     waitingListForm,
     twoColumn,
     bodyCopy,
+    sidebarAssemblies,
   } = data.contentfulPageAssemblyStandardEvent;
-
-  const sidebarCards = data.contentfulPageAssemblyStandardEvent.sidebarCards
-    ? data.contentfulPageAssemblyStandardEvent.sidebarCards.cards.map(card => ({
-        title: card.event.eventType,
-        slug: card.slug,
-        pageInformation: {
-          shortDescription: {
-            shortDescription: card.event.shortDescription,
-          },
-          pageThumbnail: card.event.thumbnailImage,
-        },
-      }))
-    : false;
 
   const { eventLocation } = event;
   const eventStatus = consistentString(event.eventStatus);
@@ -78,10 +66,7 @@ const Page = ({ data }) => {
                 <RichText richText={bodyCopy} />
               </TwoThirds>
               <SideBar>
-                {sidebarCards &&
-                  sidebarCards.map((sidebarCard, key) => (
-                    <ContentCard data={sidebarCard} key={key} />
-                  ))}
+                <SideBarAssemblies assemblies={sidebarAssemblies} />
               </SideBar>
             </ContentWithSideBar>
           </Container>
@@ -176,19 +161,8 @@ export const standardEventPageQuery = graphql`
       waitingListForm {
         ...AssemblyFormFragment
       }
-      sidebarCards {
-        cards {
-          slug
-          event {
-            eventType
-            shortDescription
-            thumbnailImage {
-              file {
-                url
-              }
-            }
-          }
-        }
+      sidebarAssemblies {
+        ...SidebarFragment
       }
     }
   }

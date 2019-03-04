@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { consistentString } from '../../utils/content-formatting';
 // Styles
 import { Container } from '../styled/containers';
 import { Header, Wrapper, StyledLinkHandler } from './styles';
 
-const Banner = ({ banner }) => {
+const Banner = ({ banner, sidebar }) => {
   const {
     headerText,
     bannerColour,
@@ -16,15 +17,18 @@ const Banner = ({ banner }) => {
 
   return (
     <Wrapper
-      bg={bannerColour.toLowerCase()}
+      bg={consistentString(bannerColour)}
       removeMarginBottom={removeMarginBottom}
+      sidebar={sidebar}
     >
       <Container>
-        <Header bg={bannerColour.toLowerCase()}>{headerText}</Header>
+        <Header as={sidebar ? 'h3' : 'h2'} bg={consistentString(bannerColour)}>
+          {headerText}
+        </Header>
         <StyledLinkHandler
           externalUrl={externalUrl}
           internalLink={internalLink}
-          bg={bannerColour.toLowerCase()}
+          bg="black"
         >
           {linkText}
         </StyledLinkHandler>
@@ -45,6 +49,7 @@ Banner.propTypes = {
     externalUrl: PropTypes.string,
     removeMarginBottom: PropTypes.bool,
   }),
+  sidebar: PropTypes.bool,
 };
 
 export default Banner;

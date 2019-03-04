@@ -74,7 +74,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c0 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   background: #e5e5e5;
   padding: 30px 0;
 }
@@ -116,7 +116,7 @@ exports[`renders correctly 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 "
       dangerouslySetInnerHTML={
         Object {
           "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
