@@ -166,5 +166,5 @@ export const createPerson = createFactory({
         'Nunc nonummy metus. Fusce pharetra convallis urna. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.',
     },
   },
-  jobTitle: 'Being awesome',
+  jobTitle: 'Developer',
 });
