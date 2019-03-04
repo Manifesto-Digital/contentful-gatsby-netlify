@@ -3711,10 +3711,10 @@ contentful-batch-libs@^9.0.0:
     lodash "^4.0.1"
     moment "^2.18.1"
 
-contentful-cli@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/contentful-cli/-/contentful-cli-0.18.0.tgz#e8215106777a2b053ac6ae36a8d389fc59c02c00"
-  integrity sha512-eVMbzJZtO0BcZMrfVyfy7dvZ0/yKe6xLzracj1g/hwPjisp1KQZ98H1wzqH4O9W0h3Y/WbYWiTxbLiCfWYDRFw==
+contentful-cli@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/contentful-cli/-/contentful-cli-0.20.0.tgz#ace095aa916e2200a1a0cc11856e1d2dbc8a9136"
+  integrity sha512-4T0NNWgNvE2I1EnpaxM1AGJWrnfL/bGHR697lX0ecdUGwtwiSSTCXEoPEZandw6PLtYx2rurromVm9UTd4kHOw==
   dependencies:
     ast-types "^0.11.5"
     bfj "^6.1.1"
@@ -3727,7 +3727,7 @@ contentful-cli@^0.18.0:
     contentful-export "^7.3.0"
     contentful-import "^7.3.0"
     contentful-management "^6.0.0-beta1"
-    contentful-migration "^0.16.1"
+    contentful-migration "^0.16.3"
     emojic "^1.1.11"
     execa "^0.10.0"
     figlet "^1.2.0"
@@ -3814,7 +3814,7 @@ contentful-management@^1.0.6:
     contentful-sdk-core "~2.5.0"
     lodash "~4.2.0"
 
-contentful-management@^5.3.0, contentful-management@^5.4.0:
+contentful-management@^5.3.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-5.6.0.tgz#fb02331183fa1385967e261bebc6a7e5995a0fcb"
   integrity sha512-keBXPHSVxtYRwcnEFreCVfDGD5XZGD/pCkS+1UybvFmaxnXppTfnlvEUW8MoMg4GunN6BELl9ButBfoUfhqaYg==
@@ -3832,7 +3832,7 @@ contentful-management@^6.0.0-beta1:
     contentful-sdk-core "^6.0.1"
     lodash "^4.17.10"
 
-contentful-migration@^0.16.1:
+contentful-migration@^0.16.3:
   version "0.16.6"
   resolved "https://registry.yarnpkg.com/contentful-migration/-/contentful-migration-0.16.6.tgz#ffb51ec377ce40d7d3c94b20d3d2614b68e080cd"
   integrity sha512-w4iqTtCKUyXQyFDXUuLrxiPGMOhHV4WYqgiWkWP6awglzal8eGENBe22LPuhUJ8ZPUypxYiCEGl+QOUxEyfCKg==
