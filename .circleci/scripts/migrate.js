@@ -200,7 +200,7 @@
         console.log('=====Generating content import=====');
         if (existsSync(seedFilePath)) {
           await exec(
-            `contentful space import --space-id ${SPACE_ID} --environment-id ${ENVIRONMENT_ID} --content-file ${seedFilePath}`
+            `contentful space import --space-id ${SPACE_ID} --environment-id ${ENVIRONMENT_ID} --content-file ${seedFilePath} --management-Token ${CMA_ACCESS_TOKEN}`
           );
         } else {
           console.log(`No Import found for: ${seedFilePath}`);
