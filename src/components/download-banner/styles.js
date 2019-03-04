@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Banner = styled.div`
-  padding: ${props => props.theme.spacing.standard} 0;
-  margin-bottom: ${props =>
-    props.removeMarginBottom ? '0' : props.theme.spacing.large};
+  padding: ${({ theme }) => theme.spacing.standard} 0;
+  margin-bottom: ${({ removeMarginBottom, theme }) =>
+    removeMarginBottom ? '0' : theme.spacing.large};
 `;
 
 export const Wrapper = styled.div`
@@ -21,7 +21,7 @@ export const FileImage = styled.div`
   display: none;
   float: left;
   max-width: 90px;
-  margin-right: ${props => props.theme.spacing.standard};
+  margin-right: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.mobileLand`
     display: block;

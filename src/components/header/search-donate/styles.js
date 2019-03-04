@@ -5,15 +5,13 @@ import { buttonReset, buttonStyles } from '../../styled/buttons';
 import { inputStyles } from '../../styled/inputs';
 import LinkHandler from '../../link-handler';
 
-import theme from '../../theme/variables';
-
 export const InputWrap = styled.div`
   display: flex;
   margin-right: 5px;
-  font-size: ${theme.fontsize.small};
+  font-size: ${({ theme }) => theme.fontsize.small};
   width: 100%;
-  margin: 0 ${theme.spacing.small};
-  border: 1px solid ${theme.palette.grey10};
+  margin: 0 ${({ theme }) => theme.spacing.small};
+  border: 1px solid ${({ theme }) => theme.palette.grey10};
 
   ${breakpoint.desktop`
     width: auto;
@@ -25,7 +23,7 @@ export const SearchInput = styled.input`
   ${inputStyles}
   width: 100%;
   margin-right: 1px;
-  background-color: ${theme.palette.white};
+  background-color: ${({ theme }) => theme.palette.white};
   border: 0;
 
   ${breakpoint.desktop`
@@ -38,14 +36,14 @@ export const SearchButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 ${theme.spacing.small};
-  background-color: ${theme.palette.white};
+  padding: 0 ${({ theme }) => theme.spacing.small};
+  background-color: ${({ theme }) => theme.palette.white};
 `;
 
 export const SearchIcon = styled(SVG)`
   display: block;
   width: 18px;
-  fill: ${theme.palette.royalBlue};
+  fill: ${({ theme }) => theme.palette.royalBlue};
 `;
 
 export const DonateButton = styled(LinkHandler)`
@@ -53,14 +51,14 @@ export const DonateButton = styled(LinkHandler)`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: ${({ MobileMenu }) => MobileMenu && theme.spacing.small};
+  margin-right: ${({ MobileMenu, theme }) => MobileMenu && theme.spacing.small};
   text-decoration: none;
   ${breakpoint.desktop`
     display: ${({ MobileMenu }) => (MobileMenu ? 'none' : 'flex')};
   `}
 
   &:hover {
-    color: ${theme.palette.white};
+    color: ${({ theme }) => theme.palette.white};
   }
 `;
 

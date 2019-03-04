@@ -8,12 +8,12 @@ export const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   flex-basis: 100%;
-  padding: ${props => props.theme.spacing.standard};
+  padding: ${({ theme }) => theme.spacing.standard};
   text-align: center;
-  background: ${props => props.theme.palette.offWhite};
-  box-shadow: ${props => props.theme.boxshadow.small};
-  border-radius: ${props => props.theme.borderradius.small};
-  margin-bottom: ${props => props.theme.spacing.standard};
+  background: ${({ theme }) => theme.palette.offWhite};
+  box-shadow: ${({ theme }) => theme.boxshadow.small};
+  border-radius: ${({ theme }) => theme.borderradius.small};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.tablet`
     flex-basis: ${({ cardsCount }) =>
@@ -23,23 +23,23 @@ export const CardContainer = styled.div`
   `}
 
   &:hover {
-    box-shadow: ${props => props.theme.boxshadow.standard};
+    box-shadow: ${({ theme }) => theme.boxshadow.standard};
   }
 `;
 
 export const CardSVG = styled(SVG)`
-  fill: ${props => props.theme.palette.black};
+  fill: ${({ theme }) => theme.palette.black};
   width: 40px;
   height: 40px;
   display: inline-block;
 `;
 
 export const TitleText = styled.h3`
-  margin-top: ${props => props.theme.spacing.medium};
+  margin-top: ${({ theme }) => theme.spacing.medium};
 `;
 
 export const SubText = styled.p`
-  margin-top: ${props => props.theme.spacing.standard};
+  margin-top: ${({ theme }) => theme.spacing.standard};
 `;
 
 export const CardCTA = styled(CTA)`

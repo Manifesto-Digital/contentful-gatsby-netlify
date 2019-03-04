@@ -23,13 +23,13 @@ export const CardRow = styled.div`
 `;
 
 export const BannerBackground = styled.section`
-  margin-bottom: ${props => props.theme.spacing.standard};
-  background: ${props =>
-    (props.bannerColour === 'white' && props.theme.palette.white) ||
-    (props.bannerColour === 'grey' && props.theme.palette.grey10)};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  background: ${({ bannerColour, theme }) =>
+    (bannerColour === 'white' && theme.palette.white) ||
+    (bannerColour === 'grey' && theme.palette.grey10)};
 
-  padding: ${props =>
-    props.bannerColour === 'grey' ? props.theme.spacing.medium : '0'}
+  padding: ${({ bannerColour, theme }) =>
+    bannerColour === 'grey' ? theme.spacing.medium : '0'}
     0;
 
     ${Card} {
@@ -53,7 +53,7 @@ export const BannerBackground = styled.section`
             position: absolute;
             bottom: 20px;
             left: 20px;
-            margin-right: ${props => props.theme.spacing.standard};
+            margin-right: ${({ theme }) => theme.spacing.standard};
             background: ${({ theme }) => theme.palette.overlayLight};
           }
 
@@ -85,7 +85,7 @@ export const BannerBackground = styled.section`
 `;
 
 export const HeaderText = styled.h2`
-  margin-bottom: ${props => props.theme.spacing.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
 
   a {
     text-decoration: none;

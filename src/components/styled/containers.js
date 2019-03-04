@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Container = styled.div`
-  max-width: ${props => props.theme.sizes.maxWidth};
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
   margin: 0 auto;
   padding: 0
-    ${props => (props.padding === false ? 0 : props.theme.spacing.standard)};
+    ${({ padding, theme }) => (padding === false ? 0 : theme.spacing.standard)};
 `;
 
 export const TwoThirds = styled.div`
@@ -36,8 +36,8 @@ export const SideBar = styled.div`
     max-width: 32%;
     width: 100%;
     margin-top: 0;
-    padding-left: ${props => !props.left && props.theme.spacing.xl};
-    padding-right: ${props => props.left && props.theme.spacing.xl};
+    padding-left: ${({ left, theme }) => !left && theme.spacing.xl};
+    padding-right: ${({ left, theme }) => left && theme.spacing.xl};
   `};
 `;
 
@@ -49,9 +49,7 @@ export const FlexBetweenContainer = styled.div`
 `;
 
 export const Section = styled.section`
-  padding: ${props => props.theme.spacing.medium} 0;
-  background-color: ${props =>
-    props.backgroundColour
-      ? props.backgroundColour
-      : props.theme.palette.white};
+  padding: ${({ theme }) => theme.spacing.medium} 0;
+  background-color: ${({ backgroundColour, theme }) =>
+    backgroundColour || theme.palette.white};
 `;

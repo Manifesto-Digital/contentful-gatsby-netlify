@@ -3,37 +3,35 @@ import styled, { css } from 'styled-components';
 export const buttonStyles = css`
   display: inline-block;
   text-align: center;
-  padding: ${props => props.theme.spacing.small} 1em;
+  padding: ${({ theme }) => theme.spacing.small} 1em;
   font-weight: normal;
-  background-color: ${props =>
-    (props.disabled && props.theme.palette.grey60) ||
-    (props.bg === 'red' && props.theme.palette.primary) ||
-    (props.bg === 'black' && props.theme.palette.black) ||
-    (props.bg === 'blue' && props.theme.palette.sanMarinoBlue) ||
-    (props.bg === 'donate' && props.theme.palette.donate) ||
-    (props.bg === 'white-outline' && 'transparent')};
+  background-color: ${({ disabled, bg, theme }) =>
+    (disabled && theme.palette.grey60) ||
+    (bg === 'red' && theme.palette.primary) ||
+    (bg === 'black' && theme.palette.black) ||
+    (bg === 'blue' && theme.palette.sanMarinoBlue) ||
+    (bg === 'donate' && theme.palette.donate) ||
+    (bg === 'white-outline' && 'transparent')};
 
-  border: ${props =>
-    props.bg === 'white-outline'
-      ? `1px solid ${props.theme.palette.white}`
-      : 'none'};
+  border: ${({ bg, theme }) =>
+    bg === 'white-outline' ? `1px solid ${theme.palette.white}` : 'none'};
 
-  color: ${props =>
-    (props.bg === 'red' && props.theme.palette.white) ||
-    (props.bg === 'black' && props.theme.palette.white) ||
-    (props.bg === 'blue' && props.theme.palette.white) ||
-    (props.bg === 'donate' && props.theme.palette.white) ||
-    (props.bg === 'white-outline' && props.theme.palette.white)};
+  color: ${({ bg, theme }) =>
+    (bg === 'red' && theme.palette.white) ||
+    (bg === 'black' && theme.palette.white) ||
+    (bg === 'blue' && theme.palette.white) ||
+    (bg === 'donate' && theme.palette.white) ||
+    (bg === 'white-outline' && theme.palette.white)};
 
-  ${props => props.fullWidth && 'width: 100%'};
+  ${({ fullWidth }) => fullWidth && 'width: 100%'};
 
   &:hover {
-    color: ${props =>
-      (props.bg === 'red' && props.theme.palette.white) ||
-      (props.bg === 'black' && props.theme.palette.white) ||
-      (props.bg === 'blue' && props.theme.palette.white) ||
-      (props.bg === 'donate' && props.theme.palette.white) ||
-      (props.bg === 'white-outline' && props.theme.palette.white)};
+    color: ${({ bg, theme }) =>
+      (bg === 'red' && theme.palette.white) ||
+      (bg === 'black' && theme.palette.white) ||
+      (bg === 'blue' && theme.palette.white) ||
+      (bg === 'donate' && theme.palette.white) ||
+      (bg === 'white-outline' && theme.palette.white)};
   }
 `;
 
@@ -51,13 +49,13 @@ export const buttonReset = css`
 
 export const SignUpButton = styled.a`
   ${buttonStyles};
-  border: 4px solid ${props => props.theme.palette.white};
-  color: ${props => props.theme.palette.white};
+  border: 4px solid ${({ theme }) => theme.palette.white};
+  color: ${({ theme }) => theme.palette.white};
   text-decoration: none;
   transition: all 0.2s ease-out;
 
   &:hover {
-    color: ${props => props.theme.palette.black};
-    background-color: ${props => props.theme.palette.white};
+    color: ${({ theme }) => theme.palette.black};
+    background-color: ${({ theme }) => theme.palette.white};
   }
 `;

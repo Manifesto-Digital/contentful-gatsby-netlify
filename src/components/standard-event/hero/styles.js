@@ -6,7 +6,7 @@ import Button from '../../button';
 
 export const FlexHeroContent = styled.div`
   flex: auto;
-  margin-top: ${props => props.theme.spacing.standard};
+  margin-top: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.desktop`
     margin-top: 0;
@@ -25,7 +25,7 @@ export const FlexHeroImage = styled.div`
 `;
 
 export const UnbulletedList = styled.ul`
-  margin-top: ${props => props.theme.spacing.small};
+  margin-top: ${({ theme }) => theme.spacing.small};
   list-style: none;
   padding-left: 0;
 `;
@@ -51,13 +51,13 @@ export const StyledSVG = styled(SVG)`
 
 export const MoneySpan = styled.span`
   font-weight: bold;
-  color: ${props => props.theme.palette.primary};
+  color: ${({ theme }) => theme.palette.primary};
 `;
 
 export const MapButton = styled.a`
-  margin-left: ${props => props.theme.spacing.small};
+  margin-left: ${({ theme }) => theme.spacing.small};
   padding: 5px;
-  background: ${props => props.theme.palette.sanMarinoBlue};
+  background: ${({ theme }) => theme.palette.sanMarinoBlue};
   color: white;
   cursor: pointer;
 

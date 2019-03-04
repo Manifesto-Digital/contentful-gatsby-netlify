@@ -17,15 +17,15 @@ export const CoveringLink = styled(LinkHandler)`
 `;
 
 export const PostedDate = styled.p`
-  color: ${props => props.theme.palette.grey45};
+  color: ${({ theme }) => theme.palette.grey45};
 `;
 
 export const ArrowIcon = styled(SVG)``;
 
 export const IconHolder = styled.div`
-  border-bottom-right-radius: ${props => props.theme.borderradius.small};
-  background: ${props => props.theme.palette.grey45};
-  color: ${props => props.theme.palette.white};
+  border-bottom-right-radius: ${({ theme }) => theme.borderradius.small};
+  background: ${({ theme }) => theme.palette.grey45};
+  color: ${({ theme }) => theme.palette.white};
   padding-top: 3px;
   height: 30px;
   width: 30px;

@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 export const Input = styled.input`
   ${inputStyles}
   padding-left: 30px;
-  max-width: ${props => (props.fullWidth ? '100%' : '10em')};
+  max-width: ${({ fullWidth }) => (fullWidth ? '100%' : '10em')};
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -23,5 +23,5 @@ export const CurrencySymbol = styled.span`
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  font-size: ${props => props.theme.fontsize.small};
+  font-size: ${({ theme }) => theme.fontsize.small};
 `;

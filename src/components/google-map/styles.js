@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
 import MapIcon from './map-icon.png';
-import theme from '../theme/variables';
 
 export const Wrapper = styled.main`
   width: 100%;
@@ -11,10 +10,10 @@ export const Wrapper = styled.main`
 export const Address = styled.div`
   display: flex;
   align-items: center;
-  margin: ${theme.spacing.small} 0;
+  margin: ${({ theme }) => theme.spacing.small} 0;
 
   svg {
-    margin-right: ${theme.spacing.small};
+    margin-right: ${({ theme }) => theme.spacing.small};
   }
 `;
 
@@ -51,7 +50,7 @@ export const Close = styled.div`
   height: 23px;
   padding-bottom: 1px;
   padding-left: 1px;
-  color: ${theme.palette.black};
+  color: ${({ theme }) => theme.palette.black};
   font-size: 27px;
 `;
 
@@ -61,8 +60,8 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  padding: ${theme.spacing.small};
-  background: ${theme.palette.white};
+  padding: ${({ theme }) => theme.spacing.small};
+  background: ${({ theme }) => theme.palette.white};
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, 20%);
   transition: opacity 0.1s ease-in;
@@ -75,7 +74,7 @@ export const InfoWrapper = styled.div`
 export const InfoInside = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: ${theme.fontsize.small};
+  font-size: ${({ theme }) => theme.fontsize.small};
 `;
 
 export const InfoAddress = styled.div`

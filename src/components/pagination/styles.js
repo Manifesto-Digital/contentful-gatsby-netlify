@@ -10,7 +10,7 @@ export const UnorderedList = styled.ul`
 `;
 export const ListItem = styled.li`
   list-style: none;
-  padding: ${props => (props.active ? props.theme.spacing.small : null)};
+  padding: ${({ active, theme }) => (active ? theme.spacing.small : null)};
 `;
 
 export const SVGIcon = styled(SVG)`
@@ -25,7 +25,7 @@ export const SVGIcon = styled(SVG)`
 
 export const Link = styled(LinkHandler)`
   display: block;
-  padding: ${props => props.theme.spacing.small};
+  padding: ${({ theme }) => theme.spacing.small};
   ${({ disabled, theme }) =>
     disabled &&
     `

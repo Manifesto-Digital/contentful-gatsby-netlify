@@ -9,13 +9,13 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
-  margin-bottom: ${props => props.theme.spacing.standard};
-  padding: 0 ${props => props.theme.spacing.standard};
-  border: 2px solid ${props => props.theme.palette.royalBlue};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  padding: 0 ${({ theme }) => theme.spacing.standard};
+  border: 2px solid ${({ theme }) => theme.palette.royalBlue};
 
   ${breakpoint.tablet`
     flex-direction: row;
-    padding: 0 ${props => props.theme.spacing.medium};
+    padding: 0 ${({ theme }) => theme.spacing.medium};
   `}
 `;
 
@@ -29,26 +29,26 @@ export const ShareLink = styled.a`
   ${linkStyles}
   display:flex;
   width: 100%;
-  padding: ${props => props.theme.spacing.standard} 0;
+  padding: ${({ theme }) => theme.spacing.standard} 0;
   text-decoration: none;
 
   ${breakpoint.tablet`
     width: auto;
-    padding: ${props => props.theme.spacing.medium} 0;
+    padding: ${({ theme }) => theme.spacing.medium} 0;
   `}
 
   &:hover {
-    color: ${props => props.theme.palette.primary};
+    color: ${({ theme }) => theme.palette.primary};
     svg {
-      fill: ${props => props.theme.palette.primary};
+      fill: ${({ theme }) => theme.palette.primary};
     }
   }
 `;
 
 export const StyledSVG = styled(SVG)`
   display: block;
-  margin-right: ${props => props.theme.spacing.standard};
-  fill: ${props => props.theme.palette.royalBlue};
+  margin-right: ${({ theme }) => theme.spacing.standard};
+  fill: ${({ theme }) => theme.palette.royalBlue};
 
   svg {
     width: 30px;

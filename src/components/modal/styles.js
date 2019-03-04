@@ -6,7 +6,7 @@ import { buttonReset } from '../styled/buttons';
 export const StyledCloseButton = styled.button`
   ${buttonReset};
   line-height: 1;
-  padding: ${props => props.theme.spacing.small};
+  padding: ${({ theme }) => theme.spacing.small};
   position: absolute;
   right: 0;
   top: 0;
@@ -19,7 +19,7 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: ${props => props.theme.palette.overlay};
+    background-color: ${({ theme }) => theme.palette.overlay};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,16 +30,16 @@ export const StyledModal = styled(ReactModalAdapter)`
     top: auto;
     left: auto;
     right: auto;
-    background-color: ${props => props.theme.palette.white};
+    background-color: ${({ theme }) => theme.palette.white};
     bottom: auto;
-    max-height: calc(100% - ${props => props.theme.spacing.large});
-    max-width: calc(100% - ${props => props.theme.spacing.large});
+    max-height: calc(100% - ${({ theme }) => theme.spacing.large});
+    max-width: calc(100% - ${({ theme }) => theme.spacing.large});
     overflow: scroll;
-    padding: ${props => props.theme.spacing.standard};
+    padding: ${({ theme }) => theme.spacing.standard};
     z-index: 2;
 
     ${breakpoint.tablet`
-      padding: ${props => props.theme.spacing.large};
+      padding: ${({ theme }) => theme.spacing.large};
     `};
   }
 `;

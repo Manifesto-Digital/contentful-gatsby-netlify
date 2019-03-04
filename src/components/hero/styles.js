@@ -8,7 +8,7 @@ export const HeroNoCard = styled.section`
   position: relative;
   overflow: hidden;
   padding-top: 350px;
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 
   ${breakpoint.tablet`
     padding-top: 60vh;
@@ -19,7 +19,7 @@ export const HeroWithCard = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 
   ${breakpoint.tablet`
     padding-top: 3em;
@@ -64,11 +64,9 @@ export const CenteredContent = styled.div`
   ${absoluteCenter};
   text-align: center;
   width: 100%;
-  padding: 0 ${props => props.theme.spacing.standard};
-  color: ${props =>
-    props.black
-      ? `${props.theme.palette.black}`
-      : `${props.theme.palette.white}`};
+  padding: 0 ${({ theme }) => theme.spacing.standard};
+  color: ${({ black, theme }) =>
+    black ? `${theme.palette.black}` : `${theme.palette.white}`};
 `;
 
 export const CardContent = styled.div`
@@ -81,8 +79,8 @@ export const CardContent = styled.div`
   width: 100%;
   background: hsla(0, 0%, 100%, 0.9);
 
-  ${breakpoint.tablet` 
-    float: ${props => (props.position === 'right' ? 'right' : 'left')};
+  ${breakpoint.tablet`
+    float: ${({ position }) => (position === 'right' ? 'right' : 'left')};
     margin-bottom: 3em;
     width: 65%;
     padding-bottom: 1em;
@@ -97,15 +95,15 @@ export const Title = styled.h1`
   margin-bottom: 0;
 `;
 export const Subtitle = styled.p`
-  font-size: ${props => props.theme.headers.h2};
+  font-size: ${({ theme }) => theme.headers.h2};
   margin-bottom: 0;
 `;
 export const CardSubtitle = styled.p`
-  margin-bottom: ${props => props.theme.spacing.small};
-  margin-top: ${props => props.theme.spacing.small};
+  margin-bottom: ${({ theme }) => theme.spacing.small};
+  margin-top: ${({ theme }) => theme.spacing.small};
 `;
 export const StyledLinkHandler = styled(LinkHandler)`
   &:hover {
-    color: ${props => props.theme.palette.primary};
+    color: ${({ theme }) => theme.palette.primary};
   }
 `;

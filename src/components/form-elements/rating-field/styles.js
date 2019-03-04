@@ -5,11 +5,11 @@ export const InputWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-right: ${props => props.theme.spacing.standard};
+  margin-right: ${({ theme }) => theme.spacing.standard};
 `;
 
 export const Label = styled.label`
-  margin-top: ${props => props.theme.spacing.xs};
+  margin-top: ${({ theme }) => theme.spacing.xs};
 `;
 
 export const LayoutWrapper = styled.div`
