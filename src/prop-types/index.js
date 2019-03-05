@@ -11,3 +11,10 @@ export const LongTextRequired = PropTypes.shape({
     content: PropTypes.string.isRequired,
   }),
 }).isRequired;
+
+export const ImageProps = PropTypes.shape({
+  description: PropTypes.string.isRequired,
+  file: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+  }),
+});

@@ -17,7 +17,10 @@ const PageTitle = ({ children, twoThirds, paddingBottom, legal }) => (
 );
 
 PageTitle.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   twoThirds: PropTypes.bool,
   paddingBottom: PropTypes.bool,
   legal: PropTypes.bool,
