@@ -20,6 +20,7 @@ import RichText from '../rich-text';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardsWithIcons from '../cards-with-icons';
 import Map from '../google-map';
+import Finder from '../finder';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -153,6 +154,28 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicGoogleMap') {
         return <Map key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicServicesFinder') {
+        return (
+          <Finder
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+            type="services"
+          />
+        );
+      }
+
+      if (internal.type === 'ContentfulTopicShopFinder') {
+        return (
+          <Finder
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+            type="shops"
+          />
+        );
       }
 
       return null;
