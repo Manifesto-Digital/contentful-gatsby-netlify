@@ -132,9 +132,9 @@ exports[`renders correctly 1`] = `
         <img
           alt=""
           className="c6"
-          src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350"
-          srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350"
+          src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
+          srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
         />
         <div
           className="c7"
@@ -164,9 +164,9 @@ exports[`renders correctly 1`] = `
         <img
           alt=""
           className="c6"
-          src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350"
-          srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350"
+          src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
+          srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
         />
         <div
           className="c7"
