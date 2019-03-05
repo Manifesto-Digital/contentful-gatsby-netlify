@@ -23,6 +23,9 @@
 
     const client = createClient({
       accessToken: CMA_ACCESS_TOKEN,
+      headers: {
+        'X-Contentful-Source-Environment': 'develop',
+      },
     });
 
     const space = await client.getSpace(SPACE_ID);
@@ -99,7 +102,6 @@
         return key.update();
       })
     );
-
     // ---------------------------------------------------------------------------
     console.log('Set default locale to new environment');
     const defaultLocale = (await environment.getLocales()).items.find(
