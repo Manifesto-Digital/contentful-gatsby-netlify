@@ -93,6 +93,7 @@
     "format": "prettier --write '**/*.js'",
     "test": "jest",
     "test-watch": "jest --watch --verbose",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "lint": "./node_modules/.bin/eslint src && prettier --list-different '**/*.js'",
     "deploy": "yarn test && yarn lint && git push",
     "mock-deploy-build": "rm -rf ./node_modules/* && yarn install && yarn test && yarn lint && gatsby build",
