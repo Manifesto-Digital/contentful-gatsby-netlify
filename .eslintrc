@@ -1,5 +1,13 @@
 {
   "extends": ["airbnb", "prettier", "prettier/react"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["test-helpers", "./__tests__/test-helpers"]],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 8,
