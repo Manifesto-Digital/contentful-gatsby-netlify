@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin-bottom: 40px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  background-color: #bdbec0;
+}
+
+.c6 {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  background-color: #e5e5e5;
+}
+
+.c1 {
+  background: linear-gradient( 90deg,#bdbec0,#bdbec0 50%,#e5e5e5 0,#e5e5e5);
+}
+
+.c7 {
+  background: linear-gradient( 90deg,#e5e5e5,#e5e5e5 50%,#bdbec0 0,#bdbec0);
+}
+
+.c5 {
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+
+.c5 span {
+  color: #ea232d;
+}
+
+.c2 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+@media (min-width:40.0625em) {
+  .c4 {
+    background-color: transparent;
+    width: 50%;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c6 {
+    background-color: transparent;
+    width: 50%;
+  }
+}
+
+@media (min-width:62em) {
+  .c5 {
+    font-size: 4rem;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    alt={1}
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h2
+            className="c5"
+          >
+            stat 1 title
+            <br />
+             
+            <span>
+              subtitle
+            </span>
+          </h2>
+          <div
+            className=""
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+              }
+            }
+          />
+        </div>
+        <div
+          className="c6"
+        >
+          <h2
+            className="c5"
+          >
+            stat 2 title
+            <br />
+             
+            <span>
+              subtitle
+            </span>
+          </h2>
+          <div
+            className=""
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    alt={0}
+    className="c7"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h2
+            className="c5"
+          >
+            stat 3 title
+            <br />
+             
+            <span>
+              subtitle
+            </span>
+          </h2>
+          <div
+            className=""
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+              }
+            }
+          />
+        </div>
+        <div
+          className="c6"
+        >
+          <h2
+            className="c5"
+          >
+            stat 4 title
+            <br />
+             
+            <span>
+              subtitle
+            </span>
+          </h2>
+          <div
+            className=""
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
