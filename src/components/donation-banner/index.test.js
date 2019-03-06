@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import DonationBanner from './index';
 import { createFactory } from '../../utils/test-factories';
 

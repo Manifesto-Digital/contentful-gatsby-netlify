@@ -13,7 +13,7 @@ import {
   numberTextField,
   numericTextField,
 } from '../../utils/test-form-factories';
-import { mountWithTheme } from '../../../__tests__/helpers';
+import { mountWithTheme } from 'test-helpers';
 
 export const createFormProps = createFactory({
   backgroundColour: 'Grey',

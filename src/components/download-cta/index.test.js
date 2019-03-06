@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  mountWithTheme,
-  snapshotComponent,
-} from '../../../__tests__/helpers/index';
+import { mountWithTheme, snapshotComponent } from 'test-helpers';
 import DownloadCTA from './index';
 import { formatFilesize } from '../../utils/filesize-formatting';
 import {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import { snapshotComponent } from 'test-helpers';
 import Map from './index';
 import { createFactory } from '../../utils/test-factories';
 

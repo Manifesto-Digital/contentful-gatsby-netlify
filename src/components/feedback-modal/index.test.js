@@ -2,7 +2,7 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import { act } from 'react-dom/test-utils';
 import FeedbackModal from '.';
-import { mountWithTheme } from '../../../__tests__/helpers';
+import { mountWithTheme } from 'test-helpers';
 
 const isModalOpen = () =>
   document.body.classList.contains('ReactModal__Body--open');

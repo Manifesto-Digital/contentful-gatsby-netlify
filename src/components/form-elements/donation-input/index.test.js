@@ -1,9 +1,6 @@
 import React from 'react';
 import DonationInput from '.';
-import {
-  mountWithTheme,
-  snapshotComponent,
-} from '../../../../__tests__/helpers';
+import { mountWithTheme, snapshotComponent } from 'test-helpers';
 import { createFactory } from '../../../utils/test-factories';
 import { CurrencySymbol } from './styles';
 

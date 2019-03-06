@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../../__tests__/helpers';
+import { snapshotComponent } from 'test-helpers';
 import { createFactory, createPerson } from '../../../utils/test-factories';
 import CardList from '.';
 import PersonCard from '../card';

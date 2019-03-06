@@ -1,6 +1,6 @@
 import React from 'react';
+import { snapshotComponent } from 'test-helpers';
 import { TableOfContentsFootNotes } from './footnotes';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
 
 export const createReferenceList = () => [
   '[s.3 Public Order Act 1986.]',

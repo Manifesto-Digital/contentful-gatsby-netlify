@@ -1,9 +1,6 @@
 import React from 'react';
 import { createFactory } from '../../utils/test-factories';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import OpeningTimes from './index';
 import { Time } from './styles';
 import theme from '../theme/variables';

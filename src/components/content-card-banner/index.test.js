@@ -1,9 +1,6 @@
 import React from 'react';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import ContentCardBanner from './index';
 import { BannerBackground, CardRow } from './styles';
 import { createContentCardBanner } from '../../utils/test-factories';

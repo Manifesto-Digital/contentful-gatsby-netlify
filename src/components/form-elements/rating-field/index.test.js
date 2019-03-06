@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Yup from 'yup';
 import RatingField from '.';
-import { mountWithTheme } from '../../../../__tests__/helpers';
+import { mountWithTheme } from 'test-helpers';
 import { FormikWrapper } from '../../../utils/test-form-wrapper';
 
 const fieldName = 'radioFieldName';

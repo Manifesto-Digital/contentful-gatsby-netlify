@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RichText from './index';
-import { snapshotComponent } from '../../../__tests__/helpers';
+import { snapshotComponent } from 'test-helpers';
 import { createFactory } from '../../utils/test-factories';
 
 // Default props

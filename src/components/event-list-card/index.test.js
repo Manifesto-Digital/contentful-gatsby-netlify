@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { createFactory, createImage } from '../../utils/test-factories';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import EventListCard from './index';
 
 export const createEventListCard = createFactory({

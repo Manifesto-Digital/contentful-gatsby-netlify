@@ -2,7 +2,7 @@ import React from 'react';
 import { act } from 'react-dom/test-utils';
 import ReactModal from 'react-modal';
 import Modal from '.';
-import { mountWithTheme } from '../../../__tests__/helpers';
+import { mountWithTheme } from 'test-helpers';
 
 const getCss = node =>
   window
