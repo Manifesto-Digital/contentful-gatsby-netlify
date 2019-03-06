@@ -29,6 +29,8 @@
     "gatsby-transformer-remark": "^2.1.12",
     "google-map-react": "1.1.2",
     "jest-styled-components": "^6.3.1",
+    "patch-package": "^6.0.5",
+    "postinstall-postinstall": "^2.0.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
     "rc-slider": "^8.6.4",
@@ -86,7 +88,8 @@
     "deploy": "yarn test && yarn lint && git push",
     "mock-deploy-build": "rm -rf ./node_modules/* && yarn install && yarn test && yarn lint && gatsby build",
     "netlify-deploy-current": "netlify deploy --dir=public",
-    "setup": "yarn install"
+    "setup": "yarn install",
+    "postinstall": "patch-package"
   },
   "husky": {
     "hooks": {
