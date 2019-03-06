@@ -16,7 +16,7 @@
     "dayjs": "^1.8.0",
     "dotenv": "^6.1.0",
     "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
+    "eslint-plugin-react-hooks": "1.4.0",
     "formik": "^1.4.1",
     "gatsby": "^2.0.83",
     "gatsby-plugin-google-tagmanager": "^2.0.7",
@@ -40,7 +40,6 @@
     "react-player": "1.9.3",
     "react-recaptcha": "^2.3.10",
     "react-tabs": "^3.0.0",
-    "react-testing-library": "^5.5.3",
     "styled-components": "^4.1.1",
     "yup": "^0.26.6"
   },
@@ -100,6 +99,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^24.1.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
@@ -118,6 +118,7 @@
     "prettier": "^1.15.2",
     "pretty-quick": "^1.8.0",
     "react-test-renderer": "16.8.1",
+    "react-testing-library": "^5.5.3",
     "webpack": "^4.27.0"
   },
   "repository": {
