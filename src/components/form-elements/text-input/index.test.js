@@ -1,6 +1,6 @@
 import React from 'react';
-import TextInput from '.';
 import { mountWithTheme, snapshotComponent } from 'test-helpers';
+import TextInput from '.';
 import { StyledInput } from './styles';
 
 const createProps = (name, error, touched) => ({

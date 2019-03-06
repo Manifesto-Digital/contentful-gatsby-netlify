@@ -1,4 +1,5 @@
 import React from 'react';
+import { mountWithTheme } from 'test-helpers';
 import ContentForm from '.';
 import FormField from '../form-elements/form-field';
 import { createFactory } from '../../utils/test-factories';
@@ -13,7 +14,6 @@ import {
   numberTextField,
   numericTextField,
 } from '../../utils/test-form-factories';
-import { mountWithTheme } from 'test-helpers';
 
 export const createFormProps = createFactory({
   backgroundColour: 'Grey',

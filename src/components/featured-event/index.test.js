@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { createFactory, createImage } from '../../utils/test-factories';
 import { snapshotComponent, mountWithTheme } from 'test-helpers';
+import { createFactory, createImage } from '../../utils/test-factories';
 import FeaturedEvent from './index';
 
 export const createFeaturedEvent = createFactory({

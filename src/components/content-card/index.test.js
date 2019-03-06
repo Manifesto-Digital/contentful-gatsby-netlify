@@ -1,6 +1,6 @@
 import React from 'react';
-import { hidePascalCaseWarning } from '../../utils/test-mocks';
 import { snapshotComponent, mountWithTheme } from 'test-helpers';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
 import ContentCard from './index';
 import { CardTitle } from './styles';
 import { createContentCards } from '../../utils/test-factories';

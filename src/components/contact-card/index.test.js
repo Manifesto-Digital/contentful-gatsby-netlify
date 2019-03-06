@@ -1,6 +1,6 @@
 import React from 'react';
-import { createFactory } from '../../utils/test-factories';
 import { snapshotComponent, mountWithTheme } from 'test-helpers';
+import { createFactory } from '../../utils/test-factories';
 import ContactCard from './index';
 import { Card } from './styles';
 

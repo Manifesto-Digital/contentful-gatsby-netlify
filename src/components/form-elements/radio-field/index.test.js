@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Yup from 'yup';
-import RadioField from '.';
 import { mountWithTheme } from 'test-helpers';
+import RadioField from '.';
 import { FormikWrapper } from '../../../utils/test-form-wrapper';
 import { createFactory } from '../../../utils/test-factories';
 import { multipleRadioField } from '../../../utils/test-form-factories';

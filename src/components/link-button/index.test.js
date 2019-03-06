@@ -1,6 +1,6 @@
 import React from 'react';
-import LinkButton from '.';
 import { snapshotComponent } from 'test-helpers';
+import LinkButton from '.';
 
 it('renders correctly', () => {
   snapshotComponent(<LinkButton>Foo</LinkButton>);
