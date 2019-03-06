@@ -5,14 +5,19 @@ import iconSrc from '../../utils/iconSrc';
 import { CardContainer, TitleText, SubText, CardCTA, CardSVG } from './styles';
 
 const CardWithIcon = ({ data, cardsCount }) => {
-  const { icon, titleText, subText, ctaText, ctaLink } = data;
-
+  const { icon, titleText, subText, ctaText, ctaLink, externalLink } = data;
   return (
     <CardContainer cardsCount={cardsCount}>
       {icon && <CardSVG src={iconSrc(icon)} cacheGetRequests />}
       <TitleText>{titleText}</TitleText>
       {subText && <SubText>{subText}</SubText>}
-      <CardCTA internalLink={ctaLink} bg="red" fullWidth>
+      <CardCTA
+        externalUrl={externalLink.URL}
+        internalLink={ctaLink}
+        bg="red"
+        fullWidth
+        newTab={externalLink.newTab}
+      >
         {ctaText}
       </CardCTA>
     </CardContainer>

@@ -18,7 +18,10 @@ export const createCTA = createFactory({
   buttonText: 'Button text',
   ctaColour: 'Red',
   internalLink: createInternalLink(),
-  externalUrl: 'http://example.com',
+  externalUrl: {
+    URL: 'http://example.com',
+    newTab: true,
+  },
 });
 
 it('renders correctly', () => {

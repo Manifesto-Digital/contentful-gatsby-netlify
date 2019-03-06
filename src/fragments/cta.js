@@ -31,7 +31,14 @@ export const ctaWithIconFragment = graphql`
         type
       }
     }
-    externalUrl
+    externalLink {
+      id
+      internal {
+        type
+      }
+      URL
+      newTab
+    }
     buttonText
     icon {
       id

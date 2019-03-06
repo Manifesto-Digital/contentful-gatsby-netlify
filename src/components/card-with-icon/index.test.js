@@ -12,6 +12,10 @@ export const createCardWithIcon = createFactory({
   subText: 'Sub text',
   ctaText: 'Click me',
   ctaLink: { slug: 'https://example.com' },
+  externalLink: {
+    URL: 'https://example.com',
+    newTab: true,
+  },
 });
 
 it('renders correctly', () => {
@@ -48,4 +52,20 @@ it('displays the correct internal cta link', () => {
   });
   const wrapper = shallow(<CardWithIcon data={mockData} />);
   expect(wrapper.find(CardCTA).prop('internalLink')).toBe(mockData.ctaLink);
+});
+
+it('displays the correct external cta link', () => {
+  const mockData = createCardWithIcon({
+    externalLink: {
+      URL: 'https://internal-test-example.com',
+      newTab: true,
+    },
+  });
+  const wrapper = shallow(<CardWithIcon data={mockData} />);
+  expect(wrapper.find(CardCTA).prop('externalUrl')).toBe(
+    mockData.externalLink.URL
+  );
+  expect(wrapper.find(CardCTA).prop('newTab')).toBe(
+    mockData.externalLink.newTab
+  );
 });

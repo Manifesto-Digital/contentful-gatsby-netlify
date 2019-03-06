@@ -22,4 +22,8 @@ export const StyledLinkHandler = styled(LinkHandler)`
     (bg === 'red' && theme.palette.white) ||
     (bg === 'san marino blue' && theme.palette.white) ||
     (bg === 'black' && theme.palette.white)};
+
+  &:hover {
+    color: ${({ bg, theme }) => bg === 'red' && theme.palette.white};
+  }
 `;

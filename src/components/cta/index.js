@@ -10,17 +10,19 @@ const CTA = ({
   children,
   bg,
   internalLink,
-  externalUrl,
+  externalURL,
+  newTab,
   icon,
   fullWidth,
   className,
 }) => (
   <StyledLinkHandler
-    externalUrl={externalUrl}
+    externalUrl={externalURL}
     internalLink={internalLink}
     bg={consistentString(bg)}
     className={className}
     fullWidth={fullWidth}
+    newTab={newTab}
   >
     {icon && icon.file && (
       <CtaIcon>
@@ -32,11 +34,18 @@ const CTA = ({
   </StyledLinkHandler>
 );
 
-CTA.fromCMS = ({ buttonText, ctaColour, internalLink, externalUrl, icon }) => ({
+CTA.fromCMS = ({
+  buttonText,
+  ctaColour,
+  internalLink,
+  externalLink,
+  icon,
+}) => ({
   children: buttonText,
   bg: ctaColour.toLowerCase(),
   internalLink,
-  externalUrl,
+  externalURL: externalLink.URL,
+  newTab: externalLink.newTab,
   icon,
 });
 
@@ -48,7 +57,10 @@ CTA.propTypes = {
     id: PropTypes.string,
     slug: PropTypes.string,
   }),
-  externalUrl: PropTypes.string,
+
+  externalURL: PropTypes.string,
+  newTab: PropTypes.bool,
+
   icon: PropTypes.shape({
     file: PropTypes.object,
   }),
