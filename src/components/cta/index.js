@@ -24,7 +24,7 @@ const CTA = ({
   >
     {icon && icon.file && (
       <CtaIcon>
-        <Image image={icon} />
+        <Image image={icon} width={300} />
       </CtaIcon>
     )}
 

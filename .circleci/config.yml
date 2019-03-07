@@ -38,6 +38,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: yarn install --frozen-lockfile
+      - run: sudo npm install -g contentful-cli
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
       - run: yarn build
 

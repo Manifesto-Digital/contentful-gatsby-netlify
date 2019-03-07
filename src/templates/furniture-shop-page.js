@@ -26,30 +26,32 @@ const Page = ({ data }) => {
 
   return (
     <Layout>
-      <ShopHero
-        header={pageHeader}
-        subHeader={subHeader}
-        introductoryText={introductoryText.introductoryText}
-        image={heroImage}
-        contactNumber={shop.contactNumber}
-      />
-      <CenteredSection
-        header="What can you donate"
-        text={whatCanYouDonate}
-        contactNumber={shop.contactNumber}
-      />
-      <ThreeColumn
-        yesList={yesPleaseList}
-        noList={noThanksList}
-        donationHelpText={howDoesYourDonationHelp}
-      />
-      <ShopInfo
-        address={shop.displayAddress}
-        openingHours={shop.openingHours}
-        parking={shop.parkingInformation}
-        disabledAccess={shop.disabledAccessInformation}
-      />
-      <ShopMap shop={shop} />
+      <article>
+        <ShopHero
+          header={pageHeader}
+          subHeader={subHeader}
+          introductoryText={introductoryText.introductoryText}
+          image={heroImage}
+          contactNumber={shop.contactNumber}
+        />
+        <CenteredSection
+          header="What can you donate"
+          text={whatCanYouDonate}
+          contactNumber={shop.contactNumber}
+        />
+        <ThreeColumn
+          yesList={yesPleaseList}
+          noList={noThanksList}
+          donationHelpText={howDoesYourDonationHelp}
+        />
+        <ShopInfo
+          address={shop.displayAddress}
+          openingHours={shop.openingHours}
+          parking={shop.parkingInformation}
+          disabledAccess={shop.disabledAccessInformation}
+        />
+        <ShopMap shop={shop} />
+      </article>
     </Layout>
   );
 };
