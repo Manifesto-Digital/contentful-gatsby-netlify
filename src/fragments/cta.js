@@ -13,7 +13,14 @@ export const ctaStandardFragment = graphql`
         type
       }
     }
-    externalUrl
+    externalLink {
+      id
+      internal {
+        type
+      }
+      URL
+      newTab
+    }
     buttonText
   }
 `;

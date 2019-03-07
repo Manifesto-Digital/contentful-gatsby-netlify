@@ -14,7 +14,13 @@ const LinkBox = ({ data }) => {
           {links &&
             links.map((link, i) => (
               <ListItem key={i} rowCount={itemsPerRow}>
-                <LinkHandler internalLink={link}>{link.title}</LinkHandler>
+                <LinkHandler
+                  externalUrl={link.URL}
+                  internalLink={link.slug && link}
+                  newTab={link.newTab}
+                >
+                  {link.title}
+                </LinkHandler>
               </ListItem>
             ))}
         </ListWrapper>

@@ -6,7 +6,7 @@ import {
 } from '../../../../__tests__/helpers';
 import StickyBanner from '.';
 import { createFactory, createTestRef } from '../../../utils/test-factories';
-import { SignUpButton } from '../../styled/buttons';
+import { SignUpLink } from '../../styled/buttons';
 import { BannerToStick } from './styles';
 
 const createStickyBanner = createFactory({
@@ -16,6 +16,7 @@ const createStickyBanner = createFactory({
   animateBanner: false,
   eventLink:
     'https://endurancecui.active.com/new/events/57227451/select-race?_p=9778819554116866&e4q=b4c582fe-43bc-41b0-8df3-221750f7842b&e4p=98898649-9a90-47cc-a977-0197a099719b&e4ts=1538665644&e4c=active&e4e=snawe00000000&e4rt=Safetynet&e4h=a74b16f1d10ebeed229cf4c8311a6f08&_ga=2.193888045.1618800628.1549375348-1259773413.1541001577',
+  newTab: true,
   buttonText: 'Button text',
   StickyBannerRef: createTestRef(),
 });
@@ -42,8 +43,8 @@ it('renders a signup button with an event link', () => {
   });
   const wrapper = shallow(<StickyBanner {...mockData} />);
 
-  wrapper.find(SignUpButton).forEach(button => {
-    expect(button.prop('href')).toEqual(mockData.eventLink);
+  wrapper.find(SignUpLink).forEach(button => {
+    expect(button.prop('externalUrl')).toEqual(mockData.eventLink);
   });
 });
 

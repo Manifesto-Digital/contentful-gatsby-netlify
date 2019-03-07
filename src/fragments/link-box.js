@@ -9,8 +9,21 @@ export const LinkBoxFragment = graphql`
     headerText
     itemsPerRow
     links {
-      title
-      slug
+      ... on ContentfulTopicExternalLink {
+        internal {
+          type
+        }
+        title
+        URL
+        newTab
+      }
+      ... on ContentfulPageAssemblyContentPage {
+        internal {
+          type
+        }
+        title
+        slug
+      }
     }
   }
 `;

@@ -17,6 +17,13 @@ export const HeroWithCardFragment = graphql`
       id
       slug
     }
-    externalUrl
+    externalLink {
+      id
+      internal {
+        type
+      }
+      URL
+      newTab
+    }
   }
 `;

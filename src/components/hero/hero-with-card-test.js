@@ -15,6 +15,11 @@ export const createHeroWithCard = createFactory({
   cardPosition: 'Right',
   blackText: true,
   image: createImage(),
+  externalLink: {
+    URL: 'https://example.com',
+    newTab: true,
+  },
+  linkText: 'Woo amazing link text',
 });
 
 it('renders correctly', () => {
@@ -52,7 +57,10 @@ it('renders an image', () => {
 
 it('renders the link', () => {
   const mockData = createHeroWithCard({
-    externalUrl: 'http://google.com',
+    externalLink: {
+      URL: 'https://example.com',
+      newTab: true,
+    },
     linkText: 'Woo amazing link text',
   });
 

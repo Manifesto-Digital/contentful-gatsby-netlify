@@ -21,11 +21,13 @@ const Hero = ({ content }) => {
     subtitle,
     cardPosition,
     linkText,
-    externalUrl,
+    externalLink,
     internalLink,
   } = content;
 
-  const link = internalLink ? getInternalLink(internalLink.slug) : externalUrl;
+  const link = internalLink
+    ? getInternalLink(internalLink.slug)
+    : externalLink.URL;
 
   return (
     <HeroWithCard>
@@ -41,7 +43,8 @@ const Hero = ({ content }) => {
           {link && linkText && (
             <StyledLinkHandler
               internalLink={internalLink}
-              externalUrl={externalUrl}
+              externalUrl={externalLink.URL}
+              newTab={externalLink.newTab}
             >
               {linkText}
             </StyledLinkHandler>
@@ -58,10 +61,13 @@ Hero.propTypes = {
     subtitle: PropTypes.string,
     cardPosition: PropTypes.oneOf(['Left', 'Right']),
     linkText: PropTypes.string,
-    externalUrl: PropTypes.string,
     internalLink: PropTypes.shape({
       id: PropTypes.string,
       slug: PropTypes.string,
+    }),
+    externalLink: PropTypes.shape({
+      URL: PropTypes.string,
+      newTab: PropTypes.bool,
     }),
     image: PropTypes.object,
   }),

@@ -11,7 +11,6 @@ const CTABanner = ({ cta, headerText, bannerColour, removeMarginBottom }) => (
     bannerColour={bannerColour.toLowerCase()}
     removeMarginBottom={removeMarginBottom}
   >
-    {console.log(cta)}
     <Container>
       <Header bannerColour={bannerColour.toLowerCase()}>{headerText}</Header>
       <CTA {...CTA.fromCMS(cta)} />

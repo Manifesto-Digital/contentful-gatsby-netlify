@@ -14,7 +14,10 @@ export const createBanner = createFactory({
   headerText: 'What an amazing banner',
   linkText: 'woooo this is a link',
   bannerColour: 'Red',
-  externalUrl: 'http://google.com',
+  externalLink: {
+    URL: 'http://google.com',
+    newTab: true,
+  },
   internalLink: createInternalLink(),
 });
 

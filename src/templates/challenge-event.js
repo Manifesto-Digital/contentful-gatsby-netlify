@@ -17,7 +17,7 @@ const ChallengeEventPage = ({ data }) => {
   } = data.contentfulPageAssemblyChallengeEvent;
 
   // Grab the information from the event reference
-  const { eventName, displayLocation, registrationLink, distance } = event;
+  const { eventName, displayLocation, externalLink, distance } = event;
   const date = dateAsString(event.eventSystemDate, 'DD MMM YYYY');
   const bannerText = `${distance}\n${displayLocation}\n${date}`;
 
@@ -53,7 +53,6 @@ const ChallengeEventPage = ({ data }) => {
 
     if (bannerStuck) {
       setAnimateBanner(false);
-
       // If scroll is above hero then dont fix banner
       if (scrollPosition < middleOfHeroBanner) {
         setBannerStuck(false);
@@ -106,14 +105,16 @@ const ChallengeEventPage = ({ data }) => {
         bannerText={bannerText}
         buttonText={bannerButtonText}
         image={heroImage}
-        eventLink={registrationLink.registrationLink}
+        eventLink={externalLink.URL}
+        newTab={externalLink.newTab}
         heroBannerRef={heroBannerRef}
       />
       <ChallengeEventAssemblies assemblies={assemblies} />
       <StickyBanner
         title={eventName}
         subtitle={displayLocation}
-        eventLink={registrationLink.registrationLink}
+        eventLink={externalLink.URL}
+        newTab={externalLink.newTab}
         bannerText={bannerText}
         buttonText={bannerButtonText}
         stickyBarRef={stickyBarRef}
@@ -148,8 +149,13 @@ export const challengeEventPageQuery = graphql`
         distance
         displayLocation
         eventSystemDate
-        registrationLink {
-          registrationLink
+        externalLink {
+          id
+          internal {
+            type
+          }
+          URL
+          newTab
         }
       }
       bannerButtonText
