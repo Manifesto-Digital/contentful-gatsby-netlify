@@ -1,4 +1,4 @@
-const { MARKS, BLOCKS } = require('@contentful/rich-text-types');
+const { MARKS, BLOCKS, INLINES } = require('@contentful/rich-text-types');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -73,6 +73,7 @@ module.exports = {
           /*
            * Defines custom html string for each node type like heading, embedded entries etc..
            */
+
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: node => {
               const imageObject = node.data.target.fields;
@@ -92,6 +93,22 @@ module.exports = {
                   alt="${alt}"
                 />`;
               }
+            },
+            [INLINES.ENTRY_HYPERLINK]: (node, next) => {
+              // There is currently a patch for Gatsby source contentful to avoid a max stack call
+              // created by links in rich text. The only field that is set currently on the target
+              // is the slug field
+              if (
+                !node.content ||
+                node.data ||
+                !node.data.target.fields ||
+                !node.data.target.field.slug
+              ) {
+                return;
+              }
+              return `<a href='/${
+                node.data.target.fields.slug['en-GB']
+              }'>${next(node.content)}</a>`;
             },
           },
 
