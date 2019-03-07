@@ -79,9 +79,9 @@ exports[`renders correctly 2`] = `
     </h3>
     <a
       className="c3"
-      href="http://example.com"
+      href="https://www.google.co.uk"
       rel="noopener"
-      target="_self"
+      target="_blank"
     >
       <span
         className="c4"

@@ -12,7 +12,11 @@ import { createCTA } from '../cta/index.test';
 
 // Default prop values
 export const createCtaBanner = createFactory({
-  cta: createCTA({ ctaColour: 'White Outline', internalLink: null }),
+  cta: createCTA({
+    ctaColour: 'White Outline',
+    internalLink: null,
+    externalLink: { URL: 'https://www.google.co.uk', newTab: true },
+  }),
   bannerColour: 'San Marino Blue',
   headerText: 'mock header text',
 });

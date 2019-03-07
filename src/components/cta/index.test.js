@@ -18,7 +18,7 @@ export const createCTA = createFactory({
   buttonText: 'Button text',
   ctaColour: 'Red',
   internalLink: createInternalLink(),
-  externalUrl: {
+  externalLink: {
     URL: 'http://example.com',
     newTab: true,
   },
