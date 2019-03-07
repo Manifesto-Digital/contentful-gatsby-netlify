@@ -58,7 +58,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       if (internal.type === 'ContentfulTopicInlineCallout') {
         return (
           <InlineCallOut key={id} insideContainer={insideContainer}>
-            <RichText richText={assembly} />
+            <RichText richText={assembly.content} />
           </InlineCallOut>
         );
       }

@@ -23,7 +23,8 @@ export const CardRow = styled.div`
 `;
 
 export const BannerBackground = styled.section`
-  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  margin-bottom: ${({ theme, sidebar }) =>
+    sidebar ? theme.spacing.standard : theme.spacing.large};
   background: ${({ bannerColour, theme }) =>
     (bannerColour === 'white' && theme.palette.white) ||
     (bannerColour === 'grey' && theme.palette.grey10)};
