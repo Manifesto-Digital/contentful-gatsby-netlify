@@ -78,6 +78,7 @@ export const pageQuery = graphql`
           ...CardsWithIconsFragment
           ...GoogleMapFragment
           ...StatsFragment
+          ...PersonCollectionFragment
         }
       }
     }
