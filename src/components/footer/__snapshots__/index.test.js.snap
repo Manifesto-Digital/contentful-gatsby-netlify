@@ -326,7 +326,7 @@ exports[`Renders correctly 1`] = `
         className="c11"
       >
         <div
-          className="c12"
+          className="c12 "
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

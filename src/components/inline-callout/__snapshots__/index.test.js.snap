@@ -55,6 +55,7 @@ exports[`renders correctly with icon chosen in cms 1`] = `
       className="c3"
     >
       <div
+        className=""
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -105,6 +106,7 @@ exports[`renders correctly with no options chosen in cms 1`] = `
       className="c2"
     >
       <div
+        className=""
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

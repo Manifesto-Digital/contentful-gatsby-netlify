@@ -7,7 +7,7 @@ import { Container } from '../styled/containers';
 // Styles
 import { BannerBackground, HeaderText, CardRow } from './styles';
 
-const ContentCardBanner = ({ data }) => {
+const ContentCardBanner = ({ data, sidebar }) => {
   const { header, bannerColour, bannerFlow, contentCards } = data;
 
   if (contentCards && contentCards.length < 2) return null;
@@ -16,6 +16,7 @@ const ContentCardBanner = ({ data }) => {
     <BannerBackground
       bannerColour={consistentString(bannerColour)}
       bannerFlow={consistentString(bannerFlow)}
+      sidebar={sidebar}
     >
       <Container>
         <HeaderText as={RichText} richText={header} />
@@ -46,6 +47,7 @@ ContentCardBanner.propTypes = {
     }),
     contentCards: PropTypes.array,
   }),
+  sidebar: PropTypes.bool,
 };
 
 export default ContentCardBanner;
