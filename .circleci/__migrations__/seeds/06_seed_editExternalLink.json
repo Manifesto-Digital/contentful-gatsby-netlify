@@ -1,0 +1,74 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "1aqnu2aYSL5KAS9yRHOePH",
+        "type": "Entry",
+        "createdAt": "2019-03-08T14:16:19.379Z",
+        "updatedAt": "2019-03-08T14:38:34.367Z",
+        "environment": {
+          "sys": {
+            "id": "import",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 32,
+        "publishedAt": "2019-03-08T14:38:34.367Z",
+        "firstPublishedAt": "2019-03-08T14:16:50.339Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 33,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "topicExternalLink"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "test topic external link"
+        },
+        "URL": {
+          "en-GB": "http://manifesto.co.uk"
+        },
+        "newTab": {
+          "en-GB": false
+        },
+        "title": {
+          "en-GB": "title"
+        }
+      }
+    }
+  ],
+  "assets": []
+}
