@@ -7,6 +7,41 @@ exports[`renders correctly 1`] = `
   padding: 0 20px;
 }
 
+.c6 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c6 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c6 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c6 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c6 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c6 ol li::before {
+  min-width: 10px;
+}
+
 .c0 {
   margin-bottom: 40px;
   padding: 40px 0;
@@ -89,7 +124,7 @@ exports[`renders correctly 1`] = `
           Mock header
         </h2>
         <div
-          className="c5 "
+          className="c5 c6"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c5 {
+.c6 {
   position: relative;
   margin-bottom: 20px;
   background: #fff;
@@ -11,20 +11,20 @@ exports[`renders correctly 1`] = `
   text-decoration: none;
 }
 
-.c5:hover {
+.c6:hover {
   box-shadow: 0 2.5px 6px rgba(0,0,0,0.16),0 2.5px 6px rgba(0,0,0,0.13);
 }
 
-.c6 {
+.c7 {
   width: 100%;
   border-radius: 3px 3px 0;
 }
 
-.c7 {
+.c8 {
   position: relative;
 }
 
-.c8 {
+.c9 {
   position: absolute;
   top: -20px;
   max-width: 100%;
@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
   overflow: hidden;
 }
 
-.c9 {
+.c10 {
   display: block;
   padding: 20px;
   color: #4d63b5;
@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
   text-decoration: none;
 }
 
-.c10 {
+.c11 {
   position: absolute;
   top: 0;
   right: 0;
@@ -57,13 +57,48 @@ exports[`renders correctly 1`] = `
   opacity: 0;
 }
 
+.c3 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c3 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c3 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c3 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c3 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c3 ol li::before {
+  min-width: 10px;
+}
+
 .c1 {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,7 +124,7 @@ exports[`renders correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c3 {
+  .c4 {
     -webkit-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
@@ -101,7 +136,7 @@ exports[`renders correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c3 .c4 {
+  .c4 .c5 {
     -webkit-flex: 0 1 calc(50% - 12px);
     -ms-flex: 0 1 calc(50% - 12px);
     flex: 0 1 calc(50% - 12px);
@@ -116,7 +151,7 @@ exports[`renders correctly 1`] = `
     className="c1"
   >
     <div
-      className="c2 "
+      className="c2 c3"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -124,67 +159,67 @@ exports[`renders correctly 1`] = `
       }
     />
     <div
-      className="c3"
+      className="c4"
     >
       <div
-        className="c4 c5"
+        className="c5 c6"
       >
         <img
           alt=""
-          className="c6"
+          className="c7"
           src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
           srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600 480w,
         //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
         />
         <div
-          className="c7"
+          className="c8"
         >
           <h3
-            className="c8"
+            className="c9"
           >
             Shelter Demo Page
           </h3>
           <Link
-            className="c9"
+            className="c10"
             to="/shelter-demo-page"
           >
             A short description for Callams test page
           </Link>
         </div>
         <Link
-          className="c10"
+          className="c11"
           to="/shelter-demo-page"
         >
           A short description for Callams test page
         </Link>
       </div>
       <div
-        className="c4 c5"
+        className="c5 c6"
       >
         <img
           alt=""
-          className="c6"
+          className="c7"
           src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
           srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600 480w,
         //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
         />
         <div
-          className="c7"
+          className="c8"
         >
           <h3
-            className="c8"
+            className="c9"
           >
             Shelter Demo Page
           </h3>
           <Link
-            className="c9"
+            className="c10"
             to="/shelter-demo-page"
           >
             A short description for Callams test page
           </Link>
         </div>
         <Link
-          className="c10"
+          className="c11"
           to="/shelter-demo-page"
         >
           A short description for Callams test page
