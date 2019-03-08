@@ -25,8 +25,10 @@ const Finder = memo(({ data, insideContainer, type }) => {
   const { response, isLoading, isError, getResponse } = useApi({
     response: [],
   });
-  const API_KEY = process.env.SEARCH_KEY;
-  const SEARCH_ENDPOINT = `https://staging.services.shelter.org.uk/api/v1/location/${query}?api_token=${API_KEY}`;
+
+  // If this is updated it will need to be changed in the test as well;
+  const API_KEY = 'inoVa1mNLOG1SKKMThHBJ5ZZYGtx6Zupy2EO2dmW';
+  const SEARCH_ENDPOINT = `https://services.shelter.org.uk/api/v1/location/${query}?api_token=${API_KEY}`;
 
   const clearInput = target => {
     target.value = '';
@@ -108,7 +110,7 @@ Finder.propTypes = {
     introText: PropTypes.object,
   }),
   insideContainer: PropTypes.bool,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['services', 'shops']),
 };
 
 export default Finder;

@@ -13,7 +13,7 @@ import {
 
 import Finder from './index';
 
-process.env.SEARCH_KEY = 'TEST_API_KEY';
+const API_KEY = 'inoVa1mNLOG1SKKMThHBJ5ZZYGtx6Zupy2EO2dmW';
 const searchLocation = 'Bristol';
 
 // Any request sent to this address will return our mock location data
@@ -23,7 +23,7 @@ beforeEach(() => {
   const mockSearchRequest = new MockAdapter(axios);
   mockSearchRequest
     .onGet(
-      `https://staging.services.shelter.org.uk/api/v1/location/${searchLocation}?api_token=TEST_API_KEY`
+      `https://services.shelter.org.uk/api/v1/location/${searchLocation}?api_token=${API_KEY}`
     )
     .reply(200, {
       data: locations,
