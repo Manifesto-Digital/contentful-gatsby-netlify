@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c4 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c0 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c1 {
+  margin-bottom: 40px;
+}
+
+.c2 {
+  width: 100%;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 75%;
+}
+
+.c5 {
+  display: block;
+  background-size: 15px 15px;
+  width: auto;
+  padding: 10px;
+  width: 100%;
+  margin-right: 5px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.c6 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #999;
+  border: none;
+  color: #fff;
+  min-width: 30%;
+}
+
+.c6:hover {
+  color: #fff;
+}
+
+.c7 {
+  display: block;
+  margin: 10px 0;
+  color: #ea232d;
+}
+
+.c7 p {
+  margin: 0;
+}
+
+.c8 svg {
+  width: 25px;
+  height: 25px;
+  -webkit-animation: cZxgpV 2s linear infinite;
+  animation: cZxgpV 2s linear infinite;
+}
+
+.c8 svg .path {
+  stroke: #ea232d;
+  stroke-linecap: round;
+  -webkit-animation: kuSBtA 1.5s ease-in-out infinite;
+  animation: kuSBtA 1.5s ease-in-out infinite;
+}
+
+@media (min-width:62em) {
+  .c5 {
+    min-width: 185px;
+  }
+}
+
+<body>
+    <div>
+      <div
+        class="c0"
+      >
+        <div
+          class="c1"
+        >
+          <h1>
+            Topic - Services Finder
+          </h1>
+          <div
+            class=""
+          >
+            <p>
+              Our advice and support services across the UK give people 
+              <b>
+                one-to-one
+              </b>
+            </p>
+          </div>
+        </div>
+        <h2>
+          Where are you?
+        </h2>
+        <p>
+          Your postcode or town
+        </p>
+        <form
+          class="c2"
+          role="search"
+        >
+          <div
+            class="c3"
+          >
+            <label
+              class="c4"
+              for="search-input"
+            >
+              Search for services
+            </label>
+            <input
+              class="c5"
+              data-testid="search-input"
+              name="search-input"
+              type="text"
+              value=""
+            />
+            <button
+              class="c6"
+              disabled=""
+              type="submit"
+            >
+              <span
+                class="c4"
+              >
+                Submit Search
+              </span>
+              Find
+            </button>
+          </div>
+          <div
+            class="c7"
+          >
+            <span
+              class="isvg loading c8"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-htpNat dscEPm"
+    >
+      <div
+        class="sc-dnqmqq cJISzh"
+      >
+        <h1>
+          Topic - Services Finder
+        </h1>
+        <div
+          class="sc-bdVaJa ibTDPh"
+        >
+          <p>
+            Our advice and support services across the UK give people 
+            <b>
+              one-to-one
+            </b>
+          </p>
+        </div>
+      </div>
+      <h2>
+        Where are you?
+      </h2>
+      <p>
+        Your postcode or town
+      </p>
+      <form
+        class="sc-iwsKbI dnCFTw"
+        role="search"
+      >
+        <div
+          class="sc-VigVT hGWIbO"
+        >
+          <label
+            class="sc-bwzfXH PRXJA"
+            for="search-input"
+          >
+            Search for services
+          </label>
+          <input
+            class="sc-jTzLTM ctAIkq"
+            data-testid="search-input"
+            name="search-input"
+            type="text"
+            value=""
+          />
+          <button
+            class="sc-fjdhpX iccCuV"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="sc-bwzfXH PRXJA"
+            >
+              Submit Search
+            </span>
+            Find
+          </button>
+        </div>
+        <div
+          class="sc-jzJRlG aqNlX"
+        >
+          <span
+            class="isvg loading sc-cSHVUG iBCbPJ"
+          />
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllBySelectText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getAllByValue": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getBySelectText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "getByValue": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllBySelectText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryAllByValue": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryBySelectText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "queryByValue": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

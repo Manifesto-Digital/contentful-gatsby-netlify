@@ -49,9 +49,11 @@ const Hero = ({
     <VideoHero>
       <Video
         url={video.file.url}
-        loop
         muted
+        loop
         playing
+        autoPlay
+        playsinline
         onReady={() => setVideoLoaded(true)}
         width={null}
         height={null}
