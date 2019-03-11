@@ -9,7 +9,7 @@ module.exports = function(migration) {
     .name('External Link')
     .type('Link')
     .localized(false)
-    .required(true)
+    .required(false)
     .validations([
       {
         linkContentType: ['topicExternalLink'],
