@@ -1,0 +1,89 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "4Vp4n1b0c8ug9Ikne1dVeJ",
+        "type": "Entry",
+        "createdAt": "2019-03-08T16:13:54.428Z",
+        "updatedAt": "2019-03-08T16:14:32.567Z",
+        "environment": {
+          "sys": {
+            "id": "import",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 18,
+        "publishedAt": "2019-03-08T16:14:32.567Z",
+        "firstPublishedAt": "2019-03-08T16:14:32.567Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 19,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "standardCta"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Migration standard CTA"
+        },
+        "buttonText": {
+          "en-GB": "cta"
+        },
+        "internalLink": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "3ZnKNB4VcSdgTOho9wmraK"
+            }
+          }
+        },
+        "ctaColour": {
+          "en-GB": "Red"
+        },
+        "externalLink": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4gXZvSzxllBNV7LhNY7bnT"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}

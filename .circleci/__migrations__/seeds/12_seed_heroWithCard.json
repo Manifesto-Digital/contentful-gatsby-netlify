@@ -1,0 +1,101 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "3fBYCCtmJWInzAMPoBAVlR",
+        "type": "Entry",
+        "createdAt": "2019-03-08T16:52:25.480Z",
+        "updatedAt": "2019-03-08T16:53:04.013Z",
+        "environment": {
+          "sys": {
+            "id": "import",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 24,
+        "publishedAt": "2019-03-08T16:53:04.013Z",
+        "firstPublishedAt": "2019-03-08T16:53:04.013Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 25,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "heroWithCard"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-GB": "Migration topic with card"
+        },
+        "subtitle": {
+          "en-GB": "migration"
+        },
+        "cardPosition": {
+          "en-GB": "Left"
+        },
+        "image": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1QpzljvxQoQE2PqEgRi9yG"
+            }
+          }
+        },
+        "linkText": {
+          "en-GB": "migration"
+        },
+        "internalLink": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "3ZnKNB4VcSdgTOho9wmraK"
+            }
+          }
+        },
+        "externalLink": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4gXZvSzxllBNV7LhNY7bnT"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}

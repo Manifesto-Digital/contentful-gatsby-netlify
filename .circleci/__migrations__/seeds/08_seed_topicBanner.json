@@ -1,0 +1,80 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "7uQbXOdoeYWSZNT0Sk9vEG",
+        "type": "Entry",
+        "createdAt": "2019-03-08T15:52:38.844Z",
+        "updatedAt": "2019-03-08T15:53:27.048Z",
+        "environment": {
+          "sys": {
+            "id": "import",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 20,
+        "publishedAt": "2019-03-08T15:53:27.048Z",
+        "firstPublishedAt": "2019-03-08T15:53:27.048Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 21,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "topicBanner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Migration topic banner"
+        },
+        "bannerColour": {
+          "en-GB": "Red"
+        },
+        "headerText": {
+          "en-GB": "migration header"
+        },
+        "externalLink": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4gXZvSzxllBNV7LhNY7bnT"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}

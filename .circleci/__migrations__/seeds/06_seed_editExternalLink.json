@@ -58,429 +58,88 @@
         "name": {
           "en-GB": "Migration external link"
         },
-        "externalLink": {
+        "URL": {
           "en-GB": "http://manifesto.co.uk"
         },
-        "openInNewWindow": {
+        "newTab": {
           "en-GB": false
         },
         "title": {
-          "en-GB": "testing title"
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6sxvmndnpn0s"
-          }
-        },
-        "id": "2BbLnMszEzzw71Y173fndb",
-        "type": "Entry",
-        "createdAt": "2019-03-08T15:45:25.761Z",
-        "updatedAt": "2019-03-08T15:46:45.095Z",
-        "environment": {
-          "sys": {
-            "id": "import",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 20,
-        "publishedAt": "2019-03-08T15:46:45.095Z",
-        "firstPublishedAt": "2019-03-08T15:46:45.095Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 21,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "topicLinkBox"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-GB": "Migration link box"
-        },
-        "headerText": {
-          "en-GB": "migration header"
-        },
-        "itemsPerRow": {
-          "en-GB": 2
-        },
-        "links": {
-          "en-GB": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "4gXZvSzxllBNV7LhNY7bnT"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6sxvmndnpn0s"
-          }
-        },
-        "id": "7uQbXOdoeYWSZNT0Sk9vEG",
-        "type": "Entry",
-        "createdAt": "2019-03-08T15:52:38.844Z",
-        "updatedAt": "2019-03-08T15:53:27.048Z",
-        "environment": {
-          "sys": {
-            "id": "import",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 20,
-        "publishedAt": "2019-03-08T15:53:27.048Z",
-        "firstPublishedAt": "2019-03-08T15:53:27.048Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 21,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "topicBanner"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-GB": "Migration topic banner"
-        },
-        "bannerColour": {
-          "en-GB": "Red"
-        },
-        "headerText": {
-          "en-GB": "migration header"
-        },
-        "externalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "4gXZvSzxllBNV7LhNY7bnT"
-            }
-          }
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6sxvmndnpn0s"
-          }
-        },
-        "id": "g5CXXdxPiBOEipJOaPJZv",
-        "type": "Entry",
-        "createdAt": "2019-03-08T15:57:03.169Z",
-        "updatedAt": "2019-03-08T15:57:53.810Z",
-        "environment": {
-          "sys": {
-            "id": "import",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 20,
-        "publishedAt": "2019-03-08T15:57:53.810Z",
-        "firstPublishedAt": "2019-03-08T15:57:53.810Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 21,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "topicPageMetaInformation"
-          }
-        }
-      },
-      "fields": {
-        "systemName": {
-          "en-GB": "Migration Meta"
-        },
-        "seoDescription": {
-          "en-GB": "migrate"
-        },
-        "shortDescription": {
-          "en-GB": "migrate"
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6sxvmndnpn0s"
-          }
-        },
-        "id": "3ZnKNB4VcSdgTOho9wmraK",
-        "type": "Entry",
-        "createdAt": "2019-03-08T15:56:28.974Z",
-        "updatedAt": "2019-03-08T15:58:06.145Z",
-        "environment": {
-          "sys": {
-            "id": "import",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 21,
-        "publishedAt": "2019-03-08T15:58:06.145Z",
-        "firstPublishedAt": "2019-03-08T15:58:06.145Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 22,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "pageAssemblyContentPage"
-          }
-        }
-      },
-      "fields": {
-        "title": {
-          "en-GB": "Migration page test"
-        },
-        "slug": {
-          "en-GB": "migration-page-test"
-        },
-        "bodyCopy": {
-          "en-GB": {
-            "data": {},
-            "content": [
-              {
-                "data": {},
-                "content": [
-                  {
-                    "data": {},
-                    "marks": [],
-                    "value": "migrate me",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
-        "pageInformation": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "g5CXXdxPiBOEipJOaPJZv"
-            }
-          }
-        },
-        "readyForReview": {
-          "en-GB": ["Yes"]
-        },
-        "legalReview": {
-          "en-GB": ["Yes"]
-        },
-        "editorialReview": {
-          "en-GB": ["Yes"]
-        },
-        "brandReview": {
-          "en-GB": ["Yes"]
-        }
-      }
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6sxvmndnpn0s"
-          }
-        },
-        "id": "3JYjKCRu31Qt7YsQ1O1rhz",
-        "type": "Entry",
-        "createdAt": "2019-03-08T16:04:31.905Z",
-        "updatedAt": "2019-03-08T16:05:16.404Z",
-        "environment": {
-          "sys": {
-            "id": "import",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 28,
-        "publishedAt": "2019-03-08T16:05:16.404Z",
-        "firstPublishedAt": "2019-03-08T16:05:16.404Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 29,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "topicCardWithIcon"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-GB": "Migration test card with icon"
-        },
-        "icon": {
-          "en-GB": "Speech bubble"
-        },
-        "titleText": {
-          "en-GB": "migration"
-        },
-        "subText": {
-          "en-GB": "migration"
-        },
-        "ctaText": {
-          "en-GB": "migration"
-        },
-        "ctaLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "3ZnKNB4VcSdgTOho9wmraK"
-            }
-          }
-        },
-        "externalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "4gXZvSzxllBNV7LhNY7bnT"
-            }
-          }
+          "en-GB": "Migration title"
         }
       }
     }
   ],
-  "assets": []
+  "assets": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "1QpzljvxQoQE2PqEgRi9yG",
+        "type": "Asset",
+        "createdAt": "2019-03-08T16:17:06.769Z",
+        "updatedAt": "2019-03-08T16:18:42.325Z",
+        "environment": {
+          "sys": {
+            "id": "import",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 14,
+        "publishedAt": "2019-03-08T16:18:42.325Z",
+        "firstPublishedAt": "2019-03-08T16:18:42.325Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 15,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "625g69sb4nKXWEDMnjfx6q"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-GB": "Migration asset"
+        },
+        "description": {
+          "en-GB": "migration"
+        },
+        "file": {
+          "en-GB": {
+            "url": "//images.ctfassets.net/6sxvmndnpn0s/1QpzljvxQoQE2PqEgRi9yG/04bb40b8d4e079bb183797a95d10040e/migration.jpeg",
+            "details": {
+              "size": 4174,
+              "image": {
+                "width": 225,
+                "height": 225
+              }
+            },
+            "fileName": "migration.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    }
+  ]
 }
