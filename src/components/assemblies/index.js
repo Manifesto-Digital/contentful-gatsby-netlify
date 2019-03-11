@@ -118,6 +118,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
           </Form>
         );
       }
+
       if (internal.type === 'ContentfulTopicContentCardsBanner') {
         return <ContentCardBanner key={id} data={assembly} />;
       }
