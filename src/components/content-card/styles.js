@@ -32,13 +32,32 @@ export const CardTitle = styled.h3`
   max-width: 100%;
   margin-bottom: 0;
   padding: 5px ${({ theme }) => theme.spacing.standard};
-  background-color: ${({ theme }) => theme.palette.primary};
   color: ${({ theme }) => theme.palette.white};
   font-size: 16px;
   font-weight: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  background: ${({ bgColour, theme }) =>
+    (bgColour === 'red' && theme.palette.primary) ||
+    (bgColour === 'blue' && theme.palette.sanMarinoBlue) ||
+    (bgColour === 'black' && theme.palette.black) ||
+    (bgColour === 'donate' && theme.palette.donate) ||
+    theme.palette.primary};
+
+  color: ${({ bgColour, theme }) =>
+    (bgColour === 'red' && theme.palette.white) ||
+    (bgColour === 'black' && theme.palette.white) ||
+    (bgColour === 'blue' && theme.palette.white) ||
+    (bgColour === 'donate' && theme.palette.white)};
+
+  &:hover {
+    color: ${({ bgColour, theme }) =>
+      (bgColour === 'red' && theme.palette.white) ||
+      (bgColour === 'black' && theme.palette.white) ||
+      (bgColour === 'blue' && theme.palette.white) ||
+      (bgColour === 'donate' && theme.palette.white)};
+  }
 `;
 
 export const SummaryText = styled(LinkHandler)`
