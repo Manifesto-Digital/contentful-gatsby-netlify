@@ -8,4 +8,4 @@ command = "mkdir public && touch public/__redirects && echo running node redirec
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Robots-Tag = noindex
+    X-Robots-Tag = "noindex"
