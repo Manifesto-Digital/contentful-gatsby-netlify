@@ -12,21 +12,20 @@ export const useApi = initialData => {
     event.preventDefault();
   };
 
-  const fetchData = async () => {
-    setFalse(false);
-    setLoading(true);
-
-    try {
-      const result = await axios(url);
-      setResponse(result.data);
-    } catch (error) {
-      setFalse(true);
-    }
-
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      setFalse(false);
+      setLoading(true);
+
+      try {
+        const result = await axios(url);
+        setResponse(result.data);
+      } catch (error) {
+        setFalse(true);
+      }
+
+      setLoading(false);
+    };
     fetchData();
   }, [url]);
 

@@ -19,20 +19,20 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
 
   const [contentWithReferences, createReferenceContent] = useState([]);
 
-  const convertBracketsToLink = text => {
-    const formattedContent = bracketsToLink(text);
-    createReferenceContent(formattedContent);
-  };
-
-  const convertBracketsToArray = text => {
-    const referenceArray = bracketsToArray(text);
-    updateReferenceList(referenceArray);
-  };
-
   useEffect(() => {
+    const convertBracketsToLink = text => {
+      const formattedContent = bracketsToLink(text);
+      createReferenceContent(formattedContent);
+    };
+
+    const convertBracketsToArray = text => {
+      const referenceArray = bracketsToArray(text);
+      updateReferenceList(referenceArray);
+    };
     convertBracketsToLink(tableOfContents);
     convertBracketsToArray(tableOfContents);
-  }, []);
+  }, [tableOfContents, updateReferenceList]);
+
   return (
     <>
       <PageTitle>
