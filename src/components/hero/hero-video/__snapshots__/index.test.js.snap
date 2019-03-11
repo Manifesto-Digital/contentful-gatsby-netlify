@@ -5,6 +5,7 @@ exports[`renders correctly 1`] = `
   overflow: hidden;
   padding-top: 60vh;
   position: relative;
+  background-color: #212122;
 }
 
 .c2 {
