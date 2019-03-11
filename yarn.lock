@@ -3742,10 +3742,10 @@ contentful-batch-libs@^9.0.0:
     lodash "^4.0.1"
     moment "^2.18.1"
 
-contentful-cli@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/contentful-cli/-/contentful-cli-0.20.0.tgz#ace095aa916e2200a1a0cc11856e1d2dbc8a9136"
-  integrity sha512-4T0NNWgNvE2I1EnpaxM1AGJWrnfL/bGHR697lX0ecdUGwtwiSSTCXEoPEZandw6PLtYx2rurromVm9UTd4kHOw==
+contentful-cli@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/contentful-cli/-/contentful-cli-0.21.0.tgz#0716334419f8696cd7d7af49a0fad2a0acc09637"
+  integrity sha512-7NgepqLbDMvJ7r7K8d9Loi1wQaB/fuoD3cn/Wnt4FlC4QS7g5t1qAGWew43HhylyDCllBIM0dkQ6DM0NZNfBWA==
   dependencies:
     ast-types "^0.11.5"
     bfj "^6.1.1"
@@ -13044,7 +13044,7 @@ react-test-renderer@16.8.4, react-test-renderer@^16.0.0-0:
     react-is "^16.8.4"
     scheduler "^0.13.4"
 
-react-testing-library@6.0.0:
+react-testing-library@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-6.0.0.tgz#81edfcfae8a795525f48685be9bf561df45bb35d"
   integrity sha512-h0h+YLe4KWptK6HxOMnoNN4ngu3W8isrwDmHjPC5gxc+nOZOCurOvbKVYCvvuAw91jdO7VZSm/5KR7TxKnz0qA==
