@@ -21,6 +21,10 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
+.c3:hover {
+  color: white;
+}
+
 <section
   className="c0"
 >

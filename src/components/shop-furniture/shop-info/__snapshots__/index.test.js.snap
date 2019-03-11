@@ -120,6 +120,7 @@ exports[`renders correctly 1`] = `
             Address
           </h3>
           <div
+            className=""
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>51 Church Road 
@@ -145,6 +146,7 @@ SW13 9HH</p>",
             Opening hours
           </h3>
           <div
+            className=""
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p><strong>Mon to Sat</strong>: 10am to 6pm
@@ -169,6 +171,7 @@ SW13 9HH</p>",
             Parking
           </h3>
           <div
+            className=""
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>No parking</p>",
@@ -192,6 +195,7 @@ SW13 9HH</p>",
             Disabled access
           </h3>
           <div
+            className=""
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>No disabled access</p>",

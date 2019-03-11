@@ -3,20 +3,20 @@ import RichText from '../rich-text';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Wrapper = styled.div`
-  margin-bottom: ${props => props.theme.spacing.large};
-  padding: ${props => props.theme.spacing.large} 0;
+  margin-bottom: ${({ theme }) => theme.spacing.large};
+  padding: ${({ theme }) => theme.spacing.large} 0;
 
-  background-color: ${props =>
-    (props.backgroundColour === 'white' && props.theme.palette.white) ||
-    (props.backgroundColour === 'black' && props.theme.palette.black) ||
-    (props.backgroundColour === 'grey' && props.theme.palette.grey10) ||
-    props.theme.palette.white};
+  background-color: ${({ backgroundColour, theme }) =>
+    (backgroundColour === 'white' && theme.palette.white) ||
+    (backgroundColour === 'black' && theme.palette.black) ||
+    (backgroundColour === 'grey' && theme.palette.grey10) ||
+    theme.palette.white};
 `;
 
 export const HeaderText = styled.h2`
-  color: ${props =>
-    (props.backgroundColour === 'black' && props.theme.palette.white) ||
-    props.theme.palette.black};
+  color: ${({ backgroundColour, theme }) =>
+    (backgroundColour === 'black' && theme.palette.white) ||
+    theme.palette.black};
 `;
 
 export const FlexContainer = styled.div`
@@ -50,7 +50,7 @@ export const ContentSemi = styled.div`
 `;
 
 export const TextWrapper = styled(RichText)`
-  color: ${props =>
-    (props.backgroundColour === 'black' && props.theme.palette.white) ||
-    props.theme.palette.black};
+  color: ${({ backgroundColour, theme }) =>
+    (backgroundColour === 'black' && theme.palette.white) ||
+    theme.palette.black};
 `;

@@ -19,7 +19,7 @@ import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 
 const PublishedDate = styled.p`
-  color: ${props => props.theme.palette.grey45};
+  color: ${({ theme }) => theme.palette.grey45};
 `;
 
 const PressReleasePage = ({ data }) => {

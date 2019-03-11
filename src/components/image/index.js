@@ -1,10 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import queryString from 'query-string';
 
-const Image = ({ image: { description, file }, className, width }) => {
+const Image = ({
+  image: { description, file },
+  className,
+  width,
+  height,
+  fit,
+}) => {
   if (!file || !file.url) return;
-  const url = width ? `${file.url}?w=${width}` : file.url;
-  return <img src={url} alt={description} className={className} />;
+  const { url } = file;
+  const params = queryString.stringify({
+    h: height,
+    w: width,
+    fit,
+  });
+
+  return (
+    <img
+      src={`${url}${params ? `?${params}` : ''}`}
+      alt={description}
+      className={className}
+    />
+  );
 };
 
 Image.propTypes = {
@@ -18,7 +37,9 @@ Image.propTypes = {
     }).isRequired,
   }),
   className: PropTypes.string,
-  width: PropTypes.number,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number,
+  fit: PropTypes.oneOf(['pad', 'fill', 'scale', 'crop', 'thumb']),
 };
 
 export default Image;

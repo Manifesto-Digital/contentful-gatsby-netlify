@@ -152,3 +152,19 @@ export const createEvent = createFactory({
   displayLocation: 'Brighton',
   notifiedTeamEmail: 'running@shelter.org.uk',
 });
+
+export const createPerson = createFactory({
+  id: 'd5ec5ab5-6824-5488-b9bc-4d8794fba4c6',
+  firstName: 'Toby',
+  lastName: 'Bushell',
+  phoneNumber: '012345678910',
+  emailAddress: 'test@test.com',
+  photo: createImage(),
+  bio: {
+    internal: {
+      content:
+        'Nunc nonummy metus. Fusce pharetra convallis urna. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.',
+    },
+  },
+  jobTitle: 'Developer',
+});

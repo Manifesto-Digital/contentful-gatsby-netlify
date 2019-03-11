@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin-bottom: ${props =>
-    props.removeMarginBottom ? '0' : props.theme.spacing.large};
-  padding: ${props => props.theme.spacing.standard};
-  background-color: ${props => props.theme.palette.grey10};
+  margin-bottom: ${({ removeMarginBottom, theme }) =>
+    removeMarginBottom ? '0' : theme.spacing.large};
+  padding: ${({ theme }) => theme.spacing.standard};
+  background-color: ${({ theme }) => theme.palette.grey10};
 `;
 
 export const VideoWrapper = styled.div`
@@ -23,7 +23,7 @@ export const VideoWrapper = styled.div`
 `;
 
 export const BottomText = styled.div`
-  margin-top: ${props => props.theme.spacing.standard};
+  margin-top: ${({ theme }) => theme.spacing.standard};
 
   p:last-child {
     margin-bottom: 0;

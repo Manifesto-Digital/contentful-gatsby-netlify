@@ -4,7 +4,7 @@ import RichText from '../rich-text';
 
 export const Grid = styled.section`
   display: block;
-  margin-bottom: ${props => props.theme.spacing.standard};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 `;
 
 export const ItemsWrapper = styled.div`
@@ -14,7 +14,7 @@ export const ItemsWrapper = styled.div`
 `;
 
 export const Item = styled(RichText)`
-  margin-bottom: ${props => props.theme.spacing.standard};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.tablet`
     width: 49%;

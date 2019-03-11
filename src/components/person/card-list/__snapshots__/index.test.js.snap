@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c10 {
+  border-bottom-right-radius: 3px;
+  background: #8c8c8c;
+  color: #fff;
+  padding-top: 3px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+}
+
+.c10 svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin: 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.c5 {
+  padding: 10px 20px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c6 {
+  margin-bottom: 5px;
+}
+
+.c7 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.c4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.c8 {
+  margin-bottom: 5px;
+}
+
+.c8:last-of-type {
+  margin-bottom: 0;
+}
+
+.c9 {
+  margin-right: 10px;
+}
+
+.c9 svg {
+  width: 18px;
+  height: 18px;
+}
+
+.c9 path {
+  fill: #ea232d;
+}
+
+.c0 {
+  margin-bottom: 40px;
+}
+
+.c2 {
+  padding: 0;
+  display: grid;
+}
+
+@media (min-width:32em) {
+  .c4 {
+    width: 35%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c2 {
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <ul
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <img
+          alt="Collection hero"
+          className="c4"
+          src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fit=fill&h=500&w=500"
+        />
+        <div
+          className="c5"
+        >
+          <h3
+            className="c6"
+          >
+            mock first name
+             
+            mock last name
+          </h3>
+          <p
+            className="c7"
+          >
+            Developer
+          </p>
+          <p
+            className="c8"
+          >
+            <span
+              className="isvg loading c9"
+            />
+             
+            test@test.com
+          </p>
+          <p
+            className="c8"
+          >
+            <span
+              className="isvg loading c9"
+            />
+             
+            012345678910
+          </p>
+        </div>
+        <div
+          aria-hidden="true"
+          className="c10"
+        >
+          <span
+            className="isvg loading"
+          />
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <img
+          alt="Collection hero"
+          className="c4"
+          src="//images.ctfassets.net/6sxvmndnpn0s/2DPKnmx9Na8WYgG4ySqkA/5ca89770eb1ac36c9dbfe34d8d65eb5c/collection-hero.jpg?fit=fill&h=500&w=500"
+        />
+        <div
+          className="c5"
+        >
+          <h3
+            className="c6"
+          >
+            mock first name 2
+             
+            mock last name 2
+          </h3>
+          <p
+            className="c7"
+          >
+            Developer
+          </p>
+          <p
+            className="c8"
+          >
+            <span
+              className="isvg loading c9"
+            />
+             
+            test@test.com
+          </p>
+          <p
+            className="c8"
+          >
+            <span
+              className="isvg loading c9"
+            />
+             
+            012345678910
+          </p>
+        </div>
+        <div
+          aria-hidden="true"
+          className="c10"
+        >
+          <span
+            className="isvg loading"
+          />
+        </div>
+      </div>
+    </ul>
+  </div>
+</section>
+`;

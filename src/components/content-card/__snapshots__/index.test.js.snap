@@ -30,13 +30,13 @@ exports[`renders correctly 1`] = `
   max-width: 100%;
   margin-bottom: 0;
   padding: 5px 20px;
-  background-color: #ea232d;
   color: #fff;
   font-size: 16px;
   font-weight: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  background: #ea232d;
 }
 
 .c4 {
@@ -63,9 +63,9 @@ exports[`renders correctly 1`] = `
   <img
     alt=""
     className="c1"
-    src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350"
-    srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350 480w,
-        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?fm=jpg&fit=fill&f=center&w=600&h=350"
+    src="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
+    srcSet="//images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600 480w,
+        //images.ctfassets.net/6sxvmndnpn0s/3lzXpdUbIjH5rj…bf633ef/Telli_Afrik_and_family_-_Steve_Franck.jpg?f=center&fit=fill&h=350&w=600"
   />
   <div
     className="c2"

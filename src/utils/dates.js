@@ -8,13 +8,15 @@ export const dateAsString = (date, format) =>
     .toString();
 
 export const getWeekDays = () => {
-  // Base date is a Monday, this ensures we get the day lsit in order
-  const baseDate = new Date(Date.UTC(2019, 0, 7));
-  const weekDays = [];
-  for (let i = 0; i < 7; i += 1) {
-    weekDays.push(baseDate.toLocaleDateString('en-GB', { weekday: 'long' }));
-    baseDate.setDate(baseDate.getDate() + 1);
-  }
+  const weekDays = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
   return weekDays;
 };
 

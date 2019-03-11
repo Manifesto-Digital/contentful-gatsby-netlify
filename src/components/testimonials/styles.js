@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
 export const ModuleWrapper = styled.div`
-  margin-bottom: ${props => props.theme.spacing.large};
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 `;
 
 export const Wrapper = styled.div`
@@ -26,9 +26,9 @@ export const ImageWrapper = styled.div`
 export const TextWrapper = styled.div`
   position: relative;
   width: 90%;
-  background-color: ${props =>
-    (props.bg === 'Grey' && props.theme.palette.grey10) ||
-    (props.bg === 'White' && props.theme.palette.white)};
+  background-color: ${({ bg, theme }) =>
+    (bg === 'Grey' && theme.palette.grey10) ||
+    (bg === 'White' && theme.palette.white)};
   padding: ${({ theme }) => theme.spacing.medium};
   margin: -${({ theme }) => theme.spacing.medium} auto 0;
 
@@ -44,6 +44,6 @@ export const TextWrapper = styled.div`
 `;
 
 export const Author = styled.span`
-  color: ${props => props.theme.palette.primary};
+  color: ${({ theme }) => theme.palette.primary};
   font-style: italic;
 `;

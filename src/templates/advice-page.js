@@ -4,15 +4,26 @@ import { graphql } from 'gatsby';
 // Components
 import Layout from '../components/layout';
 import Assemblies from '../components/assemblies';
-import { Container, TwoThirds } from '../components/styled/containers';
+import {
+  Container,
+  TwoThirds,
+  ContentWithSideBar,
+  SideBar,
+} from '../components/styled/containers';
 import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 import FeedbackModal from '../components/feedback-modal';
 import SubpageMenu from '../components/advice-page/subpage-menu';
 import SubpagePagination from '../components/advice-page/subpage-pagination';
+import SidebarAssemblies from '../components/assemblies/sidebar';
 
 const AdvicePage = ({ data, pageContext }) => {
-  const { assemblies, title, bodyCopy } = data.contentfulPageAssemblyAdvicePage;
+  const {
+    assemblies,
+    title,
+    bodyCopy,
+    sidebarAssemblies,
+  } = data.contentfulPageAssemblyAdvicePage;
   const { subpages, slug } = pageContext;
 
   return (
@@ -23,11 +34,16 @@ const AdvicePage = ({ data, pageContext }) => {
         </PageTitle>
         <Container>
           <SubpageMenu subpages={subpages} activeSlug={slug} />
-          <TwoThirds>
-            {bodyCopy && <RichText richText={bodyCopy} />}
-            <Assemblies assemblies={assemblies} insideContainer />
-            <FeedbackModal />
-          </TwoThirds>
+          <ContentWithSideBar>
+            <TwoThirds>
+              {bodyCopy && <RichText richText={bodyCopy} />}
+              <Assemblies assemblies={assemblies} insideContainer />
+              <FeedbackModal />
+            </TwoThirds>
+            <SideBar>
+              <SidebarAssemblies assemblies={sidebarAssemblies} />
+            </SideBar>
+          </ContentWithSideBar>
         </Container>
         <SubpagePagination subpages={subpages} activeSlug={slug} />
       </article>
@@ -72,6 +88,9 @@ export const advicePageQuery = graphql`
           ...ShareBlockFragment
           ...GoogleMapFragment
         }
+      }
+      sidebarAssemblies {
+        ...SidebarFragment
       }
     }
   }
