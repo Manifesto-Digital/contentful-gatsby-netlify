@@ -6,6 +6,7 @@ export const VideoHero = styled.section`
   overflow: hidden;
   padding-top: 60vh;
   position: relative;
+  background-color: ${({ theme }) => theme.palette.black};
 `;
 
 export const VideoWrapper = styled.div``;

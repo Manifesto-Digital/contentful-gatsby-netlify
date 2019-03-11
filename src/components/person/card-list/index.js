@@ -14,10 +14,11 @@ const PersonCardList = ({
   limit,
   defaultLimit,
 }) => {
-  if (!list) return null;
-  const totalLength = list.length;
   const initialLimit = limit || defaultLimit;
   const [count, updateCount] = useState(initialLimit);
+
+  if (!list) return null;
+  const totalLength = list.length;
 
   const loadMore = () => {
     updateCount(count + initialLimit);
