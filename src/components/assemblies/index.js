@@ -120,7 +120,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicContentCardsBanner') {
+      if (internal.type === 'ContentfulAssemblyContentCardsBanner') {
         return <ContentCardBanner key={id} data={assembly} />;
       }
 
