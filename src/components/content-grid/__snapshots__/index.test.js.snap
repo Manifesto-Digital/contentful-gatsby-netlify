@@ -46,7 +46,7 @@ exports[`renders correctly 1`] = `
       className="c2"
     >
       <div
-        className="c3"
+        className="c3 "
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
         }
       />
       <div
-        className="c3"
+        className="c3 "
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -62,7 +62,7 @@ exports[`renders correctly 1`] = `
         }
       />
       <div
-        className="c3"
+        className="c3 "
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -70,7 +70,7 @@ exports[`renders correctly 1`] = `
         }
       />
       <div
-        className="c3"
+        className="c3 "
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

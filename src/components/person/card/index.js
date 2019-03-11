@@ -1,24 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import SVG from 'react-inlinesvg';
-import { ImageProps } from '../../../prop-types';
-// SVGs
 import ArrowRight from '../../../assets/svg/icons/chevron-right-light.svg';
 import Envelope from '../../../assets/svg/icons/envelope-light.svg';
 import Phone from '../../../assets/svg/icons/phone-light.svg';
-// Styles
-import {
-  Card,
-  Info,
-  StyledImage,
-  ContactLine,
-  ContactIcon,
-  Name,
-  JobTitle,
-} from './styles';
+import { ImageProps } from '../../../prop-types';
+import { VisuallyHidden } from '../../styled/accessibility';
 import { IconHolder } from '../../styled/icons';
 import { CoveringLink } from '../../styled/links';
-import { VisuallyHidden } from '../../styled/accessibility';
+import {
+  Card,
+  ContactIcon,
+  ContactLine,
+  Info,
+  JobTitle,
+  Name,
+  StyledImage,
+} from './styles';
 
 const PersonCard = ({ person, link, columns }) => {
   const {
