@@ -23,10 +23,10 @@ import { consistentString } from '../utils/content-formatting';
 
 const Page = ({ data }) => {
   const standardEvent = data.contentfulPageAssemblyStandardEvent;
-  if (!standardEvent.event) return null;
-
   const [mapModal, toggleMapModal] = useToggle(false);
   const formRef = useRef(null);
+
+  if (!standardEvent.event) return null;
 
   const {
     event,
