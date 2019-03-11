@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const ContentCardBannerFragment = graphql`
-  fragment ContentCardBannerFragment on ContentfulTopicContentCardsBanner {
+  fragment ContentCardBannerFragment on ContentfulAssemblyContentCardsBanner {
     id
     internal {
       type
@@ -31,6 +31,7 @@ export const ContentCardBannerFragment = graphql`
               fileName
             }
           }
+          taxonomyColour
         }
       }
     }
