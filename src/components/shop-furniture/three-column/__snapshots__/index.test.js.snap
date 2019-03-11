@@ -209,6 +209,7 @@ exports[`renders correctly 1`] = `
           How does your donation help?
         </h3>
         <div
+          className=""
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

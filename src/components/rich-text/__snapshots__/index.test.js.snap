@@ -2,6 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
+  className=""
   dangerouslySetInnerHTML={
     Object {
       "__html": "<h3>Face-to-face services</h3><p>Our advice and support services across the UK give people <b>one-to-one, personalised help</b> with all of their housing issues.</p>",
