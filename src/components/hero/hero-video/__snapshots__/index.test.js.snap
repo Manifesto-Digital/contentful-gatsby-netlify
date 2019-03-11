@@ -134,6 +134,7 @@ exports[`renders correctly 1`] = `
   className="c0"
 >
   <React-player
+    autoPlay={true}
     className="c1"
     config={
       Object {
@@ -154,6 +155,7 @@ exports[`renders correctly 1`] = `
     onError={[Function]}
     onReady={[Function]}
     playing={true}
+    playsinline={true}
     url="//videos.ctfassets.net/6sxvmndnpn0s/5hlfsk9dwVVNBlbpWHSLvK/9f1d647e6332be389465c9d014a57a26/shelter-urban-rush.mp4"
     width={null}
   />
