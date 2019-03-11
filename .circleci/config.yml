@@ -38,12 +38,22 @@ jobs:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
-      - run: sudo npm install -g contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+
+      - restore_cache:
+          name: Cache Global NPM
+          keys:
+            - npm-global-
+      - run: sudo npm install -g contentful-cli
+      - save_cache:
+          key: npm-global-
+          paths:
+            - /usr/local/lib/node_modules/
+
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
       - run: yarn build
 
