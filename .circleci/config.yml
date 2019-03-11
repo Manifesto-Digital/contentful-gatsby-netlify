@@ -16,7 +16,6 @@ jobs:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
-      - run: sudo npm install -g contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -38,50 +37,18 @@ jobs:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
+
+      - run: sudo yarn global add contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
 
-      - restore_cache:
-          name: Cache Global NPM
-          keys:
-            - npm-global-
-      - run: sudo npm install -g contentful-cli
-      - save_cache:
-          key: npm-global-
-          paths:
-            - /usr/local/lib/node_modules/
-
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
       - run: yarn build
 
   deploy-develop:
-    docker:
-      - image: circleci/node:10.14
-    steps:
-      - checkout
-      - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "develop" $MANAGEMENT_API_KEY
-
-  deploy-uat:
-    docker:
-      - image: circleci/node:10.14
-    steps:
-      - checkout
-      - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "UAT" $MANAGEMENT_API_KEY
-
-  deploy-master:
-    docker:
-      - image: circleci/node:10.14
-    steps:
-      - checkout
-      - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "master" $MANAGEMENT_API_KEY
-
-  deploy-test:
     docker:
       - image: circleci/node:10.14
     steps:
