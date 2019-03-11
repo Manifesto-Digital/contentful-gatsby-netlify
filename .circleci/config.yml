@@ -38,7 +38,7 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
 
-      - run: yarn global add contentful-cli
+      - run: sudo yarn global add contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
