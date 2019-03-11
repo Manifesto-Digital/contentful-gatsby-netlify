@@ -19,8 +19,6 @@ const ServicePage = ({ data }) => {
     usefulInfoCopy,
   } = data.contentfulPageAssemblyServicePage;
 
-  console.log(data);
-
   return (
     <Layout>
       <article>
