@@ -31,6 +31,7 @@ export const ContentCardBannerFragment = graphql`
               fileName
             }
           }
+          taxonomyColour
         }
       }
     }
