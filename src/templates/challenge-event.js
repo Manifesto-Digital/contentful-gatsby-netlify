@@ -31,7 +31,15 @@ const ChallengeEventPage = ({ data }) => {
   let lastScroll;
 
   const handleStickyBarScroll = () => {
-    const scrollPosition = document.documentElement.scrollTop;
+    const scrollPosition =
+      window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (
+            document.documentElement ||
+            document.body.parentNode ||
+            document.body
+          ).scrollTop;
+
     // Store the original position of the banner so we can un-stick when would have been visible
     if (!stickyBarPosition) {
       setStickBarPosition(
@@ -52,17 +60,15 @@ const ChallengeEventPage = ({ data }) => {
     const bannerWouldBeVisible = bottomOfScreen >= stickyBarPosition;
 
     if (bannerStuck) {
-      setAnimateBanner(false);
+      if (!animateBanner) setAnimateBanner(false);
       // If scroll is above hero then dont fix banner
-      if (scrollPosition < middleOfHeroBanner) {
-        setBannerStuck(false);
-      }
-      // If scroll would show banner naturally in the DOM without it sticking then remove fixed
-      if (bannerWouldBeVisible) {
+      if (scrollPosition < middleOfHeroBanner || bannerWouldBeVisible) {
         setBannerStuck(false);
       }
     } else if (scrollPosition > middleOfHeroBanner && !bannerWouldBeVisible) {
-      if (lastScroll < scrollPosition) setAnimateBanner(true);
+      if (lastScroll < scrollPosition) {
+        setAnimateBanner(true);
+      }
       setBannerStuck(true);
     }
     lastScroll = scrollPosition;
@@ -89,7 +95,7 @@ const ChallengeEventPage = ({ data }) => {
   }, [stickyBarPosition]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleStickyBarScroll);
+    window.addEventListener('scroll', handleStickyBarScroll, true);
     // Specify how to clean up after this effect:
     return function cleanup() {
       window.removeEventListener('scroll', handleStickyBarScroll);

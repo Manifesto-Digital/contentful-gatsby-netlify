@@ -10,7 +10,7 @@ import { BannerBackground, HeaderText, CardRow } from './styles';
 const ContentCardBanner = ({ data, sidebar }) => {
   const { header, bannerColour, bannerFlow, contentCards } = data;
 
-  if (contentCards && contentCards.length < 2) return null;
+  if (!contentCards || contentCards.length < 2) return null;
 
   return (
     <BannerBackground
