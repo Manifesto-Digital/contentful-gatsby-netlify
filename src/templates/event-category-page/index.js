@@ -7,8 +7,14 @@ import PageTitle from '../../components/page-title';
 import RichText from '../../components/rich-text';
 import FeaturedEvent from '../../components/featured-event';
 import EventListCard from '../../components/event-list-card';
+import SideBarAssemblies from '../../components/assemblies/sidebar';
 // Styles
-import { Container, TwoThirds } from '../../components/styled/containers';
+import {
+  Container,
+  ContentWithSideBar,
+  TwoThirds,
+  SideBar,
+} from '../../components/styled/containers';
 import { IntroWrapper, OtherEventsWrapper } from './styles';
 import { SectionTag } from '../../components/styled/tags';
 
@@ -18,6 +24,7 @@ const EventCategoryPage = ({ data }) => {
     strapline,
     summary,
     featuredEvent,
+    sidebarAssemblies,
   } = data.contentfulPageAssemblyEventCategory;
 
   const standardEventPages =
@@ -51,11 +58,16 @@ const EventCategoryPage = ({ data }) => {
           <OtherEventsWrapper>
             <Container>
               <SectionTag>Other events</SectionTag>
-              <TwoThirds>
-                {events.map((event, key) => (
-                  <EventListCard data={event} key={key} />
-                ))}
-              </TwoThirds>
+              <ContentWithSideBar>
+                <TwoThirds>
+                  {events.map((event, key) => (
+                    <EventListCard data={event} key={key} />
+                  ))}
+                </TwoThirds>
+                <SideBar>
+                  <SideBarAssemblies assemblies={sidebarAssemblies} />
+                </SideBar>
+              </ContentWithSideBar>
             </Container>
           </OtherEventsWrapper>
         )}
@@ -98,6 +110,9 @@ export const eventCategoryPageQuery = graphql`
             }
           }
         }
+      }
+      sidebarAssemblies {
+        ...SidebarFragment
       }
     }
 

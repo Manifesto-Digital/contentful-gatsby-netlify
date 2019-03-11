@@ -21,6 +21,7 @@ import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardsWithIcons from '../cards-with-icons';
 import Map from '../google-map';
 import Finder from '../finder';
+import PersonCollection from '../person/collection';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -58,7 +59,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       if (internal.type === 'ContentfulTopicInlineCallout') {
         return (
           <InlineCallOut key={id} insideContainer={insideContainer}>
-            <RichText richText={assembly} />
+            <RichText richText={assembly.content} />
           </InlineCallOut>
         );
       }
@@ -176,6 +177,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
             type="shops"
           />
         );
+      }
+
+      if (internal.type === 'ContentfulAssemblyPersonCollection') {
+        return <PersonCollection key={id} data={assembly} />;
       }
 
       return null;

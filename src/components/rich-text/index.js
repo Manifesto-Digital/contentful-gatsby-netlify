@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Wrapper } from './styles';
 
-const RichText = ({ richText, className }) => {
+const RichText = ({ richText, className, sidebar }) => {
   const hasContent = item =>
     item &&
     item.childContentfulRichText &&
@@ -20,7 +21,8 @@ const RichText = ({ richText, className }) => {
 
   /* eslint-disable  react/no-danger */
   return (
-    <div
+    <Wrapper
+      sidebar={sidebar}
       className={className}
       dangerouslySetInnerHTML={createMarkup(newMarkup)}
     />
@@ -34,6 +36,7 @@ RichText.propTypes = {
     }).isRequired,
   }).isRequired,
   className: PropTypes.string,
+  sidebar: PropTypes.bool,
 };
 
 export default RichText;

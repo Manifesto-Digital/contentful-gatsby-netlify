@@ -13,6 +13,7 @@ exports[`renders correctly 1`] = `
     Address
   </h3>
   <div
+    className=""
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -23,6 +24,7 @@ exports[`renders correctly 1`] = `
     Parking
   </h3>
   <div
+    className=""
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -33,6 +35,7 @@ exports[`renders correctly 1`] = `
     Disabled access
   </h3>
   <div
+    className=""
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -43,6 +46,7 @@ exports[`renders correctly 1`] = `
     Opening times
   </h3>
   <div
+    className=""
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

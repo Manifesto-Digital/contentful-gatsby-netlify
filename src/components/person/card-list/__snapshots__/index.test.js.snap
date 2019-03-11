@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c10 {
+  border-bottom-right-radius: 3px;
+  background: #8c8c8c;
+  color: #fff;
+  padding-top: 3px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+}
+
+.c10 svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin: 0 auto;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -61,64 +86,26 @@ exports[`renders correctly 1`] = `
   fill: #ea232d;
 }
 
-.c10 {
-  border-bottom-right-radius: 3px;
-  background: #8c8c8c;
-  color: #fff;
-  padding-top: 3px;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
-}
-
-.c10 svg {
-  width: 22px;
-  height: 22px;
-  display: block;
-  margin: 0 auto;
-}
-
 .c0 {
   margin-bottom: 40px;
-  margin-top: 40px;
-  border-top: 1px solid #e5e5e5;
-  padding-top: 20px;
 }
 
 .c2 {
   padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c1 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-@media (min-width:62em) {
-  .c3 {
-    width: calc(50% - 10px);
-    font-size: 0.775rem;
-  }
+  display: grid;
 }
 
 @media (min-width:32em) {
   .c4 {
     width: 35%;
     margin-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c2 {
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
   }
 }
 
@@ -131,7 +118,7 @@ exports[`renders correctly 1`] = `
     <ul
       className="c2"
     >
-      <li
+      <div
         className="c3"
       >
         <img
@@ -152,7 +139,7 @@ exports[`renders correctly 1`] = `
           <p
             className="c7"
           >
-            Being awesome
+            Developer
           </p>
           <p
             className="c8"
@@ -181,8 +168,8 @@ exports[`renders correctly 1`] = `
             className="isvg loading"
           />
         </div>
-      </li>
-      <li
+      </div>
+      <div
         className="c3"
       >
         <img
@@ -203,7 +190,7 @@ exports[`renders correctly 1`] = `
           <p
             className="c7"
           >
-            Being awesome
+            Developer
           </p>
           <p
             className="c8"
@@ -232,7 +219,7 @@ exports[`renders correctly 1`] = `
             className="isvg loading"
           />
         </div>
-      </li>
+      </div>
     </ul>
   </div>
 </section>
