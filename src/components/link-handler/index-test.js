@@ -9,7 +9,7 @@ import { createFactory, createInternalLink } from '../../utils/test-factories';
 // Default props
 export const createLinkHandler = createFactory({
   text: 'Button text',
-  externalUrl: 'https://example.com',
+  externalUrl: { URL: 'https://example.com', newTab: true },
   internalLink: createInternalLink(),
 });
 
@@ -19,7 +19,7 @@ it('renders correctly', () => {
   snapshotComponent(
     <LinkHandler
       internalLink={mockData.internalLink}
-      externalUrl={mockData.externalUrl}
+      externalUrl={{ URL: mockData.externalUrl.URL }}
     >
       {mockData.text}
     </LinkHandler>
@@ -31,10 +31,7 @@ it('displays the correct internal link', () => {
     internalLink: createInternalLink({ slug: 'internal-slug' }),
   });
   const wrapper = shallow(
-    <LinkHandler
-      internalLink={mockData.internalLink}
-      externalUrl={mockData.externalUrl}
-    >
+    <LinkHandler internalLink={mockData.internalLink}>
       {mockData.text}
     </LinkHandler>
   );
@@ -47,17 +44,14 @@ it('displays the correct internal link', () => {
 it('displays the external link', () => {
   const mockData = createLinkHandler({
     internalLink: null,
-    externalUrl: 'https://example.com',
+    externalUrl: { URL: 'https://example.com', newTab: true },
   });
 
   const wrapper = shallow(
-    <LinkHandler
-      internalLink={mockData.internalLink}
-      externalUrl={mockData.externalUrl}
-    >
+    <LinkHandler externalUrl={{ URL: mockData.externalUrl.URL }}>
       {mockData.text}
     </LinkHandler>
   );
 
-  expect(wrapper.find('a').prop('href')).toBe(mockData.externalUrl);
+  expect(wrapper.find('a').prop('href')).toBe(mockData.externalUrl.URL);
 });

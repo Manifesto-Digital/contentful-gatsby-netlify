@@ -22,7 +22,7 @@ const CTA = ({
     bg={consistentString(bg)}
     className={className}
     fullWidth={fullWidth}
-    newTab={newTab}
+    newTab={externalURL}
   >
     {icon && icon.file && (
       <CtaIcon>
@@ -44,8 +44,8 @@ CTA.fromCMS = ({
   children: buttonText,
   bg: ctaColour.toLowerCase(),
   internalLink,
-  externalURL: externalLink.URL,
-  newTab: externalLink.newTab,
+  externalURL: externalLink,
+  newTab: externalLink,
   icon,
 });
 
@@ -57,10 +57,7 @@ CTA.propTypes = {
     id: PropTypes.string,
     slug: PropTypes.string,
   }),
-
-  externalURL: PropTypes.string,
-  newTab: PropTypes.bool,
-
+  externalURL: PropTypes.object,
   icon: PropTypes.shape({
     file: PropTypes.object,
   }),

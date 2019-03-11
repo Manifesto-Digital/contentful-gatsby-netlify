@@ -18,7 +18,7 @@ const ContactCard = ({ data }) => {
         <Icon src={iconSrc('telephone')} />
         <div>
           <NumberText>{contactNumber1Text}</NumberText>
-          <LinkHandler externalUrl={`tel:${contactNumber1}`}>
+          <LinkHandler externalUrl={{ URL: `tel:${contactNumber1}` }}>
             {contactNumber1}
           </LinkHandler>
         </div>
@@ -28,7 +28,7 @@ const ContactCard = ({ data }) => {
           <Icon src={iconSrc('telephone')} />
           <div>
             <NumberText>{contactNumber2Text}</NumberText>
-            <LinkHandler externalUrl={`tel:${contactNumber2}`}>
+            <LinkHandler externalUrl={{ URL: `tel:${contactNumber2}` }}>
               {contactNumber2}
             </LinkHandler>
           </div>

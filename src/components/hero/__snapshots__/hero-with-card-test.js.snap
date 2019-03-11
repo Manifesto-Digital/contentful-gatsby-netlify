@@ -113,9 +113,8 @@ exports[`renders correctly 1`] = `
       </p>
       <a
         className="c6"
-        href="https://example.com"
         rel="noopener"
-        target="_blank"
+        target="_self"
       >
         Woo amazing link text
       </a>

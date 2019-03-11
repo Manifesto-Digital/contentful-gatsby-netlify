@@ -82,7 +82,7 @@ const Hero = ({
       <HeroBanner ref={heroBannerRef}>
         <ContentContainer>
           <BannerText>{bannerText}</BannerText>
-          <SignUpLink externalUrl={eventLink} newTab={newTab}>
+          <SignUpLink externalUrl={{ URL: eventLink, newTab }}>
             {buttonText}
           </SignUpLink>
         </ContentContainer>
