@@ -21,6 +21,7 @@ import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardsWithIcons from '../cards-with-icons';
 import Map from '../google-map';
 import Stats from '../stats';
+import Finder from '../finder';
 import PersonCollection from '../person/collection';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
@@ -160,6 +161,28 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicStats') {
         return <Stats key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicServicesFinder') {
+        return (
+          <Finder
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+            type="services"
+          />
+        );
+      }
+
+      if (internal.type === 'ContentfulTopicShopFinder') {
+        return (
+          <Finder
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+            type="shops"
+          />
+        );
       }
 
       if (internal.type === 'ContentfulAssemblyPersonCollection') {

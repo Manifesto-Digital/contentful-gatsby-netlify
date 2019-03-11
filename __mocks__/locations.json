@@ -1,0 +1,137 @@
+{
+  "data": {
+    "agencies": {
+      "current_page": 1,
+      "data": [
+        {
+          "id": 11,
+          "AgencyID": "12586",
+          "Name": "Shelter Bristol",
+          "Location": "Bristol",
+          "distance": 0.03472813001719543,
+          "distance_in_miles": 2.399366502888032,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/bristol"
+        },
+        {
+          "id": 23,
+          "AgencyID": "31226",
+          "Name": "Shelter Cymru - Cardiff Office",
+          "Location": "Cardiff",
+          "distance": 0.6287404249935308,
+          "distance_in_miles": 43.439675962803044,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "WALES",
+          "ShowInSearch": 0,
+          "Website": "www.sheltercymru.org.uk"
+        },
+        {
+          "id": 18,
+          "AgencyID": "21188",
+          "Name": "Shelter Dorset - Bournemouth",
+          "Location": "Bournemouth (Dorset)",
+          "distance": 1.0468832740777922,
+          "distance_in_miles": 72.32916540603466,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/bournemouth"
+        },
+        {
+          "id": 1,
+          "AgencyID": "368",
+          "Name": "Shelter Birmingham - Gateway House",
+          "Location": "Birmingham Gateway House (West Midlands)",
+          "distance": 1.211643955952881,
+          "distance_in_miles": 83.71248091678456,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/birmingham_gateway_house"
+        },
+        {
+          "id": 55,
+          "AgencyID": "S340118",
+          "Name": "Shelter Birmingham - SIFA Fireside",
+          "Location": "Birmingham SIFA Fireside (West Midlands)",
+          "distance": 1.2153105869454426,
+          "distance_in_miles": 83.96580845206063,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/birmingham_sifa_fireside"
+        },
+        {
+          "id": 54,
+          "AgencyID": "S340117",
+          "Name": "Shelter Birmingham - Newtown",
+          "Location": "Birmingham Newtown (West Midlands)",
+          "distance": 1.2259612412498426,
+          "distance_in_miles": 84.70166215795163,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/birmingham_newtown"
+        },
+        {
+          "id": 58,
+          "AgencyID": "S340121",
+          "Name": "Shelter Thames Valley - Oxford",
+          "Location": "Oxford (Thames Valley)",
+          "distance": 1.3599287769921615,
+          "distance_in_miles": 93.95747920238843,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/oxford"
+        },
+        {
+          "id": 10,
+          "AgencyID": "12001",
+          "Name": "Shelter Cymru - Swansea Office",
+          "Location": "Swansea",
+          "distance": 1.3664847894101888,
+          "distance_in_miles": 94.41043410034993,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "WALES",
+          "ShowInSearch": 0,
+          "Website": "www.sheltercymru.org.uk"
+        },
+        {
+          "id": 2,
+          "AgencyID": "966",
+          "Name": "Shelter Cymru - Wrexham Office",
+          "Location": "Wrexham",
+          "distance": 1.6094188373053677,
+          "distance_in_miles": 111.19474746942787,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "WALES",
+          "ShowInSearch": 0,
+          "Website": "www.sheltercymru.org.uk"
+        },
+        {
+          "id": 5,
+          "AgencyID": "2293",
+          "Name": "Shelter Devon & Cornwall - Plymouth",
+          "Location": "Plymouth (Devon)",
+          "distance": 1.9075512918652802,
+          "distance_in_miles": 131.79271875497219,
+          "UsePublicAdviceLineContact": 0,
+          "Country": "ENGLAND",
+          "ShowInSearch": 1,
+          "Website": "https://england.shelter.org.uk/get_help/local_services/devon"
+        }
+      ],
+      "first_page_url": "https://staging.services.shelter.org.uk/api/v1/location/bristol?page=1",
+      "from": 1,
+      "next_page_url": "https://staging.services.shelter.org.uk/api/v1/location/bristol?page=2",
+      "path": "https://staging.services.shelter.org.uk/api/v1/location/bristol",
+      "per_page": 10,
+      "prev_page_url": null,
+      "to": 10
+    },
+    "search_location_country": "England"
+  }
+}
