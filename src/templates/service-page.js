@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import RichText from '../components/rich-text';
 import ContactCard from '../components/contact-card';
 import OpeningTimes from '../components/opening-times';
+import Map from '../components/google-map';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
@@ -29,6 +30,19 @@ const ServicePage = ({ data }) => {
             <RichText richText={mainBodyCopy} />
             <h2>Contact</h2>
             <ContactCard data={service} />
+            {service.displaySpecificLocation && (
+              <Map
+                insideContainer
+                data={{
+                  locations: [
+                    {
+                      location: service.searchLocation,
+                      address: service.address,
+                    },
+                  ],
+                }}
+              />
+            )}
             <h2>Opening times</h2>
             <OpeningTimes data={service} />
             <RichText richText={usefulInfoCopy} />
