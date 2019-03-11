@@ -17,6 +17,7 @@ const VideoEmbed = ({ data, insideContainer }) => {
   const options = {
     youtube: {
       playerVars: {
+        controls: 1,
         autoplay: 0,
         modestbranding: 1,
       },
