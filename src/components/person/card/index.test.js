@@ -8,9 +8,7 @@ import {
   createInternalLink,
 } from '../../../utils/test-factories';
 import PersonCard from '.';
-import { Card } from './styles';
 import { hidePascalCaseWarning } from '../../../utils/test-mocks';
-import { sizes, emSize } from '../../theme/breakpoint';
 
 const createCardProps = createFactory({
   person: createPerson(),
@@ -59,18 +57,4 @@ it('renders a link if passed', () => {
   });
   const wrapper = mountWithTheme(<PersonCard {...mockData} />);
   expect(wrapper.find(Link)).toHaveLength(1);
-});
-
-it('has 50% width on desktop if 2 columns specified', () => {
-  const mockData = createCardProps({
-    columns: 2,
-  });
-  const wrapper = mountWithTheme(<PersonCard {...mockData} />);
-  expect(wrapper.find(Card)).toHaveStyleRule(
-    'width',
-    expect.stringContaining('50%'), // Allow for any gutter size in calc
-    {
-      media: `(min-width: ${emSize(sizes.desktop)})`,
-    }
-  );
 });

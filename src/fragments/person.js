@@ -7,6 +7,7 @@ export const PersonFragment = graphql`
     lastName
     phoneNumber
     emailAddress
+    category
     photo {
       title
     }
@@ -18,6 +19,9 @@ export const PersonFragment = graphql`
     jobTitle
     photo {
       ...ImageFragment
+    }
+    page_assembly___person_ {
+      slug
     }
   }
 `;

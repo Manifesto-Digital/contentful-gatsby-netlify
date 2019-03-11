@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RightArrow from '../../assets/svg/icons/angle-right-light.svg';
+import { consistentString } from '../../utils/content-formatting';
 // Styles
 import {
   Card,
@@ -41,7 +42,13 @@ const ContentCard = ({ data, bannerFlow, cardCount }) => {
         presentational
       />
       <Wrapper>
-        {title && <CardTitle>{title}</CardTitle>}
+        {title && (
+          <CardTitle
+            bgColour={consistentString(pageInformation.taxonomyColour)}
+          >
+            {title}
+          </CardTitle>
+        )}
         <SummaryText internalLink={cardLink}>
           {description}
           {bannerFlow === 'grid' && (

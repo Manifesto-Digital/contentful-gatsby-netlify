@@ -16,9 +16,6 @@ export const Card = styled.div`
   }
 
   ${breakpoint.desktop`
-    width: ${({ theme, columns }) =>
-      columns === 2 && `calc(50% - ${theme.spacing.small})`};
-
     font-size: ${({ theme, columns }) => columns && theme.fontsize.small};
   `};
 `;
