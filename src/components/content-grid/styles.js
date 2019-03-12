@@ -15,6 +15,7 @@ export const ItemsWrapper = styled.div`
 
 export const Item = styled(RichText)`
   margin-bottom: ${({ theme }) => theme.spacing.standard};
+  border-bottom: ${({ theme, border }) => border && theme.divider.standard};
 
   ${breakpoint.tablet`
     width: 49%;
