@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f7f7f7;
+  padding: 20px;
+  font-size: 0.6rem;
+}
+
+.c0 img {
+  width: 45px;
+  height: 76px;
+  margin-right: 10px;
+}
+
+.c0 div {
+  white-space: pre-line;
+}
+
+.c0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<div
+  className="c0"
+>
+  <img
+    alt="This content applies to Scotland only."
+    src="test-file-stub?h=76&w=50"
+  />
+  <div>
+    Housing laws differ between Scotland and England. 
+    
+
+    This content applies to 
+    <strong>
+      Scotland only.
+    </strong>
+    
+
+    <a
+      href="https://england.shelter.org.uk/"
+      rel="noopener"
+      target="_self"
+    >
+      Get advice if you're England
+    </a>
+  </div>
+</div>
+`;
