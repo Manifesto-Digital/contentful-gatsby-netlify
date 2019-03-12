@@ -20,6 +20,7 @@ import RichText from '../rich-text';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardsWithIcons from '../cards-with-icons';
 import Map from '../google-map';
+import Stats from '../stats';
 import Finder from '../finder';
 import PersonCollection from '../person/collection';
 
@@ -156,6 +157,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulTopicGoogleMap') {
         return <Map key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicStats') {
+        return <Stats key={id} data={assembly} />;
       }
 
       if (internal.type === 'ContentfulTopicServicesFinder') {

@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a single testimonial correctly 1`] = `
+.c3 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c3 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c3 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c3 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c3 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c3 ol li::before {
+  min-width: 10px;
+}
+
 .c0 {
   margin-bottom: 30px;
 }
@@ -13,7 +48,7 @@ exports[`renders a single testimonial correctly 1`] = `
   margin: -30px auto 0;
 }
 
-.c3 {
+.c4 {
   color: #ea232d;
   font-style: italic;
 }
@@ -79,7 +114,7 @@ exports[`renders a single testimonial correctly 1`] = `
     className="c2"
   >
     <div
-      className=""
+      className="c3"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -87,7 +122,7 @@ exports[`renders a single testimonial correctly 1`] = `
       }
     />
     <span
-      className="c3"
+      className="c4"
     >
       — 
       Owen, London
@@ -97,6 +132,41 @@ exports[`renders a single testimonial correctly 1`] = `
 `;
 
 exports[`renders testimonials correctly 1`] = `
+.c5 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c5 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c5 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c5 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c5 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c5 ol li::before {
+  min-width: 10px;
+}
+
 .c0 {
   margin-bottom: 40px;
 }
@@ -105,7 +175,7 @@ exports[`renders testimonials correctly 1`] = `
   margin-bottom: 30px;
 }
 
-.c7 {
+.c8 {
   position: relative;
   width: 90%;
   background-color: #fff;
@@ -121,7 +191,7 @@ exports[`renders testimonials correctly 1`] = `
   margin: -30px auto 0;
 }
 
-.c5 {
+.c6 {
   color: #ea232d;
   font-style: italic;
 }
@@ -147,7 +217,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c6 {
+  .c7 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -177,7 +247,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c7 {
+  .c8 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -232,7 +302,7 @@ exports[`renders testimonials correctly 1`] = `
         className="c4"
       >
         <div
-          className=""
+          className="c5"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -240,7 +310,7 @@ exports[`renders testimonials correctly 1`] = `
           }
         />
         <span
-          className="c5"
+          className="c6"
         >
           — 
           Owen, London
@@ -251,7 +321,7 @@ exports[`renders testimonials correctly 1`] = `
       className="c2"
     >
       <div
-        className="c6"
+        className="c7"
       >
         <img
           alt="Collection hero"
@@ -261,10 +331,10 @@ exports[`renders testimonials correctly 1`] = `
         />
       </div>
       <div
-        className="c7"
+        className="c8"
       >
         <div
-          className=""
+          className="c5"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -272,7 +342,7 @@ exports[`renders testimonials correctly 1`] = `
           }
         />
         <span
-          className="c5"
+          className="c6"
         >
           — 
           Owen, London
