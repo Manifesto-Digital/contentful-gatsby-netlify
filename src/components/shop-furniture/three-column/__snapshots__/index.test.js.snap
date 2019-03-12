@@ -56,6 +56,41 @@ exports[`renders correctly 1`] = `
   fill: #ea232d;
 }
 
+.c8 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c8 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c8 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c8 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c8 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c8 ol li::before {
+  min-width: 10px;
+}
+
 .c1 {
   max-width: 1140px;
   margin: 0 auto;
@@ -209,7 +244,7 @@ exports[`renders correctly 1`] = `
           How does your donation help?
         </h3>
         <div
-          className=""
+          className="c8"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
