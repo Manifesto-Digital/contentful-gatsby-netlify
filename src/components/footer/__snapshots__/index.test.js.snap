@@ -7,12 +7,47 @@ exports[`Renders correctly 1`] = `
   padding: 0 20px;
 }
 
-.c14 {
+.c13 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c13 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c13 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c13 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c13 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c13 ol li::before {
+  min-width: 10px;
+}
+
+.c15 {
   display: block;
   width: 150px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,7 +99,7 @@ exports[`Renders correctly 1`] = `
   margin-bottom: 60px;
 }
 
-.c4 .c15 {
+.c4 .c16 {
   color: #fff;
   fill: #fff;
 }
@@ -178,7 +213,7 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c13 {
+  .c14 {
     height: 68px;
     padding: 20px 25px;
     margin-right: 0;
@@ -326,7 +361,7 @@ exports[`Renders correctly 1`] = `
         className="c11"
       >
         <div
-          className="c12 "
+          className="c12 c13"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -334,11 +369,11 @@ exports[`Renders correctly 1`] = `
           }
         />
         <Link
-          className="c13"
+          className="c14"
           to="/"
         >
           <span
-            className="isvg loading c14"
+            className="isvg loading c15"
           />
         </Link>
       </div>
