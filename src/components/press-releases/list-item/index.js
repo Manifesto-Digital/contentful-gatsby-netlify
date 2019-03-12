@@ -4,13 +4,9 @@ import { dateAsString } from '../../../utils/dates';
 import ArrowRight from '../../../assets/svg/icons/chevron-right-light.svg';
 import { LongTextRequired } from '../../../prop-types';
 // Styles
-import {
-  PressItem,
-  CoveringLink,
-  IconHolder,
-  ArrowIcon,
-  PostedDate,
-} from './styles';
+import { PressItem, ArrowIcon, PostedDate } from './styles';
+import { IconHolder } from '../../styled/icons';
+import { CoveringLink } from '../../styled/links';
 import { VisuallyHidden } from '../../styled/accessibility';
 
 const Item = ({ data }) => {
@@ -27,7 +23,7 @@ const Item = ({ data }) => {
       {shortDescription && <p>{shortDescription}</p>}
 
       <IconHolder aria-hidden="true">
-        <ArrowIcon src={ArrowRight} alt=" " cacheGetRequests />
+        <ArrowIcon src={ArrowRight} cacheGetRequests />
       </IconHolder>
 
       {datePosted && (

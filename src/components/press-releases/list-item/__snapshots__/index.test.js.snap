@@ -14,15 +14,6 @@ exports[`renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c3 {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-}
-
 .c2 {
   color: #8c8c8c;
 }
@@ -44,6 +35,15 @@ exports[`renders correctly 1`] = `
   height: 22px;
   display: block;
   margin: 0 auto;
+}
+
+.c3 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
 }
 
 .c4 {

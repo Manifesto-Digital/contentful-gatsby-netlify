@@ -3,7 +3,8 @@
 (async () => {
   try {
     const { promisify } = require('util');
-    const { readdir } = require('fs');
+    const { existsSync, readdir } = require('fs');
+    const exec = require('await-exec');
     const readdirAsync = promisify(readdir);
     const path = require('path');
     const { createClient } = require('contentful-management');
@@ -18,9 +19,13 @@
     // Configuration variables
     const [, , SPACE_ID, ENVIRONMENT_ID, CMA_ACCESS_TOKEN] = process.argv;
     const MIGRATIONS_DIR = path.join(__dirname, '..', '__migrations__');
+    const SEEDS_DIR = path.join(__dirname, '..', '__migrations__/seeds');
 
     const client = createClient({
       accessToken: CMA_ACCESS_TOKEN,
+      headers: {
+        'X-Contentful-Source-Environment': 'develop',
+      },
     });
 
     const space = await client.getSpace(SPACE_ID);
@@ -97,7 +102,6 @@
         return key.update();
       })
     );
-
     // ---------------------------------------------------------------------------
     console.log('Set default locale to new environment');
     const defaultLocale = (await environment.getLocales()).items.find(
@@ -108,6 +112,9 @@
     console.log('Read all the available migrations from the file system');
     const availableMigrations = (await readdirAsync(MIGRATIONS_DIR))
       .filter(file => /\d\d_migration_/.test(file))
+      .map(file => getVersionOfFile(file));
+    const availableSeeds = (await readdirAsync(SEEDS_DIR))
+      .filter(file => /\d\d_seed_/.test(file))
       .map(file => getVersionOfFile(file));
 
     // ---------------------------------------------------------------------------
@@ -143,6 +150,7 @@
     const migrationsToRun = availableMigrations.slice(
       currentMigrationIndex + 1
     );
+    const importsToRun = availableMigrations.slice(currentMigrationIndex + 1);
     const migrationOptions = {
       spaceId: SPACE_ID,
       environmentId: ENVIRONMENT_ID,
@@ -152,31 +160,57 @@
 
     // ---------------------------------------------------------------------------
     console.log('Run migrations and update version entry');
-    while ((migrationToRun = migrationsToRun.shift())) {
-      let updateContentfulVersion = migrationToRun[0];
-      const filePath = path.join(
-        __dirname,
-        '..',
-        '__migrations__',
-        getFileOfVersion(migrationToRun)
-      );
-      console.log(`Running ${filePath}`);
-      await runMigration(
-        Object.assign(migrationOptions, {
-          filePath,
-        })
-      );
-      console.log(`${migrationToRun} succeeded`);
+    const doMigrate = async () => {
+      while ((migrationToRun = migrationsToRun.shift())) {
+        let updateContentfulVersion = migrationToRun[0];
+        const filePath = path.join(
+          __dirname,
+          '..',
+          '__migrations__',
+          getFileOfVersion(migrationToRun)
+        );
+        console.log(`Running ${filePath}`);
+        await runMigration(
+          Object.assign(migrationOptions, {
+            filePath,
+          })
+        );
+        console.log(`${migrationToRun} succeeded`);
 
-      storedVersionEntry.fields.migrationVersion[defaultLocale] = parseInt(
-        updateContentfulVersion
-      );
-      storedVersionEntry = await storedVersionEntry.update();
-      storedVersionEntry = await storedVersionEntry.publish();
+        storedVersionEntry.fields.migrationVersion[defaultLocale] = parseInt(
+          updateContentfulVersion
+        );
+        storedVersionEntry = await storedVersionEntry.update();
+        storedVersionEntry = await storedVersionEntry.publish();
 
-      console.log(`Updated version entry to ${migrationToRun}`);
-    }
+        console.log(`Updated version entry to ${migrationToRun}`);
+      }
+    };
+    const doImport = async () => {
+      while ((importToRun = importsToRun.shift())) {
+        const seedFilePath = path.join(
+          __dirname,
+          '..',
+          '__migrations__/seeds',
+          getFileOfVersion(importToRun)
+            .replace('_migration_', '_seed_')
+            .replace('.js', '.json')
+        );
 
+        console.log(`Importing: ${seedFilePath}`);
+
+        console.log('=====Generating content import=====');
+        if (existsSync(seedFilePath)) {
+          await exec(
+            `contentful space import --space-id ${SPACE_ID} --environment-id ${ENVIRONMENT_ID} --content-file ${seedFilePath} --management-Token ${CMA_ACCESS_TOKEN}`
+          );
+        } else {
+          console.log(`No Import found for: ${seedFilePath}`);
+        }
+      }
+    };
+    await doMigrate();
+    await doImport();
     console.log('All done!');
   } catch (e) {
     console.error(e);
