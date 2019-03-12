@@ -20,7 +20,7 @@ const Image = ({
   return (
     <img
       src={`${url}${params ? `?${params}` : ''}`}
-      alt={description}
+      alt={description || url}
       className={className}
     />
   );
