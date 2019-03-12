@@ -32,6 +32,7 @@ const PersonCardList = ({
             <Card
               key={person.id + i}
               person={person}
+              columns={columns}
               link={
                 person.page_assembly___person_
                   ? person.page_assembly___person_[0] // Link is only present if a person page assembly exists for this person
