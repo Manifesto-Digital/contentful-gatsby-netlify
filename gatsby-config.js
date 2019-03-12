@@ -100,9 +100,8 @@ module.exports = {
               // is the slug field
               if (
                 !node.content ||
-                node.data ||
                 !node.data.target.fields ||
-                !node.data.target.field.slug
+                !node.data.target.fields.slug
               ) {
                 return;
               }
