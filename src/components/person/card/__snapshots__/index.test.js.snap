@@ -87,7 +87,13 @@ exports[`renders correctly 1`] = `
 }
 
 .c5 {
-  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  word-break: break-word;
+  margin-bottom: 10px;
+  line-height: 1;
 }
 
 .c5:last-of-type {
@@ -108,8 +114,19 @@ exports[`renders correctly 1`] = `
 }
 
 @media (min-width:32em) {
+  .c2 {
+    width: 70%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:32em) {
   .c1 {
-    width: 35%;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    margin-top: 10px;
+    width: 30%;
     margin-bottom: 0;
   }
 }

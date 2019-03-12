@@ -16,6 +16,7 @@ export const Card = styled.div`
   }
 
   ${breakpoint.desktop`
+    margin-bottom: ${({ columns }) => columns && '0'};
     font-size: ${({ theme, columns }) => columns && theme.fontsize.small};
   `};
 `;
@@ -23,6 +24,11 @@ export const Card = styled.div`
 export const Info = styled.div`
   padding: ${({ theme }) => `${theme.spacing.small} ${theme.spacing.standard}`};
   flex: 1;
+
+  ${breakpoint.mobileLand`
+    width: 70%;
+    margin-bottom: 0;
+  `};
 `;
 
 export const Name = styled.h3`
@@ -41,13 +47,18 @@ export const StyledImage = styled(Image)`
   width: 100%;
 
   ${breakpoint.mobileLand`
-    width: 35%;
+    align-self: flex-start;
+    margin-top:  ${({ theme }) => theme.spacing.small};
+    width: 30%;
     margin-bottom: 0;
   `};
 `;
 
 export const ContactLine = styled.p`
-  margin-bottom: 5px;
+  display: flex;
+  word-break: break-word;
+  margin-bottom: ${({ theme }) => theme.spacing.small};
+  line-height: 1;
 
   &:last-of-type {
     margin-bottom: 0;
