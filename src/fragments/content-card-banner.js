@@ -23,6 +23,7 @@ export const ContentCardBannerFragment = graphql`
           shortDescription {
             shortDescription
           }
+          taxonomyColour
           pageThumbnail {
             id
             description
