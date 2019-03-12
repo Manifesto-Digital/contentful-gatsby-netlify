@@ -3,7 +3,42 @@
 exports[`Renders correctly 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .c4 {
+  "baseElement": .c2 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c2 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c2 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c2 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c2 ol li::before {
+  min-width: 10px;
+}
+
+.c5 {
   padding: 0;
   margin: 0;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -27,13 +62,13 @@ Object {
   margin-bottom: 40px;
 }
 
-.c2 {
+.c3 {
   width: 100%;
   margin-bottom: 40px;
   border-bottom: 1px solid #f7f7f7;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -41,7 +76,7 @@ Object {
   max-width: 75%;
 }
 
-.c5 {
+.c6 {
   display: block;
   background-size: 15px 15px;
   width: auto;
@@ -52,7 +87,7 @@ Object {
   border: 1px solid #e5e5e5;
 }
 
-.c6 {
+.c7 {
   padding: 0;
   border: none;
   font: inherit;
@@ -69,28 +104,28 @@ Object {
   min-width: 30%;
 }
 
-.c6:hover {
+.c7:hover {
   color: #fff;
 }
 
-.c7 {
+.c8 {
   display: block;
   margin: 10px 0;
   color: #ea232d;
 }
 
-.c7 p {
+.c8 p {
   margin: 0;
 }
 
-.c8 svg {
+.c9 svg {
   width: 25px;
   height: 25px;
   -webkit-animation: cZxgpV 2s linear infinite;
   animation: cZxgpV 2s linear infinite;
 }
 
-.c8 svg .path {
+.c9 svg .path {
   stroke: #ea232d;
   stroke-linecap: round;
   -webkit-animation: kuSBtA 1.5s ease-in-out infinite;
@@ -98,7 +133,7 @@ Object {
 }
 
 @media (min-width:62em) {
-  .c5 {
+  .c6 {
     min-width: 185px;
   }
 }
@@ -115,7 +150,7 @@ Object {
             Topic - Services Finder
           </h1>
           <div
-            class=""
+            class="c2"
           >
             <p>
               Our advice and support services across the UK give people 
@@ -132,32 +167,32 @@ Object {
           Your postcode or town
         </p>
         <form
-          class="c2"
+          class="c3"
           role="search"
         >
           <div
-            class="c3"
+            class="c4"
           >
             <label
-              class="c4"
+              class="c5"
               for="search-input"
             >
               Search for services
             </label>
             <input
-              class="c5"
+              class="c6"
               data-testid="search-input"
               name="search-input"
               type="text"
               value=""
             />
             <button
-              class="c6"
+              class="c7"
               disabled=""
               type="submit"
             >
               <span
-                class="c4"
+                class="c5"
               >
                 Submit Search
               </span>
@@ -165,10 +200,10 @@ Object {
             </button>
           </div>
           <div
-            class="c7"
+            class="c8"
           >
             <span
-              class="isvg loading c8"
+              class="isvg loading c9"
             />
           </div>
         </form>
@@ -186,7 +221,7 @@ Object {
           Topic - Services Finder
         </h1>
         <div
-          class="sc-bdVaJa ibTDPh"
+          class="sc-bdVaJa gKPOv"
         >
           <p>
             Our advice and support services across the UK give people 

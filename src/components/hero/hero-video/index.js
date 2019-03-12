@@ -74,7 +74,9 @@ const Hero = ({
           },
         }}
       />
-      {(error || !videoLoaded) && <ImageFallback bgImage={image.file.url} />}
+      {(error || !videoLoaded) && image && (
+        <ImageFallback bgImage={image.file.url} />
+      )}
       <TitleWrapper>
         <Title>{wrapTitle()}</Title>
         <Subtitle>{subtitle}</Subtitle>

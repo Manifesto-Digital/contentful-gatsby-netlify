@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c1 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c1 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c1 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c1 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c1 ol li::before {
+  min-width: 10px;
+}
+
 .c0 {
   padding: 20px;
   background-color: #e5e5e5;
@@ -13,7 +48,7 @@ exports[`renders correctly 1`] = `
     Address
   </h3>
   <div
-    className=""
+    className="c1"
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -24,7 +59,7 @@ exports[`renders correctly 1`] = `
     Parking
   </h3>
   <div
-    className=""
+    className="c1"
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -35,7 +70,7 @@ exports[`renders correctly 1`] = `
     Disabled access
   </h3>
   <div
-    className=""
+    className="c1"
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -46,7 +81,7 @@ exports[`renders correctly 1`] = `
     Opening times
   </h3>
   <div
-    className=""
+    className="c1"
     dangerouslySetInnerHTML={
       Object {
         "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

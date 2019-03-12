@@ -63,13 +63,15 @@ const Map = ({ data, insideContainer }) => {
                 lng={place.location.lon}
                 markerClick={e => updateActiveMarker(i, e)}
               >
-                <InfoWindow
-                  index={i}
-                  address={place.address}
-                  location={place.location}
-                  activeMarker={activeMarker}
-                  clearInfoWindow={() => updateActiveMarker(-1)}
-                />
+                {place.address && (
+                  <InfoWindow
+                    index={i}
+                    address={place.address}
+                    location={place.location}
+                    activeMarker={activeMarker}
+                    clearInfoWindow={() => updateActiveMarker(-1)}
+                  />
+                )}
               </Marker>
             ))}
           </GoogleMap>
