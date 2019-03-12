@@ -6,6 +6,7 @@ export const ContentGrid4Fragment = graphql`
     internal {
       type
     }
+    border
     grid1 {
       childContentfulRichText {
         html

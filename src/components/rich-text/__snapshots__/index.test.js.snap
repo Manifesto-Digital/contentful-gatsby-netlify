@@ -1,7 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c0 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c0 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c0 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c0 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c0 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c0 ol li::before {
+  min-width: 10px;
+}
+
 <div
+  className="c0"
   dangerouslySetInnerHTML={
     Object {
       "__html": "<h3>Face-to-face services</h3><p>Our advice and support services across the UK give people <b>one-to-one, personalised help</b> with all of their housing issues.</p>",

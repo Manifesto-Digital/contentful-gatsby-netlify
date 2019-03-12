@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import useToggle from '../utils/useToggle';
 import { eventStatuses } from '../components/standard-event/data';
 // Components
+import SideBarAssemblies from '../components/assemblies/sidebar';
 import EventHero from '../components/standard-event/hero';
 import Layout from '../components/layout';
 import ContentForm from '../components/form';
@@ -22,10 +23,10 @@ import { consistentString } from '../utils/content-formatting';
 
 const Page = ({ data }) => {
   const standardEvent = data.contentfulPageAssemblyStandardEvent;
-  if (!standardEvent.event) return null;
-
   const [mapModal, toggleMapModal] = useToggle(false);
   const formRef = useRef(null);
+
+  if (!standardEvent.event) return null;
 
   const {
     event,
@@ -38,6 +39,7 @@ const Page = ({ data }) => {
     waitingListForm,
     twoColumn,
     bodyCopy,
+    sidebarAssemblies,
   } = data.contentfulPageAssemblyStandardEvent;
 
   const { eventLocation } = event;
@@ -63,7 +65,9 @@ const Page = ({ data }) => {
               <TwoThirds>
                 <RichText richText={bodyCopy} />
               </TwoThirds>
-              <SideBar />
+              <SideBar>
+                <SideBarAssemblies assemblies={sidebarAssemblies} />
+              </SideBar>
             </ContentWithSideBar>
           </Container>
         )}
@@ -156,6 +160,9 @@ export const standardEventPageQuery = graphql`
       }
       waitingListForm {
         ...AssemblyFormFragment
+      }
+      sidebarAssemblies {
+        ...SidebarFragment
       }
     }
   }

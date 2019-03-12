@@ -4,3 +4,8 @@ command = "mkdir public && touch public/__redirects && echo running node redirec
 
 [context.deploy-preview]
 command = "mkdir public && touch public/__redirects && echo running node redirect script && node __netlify__/redirects.js ctfl_spaceId_PLACEHOLDER GATSBY_CONTENTFUL_ENVIRONMENT_PLACEHOLDER ctfl_accessToken_PLACEHOLDER && yarn build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

@@ -1,28 +1,47 @@
-import styled from 'styled-components';
-import LinkHandler from '../link-handler';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: ${({ theme }) => theme.spacing.standard} 0;
-  background-color: ${({ bg, theme }) =>
-    (bg === 'red' && theme.palette.primary) ||
-    (bg === 'blue' && theme.palette.link) ||
-    (bg === 'black' && theme.palette.black) ||
-    (bg === 'green' && theme.palette.donate)};
-  margin-bottom: ${({ removeMarginBottom, theme }) =>
-    removeMarginBottom ? '0' : theme.spacing.large};
-`;
+  ${({ sidebar, theme }) =>
+    sidebar &&
+    css`
+      background-color: ${theme.palette.grey10};
+      padding: ${theme.spacing.standard};
+      margin-bottom: ${theme.spacing.standard};
+    `}
 
-export const Header = styled.h2`
-  color: ${({ bg, theme }) =>
-    (bg === 'red' && theme.palette.white) ||
-    (bg === 'blue' && theme.palette.white) ||
-    (bg === 'black' && theme.palette.white) ||
-    (bg === 'green' && theme.palette.white)};
-`;
-export const StyledLinkHandler = styled(LinkHandler)`
-  color: ${({ bg, theme }) =>
-    (bg === 'red' && theme.palette.white) ||
-    (bg === 'blue' && theme.palette.white) ||
-    (bg === 'black' && theme.palette.white) ||
-    (bg === 'green' && theme.palette.white)};
+  /**
+  * Square bulletpoints, outlined for nested lists
+  */
+  ul {
+    padding-left: 0;
+    list-style: none;
+    li {
+      position: relative;
+      padding-left: ${({ theme }) => theme.spacing.large};
+
+      &::before {
+        content: ' ';
+        position: absolute;
+        top: 8px;
+        left: ${({ theme }) => theme.spacing.small};
+        display: block;
+        width: ${({ theme }) => theme.spacing.small};
+        height: ${({ theme }) => theme.spacing.small};
+        background: ${({ theme }) => theme.palette.black};
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+        li:before {
+          background: transparent;
+          border: 1px solid ${({ theme }) => theme.palette.black};
+        }
+      }
+    }
+  }
+
+  ol li::before {
+    min-width: 10px;
+  }
 `;

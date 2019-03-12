@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c4 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c4 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c4 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c4 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c4 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c4 ol li::before {
+  min-width: 10px;
+}
+
 .c0 {
   display: block;
   margin-bottom: 20px;
@@ -46,7 +81,7 @@ exports[`renders correctly 1`] = `
       className="c2"
     >
       <div
-        className="c3"
+        className="c3 c4"
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -54,7 +89,7 @@ exports[`renders correctly 1`] = `
         }
       />
       <div
-        className="c3"
+        className="c3 c4"
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -62,7 +97,7 @@ exports[`renders correctly 1`] = `
         }
       />
       <div
-        className="c3"
+        className="c3 c4"
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
@@ -70,7 +105,7 @@ exports[`renders correctly 1`] = `
         }
       />
       <div
-        className="c3"
+        className="c3 c4"
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",

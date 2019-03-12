@@ -77,6 +77,10 @@ export const pageQuery = graphql`
           ...TwoColumnTextAndImageBlockFragment
           ...CardsWithIconsFragment
           ...GoogleMapFragment
+          ...StatsFragment
+          ...ServicesFinderFragment
+          ...ShopFinderFragment
+          ...PersonCollectionFragment
         }
       }
     }

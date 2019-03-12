@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c7 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c7 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c7 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c7 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c7 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c7 ol li::before {
+  min-width: 10px;
+}
+
 .c0 {
   margin-bottom: 40px;
   padding: 60px 0;
@@ -120,6 +155,7 @@ exports[`renders correctly 1`] = `
             Address
           </h3>
           <div
+            className="c7"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>51 Church Road 
@@ -145,6 +181,7 @@ SW13 9HH</p>",
             Opening hours
           </h3>
           <div
+            className="c7"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p><strong>Mon to Sat</strong>: 10am to 6pm
@@ -169,6 +206,7 @@ SW13 9HH</p>",
             Parking
           </h3>
           <div
+            className="c7"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>No parking</p>",
@@ -192,6 +230,7 @@ SW13 9HH</p>",
             Disabled access
           </h3>
           <div
+            className="c7"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>No disabled access</p>",

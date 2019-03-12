@@ -12,19 +12,19 @@ jobs:
       - checkout
       # Download and cache dependencies
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
       - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - ~/.cache/yarn
       # run lint!
       - run: yarn lint
       # run tests!
-      - run: yarn test
+      - run: yarn test --runInBand
 
   build:
     docker:
@@ -33,40 +33,22 @@ jobs:
       - checkout
       # Download and cache dependencies
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
-      - run: sudo npm install -g contentful-cli
+
+      - run: sudo yarn global add contentful-cli
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
       - run: yarn build
 
   deploy-develop:
-    docker:
-      - image: circleci/node:10.14
-    steps:
-      - checkout
-      - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "develop" $MANAGEMENT_API_KEY
-
-  deploy-uat:
-    docker:
-      - image: circleci/node:10.14
-    steps:
-      - checkout
-      - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "UAT" $MANAGEMENT_API_KEY
-
-  deploy-master:
-    docker:
-      - image: circleci/node:10.14
-    steps:
-      - checkout
-      - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "master" $MANAGEMENT_API_KEY
-
-  deploy-test:
     docker:
       - image: circleci/node:10.14
     steps:
