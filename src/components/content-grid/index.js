@@ -6,16 +6,16 @@ import { Grid, Item, ItemsWrapper } from './styles';
 import { Container } from '../styled/containers';
 
 const ContentGrid = ({ content }) => {
-  const { grid1, grid2, grid3, grid4 } = content;
+  const { border, grid1, grid2, grid3, grid4 } = content;
+  const contentArray = [grid1, grid2, grid3, grid4];
 
   return (
     <Grid>
       <Container>
         <ItemsWrapper>
-          <Item richText={grid1} />
-          <Item richText={grid2} />
-          <Item richText={grid3} />
-          <Item richText={grid4} />
+          {contentArray.map((gridContent, i) => (
+            <Item key={i} richText={gridContent} border={border} />
+          ))}
         </ItemsWrapper>
       </Container>
     </Grid>
@@ -27,6 +27,7 @@ ContentGrid.propTypes = {
     grid2: PropTypes.shape(richTextPropTypes),
     grid3: PropTypes.shape(richTextPropTypes),
     grid4: PropTypes.shape(richTextPropTypes),
+    border: PropTypes.bool,
   }),
 };
 
