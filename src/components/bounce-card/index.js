@@ -17,8 +17,13 @@ const BounceCard = () => (
       height={76}
     />
     <div>
-      Housing laws differ between Scotland and England. {'\n'}This content
-      applies to <strong>Scotland only.</strong>
+      <p>
+        Housing laws differ between Scotland and England. {'\n'}This content
+        applies to <strong>Scotland only.</strong>
+        {'\n'}
+      </p>
+
+      <a href="//england.shelter.org.uk">Get advice if you're England</a>
       {'\n'}
       <LinkHandler externalUrl="https://england.shelter.org.uk/">
         Get advice if you're England

@@ -8,7 +8,7 @@ exports[`renders correctly 1`] = `
   display: flex;
   background-color: #f7f7f7;
   padding: 20px;
-  font-size: 0.6rem;
+  font-size: 0.775rem;
 }
 
 .c0 img {
@@ -19,6 +19,10 @@ exports[`renders correctly 1`] = `
 
 .c0 div {
   white-space: pre-line;
+}
+
+.c0 p {
+  margin-bottom: 10px;
 }
 
 .c0 a {
@@ -34,13 +38,22 @@ exports[`renders correctly 1`] = `
     src="test-file-stub?h=76&w=50"
   />
   <div>
-    Housing laws differ between Scotland and England. 
-    
+    <p>
+      Housing laws differ between Scotland and England. 
+      
 
-    This content applies to 
-    <strong>
-      Scotland only.
-    </strong>
+      This content applies to 
+      <strong>
+        Scotland only.
+      </strong>
+      
+
+    </p>
+    <a
+      href="//england.shelter.org.uk"
+    >
+      Get advice if you're England
+    </a>
     
 
   </div>

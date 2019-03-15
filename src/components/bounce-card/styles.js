@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.palette.offWhite};
   padding: ${({ theme }) => theme.spacing.standard};
-  font-size: ${({ theme }) => theme.fontsize.tiny};
+  font-size: ${({ theme }) => theme.fontsize.small};
 
   img {
     width: 45px;
@@ -14,6 +14,10 @@ export const Wrapper = styled.div`
 
   div {
     white-space: pre-line;
+  }
+
+  p {
+    margin-bottom: ${({ theme }) => theme.spacing.small};
   }
 
   a {
