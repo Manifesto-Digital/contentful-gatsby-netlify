@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import { snapshotComponent } from 'test-helpers';
 import RelatedAdvice from './index';
 import { Title, ListItem } from './styles';
 import { createFactory, createInternalLink } from '../../utils/test-factories';
