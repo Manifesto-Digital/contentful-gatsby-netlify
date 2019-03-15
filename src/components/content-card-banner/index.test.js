@@ -7,7 +7,6 @@ import { createContentCardBanner } from '../../utils/test-factories';
 import theme from '../theme/variables';
 
 // Default prop values
-
 it('renders correctly', () => {
   const mockBanner = createContentCardBanner();
   snapshotComponent(<ContentCardBanner data={mockBanner} />);

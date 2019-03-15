@@ -477,6 +477,7 @@ Array [
   -webkit-transform: translateX(120%);
   -ms-transform: translateX(120%);
   transform: translateX(120%);
+  z-index: 1;
   overflow-y: scroll;
 }
 

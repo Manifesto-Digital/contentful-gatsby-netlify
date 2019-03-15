@@ -79,6 +79,7 @@ const navigationQuery = graphql`
 export const PureHeader = ({ pageData }) => {
   const [isOpen, openState] = useToggle(false);
   const [searchOpen, searchState] = useToggle(false);
+
   return (
     <>
       <HeaderWrapper>
