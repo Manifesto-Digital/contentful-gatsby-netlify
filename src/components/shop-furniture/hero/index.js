@@ -30,7 +30,7 @@ const ShopHero = ({
           <p>{introductoryText}</p>
         </Content>
         <HeroImage>
-          <StyledImage image={image} width={800} />
+          {image && <StyledImage image={image} width={800} />}
         </HeroImage>
       </FlexWrapper>
     </Container>
