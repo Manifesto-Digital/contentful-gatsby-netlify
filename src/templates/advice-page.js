@@ -23,11 +23,12 @@ const AdvicePage = ({ data, pageContext }) => {
     title,
     bodyCopy,
     sidebarAssemblies,
+    pageInformation,
   } = data.contentfulPageAssemblyAdvicePage;
   const { subpages, slug } = pageContext;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
           <h1>{title}</h1>
@@ -72,6 +73,9 @@ export const advicePageQuery = graphql`
         childContentfulRichText {
           html
         }
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
       assemblies {
         ... on Node {

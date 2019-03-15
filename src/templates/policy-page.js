@@ -9,10 +9,14 @@ import Policy from '../components/policy';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const PolicyPage = ({ data }) => {
-  const { pageName, policy } = data.contentfulPageAssemblyPolicyPage;
+  const {
+    pageName,
+    policy,
+    pageInformation,
+  } = data.contentfulPageAssemblyPolicyPage;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={pageName}>
       <article>
         <PageTitle>
           <h1>{pageName}</h1>
@@ -41,6 +45,9 @@ export const PolicyPageQuery = graphql`
       pageName
       policy {
         ...PolicyFragment
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }
