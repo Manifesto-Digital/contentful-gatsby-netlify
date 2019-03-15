@@ -1,9 +1,9 @@
+import { snapshotComponent } from 'test-helpers';
 import React from 'react';
 import { TableOfContent } from '.';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
 import {
-  createFactory,
   createChildContentfulRichText,
+  createFactory,
 } from '../../utils/test-factories';
 
 export const createTableOfContents = createFactory({

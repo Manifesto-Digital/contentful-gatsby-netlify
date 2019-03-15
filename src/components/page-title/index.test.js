@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import { snapshotComponent } from 'test-helpers';
 import PageTitle from '.';
 
 it('renders correctly', () => {

@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  snapshotComponent,
-  renderWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, renderWithTheme } from 'test-helpers';
 import theme from '../theme/variables';
 
 import PaddedBox from '.';

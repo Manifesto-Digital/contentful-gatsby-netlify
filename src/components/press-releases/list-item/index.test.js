@@ -1,10 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'gatsby';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import { createFactory, createImage } from '../../../utils/test-factories';
 import { hidePascalCaseWarning } from '../../../utils/test-mocks';
 import Item from '.';

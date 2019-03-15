@@ -1,9 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  mountWithTheme,
-  snapshotComponent,
-} from '../../../__tests__/helpers/index';
+import { mountWithTheme, snapshotComponent } from 'test-helpers';
 import Hero from './hero-no-card';
 import { Title, Subtitle } from './styles';
 import { createFactory, createImage } from '../../utils/test-factories';

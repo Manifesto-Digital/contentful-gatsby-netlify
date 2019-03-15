@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import {
-  mountWithTheme,
-  snapshotComponent,
-} from '../../../__tests__/helpers/index';
+import { mountWithTheme, snapshotComponent } from 'test-helpers';
 import { createFactory } from '../../utils/test-factories';
 import LegalSideBar from './index';
 

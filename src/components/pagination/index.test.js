@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import { createFactory } from '../../utils/test-factories';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
 import Pagination from '.';

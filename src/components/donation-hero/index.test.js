@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'rc-slider/lib/Slider';
-import { mountWithTheme, snapshotComponent } from '../../../__tests__/helpers';
+import { mountWithTheme, snapshotComponent } from 'test-helpers';
 import {
   StyledDonateButton,
   CollapsableArea,
