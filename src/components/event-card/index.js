@@ -24,13 +24,11 @@ const EventCard = ({ data }) => {
       <CardContent>
         <h3>{event.eventName}</h3>
         <p>{cardText}</p>
-        <CTA bg="red" fullWidth internalLink={{ slug: primaryCtaLink[0].slug }}>
+        <CTA bg="red" fullWidth link={primaryCtaLink}>
           {primaryCtaText}
         </CTA>
       </CardContent>
-      <CategoryCTA internalLink={{ slug: secondaryCtaLink.slug }}>
-        {secondaryCtaText}
-      </CategoryCTA>
+      <CategoryCTA link={secondaryCtaLink}>{secondaryCtaText}</CategoryCTA>
     </Card>
   );
 };
@@ -40,9 +38,11 @@ EventCard.propTypes = {
     event: PropTypes.object.isRequired,
     cardText: PropTypes.string.isRequired,
     primaryCtaText: PropTypes.string.isRequired,
-    primaryCtaLink: PropTypes.array.isRequired,
+    primaryCtaLink: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+      .isRequired,
     secondaryCtaText: PropTypes.string.isRequired,
-    secondaryCtaLink: PropTypes.object.isRequired,
+    secondaryCtaLink: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+      .isRequired,
   }),
 };
 

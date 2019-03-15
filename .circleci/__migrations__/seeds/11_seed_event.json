@@ -1,0 +1,124 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "3sbziwRCcgHekqJuibQNuR",
+        "type": "Entry",
+        "createdAt": "2019-03-13T13:51:25.415Z",
+        "updatedAt": "2019-03-13T13:52:39.807Z",
+        "environment": {
+          "sys": {
+            "id": "external-migration",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 59,
+        "publishedAt": "2019-03-13T13:52:39.807Z",
+        "firstPublishedAt": "2019-03-13T13:52:39.807Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 60,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "event"
+          }
+        }
+      },
+      "fields": {
+        "systemName": {
+          "en-GB": "Migration - topicEvent"
+        },
+        "eventName": {
+          "en-GB": "Event Name"
+        },
+        "shortDescription": {
+          "en-GB": "Short Description"
+        },
+        "thumbnailImage": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1QpzljvxQoQE2PqEgRi9yG"
+            }
+          }
+        },
+        "eventType": {
+          "en-GB": "Cycle"
+        },
+        "eventStatus": {
+          "en-GB": "Open"
+        },
+        "eventSystemDate": {
+          "en-GB": "2019-03-13"
+        },
+        "eventDisplayDate": {
+          "en-GB": "Display date"
+        },
+        "distance": {
+          "en-GB": "20"
+        },
+        "registrationFee": {
+          "en-GB": 100
+        },
+        "pledge": {
+          "en-GB": 200
+        },
+        "eventLocation": {
+          "en-GB": {
+            "lon": -0.07537430000002132,
+            "lat": 51.5232689
+          }
+        },
+        "displayLocation": {
+          "en-GB": "Shoreditch"
+        },
+        "notifiedTeamEmail": {
+          "en-GB": "migration@test.com"
+        },
+        "link": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4gXZvSzxllBNV7LhNY7bnT"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "assets": []
+}

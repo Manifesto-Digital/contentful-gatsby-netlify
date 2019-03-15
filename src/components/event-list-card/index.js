@@ -26,7 +26,7 @@ const EventListCard = ({ data }) => {
 
   return (
     <Card>
-      <Thumbnail image={thumbnailImage} />
+      <Thumbnail image={thumbnailImage} width={600} />
       <CardContent>
         <h3>{eventName}</h3>
         <CardInfoList>

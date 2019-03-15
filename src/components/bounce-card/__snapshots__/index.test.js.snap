@@ -43,13 +43,6 @@ exports[`renders correctly 1`] = `
     </strong>
     
 
-    <a
-      href="https://england.shelter.org.uk/"
-      rel="noopener"
-      target="_self"
-    >
-      Get advice if you're England
-    </a>
   </div>
 </div>
 `;

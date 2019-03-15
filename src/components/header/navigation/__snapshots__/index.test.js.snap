@@ -671,8 +671,8 @@ Array [
           <a
             className="c17 c18"
             href="https://scotland.shelter.org.uk/"
-            rel="noopener"
-            target="_self"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Scotland
           </a>

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 import Spinner from '../../assets/svg/spinner.svg';
 import { useApi } from '../../utils/useApi';
-import LinkHandler from '../link-handler';
 import RichText from '../rich-text';
 import { VisuallyHidden } from '../styled/accessibility';
 import { Container } from '../styled/containers';
@@ -86,9 +85,7 @@ const Finder = memo(({ data, insideContainer, type }) => {
               if (i > 2) return;
               return (
                 <li key={result.id}>
-                  <LinkHandler externalUrl={result.Website}>
-                    {result.Name}
-                  </LinkHandler>
+                  <a href={result.Website}>{result.Name}</a>
                   <p>
                     <small>
                       {result.distance_in_miles.toFixed(1)} miles away
