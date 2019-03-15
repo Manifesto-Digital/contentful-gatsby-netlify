@@ -9,20 +9,20 @@
             "id": "6sxvmndnpn0s"
           }
         },
-        "id": "4gWbs4nQSJocE7KabsIFbh",
+        "id": "1yJt0IYL21xrCVkCS6wRiT",
         "type": "Entry",
-        "createdAt": "2019-03-13T15:23:25.994Z",
-        "updatedAt": "2019-03-13T15:47:39.535Z",
+        "createdAt": "2019-03-15T16:34:26.333Z",
+        "updatedAt": "2019-03-15T16:35:25.694Z",
         "environment": {
           "sys": {
-            "id": "external-migration",
+            "id": "ci-play",
             "type": "Link",
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 44,
-        "publishedAt": "2019-03-13T15:47:39.535Z",
-        "firstPublishedAt": "2019-03-13T15:47:39.535Z",
+        "publishedVersion": 14,
+        "publishedAt": "2019-03-15T16:35:25.694Z",
+        "firstPublishedAt": "2019-03-15T16:35:25.694Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -38,7 +38,7 @@
           }
         },
         "publishedCounter": 1,
-        "version": 45,
+        "version": 15,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -56,10 +56,10 @@
       },
       "fields": {
         "name": {
-          "en-GB": "Migration - standardEvent"
+          "en-GB": "Migration - pageAssemblyStandardEvent"
         },
         "slug": {
-          "en-GB": "migration-standardevent"
+          "en-GB": "migration-pageassemblystandardevent"
         },
         "event": {
           "en-GB": {
@@ -71,53 +71,13 @@
           }
         },
         "mainCtaText": {
-          "en-GB": "Main CTA Text"
+          "en-GB": "Click me"
         },
         "mainCtaMethod": {
           "en-GB": "URL"
         },
         "displayMap": {
           "en-GB": false
-        },
-        "signUpTextLeft": {
-          "en-GB": {
-            "data": {},
-            "content": [
-              {
-                "data": {},
-                "content": [
-                  {
-                    "data": {},
-                    "marks": [],
-                    "value": "Sign up text left",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
-        "signUpTextRight": {
-          "en-GB": {
-            "data": {},
-            "content": [
-              {
-                "data": {},
-                "content": [
-                  {
-                    "data": {},
-                    "marks": [],
-                    "value": "Sign up text left",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
         },
         "bodyCopy": {
           "en-GB": {
@@ -129,7 +89,67 @@
                   {
                     "data": {},
                     "marks": [],
-                    "value": "Body copy",
+                    "value": "hello world hello world hello world hello world hello world hello world hello world hello world hello ",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "content": [
+                      {
+                        "data": {},
+                        "content": [
+                          {
+                            "data": {},
+                            "marks": [],
+                            "value": "bullet points are square now",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      },
+                      {
+                        "data": {},
+                        "content": [
+                          {
+                            "data": {},
+                            "content": [
+                              {
+                                "data": {},
+                                "content": [
+                                  {
+                                    "data": {},
+                                    "marks": [],
+                                    "value": "Intended ones too",
+                                    "nodeType": "text"
+                                  }
+                                ],
+                                "nodeType": "paragraph"
+                              }
+                            ],
+                            "nodeType": "list-item"
+                          }
+                        ],
+                        "nodeType": "unordered-list"
+                      }
+                    ],
+                    "nodeType": "list-item"
+                  }
+                ],
+                "nodeType": "unordered-list"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "",
                     "nodeType": "text"
                   }
                 ],
@@ -172,21 +192,12 @@
               "sys": {
                 "type": "Link",
                 "linkType": "Entry",
-                "id": "5yue3oKMh5oVsMn7lfJJ6L"
+                "id": "Vr1K0dCBuGP36naQkue8o"
               }
             }
           ]
         },
-        "modules": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "4ugSFnzGDVnRUMHEdlkrdb"
-            }
-          }
-        },
-        "pageMetadata": {
+        "pageInformation": {
           "en-GB": {
             "sys": {
               "type": "Link",
