@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RichText from '../rich-text';
 import { consistentString } from '../../utils/content-formatting';
-import LinkHandler from '../link-handler';
 import { Sidebar } from './styles';
 
 const ShopSidebar = ({ data }) => {
@@ -57,9 +56,7 @@ const ShopSidebar = ({ data }) => {
         <>
           <h3>Phone</h3>
           <p>
-            <LinkHandler externalUrl={`tel:${contactNumber}`}>
-              {contactNumber}
-            </LinkHandler>
+            <a href={`tel:${contactNumber}`}>{contactNumber}</a>
           </p>
         </>
       )}
@@ -68,9 +65,7 @@ const ShopSidebar = ({ data }) => {
         <>
           <h3>Email</h3>
           <p>
-            <LinkHandler externalUrl={`mailto:${contactEmail}`}>
-              {contactEmail}
-            </LinkHandler>
+            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
           </p>
         </>
       )}

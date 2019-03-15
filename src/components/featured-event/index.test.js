@@ -14,6 +14,7 @@ export const createFeaturedEvent = createFactory({
     eventName: 'my event',
     displayLocation: 'Shoreditch high street',
     eventDisplayDate: 'Yesterday',
+    eventSystemDate: '2019-02-25',
     distance: '12 yards',
     thumbnailImage: createImage(),
   },

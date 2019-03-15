@@ -9,41 +9,41 @@
             "id": "6sxvmndnpn0s"
           }
         },
-        "id": "3JYjKCRu31Qt7YsQ1O1rhz",
+        "id": "70fRGFcl9bS2eeLBhACxYA",
         "type": "Entry",
-        "createdAt": "2019-03-08T16:04:31.905Z",
-        "updatedAt": "2019-03-08T16:05:16.404Z",
+        "createdAt": "2019-02-04T10:23:05.730Z",
+        "updatedAt": "2019-03-13T11:19:08.604Z",
         "environment": {
           "sys": {
-            "id": "import",
+            "id": "external-link",
             "type": "Link",
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 28,
-        "publishedAt": "2019-03-08T16:05:16.404Z",
-        "firstPublishedAt": "2019-03-08T16:05:16.404Z",
+        "publishedVersion": 31,
+        "publishedAt": "2019-02-08T11:32:05.792Z",
+        "firstPublishedAt": "2019-02-04T10:23:41.951Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "1l6J7bgapRlYqO3xYlSiKu"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
-        "publishedCounter": 1,
-        "version": 29,
+        "publishedCounter": 2,
+        "version": 33,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "6gQK9IQRN4DQwss7t6dOxG"
           }
         },
         "contentType": {
@@ -56,37 +56,30 @@
       },
       "fields": {
         "name": {
-          "en-GB": "Migration test card with icon"
+          "en-GB": "Card with icon #1"
         },
         "icon": {
           "en-GB": "Speech bubble"
         },
         "titleText": {
-          "en-GB": "migration"
+          "en-GB": "This is the title"
         },
         "subText": {
-          "en-GB": "migration"
+          "en-GB": "This is the sub text"
         },
         "ctaText": {
-          "en-GB": "migration"
+          "en-GB": "Click me"
         },
-        "ctaLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "3ZnKNB4VcSdgTOho9wmraK"
+        "link": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4gXZvSzxllBNV7LhNY7bnT"
+              }
             }
-          }
-        },
-        "externalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "4gXZvSzxllBNV7LhNY7bnT"
-            }
-          }
+          ]
         }
       }
     },

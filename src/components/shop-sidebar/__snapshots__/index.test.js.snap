@@ -93,8 +93,7 @@ exports[`renders correctly 1`] = `
   </h3>
   <p>
     <a
-      rel="noopener"
-      target="_self"
+      href="tel:01234567890"
     >
       01234567890
     </a>
@@ -104,8 +103,7 @@ exports[`renders correctly 1`] = `
   </h3>
   <p>
     <a
-      rel="noopener"
-      target="_self"
+      href="mailto:email@shelter.org.uk"
     >
       email@shelter.org.uk
     </a>

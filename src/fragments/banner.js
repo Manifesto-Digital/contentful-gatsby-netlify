@@ -6,20 +6,8 @@ export const BannerTopicFragment = graphql`
     name
     headerText
     linkText
-    internalLink {
-      id
-      slug
-      internal {
-        type
-      }
-    }
-    externalLink {
-      id
-      internal {
-        type
-      }
-      URL
-      newTab
+    link {
+      ...LinkFragment
     }
     bannerColour
     internal {

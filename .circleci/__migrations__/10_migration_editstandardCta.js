@@ -1,28 +1,19 @@
+const linkField = require('../field-types/link');
+
 module.exports = function(migration) {
   const standardCta = migration
     .editContentType('standardCta')
     .deleteField('externalUrl');
 
-  const standardCtaField = migration
+  const standardCtaDeleteInternal = migration
     .editContentType('standardCta')
-    .createField('externalLink')
-    .name('External Link')
-    .type('Link')
-    .localized(false)
-    .required(false)
-    .validations([
-      {
-        linkContentType: ['topicExternalLink'],
-      },
-    ])
-    .disabled(false)
-    .omitted(false)
-    .linkType('Entry');
+    .deleteField('internalLink');
+
+  const standardCtaEditorCreateLink = linkField(migration, 'standardCta');
 
   const standardCtaEditor = migration
     .editContentType('standardCta')
-    .changeEditorInterface('externalLink', 'entryLinkEditor', {
-      helpText:
-        'Note that if an internal and external link are supplied, the internal link will take priority',
+    .changeEditorInterface('link', 'entryLinksEditor', {
+      bulkEditing: false,
     });
 };

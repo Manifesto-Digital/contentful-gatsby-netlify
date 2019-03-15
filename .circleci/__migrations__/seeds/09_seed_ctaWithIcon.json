@@ -9,41 +9,41 @@
             "id": "6sxvmndnpn0s"
           }
         },
-        "id": "3Ka6yBYGRFCKA1D7mTj7Qh",
+        "id": "EBVhC1KPwmSIbaBntFhPn",
         "type": "Entry",
-        "createdAt": "2019-03-08T16:16:20.415Z",
-        "updatedAt": "2019-03-08T16:19:02.582Z",
+        "createdAt": "2019-03-13T13:17:36.887Z",
+        "updatedAt": "2019-03-13T13:18:07.218Z",
         "environment": {
           "sys": {
-            "id": "import",
+            "id": "external-migration",
             "type": "Link",
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "publishedAt": "2019-03-08T16:19:02.582Z",
-        "firstPublishedAt": "2019-03-08T16:19:02.582Z",
+        "publishedVersion": 26,
+        "publishedAt": "2019-03-13T13:18:07.218Z",
+        "firstPublishedAt": "2019-03-13T13:18:07.218Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
         "publishedCounter": 1,
-        "version": 18,
+        "version": 27,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
         "contentType": {
@@ -56,19 +56,10 @@
       },
       "fields": {
         "name": {
-          "en-GB": "Migration cta icon"
+          "en-GB": "Migration - topicCtaWithIcon"
         },
         "buttonText": {
-          "en-GB": "migration"
-        },
-        "internalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "3ZnKNB4VcSdgTOho9wmraK"
-            }
-          }
+          "en-GB": "Button Text"
         },
         "ctaColour": {
           "en-GB": "Red"
@@ -82,14 +73,16 @@
             }
           }
         },
-        "externalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "4gXZvSzxllBNV7LhNY7bnT"
+        "link": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4gXZvSzxllBNV7LhNY7bnT"
+              }
             }
-          }
+          ]
         }
       }
     }

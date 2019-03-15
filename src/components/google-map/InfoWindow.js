@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkHandler from '../link-handler';
 import { InfoWrapper, Close, InfoInside, InfoAddress } from './styles';
 
 const InfoWindow = ({
@@ -17,14 +16,15 @@ const InfoWindow = ({
         <Close onClick={clearInfoWindow}>&times;</Close>
         <InfoInside>
           <InfoAddress>{address}</InfoAddress>
-          <LinkHandler
-            externalUrl={`https://www.google.co.uk/maps?daddr=${
-              location.lat
-            }, ${location.lon}`}
-            newTab
+          <a
+            href={`https://www.google.co.uk/maps?daddr=${location.lat}, ${
+              location.lon
+            }`}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Directions
-          </LinkHandler>
+          </a>
         </InfoInside>
       </InfoWrapper>
     </>

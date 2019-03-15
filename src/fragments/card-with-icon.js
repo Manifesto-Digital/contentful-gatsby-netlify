@@ -11,17 +11,8 @@ export const CardWithIconFragment = graphql`
     titleText
     subText
     ctaText
-    ctaLink {
-      id
-      slug
-    }
-    externalLink {
-      id
-      internal {
-        type
-      }
-      URL
-      newTab
+    link {
+      ...LinkFragment
     }
   }
 `;

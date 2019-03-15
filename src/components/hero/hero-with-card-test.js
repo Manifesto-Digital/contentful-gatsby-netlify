@@ -6,7 +6,11 @@ import {
 } from '../../../__tests__/helpers/index';
 import Hero from './hero-with-card';
 import { Title, CardSubtitle } from './styles';
-import { createFactory, createImage } from '../../utils/test-factories';
+import {
+  createFactory,
+  createImage,
+  createExternalRef,
+} from '../../utils/test-factories';
 
 // Default props
 export const createHeroWithCard = createFactory({
@@ -15,10 +19,7 @@ export const createHeroWithCard = createFactory({
   cardPosition: 'Right',
   blackText: true,
   image: createImage(),
-  externalLink: {
-    URL: 'https://example.com',
-    newTab: true,
-  },
+  link: createExternalRef(),
   linkText: 'Woo amazing link text',
 });
 

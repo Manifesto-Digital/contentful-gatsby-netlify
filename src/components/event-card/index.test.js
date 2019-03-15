@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { createFactory, createImage } from '../../utils/test-factories';
+import {
+  createFactory,
+  createImage,
+  createInternalRef,
+} from '../../utils/test-factories';
 import {
   snapshotComponent,
   mountWithTheme,
@@ -15,9 +19,9 @@ export const createEventCard = createFactory({
   },
   cardText: 'Description for my event',
   primaryCtaText: 'Register for event',
-  primaryCtaLink: [{ slug: 'my-event' }],
+  primaryCtaLink: createInternalRef(),
   secondaryCtaText: 'Register for event',
-  secondaryCtaLink: { slug: 'event-categories' },
+  secondaryCtaLink: createInternalRef(),
 });
 
 hidePascalCaseWarning();
@@ -38,8 +42,8 @@ it('displays the specified image correctly', () => {
 
 it('sets the correct CTA links', () => {
   const mockData = createEventCard({
-    primaryCtaLink: [{ slug: 'my-test-slug' }],
-    secondaryCtaLink: { slug: 'my-second-test-slug' },
+    primaryCtaLink: createInternalRef({ slug: 'my-test-slug' }),
+    secondaryCtaLink: createInternalRef({ slug: 'my-second-test-slug' }),
   });
   const wrapper = mountWithTheme(<EventCard data={mockData} />);
 

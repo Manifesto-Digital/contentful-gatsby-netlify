@@ -9,41 +9,41 @@
             "id": "6sxvmndnpn0s"
           }
         },
-        "id": "3fBYCCtmJWInzAMPoBAVlR",
+        "id": "6lM2wr9082aqaAmjqx7t3Y",
         "type": "Entry",
-        "createdAt": "2019-03-08T16:52:25.480Z",
-        "updatedAt": "2019-03-08T16:53:04.013Z",
+        "createdAt": "2019-03-13T13:54:29.848Z",
+        "updatedAt": "2019-03-13T13:55:51.477Z",
         "environment": {
           "sys": {
-            "id": "import",
+            "id": "external-migration",
             "type": "Link",
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 24,
-        "publishedAt": "2019-03-08T16:53:04.013Z",
-        "firstPublishedAt": "2019-03-08T16:53:04.013Z",
+        "publishedVersion": 26,
+        "publishedAt": "2019-03-13T13:55:51.477Z",
+        "firstPublishedAt": "2019-03-13T13:55:51.477Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
         "publishedCounter": 1,
-        "version": 25,
+        "version": 27,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "625g69sb4nKXWEDMnjfx6q"
+            "id": "626lvcSPzGpLe4tAiZj4tA"
           }
         },
         "contentType": {
@@ -56,10 +56,10 @@
       },
       "fields": {
         "title": {
-          "en-GB": "Migration topic with card"
+          "en-GB": "Migration - heroWithCard"
         },
         "subtitle": {
-          "en-GB": "migration"
+          "en-GB": "Subtitle"
         },
         "cardPosition": {
           "en-GB": "Left"
@@ -74,25 +74,18 @@
           }
         },
         "linkText": {
-          "en-GB": "migration"
+          "en-GB": "Link text"
         },
-        "internalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "3ZnKNB4VcSdgTOho9wmraK"
+        "link": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4gXZvSzxllBNV7LhNY7bnT"
+              }
             }
-          }
-        },
-        "externalLink": {
-          "en-GB": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "4gXZvSzxllBNV7LhNY7bnT"
-            }
-          }
+          ]
         }
       }
     }

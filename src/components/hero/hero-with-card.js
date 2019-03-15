@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getInternalLink } from '../../utils/links';
 // Components
 import ResponsiveImage from '../image/responsive';
 // Styles
@@ -15,19 +14,7 @@ import {
 import { Container } from '../styled/containers';
 
 const Hero = ({ content }) => {
-  const {
-    image,
-    title,
-    subtitle,
-    cardPosition,
-    linkText,
-    externalLink,
-    internalLink,
-  } = content;
-
-  const link = internalLink
-    ? getInternalLink(internalLink.slug)
-    : externalLink.URL;
+  const { image, title, subtitle, cardPosition, linkText, link } = content;
 
   return (
     <HeroWithCard>
@@ -41,13 +28,7 @@ const Hero = ({ content }) => {
           <Title>{title}</Title>
           {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
           {link && linkText && (
-            <StyledLinkHandler
-              internalLink={internalLink}
-              externalUrl={externalLink.URL}
-              newTab={externalLink.newTab}
-            >
-              {linkText}
-            </StyledLinkHandler>
+            <StyledLinkHandler link={link}>{linkText}</StyledLinkHandler>
           )}
         </CardContent>
       </Container>
@@ -61,14 +42,7 @@ Hero.propTypes = {
     subtitle: PropTypes.string,
     cardPosition: PropTypes.oneOf(['Left', 'Right']),
     linkText: PropTypes.string,
-    internalLink: PropTypes.shape({
-      id: PropTypes.string,
-      slug: PropTypes.string,
-    }),
-    externalLink: PropTypes.shape({
-      URL: PropTypes.string,
-      newTab: PropTypes.bool,
-    }),
+    link: PropTypes.object,
     image: PropTypes.object,
   }),
 };

@@ -1,24 +1,15 @@
+const linkField = require('../field-types/link');
+
 module.exports = function(migration) {
-  const topicCardWithIcon = migration
+  const topicCardWithIconDelete = migration
     .editContentType('topicCardWithIcon')
-    .createField('externalLink')
-    .name('External Link')
-    .type('Link')
-    .localized(false)
-    .required(false)
-    .validations([
-      {
-        linkContentType: ['topicExternalLink'],
-      },
-    ])
-    .disabled(false)
-    .omitted(false)
-    .linkType('Entry');
+    .deleteField('ctaLink');
+
+  const topicCardWithIcon = linkField(migration, 'topicCardWithIcon');
 
   const topicCardWithIconEditor = migration
     .editContentType('topicCardWithIcon')
-    .changeEditorInterface('externalLink', 'entryLinkEditor', {
-      helpText:
-        'Note that if an internal and external link are supplied, the internal link will take priority',
+    .changeEditorInterface('link', 'entryLinksEditor', {
+      bulkEditing: false,
     });
 };

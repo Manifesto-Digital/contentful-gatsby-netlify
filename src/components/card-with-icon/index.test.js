@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 import { TitleText, SubText, CardCTA } from './styles';
-import { createFactory } from '../../utils/test-factories';
+import { createFactory, createExternalRef } from '../../utils/test-factories';
 import CardWithIcon from './index';
 
 // Default props
@@ -11,11 +11,7 @@ export const createCardWithIcon = createFactory({
   titleText: 'Title text',
   subText: 'Sub text',
   ctaText: 'Click me',
-  ctaLink: { slug: 'https://example.com' },
-  externalLink: {
-    URL: 'https://example.com',
-    newTab: true,
-  },
+  link: createExternalRef(),
 });
 
 it('renders correctly', () => {
@@ -51,21 +47,5 @@ it('displays the correct internal cta link', () => {
     ctaLink: { slug: 'https://internal-test-example.com' },
   });
   const wrapper = shallow(<CardWithIcon data={mockData} />);
-  expect(wrapper.find(CardCTA).prop('internalLink')).toBe(mockData.ctaLink);
-});
-
-it('displays the correct external cta link', () => {
-  const mockData = createCardWithIcon({
-    externalLink: {
-      URL: 'https://internal-test-example.com',
-      newTab: true,
-    },
-  });
-  const wrapper = shallow(<CardWithIcon data={mockData} />);
-  expect(wrapper.find(CardCTA).prop('externalUrl')).toBe(
-    mockData.externalLink.URL
-  );
-  expect(wrapper.find(CardCTA).prop('newTab')).toBe(
-    mockData.externalLink.newTab
-  );
+  expect(wrapper.find(CardCTA).prop('link')).toBe(mockData.link);
 });

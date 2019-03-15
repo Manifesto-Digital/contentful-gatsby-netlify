@@ -3,20 +3,19 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 /**
- * If both internal and external links provided, internal is chosen
- * Internal link uses Gatsby Link
+ * Both internal and external links are references to content
  *
  */
-const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
-  if (internalLink) {
-    return (
-      <Link to={`/${internalLink.slug}`} className={className}>
-        {children}
-      </Link>
-    );
-  }
-  if (externalUrl) {
-    const { URL, newTab } = externalUrl;
+const LinkHandler = ({ className, children, link, internalLink = false }) => {
+  if (!link && !internalLink) return null; // Is a multi ref that will only ever allow 1
+
+  const linkRef = Array.isArray(link) ? link[0] : internalLink || link;
+
+  if (
+    !internalLink &&
+    linkRef.internal.type === 'ContentfulTopicExternalLink'
+  ) {
+    const { URL, newTab } = linkRef;
     return (
       <a
         href={URL}
@@ -28,23 +27,54 @@ const LinkHandler = ({ internalLink, externalUrl, className, children }) => {
       </a>
     );
   }
+  if (linkRef.slug) {
+    return (
+      <Link to={`/${linkRef.slug}`} className={className}>
+        {children}
+      </Link>
+    );
+  }
   return null;
 };
 
 LinkHandler.propTypes = {
-  externalUrl: PropTypes.shape({
-    URL: PropTypes.string,
-    newTab: PropTypes.bool,
-  }),
-  internalLink: PropTypes.shape({
-    id: PropTypes.string,
-    slug: PropTypes.string,
-  }),
+  link: PropTypes.oneOfType([
+    // Ref of links that may be internal or external
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        // External
+        PropTypes.shape({
+          internal: PropTypes.shape({
+            type: PropTypes.string.isRequired,
+          }).isRequired,
+          URL: PropTypes.string.isRequired,
+          newTab: PropTypes.bool,
+        }),
+        // Internal
+        PropTypes.shape({
+          internal: PropTypes.shape({
+            type: PropTypes.string.isRequired,
+          }).isRequired,
+          slug: PropTypes.string,
+        }),
+      ])
+    ),
+
+    PropTypes.shape({
+      internal: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+      }).isRequired,
+      slug: PropTypes.string,
+    }),
+  ]),
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
+  internalLink: PropTypes.shape({
+    slug: PropTypes.string,
+  }),
 };
 
 export default LinkHandler;

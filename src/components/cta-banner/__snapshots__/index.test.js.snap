@@ -41,8 +41,8 @@ exports[`renders correctly 2`] = `
   text-align: center;
   padding: 10px 1em;
   font-weight: normal;
-  background-color: transparent;
-  border: 1px solid #fff;
+  background-color: #ea232d;
+  border: none;
   color: #fff;
 }
 
@@ -77,18 +77,16 @@ exports[`renders correctly 2`] = `
     >
       mock header text
     </h3>
-    <a
+    <Link
       className="c3"
-      href="https://www.google.co.uk"
-      rel="noopener"
-      target="_blank"
+      to="/internal-link-slug"
     >
       <span
         className="c4"
       >
         Button text
       </span>
-    </a>
+    </Link>
   </div>
 </section>
 `;

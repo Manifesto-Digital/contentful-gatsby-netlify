@@ -4,8 +4,11 @@ import {
   snapshotComponent,
   mountWithTheme,
 } from '../../../../__tests__/helpers/index';
-import { createHeaderNavigation } from '../../../utils/test-factories';
-import Navigation from './index';
+import {
+  createHeaderNavigation,
+  createInternalRef,
+} from '../../../utils/test-factories';
+import Navigation from '.';
 import NavigationMenu from './navigation';
 import { MobileMenuClose, SubNavButton } from './styles-icons';
 import { ItemLink, SubMenu } from './styles';
@@ -21,7 +24,6 @@ hidePascalCaseWarning();
 it('Displays close button', () => {
   const mockData = createHeaderNavigation();
   const wrapper = mountWithTheme(<Navigation pageData={mockData} active />);
-
   expect(wrapper.find(MobileMenuClose)).toHaveLength(1);
 });
 
@@ -29,7 +31,7 @@ test('Should populate a menu item correctly', () => {
   const mockData = createHeaderNavigation({
     id: 'e230d8b8-4ee6-5d4c-bf25-57af664d12d7',
     menuLabel: 'What we do',
-    navigationLink: [{ slug: 'test-page', title: 'test-page' }],
+    navigationLink: [createInternalRef({ title: 'title' })],
   });
   const wrapper = mountWithTheme(
     <NavigationMenu pageData={mockData} id={mockData.id} />

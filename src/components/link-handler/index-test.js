@@ -3,55 +3,45 @@ import { Link } from 'gatsby';
 import { shallow } from 'enzyme';
 import { snapshotComponent } from '../../../__tests__/helpers/index';
 import LinkHandler from './index';
-import { getInternalLink } from '../../utils/links';
-import { createFactory, createInternalLink } from '../../utils/test-factories';
+import {
+  createFactory,
+  createExternalRef,
+  createInternalRef,
+} from '../../utils/test-factories';
 
 // Default props
 export const createLinkHandler = createFactory({
   text: 'Button text',
-  externalUrl: { URL: 'https://example.com', newTab: true },
-  internalLink: createInternalLink(),
+  link: createInternalRef(),
 });
 
 it('renders correctly', () => {
   const mockData = createLinkHandler();
 
-  snapshotComponent(
-    <LinkHandler
-      internalLink={mockData.internalLink}
-      externalUrl={{ URL: mockData.externalUrl.URL }}
-    >
-      {mockData.text}
-    </LinkHandler>
-  );
+  snapshotComponent(<LinkHandler {...mockData}>{mockData.text}</LinkHandler>);
 });
 
 it('displays the correct internal link', () => {
   const mockData = createLinkHandler({
-    internalLink: createInternalLink({ slug: 'internal-slug' }),
+    link: createInternalRef({ slug: 'internal-slug' }),
   });
   const wrapper = shallow(
-    <LinkHandler internalLink={mockData.internalLink}>
-      {mockData.text}
-    </LinkHandler>
+    <LinkHandler link={mockData.link}>{mockData.text}</LinkHandler>
   );
 
-  expect(wrapper.find(Link).prop('to')).toBe(
-    `/${getInternalLink(mockData.internalLink.slug)}`
-  );
+  expect(wrapper.find(Link).prop('to')).toBe(`/${mockData.link.slug}`);
 });
 
 it('displays the external link', () => {
   const mockData = createLinkHandler({
-    internalLink: null,
-    externalUrl: { URL: 'https://example.com', newTab: true },
+    link: createExternalRef(),
   });
 
   const wrapper = shallow(
-    <LinkHandler externalUrl={{ URL: mockData.externalUrl.URL }}>
+    <LinkHandler link={createExternalRef({ url: 'http://test.com' })}>
       {mockData.text}
     </LinkHandler>
   );
 
-  expect(wrapper.find('a').prop('href')).toBe(mockData.externalUrl.URL);
+  expect(wrapper.find('a').prop('href')).toBe(mockData.link.URL);
 });

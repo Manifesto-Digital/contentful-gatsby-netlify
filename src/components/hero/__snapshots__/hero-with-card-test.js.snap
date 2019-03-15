@@ -113,6 +113,7 @@ exports[`renders correctly 1`] = `
       </p>
       <a
         className="c6"
+        href="http://mock.com"
         rel="noopener"
         target="_self"
       >

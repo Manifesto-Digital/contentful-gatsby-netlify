@@ -13,7 +13,6 @@ const StickyBanner = ({
   title,
   subtitle,
   eventLink,
-  newTab,
   buttonText,
   stickyBarRef,
   animateBanner,
@@ -26,9 +25,7 @@ const StickyBanner = ({
           <br />
           {subtitle}
         </EventName>
-        <SignUpLink externalUrl={eventLink} newTab={newTab}>
-          {buttonText}
-        </SignUpLink>
+        <SignUpLink link={eventLink}>{buttonText}</SignUpLink>
       </ContentContainer>
     </Banner>
     <BannerToStick bannerStuck={bannerStuck} animateBanner={animateBanner}>
@@ -38,9 +35,7 @@ const StickyBanner = ({
           <br />
           {subtitle}
         </EventName>
-        <SignUpLink externalUrl={eventLink} newTab={newTab}>
-          {buttonText}
-        </SignUpLink>
+        <SignUpLink link={eventLink}>{buttonText}</SignUpLink>
       </ContentContainer>
     </BannerToStick>
   </>
@@ -51,8 +46,7 @@ StickyBanner.propTypes = {
   subtitle: PropTypes.string,
   bannerStuck: PropTypes.bool,
   animateBanner: PropTypes.bool,
-  eventLink: PropTypes.string,
-  newTab: PropTypes.bool,
+  eventLink: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   buttonText: PropTypes.string,
   stickyBarRef: PropTypes.object,
 };

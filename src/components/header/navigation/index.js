@@ -72,10 +72,10 @@ const Navigation = ({
               </Item>
               <Item>
                 <ItemLink
-                  externalUrl={{
-                    URL: 'https://scotland.shelter.org.uk/',
-                    newTab: true,
-                  }}
+                  as="a"
+                  href="https://scotland.shelter.org.uk/"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Scotland
                 </ItemLink>

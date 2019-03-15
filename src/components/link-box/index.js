@@ -6,6 +6,7 @@ import { Wrapper, ListWrapper, ListItem } from './styles';
 
 const LinkBox = ({ data }) => {
   const { headerText, itemsPerRow, links } = data;
+
   return (
     <Container>
       <Wrapper>
@@ -14,13 +15,7 @@ const LinkBox = ({ data }) => {
           {links &&
             links.map((link, i) => (
               <ListItem key={i} rowCount={itemsPerRow}>
-                <LinkHandler
-                  externalUrl={link.URL}
-                  internalLink={link.slug && link}
-                  newTab={link.newTab}
-                >
-                  {link.title}
-                </LinkHandler>
+                <LinkHandler link={link}>{link.title}</LinkHandler>
               </ListItem>
             ))}
         </ListWrapper>

@@ -10,8 +10,7 @@ const Banner = ({ banner, sidebar }) => {
     headerText,
     bannerColour,
     linkText,
-    internalLink,
-    externalLink,
+    link,
     removeMarginBottom,
   } = banner;
 
@@ -25,14 +24,11 @@ const Banner = ({ banner, sidebar }) => {
         <Header as={sidebar ? 'h3' : 'h2'} bg={consistentString(bannerColour)}>
           {headerText}
         </Header>
-        <StyledLinkHandler
-          externalUrl={externalLink.URL}
-          internalLink={internalLink}
-          bg={bannerColour.toLowerCase()}
-          newTab={externalLink.newTab}
-        >
-          {linkText}
-        </StyledLinkHandler>
+        {link && (
+          <StyledLinkHandler link={link} bg={bannerColour.toLowerCase()}>
+            {linkText}
+          </StyledLinkHandler>
+        )}
       </Container>
     </Wrapper>
   );

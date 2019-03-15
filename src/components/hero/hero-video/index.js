@@ -25,13 +25,13 @@ const Hero = ({
   buttonText,
   bannerText,
   eventLink,
-  newTab,
   heroBannerRef,
 }) => {
   // Last word in title will be wrapped to emphasize
   const wrapTitle = () => {
     const splitString = title.split(' ');
     // If only one word return
+
     if (splitString.length === 1) return title;
     const lastWordInTitle = splitString.pop();
     const startOfTitle = splitString.join(' ');
@@ -84,9 +84,7 @@ const Hero = ({
       <HeroBanner ref={heroBannerRef}>
         <ContentContainer>
           <BannerText>{bannerText}</BannerText>
-          <SignUpLink externalUrl={{ URL: eventLink, newTab }}>
-            {buttonText}
-          </SignUpLink>
+          <SignUpLink link={eventLink}>{buttonText}</SignUpLink>
         </ContentContainer>
       </HeroBanner>
       <Container />
@@ -99,8 +97,7 @@ Hero.propTypes = {
   subtitle: PropTypes.string,
   bannerText: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  eventLink: PropTypes.string.isRequired,
-  newTab: PropTypes.bool.isRequired,
+  eventLink: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   image: PropTypes.object,
   video: PropTypes.object,
   heroBannerRef: PropTypes.object,
