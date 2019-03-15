@@ -116,8 +116,6 @@
     const availableSeeds = (await readdirAsync(SEEDS_DIR)).filter(file =>
       /\d\d_seed_/.test(file)
     );
-    // .map(file => getVersionOfFile(file));
-    // console.log(availableSeeds);
     // ---------------------------------------------------------------------------
     console.log('Figure out latest ran migration of the contentful space');
     const { items: versions } = await environment.getEntries({
