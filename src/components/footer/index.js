@@ -6,18 +6,20 @@ import Icon from '../share-block/icon';
 import { consistentString } from '../../utils/content-formatting';
 import { Container } from '../styled/containers';
 import RichText from '../rich-text';
+import AccordionHandler from '../accordion/handler';
+
 import NavigationMenu from './navigation';
 import {
   Wrapper,
   Top,
   Social,
   Menus,
-  Angle,
   Bottom,
   BottomInner,
-  Text,
   LogoWrapper,
   Logo,
+  FooterAccordion,
+  ContentWrapper,
 } from './styles';
 
 const footerQuery = graphql`
@@ -78,27 +80,39 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
     <Wrapper removeMarginTop={removeMarginTop}>
       <Top>
         <Container>
-          <Menus>
-            <Social>
-              {shareType &&
-                shareType.map((type, i) => (
-                  <Icon key={i} icon={consistentString(type)} />
-                ))}
-            </Social>
-            <Menus role="navigation" aria-label="Footer menu">
-              {navigationItems &&
-                navigationItems.map((item, i) => (
-                  <NavigationMenu key={i} id={item.id} pageData={item} />
-                ))}
-            </Menus>
+          <Menus role="navigation" aria-label="Footer menu">
+            {navigationItems && (
+              <AccordionHandler
+                mobileOnly
+                render={childrenState =>
+                  navigationItems.map((item, i) => (
+                    <FooterAccordion
+                      key={i}
+                      header={item.menuLabel}
+                      active={childrenState}
+                      id={`footer-accordion-menu-${i + 1}`}
+                    >
+                      <NavigationMenu key={i} id={item.id} pageData={item} />
+                    </FooterAccordion>
+                  ))
+                }
+              />
+            )}
           </Menus>
         </Container>
       </Top>
       <Bottom>
-        <Angle />
         <Container>
           <BottomInner>
-            <Text as={RichText} richText={footerText} />
+            <ContentWrapper>
+              <Social>
+                {shareType &&
+                  shareType.map((type, i) => (
+                    <Icon key={i} icon={consistentString(type)} />
+                  ))}
+              </Social>
+              <RichText richText={footerText} />
+            </ContentWrapper>
             <LogoWrapper to="/">
               <Logo src={LogoSVG} cacheGetRequests />
             </LogoWrapper>

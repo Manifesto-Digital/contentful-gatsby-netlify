@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.c1 {
+  position: relative;
+  font-weight: normal;
+  color: #e5e5e5;
+  margin-bottom: 0;
+}
+
+.c2 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 20px 60px 20px 5px;
+  width: 100%;
+  text-align: left;
+  font-size: 1.35em;
+}
+
+.c4 {
+  display: none;
+  padding: 20px 5px 0 5px;
+}
+
+.c3 {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  top: 50%;
+  right: 5px;
+  width: 20px;
+  height: 25px;
+}
+
+.c3 svg {
+  display: block;
+  width: 20px;
+  height: 25px;
+}
+
+<div
+  className="c0"
+>
+  <h3
+    className="c1"
+  >
+    <button
+      aria-controls="ID123"
+      aria-expanded={false}
+      className="c2"
+      onClick={[Function]}
+      type="button"
+    >
+      mock header
+    </button>
+    <span
+      className="isvg loading c3"
+    />
+  </h3>
+  <div
+    aria-hidden={true}
+    className="c4"
+    id="ID123"
+  >
+    <p>
+      Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus.
+    </p>
+  </div>
+</div>
+`;

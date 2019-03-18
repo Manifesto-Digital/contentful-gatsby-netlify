@@ -7,17 +7,17 @@ exports[`Renders correctly 1`] = `
   padding: 0 20px;
 }
 
-.c13 ul {
+.c14 ul {
   padding-left: 0;
   list-style: none;
 }
 
-.c13 ul li {
+.c14 ul li {
   position: relative;
   padding-left: 40px;
 }
 
-.c13 ul li::before {
+.c14 ul li::before {
   content: ' ';
   position: absolute;
   top: 8px;
@@ -28,26 +28,36 @@ exports[`Renders correctly 1`] = `
   background: #212122;
 }
 
-.c13 ul li ul {
+.c14 ul li ul {
   padding-left: 0;
   list-style: none;
 }
 
-.c13 ul li ul li:before {
+.c14 ul li ul li:before {
   background: transparent;
   border: 1px solid #212122;
 }
 
-.c13 ol li::before {
+.c14 ol li::before {
   min-width: 10px;
 }
 
-.c15 {
+.c5 {
+  margin-bottom: 20px;
+}
+
+.c6 {
+  position: relative;
+  font-weight: normal;
+  color: #e5e5e5;
+}
+
+.c16 {
   display: block;
   width: 150px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61,10 +71,7 @@ exports[`Renders correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   height: 52px;
-  padding: 15px;
-  background: #ea232d;
   margin-right: auto;
-  margin-bottom: 20px;
 }
 
 .c0 {
@@ -77,7 +84,7 @@ exports[`Renders correctly 1`] = `
   flex-direction: column;
   background: #212122;
   margin-top: 60px;
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .c1 {
@@ -91,39 +98,26 @@ exports[`Renders correctly 1`] = `
   width: 100%;
 }
 
-.c4 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
-.c4 .c16 {
+.c13 .c17 {
   color: #fff;
   fill: #fff;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   width: 100%;
   font-size: 0.775rem;
+  color: #fff;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,16 +131,16 @@ exports[`Renders correctly 1`] = `
   padding: 0;
 }
 
-.c8 {
+.c9 {
   font-size: 0.775rem;
   color: #fff;
 }
 
-.c8:hover {
+.c9:hover {
   color: #ea232d;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -156,31 +150,13 @@ exports[`Renders correctly 1`] = `
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
-}
-
-.c5 > .c6 > li:first-child {
-  margin-bottom: 30px;
+  padding-left: 0;
 }
 
 .c10 {
-  position: absolute;
-  right: 93%;
-  z-index: 0;
-  display: none;
-  width: 0;
-  border-color: #212122;
-  border-style: solid;
-  border-width: 100px 150px 0;
-  -webkit-transform: rotate(-225deg);
-  -ms-transform: rotate(-225deg);
-  transform: rotate(-225deg);
-}
-
-.c9 {
   position: relative;
-  margin-top: 60px;
-  padding: 20px 0;
-  background: #ea232d;
+  padding: 40px 0;
+  background-color: #575757;
   overflow: hidden;
 }
 
@@ -197,11 +173,8 @@ exports[`Renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 0.775rem;
 }
 
 .c12 {
@@ -212,36 +185,38 @@ exports[`Renders correctly 1`] = `
   text-align: left;
 }
 
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 @media (min-width:62em) {
-  .c14 {
-    height: 68px;
+  .c15 {
+    margin-bottom: 20px;
     padding: 20px 25px;
     margin-right: 0;
     margin-bottom: 0;
   }
 }
 
-@media (min-width:62em) {
+@media (min-width:40.0625em) {
+  .c0 {
+    padding-top: 60px;
+  }
+}
+
+@media (min-width:40.0625em) {
   .c3 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: unset;
-    -ms-flex-wrap: unset;
-    flex-wrap: unset;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
   }
 }
 
 @media (min-width:62em) {
-  .c7 {
+  .c8 {
     width: auto;
-    padding-left: 20px;
-  }
-}
-
-@media (min-width:62em) {
-  .c10 {
-    display: block;
   }
 }
 
@@ -264,6 +239,12 @@ exports[`Renders correctly 1`] = `
   }
 }
 
+@media (min-width:40.0625em) {
+  .c4 h3 {
+    margin-bottom: 40px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -274,69 +255,71 @@ exports[`Renders correctly 1`] = `
       className="c2"
     >
       <nav
+        aria-label="Footer menu"
         className="c3"
+        role="navigation"
       >
         <div
-          className="c4"
-        />
-        <nav
-          aria-label="Footer menu"
-          className="c3"
-          role="navigation"
+          className="c4 c5"
         >
+          <h3
+            className="c6"
+          >
+            Housing Advice
+          </h3>
           <li
-            className="c5"
+            className="c7"
           >
             <ul
-              className="c6 c7"
+              className="c8"
             >
               <li
                 aria-haspopup={true}
-                className="c5"
+                className="c7"
                 role="menuitem"
               >
                 <Link
-                  className="c8"
+                  className="c9"
                   to="/tobys-page"
                 >
                   Housing Advice
                 </Link>
               </li>
               <li
-                className="c5"
+                className="c7"
               >
                 <Link
-                  className="c8"
+                  className="c9"
                   to="/320,000-people-in-britain-are-now-homeless"
                 >
                   320,000 people in Britain are now homeless
                 </Link>
               </li>
               <li
-                className="c5"
+                className="c7"
               >
                 <Link
-                  className="c8"
+                  className="c9"
                   to="/tobys-page"
                 >
                   Tobys Page
                 </Link>
               </li>
               <li
-                className="c5"
+                className="c7"
               >
                 <Link
-                  className="c8"
+                  className="c9"
                   to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
                 >
                   Shelter Manchester to hold vigil for lost homeless people
                 </Link>
               </li>
               <li
-                className="c5"
+                className="c7"
               >
                 <Link
-                  className="c8"
+                  className="c9"
                   to="/shelter-demo-page"
                 >
                   Shelter Demo Page
@@ -344,16 +327,13 @@ exports[`Renders correctly 1`] = `
               </li>
             </ul>
           </li>
-        </nav>
+        </div>
       </nav>
     </div>
   </div>
   <div
-    className="c9"
+    className="c10"
   >
-    <div
-      className="c10"
-    />
     <div
       className="c2"
     >
@@ -361,19 +341,26 @@ exports[`Renders correctly 1`] = `
         className="c11"
       >
         <div
-          className="c12 c13"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+          className="c12"
+        >
+          <div
+            className="c13"
+          />
+          <div
+            className="c14"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
+              }
             }
-          }
-        />
+          />
+        </div>
         <Link
-          className="c14"
+          className="c15"
           to="/"
         >
           <span
-            className="isvg loading c15"
+            className="isvg loading c16"
           />
         </Link>
       </div>
