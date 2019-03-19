@@ -24,7 +24,7 @@
     const client = createClient({
       accessToken: CMA_ACCESS_TOKEN,
       headers: {
-        'X-Contentful-Source-Environment': 'develop',
+        'X-Contentful-Source-Environment': 'master',
       },
     });
 
