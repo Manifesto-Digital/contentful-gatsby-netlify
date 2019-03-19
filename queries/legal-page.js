@@ -7,14 +7,10 @@ const getLegalPages = async graphql =>
             id
             slug
             title
-            parentPage {
+            parentSlug {
               slug
               key
-              child {
-                slug
-                label
-                key
-              }
+              label
             }
           }
         }
