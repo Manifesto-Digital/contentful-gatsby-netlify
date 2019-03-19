@@ -21,7 +21,9 @@ const Page = ({ data }) => {
       <article>
         {heroContent && <Hero content={heroContent[0]} />}
         <section>
-          <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
+          <Container>
+            {bodyCopy && <RichText richText={bodyCopy.json} />}
+          </Container>
         </section>
         <Assemblies assemblies={assemblies} />
       </article>
@@ -56,6 +58,7 @@ export const pageQuery = graphql`
         childContentfulRichText {
           html
         }
+        json
       }
       assemblies {
         ... on Node {

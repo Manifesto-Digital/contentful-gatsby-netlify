@@ -14,6 +14,7 @@ export const InlineCallout = graphql`
       childContentfulRichText {
         html
       }
+      json
     }
   }
 `;
