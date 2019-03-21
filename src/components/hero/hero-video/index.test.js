@@ -1,10 +1,7 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
 import { shallow } from 'enzyme';
-import {
-  mountWithTheme,
-  snapshotComponent,
-} from '../../../../__tests__/helpers/index';
+import { mountWithTheme, snapshotComponent } from 'test-helpers';
 import VideoHero from '.';
 import {
   createFactory,

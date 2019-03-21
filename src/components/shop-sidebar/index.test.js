@@ -1,12 +1,9 @@
 import React from 'react';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import {
   createFactory,
   createChildContentfulRichText,
 } from '../../utils/test-factories';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
 import ShopSidebar from './index';
 
 export const createShopSidebar = createFactory({

@@ -1,9 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import StickyBanner from '.';
 import {
   createFactory,

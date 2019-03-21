@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import { snapshotComponent } from 'test-helpers';
 import LinkHandler from './index';
 import {
   createFactory,

@@ -1,28 +1,36 @@
 import { graphql } from 'gatsby';
 
-export const ContentGrid4Fragment = graphql`
-  fragment ContentGrid4Fragment on ContentfulTopicContentGrid4 {
+export const StatsFragment = graphql`
+  fragment StatsFragment on ContentfulTopicStats {
     id
     internal {
       type
     }
-    border
-    grid1 {
+    displayType
+    stat1Title
+    stat1Subtitle
+    stat1Text {
       childContentfulRichText {
         html
       }
     }
-    grid2 {
+    stat2Title
+    stat2Subtitle
+    stat2Text {
       childContentfulRichText {
         html
       }
     }
-    grid3 {
+    stat3Title
+    stat3Subtitle
+    stat3Text {
       childContentfulRichText {
         html
       }
     }
-    grid4 {
+    stat4Title
+    stat4Subtitle
+    stat4Text {
       childContentfulRichText {
         html
       }

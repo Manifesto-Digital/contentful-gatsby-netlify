@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import {
   createFactory,
   createImage,
   createInternalRef,
 } from '../../utils/test-factories';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+
 import EventListCard from './index';
 
 export const createEventListCard = createFactory({

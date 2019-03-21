@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import { createFactory } from '../../utils/test-factories';
 import Perks from './index';
 import { Wrapper, IconWrapper } from './styles';

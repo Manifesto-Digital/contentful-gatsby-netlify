@@ -1,16 +1,12 @@
 import React from 'react';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
 import ContentCardBanner from './index';
 import { BannerBackground, CardRow } from './styles';
 import { createContentCardBanner } from '../../utils/test-factories';
 import theme from '../theme/variables';
 
 // Default prop values
-
 it('renders correctly', () => {
   const mockBanner = createContentCardBanner();
   snapshotComponent(<ContentCardBanner data={mockBanner} />);

@@ -1,10 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'gatsby';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import LinkBox from './index';
 import { ListItem } from './styles';
 import { createFactory, createInternalRef } from '../../utils/test-factories';

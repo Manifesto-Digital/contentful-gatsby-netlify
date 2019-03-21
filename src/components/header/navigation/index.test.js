@@ -1,9 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import {
   createHeaderNavigation,
   createInternalRef,

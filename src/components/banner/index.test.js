@@ -1,9 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  snapshotComponent,
-  renderWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, renderWithTheme } from 'test-helpers';
 import Banner from './index';
 import { Header } from './styles';
 import theme from '../theme/variables';

@@ -44,7 +44,7 @@ const ResponsiveImage = ({
       srcSet={`${url}${mobileParams ? `?${mobileParams}` : ''} 480w,
         ${url}${desktopParams ? `?${desktopParams}` : ''}`}
       src={`${url}${desktopParams ? `?${desktopParams}` : ''}`}
-      alt={`${!presentational ? description : ''}`}
+      alt={`${!presentational ? description || url : ''}`}
     />
   );
 };
