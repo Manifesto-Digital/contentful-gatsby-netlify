@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import { shallow } from 'enzyme';
-import { snapshotComponent } from '../../../__tests__/helpers/index';
+import { snapshotComponent } from 'test-helpers';
 import VideoEmbed from './index';
 import {
   createFactory,

@@ -97,17 +97,18 @@ export const eventCategoryPageQuery = graphql`
         }
       }
       featuredEvent {
-        slug
-        mainCtaText
-        event {
-          eventName
-          displayLocation
-          eventDisplayDate
-          eventSystemDate
-          distance
-          thumbnailImage {
-            file {
-              url
+        ... on Node {
+          ... on ContentfulPageAssemblyChallengeEvent {
+            slug
+            event {
+              ...EventFragment
+            }
+          }
+          ... on ContentfulPageAssemblyStandardEvent {
+            slug
+            mainCtaText
+            event {
+              ...EventFragment
             }
           }
         }

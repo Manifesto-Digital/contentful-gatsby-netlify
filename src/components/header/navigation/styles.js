@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
   transform: ${({ active }) =>
     active ? 'translateX(0)' : ' translateX(120%)'};
-  z-index: ${({ active }) => (active ? '10' : null)};
+  z-index: ${({ active }) => (active ? '10' : 1)};
   overflow-y: scroll;
 
   ${breakpoint.desktop`

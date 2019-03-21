@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { snapshotComponent, mountWithTheme } from '../../../__tests__/helpers';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import FeedbackForm from '.';
 import LinkButton from '../link-button';
 import { sendForm } from '../form/send';

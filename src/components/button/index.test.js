@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshotComponent } from '../../../__tests__/helpers';
+import { snapshotComponent } from 'test-helpers';
 import Button from '.';
 
 it('renders correctly', () => {

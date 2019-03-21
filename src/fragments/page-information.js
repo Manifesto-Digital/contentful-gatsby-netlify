@@ -10,6 +10,7 @@ export const PageInformationFragment = graphql`
         type
       }
     }
+    taxonomyColour
     pageThumbnail {
       ...ImageFragment
     }
