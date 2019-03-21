@@ -82,16 +82,18 @@ exports[`displays the correct icon 1`] = `
   >
     Sub text
   </p>
-  <Link
+  <a
     className="c4 c5"
-    to="/https://example.com"
+    href="http://mock.com"
+    rel="noopener"
+    target="_self"
   >
     <span
       className="c6"
     >
       Click me
     </span>
-  </Link>
+  </a>
 </div>
 `;
 
@@ -177,15 +179,17 @@ exports[`renders correctly 1`] = `
   >
     Sub text
   </p>
-  <Link
+  <a
     className="c4 c5"
-    to="/https://example.com"
+    href="http://mock.com"
+    rel="noopener"
+    target="_self"
   >
     <span
       className="c6"
     >
       Click me
     </span>
-  </Link>
+  </a>
 </div>
 `;

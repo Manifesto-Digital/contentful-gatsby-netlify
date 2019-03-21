@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Styles
 import { Banner, BannerToStick, ContentContainer, EventName } from './styles';
-import { SignUpButton } from '../../styled/buttons';
+import { SignUpLink } from '../../styled/buttons';
 
 /**
  * As banner needs to live as part of the normal DOM flow and also
@@ -25,7 +25,7 @@ const StickyBanner = ({
           <br />
           {subtitle}
         </EventName>
-        <SignUpButton href={eventLink}>{buttonText}</SignUpButton>
+        <SignUpLink link={eventLink}>{buttonText}</SignUpLink>
       </ContentContainer>
     </Banner>
     <BannerToStick bannerStuck={bannerStuck} animateBanner={animateBanner}>
@@ -35,7 +35,7 @@ const StickyBanner = ({
           <br />
           {subtitle}
         </EventName>
-        <SignUpButton href={eventLink}>{buttonText}</SignUpButton>
+        <SignUpLink link={eventLink}>{buttonText}</SignUpLink>
       </ContentContainer>
     </BannerToStick>
   </>
@@ -46,7 +46,7 @@ StickyBanner.propTypes = {
   subtitle: PropTypes.string,
   bannerStuck: PropTypes.bool,
   animateBanner: PropTypes.bool,
-  eventLink: PropTypes.string,
+  eventLink: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   buttonText: PropTypes.string,
   stickyBarRef: PropTypes.object,
 };

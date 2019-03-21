@@ -117,7 +117,7 @@ ContentForm.propTypes = {
     submitCallToAction: PropTypes.string,
     formFields: PropTypes.array,
     formHeader: PropTypes.string,
-    backgroundColour: PropTypes.oneOf(['Grey']),
+    backgroundColour: PropTypes.oneOf(['White', 'Grey']),
   }),
   insideContainer: PropTypes.bool,
 };

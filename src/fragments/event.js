@@ -12,6 +12,9 @@ export const EventFragment = graphql`
       }
       description
     }
+    link {
+      ...LinkFragment
+    }
     eventType
     eventStatus
     eventSystemDate

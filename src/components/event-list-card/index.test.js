@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { snapshotComponent, mountWithTheme } from 'test-helpers';
-import { createFactory, createImage } from '../../utils/test-factories';
+import {
+  createFactory,
+  createImage,
+  createInternalRef,
+} from '../../utils/test-factories';
+import { hidePascalCaseWarning } from '../../utils/test-mocks';
+
 import EventListCard from './index';
 
 export const createEventListCard = createFactory({
@@ -11,6 +17,8 @@ export const createEventListCard = createFactory({
     eventName: 'My Event',
     displayLocation: 'round the corner',
     eventDisplayDate: 'Yesterday',
+    eventSystemDate: '2019-02-25',
+    link: createInternalRef(),
   },
 });
 
@@ -19,6 +27,8 @@ it('renders correctly', () => {
 
   snapshotComponent(<EventListCard data={mockData} />);
 });
+
+hidePascalCaseWarning();
 
 it('displays the specified image correctly', () => {
   const mockData = createEventListCard();

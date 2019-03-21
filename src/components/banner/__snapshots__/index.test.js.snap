@@ -17,14 +17,6 @@ exports[`renders correctly 1`] = `
   color: #fff;
 }
 
-.c3 {
-  color: #fff;
-}
-
-.c3:hover {
-  color: white;
-}
-
 <section
   className="c0"
 >
@@ -36,12 +28,6 @@ exports[`renders correctly 1`] = `
     >
       What an amazing banner
     </h2>
-    <Link
-      className="c3"
-      to="/internal-link-slug"
-    >
-      woooo this is a link
-    </Link>
   </div>
 </section>
 `;

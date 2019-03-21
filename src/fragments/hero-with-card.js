@@ -13,10 +13,8 @@ export const HeroWithCardFragment = graphql`
       ...ImageFragment
     }
     linkText
-    internalLink {
-      id
-      slug
+    link {
+      ...LinkFragment
     }
-    externalUrl
   }
 `;

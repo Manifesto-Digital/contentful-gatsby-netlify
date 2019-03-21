@@ -26,6 +26,6 @@ export const StyledLinkHandler = styled(LinkHandler)`
     (bg === 'black' && theme.palette.white)};
 
   &:hover {
-    color: white;
+    color: ${({ bg, theme }) => bg === 'red' && theme.palette.white};
   }
 `;

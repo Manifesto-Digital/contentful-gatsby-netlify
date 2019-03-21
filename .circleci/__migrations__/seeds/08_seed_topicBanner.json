@@ -1,0 +1,88 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "5yue3oKMh5oVsMn7lfJJ6L",
+        "type": "Entry",
+        "createdAt": "2019-03-13T12:29:59.469Z",
+        "updatedAt": "2019-03-13T12:30:30.909Z",
+        "environment": {
+          "sys": {
+            "id": "external-migration",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 27,
+        "publishedAt": "2019-03-13T12:30:30.909Z",
+        "firstPublishedAt": "2019-03-13T12:30:30.909Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 28,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "topicBanner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Migration - topicBanner"
+        },
+        "bannerColour": {
+          "en-GB": "Red"
+        },
+        "headerText": {
+          "en-GB": "HEADER"
+        },
+        "linkText": {
+          "en-GB": "LINK TEXT"
+        },
+        "removeMarginBottom": {
+          "en-GB": true
+        },
+        "link": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4gXZvSzxllBNV7LhNY7bnT"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "assets": []
+}
