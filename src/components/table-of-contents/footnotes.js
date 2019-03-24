@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ReferenceList, FootNotesTitle } from './styles';
+import { Wrapper, ReferenceList, FootNotesTitle } from './styles';
 
-export const TableOfContentsFootNotes = ({ referenceList }) => (
-  <>
+export const TableOfContentsFootNotes = ({
+  referenceList,
+  removeBottomMargin,
+}) => (
+  <Wrapper removeBottomMargin={removeBottomMargin}>
     <FootNotesTitle>Footnotes</FootNotesTitle>
     <ReferenceList>
       {referenceList.map((reference, i) => (
@@ -19,11 +22,12 @@ export const TableOfContentsFootNotes = ({ referenceList }) => (
         </li>
       ))}
     </ReferenceList>
-  </>
+  </Wrapper>
 );
 
 TableOfContentsFootNotes.propTypes = {
   referenceList: PropTypes.array,
+  removeBottomMargin: PropTypes.bool,
 };
 
 export default TableOfContentsFootNotes;

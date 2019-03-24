@@ -48,6 +48,7 @@ export const createFile = createFactory({
   description: 'Mock file description',
   title: 'Mock file title',
   file: {
+    contentType: 'application/pdf',
     url:
       '//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf',
     fileName: 'component tree-pdf.pdf',
@@ -167,4 +168,19 @@ export const createPerson = createFactory({
     },
   },
   jobTitle: 'Developer',
+});
+
+export const createInternalRef = createFactory({
+  internal: {
+    type: 'ContentfulPageAssemblyContentPage',
+  },
+  slug: 'internal-link-slug',
+});
+
+export const createExternalRef = createFactory({
+  internal: {
+    type: 'ContentfulTopicExternalLink',
+  },
+  URL: 'http://mock.com',
+  newTab: false,
 });

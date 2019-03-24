@@ -7,14 +7,12 @@ export const CardWithIconFragment = graphql`
       type
     }
     name
-
     icon
     titleText
     subText
     ctaText
-    ctaLink {
-      id
-      slug
+    link {
+      ...LinkFragment
     }
   }
 `;

@@ -16,7 +16,6 @@ import PageTitle from '../page-title';
 
 export const TableOfContent = ({ data, updateReferenceList }) => {
   const { title, applicableRegions, bodyCopy, tableOfContents } = data;
-
   const [contentWithReferences, createReferenceContent] = useState([]);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
 
   return (
     <>
-      <PageTitle>
+      <PageTitle noContainer>
         <h1>{title}</h1>
       </PageTitle>
       {bodyCopy && (

@@ -1,41 +1,40 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { mountWithTheme, snapshotComponent } from 'test-helpers';
+import { snapshotComponent } from 'test-helpers';
 import { createFactory } from '../../utils/test-factories';
-import LegalSideBar from './index';
+import { legalHierarchy } from '../../utils/test-legal';
+import LegalSideBar from '.';
 
 export const createLegalSideBar = createFactory({
-  sideBarLinks: [{ title: 'Legal sidebar link', slug: 'legal-page' }],
+  hierarchy: legalHierarchy,
+  parentSlug: [
+    {
+      slug: 'legal',
+      key: '0',
+      label: 'Legal',
+    },
+    {
+      slug: 'harassment_and_antisocial_behaviour',
+      key: '1',
+      label: 'Harassment and antisocial behaviour',
+    },
+  ],
+  slug: 'mock-slug',
 });
 
 it('renders correctly', () => {
   const mockData = createLegalSideBar();
-
-  snapshotComponent(<LegalSideBar data={mockData} />);
+  snapshotComponent(<LegalSideBar {...mockData} />);
 });
 
-it('renders the correct information', () => {
-  const mockData = createLegalSideBar({
-    sideBarLinks: [{ title: 'test link name', slug: 'test-slug' }],
-  });
+// TODO: Once full slug can be added to the parentSlug array
+// TODO: Also check that active page has an active prop
+// it('passes an activeParent prop to the parent link items', () => {
+//   const mockData = createLegalSideBar();
+//   const wrapper = mountWithTheme(<LegalSideBar {...mockData} />);
 
-  const wrapper = mountWithTheme(<LegalSideBar data={mockData} />);
-
-  expect(wrapper.find(Link).text()).toEqual('test link name');
-  expect(wrapper.find(Link).prop('to')).toContain('test-slug');
-});
-
-it('renders multiple links correctly', () => {
-  const mockData = createLegalSideBar({
-    sideBarLinks: [
-      { title: 'test link 1', slug: 'test-slug-1' },
-      { title: 'test link 2', slug: 'test-slug-2' },
-    ],
-  });
-
-  const wrapper = mountWithTheme(<LegalSideBar data={mockData} />);
-
-  wrapper.find(Link).forEach((n, i) => {
-    expect(n.prop('to')).toContain(`test-slug-${i + 1}`);
-  });
-});
+//   mockData.parentSlug.forEach(parentItem => {
+//     expect(
+//       wrapper.findWhere(node => node.props().href === '/')
+//     ).toBeTrue();
+//   });
+// });

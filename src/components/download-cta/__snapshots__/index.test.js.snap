@@ -74,6 +74,11 @@ exports[`renders correctly 1`] = `
     >
       78.02 KB
     </div>
+    <div
+      className="c2"
+    >
+      PDF
+    </div>
   </div>
   <span
     className="isvg loading c3"

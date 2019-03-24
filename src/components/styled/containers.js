@@ -50,6 +50,6 @@ export const FlexBetweenContainer = styled.div`
 
 export const Section = styled.section`
   padding: ${({ theme }) => theme.spacing.medium} 0;
-  background-color: ${({ backgroundColour, theme }) =>
-    backgroundColour || theme.palette.white};
+  background-color: ${({ offWhite, theme }) =>
+    offWhite ? theme.palette.offWhite : theme.palette.white};
 `;

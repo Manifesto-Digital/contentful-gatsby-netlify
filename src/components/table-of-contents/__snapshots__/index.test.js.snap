@@ -2,13 +2,7 @@
 
 exports[`renders correctly 1`] = `
 Array [
-  .c1 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.c0 {
+  .c0 {
   padding-bottom: 0;
 }
 
@@ -20,11 +14,7 @@ Array [
 <div
     className="c0"
   >
-    <div
-      className="c1"
-    >
-      <h1 />
-    </div>
+    <h1 />
   </div>,
   .c0 {
   margin-bottom: 5px;

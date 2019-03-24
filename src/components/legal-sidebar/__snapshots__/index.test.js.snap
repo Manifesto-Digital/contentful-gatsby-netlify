@@ -13,16 +13,90 @@ exports[`renders correctly 1`] = `
   margin-bottom: 0;
 }
 
+.c3 {
+  font-weight: 500;
+}
+
+.c5 {
+  font-weight: normal;
+}
+
+.c1 {
+  padding-left: 0;
+}
+
+.c4 {
+  padding-left: 20px;
+  border-left: 3px solid #d9d9d9;
+}
+
+.c2 {
+  list-style: none;
+}
+
 <div
   className="c0"
 >
   <h3>
-    Resources
+    Legal
   </h3>
-  <Link
-    to="/legal-page"
+  <ul
+    className="c1"
   >
-    Legal sidebar link
-  </Link>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c3"
+        to="/legal/harassment_and_antisocial_behaviour"
+      >
+        Harassment and antisocial behaviour
+      </Link>
+    </li>
+    <ul
+      className="c4"
+    >
+      <li
+        className="c2"
+      >
+        <Link
+          className="c5"
+          to="/legal/harassment_and_antisocial_behaviour/sprint-7-legal-page-demo"
+        >
+          Sprint 7 Legal Page
+        </Link>
+      </li>
+      <li
+        className="c2"
+      >
+        <Link
+          className="c5"
+          to="/legal/harassment_and_antisocial_behaviour/identifying_the_nature_of_the_problem"
+        >
+          Identifying the nature of the problem
+        </Link>
+      </li>
+      <li
+        className="c2"
+      >
+        <Link
+          className="c5"
+          to="/legal/harassment_and_antisocial_behaviour/legal-3"
+        >
+          legal 3
+        </Link>
+      </li>
+    </ul>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c5"
+        to="/legal/introduction"
+      >
+        Introduction
+      </Link>
+    </li>
+  </ul>
 </div>
 `;

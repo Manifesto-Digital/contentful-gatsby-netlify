@@ -8,72 +8,102 @@ import {
   ContentWithSideBar,
   TwoThirds,
   SideBar,
+  Section,
 } from '../components/styled/containers';
 import { TableOfContent } from '../components/table-of-contents';
 import { TableOfContentsFootNotes } from '../components/table-of-contents/footnotes';
 import {
-  FootNotes,
   SidebarInner,
+  FootNotes,
 } from '../components/table-of-contents/styles';
+import LegalSideBar from '../components/legal-sidebar';
+import LinkList from '../components/link-list';
 
-const LegalPage = ({ data }) => {
+const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
+  const legalPage = data.contentfulPageAssemblyLegalPage;
+  const { legislations, essentialLinks, downloads } = legalPage;
+  const hasBottomSection =
+    referenceList || legislations || essentialLinks || downloads;
+
   return (
     <Layout removeFooterMargin>
       <Container>
         <ContentWithSideBar>
           <SideBar left>
             <SidebarInner>
-              <h3>Homelessness applications</h3>
-              <ul>
-                <li>Overview of homelessness law and guidance</li>
-                <li>Information and advice on homelessness</li>
-                <li>
-                  Applying as homeless
-                  <ul>
-                    <li>Making a homelessness application</li>
-                    <li>Multiple, repeat and withdrawn applications</li>
-                    <li>Criminal offences</li>
-                    <li>Duty of public authority to refer</li>
-                  </ul>
-                </li>
-                <li>Homelessness inquiries</li>
-                <li>Assessments and personalised housing plans</li>
-                <li>Defining homelessness</li>
-                <li>Eligibility: non-EEA/EU nationals</li>
-                <li>Eligibility: EEA/EU nationals and British nationals</li>
-                <li>Priority need</li>
-                <li>Intentional homelessness</li>
-                <li>Local connection</li>
-                <li>Homelessness duties</li>
-                <li>Offers and suitability of accommodation</li>
-                <li>Ending duties</li>
-                <li>Referral to another local authority</li>
-                <li>Challenging homelessness decisions</li>
-                <li>Homelessness strategies</li>
-                <li>Homelessness in Wales</li>
-              </ul>
+              <LegalSideBar
+                hierarchy={pageContext.legalHierarchy}
+                parentSlug={pageContext.parentSlug}
+                slug={pageContext.slug}
+              />
             </SidebarInner>
           </SideBar>
           <TwoThirds>
             <TableOfContent
-              data={data.contentfulPageAssemblyLegalPage}
+              data={legalPage}
               updateReferenceList={updateReferenceList}
             />
           </TwoThirds>
         </ContentWithSideBar>
       </Container>
-      {referenceList && (
-        <FootNotes>
-          <Container>
-            <ContentWithSideBar>
-              <TwoThirds right>
-                <TableOfContentsFootNotes referenceList={referenceList} />
-              </TwoThirds>
-            </ContentWithSideBar>
-          </Container>
-        </FootNotes>
+
+      {hasBottomSection && (
+        <Section offWhite>
+          {referenceList && (
+            <FootNotes>
+              <Container>
+                <ContentWithSideBar>
+                  <TwoThirds right>
+                    <TableOfContentsFootNotes referenceList={referenceList} />
+                  </TwoThirds>
+                </ContentWithSideBar>
+              </Container>
+            </FootNotes>
+          )}
+          {legalPage.legislations && (
+            <Container>
+              <ContentWithSideBar>
+                <TwoThirds right>
+                  <LinkList
+                    insideContainer
+                    links={legislations}
+                    headerText="Legislations"
+                  />
+                </TwoThirds>
+              </ContentWithSideBar>
+            </Container>
+          )}
+          {essentialLinks && (
+            <Container>
+              <ContentWithSideBar>
+                <TwoThirds right>
+                  <LinkList
+                    insideContainer
+                    links={essentialLinks}
+                    headerText="Essential Links"
+                  />
+                </TwoThirds>
+              </ContentWithSideBar>
+            </Container>
+          )}
+          {downloads && (
+            <Container>
+              <ContentWithSideBar>
+                <TwoThirds right>
+                  <LinkList
+                    downloads
+                    insideContainer
+                    links={downloads.files}
+                    headerText="Downloads"
+                  />
+                </TwoThirds>
+              </ContentWithSideBar>
+            </Container>
+          )}
+        </Section>
       )}
+      {/* <PageTools /> */}
     </Layout>
   );
 };
@@ -84,6 +114,7 @@ LegalPage.propTypes = {
     openingStatement: PropTypes.object,
     content: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default LegalPage;
@@ -105,6 +136,17 @@ export const legalPageQuery = graphql`
           childContentfulRichText {
             html
           }
+        }
+      }
+      legislations {
+        ...LinkFragment
+      }
+      essentialLinks {
+        ...LinkFragment
+      }
+      downloads {
+        files {
+          ...DownloadableFileFragment
         }
       }
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FileDownload } from '../../prop-types';
 import { formatFilesize } from '../../utils/filesize-formatting';
 import { mimeTypeToString } from '../../utils/content-formatting';
 import DownloadSVG from '../../assets/svg/icons/download-light.svg';
@@ -27,14 +28,7 @@ DownloadCTA.propTypes = {
   cta: PropTypes.shape({
     buttonText: PropTypes.string.isRequired,
     download: PropTypes.shape({
-      file: PropTypes.shape({
-        fileName: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-        contentType: PropTypes.string,
-        details: PropTypes.shape({
-          size: PropTypes.number.isRequired,
-        }),
-      }),
+      file: FileDownload,
     }),
   }),
   className: PropTypes.string,

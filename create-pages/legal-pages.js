@@ -1,5 +1,6 @@
 const path = require('path');
 const { getLegalPages } = require('../queries/legal-page');
+const { getFullSlug } = require('./helpers');
 
 async function createAdvicePages(graphql, gatsbyCreatePage) {
   const legalPageTemplate = path.resolve('src/templates/legal-page.js');
@@ -7,87 +8,111 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
   // Create pages
   const legalPagesResponse = await getLegalPages(graphql);
 
-  // Lets loop through all legal pages and create an object to manage parent and child pages
-  // This will allow us to pass through the siblings as context
   const legalPages =
     legalPagesResponse.data.allContentfulPageAssemblyLegalPage.edges;
 
-  // // Empty array that will store all the legal hierarchy information
-  const legalHierarchy = [];
+  // Checks if page is already stored on the current hierarchy level
+  const isStoredOnLevel = (pageRef, storedHierarchyLevel) =>
+    storedHierarchyLevel.some(storedPage => storedPage.slug === pageRef.slug);
 
-  const isStored = (pageRef, legalHierarchyLevel) => {
-    return legalHierarchyLevel.some(
-      storedPage => storedPage.slug === pageRef.slug
-    );
-  };
-
-  const objectToStore = ref => ({
+  const objectToStore = (currentFullSlug, ref) => ({
     slug: ref.slug,
-    label: ref.slug,
+    label: ref.label,
     children: null,
+    fullSlug: currentFullSlug,
   });
 
-  const storeParentPages = parentSlug => {
-    let parentRef = null;
-    let hierarchyLevel = legalHierarchy;
+  /**
+   * This loops through a pages parents and builds a store for the legal hierarchy
+   *
+   * Typical structure of a page in hierarchy
+   * {slug: String, label: String, children: Page[]}
+   *
+   * @param {Object[]} parentSlug
+   * @param {Object[]} hierarchy
+   * @param {Object} pageInfo
+   *
+   * @returns {Page[]}
+   */
+  const storeHierarchyPages = (parentSlug, hierarchy, pageInfo) => {
+    if (!parentSlug || !Array.isArray(parentSlug)) return;
 
-    parentSlug.forEach((ref, i) => {
-      // Check if top level exists, if so then we will need to
-      // update a level of the legal hierarchy so we will store a reference
+    // Add current page to parent slugs so that we have the full page depth
+    const allCurrentPageHierarchy = [...parentSlug, pageInfo];
+    // Keep track of the current level of the hierarchy object during the current page hierarchy loop
+    // we know that they correspond to depth, with the first item in the parentSlug array will be the top level
+    let hierarchyLevel = hierarchy;
+
+    allCurrentPageHierarchy.forEach((ref, i) => {
+      const currentFullSlug = getFullSlug(
+        allCurrentPageHierarchy.slice(0, i),
+        ref.slug
+      );
+
+      // If fist then just store on object if it doesn't exist
       if (i === 0) {
-        if (isStored(ref, legalHierarchy)) {
-          parentRef = ref;
-        } else {
-          // return storeRefArray(parentSlug, legalHierarchy);
-          legalHierarchy.push(objectToStore(ref));
+        if (!isStoredOnLevel(ref, hierarchy)) {
+          hierarchy.push(objectToStore(currentFullSlug, ref));
         }
         return;
       }
 
-      if (parentRef) {
-        const parentInHierarchy = hierarchyLevel.find(
-          item => item.slug === parentRef.slug
-        );
-        // Parent in hierarchy should always exist at this point
-        if (parentInHierarchy.children) {
-          if (!isStored(ref, parentInHierarchy.children)) {
-            parentInHierarchy.children.push(objectToStore(ref));
-          }
-        } else {
-          parentInHierarchy.children = [objectToStore(ref)];
+      // We know this isn't the first in array
+      const parentRef = allCurrentPageHierarchy[i - 1];
+
+      // Find the current page direct parent
+      const parentInHierarchy = hierarchyLevel.find(
+        parentPage => parentPage.slug === parentRef.slug
+      );
+
+      // Parent in hierarchy should always exist at this point
+      // Store the current page in the children property of the parent
+      if (parentInHierarchy.children) {
+        if (!isStoredOnLevel(ref, parentInHierarchy.children)) {
+          parentInHierarchy.children.push(objectToStore(currentFullSlug, ref));
         }
-        // debugger;
-        hierarchyLevel = parentInHierarchy.children;
-        parentRef = ref;
+      } else {
+        parentInHierarchy.children = [objectToStore(currentFullSlug, ref)];
       }
-      // debugger;
+
+      // Update the level so the next iteration will be a level deeper
+      hierarchyLevel = parentInHierarchy.children;
     });
+
+    return hierarchy;
   };
 
-  const buildHierarchy = legalPages => {
+  const buildHierarchy = () => {
     if (!legalPages) return;
-    legalPages.forEach(ref => {
-      const page = ref.node;
-      if (!page.parentSlug) return;
-      storeParentPages(page.parentSlug);
-    });
+
+    const hierarchy = legalPages.reduce((accumulator, pageRef) => {
+      const page = pageRef.node;
+      if (!page.parentSlug) return accumulator;
+      // Current page info as this won't be referenced in the parent slugs
+      // and will need to also store in the hierarchy object
+      const pageInfo = { slug: page.slug, label: page.title };
+      return storeHierarchyPages(page.parentSlug, accumulator, pageInfo);
+    }, []);
+    return hierarchy;
   };
 
-  buildHierarchy(legalPages);
+  const legalHierarchy = buildHierarchy(legalPages);
 
   // Create pages
   legalPages.forEach(({ node }) => {
     if (!node.slug) return;
+    const { parentSlug, slug } = node;
+    const fullSlug = getFullSlug(parentSlug, slug);
 
-    // gatsbyCreatePage({
-    //   path: page.slug,
-    //   component: legalPageTemplate,
-    //   context: {
-    //     slug: node.slug, // TODO: need to change to use custom contenful extension full slug and store against content model
-    //     page,
-    //     legalHierarchy,
-    //   },
-    // });
+    gatsbyCreatePage({
+      path: fullSlug,
+      component: legalPageTemplate,
+      context: {
+        slug,
+        parentSlug,
+        legalHierarchy,
+      },
+    });
   });
 }
 

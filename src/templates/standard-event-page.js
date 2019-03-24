@@ -142,7 +142,6 @@ export const standardEventPageQuery = graphql`
       }
       mainCtaText
       mainCtaMethod
-      mainCtaLink
       displayMap
       twoColumn {
         ...TwoColumnTextAndImageBlockFragment
