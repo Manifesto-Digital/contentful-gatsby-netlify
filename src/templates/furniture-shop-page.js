@@ -24,8 +24,6 @@ const Page = ({ data }) => {
 
   if (!shop) return null;
 
-  console.log('data', data.contentfulPageAssemblyFurnitureShopPage);
-
   return (
     <Layout>
       <article>

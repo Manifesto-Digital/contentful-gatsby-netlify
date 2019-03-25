@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "6lM2wr9082aqaAmjqx7t3Y",
+        "type": "Entry",
+        "createdAt": "2019-03-13T13:54:29.848Z",
+        "updatedAt": "2019-03-13T13:55:51.477Z",
+        "environment": {
+          "sys": {
+            "id": "external-migration",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 26,
+        "publishedAt": "2019-03-13T13:55:51.477Z",
+        "firstPublishedAt": "2019-03-13T13:55:51.477Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 27,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "heroWithCard"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-GB": "Migration - heroWithCard"
+        },
+        "subtitle": {
+          "en-GB": "Subtitle"
+        },
+        "cardPosition": {
+          "en-GB": "Left"
+        },
+        "image": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1QpzljvxQoQE2PqEgRi9yG"
+            }
+          }
+        },
+        "linkText": {
+          "en-GB": "Link text"
+        },
+        "link": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4gXZvSzxllBNV7LhNY7bnT"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "assets": []
+}

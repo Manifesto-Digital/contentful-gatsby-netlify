@@ -5,7 +5,6 @@ import { consistentString } from '../../../utils/content-formatting';
 import { eventStatuses } from '../data';
 // Components
 import Image from '../../image';
-import CTA from '../../cta';
 // Styles
 import {
   Container,
@@ -84,19 +83,18 @@ const EventHero = ({
               )}
             </UnbulletedList>
 
-            {/* CTA if we have a valid CTA link */}
-            {ctaLink && (
+            {/* CTA to event */}
+            {ctaLink && event.link && (
               <StyledCTA
-                {...CTA.fromCMS({
-                  buttonText: ctaText,
-                  ctaColour: 'Red',
-                  externalUrl: ctaLink,
-                })}
+                bg="red"
+                link={event.link}
                 fullWidth
                 onClick={() => {
                   window.scrollTo(0, formRef.current.offsetTop);
                 }}
-              />
+              >
+                {ctaText}
+              </StyledCTA>
             )}
 
             {/* Button as a prompt to go to a form */}
@@ -119,7 +117,9 @@ const EventHero = ({
           {/* Right column */}
           <FlexHeroImage>
             {/* Event image */}
-            {event.thumbnailImage && <Image image={event.thumbnailImage} />}
+            {event.thumbnailImage && (
+              <Image image={event.thumbnailImage} width={1000} />
+            )}
           </FlexHeroImage>
         </FlexBetweenContainer>
       </Container>

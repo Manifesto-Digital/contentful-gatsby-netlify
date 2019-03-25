@@ -5,15 +5,9 @@ export const ctaStandardFragment = graphql`
     id
     name
     ctaColour
-    internalLink {
-      id
-      slug
-
-      internal {
-        type
-      }
+    link {
+      ...LinkFragment
     }
-    externalUrl
     buttonText
   }
 `;
@@ -23,15 +17,9 @@ export const ctaWithIconFragment = graphql`
     id
     name
     ctaColour
-    internalLink {
-      id
-      slug
-
-      internal {
-        type
-      }
+    link {
+      ...LinkFragment
     }
-    externalUrl
     buttonText
     icon {
       id

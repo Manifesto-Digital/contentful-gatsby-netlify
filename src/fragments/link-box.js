@@ -9,8 +9,7 @@ export const LinkBoxFragment = graphql`
     headerText
     itemsPerRow
     links {
-      title
-      slug
+      ...LinkFragment
     }
   }
 `;

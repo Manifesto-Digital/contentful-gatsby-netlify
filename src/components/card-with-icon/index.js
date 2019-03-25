@@ -5,16 +5,19 @@ import iconSrc from '../../utils/iconSrc';
 import { CardContainer, TitleText, SubText, CardCTA, CardSVG } from './styles';
 
 const CardWithIcon = ({ data, cardsCount }) => {
-  const { icon, titleText, subText, ctaText, ctaLink } = data;
+  const { icon, titleText, subText, ctaText, link } = data;
 
   return (
     <CardContainer cardsCount={cardsCount}>
       {icon && <CardSVG src={iconSrc(icon)} cacheGetRequests />}
       <TitleText>{titleText}</TitleText>
       {subText && <SubText>{subText}</SubText>}
-      <CardCTA internalLink={ctaLink} bg="red" fullWidth>
-        {ctaText}
-      </CardCTA>
+
+      {link && (
+        <CardCTA link={link} bg="red" fullWidth>
+          {ctaText}
+        </CardCTA>
+      )}
     </CardContainer>
   );
 };
@@ -26,10 +29,7 @@ CardWithIcon.propTypes = {
     titleText: PropTypes.string.isRequired,
     subText: PropTypes.string,
     ctaText: PropTypes.string.isRequired,
-    ctaLink: PropTypes.shape({
-      id: PropTypes.string,
-      slug: PropTypes.string,
-    }),
+    link: PropTypes.object,
   }),
   cardsCount: PropTypes.number,
 };

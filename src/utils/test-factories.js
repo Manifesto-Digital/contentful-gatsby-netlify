@@ -168,3 +168,18 @@ export const createPerson = createFactory({
   },
   jobTitle: 'Developer',
 });
+
+export const createInternalRef = createFactory({
+  internal: {
+    type: 'ContentfulPageAssemblyContentPage',
+  },
+  slug: 'internal-link-slug',
+});
+
+export const createExternalRef = createFactory({
+  internal: {
+    type: 'ContentfulTopicExternalLink',
+  },
+  URL: 'http://mock.com',
+  newTab: false,
+});
