@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { dateAsString } from '../utils/dates';
 // Components
 import Layout from '../components/layout';
 import {
@@ -20,9 +21,11 @@ import LegalSideBar from '../components/legal-sidebar';
 import LinkList from '../components/link-list';
 
 const LegalPage = ({ data, pageContext }) => {
+  console.log('data', data);
+
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
-  const { legislations, essentialLinks, downloads } = legalPage;
+  const { legislations, essentialLinks, downloads, lastAmended } = legalPage;
   const hasBottomSection =
     referenceList || legislations || essentialLinks || downloads;
 
@@ -44,6 +47,7 @@ const LegalPage = ({ data, pageContext }) => {
               data={legalPage}
               updateReferenceList={updateReferenceList}
             />
+            {lastAmended && <p> {dateAsString(lastAmended, 'MMMM d, YYYY')}</p>}
           </TwoThirds>
         </ContentWithSideBar>
       </Container>
@@ -149,6 +153,7 @@ export const legalPageQuery = graphql`
           ...DownloadableFileFragment
         }
       }
+      lastAmended
     }
   }
 `;
