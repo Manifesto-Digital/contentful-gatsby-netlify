@@ -30,7 +30,7 @@ const LegalPage = ({ data, pageContext }) => {
     <Layout removeFooterMargin>
       <Container>
         <ContentWithSideBar>
-          <SideBar left>
+          <SideBar left desktop>
             <SidebarInner>
               <LegalSideBar
                 hierarchy={pageContext.legalHierarchy}

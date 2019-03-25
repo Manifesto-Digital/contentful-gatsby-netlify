@@ -31,9 +31,10 @@ export const ContentWithSideBar = styled.div`
 export const SideBar = styled.div`
   max-width: 100%;
   word-break: break-word;
+  display: ${({ desktop }) => desktop && 'none'};
 
   ${breakpoint.desktop`
-    max-width: 32%;
+    display: block;
     width: 100%;
     margin-top: 0;
     padding-left: ${({ left, theme }) => !left && theme.spacing.xl};
