@@ -1,9 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  snapshotComponent,
-  renderWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, renderWithTheme } from 'test-helpers';
 import Banner from './index';
 import { Header } from './styles';
 import theme from '../theme/variables';
@@ -14,7 +11,10 @@ export const createBanner = createFactory({
   headerText: 'What an amazing banner',
   linkText: 'woooo this is a link',
   bannerColour: 'Red',
-  externalUrl: 'http://google.com',
+  externalLink: {
+    URL: 'http://google.com',
+    newTab: true,
+  },
   internalLink: createInternalLink(),
 });
 

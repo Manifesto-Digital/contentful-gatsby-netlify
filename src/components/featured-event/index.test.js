@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import { createFactory, createImage } from '../../utils/test-factories';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
 import FeaturedEvent from './index';
 
 export const createFeaturedEvent = createFactory({
@@ -14,6 +11,7 @@ export const createFeaturedEvent = createFactory({
     eventName: 'my event',
     displayLocation: 'Shoreditch high street',
     eventDisplayDate: 'Yesterday',
+    eventSystemDate: '2019-02-25',
     distance: '12 yards',
     thumbnailImage: createImage(),
   },

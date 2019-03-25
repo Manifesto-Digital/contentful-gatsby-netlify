@@ -15,7 +15,6 @@ export const ServiceTopicFragment = graphql`
       lon
       lat
     }
-    address
     displaySpecificLocation
     mondayOpeningTimes
     tuesdayOpeningTimes

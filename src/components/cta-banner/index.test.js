@@ -1,10 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  renderWithTheme,
-  snapshotComponent,
-} from '../../../__tests__/helpers/index';
-import CTABanner from './index';
+import { renderWithTheme, snapshotComponent } from 'test-helpers';
+import CTABanner from '.';
 import { Header } from './styles';
 import theme from '../theme/variables';
 import { createFactory } from '../../utils/test-factories';
@@ -12,7 +9,7 @@ import { createCTA } from '../cta/index.test';
 
 // Default prop values
 export const createCtaBanner = createFactory({
-  cta: createCTA({ ctaColour: 'White Outline', internalLink: null }),
+  cta: createCTA(),
   bannerColour: 'San Marino Blue',
   headerText: 'mock header text',
 });

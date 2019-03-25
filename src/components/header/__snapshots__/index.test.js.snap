@@ -477,6 +477,7 @@ Array [
   -webkit-transform: translateX(120%);
   -ms-transform: translateX(120%);
   transform: translateX(120%);
+  z-index: 1;
   overflow-y: scroll;
 }
 
@@ -1066,8 +1067,8 @@ Array [
           <a
             className="c17 c18"
             href="https://scotland.shelter.org.uk/"
-            rel="noopener"
-            target="_self"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Scotland
           </a>

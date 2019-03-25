@@ -1,29 +1,25 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'gatsby';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import LinkBox from './index';
 import { ListItem } from './styles';
-import { createFactory, createInternalLink } from '../../utils/test-factories';
+import { createFactory, createInternalRef } from '../../utils/test-factories';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
 
 export const createLinkBox = createFactory({
   headerText: 'What an amazing banner',
   itemsPerRow: 3,
   links: [
-    createInternalLink(),
-    createInternalLink(),
-    createInternalLink(),
-    createInternalLink(),
+    createInternalRef({ title: 'Test Page Title' }),
+    createInternalRef({ title: 'Test Page Title' }),
+    createInternalRef({ title: 'Test Page Title' }),
+    createInternalRef({ title: 'Test Page Title' }),
   ],
 });
 
 it('renders correctly', () => {
   const mockData = createLinkBox();
-
   snapshotComponent(<LinkBox data={mockData} />);
 });
 

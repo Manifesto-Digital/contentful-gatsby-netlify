@@ -1,8 +1,8 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
 import ReactModal from 'react-modal';
+import { mountWithTheme } from 'test-helpers';
 import Modal from '.';
-import { mountWithTheme } from '../../../__tests__/helpers';
 
 const getCss = node =>
   window

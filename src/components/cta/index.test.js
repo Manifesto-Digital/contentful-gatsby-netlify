@@ -1,14 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {
-  snapshotComponent,
-  mountWithTheme,
-} from '../../../__tests__/helpers/index';
+import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import CTA from './index';
 import { StyledLinkHandler } from './styles';
 import {
   createFactory,
-  createInternalLink,
+  createInternalRef,
   createImage,
 } from '../../utils/test-factories';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
@@ -17,8 +14,7 @@ import { hidePascalCaseWarning } from '../../utils/test-mocks';
 export const createCTA = createFactory({
   buttonText: 'Button text',
   ctaColour: 'Red',
-  internalLink: createInternalLink(),
-  externalUrl: 'http://example.com',
+  link: createInternalRef(),
 });
 
 it('renders correctly', () => {

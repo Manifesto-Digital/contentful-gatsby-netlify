@@ -32,6 +32,10 @@ exports[`renders correctly 1`] = `
   margin-top: 10px;
 }
 
+.c6:hover {
+  color: #ea232d;
+}
+
 .c2 {
   max-width: 1140px;
   margin: 0 auto;
@@ -107,6 +111,14 @@ exports[`renders correctly 1`] = `
       >
         Mock Subtitle
       </p>
+      <a
+        className="c6"
+        href="http://mock.com"
+        rel="noopener"
+        target="_self"
+      >
+        Woo amazing link text
+      </a>
     </div>
   </div>
 </section>
