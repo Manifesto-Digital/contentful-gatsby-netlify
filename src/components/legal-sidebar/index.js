@@ -1,22 +1,17 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import PaddedBox from '../padded-box';
-import { buildCurrentPageHierarchy } from './helpers';
 import { UnorderedList, MenuLink, ListItem } from './styles';
 
-const LegalSideBar = ({ hierarchy, parentSlug, slug }) => {
+const LegalSideBar = ({ hierarchy, slug, heading }) => {
   if (!hierarchy) return null;
-
-  const { currentPageHierarchy, heading } = buildCurrentPageHierarchy(
-    hierarchy,
-    parentSlug,
-    slug
-  );
 
   const hasChildrenAndActive = menuItem =>
     menuItem.children &&
-    Object.hasOwnProperty.call(menuItem, 'active') &&
-    menuItem.active;
+    (menuItem.slug === slug ||
+      ((Object.hasOwnProperty.call(menuItem, 'active') ||
+        menuItem.slug === slug) &&
+        menuItem.active));
 
   const Menu = ({ menuItems, menuDepth = 0 }) => (
     <UnorderedList menuDepth={menuDepth}>
@@ -26,7 +21,7 @@ const LegalSideBar = ({ hierarchy, parentSlug, slug }) => {
             <MenuLink
               activePage={menuItem.slug === slug}
               activeParent={menuItem.active}
-              internalLink={{ slug: menuItem.fullSlug }}
+              internalLink={{ slug: menuItem.slug }}
             >
               {menuItem.label}
             </MenuLink>
@@ -44,11 +39,11 @@ const LegalSideBar = ({ hierarchy, parentSlug, slug }) => {
     menuDepth: PropTypes.number,
   };
 
-  if (!currentPageHierarchy) return null;
+  if (!hierarchy) return null;
   return (
     <PaddedBox>
       <h3>{heading}</h3>
-      <Menu menuItems={currentPageHierarchy} />
+      <Menu menuItems={hierarchy} />
     </PaddedBox>
   );
 };
@@ -61,14 +56,8 @@ LegalSideBar.propTypes = {
       children: PropTypes.arrayOf(PropTypes.object),
     })
   ),
-  parentSlug: PropTypes.arrayOf(
-    PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      key: PropTypes.string.isRequired,
-    })
-  ),
   slug: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
 };
 
 export default LegalSideBar;

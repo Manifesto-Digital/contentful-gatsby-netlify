@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { dateAsString } from '../utils/dates';
+import { buildCurrentPageHierarchy } from '../components/legal-sidebar/helpers';
 // Components
 import Layout from '../components/layout';
 import {
@@ -21,13 +22,26 @@ import LegalSideBar from '../components/legal-sidebar';
 import LinkList from '../components/link-list';
 
 const LegalPage = ({ data, pageContext }) => {
-  console.log('data', data);
-
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
   const { legislations, essentialLinks, downloads, lastAmended } = legalPage;
   const hasBottomSection =
-    referenceList || legislations || essentialLinks || downloads;
+    (referenceList && referenceList.length > 0) ||
+    legislations ||
+    essentialLinks ||
+    downloads;
+
+  let currentPageHierarchy = null;
+  let heading = null;
+
+  try {
+    ({ currentPageHierarchy, heading } = buildCurrentPageHierarchy(
+      pageContext.legalHierarchy,
+      pageContext.slug
+    ));
+  } catch (e) {
+    console.log('e', e);
+  }
 
   return (
     <Layout removeFooterMargin>
@@ -36,9 +50,9 @@ const LegalPage = ({ data, pageContext }) => {
           <SideBar left desktop>
             <SidebarInner>
               <LegalSideBar
-                hierarchy={pageContext.legalHierarchy}
-                parentSlug={pageContext.parentSlug}
+                hierarchy={currentPageHierarchy}
                 slug={pageContext.slug}
+                heading={heading}
               />
             </SidebarInner>
           </SideBar>
@@ -47,14 +61,14 @@ const LegalPage = ({ data, pageContext }) => {
               data={legalPage}
               updateReferenceList={updateReferenceList}
             />
-            {lastAmended && <p> {dateAsString(lastAmended, 'MMMM d, YYYY')}</p>}
+            {lastAmended && <p>{dateAsString(lastAmended, 'MMMM d, YYYY')}</p>}
           </TwoThirds>
         </ContentWithSideBar>
       </Container>
 
       {hasBottomSection && (
         <Section offWhite>
-          {referenceList && (
+          {referenceList && referenceList.length > 0 && (
             <FootNotes>
               <Container>
                 <ContentWithSideBar>

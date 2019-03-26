@@ -7,9 +7,28 @@ const getLegalPages = async graphql =>
             id
             slug
             title
+            pageInformation {
+              shortDescription {
+                shortDescription
+              }
+            }
             parentSlug {
-              slug
-              key
+              menuItem {
+                fields {
+                  pageInformation {
+                    en_GB {
+                      fields {
+                        shortDescription {
+                          en_GB
+                        }
+                      }
+                    }
+                  }
+                  slug {
+                    en_GB
+                  }
+                }
+              }
               label
             }
           }

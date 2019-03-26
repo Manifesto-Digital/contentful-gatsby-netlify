@@ -28,6 +28,7 @@ export const TableOfContent = ({ data, updateReferenceList }) => {
       const referenceArray = bracketsToArray(text);
       updateReferenceList(referenceArray);
     };
+    if (!tableOfContents) return;
     convertBracketsToLink(tableOfContents);
     convertBracketsToArray(tableOfContents);
   }, [tableOfContents, updateReferenceList]);

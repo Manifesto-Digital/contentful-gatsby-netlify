@@ -1,58 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
+import { buildCurrentPageHierarchy } from '../components/legal-sidebar/helpers';
 // Components
-import PageTitle from '../components/page-title';
-import RichText from '../components/rich-text';
-import Item from '../components/press-releases/list-item';
-import LegalSideBar from '../components/legal-sidebar';
-// Styles
+import Layout from '../components/layout';
 import {
   Container,
-  TwoThirds,
   ContentWithSideBar,
+  TwoThirds,
   SideBar,
 } from '../components/styled/containers';
-import { Wrapper, Subheader } from '../components/legal-landing-page/styles';
+import { SidebarInner } from '../components/table-of-contents/styles';
+import LegalSideBar from '../components/legal-sidebar';
+import RichText from '../components/rich-text';
+import PageTitle from '../components/page-title';
+import LegalSubPageList from '../components/legal-landing-page/subpage-list';
 
-const LegalLandingPage = ({ data }) => {
+const LegalLandingPage = ({ data, pageContext }) => {
   const {
     pageName,
-    subheader,
     introductionText,
-    pageReferences,
-    sideBarLinks,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
+  let currentPageHierarchy = null;
+  let heading = null;
+  let currentPage = null;
+
+  try {
+    ({ currentPageHierarchy, heading, currentPage } = buildCurrentPageHierarchy(
+      pageContext.legalHierarchy,
+      pageContext.slug
+    ));
+  } catch (e) {
+    console.log('e', e);
+  }
+
+  console.log('currentPage', currentPage);
+
   return (
-    <Layout>
-      <article>
-        <PageTitle>
-          <h1>{pageName}</h1>
-          <Subheader>{subheader}</Subheader>
-        </PageTitle>
-        <Container>
+    <Layout removeFooterMargin>
+      <Container>
+        <ContentWithSideBar>
+          {currentPageHierarchy && heading && (
+            <SideBar left desktop>
+              <SidebarInner>
+                <LegalSideBar
+                  hierarchy={currentPageHierarchy}
+                  slug={pageContext.slug}
+                  heading={heading}
+                />
+              </SidebarInner>
+            </SideBar>
+          )}
+
           <TwoThirds>
+            <PageTitle noContainer>
+              <h1>{pageName}</h1>
+            </PageTitle>
             <RichText richText={introductionText} />
+            {currentPage && currentPage.children && (
+              <LegalSubPageList items={currentPage.children} />
+            )}
           </TwoThirds>
-        </Container>
-        <Wrapper>
-          <Container>
-            <ContentWithSideBar>
-              <TwoThirds>
-                {pageReferences &&
-                  pageReferences.map((pageReference, key) => (
-                    <Item key={key} data={pageReference} />
-                  ))}
-              </TwoThirds>
-              <SideBar>
-                <LegalSideBar data={{ sideBarLinks }} />
-              </SideBar>
-            </ContentWithSideBar>
-          </Container>
-        </Wrapper>
-      </article>
+        </ContentWithSideBar>
+      </Container>
     </Layout>
   );
 };
@@ -61,6 +72,7 @@ LegalLandingPage.propTypes = {
   data: PropTypes.shape({
     contentfulPageAssemblyLegalLandingPage: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default LegalLandingPage;
@@ -74,14 +86,6 @@ export const eventsLandingPageQuery = graphql`
         childContentfulRichText {
           html
         }
-      }
-      pageReferences {
-        title
-        slug
-      }
-      sideBarLinks {
-        title
-        slug
       }
     }
   }
