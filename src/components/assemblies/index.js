@@ -17,6 +17,7 @@ import ContentCardBanner from '../content-card-banner';
 import Perks from '../perks';
 import Testimonials from '../testimonials';
 import RichText from '../rich-text';
+import RichTextWithWrapper from '../rich-text/with-wrapper';
 import TwoColumnTextAndImageBlock from '../two-column-text-and-image-block';
 import CardsWithIcons from '../cards-with-icons';
 import Map from '../google-map';
@@ -30,7 +31,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
   const AssembliesLoop = () =>
     assemblies.map(assembly => {
       // Make sure an id and name of component have been queried
-      if (!assembly.id || !assembly.internal) return null;
+      if (!assembly || !assembly.id || !assembly.internal) return null;
       const { id, internal } = assembly;
 
       // CTA
@@ -187,6 +188,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulAssemblyPersonCollection') {
         return <PersonCollection key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulTopicSimpleRichTextBlock') {
+        return <RichTextWithWrapper richText={assembly.text} />;
       }
 
       return null;
