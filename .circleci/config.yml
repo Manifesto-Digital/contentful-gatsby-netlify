@@ -87,6 +87,8 @@ jobs:
       - run: yarn build
 
   clean-up:
+    docker:
+      - image: circleci/node:10.14
     steps:
       - run: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
 
