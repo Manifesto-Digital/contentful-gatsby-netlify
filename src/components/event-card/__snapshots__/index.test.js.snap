@@ -86,7 +86,7 @@ exports[`renders correctly 1`] = `
     </p>
     <Link
       className="c3"
-      to="/my-event"
+      to="/internal-link-slug"
     >
       <span
         className="c4"
@@ -97,7 +97,7 @@ exports[`renders correctly 1`] = `
   </div>
   <Link
     className="c5"
-    to="/event-categories"
+    to="/internal-link-slug"
   >
     Register for event
   </Link>

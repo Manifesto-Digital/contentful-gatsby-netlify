@@ -18,9 +18,11 @@ const ChallengeEventPage = ({ data }) => {
   } = data.contentfulPageAssemblyChallengeEvent;
 
   // Grab the information from the event reference
-  const { eventName, displayLocation, registrationLink, distance } = event;
+  const { eventName, displayLocation, distance } = event;
   const date = dateAsString(event.eventSystemDate, 'DD MMM YYYY');
-  const bannerText = `${distance}\n${displayLocation}\n${date}`;
+  const bannerText = `${distance}\n${
+    displayLocation ? `${displayLocation}\n` : ''
+  }${date}`;
 
   const [bannerStuck, setBannerStuck] = useState(false);
   const [animateBanner, setAnimateBanner] = useState(false);
@@ -28,6 +30,56 @@ const ChallengeEventPage = ({ data }) => {
   const heroBannerRef = useRef(null);
   const stickyBarRef = useRef(null);
 
+<<<<<<< HEAD
+=======
+  // Store last scroll to detect direction for animation reasons
+  let lastScroll;
+
+  const handleStickyBarScroll = () => {
+    const scrollPosition =
+      window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (
+            document.documentElement ||
+            document.body.parentNode ||
+            document.body
+          ).scrollTop;
+
+    // Store the original position of the banner so we can un-stick when would have been visible
+    if (!stickyBarPosition) {
+      setStickBarPosition(
+        stickyBarRef.current.offsetTop + stickyBarRef.current.offsetHeight
+      );
+    }
+
+    const middleOfHeroBanner =
+      heroBannerRef.current.getBoundingClientRect().top +
+      scrollPosition +
+      heroBannerRef.current.offsetHeight / 2;
+
+    const windowHeight = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    );
+    const bottomOfScreen = windowHeight + scrollPosition;
+    const bannerWouldBeVisible = bottomOfScreen >= stickyBarPosition;
+
+    if (bannerStuck) {
+      if (!animateBanner) setAnimateBanner(false);
+      // If scroll is above hero then dont fix banner
+      if (scrollPosition < middleOfHeroBanner || bannerWouldBeVisible) {
+        setBannerStuck(false);
+      }
+    } else if (scrollPosition > middleOfHeroBanner && !bannerWouldBeVisible) {
+      if (lastScroll < scrollPosition) {
+        setAnimateBanner(true);
+      }
+      setBannerStuck(true);
+    }
+    lastScroll = scrollPosition;
+  };
+
+>>>>>>> develop
   // On resize just remove the stickyBarPosition so it will calculate again on next scroll
   const handleResize = () => {
     setStickBarPosition(null);
@@ -117,14 +169,14 @@ const ChallengeEventPage = ({ data }) => {
         bannerText={bannerText}
         buttonText={bannerButtonText}
         image={heroImage}
-        eventLink={registrationLink.registrationLink}
+        eventLink={event.link}
         heroBannerRef={heroBannerRef}
       />
       <ChallengeEventAssemblies assemblies={assemblies} />
       <StickyBanner
         title={eventName}
         subtitle={displayLocation}
-        eventLink={registrationLink.registrationLink}
+        eventLink={event.link}
         bannerText={bannerText}
         buttonText={bannerButtonText}
         stickyBarRef={stickyBarRef}
@@ -155,13 +207,7 @@ export const challengeEventPageQuery = graphql`
         }
       }
       event {
-        eventName
-        distance
-        displayLocation
-        eventSystemDate
-        registrationLink {
-          registrationLink
-        }
+        ...EventFragment
       }
       bannerButtonText
       pageInformation {
@@ -173,10 +219,6 @@ export const challengeEventPageQuery = graphql`
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
           ... on ContentfulTopicFullWidthImage {
-            internal {
-              type
-            }
-            id
             ...FullWidthImageFragment
           }
         }

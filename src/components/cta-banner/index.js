@@ -29,7 +29,7 @@ const CTABanner = ({
 );
 
 CTABanner.propTypes = {
-  cta: PropTypes.object.isRequired,
+  cta: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   headerText: PropTypes.string.isRequired,
   bannerColour: PropTypes.oneOf(['Red', 'San Marino Blue', 'Black']).isRequired,
   removeMarginBottom: PropTypes.bool,
