@@ -26,6 +26,7 @@ export const Heading = styled.h3`
 `;
 
 export const HeadingButton = styled.button`
+  position: relative;
   ${buttonReset};
   padding: ${({ theme }) =>
     `${theme.spacing.standard} ${theme.spacing.xl} ${theme.spacing.standard} ${

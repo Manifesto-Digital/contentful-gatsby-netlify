@@ -21,7 +21,8 @@ exports[`renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c2 {
+.c3 {
+  position: relative;
   padding: 0;
   border: none;
   font: inherit;
@@ -39,7 +40,7 @@ exports[`renders correctly 1`] = `
   padding: 20px 20px 0 20px;
 }
 
-.c3 {
+.c2 {
   position: absolute;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -53,7 +54,7 @@ exports[`renders correctly 1`] = `
   height: 25px;
 }
 
-.c3 svg {
+.c2 svg {
   display: block;
   width: 20px;
   height: 25px;
@@ -65,18 +66,18 @@ exports[`renders correctly 1`] = `
   <h3
     className="c1"
   >
+    <span
+      className="isvg loading c2"
+    />
     <button
       aria-controls="ID123"
       aria-expanded={false}
-      className="c2"
+      className="c3"
       onClick={[Function]}
       type="button"
     >
       mock header
     </button>
-    <span
-      className="isvg loading c3"
-    />
   </h3>
   <div
     aria-hidden={true}

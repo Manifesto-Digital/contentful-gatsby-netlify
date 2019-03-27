@@ -22,6 +22,8 @@ function Accordion({ header, children, className, active, id }) {
   return (
     <Wrapper active={active} className={className}>
       <Heading active={active}>
+        <ArrowSVG src={ArrowDown} isOpen={isOpen} />
+
         <HeadingButton
           type="button"
           onClick={e => handleClick(e)}
@@ -30,7 +32,6 @@ function Accordion({ header, children, className, active, id }) {
         >
           {header}
         </HeadingButton>
-        <ArrowSVG src={ArrowDown} isOpen={isOpen} />
       </Heading>
       <Content id={id} isOpen={isOpen} aria-hidden={!isOpen}>
         {children}
