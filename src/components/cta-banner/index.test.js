@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { renderWithTheme, snapshotComponent } from 'test-helpers';
-import CTABanner from './index';
+import CTABanner from '.';
 import { Header } from './styles';
 import theme from '../theme/variables';
 import { createFactory } from '../../utils/test-factories';
