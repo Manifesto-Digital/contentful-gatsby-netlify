@@ -90,6 +90,7 @@ jobs:
     docker:
       - image: circleci/node:10.14
     steps:
+      - checkout
       - run: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
 
   deploy-master:
