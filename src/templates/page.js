@@ -81,6 +81,7 @@ export const pageQuery = graphql`
           ...ServicesFinderFragment
           ...ShopFinderFragment
           ...PersonCollectionFragment
+          ...RichTextFragment
         }
       }
     }

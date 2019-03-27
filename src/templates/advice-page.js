@@ -87,6 +87,7 @@ export const advicePageQuery = graphql`
           ...RelatedAdviceFragment
           ...ShareBlockFragment
           ...GoogleMapFragment
+          ...RichTextFragment
         }
       }
       sidebarAssemblies {
