@@ -3,6 +3,7 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
 jobs:
   test:
     docker:
@@ -26,7 +27,7 @@ jobs:
       # run tests!
       - run: yarn test --runInBand
 
-  build:
+  migrate-test:
     docker:
       - image: circleci/node:10.14
     steps:
@@ -46,38 +47,100 @@ jobs:
             - ~/.cache/yarn
 
       - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
-      - run: yarn build
-
-  deploy-develop:
+      # - run: yarn build
+  migrate-master:
     docker:
       - image: circleci/node:10.14
     steps:
       - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --frozen-lockfile
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "develop" $MANAGEMENT_API_KEY
 
+      - run: sudo yarn global add contentful-cli
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "master" $MANAGEMENT_API_KEY
+  build:
+    docker:
+      - image: circleci/node:10.14
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run: yarn build
+
+    clean-up:
+      steps:
+        - run: - run: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
+
+  deploy-master:
+    docker:
+      - image: circleci/node:10.14
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run: sudo yarn global add netlify-cli
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run: netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success"
 workflows:
   version: 2
   build-test-deploy:
     jobs:
-      - build
-      - test:
+      - test
+      - migrate-test:
           requires:
+            - test
+      - build:
+          requires: 
+            - migrate-test
+      - clean-up:
+          requires:
+            - migrate-test
             - build
       - approve-deployment:
           type: approval
           requires:
             - test
+            - migrate-test
             - build
           filters:
             branches:
-              only:
-                - master
-                - UAT
-      - deploy-develop:
+              only: master
+      - migrate-master:
           requires:
-            - test
-            - build
+            - approve-deployment
           filters:
             branches:
-              only: develop
+              only: master
+      - deploy-master:
+          requires:
+            - migrate-master
+            - approve-deployment
+          filters:
+            branches:
+              only: master
