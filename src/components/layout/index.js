@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from "gatsby"
 // Styles
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../theme/global';
@@ -21,27 +22,41 @@ const Layout = ({
   const title = pageInformation ? pageInformation.seoTitle : pageTitle;
 
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <Helmet
-          title={title}
-          meta={[
-            {
-              name: 'description',
-              content: description,
-            },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header />
-        <main role="main" id="main">
-          {children}
-        </main>
-        <Footer removeMarginTop={removeFooterMargin} />
-      </>
-    </ThemeProvider>
+    <StaticQuery
+      query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+      render={data => (
+        <ThemeProvider theme={theme}>
+          <>
+            <GlobalStyle />
+            <Helmet
+              title={`${title} - ${data.site.siteMetadata.title}`}
+              meta={[
+                {
+                  name: 'description',
+                  content: description,
+                },
+              ]}
+            >
+              <html lang="en" />
+            </Helmet>
+            <Header />
+            <main role="main" id="main">
+              {children}
+            </main>
+            <Footer removeMarginTop={removeFooterMargin} />
+          </>
+        </ThemeProvider>
+      )
+      }
+    />
   );
 };
 
