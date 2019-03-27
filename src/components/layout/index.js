@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby';
 // Styles
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../theme/global';
@@ -24,14 +24,14 @@ const Layout = ({
   return (
     <StaticQuery
       query={graphql`
-      query {
-        site {
-          siteMetadata {
-            title
+        query {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
+      `}
       render={data => (
         <ThemeProvider theme={theme}>
           <>
@@ -54,8 +54,7 @@ const Layout = ({
             <Footer removeMarginTop={removeFooterMargin} />
           </>
         </ThemeProvider>
-      )
-      }
+      )}
     />
   );
 };
