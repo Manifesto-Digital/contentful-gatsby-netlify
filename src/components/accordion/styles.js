@@ -3,9 +3,19 @@ import SVG from 'react-inlinesvg';
 import { buttonReset } from '../styled/buttons';
 
 export const Wrapper = styled.div`
-  border-bottom: ${({ theme, active }) =>
-    active && `1px solid ${theme.palette.grey10}`};
-  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  position: relative;
+
+  &:not(:first-of-type) {
+    &:before {
+      position: absolute;
+      content: ' ';
+      left: 0;
+      top: ${({ theme }) => `-${theme.spacing.small}`};
+      width: 100%;
+      border-top: ${({ theme, active }) =>
+        active && `1px solid ${theme.palette.grey45}`};
+    }
+  }
 `;
 
 export const Heading = styled.h3`
@@ -18,9 +28,9 @@ export const Heading = styled.h3`
 export const HeadingButton = styled.button`
   ${buttonReset};
   padding: ${({ theme }) =>
-    `${theme.spacing.standard} ${theme.spacing.xl} ${
+    `${theme.spacing.standard} ${theme.spacing.xl} ${theme.spacing.standard} ${
       theme.spacing.standard
-    } 5px`};
+    }`};
   width: 100%;
   text-align: left;
   font-size: ${({ theme }) => theme.headers.h3};
@@ -28,7 +38,10 @@ export const HeadingButton = styled.button`
 
 export const Content = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  padding: ${({ theme }) => `${theme.spacing.standard} 5px 0 5px`};
+  padding: ${({ theme }) =>
+    `${theme.spacing.standard} ${theme.spacing.standard} 0 ${
+      theme.spacing.standard
+    }`};
 `;
 
 export const ArrowSVG = styled(SVG)`
@@ -36,7 +49,7 @@ export const ArrowSVG = styled(SVG)`
   transform: ${({ isOpen }) => isOpen && 'rotate(180deg)'} translateY(-50%);
   transform-origin: top;
   top: 50%;
-  right: 5px;
+  right: ${({ theme }) => theme.spacing.standard};
   width: 20px;
   height: 25px;
 

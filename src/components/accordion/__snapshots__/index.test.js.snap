@@ -2,8 +2,16 @@
 
 exports[`renders correctly 1`] = `
 .c0 {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 20px;
+  position: relative;
+}
+
+.c0:not(:first-of-type):before {
+  position: absolute;
+  content: ' ';
+  left: 0;
+  top: -10px;
+  width: 100%;
+  border-top: 1px solid #8c8c8c;
 }
 
 .c1 {
@@ -20,7 +28,7 @@ exports[`renders correctly 1`] = `
   color: inherit;
   background-color: transparent;
   cursor: pointer;
-  padding: 20px 60px 20px 5px;
+  padding: 20px 60px 20px 20px;
   width: 100%;
   text-align: left;
   font-size: 1.35em;
@@ -28,7 +36,7 @@ exports[`renders correctly 1`] = `
 
 .c4 {
   display: none;
-  padding: 20px 5px 0 5px;
+  padding: 20px 20px 0 20px;
 }
 
 .c3 {
@@ -40,7 +48,7 @@ exports[`renders correctly 1`] = `
   -ms-transform-origin: top;
   transform-origin: top;
   top: 50%;
-  right: 5px;
+  right: 20px;
   width: 20px;
   height: 25px;
 }

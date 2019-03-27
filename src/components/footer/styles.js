@@ -61,9 +61,12 @@ export const Menus = styled.nav`
   width: 100%;
   font-size: ${({ theme }) => theme.fontsize.small};
   color: ${({ theme }) => theme.palette.white};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.tablet`
-    display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: ${({ theme }) => theme.spacing.standard};
    `}

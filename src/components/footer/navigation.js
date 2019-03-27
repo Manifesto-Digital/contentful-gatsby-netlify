@@ -7,7 +7,7 @@ const NavigationMenu = ({ pageData }) => {
   const { menuLabel, navigationLink, subNavigationItems } = pageData;
 
   return (
-    <Item topLevel>
+    <>
       <MenuList>
         {navigationLink &&
           navigationLink.map((navLink, i) => (
@@ -26,7 +26,7 @@ const NavigationMenu = ({ pageData }) => {
             </Item>
           ))}
       </MenuList>
-    </Item>
+    </>
   );
 };
 

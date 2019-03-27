@@ -12,7 +12,6 @@ import { sizes } from '../theme/breakpoint';
 const AccordionsHandler = ({ render, mobileOnly }) => {
   const [childrenState, setChildrenState] = useState(false);
 
-  // On resize just remove the stickyBarPosition so it will calculate again on next scroll
   const handleResize = () => {
     const windowWidth =
       window.innerWidth ||

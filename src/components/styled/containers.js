@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Container = styled.div`
@@ -6,6 +6,16 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0
     ${({ padding, theme }) => (padding === false ? 0 : theme.spacing.standard)};
+
+  ${({ desktopOnlyPadding, theme }) =>
+    desktopOnlyPadding &&
+    css`
+      padding: 0;
+
+      ${breakpoint.desktop`
+        padding: 0 ${theme.spacing.standard};
+    `};
+    `}
 `;
 
 export const TwoThirds = styled.div`
