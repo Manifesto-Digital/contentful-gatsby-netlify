@@ -9,9 +9,9 @@ const createPolicyPage = require('./create-pages/policy-pages.js');
 const createShopPages = require('./create-pages/shop-pages.js');
 const createEventLandingPages = require('./create-pages/challenge-event-pages.js');
 const createLegalPages = require('./create-pages/legal-pages.js');
+const createLegalHomePage = require('./create-pages/legal-homepage.js');
 const createFurnitureShopPages = require('./create-pages/furniture-shop-pages.js');
 const createServicePages = require('./create-pages/service-pages.js');
-const createLegalLandingPages = require('./create-pages/legal-landing-pages.js');
 const createPersonPages = require('./create-pages/person-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -28,8 +28,8 @@ exports.createPages = async ({ graphql, actions }) => {
   createShopPages(graphql, createPage);
   createEventLandingPages(graphql, createPage);
   createLegalPages(graphql, createPage);
+  createLegalHomePage(graphql, createPage);
   createFurnitureShopPages(graphql, createPage);
   createServicePages(graphql, createPage);
-  createLegalLandingPages(graphql, createPage);
   createPersonPages(graphql, createPage);
 };
