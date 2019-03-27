@@ -12,7 +12,6 @@ import {
   SideBar,
 } from '../components/styled/containers';
 import PaddedBox from '../components/padded-box';
-import LinkBox from '../components/link-box';
 import LinkHandler from '../components/link-handler';
 
 const LegalHomepage = ({ data }) => {
