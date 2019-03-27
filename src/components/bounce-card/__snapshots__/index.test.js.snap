@@ -34,7 +34,7 @@ exports[`renders correctly 1`] = `
   className="c0"
 >
   <img
-    alt="This content applies to Scotland only."
+    alt=""
     src="test-file-stub?h=76&w=50"
   />
   <div>

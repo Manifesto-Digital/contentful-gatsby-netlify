@@ -11,8 +11,9 @@ const BounceCard = () => (
         file: {
           url: ScotlandOnly,
         },
-        description: 'This content applies to Scotland only.',
+        description: '',
       }}
+      presentational
       width={50}
       height={76}
     />
