@@ -1,5 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import SVG from 'react-inlinesvg';
+import { breakpoint } from '../theme/breakpoint';
+import { squareBulletPoints } from '../styled/lists';
 import { removeListStyles } from '../styled/utils';
 
 export const Wrapper = styled.div`
@@ -8,7 +10,27 @@ export const Wrapper = styled.div`
 `;
 
 export const UnorderedList = styled.ul`
-  ${removeListStyles};
+  ${({ showListStyle }) =>
+    !showListStyle &&
+    css`
+      ${removeListStyles};
+    `}
+
+  ${({ showListStyle }) =>
+    showListStyle &&
+    css`
+      ${squareBulletPoints};
+    `}
+
+  ${breakpoint.tablet`
+    ${({ columns }) =>
+      columns &&
+      css`
+        display: ${columns && 'grid'};
+        grid-template-columns: ${columns && `repeat(${columns}, 1fr)`};
+        grid-gap: ${({ theme }) => theme.spacing.standard};
+      `}
+    `};
 
   li {
     margin-bottom: 5px;

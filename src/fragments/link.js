@@ -14,12 +14,22 @@ export const LinkFragment = graphql`
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
       title
       slug
     }
     ... on ContentfulPageAssemblyAdvicePage {
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
       title
       slug
@@ -30,12 +40,22 @@ export const LinkFragment = graphql`
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
     ... on ContentfulPageAssemblyChallengeEvent {
       title
       slug
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
     }
     ... on ContentfulPageAssemblyPerson {
@@ -44,12 +64,22 @@ export const LinkFragment = graphql`
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
     ... on ContentfulPageAssemblyPolicyPage {
       pageName
       slug
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
     }
     ... on ContentfulPageAssemblyEventsLandingPage {
@@ -58,6 +88,11 @@ export const LinkFragment = graphql`
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
     ... on ContentfulPageAssemblyFurnitureShopPage {
       title
@@ -65,12 +100,22 @@ export const LinkFragment = graphql`
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
     ... on ContentfulPageAssemblyPressReleasePage {
       title
       slug
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
     }
 
@@ -80,12 +125,22 @@ export const LinkFragment = graphql`
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
     ... on ContentfulPageAssemblyShopPage {
       name
       slug
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
     }
 
@@ -94,6 +149,23 @@ export const LinkFragment = graphql`
       title
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
+    }
+    ... on ContentfulPageAssemblyLegalLandingPage {
+      slug
+      title
+      internal {
+        type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
     }
   }

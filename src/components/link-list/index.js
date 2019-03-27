@@ -19,11 +19,15 @@ const LinkList = ({
   insideContainer,
   removeBottomMargin,
   downloads,
+  showSummary,
+  columns,
+  heading,
+  showListStyle,
 }) => (
   <Wrapper removeBottomMargin={removeBottomMargin}>
     <Container padding={!insideContainer}>
       {headerText && <h2>{headerText}</h2>}
-      <UnorderedList>
+      <UnorderedList columns={columns} showListStyle={showListStyle}>
         {links.map((link, i) => (
           <li key={i}>
             {downloads ? (
@@ -38,7 +42,18 @@ const LinkList = ({
                 </FileInfo>
               </>
             ) : (
-              <LinkHandler link={link}>{link.title}</LinkHandler>
+              <>
+                {heading ? (
+                  <h3>
+                    <LinkHandler link={link}>{link.title}</LinkHandler>
+                  </h3>
+                ) : (
+                  <LinkHandler link={link}>{link.title}</LinkHandler>
+                )}
+              </>
+            )}
+            {showSummary && link.pageInformation && (
+              <p>{link.pageInformation.shortDescription.shortDescription}</p>
             )}
           </li>
         ))}
@@ -53,6 +68,10 @@ LinkList.propTypes = {
   insideContainer: PropTypes.bool,
   removeBottomMargin: PropTypes.bool,
   downloads: PropTypes.bool,
+  showSummary: PropTypes.bool,
+  heading: PropTypes.bool,
+  showListStyle: PropTypes.bool,
+  columns: PropTypes.number,
 };
 
 LinkList.defaultProps = {

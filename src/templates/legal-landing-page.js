@@ -85,7 +85,7 @@ export default LegalLandingPage;
 export const eventsLandingPageQuery = graphql`
   query legalLandingPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
-      pageName
+      title
       subheader
       applicableRegions
       introductionText {
