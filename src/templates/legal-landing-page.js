@@ -15,11 +15,13 @@ import LegalSideBar from '../components/legal-sidebar';
 import RichText from '../components/rich-text';
 import PageTitle from '../components/page-title';
 import LegalSubPageList from '../components/legal-landing-page/subpage-list';
+import InlineCallOut from '../components/inline-callout';
 
 const LegalLandingPage = ({ data, pageContext }) => {
   const {
     pageName,
     introductionText,
+    applicableRegions,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
   let currentPageHierarchy = null;
@@ -34,8 +36,6 @@ const LegalLandingPage = ({ data, pageContext }) => {
   } catch (e) {
     console.log('e', e);
   }
-
-  console.log('currentPage', currentPage);
 
   return (
     <Layout removeFooterMargin>
@@ -58,6 +58,11 @@ const LegalLandingPage = ({ data, pageContext }) => {
               <h1>{pageName}</h1>
             </PageTitle>
             <RichText richText={introductionText} />
+            {applicableRegions && (
+              <InlineCallOut borderColour="red" insideContainer>
+                This content applies to <strong>{applicableRegions}</strong>
+              </InlineCallOut>
+            )}
             {currentPage && currentPage.children && (
               <LegalSubPageList items={currentPage.children} />
             )}
@@ -82,6 +87,7 @@ export const eventsLandingPageQuery = graphql`
     contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
       pageName
       subheader
+      applicableRegions
       introductionText {
         childContentfulRichText {
           html

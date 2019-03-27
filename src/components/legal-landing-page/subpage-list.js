@@ -1,25 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LinkHandler from '../link-handler';
+import { List, Item } from './styles';
 
 const LegalSubPageList = ({ items }) => {
   if (!items || items.length === 0) return null;
 
   return (
     <div>
-      <ul>
+      <List>
         {items.map((item, i) => (
-          <li key={i}>
-            <p>{item.label}</p>
+          <Item key={i}>
+            <h2>
+              <LinkHandler internalLink={{ slug: item.slug }}>
+                {item.label}
+              </LinkHandler>
+            </h2>
             <p>{item.description}</p>
-          </li>
+          </Item>
         ))}
-      </ul>
+      </List>
     </div>
   );
 };
 
 LegalSubPageList.propTypes = {
-  items: PropTypes.array,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default LegalSubPageList;
