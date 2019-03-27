@@ -17,7 +17,6 @@ const Page = ({ data }) => {
     pageInformation,
     title,
   } = data.contentfulPageAssemblyContentPage;
-  console.log(pageInformation);
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
