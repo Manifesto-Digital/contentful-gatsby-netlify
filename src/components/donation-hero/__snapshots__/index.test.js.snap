@@ -447,7 +447,6 @@ exports[`renders correctly 1`] = `
                   className="rc-slider-handle"
                   onBlur={[Function]}
                   onKeyDown={[Function]}
-                  onMouseDown={[Function]}
                   role="slider"
                   style={
                     Object {
