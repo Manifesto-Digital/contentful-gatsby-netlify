@@ -86,9 +86,9 @@ jobs:
             - ~/.cache/yarn
       - run: yarn build
 
-    clean-up:
-      steps:
-        - run: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
+  clean-up:
+    steps:
+      - run: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
 
   deploy-master:
     docker:
