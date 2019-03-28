@@ -17,10 +17,11 @@ const ServicePage = ({ data }) => {
     service,
     mainBodyCopy,
     usefulInfoCopy,
+    pageInformation,
   } = data.contentfulPageAssemblyServicePage;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
           <h1>{title}</h1>
@@ -77,6 +78,9 @@ export const servicePageQuery = graphql`
         childContentfulRichText {
           html
         }
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }

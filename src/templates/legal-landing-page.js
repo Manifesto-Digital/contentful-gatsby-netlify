@@ -23,10 +23,11 @@ const LegalLandingPage = ({ data }) => {
     introductionText,
     pageReferences,
     sideBarLinks,
+    pageInformation,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={pageName}>
       <article>
         <PageTitle>
           <h1>{pageName}</h1>
@@ -82,6 +83,9 @@ export const eventsLandingPageQuery = graphql`
       sideBarLinks {
         title
         slug
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }

@@ -6,7 +6,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Shelter Website',
+    title: 'Shelter England',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
