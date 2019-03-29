@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding-top: 40px;
+}
+
+.c1 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c2 {
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 4px solid #ea232d;
+}
+
+.c5 {
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 4px solid #999;
+}
+
+.c3 {
+  margin-bottom: 10px;
+}
+
+.c4 {
+  margin-bottom: 40px;
+}
+
+<section
+  className="c0"
+>
+  <ul
+    className="c1"
+  >
+    <li
+      className="c2"
+    >
+      <h3
+        className="c3"
+      >
+        Featured legal page
+      </h3>
+      <p
+        className="c4"
+      >
+        26 Mar 2019
+      </p>
+      <p>
+        Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
+      </p>
+      <Link
+        to="/featured-legal-page"
+      >
+        View amended article
+      </Link>
+    </li>
+    <li
+      className="c5"
+    >
+      <h3
+        className="c3"
+      >
+        Legal Page 1
+      </h3>
+      <p
+        className="c4"
+      >
+        26 Mar 2019
+      </p>
+      <p>
+        Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
+      </p>
+      <Link
+        to="/legal-page-1"
+      >
+        View amended article
+      </Link>
+    </li>
+    <li
+      className="c5"
+    >
+      <h3
+        className="c3"
+      >
+        Legal page 2
+      </h3>
+      <p
+        className="c4"
+      >
+        25 Mar 2019
+      </p>
+      <p>
+        Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
+      </p>
+      <Link
+        to="/legal-page-2"
+      >
+        View amended article
+      </Link>
+    </li>
+  </ul>
+</section>
+`;

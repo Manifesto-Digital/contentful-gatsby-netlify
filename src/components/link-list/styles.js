@@ -14,6 +14,10 @@ export const UnorderedList = styled.ul`
     !showListStyle &&
     css`
       ${removeListStyles};
+
+      & > li {
+        margin: 0;
+      }
     `}
 
   ${({ showListStyle }) =>
