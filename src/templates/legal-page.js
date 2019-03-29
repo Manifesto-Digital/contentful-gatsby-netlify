@@ -43,6 +43,8 @@ const LegalPage = ({ data, pageContext }) => {
     console.log('e', e);
   }
 
+  console.log('currentPageHierarchy', currentPageHierarchy);
+
   return (
     <Layout removeFooterMargin>
       <Container>
