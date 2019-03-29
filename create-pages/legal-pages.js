@@ -71,11 +71,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     let hierarchyLevel = hierarchy;
 
     allCurrentPageHierarchy.forEach((ref, i) => {
-      debugger;
-      // const currentFullSlug = getFullSlug(
-      //   allCurrentPageHierarchy.slice(0, i),
-      //   ref.slug
-      // );
       // If fist then just store on object if it doesn't exist
       if (i === 0) {
         if (!isStoredOnLevel(ref, hierarchy)) {
@@ -121,7 +116,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
       // Current page info as this won't be referenced in the parent slugs
       // and will need to also store in the hierarchy object
 
-      debugger;
       // Get slugs from parent references
       const parentSlugsMapped = flattenParentSlugs(page.parentSlug);
 
@@ -142,7 +136,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     if (!node.slug) return;
     const { parentSlug, slug } = node;
     // const fullSlug = getFullSlug(parentSlug, slug);
-    debugger;
     const parentSlugsFlattened = flattenParentSlugs(parentSlug);
 
     gatsbyCreatePage({
