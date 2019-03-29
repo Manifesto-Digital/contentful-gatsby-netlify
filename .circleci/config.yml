@@ -121,6 +121,7 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - run: yarn build
       - run: netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod
 workflows:
   version: 2
