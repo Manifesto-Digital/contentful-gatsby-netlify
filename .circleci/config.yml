@@ -115,6 +115,7 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
       - run: sudo yarn global add netlify-cli
       - save_cache:
           name: Save Yarn Package Cache
