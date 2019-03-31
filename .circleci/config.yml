@@ -123,10 +123,13 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-        name: Build production version
-        command: yarn build
-        environment:
-          GATSBY_CONTENTFUL_ENVIRONMENT: master
+          name: Vars
+          command: echo $GATSBY_CONTENTFUL_ENVIRONMENT
+      - run:
+          name: Build production version
+          command: yarn build
+          environment:
+            GATSBY_CONTENTFUL_ENVIRONMENT: master
       - run: netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod
 workflows:
   version: 2
