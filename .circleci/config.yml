@@ -122,7 +122,6 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - GATSBY_CONTENTFUL_ENVIRONMENT
       - run:
         name: Build production version
         command: yarn build
