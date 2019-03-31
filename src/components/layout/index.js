@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-
 // Styles
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../theme/global';
 import theme from '../theme/variables';
-
-// Component
+// Components
+import LegalHeader from '../header/legal';
 import Header from '../header';
 import Footer from '../footer';
 
-const Layout = ({ children, removeFooterMargin }) => (
+const Layout = ({ children, removeFooterMargin, legal }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -36,7 +35,11 @@ const Layout = ({ children, removeFooterMargin }) => (
           >
             <html lang="en" />
           </Helmet>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          {legal ? (
+            <LegalHeader siteTitle={data.site.siteMetadata.title} />
+          ) : (
+            <Header siteTitle={data.site.siteMetadata.title} />
+          )}
           <main role="main" id="main">
             {children}
           </main>
@@ -50,6 +53,7 @@ const Layout = ({ children, removeFooterMargin }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   removeFooterMargin: PropTypes.bool,
+  legal: PropTypes.bool,
 };
 
 export default Layout;

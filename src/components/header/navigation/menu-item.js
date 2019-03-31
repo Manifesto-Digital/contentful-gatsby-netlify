@@ -5,8 +5,9 @@ import { SubNavButton, ArrowSVG } from './styles-icons';
 import { MenuList, SubMenu, ItemLink, Item } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
-const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
+const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu, legal }) => {
   const { menuLabel, navigationLink, subNavigationItems } = pageData;
+  console.log('legal', legal);
 
   return (
     <Item topLevel>
@@ -22,6 +23,7 @@ const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
                   type="button"
                   onClick={() => setActiveMenu(id)}
                   aria-expanded={menuOpen}
+                  legal={legal}
                 >
                   <ArrowSVG src={AngleRight} cacheGetRequests />
                 </SubNavButton>
@@ -34,6 +36,7 @@ const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu }) => {
             aria-expanded={menuOpen}
             aria-hidden={!menuOpen}
             role="menu"
+            legal={legal}
           >
             {subNavigationItems.map((item, i) => (
               <Item key={i}>
@@ -61,6 +64,7 @@ NavigationMenu.propTypes = {
   id: PropTypes.string.isRequired,
   menuOpen: PropTypes.bool,
   setActiveMenu: PropTypes.func,
+  legal: PropTypes.bool,
 };
 
 export default NavigationMenu;

@@ -47,10 +47,12 @@ export const Menus = styled.nav`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 0;
 
   ${breakpoint.desktop`
     flex-direction: row;
+  justify-content: ${({ legal }) => legal && 'flex-end'};
     max-width: ${({ theme }) => theme.sizes.maxWidth};
     margin: 0 auto;
     padding: 0 ${({ theme }) => theme.spacing.small};
@@ -61,10 +63,16 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding: ${({ topLevel, theme }) =>
-    topLevel ? `0` : `${theme.spacing.small}}`};
+  padding: ${({ topLevel, legal, theme }) =>
+    (legal && topLevel && `15px ${theme.spacing.standard}`) ||
+    (topLevel && '0') ||
+    `${theme.spacing.small}}`};
   border-bottom: ${({ topLevel, theme }) =>
     topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
+  border-bottom: ${({ topLevel, legal, theme }) =>
+    (legal && topLevel && `1px solid ${theme.palette.grey10}`) ||
+    (topLevel && 'none') ||
+    `1px solid ${theme.palette.grey10}`};
 
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};
@@ -117,6 +125,7 @@ export const SubMenu = styled.ul`
 
   ${breakpoint.desktop`
     position: absolute;
+    display: ${({ legal }) => legal && 'none'};
     top: 52px;
     right: 0;
     left: 0;
@@ -127,7 +136,7 @@ export const SubMenu = styled.ul`
     margin: 0;
     background: ${({ theme }) => theme.palette.grey15};
     padding: ${({ theme }) => theme.spacing.small} ${({ theme }) =>
-    theme.spacing.small}
+    theme.spacing.small};
   `}
 
   ${Item} {

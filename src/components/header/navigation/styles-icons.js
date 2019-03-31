@@ -29,7 +29,7 @@ export const SubNavButton = styled(MobileMenuClose)`
   }
 
   ${breakpoint.desktop`
-    display: flex;
+    display: ${({ legal }) => (legal ? 'none' : 'flex')};
 
     svg {
       width: auto;

@@ -44,7 +44,7 @@ const LegalPage = ({ data, pageContext }) => {
   }
 
   return (
-    <Layout removeFooterMargin>
+    <Layout removeFooterMargin legal>
       <Container>
         <ContentWithSideBar>
           <SideBar left desktop>

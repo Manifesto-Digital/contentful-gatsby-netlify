@@ -53,7 +53,7 @@ export const HeaderWrapper = styled.header`
   background: ${({ theme }) => theme.palette.grey10};
 `;
 
-export const HeaderBar = styled.header`
+export const HeaderBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
