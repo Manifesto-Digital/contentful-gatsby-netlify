@@ -11,11 +11,11 @@ const LegalSubPageList = ({ items }) => {
       <List>
         {items.map((item, i) => (
           <Item key={i}>
-            <h2>
+            <h3>
               <LinkHandler internalLink={{ slug: item.slug }}>
                 {item.label}
               </LinkHandler>
-            </h2>
+            </h3>
             <p>{item.description}</p>
           </Item>
         ))}

@@ -17,13 +17,13 @@ exports[`renders correctly 1`] = `
     <li
       className="c1"
     >
-      <h2>
+      <h3>
         <Link
           to="/legal-1"
         >
           legal 1
         </Link>
-      </h2>
+      </h3>
       <p>
         Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
       </p>
@@ -31,13 +31,13 @@ exports[`renders correctly 1`] = `
     <li
       className="c1"
     >
-      <h2>
+      <h3>
         <Link
           to="/legal-2"
         >
           legal 2
         </Link>
-      </h2>
+      </h3>
       <p>
         Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
       </p>
