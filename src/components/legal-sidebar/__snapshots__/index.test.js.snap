@@ -14,20 +14,25 @@ exports[`renders correctly 1`] = `
 }
 
 .c3 {
-  font-weight: 500;
+  font-weight: normal;
 }
 
-.c5 {
-  font-weight: normal;
+.c4 {
+  font-weight: 500;
 }
 
 .c1 {
   padding-left: 0;
 }
 
-.c4 {
+.c5 {
   padding-left: 20px;
   border-left: 3px solid #d9d9d9;
+}
+
+.c6 {
+  padding-left: 20px;
+  border-left: 3px solid #8c8c8c;
 }
 
 .c2 {
@@ -48,53 +53,77 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c3"
-        to="/legal/harassment_and_antisocial_behaviour"
+        to="/migration-legal-page"
+      >
+        Migration title
+      </Link>
+    </li>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c3"
+        to="/migration-legal-page-2"
+      >
+        Migration title
+      </Link>
+    </li>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c4"
+        to="/identifying_the_nature_of_the_problem"
       >
         Harassment and antisocial behaviour
       </Link>
     </li>
     <ul
-      className="c4"
+      className="c5"
     >
       <li
         className="c2"
       >
         <Link
-          className="c5"
-          to="/legal/harassment_and_antisocial_behaviour/sprint-7-legal-page-demo"
+          className="c4"
+          to="/homelessness-applications"
         >
-          Sprint 7 Legal Page
+          Homelessness Application
         </Link>
       </li>
-      <li
-        className="c2"
+      <ul
+        className="c6"
       >
-        <Link
-          className="c5"
-          to="/legal/harassment_and_antisocial_behaviour/identifying_the_nature_of_the_problem"
+        <li
+          className="c2"
         >
-          Identifying the nature of the problem
-        </Link>
-      </li>
-      <li
-        className="c2"
-      >
-        <Link
-          className="c5"
-          to="/legal/harassment_and_antisocial_behaviour/legal-3"
+          <Link
+            className="c3"
+            to="/responsibilities-of-landlords-tenants-and-occupiers"
+          >
+            Responsibilities of landlords, tenants and occupiers
+          </Link>
+        </li>
+        <li
+          className="c2"
         >
-          legal 3
-        </Link>
-      </li>
+          <Link
+            className="c3"
+            to="/legal-2"
+          >
+            Legal 2 page
+          </Link>
+        </li>
+      </ul>
     </ul>
     <li
       className="c2"
     >
       <Link
-        className="c5"
-        to="/legal/introduction"
+        className="c3"
+        to="/sprint-7-legal-page-demo"
       >
-        Introduction
+        Sprint 7 Legal Page
       </Link>
     </li>
   </ul>
