@@ -16,12 +16,13 @@ const EventsLandingPage = ({ data }) => {
     pageName,
     topTextSection,
     featuredEvents,
+    pageInformation,
   } = data.contentfulPageAssemblyEventsLandingPage;
 
   if (!featuredEvents || featuredEvents.length === 0) return;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={pageName}>
       <article>
         <PageTitle>
           <h1>{pageName}</h1>
@@ -81,6 +82,9 @@ export const eventsLandingPageQuery = graphql`
         secondaryCtaLink {
           ...LinkFragment
         }
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }

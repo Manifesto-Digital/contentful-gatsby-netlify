@@ -18,8 +18,14 @@ import {
 
 const LegalPage = ({ data }) => {
   const [referenceList, updateReferenceList] = useState([]);
+  const { pageInformation, title } = data.contentfulPageAssemblyLegalPage;
+
   return (
-    <Layout removeFooterMargin>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      removeFooterMargin
+    >
       <Container>
         <ContentWithSideBar>
           <SideBar left>
@@ -106,6 +112,9 @@ export const legalPageQuery = graphql`
             html
           }
         }
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }
