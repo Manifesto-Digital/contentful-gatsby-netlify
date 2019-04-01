@@ -8,10 +8,5 @@ export const ServicesFinderFragment = graphql`
     }
     name
     titleText
-    introText {
-      childContentfulRichText {
-        html
-      }
-    }
   }
 `;

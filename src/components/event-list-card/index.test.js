@@ -7,8 +7,7 @@ import {
   createInternalRef,
 } from '../../utils/test-factories';
 import { hidePascalCaseWarning } from '../../utils/test-mocks';
-
-import EventListCard from './index';
+import EventListCard from '.';
 
 export const createEventListCard = createFactory({
   slug: 'my-slug',
