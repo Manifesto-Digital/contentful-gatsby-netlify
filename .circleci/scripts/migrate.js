@@ -42,7 +42,7 @@
 
     try {
       environment = await space.getEnvironment(ENVIRONMENT_ID);
-      if (ENVIRONMENT_ID == 'CI_MIGRATION') {
+      if (ENVIRONMENT_ID === 'CI_MIGRATION') {
         await environment.delete();
         console.log('Environment deleted');
       }
