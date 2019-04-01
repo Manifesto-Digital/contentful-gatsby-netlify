@@ -19,10 +19,13 @@ import InlineCallOut from '../components/inline-callout';
 
 const LegalLandingPage = ({ data, pageContext }) => {
   const {
-    pageName,
+    title,
     introductionText,
     applicableRegions,
+    calloutInformation,
   } = data.contentfulPageAssemblyLegalLandingPage;
+
+  console.log('calloutInformation', calloutInformation);
 
   let currentPageHierarchy = null;
   let heading = null;
@@ -55,12 +58,17 @@ const LegalLandingPage = ({ data, pageContext }) => {
 
           <TwoThirds>
             <PageTitle noContainer>
-              <h1>{pageName}</h1>
+              <h1>{title}</h1>
             </PageTitle>
             <RichText richText={introductionText} />
             {applicableRegions && (
               <InlineCallOut borderColour="red" insideContainer>
                 This content applies to <strong>{applicableRegions}</strong>
+              </InlineCallOut>
+            )}
+            {calloutInformation && (
+              <InlineCallOut borderColour="red" insideContainer>
+                <RichText richText={calloutInformation} />
               </InlineCallOut>
             )}
             {currentPage && currentPage.children && (
@@ -86,9 +94,13 @@ export const eventsLandingPageQuery = graphql`
   query legalLandingPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
       title
-      subheader
       applicableRegions
       introductionText {
+        childContentfulRichText {
+          html
+        }
+      }
+      calloutInformation {
         childContentfulRichText {
           html
         }
