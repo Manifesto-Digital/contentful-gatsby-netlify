@@ -29,6 +29,7 @@ const PressReleasePage = ({ data }) => {
     notesToEditor,
     datePosted,
     showContactSideBar,
+    pageInformation,
   } = data.contentfulPageAssemblyPressReleasePage;
 
   const formattedDate = dateAsString(datePosted, 'DD MMM YYYY');
@@ -66,7 +67,7 @@ const PressReleasePage = ({ data }) => {
   };
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle twoThirds>
           <h1>{title}</h1>
@@ -135,6 +136,9 @@ export const pressReleasePageQuery = graphql`
             contentType
           }
         }
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }
