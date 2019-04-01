@@ -8,6 +8,7 @@ const Image = ({
   width,
   height,
   fit,
+  presentational,
 }) => {
   if (!file || !file.url) return;
   const { url } = file;
@@ -20,7 +21,7 @@ const Image = ({
   return (
     <img
       src={`${url}${params ? `?${params}` : ''}`}
-      alt={description || url}
+      alt={`${!presentational ? description || url : ''}`}
       className={className}
     />
   );
@@ -40,6 +41,7 @@ Image.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number,
   fit: PropTypes.oneOf(['pad', 'fill', 'scale', 'crop', 'thumb']),
+  presentational: PropTypes.bool,
 };
 
 export default Image;

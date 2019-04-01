@@ -83,7 +83,7 @@ module.exports = function(migration) {
     });
 
   pageAssemblyPerson
-    .createField('pageMetadata')
+    .createField('pageInformation')
     .name('Page Metadata')
     .type('Link')
     .localized(false)
@@ -111,7 +111,7 @@ module.exports = function(migration) {
   });
 
   pageAssemblyPerson.changeEditorInterface(
-    'pageMetadata',
+    'pageInformation',
     'entryLinkEditor',
     {}
   );

@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { breakpoint } from '../theme/breakpoint';
 import { StyledSVG } from '../share-block/styles';
 import LinkHandler from '../link-handler';
+import Accordion from '../accordion';
 
 export const Logo = styled(SVG)`
   display: block;
@@ -15,13 +16,10 @@ export const LogoWrapper = styled(Link)`
   align-items: center;
   justify-content: center;
   height: 52px;
-  padding: 15px;
-  background: ${({ theme }) => theme.palette.primary};
   margin-right: auto;
-  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.desktop`
-    height: 68px;
+    margin-bottom: ${({ theme }) => theme.spacing.standard};
     padding: ${({ theme }) => theme.spacing.standard} 25px;
     margin-right: 0;
     margin-bottom: 0;
@@ -34,7 +32,11 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.palette.black};
   margin-top: ${({ theme, removeMarginTop }) =>
     removeMarginTop ? '0' : theme.spacing.xl};
-  padding-top: ${({ theme }) => theme.spacing.xl};
+  padding-top: ${({ theme }) => theme.spacing.standard};
+
+  ${breakpoint.tablet`
+    padding-top: ${({ theme }) => theme.spacing.xl};
+  `}
 `;
 
 export const Top = styled.div`
@@ -47,8 +49,8 @@ export const Top = styled.div`
 
 export const Social = styled.div`
   display: flex;
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
   ${StyledSVG} {
     color: ${({ theme }) => theme.palette.white};
     fill: ${({ theme }) => theme.palette.white};
@@ -56,16 +58,17 @@ export const Social = styled.div`
 `;
 
 export const Menus = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
   width: 100%;
   font-size: ${({ theme }) => theme.fontsize.small};
+  color: ${({ theme }) => theme.palette.white};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: ${({ theme }) => theme.spacing.standard};
 
-  ${breakpoint.desktop`
-   flex-direction: row;
-   flex-wrap: unset;
+  ${breakpoint.tablet`
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: ${({ theme }) => theme.spacing.standard};
    `}
 `;
 
@@ -79,13 +82,13 @@ export const MenuList = styled.ul`
 
   ${breakpoint.desktop`
     width: auto;
-    padding-left: ${({ theme }) => theme.spacing.standard};
   `}
 `;
 
 export const ItemLink = styled(LinkHandler)`
   font-size: ${({ theme }) => theme.fontsize.small};
   color: ${({ theme }) => theme.palette.white};
+
   &:hover {
     color: ${({ theme }) => theme.palette.primary};
   }
@@ -96,33 +99,13 @@ export const Item = styled.li`
   flex-direction: column;
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.standard};
-
-  > ${MenuList} > li:first-child {
-    margin-bottom: ${({ theme }) => theme.spacing.medium};
-  }
-`;
-
-export const Angle = styled.div`
-  position: absolute;
-  right: 93%;
-  z-index: 0;
-  display: none;
-  width: 0;
-  border-color: ${({ theme }) => theme.palette.black};
-  border-style: solid;
-  border-width: 100px 150px 0;
-  transform: rotate(-225deg);
-
-  ${breakpoint.desktop`
-    display: block;
-  `}
+  padding-left: 0;
 `;
 
 export const Bottom = styled.div`
   position: relative;
-  margin-top: ${({ theme }) => theme.spacing.xl};
-  padding: ${({ theme }) => theme.spacing.standard} 0;
-  background: ${({ theme }) => theme.palette.primary};
+  padding: ${({ theme }) => theme.spacing.large} 0;
+  background-color: ${({ theme }) => theme.palette.grey66};
   overflow: hidden;
 `;
 
@@ -131,25 +114,33 @@ export const BottomInner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-direction: column-reverse;
-
   color: ${({ theme }) => theme.palette.white};
-  font-size: ${({ theme }) => theme.fontsize.tiny};
+  font-size: ${({ theme }) => theme.fontsize.small};
 
   ${breakpoint.desktop`
-   flex-direction: row;
-   margin-bottom: 0;
+    flex-direction: row;
+    margin-bottom: 0;
   `}
 `;
 
-export const Text = styled.div`
+export const ContentWrapper = styled.div`
   flex: 0 1 100%;
   width: 100%;
-
   text-align: left;
+
   ${breakpoint.desktop`
     flex: 0 1 50%;
     width: 50%;
     max-width: 340px;
-  `}
+  `};
+`;
+
+export const FooterAccordion = styled(Accordion)`
+  flex: 1;
+
+  h3 {
+    ${breakpoint.tablet`
+    margin-bottom: ${({ theme }) => theme.spacing.large};
+  `};
+  }
 `;
