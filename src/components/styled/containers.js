@@ -7,12 +7,12 @@ export const Container = styled.div`
   padding: 0
     ${({ padding, theme }) => (padding === false ? 0 : theme.spacing.standard)};
 
-  ${({ desktopOnlyPadding, theme }) =>
-    desktopOnlyPadding &&
+  ${({ noMobilePadding, theme }) =>
+    noMobilePadding &&
     css`
       padding: 0;
 
-      ${breakpoint.desktop`
+      ${breakpoint.tablet`
         padding: 0 ${theme.spacing.standard};
     `};
     `}

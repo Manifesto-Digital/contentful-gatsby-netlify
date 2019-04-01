@@ -79,7 +79,7 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
   return (
     <Wrapper removeMarginTop={removeMarginTop}>
       <Top>
-        <Container desktopOnlyPadding>
+        <Container noMobilePadding>
           <Menus aria-label="Footer menu">
             {navigationItems && (
               <AccordionHandler
