@@ -2,7 +2,7 @@ import React from 'react';
 import LinkHandler from '../link-handler';
 import Image from '../image';
 import { Wrapper } from './styles';
-import ScotlandOnly from '../../images/scotland_only.png';
+import ScotlandOnly from '../../assets/images/scotland_only.png';
 
 const BounceCard = () => (
   <Wrapper>

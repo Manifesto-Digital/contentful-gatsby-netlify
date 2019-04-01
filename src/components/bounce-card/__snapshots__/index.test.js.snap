@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
   background-color: #f7f7f7;
   padding: 20px;
   font-size: 0.775rem;
+  margin-bottom: 20px;
 }
 
 .c0 img {

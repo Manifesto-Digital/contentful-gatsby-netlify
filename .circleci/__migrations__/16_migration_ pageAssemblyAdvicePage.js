@@ -3,7 +3,7 @@ module.exports = function(migration) {
 
   advicePage
     .createField('displayBounceCard')
-    .name('Display Bounce Card')
+    .name('Display Scotland only widget?')
     .type('Boolean')
     .localized(false)
     .required(false)

@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.palette.offWhite};
   padding: ${({ theme }) => theme.spacing.standard};
   font-size: ${({ theme }) => theme.fontsize.small};
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
 
   img {
     width: 45px;
