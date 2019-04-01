@@ -16,16 +16,22 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
+      - run:
+          name: Yarn Install (frozen lockfile)
+          command: yarn install --frozen-lockfile
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
       # run lint!
-      - run: yarn lint
+      - run:
+          name: Linting
+          command: yarn lint
       # run tests!
-      - run: yarn test --runInBand
+      - run:
+          name: Testing
+          command: yarn test --runInBand
 
   migrate-test:
     docker:
@@ -37,16 +43,20 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
-
-      - run: sudo yarn global add contentful-cli
+      - run:
+          name: Yarn Install (frozen lockfile)
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Install Contentful CLI
+          command: sudo yarn global add contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
+      - run:
+          name: Migrations - CI_MIGRATION
+          command: node ./.circleci/scripts/migrate.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
       # - run: yarn build
   migrate-master:
     docker:
@@ -58,16 +68,20 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
-
-      - run: sudo yarn global add contentful-cli
+      - run:
+          name: Yarn Install (frozen lockfile)
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Install Contentful CLI
+          command: sudo yarn global add contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-
-      - run: node ./.circleci/scripts/migrate.js $SPACE_ID "master" $MANAGEMENT_API_KEY
+      - run:
+          name: Migrations - master
+          command: node ./.circleci/scripts/migrate.js $SPACE_ID "master" $MANAGEMENT_API_KEY
   build:
     docker:
       - image: circleci/node:10.14
@@ -78,13 +92,17 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
+      - run:
+          name: Yarn Install (frozen lockfile)
+          command: yarn install --frozen-lockfile
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run: yarn build
+      - run:
+          name: Build Gatsby (CD pipeline version)
+          command: yarn build
 
   clean-up:
     docker:
@@ -95,15 +113,20 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
-
-      - run: sudo yarn global add contentful-cli
+      - run:
+          name: Yarn Install (frozen lockfile)
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Install Contentful CLI
+          command: sudo yarn global add contentful-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
+      - run:
+          name: Removing CI_MIGRATION Environment
+          command: node ./.circleci/scripts/migrate-cleanup.js $SPACE_ID "CI_MIGRATION" $MANAGEMENT_API_KEY
 
   deploy-master:
     docker:
@@ -115,22 +138,25 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
-      - run: sudo yarn global add netlify-cli
+      - run:
+          name: Yarn Install (frozen lockfile)
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Install Netlify CLI
+          command: sudo yarn global add netlify-cli
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
       - run:
-          name: Vars
-          command: echo $GATSBY_CONTENTFUL_ENVIRONMENT
-      - run:
           name: Build production version
           command: yarn build
           environment:
             GATSBY_CONTENTFUL_ENVIRONMENT: master
-      - run: netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod
+      - run:
+          name: Deploy to Production Netlify
+          command: netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod
 workflows:
   version: 2
   build-test-deploy:
