@@ -81,9 +81,6 @@ export const pressReleasePageQuery = graphql`
           title
           datePosted
           slug
-          pageInformation {
-            ...PageInformationFragment
-          }
         }
       }
     }

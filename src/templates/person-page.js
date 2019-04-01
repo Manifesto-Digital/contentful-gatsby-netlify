@@ -8,14 +8,19 @@ import PersonCardList from '../components/person/card-list';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const Page = ({ data }) => {
-  const { title, person, quotation } = data.contentfulPageAssemblyPerson;
+  const {
+    title,
+    person,
+    quotation,
+    pageInformation,
+  } = data.contentfulPageAssemblyPerson;
   const { jobTitle, photo, bio } = person;
   const personList = data.allContentfulTopicPerson
     ? data.allContentfulTopicPerson.edges.map(item => item.node)
     : null;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle paddingBottom>
           <h1>{title}</h1>
@@ -58,6 +63,9 @@ export const personPageQuery = graphql`
       }
       person {
         ...PersonFragment
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
     allContentfulTopicPerson(

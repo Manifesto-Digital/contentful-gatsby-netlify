@@ -23,10 +23,11 @@ const LegalLandingPage = ({ data }) => {
     introductionText,
     pageReferences,
     sideBarLinks,
+    pageInformation,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={pageName}>
       <article>
         <PageTitle>
           <h1>{pageName}</h1>
@@ -68,20 +69,12 @@ export default LegalLandingPage;
 export const eventsLandingPageQuery = graphql`
   query legalLandingPageTemplateQuery($slug: String!) {
     contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
-      pageName
+      title
       subheader
       introductionText {
         childContentfulRichText {
           html
         }
-      }
-      pageReferences {
-        title
-        slug
-      }
-      sideBarLinks {
-        title
-        slug
       }
     }
   }
