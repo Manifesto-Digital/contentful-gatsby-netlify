@@ -25,8 +25,6 @@ const LegalLandingPage = ({ data, pageContext }) => {
     calloutInformation,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
-  console.log('calloutInformation', calloutInformation);
-
   let currentPageHierarchy = null;
   let heading = null;
   let currentPage = null;

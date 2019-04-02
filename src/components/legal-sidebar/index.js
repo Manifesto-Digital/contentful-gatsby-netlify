@@ -41,7 +41,7 @@ const LegalSideBar = ({ hierarchy, slug, heading }) => {
 
   if (!hierarchy) return null;
   return (
-    <PaddedBox>
+    <PaddedBox as="nav">
       <h3>{heading}</h3>
       <Menu menuItems={hierarchy} />
     </PaddedBox>

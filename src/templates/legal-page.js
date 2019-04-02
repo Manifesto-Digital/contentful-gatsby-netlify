@@ -45,82 +45,86 @@ const LegalPage = ({ data, pageContext }) => {
 
   return (
     <Layout removeFooterMargin>
-      <Container>
-        <ContentWithSideBar>
-          <SideBar left desktop>
-            <SidebarInner>
-              <LegalSideBar
-                hierarchy={currentPageHierarchy}
-                slug={pageContext.slug}
-                heading={heading}
+      <article>
+        <Container>
+          <ContentWithSideBar>
+            <SideBar left desktop>
+              <SidebarInner>
+                <LegalSideBar
+                  hierarchy={currentPageHierarchy}
+                  slug={pageContext.slug}
+                  heading={heading}
+                />
+              </SidebarInner>
+            </SideBar>
+            <TwoThirds>
+              <TableOfContent
+                data={legalPage}
+                updateReferenceList={updateReferenceList}
               />
-            </SidebarInner>
-          </SideBar>
-          <TwoThirds>
-            <TableOfContent
-              data={legalPage}
-              updateReferenceList={updateReferenceList}
-            />
-            {lastAmended && <p>{dateAsString(lastAmended, 'MMMM d, YYYY')}</p>}
-          </TwoThirds>
-        </ContentWithSideBar>
-      </Container>
+              {lastAmended && (
+                <p>Last updated: {dateAsString(lastAmended, 'MMMM d, YYYY')}</p>
+              )}
+            </TwoThirds>
+          </ContentWithSideBar>
+        </Container>
 
-      {hasBottomSection && (
-        <Section offWhite>
-          {referenceList && referenceList.length > 0 && (
-            <FootNotes>
+        {hasBottomSection && (
+          <Section offWhite>
+            {referenceList && referenceList.length > 0 && (
+              <FootNotes>
+                <Container>
+                  <ContentWithSideBar>
+                    <TwoThirds right>
+                      <TableOfContentsFootNotes referenceList={referenceList} />
+                    </TwoThirds>
+                  </ContentWithSideBar>
+                </Container>
+              </FootNotes>
+            )}
+            {legalPage.legislations && (
               <Container>
                 <ContentWithSideBar>
                   <TwoThirds right>
-                    <TableOfContentsFootNotes referenceList={referenceList} />
+                    <LinkList
+                      insideContainer
+                      links={legislations}
+                      headerText="Legislations"
+                    />
                   </TwoThirds>
                 </ContentWithSideBar>
               </Container>
-            </FootNotes>
-          )}
-          {legalPage.legislations && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds right>
-                  <LinkList
-                    insideContainer
-                    links={legislations}
-                    headerText="Legislations"
-                  />
-                </TwoThirds>
-              </ContentWithSideBar>
-            </Container>
-          )}
-          {essentialLinks && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds right>
-                  <LinkList
-                    insideContainer
-                    links={essentialLinks}
-                    headerText="Essential Links"
-                  />
-                </TwoThirds>
-              </ContentWithSideBar>
-            </Container>
-          )}
-          {downloads && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds right>
-                  <LinkList
-                    downloads
-                    insideContainer
-                    links={downloads.files}
-                    headerText="Downloads"
-                  />
-                </TwoThirds>
-              </ContentWithSideBar>
-            </Container>
-          )}
-        </Section>
-      )}
+            )}
+            {essentialLinks && (
+              <Container>
+                <ContentWithSideBar>
+                  <TwoThirds right>
+                    <LinkList
+                      insideContainer
+                      links={essentialLinks}
+                      headerText="Essential Links"
+                    />
+                  </TwoThirds>
+                </ContentWithSideBar>
+              </Container>
+            )}
+            {downloads && (
+              <Container>
+                <ContentWithSideBar>
+                  <TwoThirds right>
+                    <LinkList
+                      downloads
+                      insideContainer
+                      links={downloads.files}
+                      headerText="Downloads"
+                    />
+                  </TwoThirds>
+                </ContentWithSideBar>
+              </Container>
+            )}
+          </Section>
+        )}
+      </article>
     </Layout>
   );
 };
