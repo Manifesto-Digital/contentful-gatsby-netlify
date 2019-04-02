@@ -28,11 +28,15 @@ const Page = ({ data }) => {
         </PageTitle>
         <Container>
           <TwoThirds>
-            <Quotation
-              quote={quotation.quotation}
-              image={photo}
-              insideContainer
-            />
+            {quotation ? (
+              <Quotation
+                quote={quotation.quotation}
+                image={photo}
+                insideContainer
+              />
+            ) : (
+              <Quotation image={photo} insideContainer />
+            )}
             {bio && <p>{bio.internal.content}</p>}
             <PersonCardList list={personList} insideContainer />
           </TwoThirds>
