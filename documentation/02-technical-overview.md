@@ -4,5 +4,5 @@
   - contentful
   - gatsby
   - circleci
-- how they talk
+- how they talk to each other
 - gotcha's

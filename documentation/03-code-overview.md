@@ -2,7 +2,10 @@
 
 - project layout
 - where do i find things?
-- queries
+- queries (graph)
 - fragments
 - linting
 - testig
+- analytics
+- forms
+- dynamic vs static
