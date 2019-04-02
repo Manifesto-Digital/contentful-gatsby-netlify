@@ -3,8 +3,6 @@ module.exports = function(migration) {
     'pageAssemblyLegalPage'
   );
 
-  pageAssemblyLegalPage.deleteField('menuParent');
-
   pageAssemblyLegalPage
     .createField('parentSlug')
     .name('Parent Slug')

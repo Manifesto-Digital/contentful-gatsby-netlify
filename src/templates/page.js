@@ -14,10 +14,11 @@ const Page = ({ data }) => {
     bodyCopy,
     heroContent,
     assemblies,
+    pageInformation,
+    title,
   } = data.contentfulPageAssemblyContentPage;
-
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         {heroContent && <Hero content={heroContent[0]} />}
         <section>
@@ -57,6 +58,9 @@ export const pageQuery = graphql`
           html
         }
       }
+      pageInformation {
+        ...PageInformationFragment
+      }
       assemblies {
         ... on Node {
           ...CtaAssemblyFragment
@@ -81,6 +85,7 @@ export const pageQuery = graphql`
           ...ServicesFinderFragment
           ...ShopFinderFragment
           ...PersonCollectionFragment
+          ...RichTextFragment
         }
       }
     }

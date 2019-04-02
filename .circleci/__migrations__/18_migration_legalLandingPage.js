@@ -47,3 +47,6 @@ module.exports = function(migration) {
     {}
   );
 };
+
+('/Users/tobybushell/Desktop/shelter/.circleci/__migrations__/18_migration_legalLandingPage.js');
+('contentful space migration  --space-id 6sxvmndnpn0s --environment-id legal ./.circleci/__migrations__/18_migration_legalLandingPage.js');

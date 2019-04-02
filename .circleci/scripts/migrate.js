@@ -24,7 +24,7 @@
     const client = createClient({
       accessToken: CMA_ACCESS_TOKEN,
       headers: {
-        'X-Contentful-Source-Environment': 'develop',
+        'X-Contentful-Source-Environment': 'master',
       },
     });
 
@@ -42,7 +42,7 @@
 
     try {
       environment = await space.getEnvironment(ENVIRONMENT_ID);
-      if (ENVIRONMENT_ID == 'CI_MIGRATION') {
+      if (ENVIRONMENT_ID === 'CI_MIGRATION') {
         await environment.delete();
         console.log('Environment deleted');
       }

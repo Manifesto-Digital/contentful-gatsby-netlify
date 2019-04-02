@@ -23,6 +23,7 @@ const LegalLandingPage = ({ data, pageContext }) => {
     introductionText,
     applicableRegions,
     calloutInformation,
+    pageInformation,
   } = data.contentfulPageAssemblyLegalLandingPage;
 
   let currentPageHierarchy = null;
@@ -39,7 +40,7 @@ const LegalLandingPage = ({ data, pageContext }) => {
   }
 
   return (
-    <Layout removeFooterMargin>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <Container>
         <ContentWithSideBar>
           {currentPageHierarchy && heading && (
