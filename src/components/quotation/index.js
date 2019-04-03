@@ -1,39 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '../styled/containers';
-import {
-  Wrapper,
-  Flex,
-  Blockquote,
-  QuoteImage,
-  ImageWithoutQuote,
-  QuoteMark,
-} from './styles';
+import { Wrapper, Flex, Blockquote, QuoteImage, QuoteMark } from './styles';
 import QuoteLeft from '../../assets/svg/icons/quote-left-solid.svg';
 
-const Quotation = ({ quote, insideContainer, image }) => (
+const QuotationWithImage = ({ quote, insideContainer, image }) => (
   <Wrapper>
     <Container padding={!insideContainer}>
-      {(image && quote && (
-        <Flex>
-          <QuoteImage image={image} width={600} />
-          <Blockquote>
-            <QuoteMark src={QuoteLeft} />
-            {quote}
-          </Blockquote>
-        </Flex>
-      )) ||
-        (image && <ImageWithoutQuote image={image} width={600} />)}
+      <Flex>
+        <QuoteImage image={image} width={600} />
+        <Blockquote>
+          <QuoteMark src={QuoteLeft} />
+          {quote}
+        </Blockquote>
+      </Flex>
     </Container>
   </Wrapper>
 );
-Quotation.propTypes = {
-  quote: PropTypes.string,
+QuotationWithImage.propTypes = {
+  quote: PropTypes.string.isRequired,
   insideContainer: PropTypes.bool,
-  image: PropTypes.object,
+  image: PropTypes.object.isRequired,
 };
 
-Quotation.defaultProps = {
+QuotationWithImage.defaultProps = {
   insideContainer: false,
 };
-export default Quotation;
+export default QuotationWithImage;

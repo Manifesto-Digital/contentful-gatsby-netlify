@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { QuoteImage as PersonPageImage } from '../components/quotation/styles';
 import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
-import Quotation from '../components/quotation';
+import QuotationWithImage from '../components/quotation';
 import PersonCardList from '../components/person/card-list';
 import { Container, TwoThirds } from '../components/styled/containers';
 
@@ -29,13 +30,13 @@ const Page = ({ data }) => {
         <Container>
           <TwoThirds>
             {quotation ? (
-              <Quotation
+              <QuotationWithImage
                 quote={quotation.quotation}
                 image={photo}
                 insideContainer
               />
             ) : (
-              <Quotation image={photo} insideContainer />
+              <PersonPageImage image={photo} insideContainer />
             )}
             {bio && <p>{bio.internal.content}</p>}
             <PersonCardList list={personList} insideContainer />
