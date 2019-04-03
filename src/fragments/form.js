@@ -13,7 +13,7 @@ export const AssemblyFormFragment = graphql`
     submitCallToAction
     backgroundColour
     redirectAfterSubmission {
-      slug
+      ...LinkFragment
     }
     thankYouMessage {
       childContentfulRichText {
