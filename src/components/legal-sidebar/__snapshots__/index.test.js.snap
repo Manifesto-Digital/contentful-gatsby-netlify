@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
   list-style: none;
 }
 
-<div
+<nav
   className="c0"
 >
   <h3>
@@ -127,5 +127,5 @@ exports[`renders correctly 1`] = `
       </Link>
     </li>
   </ul>
-</div>
+</nav>
 `;

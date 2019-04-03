@@ -10,7 +10,6 @@ import {
   Wrapper,
   Menus,
   MenuList,
-  AdditionalMenu,
   Item,
   ItemLink,
   SkipToContent,
@@ -19,14 +18,13 @@ import { LegalDonateButton } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
 const Navigation = ({
-  pageData,
+  navigationItems,
   active,
   searchFocus,
   openState,
   searchState,
 }) => {
   const [activeMenu, setActiveMenu] = useState('');
-  const { navigationItems, additionalLink } = pageData;
 
   const updateActiveMenu = id => {
     if (id === activeMenu) {
@@ -102,9 +100,7 @@ Navigation.propTypes = {
   searchFocus: PropTypes.bool,
   openState: PropTypes.func,
   searchState: PropTypes.func,
-  pageData: PropTypes.shape({
-    navigationItems: PropTypes.array,
-  }),
+  navigationItems: PropTypes.array,
 };
 
 export default Navigation;

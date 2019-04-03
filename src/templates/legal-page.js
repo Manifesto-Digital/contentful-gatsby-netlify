@@ -24,6 +24,7 @@ import LinkList from '../components/link-list';
 const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
+  const { pageInformation, slug } = legalPage;
   const { legislations, essentialLinks, downloads, lastAmended } = legalPage;
   const hasBottomSection =
     (referenceList && referenceList.length > 0) ||
@@ -44,83 +45,92 @@ const LegalPage = ({ data, pageContext }) => {
   }
 
   return (
-    <Layout removeFooterMargin legal>
-      <Container>
-        <ContentWithSideBar>
-          <SideBar left desktop>
-            <SidebarInner>
-              <LegalSideBar
-                hierarchy={currentPageHierarchy}
-                slug={pageContext.slug}
-                heading={heading}
+    <Layout
+      pageInformation={pageInformation}
+      slug={slug}
+      removeFooterMargin
+      legal
+    >
+      <article>
+        <Container>
+          <ContentWithSideBar>
+            <SideBar left desktop>
+              <SidebarInner>
+                <LegalSideBar
+                  hierarchy={currentPageHierarchy}
+                  slug={pageContext.slug}
+                  heading={heading}
+                />
+              </SidebarInner>
+            </SideBar>
+            <TwoThirds>
+              <TableOfContent
+                data={legalPage}
+                updateReferenceList={updateReferenceList}
               />
-            </SidebarInner>
-          </SideBar>
-          <TwoThirds>
-            <TableOfContent
-              data={legalPage}
-              updateReferenceList={updateReferenceList}
-            />
-            {lastAmended && <p>{dateAsString(lastAmended, 'MMMM d, YYYY')}</p>}
-          </TwoThirds>
-        </ContentWithSideBar>
-      </Container>
+              {lastAmended && (
+                <p>Last updated: {dateAsString(lastAmended, 'MMMM d, YYYY')}</p>
+              )}
+            </TwoThirds>
+          </ContentWithSideBar>
+        </Container>
 
-      {hasBottomSection && (
-        <Section offWhite>
-          {referenceList && referenceList.length > 0 && (
-            <FootNotes>
+        {hasBottomSection && (
+          <Section offWhite>
+            {referenceList && referenceList.length > 0 && (
+              <FootNotes>
+                <Container>
+                  <ContentWithSideBar>
+                    <TwoThirds right>
+                      <TableOfContentsFootNotes referenceList={referenceList} />
+                    </TwoThirds>
+                  </ContentWithSideBar>
+                </Container>
+              </FootNotes>
+            )}
+            {legalPage.legislations && (
               <Container>
                 <ContentWithSideBar>
                   <TwoThirds right>
-                    <TableOfContentsFootNotes referenceList={referenceList} />
+                    <LinkList
+                      insideContainer
+                      links={legislations}
+                      headerText="Legislations"
+                    />
                   </TwoThirds>
                 </ContentWithSideBar>
               </Container>
-            </FootNotes>
-          )}
-          {legalPage.legislations && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds right>
-                  <LinkList
-                    insideContainer
-                    links={legislations}
-                    headerText="Legislations"
-                  />
-                </TwoThirds>
-              </ContentWithSideBar>
-            </Container>
-          )}
-          {essentialLinks && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds right>
-                  <LinkList
-                    insideContainer
-                    links={essentialLinks}
-                    headerText="Essential Links"
-                  />
-                </TwoThirds>
-              </ContentWithSideBar>
-            </Container>
-          )}
-          {downloads && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds right>
-                  <LinkList
-                    downloads
-                    insideContainer
-                    links={downloads.files}
-                    headerText="Downloads"
-                  />
-                </TwoThirds>
-              </ContentWithSideBar>
-            </Container>
-          )}
-        </Section>
-      )}
+            )}
+            {essentialLinks && (
+              <Container>
+                <ContentWithSideBar>
+                  <TwoThirds right>
+                    <LinkList
+                      insideContainer
+                      links={essentialLinks}
+                      headerText="Essential Links"
+                    />
+                  </TwoThirds>
+                </ContentWithSideBar>
+              </Container>
+            )}
+            {downloads && (
+              <Container>
+                <ContentWithSideBar>
+                  <TwoThirds right>
+                    <LinkList
+                      downloads
+                      insideContainer
+                      links={downloads.files}
+                      headerText="Downloads"
+                    />
+                  </TwoThirds>
+                </ContentWithSideBar>
+              </Container>
+            )}
+          </Section>
+        )}
+      </article>
     </Layout>
   );
 };
@@ -141,6 +151,9 @@ export const legalPageQuery = graphql`
     contentfulPageAssemblyLegalPage(slug: { eq: $slug }) {
       slug
       title
+      pageInformation {
+        ...PageInformationFragment
+      }
       applicableRegions
       bodyCopy {
         childContentfulRichText {

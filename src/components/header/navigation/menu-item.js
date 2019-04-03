@@ -7,7 +7,6 @@ import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
 const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu, legal }) => {
   const { menuLabel, navigationLink, subNavigationItems } = pageData;
-  console.log('legal', legal);
 
   return (
     <Item topLevel>

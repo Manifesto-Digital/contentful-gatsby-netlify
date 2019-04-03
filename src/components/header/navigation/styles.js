@@ -67,12 +67,14 @@ export const Item = styled.li`
     (legal && topLevel && `15px ${theme.spacing.standard}`) ||
     (topLevel && '0') ||
     `${theme.spacing.small}}`};
-  border-bottom: ${({ topLevel, theme }) =>
-    topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
   border-bottom: ${({ topLevel, legal, theme }) =>
     (legal && topLevel && `1px solid ${theme.palette.grey10}`) ||
     (topLevel && 'none') ||
     `1px solid ${theme.palette.grey10}`};
+
+  ${breakpoint.desktop`
+     padding: ${({ topLevel, legal }) => topLevel && legal && '0'};
+  `}
 
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};

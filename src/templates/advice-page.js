@@ -16,6 +16,7 @@ import FeedbackModal from '../components/feedback-modal';
 import SubpageMenu from '../components/advice-page/subpage-menu';
 import SubpagePagination from '../components/advice-page/subpage-pagination';
 import SidebarAssemblies from '../components/assemblies/sidebar';
+import BounceCard from '../components/bounce-card';
 
 const AdvicePage = ({ data, pageContext }) => {
   const {
@@ -23,11 +24,13 @@ const AdvicePage = ({ data, pageContext }) => {
     title,
     bodyCopy,
     sidebarAssemblies,
+    displayBounceCard,
+    pageInformation,
   } = data.contentfulPageAssemblyAdvicePage;
   const { subpages, slug } = pageContext;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
           <h1>{title}</h1>
@@ -41,6 +44,7 @@ const AdvicePage = ({ data, pageContext }) => {
               <FeedbackModal />
             </TwoThirds>
             <SideBar>
+              {displayBounceCard && <BounceCard />}
               <SidebarAssemblies assemblies={sidebarAssemblies} />
             </SideBar>
           </ContentWithSideBar>
@@ -73,6 +77,9 @@ export const advicePageQuery = graphql`
           html
         }
       }
+      pageInformation {
+        ...PageInformationFragment
+      }
       assemblies {
         ... on Node {
           ...CtaAssemblyFragment
@@ -87,8 +94,10 @@ export const advicePageQuery = graphql`
           ...RelatedAdviceFragment
           ...ShareBlockFragment
           ...GoogleMapFragment
+          ...RichTextFragment
         }
       }
+      displayBounceCard
       sidebarAssemblies {
         ...SidebarFragment
       }

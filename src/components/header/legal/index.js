@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import LegalNavigation from './navigation';
-import SearchDonate from '../search-donate';
-import { VisuallyHidden } from '../../styled/accessibility';
-import { DonateButton } from '../search-donate/styles';
+
+import NavigationMenuItem from '../navigation/menu-item';
 import LogoSVG from '../../../assets/svg/icons/logo.svg';
 import MenuSVG from '../../../assets/svg/icons/menu.svg';
 import MagGlass from '../../../assets/svg/icons/search-light.svg';
@@ -18,6 +17,23 @@ import {
   BurgerIcon,
   MenuControls,
 } from '../styles';
+import {
+  SecondHeaderWrapper,
+  SecondHeaderBar,
+  SubsectionHeader,
+  LegalItem,
+} from './styles';
+import { Container } from '../../styled/containers';
+import {
+  Wrapper,
+  Menus,
+  MenuList,
+  AdditionalMenu,
+  Item,
+  ItemLink,
+  SkipToContent,
+} from '../navigation/styles';
+import SecondNavigation from './second-navigation';
 
 const legalNavigationQuery = graphql`
   query legalNavigationQuery {
@@ -40,6 +56,18 @@ const legalNavigationQuery = graphql`
             navigationLink {
               ...LinkFragment
             }
+            childNavigationsItems {
+              menuLabel
+              navigationLink {
+                ...LinkFragment
+              }
+              childNavigationsItems {
+                menuLabel
+                navigationLink {
+                  ...LinkFragment
+                }
+              }
+            }
             subNavigationItems {
               ...LinkFragment
             }
@@ -56,54 +84,45 @@ const legalNavigationQuery = graphql`
 export const PureHeader = ({ pageData }) => {
   const [isOpen, openState] = useToggle(false);
   const [searchOpen, searchState] = useToggle(false);
+  const { navigationItems } = pageData;
+  console.log('pagedata', pageData);
+  const professionalsMenuItem = navigationItems
+    ? navigationItems.find(item => item.menuLabel === 'Professionals')
+    : null;
+  console.log('professionalsMenuItem', professionalsMenuItem);
 
   return (
-    <>
+    <header>
       <HeaderWrapper>
-        <HeaderBar>
-          <LogoWrapper to="/">
-            <Logo src={LogoSVG} cacheGetRequests />
-          </LogoWrapper>
-          <MenuControls>
-            {/* <SearchDonate resolution="desktop" />
-            <DonateButton
-              MobileMenu
-              internalLink={{ slug: 'donate' }}
-              bg="donate"
-            >
-              Donate
-              <VisuallyHidden as="legend">Donate</VisuallyHidden>
-            </DonateButton>
-            <MobileMenuOpen
-              type="button"
-              onClick={() => {
-                openState();
-                searchState();
-              }}
+        <Container noMobilePadding>
+          <HeaderBar>
+            <LogoWrapper to="/">
+              <Logo src={LogoSVG} cacheGetRequests />
+            </LogoWrapper>
+            <MenuControls>
+              <MobileMenuOpen
+                type="button"
+                onClick={openState}
+                active={isOpen}
+                aria-expanded={isOpen}
+              >
+                <BurgerIcon src={MenuSVG} cacheGetRequests />
+              </MobileMenuOpen>
+            </MenuControls>
+            <LegalNavigation
+              navigationItems={navigationItems}
               active={isOpen}
-              aria-expanded={isOpen}
-            >
-              <BurgerIcon src={MagGlass} cacheGetRequests />
-            </MobileMenuOpen> */}
-            <MobileMenuOpen
-              type="button"
-              onClick={openState}
-              active={isOpen}
-              aria-expanded={isOpen}
-            >
-              <BurgerIcon src={MenuSVG} cacheGetRequests />
-            </MobileMenuOpen>
-          </MenuControls>
-          <LegalNavigation
-            pageData={pageData}
-            active={isOpen}
-            searchFocus={searchOpen}
-            openState={openState}
-            searchState={searchState}
-          />
-        </HeaderBar>
+              searchFocus={searchOpen}
+              openState={openState}
+              searchState={searchState}
+            />
+          </HeaderBar>
+        </Container>
       </HeaderWrapper>
-    </>
+      {professionalsMenuItem && (
+        <SecondNavigation professionalsMenuItem={professionalsMenuItem} />
+      )}
+    </header>
   );
 };
 

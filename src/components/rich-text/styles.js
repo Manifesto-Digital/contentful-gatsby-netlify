@@ -17,3 +17,7 @@ export const Wrapper = styled.div`
     min-width: 10px;
   }
 `;
+
+export const ModuleWrapper = styled.section`
+  margin-bottom: ${({ theme }) => theme.spacing.large};
+`;

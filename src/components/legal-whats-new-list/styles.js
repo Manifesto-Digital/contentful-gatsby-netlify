@@ -13,7 +13,7 @@ export const ListItem = styled.li`
   padding-left: ${({ theme }) => theme.spacing.standard};
   border-left: 4px solid
     ${({ featured, theme }) =>
-      featured ? theme.palette.primary : theme.palette.grey60};
+      featured ? theme.palette.primary : theme.palette.grey40};
 `;
 
 export const ItemTitle = styled.h3`

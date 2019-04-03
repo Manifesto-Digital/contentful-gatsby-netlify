@@ -135,7 +135,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   legalPages.forEach(({ node }) => {
     if (!node.slug) return;
     const { parentSlug, slug } = node;
-    // const fullSlug = getFullSlug(parentSlug, slug);
     const parentSlugsFlattened = flattenParentSlugs(parentSlug);
 
     gatsbyCreatePage({
