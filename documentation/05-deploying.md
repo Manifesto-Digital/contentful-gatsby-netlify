@@ -1,6 +1,6 @@
 # Deploying
 
-Deployments are largely controlled by CircleCi but there are some situations where you may want to deploy to new environments for testing.
+Deployments are largely controlled by CircleCi but there are some situations where you may want to deploy to new environments for testing, in these situations Netlify will be used.
 
 ## CircleCi
 
@@ -17,6 +17,8 @@ At a high level this automates:
 - forward migrations for Contentful
 - deploying to Netlify
 
+View the [CircleCi documentation] for setup instructions.(06-infrastructure.md#CircleCi).
+
 ### Production
 
 The process for shipping changes to production requires two steps.
@@ -24,7 +26,7 @@ The process for shipping changes to production requires two steps.
 - A pull request into master with successful CircleCi status's
 - A merge into master from the pull request
 
-  After a successful merge into the `master` Github branch CircleCi will take over.
+  After a successful merge into the `master` Github branch, CircleCi will take over.
 
   CircleCi will run the tests, trial migrations and a trial build against a throw away copy of Contentful's master environment.
   Once these are successful an approval step is required for all production releases, which is a manual click with in the CircleCI workflow. After approval any migrations and seeds are run against Contentful's master environment followed by running a `gatsby build` to generate the static site and then pushing this over to Netlify using the CLI `netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod`.
@@ -39,4 +41,8 @@ Any `pull request` opened will run a simplified CircleCi workflow. This only run
 
 If Netlify is configured against the target branch,Netlify will create a deploy preview. Netlify will also automatically deploy once the branch is merged into.
 
-View the [Netlify configuration](06-infrastructure.md#Netlify).
+View the [Netlify documentation](06-infrastructure.md#Netlify) for configuration instructions.
+
+### Gotcha's
+
+CircleCi is configured to `Only build pull requests`, which means as a branch strategy only the branch defined in Github as the default will trigger full builds on merge(`master` in this case). There is on-going discussion about CircleCi allowing the pull request strategy alongside the ability to build multiple branches other than the defined default.
