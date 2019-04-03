@@ -22,7 +22,7 @@ async function createLegalWhatsNewPages(graphql, gatsbyCreatePage) {
     legalWhatsNewPages.data.contentfulPageAssemblyLegalWhatsNewPage;
 
   // Page information, including intro text and featured legal page that will be passed to all pages
-  const { title, introductoryText, featuredLegalPage } = legalWhatsNewPage;
+  const { id, title, introductoryText, featuredLegalPage } = legalWhatsNewPage;
 
   const postsPerPage = 2; // One more than will show as there is a featured item that will potentially be filtered out
   const numPages = Math.ceil(legalPages.length / postsPerPage);
@@ -32,6 +32,7 @@ async function createLegalWhatsNewPages(graphql, gatsbyCreatePage) {
       path: i === 0 ? `/legal/whats-new` : `/legal/whats-new/${i + 1}`,
       component: whatsNewPageListingsTemplate,
       context: {
+        id,
         title,
         introductoryText,
         featuredLegalPage,

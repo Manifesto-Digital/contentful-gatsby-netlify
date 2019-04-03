@@ -19,7 +19,10 @@ const Layout = ({
   const description = pageInformation
     ? pageInformation.seoDescription.internal.content
     : '';
-  const title = pageInformation ? pageInformation.seoTitle : pageTitle;
+  const title =
+    pageInformation && pageInformation.seoTitle
+      ? pageInformation.seoTitle
+      : pageTitle;
 
   return (
     <StaticQuery

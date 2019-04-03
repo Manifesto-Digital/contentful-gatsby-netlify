@@ -15,12 +15,22 @@ import PaddedBox from '../components/padded-box';
 import LinkHandler from '../components/link-handler';
 
 const LegalHomepage = ({ data }) => {
-  const { pages, hero } = data.contentfulPageAssemblyLegalHomepage;
+  const {
+    pages,
+    hero,
+    pageInformation,
+    title,
+  } = data.contentfulPageAssemblyLegalHomepage;
+
   const updatedLegalPages = data.allContentfulPageAssemblyLegalPage.edges;
   const whatsNew = updatedLegalPages.map(page => page.node);
 
   return (
-    <Layout removeFooterMargin>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      removeFooterMargin
+    >
       <HeroWithCard content={hero} />
       <Container>
         <ContentWithSideBar>
@@ -60,6 +70,9 @@ export const eventsLandingPageQuery = graphql`
   query LegalHomepageTemplateQuery($slug: String!) {
     contentfulPageAssemblyLegalHomepage(slug: { eq: $slug }) {
       title
+      pageInformation {
+        ...PageInformationFragment
+      }
       hero {
         ...HeroWithCardFragment
       }

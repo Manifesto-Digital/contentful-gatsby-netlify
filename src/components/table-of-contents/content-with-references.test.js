@@ -1,6 +1,6 @@
 import { snapshotComponent } from 'test-helpers';
 import React from 'react';
-import TableOfContent from '.';
+import ContentWithReferences from './content-with-references';
 import {
   createChildContentfulRichText,
   createFactory,
@@ -21,5 +21,7 @@ export const createTableOfContents = createFactory({
 
 it('renders correctly', () => {
   const mockData = createTableOfContents();
-  snapshotComponent(<TableOfContent {...mockData} />);
+  snapshotComponent(
+    <ContentWithReferences {...mockData} updateReferenceList={jest.fn()} />
+  );
 });

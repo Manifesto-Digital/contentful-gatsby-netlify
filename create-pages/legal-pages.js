@@ -7,6 +7,7 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   const legalLandingPageTemplate = path.resolve(
     'src/templates/legal-landing-page.js'
   );
+
   // Get legal pages
   const legalPagesResponse = await getLegalPages(graphql);
   if (legalPagesResponse.errors) {
@@ -28,7 +29,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   const legalPages =
     legalPagesResponse.data.allContentfulPageAssemblyLegalPage.edges;
 
-  // Checks if page is already stored on the current hierarchy level
+  /**
+   *  Checks if the the page ref exists on the current hierarchy level
+   *  which is an array of objects
+   *
+   * @param {Object} pageRef
+   * @param {Object[]} storedHierarchyLevel
+   */
   const isStoredOnLevel = (pageRef, storedHierarchyLevel) =>
     storedHierarchyLevel.some(storedPage => storedPage.slug === pageRef.slug);
 
@@ -49,9 +56,9 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     }));
 
   /**
-   * This loops through a pages parents and builds a store for the legal hierarchy
+   * This loops through the current page parents and builds a store for the legal hierarchy
    *
-   * Typical structure of a page in hierarchy
+   * Typical structure of a page in the built hierarchy
    * {slug: String, label: String, children: Page[]}
    *
    * @param {Object[]} parentSlug
@@ -60,11 +67,11 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
    *
    * @returns {Page[]}
    */
-  const storeHierarchyPages = (parentSlug, hierarchy, pageInfo) => {
-    if (!parentSlug || !Array.isArray(parentSlug)) return;
+  const storeHierarchyPages = (parentPages, hierarchy, pageInfo) => {
+    if (!parentPages || !Array.isArray(parentPages)) return;
 
     // Add current page to parent slugs so that we have the full page depth
-    const allCurrentPageHierarchy = [...parentSlug, pageInfo];
+    const allCurrentPageHierarchy = [...parentPages, pageInfo];
 
     // Keep track of the current level of the hierarchy object during the page hierarchy loop
     // we know that they correspond to depth, with the first item in the parentSlug array will be the top level
@@ -104,8 +111,8 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     return hierarchy;
   };
 
-  // Build up the hierarchy from the legal pages, as if a
-  // landing page has no children we do not want it to
+  // Build up the hierarchy by looping through each legal page and storing their chosen
+  // parent items in an iterable hierarchy object
   const buildHierarchy = () => {
     if (!legalPages) return;
 
@@ -113,18 +120,16 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
       const page = pageRef.node;
 
       if (!page.parentSlug) return accumulator;
-      // Current page info as this won't be referenced in the parent slugs
-      // and will need to also store in the hierarchy object
 
       // Get slugs from parent references
-      const parentSlugsMapped = flattenParentSlugs(page.parentSlug);
+      const parentPagesMapped = flattenParentSlugs(page.parentSlug);
 
       const pageInfo = {
         slug: page.slug,
         label: page.title,
         description: page.pageInformation.shortDescription.shortDescription,
       };
-      return storeHierarchyPages(parentSlugsMapped, accumulator, pageInfo);
+      return storeHierarchyPages(parentPagesMapped, accumulator, pageInfo);
     }, []);
     return hierarchy;
   };

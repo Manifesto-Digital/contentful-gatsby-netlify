@@ -94,6 +94,9 @@ export const eventsLandingPageQuery = graphql`
     contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
       title
       applicableRegions
+      pageInformation {
+        ...PageInformationFragment
+      }
       introductionText {
         childContentfulRichText {
           html
