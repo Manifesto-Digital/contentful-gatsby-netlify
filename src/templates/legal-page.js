@@ -95,7 +95,7 @@ const LegalPage = ({ data, pageContext }) => {
                 />
               )}
               {lastAmended && (
-                <p>Last updated: {dateAsString(lastAmended, 'MMMM d, YYYY')}</p>
+                <p>Last updated: {dateAsString(lastAmended, 'D MMMM YYYY')}</p>
               )}
             </TwoThirds>
           </ContentWithSideBar>

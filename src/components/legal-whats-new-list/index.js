@@ -16,7 +16,7 @@ const LegalWhatsNewList = ({ items, featuredItem }) => {
   const Item = ({ title, lastAmended, text, slug, featured }) => (
     <ListItem featured={featured}>
       <ItemTitle>{title}</ItemTitle>
-      <LastAmended>{dateAsString(lastAmended, 'DD MMM YYYY')}</LastAmended>
+      <LastAmended>{dateAsString(lastAmended, 'D MMMM YYYY')}</LastAmended>
       <p>{text}</p>
       <LinkHandler internalLink={{ slug }}>View amended article</LinkHandler>
     </ListItem>

@@ -48,7 +48,7 @@ exports[`renders correctly 1`] = `
       <p
         className="c4"
       >
-        26 Mar 2019
+        26 March 2019
       </p>
       <p>
         Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
@@ -70,7 +70,7 @@ exports[`renders correctly 1`] = `
       <p
         className="c4"
       >
-        26 Mar 2019
+        26 March 2019
       </p>
       <p>
         Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
@@ -92,7 +92,7 @@ exports[`renders correctly 1`] = `
       <p
         className="c4"
       >
-        25 Mar 2019
+        25 March 2019
       </p>
       <p>
         Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
