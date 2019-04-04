@@ -26,12 +26,12 @@ The process for shipping changes to production requires two steps.
 - A pull request into master with successful CircleCi status's
 - A merge into master from the pull request
 
-  After a successful merge into the `master` Github branch, CircleCi will take over.
+After a successful merge into the `master` Github branch, CircleCi will take over.
 
-  CircleCi will run the tests, trial migrations and a trial build against a throw away copy of Contentful's master environment.
-  Once these are successful an approval step is required for all production releases, which is a manual click with in the CircleCI workflow. After approval any migrations and seeds are run against Contentful's master environment followed by running a `gatsby build` to generate the static site and then pushing this over to Netlify using the CLI `netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod`.
+CircleCi will run the tests, trial migrations and a trial build against a throw away copy of Contentful's master environment.
+Once these are successful an approval step is required for all production releases, which is a manual click with in the CircleCI workflow. After approval any migrations and seeds are run against Contentful's master environment followed by running a `gatsby build` to generate the static site and then pushing this over to Netlify using the CLI `netlify deploy -s $NETLIFY_MASTER_ID -m "CircleCI build success" --prod`.
 
-  [Example of a successful deployment](assets/successful-workflow-production.jpeg).
+[Example of a successful deployment](assets/successful-workflow-production.jpeg).
 
 ### Any other environment
 
