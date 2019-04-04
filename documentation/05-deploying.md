@@ -17,7 +17,7 @@ At a high level this automates:
 - forward migrations for Contentful
 - deploying to Netlify
 
-View the [CircleCi documentation] for setup instructions.(06-infrastructure.md#CircleCi).
+View the [CircleCi documentation] for setup instructions.(06-infrastructure-setup.md#CircleCi).
 
 ### Production
 
@@ -41,8 +41,17 @@ Any `pull request` opened will run a simplified CircleCi workflow. This only run
 
 If Netlify is configured against the target branch,Netlify will create a deploy preview. Netlify will also automatically deploy once the branch is merged into.
 
-View the [Netlify documentation](06-infrastructure.md#Netlify) for configuration instructions.
+View the [Netlify documentation](06-infrastructure-setup.md#Netlify) for configuration instructions.
+
+### Migrations
+
+As part of the workflow altering content and content models in Contentful may require migrations to be run.
+
+CirclCi makes use of the [migration script](../.circleci/scripts/migrate.js) to identify new migrations by migration number (05-new-migration.js) and compares this to the Contenful Migration Version content type.
+If there are new migrations it will firstly test these against the dummy environment before running against Contentful master.
 
 ### Gotcha's
 
 CircleCi is configured to `Only build pull requests`, which means as a branch strategy only the branch defined in Github as the default will trigger full builds on merge(`master` in this case). There is on-going discussion about CircleCi allowing the pull request strategy alongside the ability to build multiple branches other than the defined default.
+
+Migrations require seeds to be written to prevent Gatsby failing based on empty schema generation. There is a new Gatsby Schema API which was released which could be used to overcome the need for the seeds files.
