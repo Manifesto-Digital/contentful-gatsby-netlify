@@ -69,12 +69,42 @@ This will start teh process but you will need to configure some environment vari
 
 Once those are added you should be able to re-deploy your site and will succeed allowing you to access your new site at a Netlify provided url.
 
+### Access tokens
+
+Netlify [personal access tokens](https://app.netlify.com/user/applications?&_ga=2.56244651.1271452883.1554379614-436656021.1553181172#personal-access-tokens) give third party applications access to your Netlify account.
+
 ### Deploy Contexts
 
 Settings > Build & deploy > Deploy contexts
 This allows you to configure the deployment strategies and deploy preview branches.
 
 ## CircleCi
+
+CircleCi is directly linked to Shelters Github account.
+
+### Settings
+
+Similar environment variable need to be provided for managing and retrieving Contenful data, Gatsby builds and Netlify deploys.
+
+1. Select your job website-assets and click the setting cog.
+2. Environment Variables:
+   1. `GATSBY_CONTENTFUL_ENVIRONMENT` - Contentful environment
+   2. `ctfl_accessToken` - Contentful token
+   3. `ctfl_host` - Contentful host
+   4. `ctfl_spaceId` - Contentful space id
+   5. `CONTENTFUL_MANAGEMENT_ACCESS_TOKEN` - Contentful management for migrations
+   6. `NETLIFY_AUTH_TOKEN` - Netlify personal token
+   7. `NETLIFY_MASTER_ID` - id of the Netlify environment
+
+All other configurations for the project are handled by the .circleci/config.yml file.
+
+### Builds
+
+The strategy is to only build on pull request and the default Github branch (master).
+
+1. Select your job website-assets and click the setting cog.
+2. Advanced settings
+   1. Only build pull requests is set to On.
 
 ## Azure
 
