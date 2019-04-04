@@ -13,27 +13,21 @@ const getLegalPages = async graphql =>
               }
             }
             parentSlug {
+              label
+              title
+              slug
               menuItem {
                 fields {
-                  pageInformation {
-                    en_GB {
-                      fields {
-                        shortDescription {
-                          en_GB
-                        }
-                      }
-                    }
-                  }
-                  slug {
+                  shortDescription {
                     en_GB
                   }
                 }
               }
-              label
             }
           }
         }
       }
     }
   `);
+
 module.exports = { getLegalPages };
