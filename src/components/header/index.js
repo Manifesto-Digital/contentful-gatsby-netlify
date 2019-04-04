@@ -84,6 +84,41 @@ export const PureHeader = ({ pageData }) => {
   return (
     <>
       <HeaderWrapper>
+        <HeaderBar>
+          <LogoWrapper to="/">
+            <Logo src={LogoSVG} cacheGetRequests />
+          </LogoWrapper>
+          <MenuControls>
+            <SearchDonate resolution="desktop" />
+            <DonateButton
+              MobileMenu
+              internalLink={{ slug: 'donate' }}
+              bg="donate"
+            >
+              Donate
+              <VisuallyHidden as="legend">Donate</VisuallyHidden>
+            </DonateButton>
+            <MobileMenuOpen
+              type="button"
+              onClick={() => {
+                openState();
+                searchState();
+              }}
+              active={isOpen}
+              aria-expanded={isOpen}
+            >
+              <BurgerIcon src={MagGlass} cacheGetRequests />
+            </MobileMenuOpen>
+            <MobileMenuOpen
+              type="button"
+              onClick={openState}
+              active={isOpen}
+              aria-expanded={isOpen}
+            >
+              <BurgerIcon src={MenuSVG} cacheGetRequests />
+            </MobileMenuOpen>
+          </MenuControls>
+        </HeaderBar>
         <Container noMobilePadding>
           <HeaderBar>
             <LogoWrapper to="/">
@@ -99,6 +134,7 @@ export const PureHeader = ({ pageData }) => {
                 Donate
                 <VisuallyHidden as="legend">Donate</VisuallyHidden>
               </DonateButton>
+
               <MobileMenuOpen
                 type="button"
                 onClick={() => {

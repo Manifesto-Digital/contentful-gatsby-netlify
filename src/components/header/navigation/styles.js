@@ -91,7 +91,8 @@ export const Item = styled.li`
 `;
 
 export const ItemLink = styled(LinkHandler)`
-  color: ${({ theme }) => theme.palette.black};
+  color: ${({ theme, active }) =>
+    active ? theme.palette.primary : theme.palette.black};
   font-size: ${({ theme }) => theme.fontsize.small};
   text-decoration: none;
 `;

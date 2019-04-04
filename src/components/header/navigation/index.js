@@ -15,6 +15,7 @@ import {
   SkipToContent,
 } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
+import SearchBar from '../search-donate/search-bar';
 
 const Navigation = ({
   pageData,
@@ -48,7 +49,7 @@ const Navigation = ({
         >
           <MenuSVG src={CloseSVG} />
         </MobileMenuClose>
-        <SearchDonate resolution="mobile" searchFocus={searchFocus} />
+        <SearchBar resolution="mobile" searchFocus={searchFocus} />
         <Menus role="navigation" aria-label="Main menu">
           {navigationItems && (
             <MenuList role="menubar" aria-hidden="false">

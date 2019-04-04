@@ -1,43 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { VisuallyHidden } from '../../styled/accessibility';
-import MagGlass from '../../../assets/svg/icons/search-light.svg';
-import {
-  Wrapper,
-  InputWrap,
-  SearchInput,
-  SearchButton,
-  SearchIcon,
-  DonateButton,
-} from './styles';
+import { DonateButton } from './styles';
+import SearchBar from './search-bar';
 
 const SearchDonate = ({ resolution, searchFocus }) => {
-  const placeholder = 'Search this site...';
+  console.log('resolution', resolution);
+
   return (
-    <Wrapper
-      resolution={resolution}
-      role="search"
-      action="/search"
-      method="get"
-    >
-      <VisuallyHidden as="legend">Search this site</VisuallyHidden>
-      <InputWrap>
-        <SearchInput
-          ref={input => input && searchFocus && input.focus()}
-          name="search"
-          id="search"
-          placeholder={placeholder}
-          type="search"
-        />
-        <SearchButton type="submit">
-          <SearchIcon src={MagGlass} cacheGetRequests />
-        </SearchButton>
-      </InputWrap>
-      <DonateButton internalLink={{ slug: 'donate' }} bg="donate">
+    <>
+      <SearchBar resolution={resolution} searchFocus={searchFocus} />
+      <DonateButton
+        internalLink={{ slug: 'donate' }}
+        bg="donate"
+        resolution={resolution}
+      >
         Donate
         <VisuallyHidden as="legend">Donate</VisuallyHidden>
       </DonateButton>
-    </Wrapper>
+    </>
   );
 };
 

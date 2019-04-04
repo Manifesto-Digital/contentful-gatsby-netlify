@@ -113,9 +113,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
       const page = pageRef.node;
 
       if (!page.parentSlug) return accumulator;
-      // Current page info as this won't be referenced in the parent slugs
-      // and will need to also store in the hierarchy object
-
       // Get slugs from parent references
       const parentSlugsMapped = flattenParentSlugs(page.parentSlug);
 
