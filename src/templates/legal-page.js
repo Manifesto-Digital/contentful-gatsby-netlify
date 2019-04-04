@@ -5,6 +5,7 @@ import { dateAsString } from '../utils/dates';
 import { buildCurrentPageHierarchy } from '../components/legal-sidebar/helpers';
 // Components
 import Layout from '../components/layout';
+import Breadcrumbs from '../components/breadcrumbs';
 import RichText from '../components/rich-text';
 import TableOfContent from '../components/table-of-contents';
 import ContentWithReferences from '../components/table-of-contents/content-with-references';
@@ -30,6 +31,7 @@ const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
   const { title, bodyCopy, applicableRegions, tableOfContents } = legalPage;
+  const { parentSlug, slug } = pageContext;
   const {
     legislations,
     pageInformation,
@@ -64,6 +66,11 @@ const LegalPage = ({ data, pageContext }) => {
     >
       <article>
         <Container>
+          <Breadcrumbs
+            parentSlugs={parentSlug}
+            slug={slug}
+            currentTitle={title}
+          />
           <ContentWithSideBar>
             <SideBar left desktop>
               <SidebarInner>
