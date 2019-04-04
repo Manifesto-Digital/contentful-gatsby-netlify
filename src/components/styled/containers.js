@@ -41,8 +41,10 @@ export const ContentWithSideBar = styled.div`
 export const SideBar = styled.div`
   max-width: 100%;
   word-break: break-word;
+  display: ${({ desktop }) => desktop && 'none'};
 
   ${breakpoint.desktop`
+    display: block;
     max-width: 32%;
     width: 100%;
     margin-top: 0;
@@ -60,6 +62,6 @@ export const FlexBetweenContainer = styled.div`
 
 export const Section = styled.section`
   padding: ${({ theme }) => theme.spacing.medium} 0;
-  background-color: ${({ backgroundColour, theme }) =>
-    backgroundColour || theme.palette.white};
+  background-color: ${({ offWhite, theme }) =>
+    offWhite ? theme.palette.offWhite : theme.palette.white};
 `;

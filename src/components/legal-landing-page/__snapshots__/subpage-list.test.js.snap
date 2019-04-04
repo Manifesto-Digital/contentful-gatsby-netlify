@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+<div>
+  <ul
+    className="c0"
+  >
+    <li
+      className="c1"
+    >
+      <h3>
+        <Link
+          to="/legal-1"
+        >
+          legal 1
+        </Link>
+      </h3>
+      <p>
+        Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
+      </p>
+    </li>
+    <li
+      className="c1"
+    >
+      <h3>
+        <Link
+          to="/legal-2"
+        >
+          legal 2
+        </Link>
+      </h3>
+      <p>
+        Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In turpis. short desc
+      </p>
+    </li>
+  </ul>
+</div>
+`;

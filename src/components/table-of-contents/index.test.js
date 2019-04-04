@@ -1,15 +1,12 @@
 import { snapshotComponent } from 'test-helpers';
 import React from 'react';
-import { TableOfContent } from '.';
+import TableOfContent from '.';
 import {
   createChildContentfulRichText,
   createFactory,
 } from '../../utils/test-factories';
 
 export const createTableOfContents = createFactory({
-  applicableRegions: 'England, Wales & Scotland',
-  openingStatement: createChildContentfulRichText(),
-  systemName: 'Offences involving violence',
   tableOfContents: [
     {
       textContent: createChildContentfulRichText(),
@@ -24,7 +21,5 @@ export const createTableOfContents = createFactory({
 
 it('renders correctly', () => {
   const mockData = createTableOfContents();
-  snapshotComponent(
-    <TableOfContent data={mockData} updateReferenceList={jest.fn()} />
-  );
+  snapshotComponent(<TableOfContent {...mockData} />);
 });

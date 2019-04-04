@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import { reset } from './reset';
 import { breakpoint } from './breakpoint';
 import { linkStyles } from '../styled/links';
+import { HeaderWrapper } from '../header/styles';
+import { SideBar } from '../styled/containers';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -105,4 +107,12 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 
+    @media print {
+        ${HeaderWrapper}, ${SideBar}, nav {
+            display: none !important;
+        }
+        *  {
+            color: ${({ theme }) => theme.palette.black} !important;
+        }
+    }
 `;

@@ -1,0 +1,127 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "6jwAyYxlzEgT0f6F7c7aLu",
+        "type": "Entry",
+        "createdAt": "2019-03-27T21:07:21.569Z",
+        "updatedAt": "2019-03-31T19:08:42.554Z",
+        "environment": {
+          "sys": {
+            "id": "legal",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 40,
+        "publishedAt": "2019-03-31T19:08:42.554Z",
+        "firstPublishedAt": "2019-03-27T21:09:22.754Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 41,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "pageAssemblyLegalWhatsNewPage"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-GB": "What's new in housing Law"
+        },
+        "introductoryText": {
+          "en-GB": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Donec vitae sapien ut libero venenatis faucibus. Aenean massa. Phasellus accumsan cursus velit. Nullam vel sem.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Quisque ut nisi. Vivamus aliquet elit ac nisl. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Phasellus blandit leo ut odio. Donec mollis hendrerit risus. Ut varius tincidunt libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "featuredLegalPage": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4BTd3bdHj1V4rtUlDV2cod"
+            }
+          }
+        },
+        "pageInformation": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "g5CXXdxPiBOEipJOaPJZv"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}

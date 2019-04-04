@@ -18,3 +18,12 @@ export const ImageProps = PropTypes.shape({
     url: PropTypes.string.isRequired,
   }),
 });
+
+export const FileDownload = PropTypes.shape({
+  fileName: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  contentType: PropTypes.string,
+  details: PropTypes.shape({
+    size: PropTypes.number.isRequired,
+  }),
+});

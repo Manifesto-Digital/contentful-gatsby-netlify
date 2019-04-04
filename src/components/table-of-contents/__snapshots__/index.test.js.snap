@@ -1,32 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-Array [
-  .c1 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .c0 {
-  padding-bottom: 0;
-}
-
-.c0 h1 {
-  margin-bottom: 20px;
-  padding-top: 40px;
-}
-
-<div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <h1 />
-    </div>
-  </div>,
-  .c0 {
   margin-bottom: 5px;
   padding: 20px;
 }
@@ -37,108 +12,27 @@ Array [
 }
 
 <div
-    className="c0"
+  className="c0"
+>
+  <ul
+    className="c1"
   >
-    <ul
-      className="c1"
-    >
-      <li>
-        <a
-          href="#title-0"
-          title="Public Order Act 1986"
-        >
-          Public Order Act 1986
-        </a>
-      </li>
-      <li>
-        <a
-          href="#title-1"
-          title="Police and Criminal Evidence Act 1984"
-        >
-          Police and Criminal Evidence Act 1984
-        </a>
-      </li>
-    </ul>
-  </div>,
-  .c1 {
-  position: relative;
-  clear: both;
-  background: #f7f7f7;
-  padding: 20px;
-  margin-bottom: 1em;
-  border-left: 4px solid;
-  border-color: #ea232d;
-}
-
-.c2 {
-  display: inline-block;
-}
-
-.c2 > :last-child {
-  margin-bottom: 0;
-}
-
-.c2 p:last-of-type {
-  margin-bottom: 0;
-}
-
-.c0 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 0;
-}
-
-<div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2"
-      >
-        This content applies to 
-        <strong>
-          England, Wales & Scotland
-        </strong>
-      </div>
-    </div>
-  </div>,
-  .c0 {
-  margin: 60px auto;
-}
-
-.c2 {
-  margin-bottom: 30px;
-}
-
-.c1 {
-  margin-bottom: 40px;
-}
-
-<div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <h3
-        className="c2"
-        id="title-0"
+    <li>
+      <a
+        href="#title-0"
+        title="Public Order Act 1986"
       >
         Public Order Act 1986
-      </h3>
-    </div>
-    <div
-      className="c1"
-    >
-      <h3
-        className="c2"
-        id="title-1"
+      </a>
+    </li>
+    <li>
+      <a
+        href="#title-1"
+        title="Police and Criminal Evidence Act 1984"
       >
         Police and Criminal Evidence Act 1984
-      </h3>
-    </div>
-  </div>,
-]
+      </a>
+    </li>
+  </ul>
+</div>
 `;
