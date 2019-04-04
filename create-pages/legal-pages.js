@@ -42,10 +42,9 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   const flattenParentSlugs = parentSlug =>
     parentSlug.map(item => ({
       label: item.label,
-      slug: item.menuItem.fields.slug.en_GB,
-      description:
-        item.menuItem.fields.pageInformation.en_GB.fields.shortDescription
-          .en_GB,
+      slug: item.slug,
+      title: item.title,
+      description: item.menuItem.fields.shortDescription,
     }));
 
   /**
@@ -111,7 +110,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
 
     const hierarchy = legalPages.reduce((accumulator, pageRef) => {
       const page = pageRef.node;
-
       if (!page.parentSlug) return accumulator;
       // Get slugs from parent references
       const parentSlugsMapped = flattenParentSlugs(page.parentSlug);
@@ -131,15 +129,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   // Create pages
   legalPages.forEach(({ node }) => {
     if (!node.slug) return;
-    const { parentSlug, slug } = node;
-    const parentSlugsFlattened = flattenParentSlugs(parentSlug);
+    const { slug } = node;
 
     gatsbyCreatePage({
       path: slug,
       component: legalPageTemplate,
       context: {
         slug,
-        parentSlug: parentSlugsFlattened,
         legalHierarchy,
       },
     });

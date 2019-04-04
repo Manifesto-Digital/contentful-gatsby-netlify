@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import { Location } from '@reach/router';
 import LegalNavigation from './navigation';
 
 import NavigationMenuItem from '../navigation/menu-item';
@@ -17,22 +18,7 @@ import {
   BurgerIcon,
   MenuControls,
 } from '../styles';
-import {
-  SecondHeaderWrapper,
-  SecondHeaderBar,
-  SubsectionHeader,
-  LegalItem,
-} from './styles';
 import { Container } from '../../styled/containers';
-import {
-  Wrapper,
-  Menus,
-  MenuList,
-  AdditionalMenu,
-  Item,
-  ItemLink,
-  SkipToContent,
-} from '../navigation/styles';
 import SecondNavigation from './second-navigation';
 
 const legalNavigationQuery = graphql`
@@ -56,12 +42,12 @@ const legalNavigationQuery = graphql`
             navigationLink {
               ...LinkFragment
             }
-            childNavigationsItems {
+            childNavigationItems {
               menuLabel
               navigationLink {
                 ...LinkFragment
               }
-              childNavigationsItems {
+              childNavigationItems {
                 menuLabel
                 navigationLink {
                   ...LinkFragment
@@ -120,7 +106,14 @@ export const PureHeader = ({ pageData }) => {
         </Container>
       </HeaderWrapper>
       {professionalsMenuItem && (
-        <SecondNavigation professionalsMenuItem={professionalsMenuItem} />
+        <Location>
+          {({ location }) => (
+            <SecondNavigation
+              location={location}
+              professionalsMenuItem={professionalsMenuItem}
+            />
+          )}
+        </Location>
       )}
     </header>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NavigationMenuItem from '../navigation/menu-item';
-import SearchDonate from '../search-donate';
 import { Overlay } from '../../styled/overlay';
 import { VisuallyHidden } from '../../styled/accessibility';
 import { DonateButton } from '../search-donate/styles';
