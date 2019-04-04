@@ -79,9 +79,6 @@ export const eventsLandingPageQuery = graphql`
           ...LinkFragment
         }
         secondaryCtaText
-        secondaryCtaLink {
-          ...LinkFragment
-        }
       }
       pageInformation {
         ...PageInformationFragment

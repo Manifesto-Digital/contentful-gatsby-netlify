@@ -1,0 +1,127 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "6EsF8yiRzFoFjtFPi7icPF",
+        "type": "Entry",
+        "createdAt": "2019-03-31T19:04:49.206Z",
+        "updatedAt": "2019-03-31T19:05:23.582Z",
+        "environment": {
+          "sys": {
+            "id": "legal",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 35,
+        "publishedAt": "2019-03-31T19:05:23.582Z",
+        "firstPublishedAt": "2019-03-31T19:05:23.582Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 36,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "pageAssemblyLegalLandingPage"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-GB": "Migration - Legal landing page"
+        },
+        "applicableRegions": {
+          "en-GB": "England"
+        },
+        "slug": {
+          "en-GB": "migration-legal-landing-page"
+        },
+        "subheader": {
+          "en-GB": "Migration subheader"
+        },
+        "introductionText": {
+          "en-GB": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Vivamus elementum semper nisi. Donec vitae orci sed dolor rutrum auctor. Praesent blandit laoreet nibh.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Fusce vulputate eleifend sapien. Aliquam eu nunc. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Nam eget dui.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Phasellus viverra nulla ut metus varius laoreet. Vestibulum dapibus nunc ac augue. Etiam iaculis nunc ac metus. Suspendisse potenti.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "pageInformation": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "g5CXXdxPiBOEipJOaPJZv"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}
