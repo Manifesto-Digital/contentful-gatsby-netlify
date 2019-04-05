@@ -52,7 +52,7 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
       label: item.label,
       slug: item.slug,
       title: item.title,
-      description: item.menuItem.fields.shortDescription,
+      description: item.menuItem.fields.shortDescription.en_GB,
     }));
 
   /**
