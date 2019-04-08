@@ -14,6 +14,7 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     throw Error(legalPagesResponse.errors);
   }
 
+  debugger;
   // Get landing pages
   const legalLandingPagesResponse = await getLegalLandingPages(graphql);
   if (legalLandingPagesResponse.errors) {
@@ -39,12 +40,12 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     description: ref.description,
   });
 
-  const flattenParentSlugs = parentSlug =>
-    parentSlug.map(item => ({
-      label: item.label,
-      slug: item.slug,
-      title: item.title,
-      description: item.menuItem.fields.shortDescription,
+  const flattenMenuParents = menuParent =>
+    menuParent.map(parent => ({
+      label: parent.menuItem[0].title,
+      slug: parent.menuItem[0].slug,
+      title: parent.menuItem[0].title,
+      description: parent.menuItem[0].pageInformation.shortDescription,
     }));
 
   /**
@@ -53,20 +54,20 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
    * Typical structure of a page in hierarchy
    * {slug: String, label: String, children: Page[]}
    *
-   * @param {Object[]} parentSlug
+   * @param {Object[]} menuParent
    * @param {Object[]} hierarchy
    * @param {Object} pageInfo
    *
    * @returns {Page[]}
    */
-  const storeHierarchyPages = (parentSlug, hierarchy, pageInfo) => {
-    if (!parentSlug || !Array.isArray(parentSlug)) return;
+  const storeHierarchyPages = (menuParent, hierarchy, pageInfo) => {
+    if (!menuParent || !Array.isArray(menuParent)) return;
 
     // Add current page to parent slugs so that we have the full page depth
-    const allCurrentPageHierarchy = [...parentSlug, pageInfo];
+    const allCurrentPageHierarchy = [...menuParent, pageInfo];
 
     // Keep track of the current level of the hierarchy object during the page hierarchy loop
-    // we know that they correspond to depth, with the first item in the parentSlug array will be the top level
+    // we know that they correspond to depth, with the first item in the menuParent array will be the top level
     let hierarchyLevel = hierarchy;
 
     allCurrentPageHierarchy.forEach((ref, i) => {
@@ -110,9 +111,17 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
 
     const hierarchy = legalPages.reduce((accumulator, pageRef) => {
       const page = pageRef.node;
-      if (!page.parentSlug) return accumulator;
+      if (
+        !page.menuParent ||
+        page.menuParent.find(parent => Object.keys(parent).length === 0)
+      ) {
+        return accumulator;
+      }
       // Get slugs from parent references
-      const parentSlugsMapped = flattenParentSlugs(page.parentSlug);
+
+      debugger;
+      const parentSlugsMapped = flattenMenuParents(page.menuParent);
+      debugger;
 
       const pageInfo = {
         slug: page.slug,

@@ -22,6 +22,7 @@ import LegalSideBar from '../components/legal-sidebar';
 import LinkList from '../components/link-list';
 
 const LegalPage = ({ data, pageContext }) => {
+  console.log('pageContext', pageContext);
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
   const { pageInformation, slug } = legalPage;

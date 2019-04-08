@@ -23,9 +23,14 @@ const SecondNavigation = ({ professionalsMenuItem, location }) => {
   // Get the active page and potentially active parent slugs
   const activeItemsArray = buildActiveItemsArray(menuItems, location);
   const isActive = slug => activeItemsArray.includes(slug);
+  console.log('menuItems', menuItems);
+  console.log('activeItemsArray', activeItemsArray);
+
   const activeMenuItem = menuItems.find(menuItem =>
     activeItemsArray.includes(menuItem.navigationLink[0].slug)
   );
+
+  console.log('activeMenuItem', activeMenuItem);
 
   return (
     <SecondHeaderWrapper>
