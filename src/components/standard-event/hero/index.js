@@ -60,7 +60,6 @@ const EventHero = ({
                   <MapButton onClick={toggleMapModal}>Map</MapButton>
                 )}
               </li>
-              {console.log(event)}
               <li>
                 <StyledSVG src={iconSrc('calendar')} cacheGetRequests />
                 {event.eventDisplayDate
