@@ -60,12 +60,17 @@ const EventHero = ({
                   <MapButton onClick={toggleMapModal}>Map</MapButton>
                 )}
               </li>
-              <li>
-                <StyledSVG src={iconSrc('calendar')} cacheGetRequests />
-                {event.eventDisplayDate
-                  ? event.eventDisplayDate
-                  : new Date(event.eventSystemDate).toLocaleDateString('en-GB')}
-              </li>
+              {event.eventDisplayDate ||
+                (event.eventSystemDate && (
+                  <li>
+                    <StyledSVG src={iconSrc('calendar')} cacheGetRequests />
+                    {event.eventDisplayDate
+                      ? event.eventDisplayDate
+                      : new Date(event.eventSystemDate).toLocaleDateString(
+                          'en-GB'
+                        )}
+                  </li>
+                ))}
               {/* If this isn't an "Art" type event, then display the below fields */}
               {eventType !== eventStatuses.artsAndEntertainment && (
                 <>
