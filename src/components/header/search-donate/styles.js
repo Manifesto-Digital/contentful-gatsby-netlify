@@ -49,6 +49,7 @@ export const SearchIcon = styled(SVG)`
 export const DonateButton = styled(LinkHandler)`
   ${buttonStyles};
   display: ${({ resolution }) => (resolution === 'mobile' ? 'none' : 'flex')};
+  height: 43px;
   align-items: center;
   justify-content: center;
   margin-right: ${({ MobileMenu, theme }) => MobileMenu && theme.spacing.small};

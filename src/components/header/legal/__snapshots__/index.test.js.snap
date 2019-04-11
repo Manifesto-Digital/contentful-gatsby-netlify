@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly 1`] = `
-Array [
-  .c1 {
+.c9 {
   padding: 0;
   border: none;
   font: inherit;
@@ -28,7 +27,7 @@ Array [
   cursor: pointer;
 }
 
-.c16 {
+.c18 {
   padding: 0;
   border: none;
   font: inherit;
@@ -56,23 +55,23 @@ Array [
   width: 25px;
 }
 
-.c16 svg {
+.c18 svg {
   width: 15px;
 }
 
-.c2 {
+.c10 {
   display: block;
   width: 20px;
 }
 
-.c17 {
+.c19 {
   display: block;
   fill: #212122;
   width: 20px;
   cursor: pointer;
 }
 
-.c0 {
+.c8 {
   position: fixed;
   top: 0;
   right: 0;
@@ -84,14 +83,14 @@ Array [
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0,0,0.3,1);
   -webkit-transition: transform 0.3s cubic-bezier(0,0,0.3,1);
   transition: transform 0.3s cubic-bezier(0,0,0.3,1);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  z-index: 10;
+  -webkit-transform: translateX(120%);
+  -ms-transform: translateX(120%);
+  transform: translateX(120%);
+  z-index: 1;
   overflow-y: scroll;
 }
 
-.c11 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -105,7 +104,7 @@ Array [
   padding: 0;
 }
 
-.c9 {
+.c11 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -119,77 +118,72 @@ Array [
   padding: 0;
 }
 
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 0;
-  padding: 10px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.c13 .c10 {
-  padding: 5px 10px;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 0;
-  padding: 10px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.c20 .c10 {
-  padding: 5px 10px;
-}
-
 .c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c15 .c12 {
+  padding: 5px 10px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c22 .c12 {
+  padding: 5px 10px;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c23 .c12 {
+  padding: 5px 10px;
+}
+
+.c17 {
   color: #212122;
   font-size: 0.775rem;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding: 0 10px;
-}
-
-.c21 .c12 {
-  padding: 15px 10px;
-}
-
-.c21 .c12:last-child {
-  border: none;
-}
-
-.c18 {
+.c20 {
   display: none;
 }
 
-.c19 {
+.c21 {
   display: none;
   width: 100%;
   -webkit-flex-direction: column;
@@ -200,11 +194,11 @@ Array [
   list-style: none;
 }
 
-.c19 .c12:last-child {
+.c21 .c14:last-child {
   border: none;
 }
 
-.c22 {
+.c26 {
   display: block;
   width: 100%;
   max-width: 1140px;
@@ -213,11 +207,26 @@ Array [
   overflow: hidden;
 }
 
-.c22:focus {
+.c26:focus {
   height: auto;
 }
 
-.c4 {
+.c27 {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(43,46,56,0.7);
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in opacity;
+  transition: 0.2s ease-in opacity;
+}
+
+.c25 {
   padding: 0;
   margin: 0;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -231,30 +240,63 @@ Array [
   white-space: nowrap;
 }
 
-.c5 {
+.c24 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 5px;
-  font-size: 0.775rem;
-  width: 100%;
-  margin: 0 10px;
-  border: 1px solid #e5e5e5;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 10px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c24:hover {
+  color: #fff;
+}
+
+.c24:hover {
+  color: #fff;
+}
+
+.c4 {
+  display: block;
+  width: 95px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 52px;
+  padding: 15px;
+  background: #ea232d;
 }
 
 .c6 {
-  display: block;
-  background-size: 15px 15px;
-  width: auto;
-  padding: 10px;
-  width: 100%;
-  margin-right: 1px;
-  background-color: #fff;
-  border: 0;
-}
-
-.c7 {
   padding: 0;
   border: none;
   font: inherit;
@@ -269,56 +311,79 @@ Array [
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 10px;
-  background-color: #fff;
+  width: 45px;
+  height: 50px;
+  padding: 0;
+  margin-left: auto;
 }
 
-.c8 {
+.c7 {
   display: block;
-  width: 18px;
-  fill: #0b0b89;
+  width: 20px;
 }
 
-.c3 {
+.c0 {
+  width: 100%;
+  background: #e5e5e5;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 43px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1140px;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding: 0;
 }
 
 @media (min-width:62em) {
-  .c1 {
+  .c9 {
     display: none;
   }
 }
 
 @media (min-width:62em) {
-  .c16 {
+  .c18 {
     display: none;
   }
 }
 
 @media (min-width:62em) {
-  .c16 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  .c18 {
+    display: none;
     margin-left: 5px;
   }
 
-  .c16 svg {
+  .c18 svg {
     width: auto;
   }
 }
 
 @media (min-width:62em) {
-  .c0 {
+  .c8 {
     position: relative;
     width: 100%;
     background: #e5e5e5;
@@ -333,7 +398,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c11 {
+  .c13 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -342,10 +407,14 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c9 {
+  .c11 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 10px;
@@ -353,64 +422,54 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c13 .c10 {
+  .c15 .c12 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c13 .c10 {
+  .c15 .c12 {
     margin-right: auto;
     padding: 0;
   }
 }
 
 @media (min-width:62em) {
-  .c20 .c10 {
+  .c22 .c12 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c20 .c10 {
+  .c22 .c12 {
     margin-right: auto;
     padding: 10px;
   }
 }
 
 @media (min-width:62em) {
+  .c23 {
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c23 .c12 {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c23 .c12 {
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
   .c21 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    width: auto;
-  }
-}
-
-@media (min-width:62em) {
-  .c21 .c12:last-child {
-    margin-left: 20px;
-  }
-}
-
-@media (min-width:62em) {
-  .c21 {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    min-width: 200px;
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .c21 .c14 {
-    border: none;
-  }
-}
-
-@media (min-width:62em) {
-  .c19 {
     position: absolute;
+    display: none;
     top: 52px;
     right: 0;
     left: 0;
@@ -429,7 +488,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c19 .c12 {
+  .c21 .c14 {
     -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
     -ms-flex: 0 1 calc(33.333333333333336% - 10px);
     flex: 0 1 calc(33.333333333333336% - 10px);
@@ -440,206 +499,206 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c19 .c12:hover {
+  .c21 .c14:hover {
     background: #212122;
   }
 
-  .c19 .c12:hover .c14 {
+  .c21 .c14:hover .c16 {
     color: #fff;
   }
 }
 
 @media (min-width:62em) {
-  .c5 {
-    width: auto;
-    border: 0;
-  }
-}
-
-@media (min-width:62em) {
-  .c6 {
-    min-width: 185px;
-  }
-}
-
-@media (min-width:62em) {
-  .c3 {
-    display: none;
-  }
-}
-
-<div
-    className="c0"
-  >
-    <button
-      aria-expanded={true}
-      className="c1"
-      onClick={[Function]}
-      type="button"
-    >
-      <span
-        className="isvg loading c2"
-      />
-    </button>
-    <form
-      action="/search"
-      className="c3"
-      method="get"
-      role="search"
-    >
-      <legend
-        className="c4"
-      >
-        Search this site
-      </legend>
-      <div
-        className="c5"
-      >
-        <input
-          className="c6"
-          id="search"
-          name="search"
-          placeholder="Search this site..."
-          type="search"
-        />
-        <button
-          className="c7"
-          type="submit"
-        >
-          <span
-            className="isvg loading c8"
-          />
-        </button>
-      </div>
-    </form>
-    <nav
-      aria-label="Main menu"
-      className="c9"
-      role="navigation"
-    >
-      <ul
-        aria-hidden="false"
-        className="c10 c11"
-        role="menubar"
-      >
-        <li
-          aria-haspopup={true}
-          className="c12 c13"
-          role="menuitem"
-        >
-          <Link
-            className="c14 c15"
-            to="/test-page"
-          >
-            Housing Advice
-          </Link>
-          <button
-            aria-expanded={false}
-            className="c16"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="isvg loading c17"
-            />
-          </button>
-        </li>
-        <li
-          className="c18"
-        >
-          <ul
-            aria-expanded={false}
-            aria-hidden={true}
-            className="c19"
-            role="menu"
-          >
-            <li
-              className="c12 c20"
-            >
-              <Link
-                className="c14 c15"
-                to="/sprint-7-legal-page-demo"
-              >
-                Benefits
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li
-          aria-haspopup={false}
-          className="c12 c13"
-          role="menuitem"
-        >
-          <Link
-            className="c14 c15"
-            to="/test-page"
-          >
-            What we do
-          </Link>
-        </li>
-      </ul>
-      <ul
-        aria-label="Secondary menu"
-        className="c10 c21"
-        role="navigation"
-      >
-        <li
-          className="c12 c20"
-        >
-          <Link
-            className="c14 c15"
-            to="/test-page"
-          >
-            Test Page
-          </Link>
-        </li>
-        <li
-          className="c12 c20"
-        >
-          <a
-            className="c14 c15"
-            href="https://scotland.shelter.org.uk/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Scotland
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <a
-      className="c22"
-      href="#main"
-    >
-      Skip to main content
-    </a>
-  </div>,
-  .c0 {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  background: rgba(43,46,56,0.7);
-  pointer-events: all;
-  opacity: 1;
-  -webkit-transition: 0.2s ease-in opacity;
-  transition: 0.2s ease-in opacity;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    width: 100%;
+  .c27 {
+    width: 0;
     opacity: 0;
     pointer-events: none;
   }
 }
 
-<div
+@media (min-width:62em) {
+  .c24 {
+    height: 100%;
+  }
+}
+
+@media (min-width:62em) {
+  .c4 {
+    width: 115px;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    height: 68px;
+    padding: 20px 25px;
+  }
+}
+
+@media (min-width:62em) {
+  .c6 {
+    display: none;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c1 {
+    padding: 0 20px;
+  }
+}
+
+<header>
+  <div
     className="c0"
-    onClick={[Function]}
-  />,
-]
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <Link
+          className="c3"
+          to="/"
+        >
+          <span
+            className="isvg loading c4"
+          />
+        </Link>
+        <div
+          className="c5"
+        >
+          <button
+            aria-expanded={false}
+            className="c6"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="isvg loading c7"
+            />
+          </button>
+        </div>
+        <div
+          className="c8"
+        >
+          <button
+            aria-expanded={false}
+            className="c9"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="isvg loading c10"
+            />
+          </button>
+          <nav
+            aria-label="Main menu"
+            className="c11"
+            role="navigation"
+          >
+            <ul
+              aria-hidden="false"
+              className="c12 c13"
+              role="menubar"
+            >
+              <li
+                aria-haspopup={true}
+                className="c14 c15"
+                role="menuitem"
+              >
+                <Link
+                  className="c16 c17"
+                  to="/test-page"
+                >
+                  Housing Advice
+                </Link>
+                <button
+                  aria-expanded={false}
+                  className="c18"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="isvg loading c19"
+                  />
+                </button>
+              </li>
+              <li
+                className="c20"
+              >
+                <ul
+                  aria-expanded={false}
+                  aria-hidden={true}
+                  className="c21"
+                  role="menu"
+                >
+                  <li
+                    className="c14 c22"
+                  >
+                    <Link
+                      className="c16 c17"
+                      to="/sprint-7-legal-page-demo"
+                    >
+                      Benefits
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li
+                aria-haspopup={false}
+                className="c14 c15"
+                role="menuitem"
+              >
+                <Link
+                  className="c16 c17"
+                  to="/test-page"
+                >
+                  What we do
+                </Link>
+              </li>
+              <li
+                className="c14 c23"
+              >
+                <Link
+                  className="c24"
+                  to="/donate"
+                >
+                  Donate
+                  <legend
+                    className="c25"
+                  >
+                    Donate
+                  </legend>
+                </Link>
+              </li>
+              <li
+                className="c14 c23"
+              >
+                <a
+                  className="c16 c17"
+                  href="https://scotland.shelter.org.uk/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Scotland
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <a
+            className="c26"
+            href="#main"
+          >
+            Skip to main content
+          </a>
+        </div>
+        <div
+          className="c27"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+  </div>
+</header>
 `;

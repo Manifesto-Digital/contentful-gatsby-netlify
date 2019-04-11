@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import NavigationMenuItem from '../navigation/menu-item';
 import { Overlay } from '../../styled/overlay';
 import { VisuallyHidden } from '../../styled/accessibility';
-import { DonateButton } from '../search-donate/styles';
 import { MobileMenuClose, MenuSVG } from '../navigation/styles-icons';
 import {
   Wrapper,
@@ -54,7 +53,7 @@ const Navigation = ({
                 <NavigationMenuItem
                   key={i}
                   id={item.id}
-                  pageData={item}
+                  menuItem={item}
                   menuOpen={activeMenu === item.id}
                   setActiveMenu={updateActiveMenu}
                   legal

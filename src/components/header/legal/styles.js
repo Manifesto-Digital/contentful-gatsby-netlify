@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { breakpoint } from '../../theme/breakpoint';
 import { buttonStyles, buttonReset } from '../../styled/buttons';
+import { ItemLink } from '../navigation/styles.js';
 import LinkHandler from '../../link-handler';
 
 export const LegalDonateButton = styled(LinkHandler)`
@@ -31,7 +32,8 @@ export const LegalMenuList = styled.ul`
 export const SecondHeaderWrapper = styled.div`
   display: none;
   padding: ${({ theme }) => theme.spacing.small} 0;
-  background-color: ${({ theme }) => theme.palette.grey25};
+  background-color: ${({ theme }) => theme.palette.grey15};
+
   ${breakpoint.desktop`
     display: block;
   `};
@@ -41,6 +43,10 @@ export const SecondHeaderBar = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: ${({ theme }) => theme.spacing.small};
+
+  ${ItemLink} {
+    font-weight: bold;
+  }
 `;
 
 export const SubsectionHeader = styled.h3`
@@ -64,15 +70,17 @@ export const MoreItemMenu = styled.button`
 
 export const ThirdNavigationBar = styled.div`
   display: flex;
-  background-color: ${({ theme }) => theme.palette.grey25};
+  background-color: ${({ theme }) => theme.palette.grey15};
+
   padding: ${({ theme }) => theme.spacing.small} 0;
+  margin-top: ${({ theme }) => theme.spacing.small};
 
   a {
     font-weight: normal;
   }
 `;
 
-/* Currently only display on desktop */
+/* Currently only displays on desktop */
 export const MoreSubMenu = styled.ul`
   position: absolute;
   display: flex;

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
 import { breakpoint } from '../../../theme/breakpoint';
-import { buttonStyles, buttonReset } from '../../../styled/buttons';
-import LinkHandler from '../../../link-handler';
+import { buttonReset } from '../../../styled/buttons';
 import { inputStyles } from '../../../styled/inputs';
 
 export const FormWrapper = styled.form`
@@ -39,7 +38,7 @@ export const SearchInput = styled.input`
   padding-left: ${({ theme }) => theme.spacing.large};
 
   ${breakpoint.desktop`
-      min-width: 225px;
+      min-width: 250px;
   `}
 `;
 

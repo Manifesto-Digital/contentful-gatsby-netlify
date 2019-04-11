@@ -182,9 +182,9 @@ exports[`renders correctly 1`] = `
               <h3
                 className="c9"
               >
-                Toby
+                Test
                  
-                Bushell
+                Person
               </h3>
               <p
                 className="c10"
@@ -233,9 +233,9 @@ exports[`renders correctly 1`] = `
               <h3
                 className="c9"
               >
-                Toby
+                Test
                  
-                Bushell
+                Person
               </h3>
               <p
                 className="c10"

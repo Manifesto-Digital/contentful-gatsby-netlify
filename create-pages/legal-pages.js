@@ -118,10 +118,7 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
         return accumulator;
       }
       // Get slugs from parent references
-
-      debugger;
       const parentSlugsMapped = flattenMenuParents(page.menuParent);
-      debugger;
 
       const pageInfo = {
         slug: page.slug,

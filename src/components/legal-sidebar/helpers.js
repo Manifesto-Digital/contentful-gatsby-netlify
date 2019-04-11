@@ -1,6 +1,6 @@
 export const buildCurrentPageHierarchy = (hierarchy, slug) => {
   const hierarchyDepth = 2;
-  console.log('hierarchy', hierarchy, slug);
+
   if (!hierarchy || !slug) {
     throw new Error('hierarchy object and page slug required');
   }

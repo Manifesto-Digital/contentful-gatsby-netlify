@@ -12,7 +12,6 @@ import {
 
 const SearchBar = ({ resolution, searchFocus }) => {
   const placeholder = 'Search this site...';
-  console.log('resolution', resolution);
 
   return (
     <FormWrapper

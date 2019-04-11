@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { Location } from '@reach/router';
 import LegalNavigation from './navigation';
-
-import NavigationMenuItem from '../navigation/menu-item';
 import LogoSVG from '../../../assets/svg/icons/logo.svg';
 import MenuSVG from '../../../assets/svg/icons/menu.svg';
-import MagGlass from '../../../assets/svg/icons/search-light.svg';
 import useToggle from '../../../utils/useToggle';
 import {
   HeaderWrapper,
@@ -54,9 +51,6 @@ const legalNavigationQuery = graphql`
                 }
               }
             }
-            subNavigationItems {
-              ...LinkFragment
-            }
           }
           additionalLink {
             ...LinkFragment
@@ -67,15 +61,15 @@ const legalNavigationQuery = graphql`
   }
 `;
 
-export const PureHeader = ({ pageData }) => {
+export const PureLegalHeader = ({ pageData }) => {
   const [isOpen, openState] = useToggle(false);
   const [searchOpen, searchState] = useToggle(false);
   const { navigationItems } = pageData;
-  console.log('pagedata', pageData);
+
+  // We only want to show the second level navigation if Professionals item exists
   const professionalsMenuItem = navigationItems
     ? navigationItems.find(item => item.menuLabel === 'Professionals')
     : null;
-  console.log('professionalsMenuItem', professionalsMenuItem);
 
   return (
     <header>
@@ -119,19 +113,19 @@ export const PureHeader = ({ pageData }) => {
   );
 };
 
-const Header = () => (
+const LegalHeader = () => (
   <StaticQuery
     query={legalNavigationQuery}
     render={data => (
-      <PureHeader
+      <PureLegalHeader
         pageData={data.allContentfulAssemblyNavigationMenu.edges[0].node}
       />
     )}
   />
 );
 
-PureHeader.propTypes = {
+PureLegalHeader.propTypes = {
   pageData: PropTypes.object.isRequired,
 };
 
-export default Header;
+export default LegalHeader;

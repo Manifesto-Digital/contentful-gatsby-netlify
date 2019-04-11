@@ -1,69 +1,101 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import useToggle from '../../../utils/useToggle';
 import { SubNavButton, ArrowSVG } from './styles-icons';
-import { MenuList, SubMenu, ItemLink, Item } from './styles';
+import { SubMenuUl, ItemLink, Item, SubMenuListItem } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
-const NavigationMenu = ({ pageData, id, menuOpen, setActiveMenu, legal }) => {
-  const { menuLabel, navigationLink, subNavigationItems } = pageData;
+const NavigationMenuItem = ({
+  menuItem,
+  id,
+  menuOpen,
+  setActiveMenu,
+  legal,
+  navLevel,
+}) => {
+  const [subMenuState, setSubMenuState] = useToggle();
+  const { menuLabel, navigationLink, childNavigationItems } = menuItem;
+  const navLink = navigationLink ? navigationLink[0] : null;
+
+  if (!navLink) return null;
 
   return (
-    <Item topLevel>
-      <MenuList>
-        {navigationLink &&
-          navigationLink.map((navLink, i) => (
-            <Item key={i} role="menuitem" aria-haspopup={!!subNavigationItems}>
-              <ItemLink internalLink={navLink}>
-                {menuLabel || navLink.title}
-              </ItemLink>
-              {subNavigationItems && (
-                <SubNavButton
-                  type="button"
-                  onClick={() => setActiveMenu(id)}
-                  aria-expanded={menuOpen}
-                  legal={legal}
-                >
-                  <ArrowSVG src={AngleRight} cacheGetRequests />
-                </SubNavButton>
-              )}
-            </Item>
-          ))}
-        {subNavigationItems && (
-          <SubMenu
+    <>
+      <Item
+        role="menuitem"
+        aria-haspopup={!!childNavigationItems}
+        topLevel={navLevel === 1}
+      >
+        <ItemLink internalLink={navLink}>{menuLabel || navLink.title}</ItemLink>
+        {childNavigationItems && navLevel < 3 && (
+          <SubNavButton
+            type="button"
+            onClick={() => setActiveMenu(id)}
+            aria-expanded={menuOpen}
+            legal={legal}
+          >
+            <ArrowSVG src={AngleRight} cacheGetRequests />
+          </SubNavButton>
+        )}
+      </Item>
+      {childNavigationItems && (
+        <SubMenuListItem active={menuOpen}>
+          <SubMenuUl
             active={menuOpen}
             aria-expanded={menuOpen}
             aria-hidden={!menuOpen}
             role="menu"
             legal={legal}
           >
-            {subNavigationItems.map((item, i) => (
-              <Item key={i}>
-                <ItemLink internalLink={item} tabindex="-1">
-                  {item.title}
-                </ItemLink>
-              </Item>
-            ))}
-          </SubMenu>
-        )}
-      </MenuList>
-    </Item>
+            {childNavigationItems.map(
+              (item, i) =>
+                item.navigationLink &&
+                (item.childNavigationItems && navLevel < 3 ? (
+                  <NavigationMenuItem
+                    key={i}
+                    id={item.id}
+                    menuItem={item}
+                    menuOpen={subMenuState}
+                    setActiveMenu={() => setSubMenuState()}
+                    navLevel={navLevel + 1}
+                  />
+                ) : (
+                  <Item key={i}>
+                    <ItemLink
+                      internalLink={item.navigationLink[0]}
+                      tabindex="-1"
+                    >
+                      {item.menuLabel}
+                    </ItemLink>
+                  </Item>
+                ))
+            )}
+          </SubMenuUl>
+        </SubMenuListItem>
+      )}
+    </>
   );
 };
 
-NavigationMenu.propTypes = {
-  pageData: PropTypes.shape({
+NavigationMenuItem.propTypes = {
+  menuItem: PropTypes.shape({
     navigationLink: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
       })
     ),
+    menuLabel: PropTypes.string.isRequired,
   }),
   id: PropTypes.string.isRequired,
   menuOpen: PropTypes.bool,
   setActiveMenu: PropTypes.func,
   legal: PropTypes.bool,
+  navLevel: PropTypes.number,
 };
 
-export default NavigationMenu;
+NavigationMenuItem.defaultProps = {
+  navLevel: 1,
+};
+
+export default NavigationMenuItem;

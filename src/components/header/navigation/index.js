@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import NavigationMenuItem from './menu-item';
-import SearchDonate from '../search-donate';
+import SearchBar from '../search-donate/search-bar';
 import { Overlay } from '../../styled/overlay';
-
 import { MobileMenuClose, MenuSVG } from './styles-icons';
 import {
   Wrapper,
@@ -15,7 +14,6 @@ import {
   SkipToContent,
 } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
-import SearchBar from '../search-donate/search-bar';
 
 const Navigation = ({
   pageData,
@@ -57,7 +55,7 @@ const Navigation = ({
                 <NavigationMenuItem
                   key={i}
                   id={item.id}
-                  pageData={item}
+                  menuItem={item}
                   menuOpen={activeMenu === item.id}
                   setActiveMenu={updateActiveMenu}
                 />

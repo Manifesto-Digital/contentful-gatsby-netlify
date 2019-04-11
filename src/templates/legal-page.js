@@ -22,10 +22,9 @@ import LegalSideBar from '../components/legal-sidebar';
 import LinkList from '../components/link-list';
 
 const LegalPage = ({ data, pageContext }) => {
-  console.log('pageContext', pageContext);
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
-  const { pageInformation, slug } = legalPage;
+  const { pageInformation, slug, title } = legalPage;
   const { legislations, essentialLinks, downloads, lastAmended } = legalPage;
   const hasBottomSection =
     (referenceList && referenceList.length > 0) ||
@@ -51,6 +50,7 @@ const LegalPage = ({ data, pageContext }) => {
       slug={slug}
       removeFooterMargin
       legal
+      pageTitle={title}
     >
       <article>
         <Container>

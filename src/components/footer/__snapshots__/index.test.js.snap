@@ -300,7 +300,7 @@ exports[`Renders correctly 1`] = `
             >
               <Link
                 className="c9"
-                to="/tobys-page"
+                to="/test-page"
               >
                 Housing Advice
               </Link>
@@ -310,39 +310,34 @@ exports[`Renders correctly 1`] = `
             >
               <Link
                 className="c9"
-                to="/320,000-people-in-britain-are-now-homeless"
+                to="/sprint-7-legal-page-demo"
               >
-                320,000 people in Britain are now homeless
+                Benefits
               </Link>
             </li>
+          </ul>
+        </div>
+        <div
+          className="c4 c5"
+        >
+          <h3
+            className="c6"
+          >
+            What we do
+          </h3>
+          <ul
+            className="c7"
+          >
             <li
+              aria-haspopup={false}
               className="c8"
+              role="menuitem"
             >
               <Link
                 className="c9"
-                to="/tobys-page"
+                to="/test-page"
               >
-                Tobys Page
-              </Link>
-            </li>
-            <li
-              className="c8"
-            >
-              <Link
-                className="c9"
-                to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
-              >
-                Shelter Manchester to hold vigil for lost homeless people
-              </Link>
-            </li>
-            <li
-              className="c8"
-            >
-              <Link
-                className="c9"
-                to="/shelter-demo-page"
-              >
-                Shelter Demo Page
+                What we do
               </Link>
             </li>
           </ul>

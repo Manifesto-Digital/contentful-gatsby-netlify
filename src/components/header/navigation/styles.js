@@ -63,14 +63,8 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding: ${({ topLevel, legal, theme }) =>
-    (legal && topLevel && `15px ${theme.spacing.standard}`) ||
-    (topLevel && '0') ||
-    `${theme.spacing.small}}`};
-  border-bottom: ${({ topLevel, legal, theme }) =>
-    (legal && topLevel && `1px solid ${theme.palette.grey10}`) ||
-    (topLevel && 'none') ||
-    `1px solid ${theme.palette.grey10}`};
+  padding: ${({ theme }) => theme.spacing.small};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
 
   ${breakpoint.desktop`
      padding: ${({ topLevel, legal }) => topLevel && legal && '0'};
@@ -119,10 +113,15 @@ export const AdditionalMenu = styled(MenuList)`
   `}
 `;
 
-export const SubMenu = styled.ul`
+export const SubMenuListItem = styled.li`
   display: ${({ active }) => (active ? 'flex' : 'none')};
+`;
+
+export const SubMenuUl = styled.ul`
+  display: ${({ active }) => (active ? 'flex' : 'none')};
+  width: 100%;
   flex-direction: column;
-  padding: 0 ${({ theme }) => theme.spacing.small};
+  padding-left: ${({ theme }) => theme.spacing.small};
   border: none;
   list-style: none;
 
