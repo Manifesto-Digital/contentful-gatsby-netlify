@@ -1,5 +1,4 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { snapshotComponent } from 'test-helpers';
 import Breadcrumbs from '.';
 import { createFactory } from '../../utils/test-factories';
