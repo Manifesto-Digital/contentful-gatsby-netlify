@@ -60,6 +60,8 @@ const LegalPage = ({ data, pageContext }) => {
     console.log('e', e);
   }
 
+  console.log('page context', pageContext);
+
   return (
     <Layout
       pageInformation={pageInformation}
@@ -71,7 +73,7 @@ const LegalPage = ({ data, pageContext }) => {
       <article>
         <Container>
           <Breadcrumbs
-            parentSlugs={pageContext.parentSlug}
+            parentPages={pageContext.menuParent}
             slug={slug}
             currentTitle={title}
           />

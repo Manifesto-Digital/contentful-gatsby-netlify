@@ -1,7 +1,6 @@
 const path = require('path');
 const { getLegalPages } = require('../queries/legal-page');
 const { getLegalLandingPages } = require('../queries/legal-landing-page');
-const { getFullSlug } = require('./helpers.js');
 
 async function createLegalPages(graphql, gatsbyCreatePage) {
   const legalPageTemplate = path.resolve('src/templates/legal-page.js');
@@ -16,7 +15,6 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     throw Error(legalPagesResponse.errors);
   }
 
-  debugger;
   // Get landing pages
   const legalLandingPagesResponse = await getLegalLandingPages(graphql);
   if (legalLandingPagesResponse.errors) {
@@ -143,13 +141,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   // Create pages
   legalPages.forEach(({ node }) => {
     if (!node.slug) return;
-    const { parentSlug, slug } = node;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: slug,
       component: legalPageTemplate,
       context: {
-        parentSlug,
+        menuParent,
         slug,
         legalHierarchy,
       },
@@ -159,13 +157,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   // Create Landing pages
   LandingPages.forEach(({ node }) => {
     if (!node.slug) return;
-    const { parentSlug, slug } = node;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: slug,
       component: legalLandingPageTemplate,
       context: {
-        parentSlug,
+        menuParent,
         slug,
         legalHierarchy,
       },

@@ -39,19 +39,9 @@ exports[`renders correctly 1`] = `
     >
       <Link
         className="c2"
-        to="/sprint-7-legal-landing-page"
+        to="/shelter-legal"
       >
-        Legal
-      </Link>
-    </li>
-    <li
-      className="c1"
-    >
-      <Link
-        className="c2"
-        to="/sprint-7-legal-page-demo"
-      >
-        Legal - option
+        Shelter Legal
       </Link>
     </li>
     <li
