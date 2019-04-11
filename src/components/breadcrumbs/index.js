@@ -5,8 +5,6 @@ import { BreadcrumbList, BreadcrumbListItem, BreadcrumbAnchor } from './styles';
 const Breadcrumbs = ({ parentPages, slug, currentTitle }) => {
   if (!parentPages) return null;
 
-  console.log('parent pages', parentPages);
-
   // Add current page to parent slugs array so we have the full path
   const currentPage = {
     slug,

@@ -60,8 +60,6 @@ const LegalPage = ({ data, pageContext }) => {
     console.log('e', e);
   }
 
-  console.log('page context', pageContext);
-
   return (
     <Layout
       pageInformation={pageInformation}
