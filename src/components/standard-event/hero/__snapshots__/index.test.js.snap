@@ -149,7 +149,12 @@ exports[`renders event hero correctly 1`] = `
               Map
             </a>
           </li>
-          24 February 2019
+          <li>
+            <span
+              className="isvg loading c5"
+            />
+            24 February 2019
+          </li>
           <li>
             <span
               className="isvg loading c5"
