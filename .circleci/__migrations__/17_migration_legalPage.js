@@ -4,16 +4,6 @@ module.exports = function(migration) {
   );
 
   pageAssemblyLegalPage
-    .createField('parentSlug')
-    .name('Parent Slug')
-    .type('Object')
-    .localized(false)
-    .required(false)
-    .validations([])
-    .disabled(false)
-    .omitted(false);
-
-  pageAssemblyLegalPage
     .createField('legislations')
     .name('Legislations')
     .type('Array')

@@ -4,12 +4,11 @@ import { Container } from '../styled/containers';
 import { Wrapper, Flex, Blockquote, QuoteImage, QuoteMark } from './styles';
 import QuoteLeft from '../../assets/svg/icons/quote-left-solid.svg';
 
-const Quotation = ({ quote, insideContainer, image }) => (
+const QuotationWithImage = ({ quote, insideContainer, image }) => (
   <Wrapper>
     <Container padding={!insideContainer}>
       <Flex>
-        {image && <QuoteImage image={image} width={600} />}
-
+        <QuoteImage image={image} width={600} />
         <Blockquote>
           <QuoteMark src={QuoteLeft} />
           {quote}
@@ -18,13 +17,13 @@ const Quotation = ({ quote, insideContainer, image }) => (
     </Container>
   </Wrapper>
 );
-Quotation.propTypes = {
+QuotationWithImage.propTypes = {
   quote: PropTypes.string.isRequired,
   insideContainer: PropTypes.bool,
-  image: PropTypes.object,
+  image: PropTypes.object.isRequired,
 };
 
-Quotation.defaultProps = {
+QuotationWithImage.defaultProps = {
   insideContainer: false,
 };
-export default Quotation;
+export default QuotationWithImage;

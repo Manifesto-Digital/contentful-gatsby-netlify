@@ -1,12 +1,14 @@
 const path = require('path');
 const { getLegalPages } = require('../queries/legal-page');
 const { getLegalLandingPages } = require('../queries/legal-landing-page');
+const { getFullSlug } = require('./helpers.js');
 
 async function createLegalPages(graphql, gatsbyCreatePage) {
   const legalPageTemplate = path.resolve('src/templates/legal-page.js');
   const legalLandingPageTemplate = path.resolve(
     'src/templates/legal-landing-page.js'
   );
+
   // Get legal pages
   const legalPagesResponse = await getLegalPages(graphql);
   if (legalPagesResponse.errors) {
@@ -29,7 +31,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   const legalPages =
     legalPagesResponse.data.allContentfulPageAssemblyLegalPage.edges;
 
-  // Checks if page is already stored on the current hierarchy level
+  /**
+   *  Checks if the the page ref exists on the current hierarchy level
+   *  which is an array of objects
+   *
+   * @param {Object} pageRef
+   * @param {Object[]} storedHierarchyLevel
+   */
   const isStoredOnLevel = (pageRef, storedHierarchyLevel) =>
     storedHierarchyLevel.some(storedPage => storedPage.slug === pageRef.slug);
 
@@ -49,9 +57,9 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     }));
 
   /**
-   * This loops through a pages parents and builds a store for the legal hierarchy
+   * This loops through the current page parents and builds a store for the legal hierarchy
    *
-   * Typical structure of a page in hierarchy
+   * Typical structure of a page in the built hierarchy
    * {slug: String, label: String, children: Page[]}
    *
    * @param {Object[]} menuParent
@@ -104,8 +112,8 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
     return hierarchy;
   };
 
-  // Build up the hierarchy from the legal pages, as if a
-  // landing page has no children we do not want it to
+  // Build up the hierarchy by looping through each legal page and storing their chosen
+  // parent items in an iterable hierarchy object
   const buildHierarchy = () => {
     if (!legalPages) return;
 
@@ -118,14 +126,14 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
         return accumulator;
       }
       // Get slugs from parent references
-      const parentSlugsMapped = flattenMenuParents(page.menuParent);
+      const parentPagesMapped = flattenMenuParents(page.menuParent);
 
       const pageInfo = {
         slug: page.slug,
         label: page.title,
         description: page.pageInformation.shortDescription.shortDescription,
       };
-      return storeHierarchyPages(parentSlugsMapped, accumulator, pageInfo);
+      return storeHierarchyPages(parentPagesMapped, accumulator, pageInfo);
     }, []);
     return hierarchy;
   };
@@ -135,12 +143,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   // Create pages
   legalPages.forEach(({ node }) => {
     if (!node.slug) return;
-    const { slug } = node;
+    const { parentSlug, slug } = node;
 
     gatsbyCreatePage({
       path: slug,
       component: legalPageTemplate,
       context: {
+        parentSlug,
         slug,
         legalHierarchy,
       },
@@ -150,12 +159,13 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   // Create Landing pages
   LandingPages.forEach(({ node }) => {
     if (!node.slug) return;
-    const { slug } = node;
+    const { parentSlug, slug } = node;
 
     gatsbyCreatePage({
       path: slug,
       component: legalLandingPageTemplate,
       context: {
+        parentSlug,
         slug,
         legalHierarchy,
       },

@@ -36,7 +36,7 @@ export const buildCurrentPageHierarchy = (hierarchy, slug) => {
     }
     recursiveLoop(hierarchyLevel);
 
-    if (!foundPage) throw new Error('no page found in hierarchy');
+    if (!foundPage) throw new Error(`no page found in hierarchy : ${slug}`);
 
     return { foundPageDepth, parents, foundPage };
   }

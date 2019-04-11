@@ -46,6 +46,20 @@ export const QuoteImage = styled(Image)`
   `};
 `;
 
+export const ImageWithoutQuote = styled(Image)`
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  align-self: center;
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+
+  ${breakpoint.mobileLand`
+    margin-bottom: 0;
+    max-width: 50%;
+    width: 300px;
+  `};
+`;
+
 export const QuoteMark = styled(SVG)`
   display: block;
   position: absolute;

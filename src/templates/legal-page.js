@@ -5,6 +5,20 @@ import { dateAsString } from '../utils/dates';
 import { buildCurrentPageHierarchy } from '../components/legal-sidebar/helpers';
 // Components
 import Layout from '../components/layout';
+import Breadcrumbs from '../components/breadcrumbs';
+import RichText from '../components/rich-text';
+import TableOfContent from '../components/table-of-contents';
+import ContentWithReferences from '../components/table-of-contents/content-with-references';
+import { TableOfContentsFootNotes } from '../components/table-of-contents/footnotes';
+import LegalSideBar from '../components/legal-sidebar';
+import LinkList from '../components/link-list';
+import PageTitle from '../components/page-title';
+import InlineCallOut from '../components/inline-callout';
+// Styles
+import {
+  SidebarInner,
+  FootNotes,
+} from '../components/table-of-contents/styles';
 import {
   Container,
   ContentWithSideBar,
@@ -12,20 +26,22 @@ import {
   SideBar,
   Section,
 } from '../components/styled/containers';
-import { TableOfContent } from '../components/table-of-contents';
-import { TableOfContentsFootNotes } from '../components/table-of-contents/footnotes';
-import {
-  SidebarInner,
-  FootNotes,
-} from '../components/table-of-contents/styles';
-import LegalSideBar from '../components/legal-sidebar';
-import LinkList from '../components/link-list';
 
 const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
   const legalPage = data.contentfulPageAssemblyLegalPage;
-  const { pageInformation, slug, title } = legalPage;
-  const { legislations, essentialLinks, downloads, lastAmended } = legalPage;
+  const {
+    slug,
+    title,
+    bodyCopy,
+    applicableRegions,
+    tableOfContents,
+    essentialLinks,
+    legislations,
+    downloads,
+    lastAmended,
+    pageInformation,
+  } = legalPage;
   const hasBottomSection =
     (referenceList && referenceList.length > 0) ||
     legislations ||
@@ -54,6 +70,11 @@ const LegalPage = ({ data, pageContext }) => {
     >
       <article>
         <Container>
+          <Breadcrumbs
+            parentSlugs={pageContext.parentSlug}
+            slug={slug}
+            currentTitle={title}
+          />
           <ContentWithSideBar>
             <SideBar left desktop>
               <SidebarInner>
@@ -65,12 +86,27 @@ const LegalPage = ({ data, pageContext }) => {
               </SidebarInner>
             </SideBar>
             <TwoThirds>
-              <TableOfContent
-                data={legalPage}
-                updateReferenceList={updateReferenceList}
-              />
+              <PageTitle noContainer>
+                <h1>{title}</h1>
+              </PageTitle>
+
+              {bodyCopy && <RichText richText={bodyCopy} />}
+
+              {tableOfContents && (
+                <TableOfContent tableOfContents={tableOfContents} />
+              )}
+              <InlineCallOut borderColour="red" insideContainer>
+                This content applies to <strong>{applicableRegions}</strong>
+              </InlineCallOut>
+
+              {tableOfContents && (
+                <ContentWithReferences
+                  tableOfContents={tableOfContents}
+                  updateReferenceList={updateReferenceList}
+                />
+              )}
               {lastAmended && (
-                <p>Last updated: {dateAsString(lastAmended, 'MMMM d, YYYY')}</p>
+                <p>Last updated: {dateAsString(lastAmended, 'D MMMM YYYY')}</p>
               )}
             </TwoThirds>
           </ContentWithSideBar>
@@ -156,6 +192,9 @@ export const legalPageQuery = graphql`
         ...PageInformationFragment
       }
       applicableRegions
+      pageInformation {
+        ...PageInformationFragment
+      }
       bodyCopy {
         childContentfulRichText {
           html
