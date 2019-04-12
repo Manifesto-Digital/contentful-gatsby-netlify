@@ -30,6 +30,7 @@ const LegalHomepage = ({ data }) => {
       pageInformation={pageInformation}
       pageTitle={title}
       removeFooterMargin
+      legal
     >
       <HeroWithCard content={hero} />
       <Container>
