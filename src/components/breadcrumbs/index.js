@@ -11,8 +11,11 @@ const Breadcrumbs = ({ parentPages, slug, currentTitle }) => {
     label: currentTitle,
   };
   // Flatten the parent pages to same format as current page
-  const flattenedParentPages = parentPages.map(page => page.menuItem[0]);
+  const flattenedParentPages = parentPages
+    .filter(value => Object.keys(value).length !== 0)
+    .map(page => page.menuItem[0]);
 
+  if (flattenedParentPages.length === 0) return null;
   const fullPathArray = [...flattenedParentPages, currentPage];
 
   return (
