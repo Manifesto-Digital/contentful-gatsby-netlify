@@ -6,15 +6,17 @@ export const ModuleWrapper = styled.div`
 `;
 
 export const FormWrapper = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing.standard};
+
   ${({ backgroundColour, theme }) =>
     backgroundColour === 'grey' &&
     `
-  padding:${theme.spacing.standard} ${theme.spacing.standard} 0 ${
+    padding:${theme.spacing.standard} ${theme.spacing.standard} 0 ${
       theme.spacing.standard
     } };
 
-  background-color: ${theme.palette.offWhite};
-  border: 1px solid ${theme.palette.grey10};
+    background-color: ${theme.palette.offWhite};
+    border: 1px solid ${theme.palette.grey10};
 `}
 `;
 
