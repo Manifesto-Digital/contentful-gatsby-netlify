@@ -14,11 +14,13 @@ const InlineCallOut = ({
   borderColour,
   bannerColour,
   children,
+  removeMarginBottom,
 }) => (
   <Container padding={!insideContainer} ref={forwardedRef}>
     <InlineBanner
       borderColour={consistentString(borderColour)}
       bannerColour={consistentString(bannerColour)}
+      removeMarginBottom={removeMarginBottom}
     >
       {icon && <BannerSVG src={iconSrc(icon)} cacheGetRequests />}
       <TextWrapper>{children}</TextWrapper>
@@ -33,10 +35,12 @@ InlineCallOut.propTypes = {
   insideContainer: PropTypes.bool,
   forwardedRef: PropTypes.object,
   children: PropTypes.any,
+  removeMarginBottom: PropTypes.any,
 };
 
 InlineCallOut.defaultProps = {
   insideContainer: false,
+  removeMarginBottom: false,
 };
 
 export default InlineCallOut;

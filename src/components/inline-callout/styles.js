@@ -11,7 +11,10 @@ export const InlineBanner = styled.div`
     (bannerColour === 'transparent' && 'transparent')};
 
   padding: ${({ theme }) => theme.spacing.standard};
-  margin-bottom: 1em;
+  margin-bottom: ${({ removeMarginBottom, sidebar, theme }) =>
+    (removeMarginBottom && '0') ||
+    (sidebar && theme.spacing.standard) ||
+    theme.spacing.large};
   border-left: 4px solid;
   border-color: ${({ borderColour, theme }) =>
     (borderColour === 'default' && theme.palette.primary) ||

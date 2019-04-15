@@ -6,7 +6,7 @@ exports[`renders correctly with icon chosen in cms 1`] = `
   clear: both;
   background: #f7f7f7;
   padding: 20px;
-  margin-bottom: 1em;
+  margin-bottom: 40px;
   border-left: 4px solid;
   border-color: #ea232d;
 }
@@ -108,7 +108,7 @@ exports[`renders correctly with no options chosen in cms 1`] = `
   clear: both;
   background: #f7f7f7;
   padding: 20px;
-  margin-bottom: 1em;
+  margin-bottom: 40px;
   border-left: 4px solid;
   border-color: #ea232d;
 }
