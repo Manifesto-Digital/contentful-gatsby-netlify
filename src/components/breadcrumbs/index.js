@@ -2,26 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { BreadcrumbList, BreadcrumbListItem, BreadcrumbAnchor } from './styles';
 
-const Breadcrumbs = ({ parentPages, slug, currentTitle }) => {
+const Breadcrumbs = ({ parentPages, currentTitle }) => {
   if (!parentPages) return null;
 
-  // Add current page to parent slugs array so we have the full path
-  const currentPage = {
-    slug,
-    label: currentTitle,
-  };
-  // Flatten the parent pages to same format as current page
+  // Flatten the parent to a cleaner format
   const flattenedParentPages = parentPages
     .filter(value => Object.keys(value).length !== 0)
     .map(page => page.menuItem[0]);
 
   if (flattenedParentPages.length === 0) return null;
-  const fullPathArray = [...flattenedParentPages, currentPage];
 
   return (
     <nav role="navigation">
       <BreadcrumbList>
-        {fullPathArray.map((crumb, i) => (
+        {flattenedParentPages.map((crumb, i) => (
           <BreadcrumbListItem key={i}>
             <BreadcrumbAnchor
               internalLink={{
@@ -32,6 +26,7 @@ const Breadcrumbs = ({ parentPages, slug, currentTitle }) => {
             </BreadcrumbAnchor>
           </BreadcrumbListItem>
         ))}
+        <BreadcrumbListItem>{currentTitle}</BreadcrumbListItem>
       </BreadcrumbList>
     </nav>
   );
@@ -39,7 +34,6 @@ const Breadcrumbs = ({ parentPages, slug, currentTitle }) => {
 
 Breadcrumbs.propTypes = {
   parentPages: PropTypes.array,
-  slug: PropTypes.string,
   currentTitle: PropTypes.string,
 };
 

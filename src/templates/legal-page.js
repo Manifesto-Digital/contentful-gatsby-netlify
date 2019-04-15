@@ -72,7 +72,6 @@ const LegalPage = ({ data, pageContext }) => {
         <Container>
           <Breadcrumbs
             parentPages={pageContext.menuParent}
-            slug={slug}
             currentTitle={title}
           />
           <ContentWithSideBar>

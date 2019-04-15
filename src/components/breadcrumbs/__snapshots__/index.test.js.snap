@@ -11,6 +11,7 @@ exports[`renders correctly 1`] = `
   list-style: none;
   margin: 0 0.4em 0 0;
   padding: 0;
+  font-size: 0.775rem;
 }
 
 .c1:after {
@@ -23,7 +24,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c2 {
-  font-size: 0.8em;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -47,12 +47,7 @@ exports[`renders correctly 1`] = `
     <li
       className="c1"
     >
-      <Link
-        className="c2"
-        to="/identifying_the_nature_of_the_problem"
-      >
-        Legal Page
-      </Link>
+      Legal Page
     </li>
   </ul>
 </nav>
