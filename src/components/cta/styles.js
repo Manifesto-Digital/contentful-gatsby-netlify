@@ -20,4 +20,6 @@ export const CtaText = styled.span`
 
 export const StyledLinkHandler = styled(LinkHandler)`
   ${buttonStyles}
+  margin-bottom: ${({ marginBottom, theme }) =>
+    marginBottom && theme.spacing.standard};
 `;
