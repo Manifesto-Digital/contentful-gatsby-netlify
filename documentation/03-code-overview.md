@@ -5,11 +5,10 @@
 - queries (graph)
 - fragments
 - linting
-- testig
+- testing
 - analytics
 - forms
 - dynamic vs static
-- migrations
 
 ## Migrations
 
