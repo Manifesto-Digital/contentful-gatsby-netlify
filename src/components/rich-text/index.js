@@ -9,12 +9,6 @@ import { Wrapper } from './styles';
 const RichText = ({ richText, className, sidebar }) => {
   console.log('richText', richText);
 
-  const hasContent = item =>
-    item &&
-    item.childContentfulRichText &&
-    item.childContentfulRichText.html &&
-    item.childContentfulRichText.html !== '<p></p>'; // gatsby-transformer-contentful-richtext still includes an empty p if an editor clears the rich text
-
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ENTRY]: (node, next) => {
@@ -27,17 +21,14 @@ const RichText = ({ richText, className, sidebar }) => {
 
         return <RichTextAssembly fields={flattenedFields} sys={sys} />;
       },
-      [BLOCKS.PARAGRAPH]: (node, next) => {
-        console.log('paraaaa', node);
-
-        return <p>{documentToHtmlString(node)}</p>;
-      },
     },
   };
 
-  /* eslint-disable  react/no-danger */
-  return <div>{documentToReactComponents(richText, options)}</div>;
-  /* eslint-enable react/no-danger */
+  return (
+    <Wrapper sidebar={sidebar} className={className}>
+      {documentToReactComponents(richText, options)}
+    </Wrapper>
+  );
 };
 RichText.propTypes = {
   richText: PropTypes.shape({
