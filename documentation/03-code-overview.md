@@ -183,3 +183,15 @@ module.exports = function(migration) {
   "assets": []
 }
 ```
+
+#### Useful information
+
+We found generating the seeds and migrations easier by first exporting hte models that needed adjusting and modifing this code.
+
+Get the content from a content type (you can change the query to limit this to specific pieces of content):
+`contentful space export --space-id [SPACE_ID] --environment-id [ENV] --content-file topic-url-hierarchy.json --export-dir content_export/ --content-only --use-verbose-renderer --skip-assets --query-entries 'content_type=topicUrlHierarchy' --query-assets 'fields.title=doesntexist'`
+
+Some useful generator tools: [Migration generator](https://github.com/Shelter-England/contentful-migration-generator)
+
+Run the migration script against test environment:
+`node .circleci/scripts/migrate.js "[SPACE_ID]" "[ENV]" [MANAGEMENT_TOKEN]`
