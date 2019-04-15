@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import LinkHandler from '../link-handler/index';
 
 export const buttonStyles = css`
   display: inline-block;
@@ -6,7 +7,7 @@ export const buttonStyles = css`
   padding: ${({ theme }) => theme.spacing.small} 1em;
   font-weight: normal;
   background-color: ${({ disabled, bg, theme }) =>
-    (disabled && theme.palette.grey60) ||
+    (disabled && theme.palette.grey40) ||
     (bg === 'red' && theme.palette.primary) ||
     (bg === 'black' && theme.palette.black) ||
     (bg === 'blue' && theme.palette.sanMarinoBlue) ||
@@ -47,7 +48,7 @@ export const buttonReset = css`
   cursor: pointer;
 `;
 
-export const SignUpButton = styled.a`
+export const SignUpLink = styled(LinkHandler)`
   ${buttonStyles};
   border: 4px solid ${({ theme }) => theme.palette.white};
   color: ${({ theme }) => theme.palette.white};

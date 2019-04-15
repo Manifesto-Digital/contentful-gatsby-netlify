@@ -40,13 +40,14 @@ const Page = ({ data }) => {
     twoColumn,
     bodyCopy,
     sidebarAssemblies,
+    pageInformation,
   } = data.contentfulPageAssemblyStandardEvent;
 
   const { eventLocation } = event;
   const eventStatus = consistentString(event.eventStatus);
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={event.eventName}>
       <article>
         <EventHero
           event={event}
@@ -142,7 +143,6 @@ export const standardEventPageQuery = graphql`
       }
       mainCtaText
       mainCtaMethod
-      mainCtaLink
       displayMap
       twoColumn {
         ...TwoColumnTextAndImageBlockFragment
@@ -163,6 +163,9 @@ export const standardEventPageQuery = graphql`
       }
       sidebarAssemblies {
         ...SidebarFragment
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }

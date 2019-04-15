@@ -125,6 +125,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 13. **`.eslintrc`**: Linting configuration for the code standards.
 
+## CircleCI
+
 ## 🗒️ Documentation
 
 **Document important decisions with ADRs**

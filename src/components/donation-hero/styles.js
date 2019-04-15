@@ -55,6 +55,10 @@ export const SliderBox = styled.div`
 export const StyledTabList = styled(TabList)`
   ${removeListStyles};
   display: flex;
+
+  & > li {
+    margin: 0;
+  }
 `;
 
 export const StyledTab = styled(Tab).attrs({
@@ -66,7 +70,7 @@ export const StyledTab = styled(Tab).attrs({
 
   &:not(.is-selected) {
     background: ${({ theme }) => theme.palette.offWhite};
-    color: ${({ theme }) => theme.palette.grey60};
+    color: ${({ theme }) => theme.palette.grey40};
   }
 
   &:hover {

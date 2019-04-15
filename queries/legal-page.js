@@ -7,13 +7,21 @@ const getLegalPages = async graphql =>
             id
             slug
             title
-            parentPage {
+            pageInformation {
+              shortDescription {
+                shortDescription
+              }
+            }
+            parentSlug {
+              label
+              title
               slug
-              key
-              child {
-                slug
-                label
-                key
+              menuItem {
+                fields {
+                  shortDescription {
+                    en_GB
+                  }
+                }
               }
             }
           }
@@ -21,4 +29,5 @@ const getLegalPages = async graphql =>
       }
     }
   `);
+
 module.exports = { getLegalPages };

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Marker from './Marker';
 import GoogleMap from './GoogleMap';
 import InfoWindow from './InfoWindow';
-import LinkHandler from '../link-handler';
 import { MapIconAlt, Address } from './styles';
 import { Container } from '../styled/containers';
 import IconAlt from '../../assets/svg/icons/map-marker-alt-light.svg';
@@ -78,14 +77,15 @@ const Map = ({ data, insideContainer }) => {
           {currentLocations.length === 1 && currentLocations[0].address && (
             <Address>
               {IconAlt && <MapIconAlt src={IconAlt} cacheGetRequests />}
-              <LinkHandler
-                externalUrl={`https://www.google.co.uk/maps?daddr=${
+              <a
+                href={`https://www.google.co.uk/maps?daddr=${
                   currentLocations[0].location.lat
                 }, ${currentLocations[0].location.lon}`}
-                newTab
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {currentLocations[0].address}
-              </LinkHandler>
+              </a>
             </Address>
           )}
         </>

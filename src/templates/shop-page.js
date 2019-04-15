@@ -16,10 +16,16 @@ import {
 } from '../components/styled/containers';
 
 const Page = ({ data }) => {
-  const { name, bodyCopy, shop, form } = data.contentfulPageAssemblyShopPage;
+  const {
+    name,
+    bodyCopy,
+    shop,
+    form,
+    pageInformation,
+  } = data.contentfulPageAssemblyShopPage;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={name}>
       <article>
         <PageTitle>
           <h1>{name}</h1>
@@ -62,6 +68,9 @@ export const shopPageQuery = graphql`
       }
       form {
         ...AssemblyFormFragment
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
   }

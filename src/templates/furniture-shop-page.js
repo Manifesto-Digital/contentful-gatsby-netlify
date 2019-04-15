@@ -20,14 +20,13 @@ const Page = ({ data }) => {
     yesPleaseList,
     noThanksList,
     howDoesYourDonationHelp,
+    pageInformation,
   } = data.contentfulPageAssemblyFurnitureShopPage;
 
   if (!shop) return null;
 
-  console.log('data', data.contentfulPageAssemblyFurnitureShopPage);
-
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={pageHeader}>
       <article>
         <ShopHero
           header={pageHeader}
@@ -93,7 +92,7 @@ export const furnitureShopPageQuery = graphql`
         }
       }
       pageInformation {
-        id
+        ...PageInformationFragment
       }
     }
   }

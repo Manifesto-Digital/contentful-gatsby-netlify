@@ -25,6 +25,7 @@ const EventCategoryPage = ({ data }) => {
     summary,
     featuredEvent,
     sidebarAssemblies,
+    pageInformation,
   } = data.contentfulPageAssemblyEventCategory;
 
   const standardEventPages =
@@ -40,7 +41,7 @@ const EventCategoryPage = ({ data }) => {
     );
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={pageName}>
       <article>
         <PageTitle>
           <h1>{pageName}</h1>
@@ -114,6 +115,9 @@ export const eventCategoryPageQuery = graphql`
       }
       sidebarAssemblies {
         ...SidebarFragment
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
 

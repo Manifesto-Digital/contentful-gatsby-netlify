@@ -24,7 +24,7 @@
     const client = createClient({
       accessToken: CMA_ACCESS_TOKEN,
       headers: {
-        'X-Contentful-Source-Environment': 'develop',
+        'X-Contentful-Source-Environment': 'master',
       },
     });
 
@@ -42,7 +42,7 @@
 
     try {
       environment = await space.getEnvironment(ENVIRONMENT_ID);
-      if (ENVIRONMENT_ID == 'CI_MIGRATION') {
+      if (ENVIRONMENT_ID === 'CI_MIGRATION') {
         await environment.delete();
         console.log('Environment deleted');
       }
@@ -113,10 +113,9 @@
     const availableMigrations = (await readdirAsync(MIGRATIONS_DIR))
       .filter(file => /\d\d_migration_/.test(file))
       .map(file => getVersionOfFile(file));
-    const availableSeeds = (await readdirAsync(SEEDS_DIR))
-      .filter(file => /\d\d_seed_/.test(file))
-      .map(file => getVersionOfFile(file));
-
+    const availableSeeds = (await readdirAsync(SEEDS_DIR)).filter(file =>
+      /\d\d_seed_/.test(file)
+    );
     // ---------------------------------------------------------------------------
     console.log('Figure out latest ran migration of the contentful space');
     const { items: versions } = await environment.getEntries({
@@ -188,24 +187,29 @@
     };
     const doImport = async () => {
       while ((importToRun = importsToRun.shift())) {
-        const seedFilePath = path.join(
-          __dirname,
-          '..',
-          '__migrations__/seeds',
-          getFileOfVersion(importToRun)
-            .replace('_migration_', '_seed_')
-            .replace('.js', '.json')
-        );
+        for (const seed in availableSeeds) {
+          if (
+            getFileOfVersion(importToRun).split('_')[0] ===
+            availableSeeds[seed].split('_')[0]
+          ) {
+            const seedFilePath = path.join(
+              __dirname,
+              '..',
+              '__migrations__/seeds',
+              availableSeeds[seed]
+            );
 
-        console.log(`Importing: ${seedFilePath}`);
+            console.log(`Importing: ${seedFilePath}`);
 
-        console.log('=====Generating content import=====');
-        if (existsSync(seedFilePath)) {
-          await exec(
-            `contentful space import --space-id ${SPACE_ID} --environment-id ${ENVIRONMENT_ID} --content-file ${seedFilePath} --management-Token ${CMA_ACCESS_TOKEN}`
-          );
-        } else {
-          console.log(`No Import found for: ${seedFilePath}`);
+            console.log('=====Generating content import=====');
+            if (existsSync(seedFilePath)) {
+              await exec(
+                `contentful space import --space-id ${SPACE_ID} --environment-id ${ENVIRONMENT_ID} --content-file ${seedFilePath} --management-Token ${CMA_ACCESS_TOKEN}`
+              );
+            } else {
+              console.log(`No Import found for: ${seedFilePath}`);
+            }
+          }
         }
       }
     };

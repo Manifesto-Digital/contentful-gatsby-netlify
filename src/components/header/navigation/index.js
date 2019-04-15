@@ -71,7 +71,12 @@ const Navigation = ({
                 </ItemLink>
               </Item>
               <Item>
-                <ItemLink externalUrl="https://scotland.shelter.org.uk/">
+                <ItemLink
+                  as="a"
+                  href="https://scotland.shelter.org.uk/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   Scotland
                 </ItemLink>
               </Item>

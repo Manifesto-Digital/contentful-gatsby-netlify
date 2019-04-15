@@ -14,7 +14,7 @@ import {
   ContentContainer,
   BannerText,
 } from './styles';
-import { SignUpButton } from '../../styled/buttons';
+import { SignUpLink } from '../../styled/buttons';
 import { Container } from '../../styled/containers';
 
 const Hero = ({
@@ -31,6 +31,7 @@ const Hero = ({
   const wrapTitle = () => {
     const splitString = title.split(' ');
     // If only one word return
+
     if (splitString.length === 1) return title;
     const lastWordInTitle = splitString.pop();
     const startOfTitle = splitString.join(' ');
@@ -83,7 +84,7 @@ const Hero = ({
       <HeroBanner ref={heroBannerRef}>
         <ContentContainer>
           <BannerText>{bannerText}</BannerText>
-          <SignUpButton href={eventLink}>{buttonText}</SignUpButton>
+          <SignUpLink link={eventLink}>{buttonText}</SignUpLink>
         </ContentContainer>
       </HeroBanner>
       <Container />
@@ -96,7 +97,7 @@ Hero.propTypes = {
   subtitle: PropTypes.string,
   bannerText: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  eventLink: PropTypes.string.isRequired,
+  eventLink: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   image: PropTypes.object,
   video: PropTypes.object,
   heroBannerRef: PropTypes.object,

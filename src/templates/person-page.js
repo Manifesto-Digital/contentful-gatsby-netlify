@@ -1,21 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { QuoteImage as PersonPageImage } from '../components/quotation/styles';
 import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
-import Quotation from '../components/quotation';
+import QuotationWithImage from '../components/quotation';
 import PersonCardList from '../components/person/card-list';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const Page = ({ data }) => {
-  const { title, person, quotation } = data.contentfulPageAssemblyPerson;
+  const {
+    title,
+    person,
+    quotation,
+    pageInformation,
+  } = data.contentfulPageAssemblyPerson;
   const { jobTitle, photo, bio } = person;
   const personList = data.allContentfulTopicPerson
     ? data.allContentfulTopicPerson.edges.map(item => item.node)
     : null;
 
   return (
-    <Layout>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle paddingBottom>
           <h1>{title}</h1>
@@ -23,11 +29,15 @@ const Page = ({ data }) => {
         </PageTitle>
         <Container>
           <TwoThirds>
-            <Quotation
-              quote={quotation.quotation}
-              image={photo}
-              insideContainer
-            />
+            {quotation ? (
+              <QuotationWithImage
+                quote={quotation.quotation}
+                image={photo}
+                insideContainer
+              />
+            ) : (
+              <PersonPageImage image={photo} insideContainer />
+            )}
             {bio && <p>{bio.internal.content}</p>}
             <PersonCardList list={personList} insideContainer />
           </TwoThirds>
@@ -58,6 +68,9 @@ export const personPageQuery = graphql`
       }
       person {
         ...PersonFragment
+      }
+      pageInformation {
+        ...PageInformationFragment
       }
     }
     allContentfulTopicPerson(

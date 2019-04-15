@@ -82,16 +82,18 @@ exports[`displays the correct icon 1`] = `
   >
     Sub text
   </p>
-  <Link
+  <a
     className="c4 c5"
-    to="/https://example.com"
+    href="http://mock.com"
+    rel="noopener"
+    target="_self"
   >
     <span
       className="c6"
     >
       Click me
     </span>
-  </Link>
+  </a>
 </div>
 `;
 
@@ -177,16 +179,18 @@ exports[`renders correctly 1`] = `
   >
     Sub text
   </p>
-  <Link
+  <a
     className="c4 c5"
-    to="/https://example.com"
+    href="http://mock.com"
+    rel="noopener"
+    target="_self"
   >
     <span
       className="c6"
     >
       Click me
     </span>
-  </Link>
+  </a>
 </div>
 `;
 
@@ -306,16 +310,18 @@ exports[`renders correctly 2`] = `
       >
         Sub text
       </p>
-      <Link
+      <a
         className="c6 c7"
-        to="/https://example.com"
+        href="http://mock.com"
+        rel="noopener"
+        target="_self"
       >
         <span
           className="c8"
         >
           Click me
         </span>
-      </Link>
+      </a>
     </div>
     <div
       className="c2"
@@ -333,16 +339,18 @@ exports[`renders correctly 2`] = `
       >
         Sub text
       </p>
-      <Link
+      <a
         className="c6 c7"
-        to="/https://example.com"
+        href="http://mock.com"
+        rel="noopener"
+        target="_self"
       >
         <span
           className="c8"
         >
           Click me
         </span>
-      </Link>
+      </a>
     </div>
     <div
       className="c2"
@@ -360,16 +368,18 @@ exports[`renders correctly 2`] = `
       >
         Sub text
       </p>
-      <Link
+      <a
         className="c6 c7"
-        to="/https://example.com"
+        href="http://mock.com"
+        rel="noopener"
+        target="_self"
       >
         <span
           className="c8"
         >
           Click me
         </span>
-      </Link>
+      </a>
     </div>
   </div>
 </div>
