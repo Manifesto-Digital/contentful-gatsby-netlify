@@ -20,7 +20,8 @@ const ChallengeEventPage = ({ data }) => {
   // Grab the information from the event reference
   const { eventName, displayLocation, distance } = event;
   const date = dateAsString(event.eventSystemDate, 'DD MMM YYYY');
-  const bannerText = `${distance}\n${
+
+  const bannerText = `${distance ? `${distance}\n` : ''}${
     displayLocation ? `${displayLocation}\n` : ''
   }${date}`;
 

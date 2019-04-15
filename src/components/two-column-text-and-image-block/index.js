@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import Image from '../image';
 import InlineCallOut from '../inline-callout';
 import { richTextPropTypes } from '../../prop-types';
-import { Container } from '../styled/containers';
 import { consistentString } from '../../utils/content-formatting';
-
 // Styles
+import { Container } from '../styled/containers';
 import {
   Wrapper,
   HeaderText,
@@ -26,6 +25,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
     rightColumnImage,
     rightColumnCta,
     rightColumnCalloutBanners,
+    removeMarginBottom,
   } = data;
 
   if (!headerText || !leftColumnText) {
@@ -35,7 +35,11 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
   const backgroundColour = consistentString(data.backgroundColour);
 
   return (
-    <Wrapper backgroundColour={backgroundColour} padding={!insideContainer}>
+    <Wrapper
+      backgroundColour={backgroundColour}
+      padding={!insideContainer}
+      removeMarginBottom={removeMarginBottom}
+    >
       <Container>
         <FlexContainer>
           <ContentSemi>
@@ -94,6 +98,7 @@ TwoColumnTextAndImageBlock.propTypes = {
     rightColumnCalloutBanners: PropTypes.array,
     rightColumnCta: PropTypes.object,
     backgroundColour: PropTypes.oneOf(['White', 'Black', 'Grey']).isRequired,
+    removeMarginBottom: PropTypes.bool,
   }),
   insideContainer: PropTypes.bool,
 };
