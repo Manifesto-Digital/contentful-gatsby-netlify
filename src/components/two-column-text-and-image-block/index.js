@@ -63,7 +63,9 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
                 richText={rightColumnText}
               />
             )}
-            {rightColumnCta && <CTA {...CTA.fromCMS(rightColumnCta)} />}
+            {rightColumnCta && (
+              <CTA marginBottom {...CTA.fromCMS(rightColumnCta)} />
+            )}
             {rightColumnImage && (
               <Image image={rightColumnImage} width={1000} />
             )}
