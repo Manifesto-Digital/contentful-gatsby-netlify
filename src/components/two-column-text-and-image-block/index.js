@@ -51,6 +51,10 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
                 <InlineCallOut
                   insideContainer={!insideContainer}
                   key={calloutBanner.id + i}
+                  icon={calloutBanner.icon}
+                  borderColour={calloutBanner.borderColour}
+                  bannerColour={calloutBanner.bannerColour}
+                  removeMarginBottom={calloutBanner.removeMarginBottom}
                 >
                   <RichText richText={calloutBanner.content} />
                 </InlineCallOut>
@@ -73,6 +77,7 @@ const TwoColumnTextAndImageBlock = ({ data, insideContainer }) => {
                 <InlineCallOut
                   insideContainer={!insideContainer}
                   key={calloutBanner.id + i}
+                  {...InlineCallOut.fromCMS(calloutBanner)}
                 >
                   <RichText richText={calloutBanner.content} />
                 </InlineCallOut>
