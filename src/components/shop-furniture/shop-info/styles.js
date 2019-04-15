@@ -16,15 +16,15 @@ export const Flex = styled.div`
 
 export const Flex25 = styled.div`
   width: 100%;
-  margin-bottom: ${({ theme }) => theme.spacing.standard};
   background: ${({ theme }) => theme.palette.white};
 
-  &:last-of-type {
-    margin-bottom: 0;
+  &:not(:last-of-type) {
+    margin-bottom: ${({ theme }) => theme.spacing.standard};
   }
 
   ${breakpoint.mobileLand`
-    flex-basis: calc(50% - ${({ theme }) => theme.spacing.small})
+    flex-basis: calc(50% - ${({ theme }) => theme.spacing.small});
+    margin-bottom: ${({ theme }) => theme.spacing.standard};
   `};
 
   ${breakpoint.desktop`

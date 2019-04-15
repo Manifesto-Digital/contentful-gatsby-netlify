@@ -58,12 +58,11 @@ exports[`renders correctly 1`] = `
 
 .c3 {
   width: 100%;
-  margin-bottom: 20px;
   background: #fff;
 }
 
-.c3:last-of-type {
-  margin-bottom: 0;
+.c3:not(:last-of-type) {
+  margin-bottom: 20px;
 }
 
 .c4 {
@@ -113,6 +112,7 @@ exports[`renders correctly 1`] = `
     -webkit-flex-basis: calc(50% - 10px);
     -ms-flex-preferred-size: calc(50% - 10px);
     flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
   }
 }
 
