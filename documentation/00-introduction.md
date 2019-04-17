@@ -1,6 +1,6 @@
 # Introduction
 
-This set of documents describes the tools and approaches utilized in the rebuild of Shelters main website.
+This set of documents describes the tools and approaches used in the rebuild of Shelters main website.
 
 ## Table of contents
 
