@@ -29,8 +29,6 @@ const AdvicePage = ({ data, pageContext }) => {
   } = data.contentfulPageAssemblyAdvicePage;
   const { subpages, slug } = pageContext;
 
-  // Test page https://uat-shelter-website.netlify.com/wr-homeless-get-help
-
   // If page is part of a guide use the guide overview/parent page as the top page title
   const pageTitle = subpages ? subpages.pages[0].title : title;
 
