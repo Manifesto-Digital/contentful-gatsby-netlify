@@ -23,3 +23,5 @@ Netlify is used to host the Gatsby generated code for the website.
 CircleCI is a build automation tool. It is used as a CI/CD pipeline to deliver code and content changes to the environments.
 
 ## What does this look like
+
+At a high level this is represented with the basic development flow [here](assets/shelter-highlevel-workflow.jpg)
