@@ -6,7 +6,15 @@ import Image from '../image';
 // Styles
 import { StyledLinkHandler, CtaIcon, CtaText } from './styles';
 
-const CTA = ({ children, bg, link, icon, fullWidth, className }) => {
+const CTA = ({
+  children,
+  bg,
+  link,
+  icon,
+  fullWidth,
+  className,
+  externalUrl,
+}) => {
   if (!link) return null;
 
   return (
@@ -15,12 +23,13 @@ const CTA = ({ children, bg, link, icon, fullWidth, className }) => {
       bg={consistentString(bg)}
       className={className}
       fullWidth={fullWidth}
+      externalUrl={externalUrl}
     >
-      {icon && icon.file && (
+      {/* {icon && icon.file && (
         <CtaIcon>
           <Image image={icon} width={300} />
         </CtaIcon>
-      )}
+      )} */}
 
       <CtaText>{children}</CtaText>
     </StyledLinkHandler>
@@ -41,6 +50,7 @@ CTA.propTypes = {
     file: PropTypes.object,
   }),
   fullWidth: PropTypes.bool,
+  externalUrl: PropTypes.bool,
   className: PropTypes.string,
 };
 

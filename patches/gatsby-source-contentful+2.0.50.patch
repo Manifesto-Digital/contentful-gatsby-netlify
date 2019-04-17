@@ -1,0 +1,68 @@
+diff --git a/node_modules/gatsby-source-contentful/normalize.js b/node_modules/gatsby-source-contentful/normalize.js
+index d3a17c4..2646df8 100644
+--- a/node_modules/gatsby-source-contentful/normalize.js
++++ b/node_modules/gatsby-source-contentful/normalize.js
+@@ -199,6 +199,7 @@ function prepareTextNode(node, key, text, createNodeId) {
+ }
+ 
+ function prepareRichTextNode(node, key, content, createNodeId) {
++  richTextOneLevel(content);
+   const str = stringify(content);
+   const richTextNode = Object.assign({}, content, {
+     id: createNodeId(`${node.id}${key}RichTextNode`),
+@@ -469,3 +470,55 @@ exports.createAssetNodes = ({
+     createNode(assetNode);
+   });
+ };
++
++
++function mutateFieldsToOnlySlug(nodeToMutate, item, itemIndex, currentSlug) {
++  const nodeToMutateFields = nodeToMutate.fields;
++
++  if (Object.prototype.hasOwnProperty.call(nodeToMutateFields, "slug") && nodeToMutateFields.slug !== currentSlug) {
++    const {
++      slug
++    } = nodeToMutateFields;
++    nodeToMutate.fields = {
++      slug
++    };
++  } else {
++    // If no slug or if reference to same content set to null
++    item.content.splice(itemIndex, 1);
++  }
++}
++
++function mutateLinkReferenceIfNeeded(node, item, i, slug = 'test') {
++  const embeddedContentModel = node.data.target.sys.contentType.sys.id;
++  if (embeddedContentModel === "assemblyCta") {
++    const contentModelFields = node.data.target.fields;
++    const fieldLink = contentModelFields.cta["en-GB"][0].fields.link["en-GB"][0];
++    return mutateFieldsToOnlySlug(fieldLink, item, i, slug);
++  }
++}
++
++function richTextOneLevel(content) {
++  Object.keys(content).forEach(k => {
++    const item = content[k];
++
++    if (Array.isArray(item)) {
++      Object.keys(item).forEach((ik, i) => {
++        const rtItem = item[ik];
++
++
++        if (Object.prototype.hasOwnProperty.call(rtItem, "nodeType") && rtItem.nodeType === "embedded-entry-block") {
++          mutateLinkReferenceIfNeeded(rtItem, item, i);
++        }
++
++        if (Object.prototype.hasOwnProperty.call(rtItem, "content") && Array.isArray(rtItem.content) && rtItem.content.length > 0) {
++          rtItem.content.forEach((contentNode, ii) => {
++            if (Object.prototype.hasOwnProperty.call(contentNode, "nodeType") && contentNode.nodeType === "entry-hyperlink") {
++              // fields needed just slug for now
++              mutateFieldsToOnlySlug(contentNode.data.target, contentNode, ii);
++            }
++          });
++        }
++      });
++    }
++  })
++}
