@@ -57,14 +57,13 @@ exports[`Renders correctly 1`] = `
   position: absolute;
   content: ' ';
   left: 0;
-  top: -10px;
+  top: 0;
   width: 100%;
 }
 
 .c6 {
   position: relative;
   font-weight: normal;
-  color: #e5e5e5;
 }
 
 .c17 {
@@ -208,6 +207,7 @@ exports[`Renders correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  color: #e5e5e5;
 }
 
 @media (min-width:40.0625em) {

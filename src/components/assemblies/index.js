@@ -24,6 +24,7 @@ import Map from '../google-map';
 import Stats from '../stats';
 import Finder from '../finder';
 import PersonCollection from '../person/collection';
+import Accordions from '../accordion/accordions';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -191,7 +192,11 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       }
 
       if (internal.type === 'ContentfulTopicSimpleRichTextBlock') {
-        return <RichTextWithWrapper richText={assembly.text} />;
+        return <RichTextWithWrapper key={id} richText={assembly.text} />;
+      }
+
+      if (internal.type === 'ContentfulAssemblyAccordions') {
+        return <Accordions key={id} data={assembly} />;
       }
 
       return null;
