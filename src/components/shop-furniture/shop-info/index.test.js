@@ -8,24 +8,83 @@ import { Heading } from './styles';
 // Default props
 export const createShopInfo = createFactory({
   address: {
-    childContentfulRichText: {
-      html: '<p>51 Church Road \nLondon\nSW13 9HH</p>',
+    json: {
+      data: {},
+      content: [
+        {
+          data: {},
+          content: [
+            {
+              data: {},
+              marks: [],
+              value: 'Church road, Glasgow',
+              nodeType: 'text',
+            },
+          ],
+          nodeType: 'paragraph',
+        },
+      ],
+      nodeType: 'document',
     },
   },
   openingHours: {
-    childContentfulRichText: {
-      html:
-        '<p><strong>Mon to Sat</strong>: 10am to 6pm\n<strong>Sunday</strong>: 11am to 5pm</p>',
+    json: {
+      data: {},
+      content: [
+        {
+          data: {},
+          content: [
+            {
+              data: {},
+              marks: [],
+              value: 'Mon to Sat, 9 - 5',
+              nodeType: 'text',
+            },
+          ],
+          nodeType: 'paragraph',
+        },
+      ],
+      nodeType: 'document',
     },
   },
   parking: {
-    childContentfulRichText: {
-      html: '<p>No parking</p>',
+    json: {
+      data: {},
+      content: [
+        {
+          data: {},
+          content: [
+            {
+              data: {},
+              marks: [],
+              value: 'No parking',
+              nodeType: 'text',
+            },
+          ],
+          nodeType: 'paragraph',
+        },
+      ],
+      nodeType: 'document',
     },
   },
   disabledAccess: {
-    childContentfulRichText: {
-      html: '<p>No disabled access</p>',
+    json: {
+      data: {},
+      content: [
+        {
+          data: {},
+          content: [
+            {
+              data: {},
+              marks: [],
+              value: '2 Disabled Bays Available',
+              nodeType: 'text',
+            },
+          ],
+          nodeType: 'paragraph',
+        },
+      ],
+      nodeType: 'document',
     },
   },
 });

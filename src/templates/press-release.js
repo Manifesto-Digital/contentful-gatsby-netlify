@@ -118,14 +118,10 @@ export const pressReleasePageQuery = graphql`
       showContactSideBar
       showThumbnailOnListingPage
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       notesToEditor {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       downloads {
         files {

@@ -125,12 +125,19 @@ exports[`renders correctly 1`] = `
         </h2>
         <div
           className="c5 c6"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-            }
-          }
-        />
+        >
+          <p>
+            Some body text
+          </p>
+          <h2>
+            Some header text
+          </h2>
+          <p>
+            <b>
+              some bollld text
+            </b>
+          </p>
+        </div>
       </div>
       <div
         className="c3"

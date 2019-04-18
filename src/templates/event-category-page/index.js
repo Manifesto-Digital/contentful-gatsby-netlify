@@ -92,9 +92,7 @@ export const eventCategoryPageQuery = graphql`
       pageName
       strapline
       summary {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       featuredEvent {
         ... on Node {

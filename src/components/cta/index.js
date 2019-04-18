@@ -25,11 +25,11 @@ const CTA = ({
       fullWidth={fullWidth}
       externalUrl={externalUrl}
     >
-      {/* {icon && icon.file && (
+      {icon && icon.file && (
         <CtaIcon>
           <Image image={icon} width={300} />
         </CtaIcon>
-      )} */}
+      )}
 
       <CtaText>{children}</CtaText>
     </StyledLinkHandler>

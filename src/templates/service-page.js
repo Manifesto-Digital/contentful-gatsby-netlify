@@ -70,14 +70,10 @@ export const servicePageQuery = graphql`
         ...ServiceTopicFragment
       }
       mainBodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       usefulInfoCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       pageInformation {
         ...PageInformationFragment

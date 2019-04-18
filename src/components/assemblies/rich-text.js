@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import InlineCallOut from '../inline-callout';
 import RichText from '../rich-text';
 import CTABanner from '../cta-banner';
+import DownloadBanner from '../download-banner';
+import Map from '../google-map';
+import AdviceSearchBox from '../advice-search-box';
+import VideoEmbed from '../video';
 
 const Assemblies = ({ fields, sys }) => {
   const AssemblyCheck = () => {
@@ -22,10 +26,25 @@ const Assemblies = ({ fields, sys }) => {
         <CTABanner
           headerText={fields.ctaHeaderText}
           removeMarginBottom={fields.removeMarginBottom}
-          cta={{ externalUrl: true, ...fields.cta }}
+          cta={{ externalUrl: true, ...fields.cta[0] }}
           bannerColour={fields.bannerColour}
         />
       );
+    }
+
+    if (type === 'assemblyDownloadBanner') {
+      return <DownloadBanner banner={fields} />;
+    }
+
+    if (type === 'topicGoogleMap') {
+      return <Map data={fields} insideContainer />;
+    }
+
+    if (type === 'topicAdviceSearchBox') {
+      return <AdviceSearchBox data={fields} insideContainer />;
+    }
+    if (type === 'topicVideoEmbed') {
+      return <VideoEmbed data={fields} insideContainer />;
     }
 
     return null;

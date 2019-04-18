@@ -49,45 +49,73 @@ exports[`renders correctly 1`] = `
   </h3>
   <div
     className="c1"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-      }
-    }
-  />
+  >
+    <p>
+      Some body text
+    </p>
+    <h2>
+      Some header text
+    </h2>
+    <p>
+      <b>
+        some bollld text
+      </b>
+    </p>
+  </div>
   <h3>
     Parking
   </h3>
   <div
     className="c1"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-      }
-    }
-  />
+  >
+    <p>
+      Some body text
+    </p>
+    <h2>
+      Some header text
+    </h2>
+    <p>
+      <b>
+        some bollld text
+      </b>
+    </p>
+  </div>
   <h3>
     Disabled access
   </h3>
   <div
     className="c1"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-      }
-    }
-  />
+  >
+    <p>
+      Some body text
+    </p>
+    <h2>
+      Some header text
+    </h2>
+    <p>
+      <b>
+        some bollld text
+      </b>
+    </p>
+  </div>
   <h3>
     Opening times
   </h3>
   <div
     className="c1"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-      }
-    }
-  />
+  >
+    <p>
+      Some body text
+    </p>
+    <h2>
+      Some header text
+    </h2>
+    <p>
+      <b>
+        some bollld text
+      </b>
+    </p>
+  </div>
   <h3>
     Phone
   </h3>

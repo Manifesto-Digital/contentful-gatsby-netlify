@@ -12,28 +12,20 @@ export const ShopTopicFragment = graphql`
       lat
     }
     displayAddress {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     shortAddress
     region
     contactNumber
     contactEmail
     openingHours {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     parkingInformation {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     disabledAccessInformation {
-      childContentfulRichText {
-        html
-      }
+      json
     }
   }
 `;

@@ -11,9 +11,6 @@ export const InlineCallout = graphql`
       type
     }
     content {
-      childContentfulRichText {
-        html
-      }
       json
     }
   }

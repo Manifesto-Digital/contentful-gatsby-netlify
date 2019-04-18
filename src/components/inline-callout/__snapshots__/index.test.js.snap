@@ -91,12 +91,19 @@ exports[`renders correctly with icon chosen in cms 1`] = `
     >
       <div
         className="c4"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
+      >
+        <p>
+          Some body text
+        </p>
+        <h2>
+          Some header text
+        </h2>
+        <p>
+          <b>
+            some bollld text
+          </b>
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -177,12 +184,19 @@ exports[`renders correctly with no options chosen in cms 1`] = `
     >
       <div
         className="c3"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
+      >
+        <p>
+          Some body text
+        </p>
+        <h2>
+          Some header text
+        </h2>
+        <p>
+          <b>
+            some bollld text
+          </b>
+        </p>
+      </div>
     </div>
   </div>
 </div>

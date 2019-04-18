@@ -8,9 +8,7 @@ export const VideoTopicFragment = graphql`
     title
     metaDescription
     bottomText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     removeMarginBottom
     internal {

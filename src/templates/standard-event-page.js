@@ -148,9 +148,7 @@ export const standardEventPageQuery = graphql`
         ...TwoColumnTextAndImageBlockFragment
       }
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       registerInterestForm {
         ...AssemblyFormFragment

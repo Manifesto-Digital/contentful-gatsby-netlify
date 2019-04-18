@@ -8,24 +8,16 @@ export const ContentGrid4Fragment = graphql`
     }
     border
     grid1 {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     grid2 {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     grid3 {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     grid4 {
-      childContentfulRichText {
-        html
-      }
+      json
     }
   }
 `;

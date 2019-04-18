@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@contentful/gatsby-transformer-contentful-richtext": "13.1.0",
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "@contentful/rich-text-types": "^13.1.0",

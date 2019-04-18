@@ -14,21 +14,17 @@ const InlineCallOut = ({
   borderColour,
   bannerColour,
   children,
-}) => {
-  console.log('bannerColour', bannerColour);
-
-  return (
-    <Container padding={!insideContainer} ref={forwardedRef}>
-      <InlineBanner
-        borderColour={consistentString(borderColour)}
-        bannerColour={consistentString(bannerColour)}
-      >
-        {icon && <BannerSVG src={iconSrc(icon)} cacheGetRequests />}
-        <TextWrapper>{children}</TextWrapper>
-      </InlineBanner>
-    </Container>
-  );
-};
+}) => (
+  <Container padding={!insideContainer} ref={forwardedRef}>
+    <InlineBanner
+      borderColour={consistentString(borderColour)}
+      bannerColour={consistentString(bannerColour)}
+    >
+      {icon && <BannerSVG src={iconSrc(icon)} cacheGetRequests />}
+      <TextWrapper>{children}</TextWrapper>
+    </InlineBanner>
+  </Container>
+);
 
 InlineCallOut.propTypes = {
   icon: PropTypes.string,

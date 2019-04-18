@@ -17,14 +17,13 @@ const Page = ({ data }) => {
     pageInformation,
     title,
   } = data.contentfulPageAssemblyContentPage;
+
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         {heroContent && <Hero content={heroContent[0]} />}
         <section>
-          <Container>
-            {bodyCopy && <RichText richText={bodyCopy.json} />}
-          </Container>
+          <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
         </section>
         <Assemblies assemblies={assemblies} />
       </article>
@@ -56,9 +55,7 @@ export const pageQuery = graphql`
         internal {
           type
         }
-        childContentfulRichText {
-          html
-        }
+
         json
       }
       pageInformation {

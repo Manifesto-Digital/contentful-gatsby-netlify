@@ -10,9 +10,7 @@ export const TestimonialTopicFragment = graphql`
       ...ImageFragment
     }
     text {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     author
     backgroundColour
