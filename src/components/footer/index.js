@@ -81,6 +81,7 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
                       header={item.menuLabel}
                       active={childrenState}
                       id={`footer-accordion-menu-${i + 1}`}
+                      footer
                     >
                       <MenuItem key={i} id={item.id} pageData={item} />
                     </FooterAccordion>

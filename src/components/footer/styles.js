@@ -137,6 +137,7 @@ export const ContentWrapper = styled.div`
 
 export const FooterAccordion = styled(Accordion)`
   flex: 1;
+  color: ${({ theme }) => theme.palette.grey10};
 
   h3 {
     ${breakpoint.tablet`

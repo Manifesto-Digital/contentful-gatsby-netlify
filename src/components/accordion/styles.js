@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
       position: absolute;
       content: ' ';
       left: 0;
-      top: ${({ theme }) => `-${theme.spacing.small}`};
+      top: ${({ theme, footer }) => (footer ? `-${theme.spacing.small}` : '0')};
       width: 100%;
       border-top: ${({ theme, active }) =>
         active && `1px solid ${theme.palette.grey45}`};
@@ -21,7 +21,6 @@ export const Wrapper = styled.div`
 export const Heading = styled.h3`
   position: relative;
   font-weight: normal;
-  color: ${({ theme }) => theme.palette.grey10};
   margin-bottom: ${({ active }) => active && '0'};
 `;
 
@@ -59,4 +58,8 @@ export const ArrowSVG = styled(SVG)`
     width: 20px;
     height: 25px;
   }
+`;
+
+export const AccordionsWrapper = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 `;

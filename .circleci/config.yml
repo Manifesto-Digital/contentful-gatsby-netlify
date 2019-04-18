@@ -162,11 +162,10 @@ workflows:
   build-test-deploy:
     jobs:
       - test
-      - migrate-test:
-          requires:
-            - test
+      - migrate-test
       - build:
           requires:
+            - test
             - migrate-test
       - clean-up:
           requires:

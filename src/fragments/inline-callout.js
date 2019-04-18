@@ -10,6 +10,7 @@ export const InlineCallout = graphql`
     internal {
       type
     }
+    removeMarginBottom
     content {
       childContentfulRichText {
         html

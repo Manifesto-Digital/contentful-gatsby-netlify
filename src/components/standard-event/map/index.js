@@ -11,7 +11,7 @@ const EventMap = ({ eventLocation }) => (
         key: 'AIzaSyCp8IoFqy0SA8sGDYUy0Hbk8Ktdc46zcGE',
       }}
       defaultCenter={{ lat: eventLocation.lat, lng: eventLocation.lon }}
-      defaultZoom={10}
+      defaultZoom={16}
     />
   </MapWrapper>
 );
