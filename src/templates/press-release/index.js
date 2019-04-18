@@ -1,26 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-
-import styled from 'styled-components';
-
-import { dateAsString } from '../utils/dates';
+import { dateAsString } from '../../utils/dates';
 // Components
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 import {
   Container,
   TwoThirds,
   SideBar,
   ContentWithSideBar,
-} from '../components/styled/containers';
-import MediaContact from '../components/media-contact';
-import PaddedBox from '../components/padded-box';
-import PageTitle from '../components/page-title';
-import RichText from '../components/rich-text';
-
-const PublishedDate = styled.p`
-  color: ${({ theme }) => theme.palette.grey45};
-`;
+} from '../../components/styled/containers';
+import MediaContact from '../../components/media-contact';
+import PaddedBox from '../../components/padded-box';
+import PageTitle from '../../components/page-title';
+import RichText from '../../components/rich-text';
+// Styles
+import { PublishedDate } from './styles';
 
 const PressReleasePage = ({ data }) => {
   const {
