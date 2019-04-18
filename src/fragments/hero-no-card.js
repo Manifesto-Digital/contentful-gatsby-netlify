@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const HeroNoCardFragment = graphql`
-  fragment HeroNoCardFragment on ContentfulTopicHeroNoCard {
+  fragment HeroNoCardFragment on ContentfulComponentHeroNoCard {
     id
     internal {
       type

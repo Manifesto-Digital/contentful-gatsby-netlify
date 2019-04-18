@@ -78,7 +78,7 @@ const EventCategoryPage = ({ data }) => {
 EventCategoryPage.propTypes = {
   data: PropTypes.shape({
     contentfulPageEventCategory: PropTypes.object,
-    allContentfulTopicEvent: PropTypes.object,
+    allContentfulDataEvent: PropTypes.object,
   }),
 };
 

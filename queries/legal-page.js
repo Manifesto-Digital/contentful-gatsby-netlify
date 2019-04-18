@@ -15,7 +15,7 @@ const getLegalPages = async graphql =>
               }
             }
             menuParent {
-              ... on ContentfulTopicUrlHierarchy {
+              ... on ContentfulComponentUrlHierarchy {
                 menuItem {
                   ${PagesFragment}
                 }

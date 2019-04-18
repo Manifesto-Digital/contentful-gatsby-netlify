@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
-export const AdviceSearchBoxTopicFragment = graphql`
-  fragment AdviceSearchBoxTopicFragment on ContentfulTopicAdviceSearchBox {
+export const AdviceSearchBoxComponentFragment = graphql`
+  fragment AdviceSearchBoxComponentFragment on ContentfulComponentAdviceSearchBox {
     id
     headerText
     collectionToSearch

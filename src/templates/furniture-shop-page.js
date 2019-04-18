@@ -77,7 +77,7 @@ export const furnitureShopPageQuery = graphql`
         ...ImageFragment
       }
       shop {
-        ...ShopTopicFragment
+        ...ShopComponentFragment
       }
       whatCanYouDonate {
         childContentfulRichText {

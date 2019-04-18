@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const PersonFragment = graphql`
-  fragment PersonFragment on ContentfulTopicPerson {
+  fragment PersonFragment on ContentfulDataPerson {
     id
     firstName
     lastName

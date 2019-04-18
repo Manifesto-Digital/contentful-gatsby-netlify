@@ -64,7 +64,7 @@ export const shopPageQuery = graphql`
         }
       }
       shop {
-        ...ShopTopicFragment
+        ...ShopComponentFragment
       }
       form {
         ...AssemblyFormFragment

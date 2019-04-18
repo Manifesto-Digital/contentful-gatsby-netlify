@@ -67,7 +67,7 @@ export const servicePageQuery = graphql`
     contentfulPageService(slug: { eq: $slug }) {
       title
       service {
-        ...ServiceTopicFragment
+        ...ServiceComponentFragment
       }
       mainBodyCopy {
         childContentfulRichText {

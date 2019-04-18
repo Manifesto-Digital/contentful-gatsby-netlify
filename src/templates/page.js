@@ -65,11 +65,11 @@ export const pageQuery = graphql`
         ... on Node {
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
-          ...BannerTopicFragment
+          ...BannerComponentFragment
           ...InlineCallout
-          ...VideoTopicFragment
+          ...VideoComponentFragment
           ...DownloadBannerAssemblyFragment
-          ...AdviceSearchBoxTopicFragment
+          ...AdviceSearchBoxComponentFragment
           ...ShareBlockFragment
           ...LinkBoxFragment
           ...RelatedAdviceFragment

@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const DonationBanner = graphql`
-  fragment DonationBanner on ContentfulTopicDonationBanner {
+  fragment DonationBanner on ContentfulComponentDonationBanner {
     id
     name
     internal {

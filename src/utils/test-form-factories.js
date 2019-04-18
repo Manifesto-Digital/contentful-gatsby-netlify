@@ -2,7 +2,7 @@ import { createFactory } from './test-factories';
 
 export const selectField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Drop down',
   fieldLabel: 'Title',
@@ -29,7 +29,7 @@ export const selectField = createFactory({
 
 export const textField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Text field',
   fieldLabel: 'First Name',
@@ -43,7 +43,7 @@ export const textField = createFactory({
 
 export const singleCheckboxField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Checkboxes',
   fieldLabel: 'A single checkbox',
@@ -62,7 +62,7 @@ export const singleCheckboxField = createFactory({
 
 export const multipleCheckboxField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Checkboxes',
   fieldLabel: 'Multi checkbox',
@@ -89,7 +89,7 @@ export const multipleCheckboxField = createFactory({
 
 export const singleRadioField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Radio Buttons',
   fieldLabel: 'A single radio button',
@@ -108,7 +108,7 @@ export const singleRadioField = createFactory({
 
 export const multipleRadioField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Radio Buttons',
   fieldLabel: 'Multiple radio buttons',
@@ -135,7 +135,7 @@ export const multipleRadioField = createFactory({
 
 export const emailTextField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Email',
   fieldLabel: 'Email address',
@@ -149,7 +149,7 @@ export const emailTextField = createFactory({
 
 export const numberTextField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Phone number',
   fieldLabel: 'Phone number',
@@ -163,7 +163,7 @@ export const numberTextField = createFactory({
 
 export const numericTextField = createFactory({
   internal: {
-    type: 'ContentfulTopicFormField',
+    type: 'ContentfulComponentFormField',
   },
   fieldType: 'Numeric',
   fieldLabel: 'Number',

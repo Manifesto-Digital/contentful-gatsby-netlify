@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 
 export const LinkFragment = graphql`
   fragment LinkFragment on Node {
-    ... on ContentfulTopicExternalLink {
+    ... on ContentfulComponentExternalLink {
       internal {
         type
       }

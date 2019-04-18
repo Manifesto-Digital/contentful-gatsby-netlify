@@ -37,10 +37,7 @@ const navigationQuery = graphql`
             }
             menuLabel
             navigationLink {
-              ... on ContentfulPageContent {
-                title
-                slug
-              }
+              ...LinkFragment
             }
             childNavigationItems {
               menuLabel
@@ -54,10 +51,7 @@ const navigationQuery = graphql`
             internal {
               type
             }
-            ... on ContentfulPageContent {
-              title
-              slug
-            }
+            ...LinkFragment
           }
         }
       }

@@ -16,8 +16,8 @@ const Page = ({ data }) => {
     pageInformation,
   } = data.contentfulPagePerson;
   const { jobTitle, photo, bio } = person;
-  const personList = data.allContentfulTopicPerson
-    ? data.allContentfulTopicPerson.edges.map(item => item.node)
+  const personList = data.allContentfulDataPerson
+    ? data.allContentfulDataPerson.edges.map(item => item.node)
     : null;
 
   return (
@@ -73,7 +73,7 @@ export const personPageQuery = graphql`
         ...PageInformationFragment
       }
     }
-    allContentfulTopicPerson(
+    allContentfulDataPerson(
       filter: { category: { eq: $category }, id: { ne: $personId } }
     ) {
       edges {

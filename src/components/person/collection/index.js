@@ -36,7 +36,7 @@ const PersonCollection = ({ data }) => {
     <StaticQuery
       query={graphql`
         query personCollectionQuery {
-          allContentfulTopicPerson {
+          allContentfulDataPerson {
             edges {
               node {
                 ...PersonFragment
@@ -48,7 +48,7 @@ const PersonCollection = ({ data }) => {
       render={response => {
         // Turn response into a simple array of objects and remove the nesting inside node
         // return only people from the same category as requests
-        const personArray = [...response.allContentfulTopicPerson.edges]
+        const personArray = [...response.allContentfulDataPerson.edges]
           .map(edge => edge.node)
           .filter(person => person.category === data.category);
 

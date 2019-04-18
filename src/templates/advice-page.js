@@ -84,10 +84,10 @@ export const advicePageQuery = graphql`
         ... on Node {
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
-          ...BannerTopicFragment
+          ...BannerComponentFragment
           ...InlineCallout
-          ...VideoTopicFragment
-          ...AdviceSearchBoxTopicFragment
+          ...VideoComponentFragment
+          ...AdviceSearchBoxComponentFragment
           ...DownloadBannerAssemblyFragment
           ...LinkBoxFragment
           ...DonationBanner

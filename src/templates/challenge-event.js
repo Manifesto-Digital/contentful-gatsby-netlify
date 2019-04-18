@@ -169,7 +169,7 @@ export const challengeEventPageQuery = graphql`
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
-          ... on ContentfulTopicFullWidthImage {
+          ... on ContentfulComponentFullWidthImage {
             ...FullWidthImageFragment
           }
         }
