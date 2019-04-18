@@ -11,6 +11,8 @@ export const BreadcrumbListItem = styled.li`
   list-style: none;
   margin: 0 0.4em 0 0;
   padding: 0;
+  font-size: ${({ theme }) => theme.fontsize.small};
+
   &:after {
     content: '>';
     margin-left: 0.4em;
@@ -23,6 +25,5 @@ export const BreadcrumbListItem = styled.li`
 `;
 
 export const BreadcrumbAnchor = styled(LinkHandler)`
-  font-size: 0.8em;
   text-decoration: none;
 `;

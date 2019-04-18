@@ -11,16 +11,17 @@ export const FlexWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 
-  ${breakpoint.tablet`
+  ${breakpoint.mobileLand`
     flex-wrap: nowrap;
   `};
 `;
 
 export const Content = styled.div`
-  ${breakpoint.tablet`
+  ${breakpoint.mobileLand`
     padding-right: ${({ theme }) => theme.spacing.standard};
   `};
 `;
+
 export const SubHeading = styled.p`
   font-size: ${({ theme }) => theme.headers.h3};
 
@@ -30,13 +31,13 @@ export const SubHeading = styled.p`
 `;
 
 export const HeroImage = styled.div`
-  flex-shrink: 0;
-  ${breakpoint.tablet`
+  ${breakpoint.mobileLand`
+    flex-shrink: 0;
     width: 50%;
     padding-left: ${({ theme }) => theme.spacing.standard};
   `};
   ${breakpoint.desktop`
-    width: 30%;
+    width: 33%;
   `};
 `;
 

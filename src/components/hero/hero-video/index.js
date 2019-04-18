@@ -48,32 +48,34 @@ const Hero = ({
 
   return (
     <VideoHero>
-      <Video
-        url={video.file.url}
-        muted
-        loop
-        playing
-        autoPlay
-        playsinline
-        onReady={() => setVideoLoaded(true)}
-        width={null}
-        height={null}
-        onError={e => {
-          // On error fires on load, check that there is an actual error
-          if (e.target.error) setError(true);
-        }}
-        config={{
-          file: {
-            attributes: {
-              style: {
-                width: 'auto',
-                height: 'auto',
+      {video && (
+        <Video
+          url={video.file.url}
+          muted
+          loop
+          playing
+          autoPlay
+          playsinline
+          onReady={() => setVideoLoaded(true)}
+          width={null}
+          height={null}
+          onError={e => {
+            // On error fires on load, check that there is an actual error
+            if (e.target.error) setError(true);
+          }}
+          config={{
+            file: {
+              attributes: {
+                style: {
+                  width: 'auto',
+                  height: 'auto',
+                },
+                poster: 'data:image/gif,AAAA',
               },
-              poster: 'data:image/gif,AAAA',
             },
-          },
-        }}
-      />
+          }}
+        />
+      )}
       {(error || !videoLoaded) && image && (
         <ImageFallback bgImage={image.file.url} />
       )}

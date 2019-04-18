@@ -36,6 +36,31 @@ exports[`renders correctly 1`] = `
   min-width: 10px;
 }
 
+.c0 blockquote {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 0;
+  padding: 60px 20px 20px 20px;
+  border-left: 4px solid #ea232d;
+  font-size: 1.35em;
+  font-weight: 300;
+}
+
+.c0 blockquote:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(test-file-stub);
+  top: 10px;
+  left: 20px;
+  color: #ea232d;
+}
+
 <div
   className="c0"
 >

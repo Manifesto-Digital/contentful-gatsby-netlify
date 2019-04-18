@@ -6,9 +6,9 @@ import {
   createInternalRef,
 } from '../../../utils/test-factories';
 import Navigation from '.';
-import NavigationMenu from './navigation';
+import NavigationMenuItem from './menu-item';
 import { MobileMenuClose, SubNavButton } from './styles-icons';
-import { ItemLink, SubMenu } from './styles';
+import { ItemLink, SubMenuUl } from './styles';
 import { hidePascalCaseWarning } from '../../../utils/test-mocks';
 
 it('Renders correctly', () => {
@@ -31,7 +31,7 @@ test('Should populate a menu item correctly', () => {
     navigationLink: [createInternalRef({ title: 'title' })],
   });
   const wrapper = mountWithTheme(
-    <NavigationMenu pageData={mockData} id={mockData.id} />
+    <NavigationMenuItem menuItem={mockData} id={mockData.id} />
   );
 
   expect(
@@ -49,27 +49,37 @@ test('Should populate a menu item correctly', () => {
   ).toBe(mockData.navigationLink[0]);
 });
 
-test('Should populate a sub-menu', () => {
+test('Should populate a menu', () => {
   const mockData = createHeaderNavigation({
     id: 'e230d8b8-4ee6-5d4c-bf25-57af664d12d7',
-    subNavigationItems: [
+    navigationItems: [
       {
-        slug: '320,000-people-in-britain-are-now-homeless',
-        title: '320,000 people in Britain are now homeless',
+        id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
+        menuLabel: 'Housing Advice',
+        navigationLink: [
+          {
+            title: 'Test Page ',
+            slug: 'Test-page',
+          },
+        ],
       },
       {
-        title: 'Shelter Manchester to hold vigil for lost homeless people',
-        slug: 'shelter-manchester-to-hold-vigil-for-lost-homeless-people',
+        id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
+        menuLabel: 'Housing Advice',
+        navigationLink: [
+          {
+            title: 'Test Page ',
+            slug: 'Test-page',
+          },
+        ],
       },
     ],
+    additionalLink: null,
   });
   const wrapper = mountWithTheme(
-    <NavigationMenu pageData={mockData} id={mockData.id} />
+    <Navigation pageData={mockData} active={false} id={mockData.id} />
   );
-
-  expect(wrapper.find(ItemLink)).toHaveLength(
-    mockData.subNavigationItems.length
-  );
+  expect(wrapper.find(ItemLink)).toHaveLength(mockData.navigationItems.length);
 });
 
 it('Opens a sub-navigation on button click', () => {
@@ -78,15 +88,15 @@ it('Opens a sub-navigation on button click', () => {
       {
         id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
         menuLabel: 'Housing Advice',
-        navigationLink: [{ title: 'Tobys Page', slug: 'tobys-page' }],
-        subNavigationItems: [
+        navigationLink: [{ title: 'Test Page', slug: 'test-page' }],
+        childNavigationItems: [
           {
             slug: '320,000-people-in-britain-are-now-homeless',
             title: '320,000 people in Britain are now homeless',
           },
           {
-            title: 'Tobys Page',
-            slug: 'tobys-page',
+            title: 'Test Page',
+            slug: 'test-page',
           },
           {
             title: 'Shelter Manchester to hold vigil for lost homeless people',
@@ -105,5 +115,5 @@ it('Opens a sub-navigation on button click', () => {
   const mockButton = wrapper.find(SubNavButton);
 
   mockButton.simulate('click');
-  expect(wrapper.find(SubMenu)).toHaveStyleRule('display', 'flex');
+  expect(wrapper.find(SubMenuUl)).toHaveStyleRule('display', 'flex');
 });

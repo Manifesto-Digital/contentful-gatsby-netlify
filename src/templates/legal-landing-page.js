@@ -40,7 +40,7 @@ const LegalLandingPage = ({ data, pageContext }) => {
   }
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout pageInformation={pageInformation} pageTitle={title} legal>
       <Container>
         <ContentWithSideBar>
           {currentPageHierarchy && heading && (

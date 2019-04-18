@@ -14,6 +14,7 @@ const CTA = ({
   fullWidth,
   className,
   externalUrl,
+  marginBottom,
 }) => {
   if (!link) return null;
 
@@ -24,6 +25,7 @@ const CTA = ({
       className={className}
       fullWidth={fullWidth}
       externalUrl={externalUrl}
+      marginBottom={marginBottom}
     >
       {icon && icon.file && (
         <CtaIcon>
@@ -52,6 +54,7 @@ CTA.propTypes = {
   fullWidth: PropTypes.bool,
   externalUrl: PropTypes.bool,
   className: PropTypes.string,
+  marginBottom: PropTypes.bool,
 };
 
 export default CTA;

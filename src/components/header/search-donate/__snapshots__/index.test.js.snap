@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders correctly 1`] = `
-.c1 {
+Array [
+  .c1 {
   padding: 0;
   margin: 0;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -67,48 +68,9 @@ exports[`Renders correctly 1`] = `
   fill: #0b0b89;
 }
 
-.c7 {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 1em;
-  font-weight: normal;
-  background-color: #12b9bf;
-  border: none;
-  color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c7:hover {
-  color: #fff;
-}
-
-.c7:hover {
-  color: #fff;
-}
-
 .c0 {
   display: none;
   height: 43px;
-}
-
-.c0 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 @media (min-width:62em) {
@@ -125,12 +87,90 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c7 {
+  .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+<form
+    action="/search"
+    className="c0"
+    method="get"
+    role="search"
+  >
+    <legend
+      className="c1"
+    >
+      Search this site
+    </legend>
+    <div
+      className="c2"
+    >
+      <input
+        className="c3"
+        id="search"
+        name="search"
+        placeholder="Search this site..."
+        type="search"
+      />
+      <button
+        className="c4"
+        type="submit"
+      >
+        <span
+          className="isvg loading c5"
+        />
+      </button>
+    </div>
+  </form>,
+  .c1 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 43px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:hover {
+  color: #fff;
+}
+
+.c0:hover {
+  color: #fff;
 }
 
 @media (min-width:62em) {
@@ -142,38 +182,8 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-<form
-  action="/search"
-  className="c0"
-  method="get"
-  role="search"
->
-  <legend
-    className="c1"
-  >
-    Search this site
-  </legend>
-  <div
-    className="c2"
-  >
-    <input
-      className="c3"
-      id="search"
-      name="search"
-      placeholder="Search this site..."
-      type="search"
-    />
-    <button
-      className="c4"
-      type="submit"
-    >
-      <span
-        className="isvg loading c5"
-      />
-    </button>
-  </div>
-  <Link
-    className="c6 c7"
+<Link
+    className="c0"
     to="/donate"
   >
     Donate
@@ -182,6 +192,6 @@ exports[`Renders correctly 1`] = `
     >
       Donate
     </legend>
-  </Link>
-</form>
+  </Link>,
+]
 `;

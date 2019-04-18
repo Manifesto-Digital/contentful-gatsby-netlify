@@ -1,27 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Item from '../components/press-releases/list-item';
-import Layout from '../components/layout';
+// Components
+import Item from '../../components/press-releases/list-item';
+import Layout from '../../components/layout';
+import MediaContact from '../../components/media-contact';
+import PageTitle from '../../components/page-title';
+import Pagination from '../../components/pagination';
+// Styles
 import {
   Container,
   TwoThirds,
   SideBar,
   ContentWithSideBar,
-} from '../components/styled/containers';
-import MediaContact from '../components/media-contact';
-import PageTitle from '../components/page-title';
-import Pagination from '../components/pagination';
+} from '../../components/styled/containers';
+import { List } from './styles';
 
-const PressReleaseList = styled.div`
-  background: ${({ theme }) => theme.palette.grey10};
-  padding-top: ${({ theme }) => theme.spacing.large};
-`;
-
-const PressReleaseTemplate = ({ data, pageContext }) => {
+const PressReleaseList = ({ data, pageContext }) => {
   const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
   const { title, subHeading } = pageContext;
+
   return (
     <Layout>
       <PageTitle twoThirds paddingBottom>
@@ -29,14 +27,14 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
         <p>{subHeading}</p>
       </PageTitle>
 
-      <PressReleaseList>
+      <List>
         <Container>
           <ContentWithSideBar>
             <TwoThirds>
               {posts.map(({ node }) => (
                 <Item key={node.id} data={node} />
               ))}
-              <Pagination pageContext={pageContext} slug="press-releases" />
+              <Pagination pageContext={pageContext} slug={pageContext.slug} />
             </TwoThirds>
 
             <SideBar>
@@ -44,12 +42,12 @@ const PressReleaseTemplate = ({ data, pageContext }) => {
             </SideBar>
           </ContentWithSideBar>
         </Container>
-      </PressReleaseList>
+      </List>
     </Layout>
   );
 };
 
-PressReleaseTemplate.propTypes = {
+PressReleaseList.propTypes = {
   data: PropTypes.object,
   pageContext: PropTypes.shape({
     currentPage: PropTypes.number,
@@ -66,7 +64,7 @@ Item.propTypes = {
   datePosted: PropTypes.string,
 };
 
-export default PressReleaseTemplate;
+export default PressReleaseList;
 
 export const pressReleasePageQuery = graphql`
   query pressReleaseQuery2($skip: Int!, $limit: Int!) {

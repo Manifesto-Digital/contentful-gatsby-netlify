@@ -6,10 +6,11 @@ const {
 
 async function createPressReleasePages(graphql, gatsbyCreatePage) {
   const pressReleasePageTemplate = path.resolve(
-    'src/templates/press-release.js'
+    'src/templates/press-release/index.js'
   );
+
   const pressReleaseListingPageTemplate = path.resolve(
-    'src/templates/press-release-list.js'
+    'src/templates/press-release-list/index.js'
   );
 
   // Get press release pages
@@ -35,23 +36,25 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   });
 
   // Create press release list pages
-
   // Grab the page for content to use in listings page
   // Filtered by contentful_id in query to only return one
   const pressReleaseListingsPages = await getPressReleaseListingsPages(graphql);
+
   const pressReleaseListingPage =
     pressReleaseListingsPages.data
-      .allContentfulPageAssemblyPressReleaseListingsPage.edges[0].node;
-  const { title, subHeading } = pressReleaseListingPage;
+      .contentfulPageAssemblyPressReleaseListingsPage;
+
+  const { title, subHeading, slug } = pressReleaseListingPage;
 
   const postsPerPage = 3; // deliberately low for testing purposes,
   const numPages = Math.ceil(pressReleases.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
     gatsbyCreatePage({
-      path: i === 0 ? `/press-releases` : `/press-releases/${i + 1}`,
+      path: i === 0 ? `/${slug}` : `/${slug}/${i + 1}`,
       component: pressReleaseListingPageTemplate,
       context: {
+        slug,
         title,
         subHeading,
         limit: postsPerPage,

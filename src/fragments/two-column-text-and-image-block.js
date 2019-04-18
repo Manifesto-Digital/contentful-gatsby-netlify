@@ -31,5 +31,6 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
       ...InlineCallout
     }
     backgroundColour
+    removeMarginBottom
   }
 `;

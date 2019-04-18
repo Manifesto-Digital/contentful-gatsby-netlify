@@ -12,10 +12,12 @@ const ContentCardBanner = ({ data, sidebar }) => {
 
   if (!contentCards || contentCards.length < 2) return null;
 
+  const bannerDirection = sidebar ? 'vertical' : consistentString(bannerFlow);
+
   return (
     <BannerBackground
       bannerColour={consistentString(bannerColour)}
-      bannerFlow={consistentString(bannerFlow)}
+      bannerFlow={bannerDirection}
       sidebar={sidebar}
     >
       <Container>
@@ -25,7 +27,7 @@ const ContentCardBanner = ({ data, sidebar }) => {
             <ContentCard
               key={i}
               data={contentCard}
-              bannerFlow={consistentString(bannerFlow)}
+              bannerFlow={bannerDirection}
               currentCardCount={i}
               cardCount={contentCards.length}
             />
