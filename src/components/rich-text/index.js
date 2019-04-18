@@ -26,15 +26,20 @@ const RichText = ({ richText, className, sidebar }) => {
     },
   };
 
+  const json = richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
+
+  if(!json) return null; 
+
   return (
     <Wrapper sidebar={sidebar} className={className}>
-      {documentToReactComponents(richText.json, options)}
+      {documentToReactComponents(json, options)}
     </Wrapper>
   );
 };
 RichText.propTypes = {
   richText: PropTypes.shape({
-    json: PropTypes.object.isRequired,
+    json: PropTypes.object,
+    content: PropTypes.object,
   }).isRequired,
   className: PropTypes.string,
   sidebar: PropTypes.bool,

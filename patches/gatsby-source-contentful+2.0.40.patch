@@ -1,5 +1,5 @@
 diff --git a/node_modules/gatsby-source-contentful/normalize.js b/node_modules/gatsby-source-contentful/normalize.js
-index d3a17c4..110673d 100644
+index d3a17c4..64fe1b1 100644
 --- a/node_modules/gatsby-source-contentful/normalize.js
 +++ b/node_modules/gatsby-source-contentful/normalize.js
 @@ -199,6 +199,7 @@ function prepareTextNode(node, key, text, createNodeId) {
@@ -67,4 +67,3 @@ index d3a17c4..110673d 100644
 +    }
 +  })
 +}
-\ No newline at end of file
