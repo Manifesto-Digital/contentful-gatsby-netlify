@@ -19,8 +19,6 @@ const EventsLandingPage = ({ data }) => {
     pageInformation,
   } = data.contentfulPageEventsLanding;
 
-  if (!featuredEvents || featuredEvents.length === 0) return;
-
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
@@ -34,11 +32,13 @@ const EventsLandingPage = ({ data }) => {
           <Container>
             <TwoThirds>
               <SectionTag>Featured events</SectionTag>
-              <CardWrapper>
-                {featuredEvents.map((featuredEvent, key) => (
-                  <EventCard key={key} data={featuredEvent} />
-                ))}
-              </CardWrapper>
+              {featuredEvents && featuredEvents.length > 0 && (
+                <CardWrapper>
+                  {featuredEvents.map((featuredEvent, key) => (
+                    <EventCard key={key} data={featuredEvent} />
+                  ))}
+                </CardWrapper>
+              )}
             </TwoThirds>
           </Container>
         </Wrapper>
