@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const GoogleMapFragment = graphql`
-  fragment GoogleMapFragment on ContentfulTopicGoogleMap {
+  fragment GoogleMapFragment on ContentfulComponentGoogleMap {
     id
     internal {
       type

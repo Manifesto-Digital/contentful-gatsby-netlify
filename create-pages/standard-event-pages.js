@@ -15,19 +15,17 @@ async function createContentPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  pages.data.allContentfulPageAssemblyStandardEvent.edges.forEach(
-    ({ node }) => {
-      if (!node.slug) return;
+  pages.data.allContentfulPageStandardEvent.edges.forEach(({ node }) => {
+    if (!node.slug) return;
 
-      gatsbyCreatePage({
-        path: node.slug,
-        component: standardEventPageTemplate,
-        context: {
-          slug: node.slug,
-        },
-      });
-    }
-  );
+    gatsbyCreatePage({
+      path: node.slug,
+      component: standardEventPageTemplate,
+      context: {
+        slug: node.slug,
+      },
+    });
+  });
 }
 
 module.exports = createContentPages;

@@ -24,7 +24,7 @@ const LegalLandingPage = ({ data, pageContext }) => {
     applicableRegions,
     calloutInformation,
     pageInformation,
-  } = data.contentfulPageAssemblyLegalLandingPage;
+  } = data.contentfulPageLegalLanding;
 
   let currentPageHierarchy = null;
   let heading = null;
@@ -82,7 +82,7 @@ const LegalLandingPage = ({ data, pageContext }) => {
 
 LegalLandingPage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyLegalLandingPage: PropTypes.object,
+    contentfulPageLegalLanding: PropTypes.object,
   }),
   pageContext: PropTypes.object,
 };
@@ -91,7 +91,7 @@ export default LegalLandingPage;
 
 export const eventsLandingPageQuery = graphql`
   query legalLandingPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyLegalLandingPage(slug: { eq: $slug }) {
+    contentfulPageLegalLanding(slug: { eq: $slug }) {
       title
       applicableRegions
       pageInformation {

@@ -27,7 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
   createChallengeEventPages(graphql, createPage);
   createPolicyPage(graphql, createPage);
   createShopPages(graphql, createPage);
-  createEventLandingPages(graphql, createPage);
   createLegalPages(graphql, createPage);
   createLegalWhatsNew(graphql, createPage);
   createLegalHomePage(graphql, createPage);

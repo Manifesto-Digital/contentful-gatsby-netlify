@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const PageInformationFragment = graphql`
-  fragment PageInformationFragment on ContentfulTopicPageMetaInformation {
+  fragment PageInformationFragment on ContentfulComponentPageMetaInformation {
     id
     seoTitle
     seoDescription {
@@ -15,11 +15,6 @@ export const PageInformationFragment = graphql`
       ...ImageFragment
     }
     shortDescription {
-      internal {
-        content
-      }
-    }
-    longDescription {
       internal {
         content
       }

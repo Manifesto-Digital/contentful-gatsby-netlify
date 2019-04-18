@@ -13,7 +13,7 @@ const LinkHandler = ({ className, children, link, internalLink = false }) => {
 
   if (
     !internalLink &&
-    linkRef.internal.type === 'ContentfulTopicExternalLink'
+    linkRef.internal.type === 'ContentfulComponentExternalLink'
   ) {
     const { URL, newTab } = linkRef;
     return (

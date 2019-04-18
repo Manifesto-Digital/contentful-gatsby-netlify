@@ -29,7 +29,7 @@ import {
 
 const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
-  const legalPage = data.contentfulPageAssemblyLegalPage;
+  const legalPage = data.contentfulPageLegal;
   const {
     slug,
     title,
@@ -184,7 +184,7 @@ export default LegalPage;
 
 export const legalPageQuery = graphql`
   query legalPageQuery($slug: String!) {
-    contentfulPageAssemblyLegalPage(slug: { eq: $slug }) {
+    contentfulPageLegal(slug: { eq: $slug }) {
       slug
       title
       pageInformation {

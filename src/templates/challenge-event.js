@@ -15,7 +15,7 @@ const ChallengeEventPage = ({ data }) => {
     assemblies,
     pageInformation,
     event,
-  } = data.contentfulPageAssemblyChallengeEvent;
+  } = data.contentfulPageChallengeEvent;
 
   // Grab the information from the event reference
   const { eventName, displayLocation, distance } = event;
@@ -148,7 +148,7 @@ export default ChallengeEventPage;
 
 export const challengeEventPageQuery = graphql`
   query challengeEventPageQuery($slug: String!) {
-    contentfulPageAssemblyChallengeEvent(slug: { eq: $slug }) {
+    contentfulPageChallengeEvent(slug: { eq: $slug }) {
       heroImage {
         ...ImageFragment
       }
@@ -169,7 +169,7 @@ export const challengeEventPageQuery = graphql`
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
-          ... on ContentfulTopicFullWidthImage {
+          ... on ContentfulComponentFullWidthImage {
             ...FullWidthImageFragment
           }
         }

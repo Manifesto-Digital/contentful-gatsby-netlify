@@ -16,7 +16,7 @@ const Page = ({ data }) => {
     assemblies,
     pageInformation,
     title,
-  } = data.contentfulPageAssemblyContentPage;
+  } = data.contentfulPageContent;
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
@@ -32,7 +32,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyContentPage: PropTypes.object,
+    contentfulPageContent: PropTypes.object,
   }),
 };
 
@@ -40,7 +40,7 @@ export default Page;
 
 export const pageQuery = graphql`
   query pageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyContentPage(slug: { eq: $slug }) {
+    contentfulPageContent(slug: { eq: $slug }) {
       title
       heroContent {
         ... on Node {
@@ -65,17 +65,16 @@ export const pageQuery = graphql`
         ... on Node {
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
-          ...BannerTopicFragment
+          ...BannerComponentFragment
           ...InlineCallout
-          ...VideoTopicFragment
+          ...VideoComponentFragment
           ...DownloadBannerAssemblyFragment
-          ...AdviceSearchBoxTopicFragment
+          ...AdviceSearchBoxComponentFragment
           ...ShareBlockFragment
           ...LinkBoxFragment
           ...RelatedAdviceFragment
           ...DonationBanner
           ...AssemblyFormFragment
-          ...ContentCardBannerFragment
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
@@ -87,6 +86,7 @@ export const pageQuery = graphql`
           ...PersonCollectionFragment
           ...RichTextFragment
           ...AccordionsFragment
+          ...FullWidthImageFragment
         }
       }
     }

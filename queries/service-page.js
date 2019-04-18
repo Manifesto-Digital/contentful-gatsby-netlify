@@ -1,7 +1,7 @@
 const getServicePages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyServicePage {
+      allContentfulPageService {
         edges {
           node {
             id

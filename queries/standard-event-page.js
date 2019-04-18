@@ -1,7 +1,7 @@
 const getStandardEventPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyStandardEvent {
+      allContentfulPageStandardEvent {
         edges {
           node {
             id

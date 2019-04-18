@@ -1,7 +1,7 @@
 const getShopPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyShopPage {
+      allContentfulPageShop {
         edges {
           node {
             id

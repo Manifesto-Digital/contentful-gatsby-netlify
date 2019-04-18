@@ -15,11 +15,9 @@ async function createLegalWhatsNewPages(graphql, gatsbyCreatePage) {
     throw Error(legalWhatsNewPages.errors);
   }
 
-  const legalPages =
-    legalWhatsNewPages.data.allContentfulPageAssemblyLegalPage.edges;
+  const legalPages = legalWhatsNewPages.data.allContentfulPageLegal.edges;
 
-  const legalWhatsNewPage =
-    legalWhatsNewPages.data.contentfulPageAssemblyLegalWhatsNewPage;
+  const legalWhatsNewPage = legalWhatsNewPages.data.contentfulPageLegalWhatsNew;
 
   // Page information, including intro text and featured legal page that will be passed to all pages
   const { id, title, introductoryText, featuredLegalPage } = legalWhatsNewPage;

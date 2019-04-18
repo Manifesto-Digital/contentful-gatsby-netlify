@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const ShareBlockFragment = graphql`
-  fragment ShareBlockFragment on ContentfulTopicShareBlock {
+  fragment ShareBlockFragment on ContentfulComponentShareBlock {
     id
     internal {
       type

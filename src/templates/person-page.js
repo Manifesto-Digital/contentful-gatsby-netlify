@@ -14,10 +14,10 @@ const Page = ({ data }) => {
     person,
     quotation,
     pageInformation,
-  } = data.contentfulPageAssemblyPerson;
+  } = data.contentfulPagePerson;
   const { jobTitle, photo, bio } = person;
-  const personList = data.allContentfulTopicPerson
-    ? data.allContentfulTopicPerson.edges.map(item => item.node)
+  const personList = data.allContentfulDataPerson
+    ? data.allContentfulDataPerson.edges.map(item => item.node)
     : null;
 
   return (
@@ -49,7 +49,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyPerson: PropTypes.object,
+    contentfulPagePerson: PropTypes.object,
   }),
 };
 
@@ -61,7 +61,7 @@ export const personPageQuery = graphql`
     $category: String!
     $personId: String!
   ) {
-    contentfulPageAssemblyPerson(slug: { eq: $slug }) {
+    contentfulPagePerson(slug: { eq: $slug }) {
       title
       quotation {
         quotation
@@ -73,13 +73,13 @@ export const personPageQuery = graphql`
         ...PageInformationFragment
       }
     }
-    allContentfulTopicPerson(
+    allContentfulDataPerson(
       filter: { category: { eq: $category }, id: { ne: $personId } }
     ) {
       edges {
         node {
           ...PersonFragment
-          page_assembly___person_ {
+          page___person_ {
             slug
           }
         }

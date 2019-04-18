@@ -15,7 +15,7 @@ const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
       if (!assembly.id || !assembly.internal) return null;
       const { id, internal } = assembly;
 
-      if (internal.type === 'ContentfulTopicChallengeEventPerksList') {
+      if (internal.type === 'ContentfulComponentChallengeEventPerksList') {
         return (
           <Perks key={id} data={assembly} insideContainer={insideContainer} />
         );
@@ -31,11 +31,11 @@ const ChallengeEventAssemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
+      if (internal.type === 'ContentfulComponentTwoColumnTextAndImageBlock') {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicFullWidthImage') {
+      if (internal.type === 'ContentfulComponentFullWidthImage') {
         return <FullWidthImage key={id} data={assembly} />;
       }
 

@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const EventFragment = graphql`
-  fragment EventFragment on ContentfulTopicEvent {
+  fragment EventFragment on ContentfulDataEvent {
     id
     eventName
     shortDescription

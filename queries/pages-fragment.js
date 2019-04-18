@@ -1,6 +1,6 @@
 const PagesFragment = `
     ...on Node {
-      ... on ContentfulPageAssemblyContentPage {
+      ... on ContentfulPageContent {
         internal {
           type
         }
@@ -12,7 +12,7 @@ const PagesFragment = `
         title
         slug
       }
-      ... on ContentfulPageAssemblyAdvicePage {
+      ... on ContentfulPageAdvice {
         internal {
           type
         }
@@ -24,19 +24,7 @@ const PagesFragment = `
         title
         slug
       }
-      ... on ContentfulPageAssemblyStandardEvent {
-        name
-        slug
-        internal {
-          type
-        }
-        pageInformation {
-          shortDescription {
-            shortDescription
-          }
-        }
-      }
-      ... on ContentfulPageAssemblyChallengeEvent {
+      ... on ContentfulPageStandardEvent {
         title
         slug
         internal {
@@ -48,7 +36,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyPerson {
+      ... on ContentfulPageChallengeEvent {
         title
         slug
         internal {
@@ -60,31 +48,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyPolicyPage {
-        pageName
-        slug
-        internal {
-          type
-        }
-        pageInformation {
-          shortDescription {
-            shortDescription
-          }
-        }
-      }
-      ... on ContentfulPageAssemblyEventsLandingPage {
-        pageName
-        slug
-        internal {
-          type
-        }
-        pageInformation {
-          shortDescription {
-            shortDescription
-          }
-        }
-      }
-      ... on ContentfulPageAssemblyFurnitureShopPage {
+      ... on ContentfulPagePerson {
         title
         slug
         internal {
@@ -96,7 +60,43 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyPressReleasePage {
+      ... on ContentfulPagePolicy {
+        title
+        slug
+        internal {
+          type
+        }
+        pageInformation {
+          shortDescription {
+            shortDescription
+          }
+        }
+      }
+      ... on ContentfulPageEventsLanding {
+        title
+        slug
+        internal {
+          type
+        }
+        pageInformation {
+          shortDescription {
+            shortDescription
+          }
+        }
+      }
+      ... on ContentfulPageFurnitureShop {
+        title
+        slug
+        internal {
+          type
+        }
+        pageInformation {
+          shortDescription {
+            shortDescription
+          }
+        }
+      }
+      ... on ContentfulPagePressRelease {
         title
         slug
         internal {
@@ -109,7 +109,7 @@ const PagesFragment = `
         }
       }
 
-      ... on ContentfulPageAssemblyServicePage {
+      ... on ContentfulPageService {
         title
         slug
         internal {
@@ -121,8 +121,8 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyShopPage {
-        name
+      ... on ContentfulPageShop {
+        title
         slug
         internal {
           type
@@ -134,7 +134,7 @@ const PagesFragment = `
         }
       }
 
-      ... on ContentfulPageAssemblyLegalPage {
+      ... on ContentfulPageLegal {
         slug
         title
         internal {
@@ -146,7 +146,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyLegalLandingPage {
+      ... on ContentfulPageLegalLanding {
         slug
         title
         internal {
@@ -158,7 +158,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyLegalHomepage {
+      ... on ContentfulPageLegalHomepage {
         slug
         title
         internal {

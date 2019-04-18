@@ -8,7 +8,7 @@ export const TestimonialsAssemblyFragment = graphql`
     }
     headerText
     testimonials {
-      ...TestimonialTopicFragment
+      ...TestimonialComponentFragment
     }
   }
 `;
