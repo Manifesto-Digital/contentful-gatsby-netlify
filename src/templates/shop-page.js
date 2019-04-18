@@ -17,7 +17,7 @@ import {
 
 const Page = ({ data }) => {
   const {
-    name,
+    title,
     bodyCopy,
     shop,
     form,
@@ -25,10 +25,10 @@ const Page = ({ data }) => {
   } = data.contentfulPageShop;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={name}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{name}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           <ContentWithSideBar>
@@ -57,7 +57,7 @@ export default Page;
 export const shopPageQuery = graphql`
   query shopPageTemplateQuery($slug: String!) {
     contentfulPageShop(slug: { eq: $slug }) {
-      name
+      title
       bodyCopy {
         childContentfulRichText {
           html

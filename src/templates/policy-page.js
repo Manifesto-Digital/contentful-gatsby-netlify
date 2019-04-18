@@ -9,13 +9,13 @@ import Policy from '../components/policy';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const PolicyPage = ({ data }) => {
-  const { pageName, policy, pageInformation } = data.contentfulPagePolicy;
+  const { title, policy, pageInformation } = data.contentfulPagePolicy;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={pageName}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{pageName}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           <TwoThirds>
@@ -38,7 +38,7 @@ export default PolicyPage;
 export const PolicyPageQuery = graphql`
   query PolicyPageTemplateQuery($slug: String!) {
     contentfulPagePolicy(slug: { eq: $slug }) {
-      pageName
+      title
       policy {
         ...PolicyFragment
       }

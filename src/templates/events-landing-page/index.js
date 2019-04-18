@@ -13,7 +13,7 @@ import { Wrapper, CardWrapper } from './styles';
 
 const EventsLandingPage = ({ data }) => {
   const {
-    pageName,
+    title,
     topTextSection,
     featuredEvents,
     pageInformation,
@@ -22,10 +22,10 @@ const EventsLandingPage = ({ data }) => {
   if (!featuredEvents || featuredEvents.length === 0) return;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={pageName}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{pageName}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           {topTextSection && <RichText richText={topTextSection} />}
@@ -58,7 +58,7 @@ export default EventsLandingPage;
 export const eventsLandingPageQuery = graphql`
   query eventsLandingPageTemplateQuery($slug: String!) {
     contentfulPageEventsLanding(slug: { eq: $slug }) {
-      pageName
+      title
       topTextSection {
         childContentfulRichText {
           html

@@ -33,7 +33,7 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
   if (advicePages.errors) {
     throw Error(advicePages.errors);
   }
-
+  if (!advicePages.data.allContentfulPageAdvice) return;
   // Create pages
   advicePages.data.allContentfulPageAdvice.edges.forEach(({ node }) => {
     if (!node.slug) return;

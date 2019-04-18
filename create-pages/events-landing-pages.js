@@ -24,7 +24,7 @@ async function createEventsLandingPages(graphql, gatsbyCreatePage) {
         component: eventsLandingPageTemplate,
         context: {
           slug: node.slug,
-          pageName: node.pageName,
+          title: node.title,
           topTextSection: node.topTextSection,
           featuredEvents: node.featuredEvents,
         },

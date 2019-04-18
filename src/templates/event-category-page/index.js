@@ -20,7 +20,7 @@ import { SectionTag } from '../../components/styled/tags';
 
 const EventCategoryPage = ({ data }) => {
   const {
-    pageName,
+    title,
     strapline,
     summary,
     featuredEvent,
@@ -39,10 +39,10 @@ const EventCategoryPage = ({ data }) => {
     );
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={pageName}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{pageName}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           <IntroWrapper>
@@ -87,7 +87,7 @@ export default EventCategoryPage;
 export const eventCategoryPageQuery = graphql`
   query eventCategoryPageTemplateQuery($slug: String!, $type: String!) {
     contentfulPageEventCategory(slug: { eq: $slug }) {
-      pageName
+      title
       strapline
       summary {
         childContentfulRichText {

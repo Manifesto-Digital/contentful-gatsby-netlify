@@ -75,7 +75,6 @@ export const pageQuery = graphql`
           ...RelatedAdviceFragment
           ...DonationBanner
           ...AssemblyFormFragment
-          ...ContentCardBannerFragment
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
@@ -87,6 +86,7 @@ export const pageQuery = graphql`
           ...PersonCollectionFragment
           ...RichTextFragment
           ...AccordionsFragment
+          ...FullWidthImageFragment
         }
       }
     }

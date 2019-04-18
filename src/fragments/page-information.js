@@ -19,10 +19,5 @@ export const PageInformationFragment = graphql`
         content
       }
     }
-    longDescription {
-      internal {
-        content
-      }
-    }
   }
 `;

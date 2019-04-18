@@ -25,7 +25,7 @@ const PagesFragment = `
         slug
       }
       ... on ContentfulPageStandardEvent {
-        name
+        title
         slug
         internal {
           type
@@ -61,7 +61,7 @@ const PagesFragment = `
         }
       }
       ... on ContentfulPagePolicy {
-        pageName
+        title
         slug
         internal {
           type
@@ -73,7 +73,7 @@ const PagesFragment = `
         }
       }
       ... on ContentfulPageEventsLanding {
-        pageName
+        title
         slug
         internal {
           type
@@ -122,7 +122,7 @@ const PagesFragment = `
         }
       }
       ... on ContentfulPageShop {
-        name
+        title
         slug
         internal {
           type

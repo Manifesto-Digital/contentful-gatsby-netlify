@@ -35,7 +35,7 @@ export const LinkFragment = graphql`
       slug
     }
     ... on ContentfulPageStandardEvent {
-      name
+      title
       slug
       internal {
         type
@@ -71,7 +71,7 @@ export const LinkFragment = graphql`
       }
     }
     ... on ContentfulPagePolicy {
-      pageName
+      title
       slug
       internal {
         type
@@ -83,7 +83,7 @@ export const LinkFragment = graphql`
       }
     }
     ... on ContentfulPageEventsLanding {
-      pageName
+      title
       slug
       internal {
         type
@@ -132,7 +132,7 @@ export const LinkFragment = graphql`
       }
     }
     ... on ContentfulPageShop {
-      name
+      title
       slug
       internal {
         type
