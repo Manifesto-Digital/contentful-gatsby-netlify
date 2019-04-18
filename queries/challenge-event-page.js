@@ -11,7 +11,7 @@
 const getChallengeEventPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyChallengeEvent {
+      allContentfulPageChallengeEvent {
         edges {
           node {
             id

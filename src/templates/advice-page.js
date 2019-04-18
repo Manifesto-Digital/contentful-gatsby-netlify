@@ -26,7 +26,7 @@ const AdvicePage = ({ data, pageContext }) => {
     sidebarAssemblies,
     displayBounceCard,
     pageInformation,
-  } = data.contentfulPageAssemblyAdvicePage;
+  } = data.contentfulPageAdvice;
   const { subpages, slug } = pageContext;
 
   return (
@@ -57,7 +57,7 @@ const AdvicePage = ({ data, pageContext }) => {
 
 AdvicePage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyAdvicePage: PropTypes.object,
+    contentfulPageAdvice: PropTypes.object,
   }),
   pageContext: PropTypes.object,
 };
@@ -66,7 +66,7 @@ export default AdvicePage;
 
 export const advicePageQuery = graphql`
   query advicePageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyAdvicePage(slug: { eq: $slug }) {
+    contentfulPageAdvice(slug: { eq: $slug }) {
       title
       bodyCopy {
         id

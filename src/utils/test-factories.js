@@ -187,7 +187,7 @@ export const createPerson = createFactory({
 
 export const createInternalRef = createFactory({
   internal: {
-    type: 'ContentfulPageAssemblyContentPage',
+    type: 'ContentfulPageContent',
   },
   slug: 'internal-link-slug',
 });

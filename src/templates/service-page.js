@@ -18,7 +18,7 @@ const ServicePage = ({ data }) => {
     mainBodyCopy,
     usefulInfoCopy,
     pageInformation,
-  } = data.contentfulPageAssemblyServicePage;
+  } = data.contentfulPageService;
 
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
@@ -56,7 +56,7 @@ const ServicePage = ({ data }) => {
 
 ServicePage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyServicePage: PropTypes.object,
+    contentfulPageService: PropTypes.object,
   }),
 };
 
@@ -64,7 +64,7 @@ export default ServicePage;
 
 export const servicePageQuery = graphql`
   query servicePageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyServicePage(slug: { eq: $slug }) {
+    contentfulPageService(slug: { eq: $slug }) {
       title
       service {
         ...ServiceTopicFragment

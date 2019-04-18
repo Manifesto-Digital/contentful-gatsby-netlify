@@ -26,12 +26,10 @@ const EventCategoryPage = ({ data }) => {
     featuredEvent,
     sidebarAssemblies,
     pageInformation,
-  } = data.contentfulPageAssemblyEventCategory;
+  } = data.contentfulPageEventCategory;
 
-  const standardEventPages =
-    data.allContentfulPageAssemblyStandardEvent.edges || [];
-  const challengeEventPages =
-    data.allContentfulPageAssemblyChallengeEvent.edges || [];
+  const standardEventPages = data.allContentfulPageStandardEvent.edges || [];
+  const challengeEventPages = data.allContentfulPageChallengeEvent.edges || [];
 
   const events = standardEventPages
     .concat(challengeEventPages)
@@ -79,7 +77,7 @@ const EventCategoryPage = ({ data }) => {
 
 EventCategoryPage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyEventCategory: PropTypes.object,
+    contentfulPageEventCategory: PropTypes.object,
     allContentfulTopicEvent: PropTypes.object,
   }),
 };
@@ -88,7 +86,7 @@ export default EventCategoryPage;
 
 export const eventCategoryPageQuery = graphql`
   query eventCategoryPageTemplateQuery($slug: String!, $type: String!) {
-    contentfulPageAssemblyEventCategory(slug: { eq: $slug }) {
+    contentfulPageEventCategory(slug: { eq: $slug }) {
       pageName
       strapline
       summary {
@@ -98,13 +96,13 @@ export const eventCategoryPageQuery = graphql`
       }
       featuredEvent {
         ... on Node {
-          ... on ContentfulPageAssemblyChallengeEvent {
+          ... on ContentfulPageChallengeEvent {
             slug
             event {
               ...EventFragment
             }
           }
-          ... on ContentfulPageAssemblyStandardEvent {
+          ... on ContentfulPageStandardEvent {
             slug
             mainCtaText
             event {
@@ -121,7 +119,7 @@ export const eventCategoryPageQuery = graphql`
       }
     }
 
-    allContentfulPageAssemblyStandardEvent(
+    allContentfulPageStandardEvent(
       filter: { event: { eventType: { eq: $type } } }
     ) {
       edges {
@@ -142,7 +140,7 @@ export const eventCategoryPageQuery = graphql`
       }
     }
 
-    allContentfulPageAssemblyChallengeEvent(
+    allContentfulPageChallengeEvent(
       filter: { event: { eventType: { eq: $type } } }
     ) {
       edges {

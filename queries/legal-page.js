@@ -3,7 +3,7 @@ const { PagesFragment } = require('./pages-fragment');
 const getLegalPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyLegalPage {
+      allContentfulPageLegal {
         edges {
           node {
             id

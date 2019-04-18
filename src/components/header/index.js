@@ -37,7 +37,7 @@ const navigationQuery = graphql`
             }
             menuLabel
             navigationLink {
-              ... on ContentfulPageAssemblyContentPage {
+              ... on ContentfulPageContent {
                 title
                 slug
               }
@@ -54,7 +54,7 @@ const navigationQuery = graphql`
             internal {
               type
             }
-            ... on ContentfulPageAssemblyContentPage {
+            ... on ContentfulPageContent {
               title
               slug
             }

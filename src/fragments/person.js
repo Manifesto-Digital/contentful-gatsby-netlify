@@ -20,7 +20,7 @@ export const PersonFragment = graphql`
     photo {
       ...ImageFragment
     }
-    page_assembly___person_ {
+    page___person_ {
       slug
     }
   }

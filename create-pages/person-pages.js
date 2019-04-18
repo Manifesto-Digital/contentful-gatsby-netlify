@@ -13,7 +13,7 @@ async function createPersonPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  pages.data.allContentfulPageAssemblyPerson.edges.forEach(({ node }) => {
+  pages.data.allContentfulPagePerson.edges.forEach(({ node }) => {
     if (!node.slug) return;
 
     gatsbyCreatePage({

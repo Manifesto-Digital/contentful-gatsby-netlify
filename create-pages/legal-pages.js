@@ -23,11 +23,9 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
   }
 
   const LandingPages =
-    legalLandingPagesResponse.data.allContentfulPageAssemblyLegalLandingPage
-      .edges;
+    legalLandingPagesResponse.data.allContentfulPageLegalLanding.edges;
 
-  const legalPages =
-    legalPagesResponse.data.allContentfulPageAssemblyLegalPage.edges;
+  const legalPages = legalPagesResponse.data.allContentfulPageLegal.edges;
 
   /**
    *  Checks if the the page ref exists on the current hierarchy level

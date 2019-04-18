@@ -21,7 +21,7 @@ const Page = ({ data }) => {
     noThanksList,
     howDoesYourDonationHelp,
     pageInformation,
-  } = data.contentfulPageAssemblyFurnitureShopPage;
+  } = data.contentfulPageFurnitureShop;
 
   if (!shop) return null;
 
@@ -65,7 +65,7 @@ export default Page;
 
 export const furnitureShopPageQuery = graphql`
   query furnitureShopPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyFurnitureShopPage(slug: { eq: $slug }) {
+    contentfulPageFurnitureShop(slug: { eq: $slug }) {
       title
       slug
       pageHeader

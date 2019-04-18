@@ -11,7 +11,7 @@
 const getAdvicePages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyAdvicePage(
+      allContentfulPageAdvice(
         filter: { topic___sub_pages: { elemMatch: { id: { eq: null } } } }
       ) {
         edges {

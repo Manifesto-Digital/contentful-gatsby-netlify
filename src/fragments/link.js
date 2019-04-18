@@ -10,7 +10,7 @@ export const LinkFragment = graphql`
       URL
       newTab
     }
-    ... on ContentfulPageAssemblyContentPage {
+    ... on ContentfulPageContent {
       internal {
         type
       }
@@ -22,7 +22,7 @@ export const LinkFragment = graphql`
       title
       slug
     }
-    ... on ContentfulPageAssemblyAdvicePage {
+    ... on ContentfulPageAdvice {
       internal {
         type
       }
@@ -34,7 +34,7 @@ export const LinkFragment = graphql`
       title
       slug
     }
-    ... on ContentfulPageAssemblyStandardEvent {
+    ... on ContentfulPageStandardEvent {
       name
       slug
       internal {
@@ -46,7 +46,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyChallengeEvent {
+    ... on ContentfulPageChallengeEvent {
       title
       slug
       internal {
@@ -58,7 +58,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyPerson {
+    ... on ContentfulPagePerson {
       title
       slug
       internal {
@@ -70,7 +70,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyPolicyPage {
+    ... on ContentfulPagePolicy {
       pageName
       slug
       internal {
@@ -82,7 +82,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyEventsLandingPage {
+    ... on ContentfulPageEventsLanding {
       pageName
       slug
       internal {
@@ -94,7 +94,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyFurnitureShopPage {
+    ... on ContentfulPageFurnitureShop {
       title
       slug
       internal {
@@ -106,7 +106,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyPressReleasePage {
+    ... on ContentfulPagePressRelease {
       title
       slug
       internal {
@@ -119,7 +119,7 @@ export const LinkFragment = graphql`
       }
     }
 
-    ... on ContentfulPageAssemblyServicePage {
+    ... on ContentfulPageService {
       title
       slug
       internal {
@@ -131,7 +131,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyShopPage {
+    ... on ContentfulPageShop {
       name
       slug
       internal {
@@ -144,7 +144,7 @@ export const LinkFragment = graphql`
       }
     }
 
-    ... on ContentfulPageAssemblyLegalPage {
+    ... on ContentfulPageLegal {
       slug
       title
       internal {
@@ -156,7 +156,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyLegalLandingPage {
+    ... on ContentfulPageLegalLanding {
       slug
       title
       internal {
@@ -168,7 +168,7 @@ export const LinkFragment = graphql`
         }
       }
     }
-    ... on ContentfulPageAssemblyLegalHomepage {
+    ... on ContentfulPageLegalHomepage {
       slug
       title
       internal {

@@ -1,6 +1,6 @@
 const PagesFragment = `
     ...on Node {
-      ... on ContentfulPageAssemblyContentPage {
+      ... on ContentfulPageContent {
         internal {
           type
         }
@@ -12,7 +12,7 @@ const PagesFragment = `
         title
         slug
       }
-      ... on ContentfulPageAssemblyAdvicePage {
+      ... on ContentfulPageAdvice {
         internal {
           type
         }
@@ -24,7 +24,7 @@ const PagesFragment = `
         title
         slug
       }
-      ... on ContentfulPageAssemblyStandardEvent {
+      ... on ContentfulPageStandardEvent {
         name
         slug
         internal {
@@ -36,7 +36,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyChallengeEvent {
+      ... on ContentfulPageChallengeEvent {
         title
         slug
         internal {
@@ -48,7 +48,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyPerson {
+      ... on ContentfulPagePerson {
         title
         slug
         internal {
@@ -60,7 +60,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyPolicyPage {
+      ... on ContentfulPagePolicy {
         pageName
         slug
         internal {
@@ -72,7 +72,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyEventsLandingPage {
+      ... on ContentfulPageEventsLanding {
         pageName
         slug
         internal {
@@ -84,7 +84,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyFurnitureShopPage {
+      ... on ContentfulPageFurnitureShop {
         title
         slug
         internal {
@@ -96,7 +96,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyPressReleasePage {
+      ... on ContentfulPagePressRelease {
         title
         slug
         internal {
@@ -109,7 +109,7 @@ const PagesFragment = `
         }
       }
 
-      ... on ContentfulPageAssemblyServicePage {
+      ... on ContentfulPageService {
         title
         slug
         internal {
@@ -121,7 +121,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyShopPage {
+      ... on ContentfulPageShop {
         name
         slug
         internal {
@@ -134,7 +134,7 @@ const PagesFragment = `
         }
       }
 
-      ... on ContentfulPageAssemblyLegalPage {
+      ... on ContentfulPageLegal {
         slug
         title
         internal {
@@ -146,7 +146,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyLegalLandingPage {
+      ... on ContentfulPageLegalLanding {
         slug
         title
         internal {
@@ -158,7 +158,7 @@ const PagesFragment = `
           }
         }
       }
-      ... on ContentfulPageAssemblyLegalHomepage {
+      ... on ContentfulPageLegalHomepage {
         slug
         title
         internal {

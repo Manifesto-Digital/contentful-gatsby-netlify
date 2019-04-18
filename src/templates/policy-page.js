@@ -9,11 +9,7 @@ import Policy from '../components/policy';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const PolicyPage = ({ data }) => {
-  const {
-    pageName,
-    policy,
-    pageInformation,
-  } = data.contentfulPageAssemblyPolicyPage;
+  const { pageName, policy, pageInformation } = data.contentfulPagePolicy;
 
   return (
     <Layout pageInformation={pageInformation} pageTitle={pageName}>
@@ -33,7 +29,7 @@ const PolicyPage = ({ data }) => {
 
 PolicyPage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyPolicyPage: PropTypes.object,
+    contentfulPagePolicy: PropTypes.object,
   }),
 };
 
@@ -41,7 +37,7 @@ export default PolicyPage;
 
 export const PolicyPageQuery = graphql`
   query PolicyPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyPolicyPage(slug: { eq: $slug }) {
+    contentfulPagePolicy(slug: { eq: $slug }) {
       pageName
       policy {
         ...PolicyFragment

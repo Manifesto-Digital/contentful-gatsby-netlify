@@ -15,7 +15,7 @@ async function createEventsLandingPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  eventLandingPages.data.allContentfulPageAssemblyEventsLandingPage.edges.forEach(
+  eventLandingPages.data.allContentfulPageEventsLanding.edges.forEach(
     ({ node }) => {
       if (!node.slug) return;
 

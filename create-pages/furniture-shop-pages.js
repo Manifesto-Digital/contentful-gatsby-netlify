@@ -15,19 +15,17 @@ async function createFurnitureShopPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  pages.data.allContentfulPageAssemblyFurnitureShopPage.edges.forEach(
-    ({ node }) => {
-      if (!node.slug) return;
+  pages.data.allContentfulPageFurnitureShop.edges.forEach(({ node }) => {
+    if (!node.slug) return;
 
-      gatsbyCreatePage({
-        path: node.slug,
-        component: standardEventPageTemplate,
-        context: {
-          slug: node.slug,
-        },
-      });
-    }
-  );
+    gatsbyCreatePage({
+      path: node.slug,
+      component: standardEventPageTemplate,
+      context: {
+        slug: node.slug,
+      },
+    });
+  });
 }
 
 module.exports = createFurnitureShopPages;

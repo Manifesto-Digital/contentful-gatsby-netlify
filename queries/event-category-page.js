@@ -1,7 +1,7 @@
 const getEventCategoryPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyEventCategory {
+      allContentfulPageEventCategory {
         edges {
           node {
             id

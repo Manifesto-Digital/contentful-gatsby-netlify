@@ -1,7 +1,7 @@
 const getPolicyPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyPolicyPage {
+      allContentfulPagePolicy {
         edges {
           node {
             id

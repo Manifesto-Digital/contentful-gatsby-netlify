@@ -17,7 +17,7 @@ const EventsLandingPage = ({ data }) => {
     topTextSection,
     featuredEvents,
     pageInformation,
-  } = data.contentfulPageAssemblyEventsLandingPage;
+  } = data.contentfulPageEventsLanding;
 
   if (!featuredEvents || featuredEvents.length === 0) return;
 
@@ -49,7 +49,7 @@ const EventsLandingPage = ({ data }) => {
 
 EventsLandingPage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyEventsLandingPage: PropTypes.object,
+    contentfulPageEventsLanding: PropTypes.object,
   }),
 };
 
@@ -57,7 +57,7 @@ export default EventsLandingPage;
 
 export const eventsLandingPageQuery = graphql`
   query eventsLandingPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyEventsLandingPage(slug: { eq: $slug }) {
+    contentfulPageEventsLanding(slug: { eq: $slug }) {
       pageName
       topTextSection {
         childContentfulRichText {

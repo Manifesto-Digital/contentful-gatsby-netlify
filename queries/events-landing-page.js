@@ -1,7 +1,7 @@
 const getEventsLandingPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyEventsLandingPage {
+      allContentfulPageEventsLanding {
         edges {
           node {
             id
