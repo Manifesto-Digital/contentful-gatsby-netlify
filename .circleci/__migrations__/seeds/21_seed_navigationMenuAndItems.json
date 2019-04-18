@@ -1,0 +1,235 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "4Yj86iJFRXCpjuQdNL950t",
+        "type": "Entry",
+        "createdAt": "2019-03-29T15:28:03.918Z",
+        "updatedAt": "2019-04-10T13:59:15.093Z",
+        "environment": {
+          "sys": {
+            "id": "legal",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 15,
+        "publishedAt": "2019-04-10T13:59:15.093Z",
+        "firstPublishedAt": "2019-03-29T15:34:28.588Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 16,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "assemblyNavigationMenu"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Legal Navigation"
+        },
+        "navigationItems": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "22XMVqCTWxTBQJYzXudb78"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "22XMVqCTWxTBQJYzXudb78",
+        "type": "Entry",
+        "createdAt": "2019-04-10T13:57:39.429Z",
+        "updatedAt": "2019-04-10T13:59:05.931Z",
+        "environment": {
+          "sys": {
+            "id": "legal",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 21,
+        "publishedAt": "2019-04-10T13:59:05.931Z",
+        "firstPublishedAt": "2019-04-10T13:59:05.931Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "topicNavigationItem"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Migration - topicNavigationItem"
+        },
+        "menuLabel": {
+          "en-GB": "Menu Label"
+        },
+        "navigationLink": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3ZnKNB4VcSdgTOho9wmraK"
+              }
+            }
+          ]
+        },
+        "childNavigationItems": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7oGVHHCsnohNvNt7kdr0V3"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "7oGVHHCsnohNvNt7kdr0V3",
+        "type": "Entry",
+        "createdAt": "2019-04-10T13:58:36.023Z",
+        "updatedAt": "2019-04-10T13:59:02.799Z",
+        "environment": {
+          "sys": {
+            "id": "legal",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 19,
+        "publishedAt": "2019-04-10T13:59:02.799Z",
+        "firstPublishedAt": "2019-04-10T13:59:02.799Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 20,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "topicNavigationItem"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Migration - topicNavigationItem child"
+        },
+        "menuLabel": {
+          "en-GB": "Child Menu label"
+        },
+        "navigationLink": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3ZnKNB4VcSdgTOho9wmraK"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "assets": []
+}

@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import NavigationMenuItem from './menu-item';
-import SearchBar from '../search-donate/search-bar';
+import NavigationMenuItem from '../navigation/menu-item';
 import { Overlay } from '../../styled/overlay';
-import { MobileMenuClose, MenuSVG } from './styles-icons';
+import { VisuallyHidden } from '../../styled/accessibility';
+import { MobileMenuClose, MenuSVG } from '../navigation/styles-icons';
 import {
   Wrapper,
   Menus,
   MenuList,
-  AdditionalMenu,
   Item,
   ItemLink,
   SkipToContent,
-} from './styles';
+} from '../navigation/styles';
+import { LegalDonateButton } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
 
 const Navigation = ({
-  pageData,
+  navigationItems,
   active,
   searchFocus,
   openState,
   searchState,
 }) => {
   const [activeMenu, setActiveMenu] = useState('');
-  const { navigationItems, additionalLink } = pageData;
 
   const updateActiveMenu = id => {
     if (id === activeMenu) {
@@ -47,8 +46,7 @@ const Navigation = ({
         >
           <MenuSVG src={CloseSVG} />
         </MobileMenuClose>
-        <SearchBar resolution="mobile" searchFocus={searchFocus} />
-        <Menus role="navigation" aria-label="Main menu">
+        <Menus role="navigation" aria-label="Main menu" legal>
           {navigationItems && (
             <MenuList role="menubar" aria-hidden="false">
               {navigationItems.map((item, i) => (
@@ -58,18 +56,20 @@ const Navigation = ({
                   menuItem={item}
                   menuOpen={activeMenu === item.id}
                   setActiveMenu={updateActiveMenu}
+                  legal
                 />
               ))}
-            </MenuList>
-          )}
-          {additionalLink && (
-            <AdditionalMenu role="navigation" aria-label="Secondary menu">
-              <Item>
-                <ItemLink internalLink={additionalLink[0]}>
-                  {additionalLink[0].menuLabel || additionalLink[0].title}
-                </ItemLink>
+              <Item topLevel legal>
+                <LegalDonateButton
+                  mobileMenu
+                  internalLink={{ slug: 'donate' }}
+                  bg="donate"
+                >
+                  Donate
+                  <VisuallyHidden as="legend">Donate</VisuallyHidden>
+                </LegalDonateButton>
               </Item>
-              <Item>
+              <Item topLevel legal>
                 <ItemLink
                   as="a"
                   href="https://scotland.shelter.org.uk/"
@@ -79,7 +79,7 @@ const Navigation = ({
                   Scotland
                 </ItemLink>
               </Item>
-            </AdditionalMenu>
+            </MenuList>
           )}
         </Menus>
         <SkipToContent href="#main">Skip to main content</SkipToContent>
@@ -98,9 +98,7 @@ Navigation.propTypes = {
   searchFocus: PropTypes.bool,
   openState: PropTypes.func,
   searchState: PropTypes.func,
-  pageData: PropTypes.shape({
-    navigationItems: PropTypes.array,
-  }),
+  navigationItems: PropTypes.array,
 };
 
 export default Navigation;

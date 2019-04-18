@@ -168,5 +168,17 @@ export const LinkFragment = graphql`
         }
       }
     }
+    ... on ContentfulPageAssemblyLegalHomepage {
+      slug
+      title
+      internal {
+        type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
+    }
   }
 `;

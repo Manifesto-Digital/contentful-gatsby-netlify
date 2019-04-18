@@ -145,9 +145,9 @@ exports[`renders correctly 1`] = `
     <h3
       className="c3"
     >
-      Toby
+      Test
        
-      Bushell
+      Person
     </h3>
     <p
       className="c4"
@@ -188,9 +188,9 @@ exports[`renders correctly 1`] = `
     <span
       className="c9"
     >
-      Toby
+      Test
        
-      Bushell
+      Person
     </span>
   </Link>
 </div>

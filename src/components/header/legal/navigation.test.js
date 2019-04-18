@@ -5,33 +5,38 @@ import {
   createHeaderNavigation,
   createInternalRef,
 } from '../../../utils/test-factories';
-import Navigation from '.';
-import NavigationMenuItem from './menu-item';
-import { MobileMenuClose, SubNavButton } from './styles-icons';
-import { ItemLink, SubMenuUl } from './styles';
+import LegalNavigation from './navigation';
+import NavigationMenuItem from '../navigation/menu-item';
+import { MobileMenuClose, SubNavButton } from '../navigation/styles-icons';
+import { ItemLink, SubMenuUl } from '../navigation/styles';
 import { hidePascalCaseWarning } from '../../../utils/test-mocks';
 
 it('Renders correctly', () => {
-  const mockData = createHeaderNavigation();
-  snapshotComponent(<Navigation pageData={mockData} active />);
+  const mockData = createHeaderNavigation({ acitve: false });
+  snapshotComponent(
+    <LegalNavigation navigationItems={mockData.navigationItems} active />
+  );
 });
 
 hidePascalCaseWarning();
 
 it('Displays close button', () => {
   const mockData = createHeaderNavigation();
-  const wrapper = mountWithTheme(<Navigation pageData={mockData} active />);
+  const wrapper = mountWithTheme(
+    <LegalNavigation navigationItems={mockData.navigationItems} active />
+  );
   expect(wrapper.find(MobileMenuClose)).toHaveLength(1);
 });
 
 test('Should populate a menu item correctly', () => {
-  const mockData = createHeaderNavigation({
+  const mockMenuItem = {
     id: 'e230d8b8-4ee6-5d4c-bf25-57af664d12d7',
     menuLabel: 'What we do',
     navigationLink: [createInternalRef({ title: 'title' })],
-  });
+  };
+
   const wrapper = mountWithTheme(
-    <NavigationMenuItem menuItem={mockData} id={mockData.id} />
+    <NavigationMenuItem menuItem={mockMenuItem} id={mockMenuItem.id} />
   );
 
   expect(
@@ -39,14 +44,14 @@ test('Should populate a menu item correctly', () => {
       .find(ItemLink)
       .at(0)
       .text()
-  ).toBe(mockData.menuLabel || mockData.navigationLink[0].title);
+  ).toBe(mockMenuItem.menuLabel);
 
   expect(
     wrapper
       .find(ItemLink)
       .at(0)
       .props().internalLink
-  ).toBe(mockData.navigationLink[0]);
+  ).toBe(mockMenuItem.navigationLink[0]);
 });
 
 test('Should populate a menu', () => {
@@ -55,7 +60,7 @@ test('Should populate a menu', () => {
     navigationItems: [
       {
         id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
-        menuLabel: 'Housing Advice',
+        menuLabel: 'Label 1',
         navigationLink: [
           {
             title: 'Test Page ',
@@ -65,7 +70,7 @@ test('Should populate a menu', () => {
       },
       {
         id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
-        menuLabel: 'Housing Advice',
+        menuLabel: 'Label 2',
         navigationLink: [
           {
             title: 'Test Page ',
@@ -77,9 +82,16 @@ test('Should populate a menu', () => {
     additionalLink: null,
   });
   const wrapper = mountWithTheme(
-    <Navigation pageData={mockData} active={false} id={mockData.id} />
+    <LegalNavigation
+      navigationItems={mockData.navigationItems}
+      active={false}
+      id={mockData.id}
+    />
   );
-  expect(wrapper.find(ItemLink)).toHaveLength(mockData.navigationItems.length);
+
+  expect(wrapper.find(ItemLink)).toHaveLength(
+    mockData.navigationItems.length + 1
+  ); // Scotland link
 });
 
 it('Opens a sub-navigation on button click', () => {
@@ -88,14 +100,14 @@ it('Opens a sub-navigation on button click', () => {
       {
         id: 'd582da1f-1f7f-5f4c-ae3b-ef2b41972dbc',
         menuLabel: 'Housing Advice',
-        navigationLink: [{ title: 'Test Page', slug: 'test-page' }],
+        navigationLink: [{ title: 'test Page', slug: 'test-page' }],
         childNavigationItems: [
           {
             slug: '320,000-people-in-britain-are-now-homeless',
             title: '320,000 people in Britain are now homeless',
           },
           {
-            title: 'Test Page',
+            title: 'test Page',
             slug: 'test-page',
           },
           {
@@ -111,7 +123,9 @@ it('Opens a sub-navigation on button click', () => {
     ],
   });
 
-  const wrapper = mountWithTheme(<Navigation pageData={mockData} active />);
+  const wrapper = mountWithTheme(
+    <LegalNavigation navigationItems={mockData.navigationItems} active />
+  );
   const mockButton = wrapper.find(SubNavButton);
 
   mockButton.simulate('click');
