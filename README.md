@@ -45,9 +45,9 @@
 
 Netlify will control branch deployments
 
-- develop: [develop--shelter-website.netlify.com](develop--shelter-website.netlify.com)
-- staging: [staging--shelter-website.netlify.com](staging--shelter-website.netlify.com)
-- master: [shelter-website.netlify.com](shelter-website.netlify.com)
+- develop: [develop--shelter-website.netlify.com](https://develop--shelter-website.netlify.com/)
+- staging: [staging--shelter-website.netlify.com](https://staging--shelter-website.netlify.com/)
+- master: [shelter-website.netlify.com](https://shelter-website.netlify.com/)
 
 ### 📌 Deploy a local branch for testing
 
