@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
 import QuotationWithImage from '../components/quotation';
 import PersonCardList from '../components/person/card-list';
+import Assemblies from '../components/assemblies';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const Page = ({ data }) => {
@@ -14,6 +15,7 @@ const Page = ({ data }) => {
     person,
     quotation,
     pageInformation,
+    assemblies,
   } = data.contentfulPagePerson;
   const { jobTitle, photo, bio } = person;
   const personList = data.allContentfulDataPerson
@@ -40,6 +42,7 @@ const Page = ({ data }) => {
             )}
             {bio && <p>{bio.internal.content}</p>}
             <PersonCardList list={personList} insideContainer />
+            <Assemblies assemblies={assemblies} insideContainer />
           </TwoThirds>
         </Container>
       </article>
@@ -71,6 +74,14 @@ export const personPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...ContentCardBannerFragment
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...ShareBlockFragment
+        }
       }
     }
     allContentfulDataPerson(

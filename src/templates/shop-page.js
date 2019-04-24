@@ -7,6 +7,7 @@ import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 import ShopSidebar from '../components/shop-sidebar';
 import Form from '../components/form';
+import Assemblies from '../components/assemblies';
 // Styles
 import {
   Container,
@@ -22,6 +23,7 @@ const Page = ({ data }) => {
     shop,
     form,
     pageInformation,
+    assemblies,
   } = data.contentfulPageShop;
 
   return (
@@ -35,6 +37,7 @@ const Page = ({ data }) => {
             <TwoThirds>
               <RichText richText={bodyCopy} />
               {form && <Form data={form} insideContainer />}
+              <Assemblies assemblies={assemblies} insideContainer />
             </TwoThirds>
             <SideBar>
               <ShopSidebar data={shop} />
@@ -71,6 +74,21 @@ export const shopPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...ContentGrid4Fragment
+          ...DonationBanner
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...StatsFragment
+          ...TwoColumnTextAndImageBlockFragment
+        }
       }
     }
   }

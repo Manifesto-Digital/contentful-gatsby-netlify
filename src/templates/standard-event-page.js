@@ -11,6 +11,7 @@ import ContentForm from '../components/form';
 import RichText from '../components/rich-text';
 import Modal from '../components/modal';
 import EventMap from '../components/standard-event/map';
+import Assemblies from '../components/assemblies';
 // Styles
 import {
   Container,
@@ -39,6 +40,7 @@ const Page = ({ data }) => {
     waitingListForm,
     twoColumn,
     bodyCopy,
+    assemblies,
     sidebarAssemblies,
     pageInformation,
   } = data.contentfulPageStandardEvent;
@@ -65,6 +67,7 @@ const Page = ({ data }) => {
             <ContentWithSideBar>
               <TwoThirds>
                 <RichText richText={bodyCopy} />
+                <Assemblies assemblies={assemblies} insideContainer />
               </TwoThirds>
               <SideBar>
                 <SideBarAssemblies assemblies={sidebarAssemblies} />
@@ -166,6 +169,24 @@ export const standardEventPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...AdviceSearchBoxComponentFragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...StatsFragment
+          ...TwoColumnTextAndImageBlockFragment
+        }
       }
     }
   }

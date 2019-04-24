@@ -7,6 +7,7 @@ import RichText from '../components/rich-text';
 import ContactCard from '../components/contact-card';
 import OpeningTimes from '../components/opening-times';
 import Map from '../components/google-map';
+import Assemblies from '../components/assemblies';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
@@ -18,6 +19,7 @@ const ServicePage = ({ data }) => {
     mainBodyCopy,
     usefulInfoCopy,
     pageInformation,
+    assemblies,
   } = data.contentfulPageService;
 
   return (
@@ -47,6 +49,7 @@ const ServicePage = ({ data }) => {
             <h2>Opening times</h2>
             <OpeningTimes data={service} />
             <RichText richText={usefulInfoCopy} />
+            <Assemblies assemblies={assemblies} insideContainer />
           </TwoThirds>
         </Container>
       </article>
@@ -77,6 +80,24 @@ export const servicePageQuery = graphql`
       usefulInfoCopy {
         childContentfulRichText {
           html
+        }
+      }
+      assemblies {
+        ... on Node {
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...AdviceSearchBoxComponentFragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ServicesFinderFragment
+          ...ShareBlockFragment
+          ...StatsFragment
         }
       }
       pageInformation {
