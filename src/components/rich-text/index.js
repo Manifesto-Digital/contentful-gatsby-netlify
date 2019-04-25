@@ -18,19 +18,19 @@ const RichText = ({ richText, className, sidebar }) => {
         return <Image image={flattenedFields} width={1000} />;
       },
 
-      [BLOCKS.EMBEDDED_ENTRY]: (node, next) => {
+      [BLOCKS.EMBEDDED_ENTRY]: node => {
         const { fields, sys } = node.data.target;
         const flattenedFields = fieldsMap(fields);
         return <RichTextAssembly fields={flattenedFields} sys={sys} />;
       },
-      [INLINES.ENTRY_HYPERLINK]: (node, next) => {
+      [INLINES.ENTRY_HYPERLINK]: node => {
         // There is currently a patch for Gatsby source contentful to avoid a max stack call
         // created by links in rich text. The only field that is set currently on the target
         // is the slug field
         if (!node.data.target.fields || !node.data.target.fields.slug) {
           return;
         }
-        const { fields, sys } = node.data.target;
+        const { fields } = node.data.target;
         if (!fields || !fields) {
           return;
         }
