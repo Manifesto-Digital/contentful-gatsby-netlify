@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import RichTextAssembly from '../assemblies/rich-text';
 import Image from '../image';
+import LinkHandler from '../link-handler';
 import { fieldsMap } from './helpers';
 import { Wrapper } from './styles';
 
@@ -27,16 +27,23 @@ const RichText = ({ richText, className, sidebar }) => {
         // There is currently a patch for Gatsby source contentful to avoid a max stack call
         // created by links in rich text. The only field that is set currently on the target
         // is the slug field
-        if (!node.data.target.fields || !node.data.target.fields.slug) {
-          return;
-        }
-        const { fields } = node.data.target;
-        if (!fields || !fields) {
+        const { fields, sys } = node.data.target;
+        // If fields has URL then this is an external link component
+        if (!fields || (!fields.slug && !fields.URL)) {
           return;
         }
         const flattenedFields = fieldsMap(fields);
+        const externalLink = sys.contentType.sys.id === 'topicExternalLink';
+        const linkType = externalLink
+          ? 'ContentfulComponentExternalLink'
+          : sys.contentType.sys.id;
+
         return (
-          <a href={`/${flattenedFields.slug}`}>{documentToHtmlString(node)}</a>
+          <LinkHandler
+            link={{ internal: { type: linkType }, ...flattenedFields }}
+          >
+            {documentToReactComponents(node)}
+          </LinkHandler>
         );
       },
       /* eslint-enable */
