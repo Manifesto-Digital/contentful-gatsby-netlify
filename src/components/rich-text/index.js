@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import RichTextAssembly from '../assemblies/rich-text';
 import Image from '../image';
 import { fieldsMap } from './helpers';
@@ -21,6 +22,22 @@ const RichText = ({ richText, className, sidebar }) => {
         const { fields, sys } = node.data.target;
         const flattenedFields = fieldsMap(fields);
         return <RichTextAssembly fields={flattenedFields} sys={sys} />;
+      },
+      [INLINES.ENTRY_HYPERLINK]: (node, next) => {
+        // There is currently a patch for Gatsby source contentful to avoid a max stack call
+        // created by links in rich text. The only field that is set currently on the target
+        // is the slug field
+        if (!node.data.target.fields || !node.data.target.fields.slug) {
+          return;
+        }
+        const { fields, sys } = node.data.target;
+        if (!fields || !fields) {
+          return;
+        }
+        const flattenedFields = fieldsMap(fields);
+        return (
+          <a href={`/${flattenedFields.slug}`}>{documentToHtmlString(node)}</a>
+        );
       },
       /* eslint-enable */
     },
