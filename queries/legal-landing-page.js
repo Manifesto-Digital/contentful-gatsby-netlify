@@ -1,7 +1,7 @@
 const getLegalLandingPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyLegalLandingPage {
+      allContentfulPageLegalLanding {
         edges {
           node {
             id

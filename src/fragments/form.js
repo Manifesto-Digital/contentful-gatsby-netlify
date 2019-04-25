@@ -26,7 +26,7 @@ export const AssemblyFormFragment = graphql`
     }
   }
 
-  fragment FormFieldFragment on ContentfulTopicFormField {
+  fragment FormFieldFragment on ContentfulComponentFormField {
     internal {
       type
     }
@@ -45,7 +45,7 @@ export const AssemblyFormFragment = graphql`
     }
   }
 
-  fragment FormFieldsetFragment on ContentfulTopicFormFieldset {
+  fragment FormFieldsetFragment on ContentfulComponentFormFieldset {
     internal {
       type
     }

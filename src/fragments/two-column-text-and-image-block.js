@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const TwoColumnTextAndImageBlockFragment = graphql`
-  fragment TwoColumnTextAndImageBlockFragment on ContentfulTopicTwoColumnTextAndImageBlock {
+  fragment TwoColumnTextAndImageBlockFragment on ContentfulComponentTwoColumnTextAndImageBlock {
     id
     internal {
       type

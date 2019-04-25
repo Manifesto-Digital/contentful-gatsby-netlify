@@ -17,18 +17,18 @@ import {
 
 const Page = ({ data }) => {
   const {
-    name,
+    title,
     bodyCopy,
     shop,
     form,
     pageInformation,
-  } = data.contentfulPageAssemblyShopPage;
+  } = data.contentfulPageShop;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={name}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{name}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           <ContentWithSideBar>
@@ -48,7 +48,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyShopPage: PropTypes.object,
+    contentfulPageShop: PropTypes.object,
   }),
 };
 
@@ -56,13 +56,13 @@ export default Page;
 
 export const shopPageQuery = graphql`
   query shopPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyShopPage(slug: { eq: $slug }) {
-      name
+    contentfulPageShop(slug: { eq: $slug }) {
+      title
       bodyCopy {
         json
       }
       shop {
-        ...ShopTopicFragment
+        ...ShopComponentFragment
       }
       form {
         ...AssemblyFormFragment

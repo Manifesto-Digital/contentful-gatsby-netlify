@@ -21,7 +21,7 @@ module.exports = function(migration) {
           linkContentType: [
             'pageAssemblyAdvicePage',
             'pageAssemblyChallengeEvent',
-            'pageAssemblyContentPage',
+            'pageContent',
           ],
         },
       ],

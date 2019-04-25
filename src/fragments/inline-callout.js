@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const InlineCallout = graphql`
-  fragment InlineCallout on ContentfulTopicInlineCallout {
+  fragment InlineCallout on ContentfulComponentInlineCallout {
     id
     name
     icon

@@ -8,7 +8,7 @@ export const AccordionsFragment = graphql`
       type
     }
     accordions {
-      ... on ContentfulTopicAccordion {
+      ... on ContentfulComponentAccordion {
         title
         heading
         content {

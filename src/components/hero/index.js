@@ -8,15 +8,15 @@ import DonationHero from '../donation-hero';
 const Hero = ({ content }) => {
   const { type } = content.internal;
 
-  if (type === 'ContentfulTopicHeroWithCard') {
+  if (type === 'ContentfulComponentHeroWithCard') {
     return <HeroWithCard content={content} />;
   }
 
-  if (type === 'ContentfulTopicHeroNoCard') {
+  if (type === 'ContentfulComponentHeroNoCard') {
     return <HeroNoCard content={content} />;
   }
 
-  if (type === 'ContentfulTopicDonationHero') {
+  if (type === 'ContentfulComponentDonationHero') {
     return <DonationHero content={content} />;
   }
 

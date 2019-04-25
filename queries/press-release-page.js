@@ -1,7 +1,7 @@
 const getPressReleasePages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyPressReleasePage {
+      allContentfulPagePressRelease {
         edges {
           node {
             title

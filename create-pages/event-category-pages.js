@@ -15,7 +15,7 @@ async function createEventCategoryPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  eventCategoryPages.data.allContentfulPageAssemblyEventCategory.edges.forEach(
+  eventCategoryPages.data.allContentfulPageEventCategory.edges.forEach(
     ({ node }) => {
       if (!node.slug) return;
 

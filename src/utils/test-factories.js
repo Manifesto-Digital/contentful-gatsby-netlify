@@ -232,14 +232,14 @@ export const createPerson = createFactory({
 
 export const createInternalRef = createFactory({
   internal: {
-    type: 'ContentfulPageAssemblyContentPage',
+    type: 'ContentfulPageContent',
   },
   slug: 'internal-link-slug',
 });
 
 export const createExternalRef = createFactory({
   internal: {
-    type: 'ContentfulTopicExternalLink',
+    type: 'ContentfulComponentExternalLink',
   },
   URL: 'http://mock.com',
   newTab: false,

@@ -25,12 +25,11 @@ const PressReleasePage = ({ data }) => {
     datePosted,
     showContactSideBar,
     pageInformation,
-  } = data.contentfulPageAssemblyPressReleasePage;
+  } = data.contentfulPagePressRelease;
 
   const formattedDate = dateAsString(datePosted, 'DD MMM YYYY');
 
-  let relatedFiles =
-    data.contentfulPageAssemblyPressReleasePage.downloads || null;
+  let relatedFiles = data.contentfulPagePressRelease.downloads || null;
 
   if (relatedFiles) {
     relatedFiles = relatedFiles[0].files;
@@ -99,7 +98,7 @@ const PressReleasePage = ({ data }) => {
 
 PressReleasePage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyPressReleasePage: PropTypes.object,
+    contentfulPagePressRelease: PropTypes.object,
   }),
 };
 
@@ -107,7 +106,7 @@ export default PressReleasePage;
 
 export const pressReleasePageQuery = graphql`
   query pressReleasePageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyPressReleasePage(slug: { eq: $slug }) {
+    contentfulPagePressRelease(slug: { eq: $slug }) {
       title
       datePosted
       showContactSideBar

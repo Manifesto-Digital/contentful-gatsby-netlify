@@ -13,7 +13,7 @@ export const ContentCardBannerFragment = graphql`
     bannerColour
     bannerFlow
     contentCards {
-      ... on ContentfulPageAssemblyContentPage {
+      ... on ContentfulPageContent {
         id
         slug
         title

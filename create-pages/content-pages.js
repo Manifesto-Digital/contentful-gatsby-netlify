@@ -13,7 +13,7 @@ async function createContentPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  pages.data.allContentfulPageAssemblyContentPage.edges.forEach(({ node }) => {
+  pages.data.allContentfulPageContent.edges.forEach(({ node }) => {
     if (!node.slug) return;
     gatsbyCreatePage({
       path: node.slug,

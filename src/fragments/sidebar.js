@@ -5,7 +5,7 @@ export const SidebarFragment = graphql`
     ...ContentCardBannerFragment
     ...CtaAssemblyFragment
     ...InlineCallout
-    ...BannerTopicFragment
+    ...BannerComponentFragment
     ...RichTextFragment
     ...InlineCallout
   }

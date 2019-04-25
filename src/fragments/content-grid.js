@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const ContentGrid4Fragment = graphql`
-  fragment ContentGrid4Fragment on ContentfulTopicContentGrid4 {
+  fragment ContentGrid4Fragment on ContentfulComponentContentGrid4 {
     id
     internal {
       type

@@ -21,7 +21,7 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   }
 
   const pressReleases =
-    pressReleasePages.data.allContentfulPageAssemblyPressReleasePage.edges;
+    pressReleasePages.data.allContentfulPagePressRelease.edges;
 
   // Create single pages
   pressReleases.forEach(({ node }) => {
@@ -41,8 +41,7 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   const pressReleaseListingsPages = await getPressReleaseListingsPages(graphql);
 
   const pressReleaseListingPage =
-    pressReleaseListingsPages.data
-      .contentfulPageAssemblyPressReleaseListingsPage;
+    pressReleaseListingsPages.data.contentfulPagePressReleaseListings;
 
   const { title, subHeading, slug } = pressReleaseListingPage;
 

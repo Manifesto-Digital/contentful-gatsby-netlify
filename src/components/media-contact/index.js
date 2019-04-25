@@ -6,7 +6,7 @@ const MediaContact = innerColour => (
   <StaticQuery
     query={graphql`
       query details {
-        contentfulTopicMediaContactDetails(
+        contentfulComponentMediaContactDetails(
           contentful_id: { eq: "2b8fYScWgWvL6rMpHZhnUr" }
         ) {
           title
@@ -24,7 +24,7 @@ const MediaContact = innerColour => (
         officeOpeningHours,
         alternativePhone,
         emailAddress,
-      } = data.contentfulTopicMediaContactDetails;
+      } = data.contentfulComponentMediaContactDetails;
 
       const boxColour = innerColour.innerColour
         ? innerColour.innerColour

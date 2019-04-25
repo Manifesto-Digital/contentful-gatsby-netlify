@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
-export const ShopTopicFragment = graphql`
-  fragment ShopTopicFragment on ContentfulTopicShop {
+export const ShopComponentFragment = graphql`
+  fragment ShopComponentFragment on ContentfulDataShop {
     id
     internal {
       type

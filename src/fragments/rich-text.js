@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const RichTextFragment = graphql`
-  fragment RichTextFragment on ContentfulTopicSimpleRichTextBlock {
+  fragment RichTextFragment on ContentfulComponentSimpleRichTextBlock {
     id
     internal {
       type

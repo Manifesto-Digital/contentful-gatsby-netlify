@@ -43,7 +43,7 @@ const footerQuery = graphql`
             }
             menuLabel
             navigationLink {
-              ... on ContentfulPageAssemblyContentPage {
+              ... on ContentfulPageContent {
                 title
                 slug
               }

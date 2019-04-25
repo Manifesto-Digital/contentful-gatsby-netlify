@@ -17,7 +17,7 @@ import {
 import { List } from './styles';
 
 const PressReleaseList = ({ data, pageContext }) => {
-  const posts = data.allContentfulPageAssemblyPressReleasePage.edges;
+  const posts = data.allContentfulPagePressRelease.edges;
   const { title, subHeading } = pageContext;
 
   return (
@@ -68,7 +68,7 @@ export default PressReleaseList;
 
 export const pressReleasePageQuery = graphql`
   query pressReleaseQuery2($skip: Int!, $limit: Int!) {
-    allContentfulPageAssemblyPressReleasePage(
+    allContentfulPagePressRelease(
       limit: $limit
       skip: $skip
       sort: { fields: [datePosted], order: DESC }

@@ -3,7 +3,7 @@ const { PagesFragment } = require('./pages-fragment');
 const getLegalPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyLegalPage {
+      allContentfulPageLegal {
         edges {
           node {
             id
@@ -15,7 +15,7 @@ const getLegalPages = async graphql =>
               }
             }
             menuParent {
-              ... on ContentfulTopicUrlHierarchy {
+              ... on ContentfulComponentUrlHierarchy {
                 menuItem {
                   ${PagesFragment}
                 }
