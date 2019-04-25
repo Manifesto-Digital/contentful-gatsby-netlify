@@ -49,7 +49,7 @@ const ChallengeEventPage = ({ data }) => {
     return function cleanup() {
       window.removeEventListener('resize', handleResize);
     };
-  }, [stickyBarPosition]);
+  }, [stickyBarPosition, handleResize]);
 
   useEffect(() => {
     // Store last scroll to detect direction for animation reasons

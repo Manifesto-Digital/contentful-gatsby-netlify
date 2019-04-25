@@ -28,7 +28,7 @@ const RichText = ({ richText, className, sidebar }) => {
 
   const json = richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
 
-  if(!json) return null; 
+  if (!json) return null;
 
   return (
     <Wrapper sidebar={sidebar} className={className}>
