@@ -27,7 +27,7 @@ const Finder = memo(({ data, insideContainer, type }) => {
 
   // If this is updated it will need to be changed in the test as well;
   const API_KEY = 'inoVa1mNLOG1SKKMThHBJ5ZZYGtx6Zupy2EO2dmW';
-  const SEARCH_ENDPOINT = `https://services.shelter.org.uk/api/v1/location/${query}?api_token=${API_KEY}`;
+  const SEARCH_ENDPOINT = `https://staging.services.shelter.org.uk/api/v1/location/${query}?api_token=${API_KEY}`;
 
   const clearInput = target => {
     target.value = '';

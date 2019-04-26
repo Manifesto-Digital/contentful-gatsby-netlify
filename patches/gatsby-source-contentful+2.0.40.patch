@@ -1,5 +1,5 @@
 diff --git a/node_modules/gatsby-source-contentful/normalize.js b/node_modules/gatsby-source-contentful/normalize.js
-index d3a17c4..64fe1b1 100644
+index d3a17c4..ee8f553 100644
 --- a/node_modules/gatsby-source-contentful/normalize.js
 +++ b/node_modules/gatsby-source-contentful/normalize.js
 @@ -199,6 +199,7 @@ function prepareTextNode(node, key, text, createNodeId) {
@@ -10,56 +10,34 @@ index d3a17c4..64fe1b1 100644
    const str = stringify(content);
    const richTextNode = Object.assign({}, content, {
      id: createNodeId(`${node.id}${key}RichTextNode`),
-@@ -469,3 +470,56 @@ exports.createAssetNodes = ({
+@@ -469,3 +470,34 @@ exports.createAssetNodes = ({
      createNode(assetNode);
    });
  };
 +
-+
-+function mutateFieldsToOnlySlug(nodeToMutate, item, itemIndex) {
-+  const nodeToMutateFields = nodeToMutate.fields;
-+
-+  if (Object.prototype.hasOwnProperty.call(nodeToMutateFields, "slug") ) {
-+    const {
-+      slug
-+    } = nodeToMutateFields;
-+
-+    nodeToMutate.fields = {
-+      slug
-+    };
-+  } else {
-+    // If no slug set to null
-+    item.content.splice(itemIndex, 1);
-+  }
-+}
-+
-+function mutateLinkReferenceIfNeeded(node, item, i) {
-+  const embeddedContentModel = node.data.target.sys.contentType.sys.id;
-+  if (embeddedContentModel === "assemblyCta") {
-+    const contentModelFields = node.data.target.fields;
-+    const fieldLink = contentModelFields.cta["en-GB"][0].fields.link["en-GB"][0];
-+    return mutateFieldsToOnlySlug(fieldLink, item, i);
-+  }
-+}
-+
 +function richTextOneLevel(content) {
 +  Object.keys(content).forEach(k => {
-+    const item = content[k];
++    if (Array.isArray(content[k])) {
++      Object.keys(content[k]).forEach(ik => {
++        const inside = content[k][ik];
 +
-+    if (Array.isArray(item)) {
-+      Object.keys(item).forEach((ik, i) => {
-+        const rtItem = item[ik];
-+
-+
-+        if (Object.prototype.hasOwnProperty.call(rtItem, "nodeType") && rtItem.nodeType === "embedded-entry-block") {
-+          mutateLinkReferenceIfNeeded(rtItem, item, i);
-+        }
-+
-+        if (Object.prototype.hasOwnProperty.call(rtItem, "content") && Array.isArray(rtItem.content) && rtItem.content.length > 0) {
-+          rtItem.content.forEach((contentNode, ii) => {
-+            if (Object.prototype.hasOwnProperty.call(contentNode, "nodeType") && contentNode.nodeType === "entry-hyperlink") {
++        if (Object.prototype.hasOwnProperty.call(inside, 'content') && Array.isArray(inside.content)) {
++          inside.content.forEach((node, i) => {
++            if (Object.prototype.hasOwnProperty.call(node, 'nodeType') && node.nodeType === 'entry-hyperlink') {
 +              // fields needed just slug for now
-+              mutateFieldsToOnlySlug(contentNode.data.target, contentNode, ii);
++              const targetFields = node.data.target.fields;
++
++              if (targetFields && Object.prototype.hasOwnProperty.call(targetFields, 'slug')) {
++                const slug = targetFields.slug;
++                node.data.target.fields = {
++                  slug
++                };
++              } else {
++                // If no slug lets delete so no max loop happens
++                if(inside.content) {
++                    inside.content.splice(i, 1);
++                }
++              }
 +            }
 +          });
 +        }
@@ -67,3 +45,4 @@ index d3a17c4..64fe1b1 100644
 +    }
 +  })
 +}
+\ No newline at end of file
