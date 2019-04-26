@@ -38,6 +38,51 @@ export const createVideo = createFactory({
 });
 
 export const createChildContentfulRichText = createFactory({
+  json: {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [],
+            value: 'Some body text',
+            nodeType: 'text',
+          },
+        ],
+        nodeType: 'paragraph',
+      },
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [],
+            value: 'Some header text',
+            nodeType: 'text',
+          },
+        ],
+        nodeType: 'heading-2',
+      },
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [
+              {
+                type: 'bold',
+              },
+            ],
+            value: 'some bollld text',
+            nodeType: 'text',
+          },
+        ],
+        nodeType: 'paragraph',
+      },
+    ],
+  },
   childContentfulRichText: {
     html:
       '<p>Our advice and support services across the UK give people <b>one-to-one</p>',

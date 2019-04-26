@@ -11,9 +11,7 @@ export const PolicyFragment = graphql`
     publishDate
     displayDate
     summary {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     media {
       ...DownloadableFileFragment

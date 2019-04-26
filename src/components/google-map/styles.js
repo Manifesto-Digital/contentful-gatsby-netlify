@@ -3,6 +3,10 @@ import SVG from 'react-inlinesvg';
 import MapIcon from './map-icon.png';
 
 export const Wrapper = styled.main`
+  margin-bottom: ${({ theme }) => theme.spacing.large};
+`;
+
+export const MapWrapper = styled.main`
   width: 100%;
   height: 400px;
 `;

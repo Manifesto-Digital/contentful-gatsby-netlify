@@ -9,17 +9,13 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
     systemName
     headerText
     leftColumnText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     leftColumnCalloutBanners {
       ...InlineCallout
     }
     rightColumnText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     rightColumnCta {
       ...ctaStandardFragment

@@ -73,9 +73,7 @@ export const advicePageQuery = graphql`
         internal {
           type
         }
-        childContentfulRichText {
-          html
-        }
+        json
       }
       pageInformation {
         ...PageInformationFragment

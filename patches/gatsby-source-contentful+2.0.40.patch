@@ -1,5 +1,5 @@
 diff --git a/node_modules/gatsby-source-contentful/normalize.js b/node_modules/gatsby-source-contentful/normalize.js
-index d3a17c4..cd6da97 100644
+index d3a17c4..953eae5 100644
 --- a/node_modules/gatsby-source-contentful/normalize.js
 +++ b/node_modules/gatsby-source-contentful/normalize.js
 @@ -199,6 +199,7 @@ function prepareTextNode(node, key, text, createNodeId) {
@@ -10,7 +10,7 @@ index d3a17c4..cd6da97 100644
    const str = stringify(content);
    const richTextNode = Object.assign({}, content, {
      id: createNodeId(`${node.id}${key}RichTextNode`),
-@@ -469,3 +470,32 @@ exports.createAssetNodes = ({
+@@ -469,3 +470,34 @@ exports.createAssetNodes = ({
      createNode(assetNode);
    });
  };
@@ -34,7 +34,9 @@ index d3a17c4..cd6da97 100644
 +                };
 +              } else {
 +                // If no slug lets delete so no max loop happens
-+                inside.content.splice(i, 1);
++                if(inside.content) {
++                    inside.content.splice(i, 1);
++                }
 +              }
 +            }
 +          });

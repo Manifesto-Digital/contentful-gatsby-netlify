@@ -8,9 +8,7 @@ const getLegalWhatsNewListingsPages = async graphql =>
         title
         introductoryText {
           id
-          childContentfulRichText {
-            html
-          }
+          json
         }
         featuredLegalPage {
           id

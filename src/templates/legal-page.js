@@ -195,16 +195,12 @@ export const legalPageQuery = graphql`
         ...PageInformationFragment
       }
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       tableOfContents {
         title
         textContent {
-          childContentfulRichText {
-            html
-          }
+          json
         }
       }
       legislations {

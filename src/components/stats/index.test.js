@@ -7,6 +7,7 @@ import {
 } from '../../utils/test-factories';
 import Stats from '.';
 import SingleStat from './single-stat';
+import { Title } from './styles';
 
 // Default props
 const createStat = (i, title, subtitle, text) => ({
@@ -55,7 +56,7 @@ it('renders the title and subtitle as h2s', () => {
   });
 
   const wrapper = mountWithTheme(<Stats data={mockData} />);
-  wrapper.find('h2').forEach((header, i) => {
+  wrapper.find(Title).forEach((header, i) => {
     expect(header.text()).toContain(`${i + 1} title subtitle`);
   });
 });

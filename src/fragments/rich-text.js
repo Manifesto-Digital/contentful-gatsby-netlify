@@ -7,9 +7,7 @@ export const RichTextFragment = graphql`
       type
     }
     text {
-      childContentfulRichText {
-        html
-      }
+      json
     }
   }
 `;

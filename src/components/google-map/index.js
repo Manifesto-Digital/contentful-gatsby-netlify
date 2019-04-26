@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Marker from './Marker';
 import GoogleMap from './GoogleMap';
 import InfoWindow from './InfoWindow';
-import { MapIconAlt, Address } from './styles';
+import { Wrapper, MapIconAlt, Address } from './styles';
 import { Container } from '../styled/containers';
 import IconAlt from '../../assets/svg/icons/map-marker-alt-light.svg';
 
@@ -45,52 +45,54 @@ const Map = ({ data, insideContainer }) => {
   }, [locations]);
 
   return (
-    <Container padding={!insideContainer}>
-      {currentLocations && (
-        <>
-          {headerText && <h2>{headerText}</h2>}
-          <GoogleMap
-            onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
-          >
-            {currentLocations.map((place, i) => (
-              <Marker
-                key={i}
-                index={i}
-                activeMarker={activeMarker}
-                text={place.address}
-                lat={place.location.lat}
-                lng={place.location.lon}
-                markerClick={e => updateActiveMarker(i, e)}
-              >
-                {place.address && (
-                  <InfoWindow
-                    index={i}
-                    address={place.address}
-                    location={place.location}
-                    activeMarker={activeMarker}
-                    clearInfoWindow={() => updateActiveMarker(-1)}
-                  />
-                )}
-              </Marker>
-            ))}
-          </GoogleMap>
-          {currentLocations.length === 1 && currentLocations[0].address && (
-            <Address>
-              {IconAlt && <MapIconAlt src={IconAlt} cacheGetRequests />}
-              <a
-                href={`https://www.google.co.uk/maps?daddr=${
-                  currentLocations[0].location.lat
-                }, ${currentLocations[0].location.lon}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {currentLocations[0].address}
-              </a>
-            </Address>
-          )}
-        </>
-      )}
-    </Container>
+    <Wrapper>
+      <Container padding={!insideContainer}>
+        {currentLocations && (
+          <>
+            {headerText && <h2>{headerText}</h2>}
+            <GoogleMap
+              onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps)}
+            >
+              {currentLocations.map((place, i) => (
+                <Marker
+                  key={i}
+                  index={i}
+                  activeMarker={activeMarker}
+                  text={place.address}
+                  lat={place.location.lat}
+                  lng={place.location.lon}
+                  markerClick={e => updateActiveMarker(i, e)}
+                >
+                  {place.address && (
+                    <InfoWindow
+                      index={i}
+                      address={place.address}
+                      location={place.location}
+                      activeMarker={activeMarker}
+                      clearInfoWindow={() => updateActiveMarker(-1)}
+                    />
+                  )}
+                </Marker>
+              ))}
+            </GoogleMap>
+            {currentLocations.length === 1 && currentLocations[0].address && (
+              <Address>
+                {IconAlt && <MapIconAlt src={IconAlt} cacheGetRequests />}
+                <a
+                  href={`https://www.google.co.uk/maps?daddr=${
+                    currentLocations[0].location.lat
+                  }, ${currentLocations[0].location.lon}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {currentLocations[0].address}
+                </a>
+              </Address>
+            )}
+          </>
+        )}
+      </Container>
+    </Wrapper>
   );
 };
 
