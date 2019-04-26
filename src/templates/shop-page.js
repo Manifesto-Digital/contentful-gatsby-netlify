@@ -59,9 +59,7 @@ export const shopPageQuery = graphql`
     contentfulPageShop(slug: { eq: $slug }) {
       title
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       shop {
         ...ShopComponentFragment

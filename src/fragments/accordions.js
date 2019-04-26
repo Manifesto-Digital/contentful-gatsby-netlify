@@ -12,9 +12,7 @@ export const AccordionsFragment = graphql`
         title
         heading
         content {
-          childContentfulRichText {
-            html
-          }
+          json
         }
       }
     }

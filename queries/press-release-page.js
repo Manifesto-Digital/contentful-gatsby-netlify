@@ -11,14 +11,10 @@ const getPressReleasePages = async graphql =>
             showContactSideBar
             showThumbnailOnListingPage
             bodyCopy {
-              childContentfulRichText {
-                html
-              }
+              json
             }
             notesToEditor {
-              childContentfulRichText {
-                html
-              }
+              json
             }
           }
         }

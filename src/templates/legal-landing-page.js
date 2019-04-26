@@ -98,14 +98,10 @@ export const eventsLandingPageQuery = graphql`
         ...PageInformationFragment
       }
       introductionText {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       calloutInformation {
-        childContentfulRichText {
-          html
-        }
+        json
       }
     }
   }

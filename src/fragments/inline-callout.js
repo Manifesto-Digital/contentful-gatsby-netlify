@@ -12,9 +12,7 @@ export const InlineCallout = graphql`
     }
     removeMarginBottom
     content {
-      childContentfulRichText {
-        html
-      }
+      json
     }
   }
 `;

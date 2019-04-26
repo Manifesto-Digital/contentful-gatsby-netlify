@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .c3 ul {
   padding-left: 0;
   list-style: none;
@@ -80,12 +86,6 @@ exports[`renders correctly 1`] = `
   color: #ea232d;
 }
 
-.c1 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 @media (min-width:40.0625em) {
   .c2 {
     max-width: 66.666%;
@@ -106,12 +106,19 @@ exports[`renders correctly 1`] = `
       </h2>
       <div
         className="c3"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
+      >
+        <p>
+          Some body text
+        </p>
+        <h2>
+          Some header text
+        </h2>
+        <p>
+          <b>
+            some bollld text
+          </b>
+        </p>
+      </div>
       <p>
         Call us on: 
         <span

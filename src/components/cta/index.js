@@ -13,6 +13,7 @@ const CTA = ({
   icon,
   fullWidth,
   className,
+  externalUrl,
   marginBottom,
 }) => {
   if (!link) return null;
@@ -23,6 +24,7 @@ const CTA = ({
       bg={consistentString(bg)}
       className={className}
       fullWidth={fullWidth}
+      externalUrl={externalUrl}
       marginBottom={marginBottom}
     >
       {icon && icon.file && (
@@ -50,6 +52,7 @@ CTA.propTypes = {
     file: PropTypes.object,
   }),
   fullWidth: PropTypes.bool,
+  externalUrl: PropTypes.bool,
   className: PropTypes.string,
   marginBottom: PropTypes.bool,
 };

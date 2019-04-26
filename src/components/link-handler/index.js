@@ -8,9 +8,7 @@ import { Link } from 'gatsby';
  */
 const LinkHandler = ({ className, children, link, internalLink = false }) => {
   if (!link && !internalLink) return null; // Is a multi ref that will only ever allow 1
-
   const linkRef = Array.isArray(link) ? link[0] : internalLink || link;
-
   if (
     !internalLink &&
     linkRef.internal.type === 'ContentfulComponentExternalLink'

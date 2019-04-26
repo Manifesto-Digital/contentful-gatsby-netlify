@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import QuotationWithImage from './index';
-import { QuoteImage, ImageWithoutQuote } from './styles';
+import { QuoteImage } from './styles';
 import { createFactory, createImage } from '../../utils/test-factories';
 
 // Default props

@@ -3,7 +3,27 @@
 exports[`Renders correctly 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .c2 ul {
+  "baseElement": .c0 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c5 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c2 ul {
   padding-left: 0;
   list-style: none;
 }
@@ -61,26 +81,6 @@ Object {
   top: 10px;
   left: 20px;
   color: #ea232d;
-}
-
-.c5 {
-  padding: 0;
-  margin: 0;
-  -webkit-clip: rect(1px,1px,1px,1px);
-  clip: rect(1px,1px,1px,1px);
-  -webkit-clip-path: inset(1px);
-  clip-path: inset(1px);
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-}
-
-.c0 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .c1 {
@@ -178,9 +178,14 @@ Object {
             class="c2"
           >
             <p>
-              Our advice and support services across the UK give people 
+              Some body text
+            </p>
+            <h2>
+              Some header text
+            </h2>
+            <p>
               <b>
-                one-to-one
+                some bollld text
               </b>
             </p>
           </div>
@@ -240,18 +245,23 @@ Object {
       class="sc-bxivhb bAZvsb"
     >
       <div
-        class="sc-iwsKbI dyYfBd"
+        class="sc-fBuWsC ioXrhm"
       >
         <h1>
           Topic - Services Finder
         </h1>
         <div
-          class="sc-bdVaJa gMnSGK"
+          class="sc-hzDkRC cmDYgb"
         >
           <p>
-            Our advice and support services across the UK give people 
+            Some body text
+          </p>
+          <h2>
+            Some header text
+          </h2>
+          <p>
             <b>
-              one-to-one
+              some bollld text
             </b>
           </p>
         </div>
@@ -263,32 +273,32 @@ Object {
         Your postcode or town
       </p>
       <form
-        class="sc-gZMcBi iIAYaJ"
+        class="sc-fMiknA hHsqOy"
         role="search"
       >
         <div
-          class="sc-jTzLTM kzkKCK"
+          class="sc-fAjcbJ fVGsRR"
         >
           <label
-            class="sc-htpNat VCSbh"
+            class="sc-gipzik fqhPMh"
             for="search-input"
           >
             Search for services
           </label>
           <input
-            class="sc-fjdhpX eIGDEc"
+            class="sc-caSCKo tKmWb"
             data-testid="search-input"
             name="search-input"
             type="text"
             value=""
           />
           <button
-            class="sc-jzJRlG hjDngI"
+            class="sc-gisBJw eqbxkT"
             disabled=""
             type="submit"
           >
             <span
-              class="sc-htpNat VCSbh"
+              class="sc-gipzik fqhPMh"
             >
               Submit Search
             </span>
@@ -296,10 +306,10 @@ Object {
           </button>
         </div>
         <div
-          class="sc-cSHVUG txBRk"
+          class="sc-kjoXOD fIALgx"
         >
           <span
-            class="isvg loading sc-kAzzGY kQYXZD"
+            class="isvg loading sc-cHGsZl dPMmUY"
           />
         </div>
       </form>

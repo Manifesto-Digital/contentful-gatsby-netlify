@@ -9,9 +9,7 @@ export const ShopFinderFragment = graphql`
     name
     titleText
     introText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
   }
 `;
