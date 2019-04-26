@@ -17,9 +17,9 @@ import Pagination from '../components/pagination';
 
 const LegalWhatsNew = ({ data, pageContext }) => {
   const { title, featuredLegalPage, introductoryText } = pageContext;
-  const { pageInformation } = data.contentfulPageAssemblyLegalWhatsNewPage;
-  const legalUpdatesItems = data.allContentfulPageAssemblyLegalPage.edges
-    ? data.allContentfulPageAssemblyLegalPage.edges.map(edge => edge.node)
+  const { pageInformation } = data.contentfulPageLegalWhatsNew;
+  const legalUpdatesItems = data.allContentfulPageLegal.edges
+    ? data.allContentfulPageLegal.edges.map(edge => edge.node)
     : [];
 
   // We are passed one legal page more than we wish to display incase
@@ -70,13 +70,13 @@ export default LegalWhatsNew;
 
 export const LegalWhatsNewQuery = graphql`
   query LegalWhatsNewQuery($skip: Int!, $limit: Int!, $id: String!) {
-    contentfulPageAssemblyLegalWhatsNewPage(id: { eq: $id }) {
+    contentfulPageLegalWhatsNew(id: { eq: $id }) {
       title
       pageInformation {
         ...PageInformationFragment
       }
     }
-    allContentfulPageAssemblyLegalPage(
+    allContentfulPageLegal(
       limit: $limit
       skip: $skip
       sort: { fields: [lastAmended], order: DESC }

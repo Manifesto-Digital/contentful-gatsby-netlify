@@ -1,16 +1,14 @@
 const getLegalWhatsNewListingsPages = async graphql =>
   graphql(`
     {
-      contentfulPageAssemblyLegalWhatsNewPage(
+      contentfulPageLegalWhatsNew(
         contentful_id: { eq: "6jwAyYxlzEgT0f6F7c7aLu" }
       ) {
         id
         title
         introductoryText {
           id
-          childContentfulRichText {
-            html
-          }
+          json
         }
         featuredLegalPage {
           id
@@ -24,9 +22,7 @@ const getLegalWhatsNewListingsPages = async graphql =>
           }
         }
       }
-      allContentfulPageAssemblyLegalPage(
-        sort: { fields: lastAmended, order: DESC }
-      ) {
+      allContentfulPageLegal(sort: { fields: lastAmended, order: DESC }) {
         edges {
           node {
             slug

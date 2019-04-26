@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const PolicyFragment = graphql`
-  fragment PolicyFragment on ContentfulTopicPolicy {
+  fragment PolicyFragment on ContentfulComponentPolicy {
     id
     internal {
       type
@@ -11,9 +11,7 @@ export const PolicyFragment = graphql`
     publishDate
     displayDate
     summary {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     media {
       ...DownloadableFileFragment

@@ -47,10 +47,12 @@ export const Menus = styled.nav`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 0;
 
   ${breakpoint.desktop`
     flex-direction: row;
+  justify-content: ${({ legal }) => legal && 'flex-end'};
     max-width: ${({ theme }) => theme.sizes.maxWidth};
     margin: 0 auto;
     padding: 0 ${({ theme }) => theme.spacing.small};
@@ -61,10 +63,12 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding: ${({ topLevel, theme }) =>
-    topLevel ? `0` : `${theme.spacing.small}}`};
-  border-bottom: ${({ topLevel, theme }) =>
-    topLevel ? ' none' : `1px solid ${theme.palette.grey10}`};
+  padding: ${({ theme }) => theme.spacing.small};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
+
+  ${breakpoint.desktop`
+     padding: ${({ topLevel, legal }) => topLevel && legal && '0'};
+  `}
 
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};
@@ -81,7 +85,8 @@ export const Item = styled.li`
 `;
 
 export const ItemLink = styled(LinkHandler)`
-  color: ${({ theme }) => theme.palette.black};
+  color: ${({ theme, active }) =>
+    active ? theme.palette.primary : theme.palette.black};
   font-size: ${({ theme }) => theme.fontsize.small};
   text-decoration: none;
 `;
@@ -108,15 +113,21 @@ export const AdditionalMenu = styled(MenuList)`
   `}
 `;
 
-export const SubMenu = styled.ul`
+export const SubMenuListItem = styled.li`
   display: ${({ active }) => (active ? 'flex' : 'none')};
+`;
+
+export const SubMenuUl = styled.ul`
+  display: ${({ active }) => (active ? 'flex' : 'none')};
+  width: 100%;
   flex-direction: column;
-  padding: 0 ${({ theme }) => theme.spacing.small};
+  padding-left: ${({ theme }) => theme.spacing.small};
   border: none;
   list-style: none;
 
   ${breakpoint.desktop`
     position: absolute;
+    display: ${({ legal }) => legal && 'none'};
     top: 52px;
     right: 0;
     left: 0;
@@ -127,7 +138,7 @@ export const SubMenu = styled.ul`
     margin: 0;
     background: ${({ theme }) => theme.palette.grey15};
     padding: ${({ theme }) => theme.spacing.small} ${({ theme }) =>
-    theme.spacing.small}
+    theme.spacing.small};
   `}
 
   ${Item} {

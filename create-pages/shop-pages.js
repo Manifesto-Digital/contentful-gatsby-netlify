@@ -13,7 +13,7 @@ async function createShopPages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  shopPages.data.allContentfulPageAssemblyShopPage.edges.forEach(({ node }) => {
+  shopPages.data.allContentfulPageShop.edges.forEach(({ node }) => {
     if (!node.slug) return;
 
     gatsbyCreatePage({

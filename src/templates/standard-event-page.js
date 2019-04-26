@@ -22,7 +22,7 @@ import TwoColumnTextAndImageBlock from '../components/two-column-text-and-image-
 import { consistentString } from '../utils/content-formatting';
 
 const Page = ({ data }) => {
-  const standardEvent = data.contentfulPageAssemblyStandardEvent;
+  const standardEvent = data.contentfulPageStandardEvent;
   const [mapModal, toggleMapModal] = useToggle(false);
   const formRef = useRef(null);
 
@@ -41,7 +41,7 @@ const Page = ({ data }) => {
     bodyCopy,
     sidebarAssemblies,
     pageInformation,
-  } = data.contentfulPageAssemblyStandardEvent;
+  } = data.contentfulPageStandardEvent;
 
   const { eventLocation } = event;
   const eventStatus = consistentString(event.eventStatus);
@@ -136,7 +136,7 @@ export default Page;
 
 export const standardEventPageQuery = graphql`
   query standardEventPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyStandardEvent(slug: { eq: $slug }) {
+    contentfulPageStandardEvent(slug: { eq: $slug }) {
       slug
       event {
         ...EventFragment
@@ -148,9 +148,7 @@ export const standardEventPageQuery = graphql`
         ...TwoColumnTextAndImageBlockFragment
       }
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       registerInterestForm {
         ...AssemblyFormFragment

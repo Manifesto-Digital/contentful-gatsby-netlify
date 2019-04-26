@@ -1,7 +1,7 @@
 const getPersonPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyPerson {
+      allContentfulPagePerson {
         edges {
           node {
             id

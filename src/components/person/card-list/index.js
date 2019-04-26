@@ -34,8 +34,8 @@ const PersonCardList = ({
               person={person}
               columns={columns}
               link={
-                person.page_assembly___person_
-                  ? person.page_assembly___person_[0] // Link is only present if a person page assembly exists for this person
+                person.page___person_
+                  ? person.page___person_[0] // Link is only present if a person page assembly exists for this person
                   : null
               }
             />

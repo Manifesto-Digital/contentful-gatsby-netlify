@@ -49,6 +49,31 @@ exports[`Renders correctly 1`] = `
   min-width: 10px;
 }
 
+.c15 blockquote {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 0;
+  padding: 60px 20px 20px 20px;
+  border-left: 4px solid #ea232d;
+  font-size: 1.35em;
+  font-weight: 300;
+}
+
+.c15 blockquote:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(test-file-stub);
+  top: 10px;
+  left: 20px;
+  color: #ea232d;
+}
+
 .c5 {
   position: relative;
 }
@@ -57,14 +82,13 @@ exports[`Renders correctly 1`] = `
   position: absolute;
   content: ' ';
   left: 0;
-  top: -10px;
+  top: 0;
   width: 100%;
 }
 
 .c6 {
   position: relative;
   font-weight: normal;
-  color: #e5e5e5;
 }
 
 .c17 {
@@ -208,6 +232,7 @@ exports[`Renders correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  color: #e5e5e5;
 }
 
 @media (min-width:40.0625em) {
@@ -300,7 +325,7 @@ exports[`Renders correctly 1`] = `
             >
               <Link
                 className="c9"
-                to="/tobys-page"
+                to="/test-page"
               >
                 Housing Advice
               </Link>
@@ -310,39 +335,34 @@ exports[`Renders correctly 1`] = `
             >
               <Link
                 className="c9"
-                to="/320,000-people-in-britain-are-now-homeless"
+                to="/sprint-7-legal-page-demo"
               >
-                320,000 people in Britain are now homeless
+                Benefits
               </Link>
             </li>
+          </ul>
+        </div>
+        <div
+          className="c4 c5"
+        >
+          <h3
+            className="c6"
+          >
+            What we do
+          </h3>
+          <ul
+            className="c7"
+          >
             <li
+              aria-haspopup={false}
               className="c8"
+              role="menuitem"
             >
               <Link
                 className="c9"
-                to="/tobys-page"
+                to="/test-page"
               >
-                Tobys Page
-              </Link>
-            </li>
-            <li
-              className="c8"
-            >
-              <Link
-                className="c9"
-                to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
-              >
-                Shelter Manchester to hold vigil for lost homeless people
-              </Link>
-            </li>
-            <li
-              className="c8"
-            >
-              <Link
-                className="c9"
-                to="/shelter-demo-page"
-              >
-                Shelter Demo Page
+                What we do
               </Link>
             </li>
           </ul>
@@ -367,12 +387,19 @@ exports[`Renders correctly 1`] = `
           />
           <div
             className="c15"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-              }
-            }
-          />
+          >
+            <p>
+              Some body text
+            </p>
+            <h2>
+              Some header text
+            </h2>
+            <p>
+              <b>
+                some bollld text
+              </b>
+            </p>
+          </div>
         </div>
         <Link
           className="c16"

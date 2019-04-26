@@ -48,11 +48,13 @@ export const SearchIcon = styled(SVG)`
 
 export const DonateButton = styled(LinkHandler)`
   ${buttonStyles};
-  display: flex;
+  display: ${({ resolution }) => (resolution === 'mobile' ? 'none' : 'flex')};
+  height: 43px;
   align-items: center;
   justify-content: center;
   margin-right: ${({ MobileMenu, theme }) => MobileMenu && theme.spacing.small};
   text-decoration: none;
+
   ${breakpoint.desktop`
     display: ${({ MobileMenu }) => (MobileMenu ? 'none' : 'flex')};
   `}
@@ -62,17 +64,12 @@ export const DonateButton = styled(LinkHandler)`
   }
 `;
 
-export const Wrapper = styled.form`
+export const FormWrapper = styled.form`
   display: ${({ resolution }) => (resolution === 'desktop' ? 'none' : 'flex')};
+  height: 43px;
 
   ${breakpoint.desktop`
       display: ${({ resolution }) =>
         resolution === 'desktop' ? 'flex' : 'none'};
   `}
-
-  ${DonateButton} {
-    display: ${({ resolution }) => (resolution === 'mobile' ? 'none' : 'flex')};
-  }
-
-  height: 43px;
 `;

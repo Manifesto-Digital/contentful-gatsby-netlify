@@ -24,6 +24,7 @@ import Map from '../google-map';
 import Stats from '../stats';
 import Finder from '../finder';
 import PersonCollection from '../person/collection';
+import Accordions from '../accordion/accordions';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -46,27 +47,31 @@ const Assemblies = ({ assemblies, insideContainer }) => {
           />
         );
       }
-      if (internal.type === 'ContentfulTopicContentGrid4') {
+      if (internal.type === 'ContentfulComponentContentGrid4') {
         return <ContentGrid key={id} content={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicBanner') {
+      if (internal.type === 'ContentfulComponentBanner') {
         return <Banner key={id} banner={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicDonationBanner') {
+      if (internal.type === 'ContentfulComponentDonationBanner') {
         return <DonationBanner key={id} banner={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicInlineCallout') {
+      if (internal.type === 'ContentfulComponentInlineCallout') {
         return (
-          <InlineCallOut key={id} insideContainer={insideContainer}>
+          <InlineCallOut
+            key={id}
+            insideContainer={insideContainer}
+            {...InlineCallOut.fromCMS(assembly)}
+          >
             <RichText richText={assembly.content} />
           </InlineCallOut>
         );
       }
 
-      if (internal.type === 'ContentfulTopicVideoEmbed') {
+      if (internal.type === 'ContentfulComponentVideoEmbed') {
         return (
           <VideoEmbed
             key={id}
@@ -80,11 +85,11 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         return <DownloadBanner key={id} banner={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicLinkBox') {
+      if (internal.type === 'ContentfulComponentLinkBox') {
         return <LinkBox key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicAdviceSearchBox') {
+      if (internal.type === 'ContentfulComponentAdviceSearchBox') {
         return (
           <AdviceSearchBox
             key={id}
@@ -94,7 +99,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicRelatedAdvice') {
+      if (internal.type === 'ContentfulComponentRelatedAdvice') {
         return (
           <RelatedAdvice
             key={id}
@@ -104,7 +109,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicShareBlock') {
+      if (internal.type === 'ContentfulComponentShareBlock') {
         return (
           <ShareBlock
             key={id}
@@ -126,7 +131,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         return <ContentCardBanner key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicChallengeEventPerksList') {
+      if (internal.type === 'ContentfulComponentChallengeEventPerksList') {
         return (
           <Perks key={id} data={assembly} insideContainer={insideContainer} />
         );
@@ -142,7 +147,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicTwoColumnTextAndImageBlock') {
+      if (internal.type === 'ContentfulComponentTwoColumnTextAndImageBlock') {
         return <TwoColumnTextAndImageBlock key={id} data={assembly} />;
       }
 
@@ -156,15 +161,15 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicGoogleMap') {
+      if (internal.type === 'ContentfulComponentGoogleMap') {
         return <Map key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicStats') {
+      if (internal.type === 'ContentfulComponentStats') {
         return <Stats key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicServicesFinder') {
+      if (internal.type === 'ContentfulComponentServicesFinder') {
         return (
           <Finder
             key={id}
@@ -175,7 +180,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         );
       }
 
-      if (internal.type === 'ContentfulTopicShopFinder') {
+      if (internal.type === 'ContentfulComponentShopFinder') {
         return (
           <Finder
             key={id}
@@ -190,8 +195,12 @@ const Assemblies = ({ assemblies, insideContainer }) => {
         return <PersonCollection key={id} data={assembly} />;
       }
 
-      if (internal.type === 'ContentfulTopicSimpleRichTextBlock') {
-        return <RichTextWithWrapper richText={assembly.text} />;
+      if (internal.type === 'ContentfulComponentSimpleRichTextBlock') {
+        return <RichTextWithWrapper key={id} richText={assembly.text} />;
+      }
+
+      if (internal.type === 'ContentfulAssemblyAccordions') {
+        return <Accordions key={id} data={assembly} />;
       }
 
       return null;

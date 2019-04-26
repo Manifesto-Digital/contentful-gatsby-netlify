@@ -8,14 +8,12 @@ export const ContentCardBannerFragment = graphql`
     }
     header {
       id
-      childContentfulRichText {
-        html
-      }
+      json
     }
     bannerColour
     bannerFlow
     contentCards {
-      ... on ContentfulPageAssemblyContentPage {
+      ... on ContentfulPageContent {
         id
         slug
         title

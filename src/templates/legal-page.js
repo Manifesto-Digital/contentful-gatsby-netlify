@@ -29,17 +29,19 @@ import {
 
 const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
-  const legalPage = data.contentfulPageAssemblyLegalPage;
-  const { title, bodyCopy, applicableRegions, tableOfContents } = legalPage;
-  const { parentSlug, slug } = pageContext;
+  const legalPage = data.contentfulPageLegal;
   const {
-    legislations,
-    pageInformation,
+    slug,
+    title,
+    bodyCopy,
+    applicableRegions,
+    tableOfContents,
     essentialLinks,
+    legislations,
     downloads,
     lastAmended,
+    pageInformation,
   } = legalPage;
-
   const hasBottomSection =
     (referenceList && referenceList.length > 0) ||
     legislations ||
@@ -61,14 +63,15 @@ const LegalPage = ({ data, pageContext }) => {
   return (
     <Layout
       pageInformation={pageInformation}
-      pageTitle={title}
+      slug={slug}
       removeFooterMargin
+      legal
+      pageTitle={title}
     >
       <article>
         <Container>
           <Breadcrumbs
-            parentSlugs={parentSlug}
-            slug={slug}
+            parentPages={pageContext.menuParent}
             currentTitle={title}
           />
           <ContentWithSideBar>
@@ -181,24 +184,23 @@ export default LegalPage;
 
 export const legalPageQuery = graphql`
   query legalPageQuery($slug: String!) {
-    contentfulPageAssemblyLegalPage(slug: { eq: $slug }) {
+    contentfulPageLegal(slug: { eq: $slug }) {
       slug
       title
+      pageInformation {
+        ...PageInformationFragment
+      }
       applicableRegions
       pageInformation {
         ...PageInformationFragment
       }
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       tableOfContents {
         title
         textContent {
-          childContentfulRichText {
-            html
-          }
+          json
         }
       }
       legislations {

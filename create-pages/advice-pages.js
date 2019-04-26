@@ -33,22 +33,20 @@ async function createAdvicePages(graphql, gatsbyCreatePage) {
   if (advicePages.errors) {
     throw Error(advicePages.errors);
   }
-
+  if (!advicePages.data.allContentfulPageAdvice) return;
   // Create pages
-  advicePages.data.allContentfulPageAssemblyAdvicePage.edges.forEach(
-    ({ node }) => {
-      if (!node.slug) return;
-      if (node.subPages) {
-        // Add the parent page info into the subPages array so that we can access in template
-        node.subPages.pages.unshift({
-          id: node.id,
-          slug: node.slug,
-          title: node.title,
-          subPages: null,
-        });
-      }
-      shelterCreatePage(node, node.subPages);
+  advicePages.data.allContentfulPageAdvice.edges.forEach(({ node }) => {
+    if (!node.slug) return;
+    if (node.subPages) {
+      // Add the parent page info into the subPages array so that we can access in template
+      node.subPages.pages.unshift({
+        id: node.id,
+        slug: node.slug,
+        title: node.title,
+        subPages: null,
+      });
     }
-  );
+    shelterCreatePage(node, node.subPages);
+  });
 }
 module.exports = createAdvicePages;

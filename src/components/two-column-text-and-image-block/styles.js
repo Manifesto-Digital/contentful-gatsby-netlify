@@ -3,7 +3,8 @@ import RichText from '../rich-text';
 import { breakpoint } from '../theme/breakpoint';
 
 export const Wrapper = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing.large};
+  margin-bottom: ${({ removeMarginBottom, theme }) =>
+    removeMarginBottom ? '0' : theme.spacing.large};
   padding: ${({ theme }) => theme.spacing.large} 0;
 
   background-color: ${({ backgroundColour, theme }) =>

@@ -10,7 +10,7 @@ import FormField from '../form-elements/form-field';
  * @param {field.formik} param
  */
 const FormFieldType = ({ formField }) => {
-  if (formField.internal.type === 'ContentfulTopicFormFieldset') {
+  if (formField.internal.type === 'ContentfulComponentFormFieldset') {
     const { fieldsetLegend, fieldsetDescription, formFields } = formField;
     return (
       <FormFieldset

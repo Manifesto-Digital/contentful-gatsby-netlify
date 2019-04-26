@@ -15,12 +15,13 @@ const ChallengeEventPage = ({ data }) => {
     assemblies,
     pageInformation,
     event,
-  } = data.contentfulPageAssemblyChallengeEvent;
+  } = data.contentfulPageChallengeEvent;
 
   // Grab the information from the event reference
   const { eventName, displayLocation, distance } = event;
   const date = dateAsString(event.eventSystemDate, 'DD MMM YYYY');
-  const bannerText = `${distance}\n${
+
+  const bannerText = `${distance ? `${distance}\n` : ''}${
     displayLocation ? `${displayLocation}\n` : ''
   }${date}`;
 
@@ -48,7 +49,7 @@ const ChallengeEventPage = ({ data }) => {
     return function cleanup() {
       window.removeEventListener('resize', handleResize);
     };
-  }, [stickyBarPosition]);
+  }, [stickyBarPosition, handleResize]);
 
   useEffect(() => {
     // Store last scroll to detect direction for animation reasons
@@ -147,7 +148,7 @@ export default ChallengeEventPage;
 
 export const challengeEventPageQuery = graphql`
   query challengeEventPageQuery($slug: String!) {
-    contentfulPageAssemblyChallengeEvent(slug: { eq: $slug }) {
+    contentfulPageChallengeEvent(slug: { eq: $slug }) {
       heroImage {
         ...ImageFragment
       }
@@ -168,7 +169,7 @@ export const challengeEventPageQuery = graphql`
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
-          ... on ContentfulTopicFullWidthImage {
+          ... on ContentfulComponentFullWidthImage {
             ...FullWidthImageFragment
           }
         }

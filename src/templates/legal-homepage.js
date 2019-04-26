@@ -20,9 +20,9 @@ const LegalHomepage = ({ data }) => {
     hero,
     pageInformation,
     title,
-  } = data.contentfulPageAssemblyLegalHomepage;
+  } = data.contentfulPageLegalHomepage;
 
-  const updatedLegalPages = data.allContentfulPageAssemblyLegalPage.edges;
+  const updatedLegalPages = data.allContentfulPageLegal.edges;
   const whatsNew = updatedLegalPages.map(page => page.node);
 
   return (
@@ -30,6 +30,7 @@ const LegalHomepage = ({ data }) => {
       pageInformation={pageInformation}
       pageTitle={title}
       removeFooterMargin
+      legal
     >
       <HeroWithCard content={hero} />
       <Container>
@@ -60,7 +61,7 @@ const LegalHomepage = ({ data }) => {
 
 LegalHomepage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyLegalHomepage: PropTypes.object,
+    contentfulPageLegalHomepage: PropTypes.object,
   }),
 };
 
@@ -68,7 +69,7 @@ export default LegalHomepage;
 
 export const eventsLandingPageQuery = graphql`
   query LegalHomepageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyLegalHomepage(slug: { eq: $slug }) {
+    contentfulPageLegalHomepage(slug: { eq: $slug }) {
       title
       pageInformation {
         ...PageInformationFragment
@@ -80,7 +81,7 @@ export const eventsLandingPageQuery = graphql`
         ...LinkFragment
       }
     }
-    allContentfulPageAssemblyLegalPage(
+    allContentfulPageLegal(
       sort: { fields: lastAmended, order: DESC }
       limit: 5
     ) {

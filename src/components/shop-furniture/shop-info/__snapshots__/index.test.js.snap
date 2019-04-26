@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .c7 ul {
   padding-left: 0;
   list-style: none;
@@ -36,6 +42,31 @@ exports[`renders correctly 1`] = `
   min-width: 10px;
 }
 
+.c7 blockquote {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 0;
+  padding: 60px 20px 20px 20px;
+  border-left: 4px solid #ea232d;
+  font-size: 1.35em;
+  font-weight: 300;
+}
+
+.c7 blockquote:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(test-file-stub);
+  top: 10px;
+  left: 20px;
+  color: #ea232d;
+}
+
 .c0 {
   margin-bottom: 40px;
   padding: 60px 0;
@@ -58,12 +89,11 @@ exports[`renders correctly 1`] = `
 
 .c3 {
   width: 100%;
-  margin-bottom: 20px;
   background: #fff;
 }
 
-.c3:last-of-type {
-  margin-bottom: 0;
+.c3:not(:last-of-type) {
+  margin-bottom: 20px;
 }
 
 .c4 {
@@ -102,17 +132,12 @@ exports[`renders correctly 1`] = `
   height: 20px;
 }
 
-.c1 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 @media (min-width:32em) {
   .c3 {
     -webkit-flex-basis: calc(50% - 10px);
     -ms-flex-preferred-size: calc(50% - 10px);
     flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
   }
 }
 
@@ -156,14 +181,11 @@ exports[`renders correctly 1`] = `
           </h3>
           <div
             className="c7"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>51 Church Road 
-London
-SW13 9HH</p>",
-              }
-            }
-          />
+          >
+            <p>
+              Church road, Glasgow
+            </p>
+          </div>
         </div>
       </div>
       <div
@@ -182,13 +204,11 @@ SW13 9HH</p>",
           </h3>
           <div
             className="c7"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p><strong>Mon to Sat</strong>: 10am to 6pm
-<strong>Sunday</strong>: 11am to 5pm</p>",
-              }
-            }
-          />
+          >
+            <p>
+              Mon to Sat, 9 - 5
+            </p>
+          </div>
         </div>
       </div>
       <div
@@ -207,12 +227,11 @@ SW13 9HH</p>",
           </h3>
           <div
             className="c7"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>No parking</p>",
-              }
-            }
-          />
+          >
+            <p>
+              No parking
+            </p>
+          </div>
         </div>
       </div>
       <div
@@ -231,12 +250,11 @@ SW13 9HH</p>",
           </h3>
           <div
             className="c7"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>No disabled access</p>",
-              }
-            }
-          />
+          >
+            <p>
+              2 Disabled Bays Available
+            </p>
+          </div>
         </div>
       </div>
     </div>

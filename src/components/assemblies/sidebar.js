@@ -16,11 +16,11 @@ const SidebarAssemblies = ({ assemblies }) => {
       if (!assembly.id || !assembly.internal) return null;
       const { id, internal } = assembly;
 
-      if (internal.type === 'ContentfulTopicBanner') {
+      if (internal.type === 'ContentfulComponentBanner') {
         return <Banner key={id} banner={assembly} sidebar />;
       }
 
-      if (internal.type === 'ContentfulTopicInlineCallout') {
+      if (internal.type === 'ContentfulComponentInlineCallout') {
         return (
           <InlineCallOut key={id} insideContainer>
             <RichText richText={assembly.content} />
@@ -45,7 +45,7 @@ const SidebarAssemblies = ({ assemblies }) => {
         return <ContentCardBanner key={id} data={assembly} sidebar />;
       }
 
-      if (internal.type === 'ContentfulTopicSimpleRichTextBlock') {
+      if (internal.type === 'ContentfulComponentSimpleRichTextBlock') {
         return <RichText key={id} richText={assembly.text} sidebar />;
       }
 

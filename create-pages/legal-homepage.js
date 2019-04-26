@@ -13,7 +13,7 @@ async function createLegalHomepage(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  const homepage = legalHomepage.data.contentfulPageAssemblyLegalHomepage;
+  const homepage = legalHomepage.data.contentfulPageLegalHomepage;
 
   if (!homepage || !homepage.slug) return;
   gatsbyCreatePage({

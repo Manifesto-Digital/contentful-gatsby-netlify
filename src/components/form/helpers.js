@@ -15,7 +15,7 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
     if (!field.fieldType) return;
 
     // Set default value to be the initial value for form
-    if (field.internal.type === 'ContentfulTopicFormField') {
+    if (field.internal.type === 'ContentfulComponentFormField') {
       initialValues[field.machineName] = field.defaultValue || '';
     }
     // Multiple checkboxes require an array of values
@@ -30,7 +30,7 @@ export const getInitialValues = (fields, hiddenInitialValues) => {
       }
     }
 
-    if (field.internal.type === 'ContentfulTopicFormFieldset') {
+    if (field.internal.type === 'ContentfulComponentFormFieldset') {
       getInitialValues(field.formFields);
     }
   });

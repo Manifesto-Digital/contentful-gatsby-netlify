@@ -26,7 +26,7 @@ const AdvicePage = ({ data, pageContext }) => {
     sidebarAssemblies,
     displayBounceCard,
     pageInformation,
-  } = data.contentfulPageAssemblyAdvicePage;
+  } = data.contentfulPageAdvice;
   const { subpages, slug } = pageContext;
 
   // If page is part of a guide use the guide overview/parent page as the top page title
@@ -64,7 +64,7 @@ const AdvicePage = ({ data, pageContext }) => {
 
 AdvicePage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyAdvicePage: PropTypes.object,
+    contentfulPageAdvice: PropTypes.object,
   }),
   pageContext: PropTypes.object,
 };
@@ -73,16 +73,14 @@ export default AdvicePage;
 
 export const advicePageQuery = graphql`
   query advicePageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyAdvicePage(slug: { eq: $slug }) {
+    contentfulPageAdvice(slug: { eq: $slug }) {
       title
       bodyCopy {
         id
         internal {
           type
         }
-        childContentfulRichText {
-          html
-        }
+        json
       }
       pageInformation {
         ...PageInformationFragment
@@ -91,10 +89,10 @@ export const advicePageQuery = graphql`
         ... on Node {
           ...CtaAssemblyFragment
           ...ContentGrid4Fragment
-          ...BannerTopicFragment
+          ...BannerComponentFragment
           ...InlineCallout
-          ...VideoTopicFragment
-          ...AdviceSearchBoxTopicFragment
+          ...VideoComponentFragment
+          ...AdviceSearchBoxComponentFragment
           ...DownloadBannerAssemblyFragment
           ...LinkBoxFragment
           ...DonationBanner

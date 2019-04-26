@@ -1,16 +1,14 @@
 import { graphql } from 'gatsby';
 
-export const VideoTopicFragment = graphql`
-  fragment VideoTopicFragment on ContentfulTopicVideoEmbed {
+export const VideoComponentFragment = graphql`
+  fragment VideoComponentFragment on ContentfulComponentVideoEmbed {
     id
     name
     externalUrl
     title
     metaDescription
     bottomText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     removeMarginBottom
     internal {

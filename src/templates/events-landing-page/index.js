@@ -13,19 +13,17 @@ import { Wrapper, CardWrapper } from './styles';
 
 const EventsLandingPage = ({ data }) => {
   const {
-    pageName,
+    title,
     topTextSection,
     featuredEvents,
     pageInformation,
-  } = data.contentfulPageAssemblyEventsLandingPage;
-
-  if (!featuredEvents || featuredEvents.length === 0) return;
+  } = data.contentfulPageEventsLanding;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={pageName}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{pageName}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           {topTextSection && <RichText richText={topTextSection} />}
@@ -34,11 +32,13 @@ const EventsLandingPage = ({ data }) => {
           <Container>
             <TwoThirds>
               <SectionTag>Featured events</SectionTag>
-              <CardWrapper>
-                {featuredEvents.map((featuredEvent, key) => (
-                  <EventCard key={key} data={featuredEvent} />
-                ))}
-              </CardWrapper>
+              {featuredEvents && featuredEvents.length > 0 && (
+                <CardWrapper>
+                  {featuredEvents.map((featuredEvent, key) => (
+                    <EventCard key={key} data={featuredEvent} />
+                  ))}
+                </CardWrapper>
+              )}
             </TwoThirds>
           </Container>
         </Wrapper>
@@ -49,7 +49,7 @@ const EventsLandingPage = ({ data }) => {
 
 EventsLandingPage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyEventsLandingPage: PropTypes.object,
+    contentfulPageEventsLanding: PropTypes.object,
   }),
 };
 
@@ -57,12 +57,10 @@ export default EventsLandingPage;
 
 export const eventsLandingPageQuery = graphql`
   query eventsLandingPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyEventsLandingPage(slug: { eq: $slug }) {
-      pageName
+    contentfulPageEventsLanding(slug: { eq: $slug }) {
+      title
       topTextSection {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       featuredEvents {
         event {

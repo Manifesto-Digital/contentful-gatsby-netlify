@@ -8,7 +8,7 @@ import { Container } from '../styled/containers';
 import RichText from '../rich-text';
 import AccordionHandler from '../accordion/handler';
 
-import NavigationMenu from './navigation';
+import MenuItem from './menu-item';
 import {
   Wrapper,
   Top,
@@ -34,9 +34,7 @@ const footerQuery = graphql`
           shareType
           footerText {
             id
-            childContentfulRichText {
-              html
-            }
+            json
           }
           navigationItems {
             id
@@ -45,25 +43,15 @@ const footerQuery = graphql`
             }
             menuLabel
             navigationLink {
-              ... on ContentfulPageAssemblyContentPage {
+              ... on ContentfulPageContent {
                 title
                 slug
               }
             }
-            subNavigationItems {
-              ... on Node {
-                ... on ContentfulPageAssemblyPressReleasePage {
-                  title
-                  slug
-                }
-                ... on ContentfulPageAssemblyContentPage {
-                  title
-                  slug
-                }
-                ... on ContentfulPageAssemblyAdvicePage {
-                  title
-                  slug
-                }
+            childNavigationItems {
+              menuLabel
+              navigationLink {
+                ...LinkFragment
               }
             }
           }
@@ -91,8 +79,9 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
                       header={item.menuLabel}
                       active={childrenState}
                       id={`footer-accordion-menu-${i + 1}`}
+                      footer
                     >
-                      <NavigationMenu key={i} id={item.id} pageData={item} />
+                      <MenuItem key={i} id={item.id} pageData={item} />
                     </FooterAccordion>
                   ))
                 }

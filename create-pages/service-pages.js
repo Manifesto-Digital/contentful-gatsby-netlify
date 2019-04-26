@@ -13,19 +13,17 @@ async function createServicePages(graphql, gatsbyCreatePage) {
   }
 
   // Create pages
-  servicePages.data.allContentfulPageAssemblyServicePage.edges.forEach(
-    ({ node }) => {
-      if (!node.slug) return;
+  servicePages.data.allContentfulPageService.edges.forEach(({ node }) => {
+    if (!node.slug) return;
 
-      gatsbyCreatePage({
-        path: node.slug,
-        component: servicePageTemplate,
-        context: {
-          slug: node.slug,
-        },
-      });
-    }
-  );
+    gatsbyCreatePage({
+      path: node.slug,
+      component: servicePageTemplate,
+      context: {
+        slug: node.slug,
+      },
+    });
+  });
 }
 
 module.exports = createServicePages;

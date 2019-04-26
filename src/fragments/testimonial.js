@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
-export const TestimonialTopicFragment = graphql`
-  fragment TestimonialTopicFragment on ContentfulTopicTestimonial {
+export const TestimonialComponentFragment = graphql`
+  fragment TestimonialComponentFragment on ContentfulDataTestimonial {
     id
     internal {
       type
@@ -10,9 +10,7 @@ export const TestimonialTopicFragment = graphql`
       ...ImageFragment
     }
     text {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     author
     backgroundColour

@@ -1,7 +1,7 @@
 const getPressReleasePages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyPressReleasePage {
+      allContentfulPagePressRelease {
         edges {
           node {
             title
@@ -11,14 +11,10 @@ const getPressReleasePages = async graphql =>
             showContactSideBar
             showThumbnailOnListingPage
             bodyCopy {
-              childContentfulRichText {
-                html
-              }
+              json
             }
             notesToEditor {
-              childContentfulRichText {
-                html
-              }
+              json
             }
           }
         }

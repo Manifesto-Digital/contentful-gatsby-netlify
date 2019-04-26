@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
 import { breakpoint } from '../theme/breakpoint';
 import Image from '../image';
+import { quoteStyles } from '../styled/quote';
 
 export const Wrapper = styled.section`
   margin-bottom: ${({ theme }) => theme.spacing.large};
@@ -19,17 +20,7 @@ export const Flex = styled.div`
 `;
 
 export const Blockquote = styled.blockquote`
-  flex: 1;
-  position: relative;
-  margin-right: ${({ theme }) => theme.spacing.standard};
-  margin-bottom: 0;
-  padding: ${({ theme }) =>
-    ` ${theme.spacing.xl} ${theme.spacing.standard} ${theme.spacing.standard} ${
-      theme.spacing.standard
-    }`};
-  border-left: 4px solid ${({ theme }) => theme.palette.primary};
-  font-size: ${({ theme }) => theme.headers.h3};
-  font-weight: 300;
+  ${quoteStyles};
 `;
 
 export const QuoteImage = styled(Image)`

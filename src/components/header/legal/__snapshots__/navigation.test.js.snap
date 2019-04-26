@@ -1,0 +1,559 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+Array [
+  .c1 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.c10 {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+  height: auto;
+  width: 25px;
+}
+
+.c10 svg {
+  width: 15px;
+}
+
+.c2 {
+  display: block;
+  width: 20px;
+}
+
+.c11 {
+  display: block;
+  fill: #212122;
+  width: 20px;
+  cursor: pointer;
+}
+
+.c0 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -1px 0 14px rgba(0,0,0,0.5);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transition: transform 0.3s cubic-bezier(0,0,0.3,1);
+  transition: transform 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  z-index: 10;
+  overflow-y: scroll;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c7 .c4 {
+  padding: 5px 10px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c14 .c4 {
+  padding: 5px 10px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c15 .c4 {
+  padding: 5px 10px;
+}
+
+.c9 {
+  color: #212122;
+  font-size: 0.775rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c12 {
+  display: none;
+}
+
+.c13 {
+  display: none;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 10px;
+  border: none;
+  list-style: none;
+}
+
+.c13 .c6:last-child {
+  border: none;
+}
+
+.c18 {
+  display: block;
+  width: 100%;
+  max-width: 1140px;
+  height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.c18:focus {
+  height: auto;
+}
+
+.c17 {
+  padding: 0;
+  margin: 0;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  -webkit-clip-path: inset(1px);
+  clip-path: inset(1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.c16 {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 1em;
+  font-weight: normal;
+  background-color: #12b9bf;
+  border: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 10px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c16:hover {
+  color: #fff;
+}
+
+.c16:hover {
+  color: #fff;
+}
+
+@media (min-width:62em) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c10 {
+    display: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c10 {
+    display: none;
+    margin-left: 5px;
+  }
+
+  .c10 svg {
+    width: auto;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    position: relative;
+    width: 100%;
+    background: #e5e5e5;
+    box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    overflow-y: visible;
+  }
+}
+
+@media (min-width:62em) {
+  .c5 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 .c4 {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 .c4 {
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 .c4 {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c14 .c4 {
+    margin-right: auto;
+    padding: 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c15 {
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c15 .c4 {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c15 .c4 {
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 {
+    position: absolute;
+    display: none;
+    top: 52px;
+    right: 0;
+    left: 0;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background: #d9d9d9;
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 .c6 {
+    -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
+    -ms-flex: 0 1 calc(33.333333333333336% - 10px);
+    flex: 0 1 calc(33.333333333333336% - 10px);
+    width: 32%;
+    margin-left: 10px;
+    border: none;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 .c6:hover {
+    background: #212122;
+  }
+
+  .c13 .c6:hover .c8 {
+    color: #fff;
+  }
+}
+
+@media (min-width:62em) {
+  .c16 {
+    height: 100%;
+  }
+}
+
+<div
+    className="c0"
+  >
+    <button
+      aria-expanded={true}
+      className="c1"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="isvg loading c2"
+      />
+    </button>
+    <nav
+      aria-label="Main menu"
+      className="c3"
+      role="navigation"
+    >
+      <ul
+        aria-hidden="false"
+        className="c4 c5"
+        role="menubar"
+      >
+        <li
+          aria-haspopup={true}
+          className="c6 c7"
+          role="menuitem"
+        >
+          <Link
+            className="c8 c9"
+            to="/test-page"
+          >
+            Housing Advice
+          </Link>
+          <button
+            aria-expanded={false}
+            className="c10"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="isvg loading c11"
+            />
+          </button>
+        </li>
+        <li
+          className="c12"
+        >
+          <ul
+            aria-expanded={false}
+            aria-hidden={true}
+            className="c13"
+            role="menu"
+          >
+            <li
+              className="c6 c14"
+            >
+              <Link
+                className="c8 c9"
+                to="/sprint-7-legal-page-demo"
+              >
+                Benefits
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          aria-haspopup={false}
+          className="c6 c7"
+          role="menuitem"
+        >
+          <Link
+            className="c8 c9"
+            to="/test-page"
+          >
+            What we do
+          </Link>
+        </li>
+        <li
+          className="c6 c15"
+        >
+          <Link
+            className="c16"
+            to="/donate"
+          >
+            Donate
+            <legend
+              className="c17"
+            >
+              Donate
+            </legend>
+          </Link>
+        </li>
+        <li
+          className="c6 c15"
+        >
+          <a
+            className="c8 c9"
+            href="https://scotland.shelter.org.uk/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Scotland
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <a
+      className="c18"
+      href="#main"
+    >
+      Skip to main content
+    </a>
+  </div>,
+  .c0 {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(43,46,56,0.7);
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: 0.2s ease-in opacity;
+  transition: 0.2s ease-in opacity;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+<div
+    className="c0"
+    onClick={[Function]}
+  />,
+]
+`;
