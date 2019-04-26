@@ -20,12 +20,15 @@ const Assemblies = ({ fields, sys }) => {
         </InlineCallOut>
       );
     }
-  
+
     if (type === 'assemblyCta') {
-      // TODO: Improve gatsby source contentful patch mutation to 
+      // TODO: Improve gatsby source contentful patch mutation to
       // include internal {type} so that we can use link handler
       const cta = fields.cta[0];
-      cta.link = {internal: {type :'ContentfulComponentExternalLink' }, ...cta.link[0]}
+      cta.link = {
+        internal: { type: 'ContentfulComponentExternalLink' },
+        ...cta.link[0],
+      };
       return (
         <CTABanner
           headerText={fields.ctaHeaderText}
