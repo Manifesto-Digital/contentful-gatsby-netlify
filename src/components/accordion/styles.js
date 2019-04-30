@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
       top: ${({ theme, footer }) => (footer ? `-${theme.spacing.small}` : '0')};
       width: 100%;
       border-top: ${({ theme, active }) =>
-        active && `1px solid ${theme.palette.grey45}`};
+        active && `1px solid ${theme.palette.grey15}`};
     }
   }
 `;

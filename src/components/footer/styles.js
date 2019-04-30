@@ -140,6 +140,13 @@ export const FooterAccordion = styled(Accordion)`
   flex: 1;
   color: ${({ theme }) => theme.palette.grey10};
 
+  &:not(:first-of-type) {
+    &:before {
+      border-top: ${({ theme, active }) =>
+        active && `1px solid ${theme.palette.grey45}`};
+    }
+  }
+
   h3 {
     ${breakpoint.tablet`
       margin-bottom: ${({ theme }) => theme.spacing.large};
