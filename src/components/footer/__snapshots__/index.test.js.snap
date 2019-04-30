@@ -8,23 +8,23 @@ exports[`Renders correctly 1`] = `
   padding: 0;
 }
 
-.c11 {
+.c12 {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.c15 ul {
+.c16 ul {
   padding-left: 0;
   list-style: none;
 }
 
-.c15 ul li {
+.c16 ul li {
   position: relative;
   padding-left: 40px;
 }
 
-.c15 ul li::before {
+.c16 ul li::before {
   content: ' ';
   position: absolute;
   top: 8px;
@@ -35,21 +35,21 @@ exports[`Renders correctly 1`] = `
   background: #212122;
 }
 
-.c15 ul li ul {
+.c16 ul li ul {
   padding-left: 0;
   list-style: none;
 }
 
-.c15 ul li ul li:before {
+.c16 ul li ul li:before {
   background: transparent;
   border: 1px solid #212122;
 }
 
-.c15 ol li::before {
+.c16 ol li::before {
   min-width: 10px;
 }
 
-.c15 blockquote {
+.c16 blockquote {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -62,7 +62,7 @@ exports[`Renders correctly 1`] = `
   font-weight: 300;
 }
 
-.c15 blockquote:before {
+.c16 blockquote:before {
   content: '';
   display: block;
   position: absolute;
@@ -86,17 +86,18 @@ exports[`Renders correctly 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c7 {
   position: relative;
   font-weight: normal;
+  color: #4d63b5;
 }
 
-.c17 {
+.c18 {
   display: block;
   width: 150px;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,7 +138,7 @@ exports[`Renders correctly 1`] = `
   width: 100%;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -145,7 +146,7 @@ exports[`Renders correctly 1`] = `
   margin-bottom: 20px;
 }
 
-.c14 .c18 {
+.c15 .c19 {
   color: #fff;
   fill: #fff;
 }
@@ -160,7 +161,7 @@ exports[`Renders correctly 1`] = `
   grid-gap: 20px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -174,16 +175,16 @@ exports[`Renders correctly 1`] = `
   padding: 0;
 }
 
-.c9 {
+.c10 {
   font-size: 0.775rem;
   color: #fff;
 }
 
-.c9:hover {
+.c10:hover {
   color: #ea232d;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -196,14 +197,14 @@ exports[`Renders correctly 1`] = `
   padding-left: 0;
 }
 
-.c10 {
+.c11 {
   position: relative;
   padding: 40px 0;
   background-color: #575757;
   overflow: hidden;
 }
 
-.c12 {
+.c13 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -220,7 +221,7 @@ exports[`Renders correctly 1`] = `
   font-size: 0.775rem;
 }
 
-.c13 {
+.c14 {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
@@ -235,6 +236,19 @@ exports[`Renders correctly 1`] = `
   color: #e5e5e5;
 }
 
+.c4 .c21 {
+  padding-left: 20px;
+}
+
+.c4 .c6 {
+  color: #fff;
+}
+
+.c4 .c20 {
+  color: #fff;
+  padding-left: 20px;
+}
+
 @media (min-width:40.0625em) {
   .c2 {
     padding: 0 20px;
@@ -242,7 +256,7 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c16 {
+  .c17 {
     margin-bottom: 20px;
     padding: 20px 25px;
     margin-right: 0;
@@ -264,13 +278,13 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c7 {
+  .c8 {
     width: auto;
   }
 }
 
 @media (min-width:62em) {
-  .c12 {
+  .c13 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -279,7 +293,7 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c13 {
+  .c14 {
     -webkit-flex: 0 1 50%;
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;
@@ -291,6 +305,12 @@ exports[`Renders correctly 1`] = `
 @media (min-width:40.0625em) {
   .c4 h3 {
     margin-bottom: 40px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c4 .c6 {
+    font-size: 1.35em;
   }
 }
 
@@ -311,30 +331,30 @@ exports[`Renders correctly 1`] = `
           className="c4 c5"
         >
           <h3
-            className="c6"
+            className="c6 c7"
           >
             Housing Advice
           </h3>
           <ul
-            className="c7"
+            className="c8"
           >
             <li
               aria-haspopup={true}
-              className="c8"
+              className="c9"
               role="menuitem"
             >
               <Link
-                className="c9"
+                className="c10"
                 to="/test-page"
               >
                 Housing Advice
               </Link>
             </li>
             <li
-              className="c8"
+              className="c9"
             >
               <Link
-                className="c9"
+                className="c10"
                 to="/sprint-7-legal-page-demo"
               >
                 Benefits
@@ -346,20 +366,20 @@ exports[`Renders correctly 1`] = `
           className="c4 c5"
         >
           <h3
-            className="c6"
+            className="c6 c7"
           >
             What we do
           </h3>
           <ul
-            className="c7"
+            className="c8"
           >
             <li
               aria-haspopup={false}
-              className="c8"
+              className="c9"
               role="menuitem"
             >
               <Link
-                className="c9"
+                className="c10"
                 to="/test-page"
               >
                 What we do
@@ -371,22 +391,22 @@ exports[`Renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="c10"
+    className="c11"
   >
     <div
-      className="c11"
+      className="c12"
     >
       <div
-        className="c12"
+        className="c13"
       >
         <div
-          className="c13"
+          className="c14"
         >
           <div
-            className="c14"
+            className="c15"
           />
           <div
-            className="c15"
+            className="c16"
           >
             <p>
               Some body text
@@ -402,11 +422,11 @@ exports[`Renders correctly 1`] = `
           </div>
         </div>
         <Link
-          className="c16"
+          className="c17"
           to="/"
         >
           <span
-            className="isvg loading c17"
+            className="isvg loading c18"
           />
         </Link>
       </div>
