@@ -173,7 +173,6 @@ export const challengeEventPageQuery = graphql`
           ...CtaAssemblyFragment
           ...DownloadBannerAssemblyFragment
           ...AssemblyFormFragment
-          ...TestimonialsAssemblyFragment
           ...ContentGrid4Fragment
           ...DonationBanner
           ...GoogleMapFragment

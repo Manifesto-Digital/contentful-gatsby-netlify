@@ -99,7 +99,6 @@ export const furnitureShopPageQuery = graphql`
       }
       assemblies {
         ... on Node {
-          ...CardsWithIconsFragment
           ...ContentCardBannerFragment
           ...CtaAssemblyFragment
           ...DownloadBannerAssemblyFragment
