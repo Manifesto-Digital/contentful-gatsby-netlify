@@ -5,7 +5,7 @@ import { dateAsString } from '../utils/dates';
 import Layout from '../components/layout';
 import HeroVideo from '../components/hero/hero-video';
 import StickyBanner from '../components/challenge-event/sticky-banner';
-import ChallengeEventAssemblies from '../components/assemblies/challenge-event';
+import Assemblies from '../components/assemblies';
 
 const ChallengeEventPage = ({ data }) => {
   const {
@@ -49,7 +49,7 @@ const ChallengeEventPage = ({ data }) => {
     return function cleanup() {
       window.removeEventListener('resize', handleResize);
     };
-  }, [stickyBarPosition, handleResize]);
+  }, [handleResize, stickyBarPosition]);
 
   useEffect(() => {
     // Store last scroll to detect direction for animation reasons
@@ -123,7 +123,7 @@ const ChallengeEventPage = ({ data }) => {
         eventLink={event.link}
         heroBannerRef={heroBannerRef}
       />
-      <ChallengeEventAssemblies assemblies={assemblies} />
+      <Assemblies assemblies={assemblies} />
       <StickyBanner
         title={eventName}
         subtitle={displayLocation}
@@ -169,9 +169,18 @@ export const challengeEventPageQuery = graphql`
           ...PerksListFragment
           ...TestimonialsAssemblyFragment
           ...TwoColumnTextAndImageBlockFragment
-          ... on ContentfulComponentFullWidthImage {
-            ...FullWidthImageFragment
-          }
+          ...CardsWithIconsFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...ContentGrid4Fragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...StatsFragment
+          ...TwoColumnTextAndImageBlockFragment
         }
       }
     }

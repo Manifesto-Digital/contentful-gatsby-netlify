@@ -14,6 +14,7 @@ import MediaContact from '../../components/media-contact';
 import PaddedBox from '../../components/padded-box';
 import PageTitle from '../../components/page-title';
 import RichText from '../../components/rich-text';
+import Assemblies from '../../components/assemblies';
 // Styles
 import { PublishedDate } from './styles';
 
@@ -25,6 +26,7 @@ const PressReleasePage = ({ data }) => {
     datePosted,
     showContactSideBar,
     pageInformation,
+    assemblies,
   } = data.contentfulPagePressRelease;
 
   const formattedDate = dateAsString(datePosted, 'DD MMM YYYY');
@@ -81,6 +83,7 @@ const PressReleasePage = ({ data }) => {
                   <RichText richText={notesToEditor} />
                 </PaddedBox>
               )}
+              <Assemblies assemblies={assemblies} insideContainer />
             </TwoThirds>
 
             {showContactSideBar && (
@@ -125,6 +128,13 @@ export const pressReleasePageQuery = graphql`
             fileName
             contentType
           }
+        }
+      }
+      assemblies {
+        ... on Node {
+          ...CtaAssemblyFragment
+          ...PersonCollectionFragment
+          ...ShareBlockFragment
         }
       }
       pageInformation {

@@ -7,6 +7,7 @@ import PageTitle from '../../components/page-title';
 import RichText from '../../components/rich-text';
 import FeaturedEvent from '../../components/featured-event';
 import EventListCard from '../../components/event-list-card';
+import Assemblies from '../../components/assemblies';
 import SideBarAssemblies from '../../components/assemblies/sidebar';
 // Styles
 import {
@@ -24,6 +25,7 @@ const EventCategoryPage = ({ data }) => {
     strapline,
     summary,
     featuredEvent,
+    assemblies,
     sidebarAssemblies,
     pageInformation,
   } = data.contentfulPageEventCategory;
@@ -62,6 +64,7 @@ const EventCategoryPage = ({ data }) => {
                   {events.map((event, key) => (
                     <EventListCard data={event} key={key} />
                   ))}
+                  <Assemblies assemblies={assemblies} insideContainer />
                 </TwoThirds>
                 <SideBar>
                   <SideBarAssemblies assemblies={sidebarAssemblies} />
@@ -107,6 +110,15 @@ export const eventCategoryPageQuery = graphql`
               ...EventFragment
             }
           }
+        }
+      }
+      assemblies {
+        ... on Node {
+          ...ContentCardBannerFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...DonationBanner
+          ...ShareBlockFragment
         }
       }
       sidebarAssemblies {

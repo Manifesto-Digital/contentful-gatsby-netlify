@@ -5,11 +5,17 @@ import Layout from '../components/layout';
 // Components
 import PageTitle from '../components/page-title';
 import Policy from '../components/policy';
+import Assemblies from '../components/assemblies';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const PolicyPage = ({ data }) => {
-  const { title, policy, pageInformation } = data.contentfulPagePolicy;
+  const {
+    title,
+    policy,
+    pageInformation,
+    assemblies,
+  } = data.contentfulPagePolicy;
 
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
@@ -20,6 +26,7 @@ const PolicyPage = ({ data }) => {
         <Container>
           <TwoThirds>
             <Policy data={policy} />
+            <Assemblies assemblies={assemblies} insideContainer />
           </TwoThirds>
         </Container>
       </article>
@@ -42,6 +49,13 @@ export const PolicyPageQuery = graphql`
       policy {
         ...PolicyFragment
       }
+      assemblies {
+        ... on Node {
+          ...CtaAssemblyFragment
+          ...ShareBlockFragment
+        }
+      }
+
       pageInformation {
         ...PageInformationFragment
       }

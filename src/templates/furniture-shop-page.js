@@ -8,6 +8,7 @@ import ThreeColumn from '../components/shop-furniture/three-column';
 import ShopInfo from '../components/shop-furniture/shop-info';
 import ShopMap from '../components/shop-furniture/shop-map';
 import Layout from '../components/layout';
+import Assemblies from '../components/assemblies';
 
 const Page = ({ data }) => {
   const {
@@ -21,6 +22,7 @@ const Page = ({ data }) => {
     noThanksList,
     howDoesYourDonationHelp,
     pageInformation,
+    assemblies,
   } = data.contentfulPageFurnitureShop;
 
   if (!shop) return null;
@@ -52,6 +54,7 @@ const Page = ({ data }) => {
           disabledAccess={shop.disabledAccessInformation}
         />
         <ShopMap shop={shop} />
+        <Assemblies assemblies={assemblies} />
       </article>
     </Layout>
   );
@@ -89,6 +92,22 @@ export const furnitureShopPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...AdviceSearchBoxComponentFragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...TwoColumnTextAndImageBlockFragment
+        }
       }
     }
   }

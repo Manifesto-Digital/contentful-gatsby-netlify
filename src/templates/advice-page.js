@@ -100,6 +100,10 @@ export const advicePageQuery = graphql`
           ...ShareBlockFragment
           ...GoogleMapFragment
           ...RichTextFragment
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...AssemblyFormFragment
+          ...TwoColumnTextAndImageBlockFragment
         }
       }
       displayBounceCard

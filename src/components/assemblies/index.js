@@ -25,6 +25,7 @@ import Stats from '../stats';
 import Finder from '../finder';
 import PersonCollection from '../person/collection';
 import Accordions from '../accordion/accordions';
+import FullWidthImage from '../image/full-width-image';
 
 const Assemblies = ({ assemblies, insideContainer }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -201,6 +202,10 @@ const Assemblies = ({ assemblies, insideContainer }) => {
 
       if (internal.type === 'ContentfulAssemblyAccordions') {
         return <Accordions key={id} data={assembly} />;
+      }
+
+      if (internal.type === 'ContentfulComponentFullWidthImage') {
+        return <FullWidthImage key={id} data={assembly} />;
       }
 
       return null;
