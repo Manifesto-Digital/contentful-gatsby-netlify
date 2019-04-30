@@ -73,14 +73,10 @@ export const servicePageQuery = graphql`
         ...ServiceComponentFragment
       }
       mainBodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       usefulInfoCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       assemblies {
         ... on Node {

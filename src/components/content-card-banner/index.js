@@ -43,9 +43,7 @@ ContentCardBanner.propTypes = {
     bannerColour: PropTypes.oneOf(['White', 'Grey']).isRequired,
     bannerFlow: PropTypes.oneOf(['Vertical', 'Horizontal', 'Grid']).isRequired,
     header: PropTypes.shape({
-      childContentfulRichText: PropTypes.shape({
-        html: PropTypes.string,
-      }),
+      json: PropTypes.object,
     }),
     contentCards: PropTypes.array,
   }),

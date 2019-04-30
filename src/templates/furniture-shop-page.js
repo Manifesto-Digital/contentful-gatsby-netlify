@@ -83,16 +83,12 @@ export const furnitureShopPageQuery = graphql`
         ...ShopComponentFragment
       }
       whatCanYouDonate {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       yesPleaseList
       noThanksList
       howDoesYourDonationHelp {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       pageInformation {
         ...PageInformationFragment

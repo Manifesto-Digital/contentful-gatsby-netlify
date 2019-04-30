@@ -34,9 +34,7 @@ const footerQuery = graphql`
           shareType
           footerText {
             id
-            childContentfulRichText {
-              html
-            }
+            json
           }
           navigationItems {
             id

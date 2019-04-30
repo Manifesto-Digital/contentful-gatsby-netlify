@@ -54,9 +54,8 @@ export const pageQuery = graphql`
         internal {
           type
         }
-        childContentfulRichText {
-          html
-        }
+
+        json
       }
       pageInformation {
         ...PageInformationFragment

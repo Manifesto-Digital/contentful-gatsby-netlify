@@ -60,9 +60,7 @@ export const eventsLandingPageQuery = graphql`
     contentfulPageEventsLanding(slug: { eq: $slug }) {
       title
       topTextSection {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       featuredEvents {
         event {

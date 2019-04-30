@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import GoogleMapReact from 'google-map-react';
-import { Wrapper } from './styles';
+import { MapWrapper } from './styles';
 
 const GoogleMap = ({ children, onGoogleApiLoaded }) => (
-  <Wrapper>
+  <MapWrapper>
     <GoogleMapReact
       bootstrapURLKeys={{
         key: 'AIzaSyCp8IoFqy0SA8sGDYUy0Hbk8Ktdc46zcGE',
@@ -17,7 +16,7 @@ const GoogleMap = ({ children, onGoogleApiLoaded }) => (
     >
       {children}
     </GoogleMapReact>
-  </Wrapper>
+  </MapWrapper>
 );
 
 GoogleMap.propTypes = {

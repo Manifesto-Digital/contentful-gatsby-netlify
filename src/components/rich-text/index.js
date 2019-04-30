@@ -1,39 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import RichTextAssembly from '../assemblies/rich-text';
+import Image from '../image';
+import LinkHandler from '../link-handler';
+import { fieldsMap } from './helpers';
 import { Wrapper } from './styles';
 
 const RichText = ({ richText, className, sidebar }) => {
-  const hasContent = item =>
-    item &&
-    item.childContentfulRichText &&
-    item.childContentfulRichText.html &&
-    item.childContentfulRichText.html !== '<p></p>'; // gatsby-transformer-contentful-richtext still includes an empty p if an editor clears the rich text
+  const options = {
+    renderNode: {
+      /* eslint-disable react/display-name */
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        const imageObject = node.data.target.fields;
+        const flattenedFields = fieldsMap(imageObject);
+        return <Image image={flattenedFields} width={1000} />;
+      },
 
-  if (!hasContent(richText)) return null;
+      [BLOCKS.EMBEDDED_ENTRY]: node => {
+        const { fields, sys } = node.data.target;
+        const flattenedFields = fieldsMap(fields);
+        return <RichTextAssembly fields={flattenedFields} sys={sys} />;
+      },
+      [INLINES.ENTRY_HYPERLINK]: node => {
+        // There is currently a patch for Gatsby source contentful to avoid a max stack call
+        // created by links in rich text. The only field that is set currently on the target
+        // is the slug field
+        const { fields, sys } = node.data.target;
+        // If fields has URL then this is an external link component
+        if (!fields || (!fields.slug && !fields.URL)) {
+          return;
+        }
+        const flattenedFields = fieldsMap(fields);
+        const externalLink = sys.contentType.sys.id === 'topicExternalLink';
+        const linkType = externalLink
+          ? 'ContentfulComponentExternalLink'
+          : sys.contentType.sys.id;
 
-  // Strip out empty <p> tag
-  const newMarkup = richText.childContentfulRichText.html.replace(
-    '<p></p>',
-    ''
-  );
+        return (
+          <LinkHandler
+            link={{ internal: { type: linkType }, ...flattenedFields }}
+          >
+            {documentToReactComponents(node)}
+          </LinkHandler>
+        );
+      },
+      /* eslint-enable */
+    },
+  };
 
-  const createMarkup = markupToRender => ({ __html: markupToRender });
+  const json = richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
 
-  /* eslint-disable  react/no-danger */
+  if (!json) return null;
+
   return (
-    <Wrapper
-      sidebar={sidebar}
-      className={className}
-      dangerouslySetInnerHTML={createMarkup(newMarkup)}
-    />
+    <Wrapper sidebar={sidebar} className={className}>
+      {documentToReactComponents(json, options)}
+    </Wrapper>
   );
-  /* eslint-enable react/no-danger */
 };
 RichText.propTypes = {
   richText: PropTypes.shape({
-    childContentfulRichText: PropTypes.shape({
-      html: PropTypes.string.isRequired,
-    }).isRequired,
+    json: PropTypes.object,
+    content: PropTypes.object,
   }).isRequired,
   className: PropTypes.string,
   sidebar: PropTypes.bool,

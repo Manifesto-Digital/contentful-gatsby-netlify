@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ArrowDown from '../../assets/svg/icons/chevron-down-light.svg';
+import ArrowDown from '../../assets/svg/icons/chevron-down-solid.svg';
 
 import { Wrapper, Heading, HeadingButton, Content, ArrowSVG } from './styles';
 
@@ -21,7 +21,7 @@ function Accordion({ header, children, className, active, id, footer }) {
   }
   return (
     <Wrapper active={active} className={className} footer={footer}>
-      <Heading active={active}>
+      <Heading active={active} isOpen={isOpen}>
         <ArrowSVG src={ArrowDown} isOpen={isOpen} />
 
         <HeadingButton
@@ -29,6 +29,7 @@ function Accordion({ header, children, className, active, id, footer }) {
           onClick={e => handleClick(e)}
           aria-controls={id}
           aria-expanded={isOpen}
+          isOpen={isOpen}
         >
           {header}
         </HeadingButton>

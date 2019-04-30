@@ -16,9 +16,7 @@ export const AssemblyFormFragment = graphql`
       ...LinkFragment
     }
     thankYouMessage {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     formFields {
       ... on Node {
