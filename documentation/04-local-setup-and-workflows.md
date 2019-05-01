@@ -12,24 +12,32 @@
 
 ## Running locally
 
-HOW TO SOURCE ENV FILES HERE //TODO:
+You will require a `.env.development` and `.env.production` with the following values.
+
+- `ctfl_spaceId`: Contentful -> Settings -> General Settings
+- `ctld_token`: Contentful -> Settings -> Api keys -> content delivery api
+- `ctfl_accessToken`: Contentful -> Settings -> Api keys -> content delivery api
+- `GOOGLE_MAP_API_KEY`: https://console.cloud.google.com/apis/credentials
+- `GATSBY_CONTENTFUL_ENVIRONMENT` : Environment id of your choosing (defaults to master)
+
+    <!-- -->
+
+**Steps**
 
 - Clone the repository
 - Install dependencies `yarn install`
 - Add the `.env.development` and `.env.production` files into root
 - Run `yarn develop`
 
-If encountered errors while running locally then check the debugging section.
+If encountered errors while running locally then check the [debugging](./09-debugging-and-gotchas.md) section
 
 ## Typical workflows
-A high level view of how content flows into gatsby can be found here // TODO: add link. If you are requiring content structure changes in contentful then please follow the next steps.
-
-If no content changes are needed skip to components // TODO: figure out link here
+A high level view of how content flows into gatsby can be found [here](./assets/FE-content-flow-overview.jpg) link. If you are requiring content structure changes in contentful then please follow the next steps.
 
 ### Contentful content model creation or changed
-:exclamation: Always follow contentful conventions// TODO: link here
+:exclamation: Always follow [contentful conventions](./08-contentful-conventions.md)
 
-//TODO: if not modifying page link
+If no page content model changes are needed skip to component creation [New Component](#new-component)
 
 #### New Page
 
@@ -58,7 +66,7 @@ const getContentPages = async graphql =>
 module.exports = { getContentPages };
 ```
 
-The above GraphQL query is requesting all the content of type `PageAssemblyContentPage` and has the filename `content-page.js`. // TODO: graphql playground link
+The above GraphQL query is requesting all the content of type `PageAssemblyContentPage` and has the filename `content-page.js`. Use the [GraphiQL IDE](./09-debugging-and-gotchas.md#graphiQL-ide) to create and debug the query.
 
 ###### Create a file in create-pages
 Depending on the use-case the logic inside this file could vary greatly, the following is the most simplest example. It will do the following:
@@ -102,15 +110,15 @@ module.exports = createContentPages;
 
 The `gatsbyCreatePage` function has been passed from gatsby-node.js. The paramaters are:
 
-- path - **slug**
-- component - **which template to use as the entry point (receives the path as slug in the GraphQL query in that template)**
-- context - **An object to be passed, that will be ava1able as a pageContext prop**
+- **path**: Slug
+- **component**: Which template to use as the entry point (receives the path as slug in the GraphQL query in that template)
+- **context**: An object to be passed, that will be available as a `pageContext` prop
 
 #### Page modification
-If the name has changed as mentioned in the gotcha here // TODO: link then the query to fetch the page and the query in the template itself will have to be updated.
+If the name of the content model is to be changed as mentioned in the gotcha [here](./09-debugging-and-gotchas.md##content-model-name-is-used-in-query) the page query will have to be updated.
 
 #### New Component
-:exclamation: Always follow contentful conventions// TODO: link here
+:exclamation: Always follow [contentful conventions](./08-contentful-conventions.md)
 
 After creating the new component content type in most cases this will also need to be added to a page template.
 
@@ -127,7 +135,7 @@ If the component is re-usable then a fragment should be made.
 We have a folder for fragments `src/fragments` there will be many examples here on the different uses. **Fragments can be used within fragments**
 https://www.gatsbyjs.org/docs/querying-with-graphql/#fragments
 
-To check where in the GraphQL query to query for the new component use the playground to see what schema is available // TODO: link to playground
+To check where in the GraphQL query to query for the new component use the [GraphiQL IDE](./09-debugging-and-gotchas.md#graphiQL-ide) to see what schema is available.
 
 #### Adding to a list of assemblies
 
@@ -142,4 +150,4 @@ We then loop through the returned array of assemblies to determine which React c
     }
 ```
 
-The array is then looped in the assemblies file (currently `src/assemblies/index`). If the type matches the id of the piece of content we are expecting then the React Component is called for that component.
+The array is then looped in the assemblies file (currently `src/assemblies/index`). If the type matches the id of the piece of content we are expecting then the React Component is called for that piece of content.
