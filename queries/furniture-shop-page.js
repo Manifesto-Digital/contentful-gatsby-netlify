@@ -1,7 +1,7 @@
 const getFurnitureShopPages = async graphql =>
   graphql(`
     {
-      allContentfulPageAssemblyFurnitureShopPage {
+      allContentfulPageFurnitureShop {
         edges {
           node {
             id

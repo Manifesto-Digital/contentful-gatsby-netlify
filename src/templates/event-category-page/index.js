@@ -7,6 +7,7 @@ import PageTitle from '../../components/page-title';
 import RichText from '../../components/rich-text';
 import FeaturedEvent from '../../components/featured-event';
 import EventListCard from '../../components/event-list-card';
+import Assemblies from '../../components/assemblies';
 import SideBarAssemblies from '../../components/assemblies/sidebar';
 // Styles
 import {
@@ -20,18 +21,17 @@ import { SectionTag } from '../../components/styled/tags';
 
 const EventCategoryPage = ({ data }) => {
   const {
-    pageName,
+    title,
     strapline,
     summary,
     featuredEvent,
+    assemblies,
     sidebarAssemblies,
     pageInformation,
-  } = data.contentfulPageAssemblyEventCategory;
+  } = data.contentfulPageEventCategory;
 
-  const standardEventPages =
-    data.allContentfulPageAssemblyStandardEvent.edges || [];
-  const challengeEventPages =
-    data.allContentfulPageAssemblyChallengeEvent.edges || [];
+  const standardEventPages = data.allContentfulPageStandardEvent.edges || [];
+  const challengeEventPages = data.allContentfulPageChallengeEvent.edges || [];
 
   const events = standardEventPages
     .concat(challengeEventPages)
@@ -41,10 +41,10 @@ const EventCategoryPage = ({ data }) => {
     );
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={pageName}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{pageName}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           <IntroWrapper>
@@ -64,6 +64,7 @@ const EventCategoryPage = ({ data }) => {
                   {events.map((event, key) => (
                     <EventListCard data={event} key={key} />
                   ))}
+                  <Assemblies assemblies={assemblies} insideContainer />
                 </TwoThirds>
                 <SideBar>
                   <SideBarAssemblies assemblies={sidebarAssemblies} />
@@ -79,8 +80,8 @@ const EventCategoryPage = ({ data }) => {
 
 EventCategoryPage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyEventCategory: PropTypes.object,
-    allContentfulTopicEvent: PropTypes.object,
+    contentfulPageEventCategory: PropTypes.object,
+    allContentfulDataEvent: PropTypes.object,
   }),
 };
 
@@ -88,29 +89,36 @@ export default EventCategoryPage;
 
 export const eventCategoryPageQuery = graphql`
   query eventCategoryPageTemplateQuery($slug: String!, $type: String!) {
-    contentfulPageAssemblyEventCategory(slug: { eq: $slug }) {
-      pageName
+    contentfulPageEventCategory(slug: { eq: $slug }) {
+      title
       strapline
       summary {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       featuredEvent {
         ... on Node {
-          ... on ContentfulPageAssemblyChallengeEvent {
+          ... on ContentfulPageChallengeEvent {
             slug
             event {
               ...EventFragment
             }
           }
-          ... on ContentfulPageAssemblyStandardEvent {
+          ... on ContentfulPageStandardEvent {
             slug
             mainCtaText
             event {
               ...EventFragment
             }
           }
+        }
+      }
+      assemblies {
+        ... on Node {
+          ...ContentCardBannerFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...DonationBanner
+          ...ShareBlockFragment
         }
       }
       sidebarAssemblies {
@@ -121,7 +129,7 @@ export const eventCategoryPageQuery = graphql`
       }
     }
 
-    allContentfulPageAssemblyStandardEvent(
+    allContentfulPageStandardEvent(
       filter: { event: { eventType: { eq: $type } } }
     ) {
       edges {
@@ -142,7 +150,7 @@ export const eventCategoryPageQuery = graphql`
       }
     }
 
-    allContentfulPageAssemblyChallengeEvent(
+    allContentfulPageChallengeEvent(
       filter: { event: { eventType: { eq: $type } } }
     ) {
       edges {

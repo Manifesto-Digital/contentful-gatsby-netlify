@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0.8em 0;
+}
+
+.c1 {
+  display: inline-block;
+  list-style: none;
+  margin: 0 0.4em 0 0;
+  padding: 0;
+  font-size: 0.775rem;
+}
+
+.c1:after {
+  content: '>';
+  margin-left: 0.4em;
+}
+
+.c1:last-child:after {
+  content: '';
+}
+
+.c2 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<nav
+  role="navigation"
+>
+  <ul
+    className="c0"
+  >
+    <li
+      className="c1"
+    >
+      <Link
+        className="c2"
+        to="/shelter-legal"
+      >
+        Shelter Legal
+      </Link>
+    </li>
+    <li
+      className="c1"
+    >
+      Legal Page
+    </li>
+  </ul>
+</nav>
+`;

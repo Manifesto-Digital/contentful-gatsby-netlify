@@ -7,6 +7,7 @@ import RichText from '../components/rich-text';
 import ContactCard from '../components/contact-card';
 import OpeningTimes from '../components/opening-times';
 import Map from '../components/google-map';
+import Assemblies from '../components/assemblies';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
@@ -18,7 +19,8 @@ const ServicePage = ({ data }) => {
     mainBodyCopy,
     usefulInfoCopy,
     pageInformation,
-  } = data.contentfulPageAssemblyServicePage;
+    assemblies,
+  } = data.contentfulPageService;
 
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
@@ -47,6 +49,7 @@ const ServicePage = ({ data }) => {
             <h2>Opening times</h2>
             <OpeningTimes data={service} />
             <RichText richText={usefulInfoCopy} />
+            <Assemblies assemblies={assemblies} insideContainer />
           </TwoThirds>
         </Container>
       </article>
@@ -56,7 +59,7 @@ const ServicePage = ({ data }) => {
 
 ServicePage.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyServicePage: PropTypes.object,
+    contentfulPageService: PropTypes.object,
   }),
 };
 
@@ -64,19 +67,33 @@ export default ServicePage;
 
 export const servicePageQuery = graphql`
   query servicePageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyServicePage(slug: { eq: $slug }) {
+    contentfulPageService(slug: { eq: $slug }) {
       title
       service {
-        ...ServiceTopicFragment
+        ...ServiceComponentFragment
       }
       mainBodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       usefulInfoCopy {
-        childContentfulRichText {
-          html
+        json
+      }
+      assemblies {
+        ... on Node {
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...AdviceSearchBoxComponentFragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ServicesFinderFragment
+          ...ShareBlockFragment
+          ...StatsFragment
         }
       }
       pageInformation {

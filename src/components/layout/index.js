@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../theme/global';
 import theme from '../theme/variables';
 // Components
+import LegalHeader from '../header/legal';
 import Header from '../header';
 import Footer from '../footer';
 
@@ -15,11 +16,15 @@ const Layout = ({
   removeFooterMargin,
   pageInformation,
   pageTitle,
+  legal,
 }) => {
   const description = pageInformation
     ? pageInformation.seoDescription.internal.content
     : '';
-  const title = pageInformation ? pageInformation.seoTitle : pageTitle;
+  const title =
+    pageInformation && pageInformation.setTitle
+      ? pageInformation.seoTitle
+      : pageTitle;
 
   return (
     <StaticQuery
@@ -47,7 +52,11 @@ const Layout = ({
             >
               <html lang="en" />
             </Helmet>
-            <Header />
+            {legal ? (
+              <LegalHeader siteTitle={data.site.siteMetadata.title} />
+            ) : (
+              <Header siteTitle={data.site.siteMetadata.title} />
+            )}
             <main role="main" id="main">
               {children}
             </main>
@@ -62,6 +71,7 @@ const Layout = ({
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   removeFooterMargin: PropTypes.bool,
+  legal: PropTypes.bool,
   pageInformation: PropTypes.shape({
     seoTitle: PropTypes.string.isRequired,
     seoDescription: PropTypes.shape({

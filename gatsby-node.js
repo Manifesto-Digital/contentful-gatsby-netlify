@@ -9,27 +9,30 @@ const createPolicyPage = require('./create-pages/policy-pages.js');
 const createShopPages = require('./create-pages/shop-pages.js');
 const createEventLandingPages = require('./create-pages/challenge-event-pages.js');
 const createLegalPages = require('./create-pages/legal-pages.js');
+const createLegalHomePage = require('./create-pages/legal-homepage.js');
+const createLegalWhatsNew = require('./create-pages/legal-whats-new-pages.js');
 const createFurnitureShopPages = require('./create-pages/furniture-shop-pages.js');
 const createServicePages = require('./create-pages/service-pages.js');
-const createLegalLandingPages = require('./create-pages/legal-landing-pages.js');
 const createPersonPages = require('./create-pages/person-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  createAdvicePages(graphql, createPage);
-  createContentPages(graphql, createPage);
-  createPressReleasePages(graphql, createPage);
-  createEventsLandingPages(graphql, createPage);
-  createEventCategoryPages(graphql, createPage);
-  createStandardEventPages(graphql, createPage);
-  createChallengeEventPages(graphql, createPage);
-  createPolicyPage(graphql, createPage);
-  createShopPages(graphql, createPage);
-  createEventLandingPages(graphql, createPage);
-  createLegalPages(graphql, createPage);
-  createFurnitureShopPages(graphql, createPage);
-  createServicePages(graphql, createPage);
-  createLegalLandingPages(graphql, createPage);
-  createPersonPages(graphql, createPage);
+  await Promise.all([
+    createAdvicePages(graphql, createPage),
+    createContentPages(graphql, createPage),
+    createPressReleasePages(graphql, createPage),
+    createEventsLandingPages(graphql, createPage),
+    createEventCategoryPages(graphql, createPage),
+    createStandardEventPages(graphql, createPage),
+    createChallengeEventPages(graphql, createPage),
+    createPolicyPage(graphql, createPage),
+    createShopPages(graphql, createPage),
+    createLegalPages(graphql, createPage),
+    createLegalWhatsNew(graphql, createPage),
+    createLegalHomePage(graphql, createPage),
+    createFurnitureShopPages(graphql, createPage),
+    createServicePages(graphql, createPage),
+    createPersonPages(graphql, createPage),
+  ]);
 };

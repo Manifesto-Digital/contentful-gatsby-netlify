@@ -13,8 +13,7 @@ async function createChallengeEventPages(graphql, gatsbyCreatePage) {
     throw Error(eventPages.errors);
   }
 
-  const challengeEvents =
-    eventPages.data.allContentfulPageAssemblyChallengeEvent.edges;
+  const challengeEvents = eventPages.data.allContentfulPageChallengeEvent.edges;
 
   // Create single pages
   challengeEvents.forEach(({ node }) => {

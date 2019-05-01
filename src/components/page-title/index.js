@@ -4,17 +4,28 @@ import PropTypes from 'prop-types';
 import { Container, TwoThirds } from '../styled/containers';
 import { Wrapper } from './styles.js';
 
-const PageTitle = ({ children, twoThirds, paddingBottom, legal }) => (
-  <Wrapper paddingBottom={paddingBottom} legal={legal}>
-    {twoThirds ? (
-      <Container>
-        <TwoThirds>{children}</TwoThirds>
-      </Container>
-    ) : (
-      <Container>{children}</Container>
-    )}
-  </Wrapper>
-);
+const PageTitle = ({
+  children,
+  twoThirds,
+  paddingBottom,
+  legal,
+  noContainer,
+}) => {
+  if (noContainer) {
+    return <Wrapper>{children}</Wrapper>;
+  }
+  return (
+    <Wrapper paddingBottom={paddingBottom} legal={legal}>
+      {twoThirds ? (
+        <Container>
+          <TwoThirds>{children}</TwoThirds>
+        </Container>
+      ) : (
+        <Container>{children}</Container>
+      )}
+    </Wrapper>
+  );
+};
 
 PageTitle.propTypes = {
   children: PropTypes.oneOfType([
@@ -24,6 +35,7 @@ PageTitle.propTypes = {
   twoThirds: PropTypes.bool,
   paddingBottom: PropTypes.bool,
   legal: PropTypes.bool,
+  noContainer: PropTypes.bool,
 };
 
 PageTitle.defaultProps = {

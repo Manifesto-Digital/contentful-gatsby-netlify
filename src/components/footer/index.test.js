@@ -15,8 +15,12 @@ hidePascalCaseWarning();
 
 test('Should populate a menu item correctly', () => {
   const mockData = createHeaderNavigation({
-    menuLabel: 'Housing Advice',
-    navigationLink: [{ slug: 'tobys-page', title: 'Tobys Page' }],
+    navigationItems: [
+      {
+        menuLabel: 'Test label',
+        navigationLink: [{ slug: 'test-page', title: 'Test Page' }],
+      },
+    ],
   });
   const wrapper = mountWithTheme(<PureFooter pageData={mockData} />);
 
@@ -25,12 +29,12 @@ test('Should populate a menu item correctly', () => {
       .find(ItemLink)
       .at(0)
       .text()
-  ).toEqual(mockData.menuLabel || mockData.navigationLink[0].title);
+  ).toEqual(mockData.navigationItems[0].menuLabel);
 
   expect(
     wrapper
       .find(ItemLink)
       .at(0)
       .props().internalLink
-  ).toEqual(mockData.navigationLink[0]);
+  ).toEqual(mockData.navigationItems[0].navigationLink[0]);
 });

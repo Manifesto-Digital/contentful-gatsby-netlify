@@ -10,10 +10,10 @@ export const Wrapper = styled.div`
       position: absolute;
       content: ' ';
       left: 0;
-      top: ${({ theme }) => `-${theme.spacing.small}`};
+      top: ${({ theme, footer }) => (footer ? `-${theme.spacing.small}` : '0')};
       width: 100%;
       border-top: ${({ theme, active }) =>
-        active && `1px solid ${theme.palette.grey45}`};
+        active && `1px solid ${theme.palette.grey15}`};
     }
   }
 `;
@@ -21,28 +21,28 @@ export const Wrapper = styled.div`
 export const Heading = styled.h3`
   position: relative;
   font-weight: normal;
-  color: ${({ theme }) => theme.palette.grey10};
   margin-bottom: ${({ active }) => active && '0'};
+  color: ${({ theme, isOpen }) =>
+    isOpen ? theme.palette.primary : theme.palette.sanMarinoBlue};
 `;
 
 export const HeadingButton = styled.button`
   position: relative;
   ${buttonReset};
-  padding: ${({ theme }) =>
-    `${theme.spacing.standard} ${theme.spacing.xl} ${theme.spacing.standard} ${
-      theme.spacing.standard
-    }`};
   width: 100%;
+  padding: ${({ theme }) =>
+    `${theme.spacing.standard} ${theme.spacing.xl} ${
+      theme.spacing.standard
+    } 0`};
   text-align: left;
-  font-size: ${({ theme }) => theme.headers.h3};
+  color: ${({ theme, isOpen }) =>
+    isOpen ? theme.palette.primary : theme.palette.sanMarinoBlue};
 `;
 
 export const Content = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   padding: ${({ theme }) =>
-    `${theme.spacing.standard} ${theme.spacing.standard} 0 ${
-      theme.spacing.standard
-    }`};
+    `${theme.spacing.standard} ${theme.spacing.standard} 0 0`};
 `;
 
 export const ArrowSVG = styled(SVG)`
@@ -59,4 +59,8 @@ export const ArrowSVG = styled(SVG)`
     width: 20px;
     height: 25px;
   }
+`;
+
+export const AccordionsWrapper = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing.large};
 `;

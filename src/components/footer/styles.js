@@ -5,6 +5,7 @@ import { breakpoint } from '../theme/breakpoint';
 import { StyledSVG } from '../share-block/styles';
 import LinkHandler from '../link-handler';
 import Accordion from '../accordion';
+import { HeadingButton, Heading, Content } from '../accordion/styles';
 
 export const Logo = styled(SVG)`
   display: block;
@@ -137,10 +138,34 @@ export const ContentWrapper = styled.div`
 
 export const FooterAccordion = styled(Accordion)`
   flex: 1;
+  color: ${({ theme }) => theme.palette.grey10};
+
+  &:not(:first-of-type) {
+    &:before {
+      border-top: ${({ theme, active }) =>
+        active && `1px solid ${theme.palette.grey45}`};
+    }
+  }
 
   h3 {
     ${breakpoint.tablet`
-    margin-bottom: ${({ theme }) => theme.spacing.large};
+      margin-bottom: ${({ theme }) => theme.spacing.large};
   `};
+  }
+
+  ${Content} {
+    padding-left: ${({ theme }) => theme.spacing.standard};
+  }
+  ${Heading} {
+    color: ${({ theme, isOpen }) =>
+      isOpen ? theme.palette.primary : theme.palette.white};
+    ${breakpoint.tablet`
+      font-size: ${({ theme }) => theme.headers.h3};
+  `};
+  }
+  ${HeadingButton} {
+    color: ${({ theme, isOpen }) =>
+      isOpen ? theme.palette.primary : theme.palette.white};
+    padding-left: ${({ theme }) => theme.spacing.standard};
   }
 `;

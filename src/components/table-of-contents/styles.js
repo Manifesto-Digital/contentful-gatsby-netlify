@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 
+export const Wrapper = styled.div`
+  margin-bottom: ${({ theme, removeBottomMargin }) =>
+    removeBottomMargin ? '0' : theme.spacing.large};
+`;
+
 export const Table = styled.div`
   margin-bottom: 5px;
   padding: ${({ theme }) => theme.spacing.standard};
@@ -13,8 +18,6 @@ export const TableList = styled.ul`
 
 export const OpeningStatement = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.standard};
-  padding: ${({ theme }) => theme.spacing.standard};
-  background: ${({ theme }) => theme.palette.offWhite};
 `;
 
 export const Block = styled.div`
@@ -36,7 +39,7 @@ export const ReferenceList = styled.ul`
   font-size: ${({ theme }) => theme.fontsize.small};
 
   ${breakpoint.desktop`
-    margin-left: -${({ theme }) => theme.spacing.medium};
+    margin-left: -25px;
   `};
 
   a {
@@ -57,7 +60,7 @@ export const SidebarInner = styled.div`
 `;
 
 export const FootNotes = styled.div`
-  padding: ${({ theme }) => theme.spacing.large} 0;
+  padding-top: ${({ theme }) => theme.spacing.large};
   background: ${({ theme }) => theme.palette.offWhite};
 `;
 

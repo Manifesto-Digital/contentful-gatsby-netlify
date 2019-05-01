@@ -1,9 +1,7 @@
 module.exports = function(migration) {
-  const pageAssemblyContentPage = migration.editContentType(
-    'pageAssemblyContentPage'
-  );
-  pageAssemblyContentPage
-    .createField('redirectsPageAssemblyContentPage')
+  const pageContent = migration.editContentType('pageContent');
+  pageContent
+    .createField('redirectsPageContent')
     .name('Redirects')
     .type('Array')
     .localized(false)

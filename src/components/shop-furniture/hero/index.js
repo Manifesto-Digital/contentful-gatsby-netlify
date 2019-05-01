@@ -25,7 +25,7 @@ const ShopHero = ({
         <Content>
           <h3>{subHeader}</h3>
           <SubHeading>
-            Call us on: <span>{contactNumber}</span>
+            Call us on: <a href={`tel:${contactNumber}`}>{contactNumber}</a>
           </SubHeading>
           <p>{introductoryText}</p>
         </Content>

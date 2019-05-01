@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const TwoColumnTextAndImageBlockFragment = graphql`
-  fragment TwoColumnTextAndImageBlockFragment on ContentfulTopicTwoColumnTextAndImageBlock {
+  fragment TwoColumnTextAndImageBlockFragment on ContentfulComponentTwoColumnTextAndImageBlock {
     id
     internal {
       type
@@ -9,17 +9,13 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
     systemName
     headerText
     leftColumnText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     leftColumnCalloutBanners {
       ...InlineCallout
     }
     rightColumnText {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     rightColumnCta {
       ...ctaStandardFragment
@@ -35,5 +31,6 @@ export const TwoColumnTextAndImageBlockFragment = graphql`
       ...InlineCallout
     }
     backgroundColour
+    removeMarginBottom
   }
 `;

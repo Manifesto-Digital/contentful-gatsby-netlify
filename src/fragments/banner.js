@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
-export const BannerTopicFragment = graphql`
-  fragment BannerTopicFragment on ContentfulTopicBanner {
+export const BannerComponentFragment = graphql`
+  fragment BannerComponentFragment on ContentfulComponentBanner {
     id
     name
     headerText

@@ -55,6 +55,10 @@ export const SliderBox = styled.div`
 export const StyledTabList = styled(TabList)`
   ${removeListStyles};
   display: flex;
+
+  & > li {
+    margin: 0;
+  }
 `;
 
 export const StyledTab = styled(Tab).attrs({

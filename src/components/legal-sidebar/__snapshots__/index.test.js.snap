@@ -13,16 +13,119 @@ exports[`renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-<div
+.c3 {
+  font-weight: normal;
+}
+
+.c4 {
+  font-weight: 500;
+}
+
+.c1 {
+  padding-left: 0;
+}
+
+.c5 {
+  padding-left: 20px;
+  border-left: 3px solid #d9d9d9;
+}
+
+.c6 {
+  padding-left: 20px;
+  border-left: 3px solid #8c8c8c;
+}
+
+.c2 {
+  list-style: none;
+}
+
+<nav
   className="c0"
 >
   <h3>
-    Resources
+    Legal
   </h3>
-  <Link
-    to="/legal-page"
+  <ul
+    className="c1"
   >
-    Legal sidebar link
-  </Link>
-</div>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c3"
+        to="/migration-legal-page"
+      >
+        Migration title
+      </Link>
+    </li>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c3"
+        to="/migration-legal-page-2"
+      >
+        Migration title
+      </Link>
+    </li>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c4"
+        to="/identifying_the_nature_of_the_problem"
+      >
+        Harassment and antisocial behaviour
+      </Link>
+    </li>
+    <ul
+      className="c5"
+    >
+      <li
+        className="c2"
+      >
+        <Link
+          className="c4"
+          to="/homelessness-applications"
+        >
+          Homelessness Application
+        </Link>
+      </li>
+      <ul
+        className="c6"
+      >
+        <li
+          className="c2"
+        >
+          <Link
+            className="c3"
+            to="/responsibilities-of-landlords-tenants-and-occupiers"
+          >
+            Responsibilities of landlords, tenants and occupiers
+          </Link>
+        </li>
+        <li
+          className="c2"
+        >
+          <Link
+            className="c3"
+            to="/legal-2"
+          >
+            Legal 2 page
+          </Link>
+        </li>
+      </ul>
+    </ul>
+    <li
+      className="c2"
+    >
+      <Link
+        className="c3"
+        to="/sprint-7-legal-page-demo"
+      >
+        Sprint 7 Legal Page
+      </Link>
+    </li>
+  </ul>
+</nav>
 `;

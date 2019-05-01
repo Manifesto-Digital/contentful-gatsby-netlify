@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const ctaStandardFragment = graphql`
-  fragment ctaStandardFragment on ContentfulTopicStandardCta {
+  fragment ctaStandardFragment on ContentfulComponentStandardCta {
     id
     name
     ctaColour
@@ -13,7 +13,7 @@ export const ctaStandardFragment = graphql`
 `;
 
 export const ctaWithIconFragment = graphql`
-  fragment ctaWithIconFragment on ContentfulTopicCtaWithIcon {
+  fragment ctaWithIconFragment on ContentfulComponentCtaWithIcon {
     id
     name
     ctaColour

@@ -6,7 +6,7 @@ exports[`renders correctly with icon chosen in cms 1`] = `
   clear: both;
   background: #f7f7f7;
   padding: 20px;
-  margin-bottom: 1em;
+  margin-bottom: 40px;
   border-left: 4px solid;
   border-color: #ea232d;
 }
@@ -77,6 +77,31 @@ exports[`renders correctly with icon chosen in cms 1`] = `
   min-width: 10px;
 }
 
+.c4 blockquote {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 0;
+  padding: 60px 20px 20px 20px;
+  border-left: 4px solid #ea232d;
+  font-size: 1.35em;
+  font-weight: 300;
+}
+
+.c4 blockquote:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(test-file-stub);
+  top: 10px;
+  left: 20px;
+  color: #ea232d;
+}
+
 <div
   className="c0"
 >
@@ -91,12 +116,19 @@ exports[`renders correctly with icon chosen in cms 1`] = `
     >
       <div
         className="c4"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
+      >
+        <p>
+          Some body text
+        </p>
+        <h2>
+          Some header text
+        </h2>
+        <p>
+          <b>
+            some bollld text
+          </b>
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -108,7 +140,7 @@ exports[`renders correctly with no options chosen in cms 1`] = `
   clear: both;
   background: #f7f7f7;
   padding: 20px;
-  margin-bottom: 1em;
+  margin-bottom: 40px;
   border-left: 4px solid;
   border-color: #ea232d;
 }
@@ -166,6 +198,31 @@ exports[`renders correctly with no options chosen in cms 1`] = `
   min-width: 10px;
 }
 
+.c3 blockquote {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 0;
+  padding: 60px 20px 20px 20px;
+  border-left: 4px solid #ea232d;
+  font-size: 1.35em;
+  font-weight: 300;
+}
+
+.c3 blockquote:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(test-file-stub);
+  top: 10px;
+  left: 20px;
+  color: #ea232d;
+}
+
 <div
   className="c0"
 >
@@ -177,12 +234,19 @@ exports[`renders correctly with no options chosen in cms 1`] = `
     >
       <div
         className="c3"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Our advice and support services across the UK give people <b>one-to-one</p>",
-          }
-        }
-      />
+      >
+        <p>
+          Some body text
+        </p>
+        <h2>
+          Some header text
+        </h2>
+        <p>
+          <b>
+            some bollld text
+          </b>
+        </p>
+      </div>
     </div>
   </div>
 </div>

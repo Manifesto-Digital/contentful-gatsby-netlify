@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { QuoteImage as PersonPageImage } from '../components/quotation/styles';
 import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
-import Quotation from '../components/quotation';
+import QuotationWithImage from '../components/quotation';
 import PersonCardList from '../components/person/card-list';
+import Assemblies from '../components/assemblies';
 import { Container, TwoThirds } from '../components/styled/containers';
 
 const Page = ({ data }) => {
@@ -13,10 +15,11 @@ const Page = ({ data }) => {
     person,
     quotation,
     pageInformation,
-  } = data.contentfulPageAssemblyPerson;
+    assemblies,
+  } = data.contentfulPagePerson;
   const { jobTitle, photo, bio } = person;
-  const personList = data.allContentfulTopicPerson
-    ? data.allContentfulTopicPerson.edges.map(item => item.node)
+  const personList = data.allContentfulDataPerson
+    ? data.allContentfulDataPerson.edges.map(item => item.node)
     : null;
 
   return (
@@ -28,13 +31,18 @@ const Page = ({ data }) => {
         </PageTitle>
         <Container>
           <TwoThirds>
-            <Quotation
-              quote={quotation.quotation}
-              image={photo}
-              insideContainer
-            />
+            {quotation ? (
+              <QuotationWithImage
+                quote={quotation.quotation}
+                image={photo}
+                insideContainer
+              />
+            ) : (
+              <PersonPageImage image={photo} insideContainer />
+            )}
             {bio && <p>{bio.internal.content}</p>}
             <PersonCardList list={personList} insideContainer />
+            <Assemblies assemblies={assemblies} insideContainer />
           </TwoThirds>
         </Container>
       </article>
@@ -44,7 +52,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyPerson: PropTypes.object,
+    contentfulPagePerson: PropTypes.object,
   }),
 };
 
@@ -56,7 +64,7 @@ export const personPageQuery = graphql`
     $category: String!
     $personId: String!
   ) {
-    contentfulPageAssemblyPerson(slug: { eq: $slug }) {
+    contentfulPagePerson(slug: { eq: $slug }) {
       title
       quotation {
         quotation
@@ -67,14 +75,22 @@ export const personPageQuery = graphql`
       pageInformation {
         ...PageInformationFragment
       }
+      assemblies {
+        ... on Node {
+          ...ContentCardBannerFragment
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...ShareBlockFragment
+        }
+      }
     }
-    allContentfulTopicPerson(
+    allContentfulDataPerson(
       filter: { category: { eq: $category }, id: { ne: $personId } }
     ) {
       edges {
         node {
           ...PersonFragment
-          page_assembly___person_ {
+          page___person_ {
             slug
           }
         }

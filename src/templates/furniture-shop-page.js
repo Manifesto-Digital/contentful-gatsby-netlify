@@ -8,6 +8,7 @@ import ThreeColumn from '../components/shop-furniture/three-column';
 import ShopInfo from '../components/shop-furniture/shop-info';
 import ShopMap from '../components/shop-furniture/shop-map';
 import Layout from '../components/layout';
+import Assemblies from '../components/assemblies';
 
 const Page = ({ data }) => {
   const {
@@ -21,7 +22,8 @@ const Page = ({ data }) => {
     noThanksList,
     howDoesYourDonationHelp,
     pageInformation,
-  } = data.contentfulPageAssemblyFurnitureShopPage;
+    assemblies,
+  } = data.contentfulPageFurnitureShop;
 
   if (!shop) return null;
 
@@ -52,6 +54,7 @@ const Page = ({ data }) => {
           disabledAccess={shop.disabledAccessInformation}
         />
         <ShopMap shop={shop} />
+        <Assemblies assemblies={assemblies} />
       </article>
     </Layout>
   );
@@ -65,7 +68,7 @@ export default Page;
 
 export const furnitureShopPageQuery = graphql`
   query furnitureShopPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyFurnitureShopPage(slug: { eq: $slug }) {
+    contentfulPageFurnitureShop(slug: { eq: $slug }) {
       title
       slug
       pageHeader
@@ -77,22 +80,34 @@ export const furnitureShopPageQuery = graphql`
         ...ImageFragment
       }
       shop {
-        ...ShopTopicFragment
+        ...ShopComponentFragment
       }
       whatCanYouDonate {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       yesPleaseList
       noThanksList
       howDoesYourDonationHelp {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...AdviceSearchBoxComponentFragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...TwoColumnTextAndImageBlockFragment
+        }
       }
     }
   }

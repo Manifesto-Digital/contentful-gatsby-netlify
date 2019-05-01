@@ -1,0 +1,104 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "1N0cP5yqZthVRbc68IARPd",
+        "type": "Entry",
+        "createdAt": "2019-03-27T12:03:00.072Z",
+        "updatedAt": "2019-04-01T09:04:20.572Z",
+        "environment": {
+          "sys": {
+            "id": "legal",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 26,
+        "publishedAt": "2019-04-01T09:04:20.572Z",
+        "firstPublishedAt": "2019-03-27T12:04:02.250Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 27,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "pageAssemblyLegalHomepage"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-GB": "Shelter Legal"
+        },
+        "slug": {
+          "en-GB": "shelter-legal"
+        },
+        "hero": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6lM2wr9082aqaAmjqx7t3Y"
+            }
+          }
+        },
+        "pages": {
+          "en-GB": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4BTd3bdHj1V4rtUlDV2cod"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2BvQT2Y6t53ajH2yrZiluZ"
+              }
+            }
+          ]
+        },
+        "pageInformation": {
+          "en-GB": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "g5CXXdxPiBOEipJOaPJZv"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}

@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
-export const ShopTopicFragment = graphql`
-  fragment ShopTopicFragment on ContentfulTopicShop {
+export const ShopComponentFragment = graphql`
+  fragment ShopComponentFragment on ContentfulDataShop {
     id
     internal {
       type
@@ -12,28 +12,20 @@ export const ShopTopicFragment = graphql`
       lat
     }
     displayAddress {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     shortAddress
     region
     contactNumber
     contactEmail
     openingHours {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     parkingInformation {
-      childContentfulRichText {
-        html
-      }
+      json
     }
     disabledAccessInformation {
-      childContentfulRichText {
-        html
-      }
+      json
     }
   }
 `;

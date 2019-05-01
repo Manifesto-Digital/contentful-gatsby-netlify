@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Navigation from './navigation';
 import SearchDonate from './search-donate';
-import { VisuallyHidden } from '../styled/accessibility';
-import { DonateButton } from './search-donate/styles';
 import LogoSVG from '../../assets/svg/icons/logo.svg';
 import MenuSVG from '../../assets/svg/icons/menu.svg';
 import MagGlass from '../../assets/svg/icons/search-light.svg';
@@ -18,6 +16,7 @@ import {
   BurgerIcon,
   MenuControls,
 } from './styles';
+import { Container } from '../styled/containers';
 
 const navigationQuery = graphql`
   query navigationItemsQuery {
@@ -38,25 +37,12 @@ const navigationQuery = graphql`
             }
             menuLabel
             navigationLink {
-              ... on ContentfulPageAssemblyContentPage {
-                title
-                slug
-              }
+              ...LinkFragment
             }
-            subNavigationItems {
-              ... on Node {
-                ... on ContentfulPageAssemblyPressReleasePage {
-                  title
-                  slug
-                }
-                ... on ContentfulPageAssemblyContentPage {
-                  title
-                  slug
-                }
-                ... on ContentfulPageAssemblyAdvicePage {
-                  title
-                  slug
-                }
+            childNavigationItems {
+              menuLabel
+              navigationLink {
+                ...LinkFragment
               }
             }
           }
@@ -65,10 +51,7 @@ const navigationQuery = graphql`
             internal {
               type
             }
-            ... on ContentfulPageAssemblyContentPage {
-              title
-              slug
-            }
+            ...LinkFragment
           }
         }
       }
@@ -83,41 +66,36 @@ export const PureHeader = ({ pageData }) => {
   return (
     <>
       <HeaderWrapper>
-        <HeaderBar>
-          <LogoWrapper to="/">
-            <Logo src={LogoSVG} cacheGetRequests />
-          </LogoWrapper>
-          <MenuControls>
-            <SearchDonate resolution="desktop" />
-            <DonateButton
-              MobileMenu
-              internalLink={{ slug: 'donate' }}
-              bg="donate"
-            >
-              Donate
-              <VisuallyHidden as="legend">Donate</VisuallyHidden>
-            </DonateButton>
-            <MobileMenuOpen
-              type="button"
-              onClick={() => {
-                openState();
-                searchState();
-              }}
-              active={isOpen}
-              aria-expanded={isOpen}
-            >
-              <BurgerIcon src={MagGlass} cacheGetRequests />
-            </MobileMenuOpen>
-            <MobileMenuOpen
-              type="button"
-              onClick={openState}
-              active={isOpen}
-              aria-expanded={isOpen}
-            >
-              <BurgerIcon src={MenuSVG} cacheGetRequests />
-            </MobileMenuOpen>
-          </MenuControls>
-        </HeaderBar>
+        <Container noMobilePadding>
+          <HeaderBar>
+            <LogoWrapper to="/">
+              <Logo src={LogoSVG} cacheGetRequests />
+            </LogoWrapper>
+            <MenuControls>
+              <SearchDonate resolution="desktop" />
+
+              <MobileMenuOpen
+                type="button"
+                onClick={() => {
+                  openState();
+                  searchState();
+                }}
+                active={isOpen}
+                aria-expanded={isOpen}
+              >
+                <BurgerIcon src={MagGlass} cacheGetRequests />
+              </MobileMenuOpen>
+              <MobileMenuOpen
+                type="button"
+                onClick={openState}
+                active={isOpen}
+                aria-expanded={isOpen}
+              >
+                <BurgerIcon src={MenuSVG} cacheGetRequests />
+              </MobileMenuOpen>
+            </MenuControls>
+          </HeaderBar>
+        </Container>
       </HeaderWrapper>
       <Navigation
         pageData={pageData}

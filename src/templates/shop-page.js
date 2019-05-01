@@ -7,6 +7,7 @@ import PageTitle from '../components/page-title';
 import RichText from '../components/rich-text';
 import ShopSidebar from '../components/shop-sidebar';
 import Form from '../components/form';
+import Assemblies from '../components/assemblies';
 // Styles
 import {
   Container,
@@ -17,24 +18,26 @@ import {
 
 const Page = ({ data }) => {
   const {
-    name,
+    title,
     bodyCopy,
     shop,
     form,
     pageInformation,
-  } = data.contentfulPageAssemblyShopPage;
+    assemblies,
+  } = data.contentfulPageShop;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={name}>
+    <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         <PageTitle>
-          <h1>{name}</h1>
+          <h1>{title}</h1>
         </PageTitle>
         <Container>
           <ContentWithSideBar>
             <TwoThirds>
               <RichText richText={bodyCopy} />
               {form && <Form data={form} insideContainer />}
+              <Assemblies assemblies={assemblies} insideContainer />
             </TwoThirds>
             <SideBar>
               <ShopSidebar data={shop} />
@@ -48,7 +51,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.shape({
-    contentfulPageAssemblyShopPage: PropTypes.object,
+    contentfulPageShop: PropTypes.object,
   }),
 };
 
@@ -56,21 +59,34 @@ export default Page;
 
 export const shopPageQuery = graphql`
   query shopPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyShopPage(slug: { eq: $slug }) {
-      name
+    contentfulPageShop(slug: { eq: $slug }) {
+      title
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       shop {
-        ...ShopTopicFragment
+        ...ShopComponentFragment
       }
       form {
         ...AssemblyFormFragment
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...ContentGrid4Fragment
+          ...DonationBanner
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...StatsFragment
+          ...TwoColumnTextAndImageBlockFragment
+        }
       }
     }
   }

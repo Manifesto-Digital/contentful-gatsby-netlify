@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 
 export const LinkFragment = graphql`
   fragment LinkFragment on Node {
-    ... on ContentfulTopicExternalLink {
+    ... on ContentfulComponentExternalLink {
       internal {
         type
       }
@@ -10,79 +10,174 @@ export const LinkFragment = graphql`
       URL
       newTab
     }
-    ... on ContentfulPageAssemblyContentPage {
+    ... on ContentfulPageContent {
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
       title
       slug
     }
-    ... on ContentfulPageAssemblyAdvicePage {
+    ... on ContentfulPageAdvice {
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
       title
       slug
     }
-    ... on ContentfulPageAssemblyStandardEvent {
-      slug
-      internal {
-        type
-      }
-    }
-    ... on ContentfulPageAssemblyChallengeEvent {
+    ... on ContentfulPageStandardEvent {
       title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyPerson {
+    ... on ContentfulPageChallengeEvent {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyPolicyPage {
+    ... on ContentfulPagePerson {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyEventsLandingPage {
+    ... on ContentfulPagePolicy {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyFurnitureShopPage {
+    ... on ContentfulPageEventsLanding {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyPressReleasePage {
+    ... on ContentfulPageFurnitureShop {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyPressReleasePage {
+    ... on ContentfulPagePressRelease {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyServicePage {
+
+    ... on ContentfulPageService {
+      title
       slug
       internal {
         type
       }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
     }
-    ... on ContentfulPageAssemblyShopPage {
+    ... on ContentfulPageShop {
+      title
       slug
       internal {
         type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
+    }
+
+    ... on ContentfulPageLegal {
+      slug
+      title
+      internal {
+        type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
+    }
+    ... on ContentfulPageLegalLanding {
+      slug
+      title
+      internal {
+        type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
+      }
+    }
+    ... on ContentfulPageLegalHomepage {
+      slug
+      title
+      internal {
+        type
+      }
+      pageInformation {
+        shortDescription {
+          shortDescription
+        }
       }
     }
   }

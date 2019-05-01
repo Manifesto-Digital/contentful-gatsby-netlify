@@ -46,25 +46,18 @@ export const BurgerIcon = styled(SVG)`
   width: 20px;
 `;
 
-export const HeaderWrapper = styled.header`
-  display: flex;
-  justify-content: center;
+export const HeaderWrapper = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.palette.grey10};
 `;
 
-export const HeaderBar = styled.header`
+export const HeaderBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   width: 100%;
   background: ${({ theme }) => theme.palette.grey10};
-
-  ${breakpoint.desktop`
-    padding: 0
-    ${({ theme }) => theme.spacing.standard};
-  `}
 `;
 
 export const MenuControls = styled.div`

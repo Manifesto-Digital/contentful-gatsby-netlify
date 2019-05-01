@@ -28,7 +28,7 @@ Array [
   cursor: pointer;
 }
 
-.c19 {
+.c16 {
   padding: 0;
   border: none;
   font: inherit;
@@ -54,10 +54,9 @@ Array [
   cursor: pointer;
   height: auto;
   width: 25px;
-  margin-left: 5px;
 }
 
-.c19 svg {
+.c16 svg {
   width: 15px;
 }
 
@@ -66,7 +65,7 @@ Array [
   width: 20px;
 }
 
-.c20 {
+.c17 {
   display: block;
   fill: #212122;
   width: 20px;
@@ -92,7 +91,7 @@ Array [
   overflow-y: scroll;
 }
 
-.c13 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -106,7 +105,7 @@ Array [
   padding: 0;
 }
 
-.c11 {
+.c9 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -116,28 +115,11 @@ Array [
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 0;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 0;
-  padding: 0;
-  border-bottom: none;
-}
-
-.c15 .c12 {
-  padding: 5px 10px;
-}
-
-.c16 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,18 +133,36 @@ Array [
   border-bottom: 1px solid #e5e5e5;
 }
 
-.c16 .c12 {
+.c13 .c10 {
   padding: 5px 10px;
 }
 
-.c18 {
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c20 .c10 {
+  padding: 5px 10px;
+}
+
+.c15 {
   color: #212122;
   font-size: 0.775rem;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -177,29 +177,34 @@ Array [
   padding: 0 10px;
 }
 
-.c22 .c14 {
+.c21 .c12 {
   padding: 15px 10px;
 }
 
-.c22 .c14:last-child {
+.c21 .c12:last-child {
   border: none;
 }
 
-.c21 {
+.c18 {
   display: none;
+}
+
+.c19 {
+  display: none;
+  width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0 10px;
+  padding-left: 10px;
   border: none;
   list-style: none;
 }
 
-.c21 .c14:last-child {
+.c19 .c12:last-child {
   border: none;
 }
 
-.c23 {
+.c22 {
   display: block;
   width: 100%;
   max-width: 1140px;
@@ -208,7 +213,7 @@ Array [
   overflow: hidden;
 }
 
-.c23:focus {
+.c22:focus {
   height: auto;
 }
 
@@ -278,48 +283,12 @@ Array [
   fill: #0b0b89;
 }
 
-.c10 {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 1em;
-  font-weight: normal;
-  background-color: #12b9bf;
-  border: none;
-  color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c10:hover {
-  color: #fff;
-}
-
-.c10:hover {
-  color: #fff;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 43px;
-}
-
-.c3 .c9 {
-  display: none;
 }
 
 @media (min-width:62em) {
@@ -329,20 +298,21 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c19 {
+  .c16 {
     display: none;
   }
 }
 
 @media (min-width:62em) {
-  .c19 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    margin-left: 5px;
   }
 
-  .c19 svg {
+  .c16 svg {
     width: auto;
   }
 }
@@ -363,7 +333,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c13 {
+  .c11 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -372,7 +342,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c11 {
+  .c9 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -383,33 +353,33 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c15 .c12 {
+  .c13 .c10 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c15 .c12 {
+  .c13 .c10 {
     margin-right: auto;
     padding: 0;
   }
 }
 
 @media (min-width:62em) {
-  .c16 .c12 {
+  .c20 .c10 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c16 .c12 {
+  .c20 .c10 {
     margin-right: auto;
     padding: 10px;
   }
 }
 
 @media (min-width:62em) {
-  .c22 {
+  .c21 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -418,13 +388,13 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c22 .c14:last-child {
+  .c21 .c12:last-child {
     margin-left: 20px;
   }
 }
 
 @media (min-width:62em) {
-  .c22 {
+  .c21 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -433,13 +403,13 @@ Array [
     margin-right: 0;
   }
 
-  .c22 .c17 {
+  .c21 .c14 {
     border: none;
   }
 }
 
 @media (min-width:62em) {
-  .c21 {
+  .c19 {
     position: absolute;
     top: 52px;
     right: 0;
@@ -459,7 +429,7 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c21 .c14 {
+  .c19 .c12 {
     -webkit-flex: 0 1 calc(33.333333333333336% - 10px);
     -ms-flex: 0 1 calc(33.333333333333336% - 10px);
     flex: 0 1 calc(33.333333333333336% - 10px);
@@ -470,11 +440,11 @@ Array [
 }
 
 @media (min-width:62em) {
-  .c21 .c14:hover {
+  .c19 .c12:hover {
     background: #212122;
   }
 
-  .c21 .c14:hover .c17 {
+  .c19 .c12:hover .c14 {
     color: #fff;
   }
 }
@@ -489,15 +459,6 @@ Array [
 @media (min-width:62em) {
   .c6 {
     min-width: 185px;
-  }
-}
-
-@media (min-width:62em) {
-  .c10 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 
@@ -550,126 +511,93 @@ Array [
           />
         </button>
       </div>
-      <Link
-        className="c9 c10"
-        to="/donate"
-      >
-        Donate
-        <legend
-          className="c4"
-        >
-          Donate
-        </legend>
-      </Link>
     </form>
     <nav
       aria-label="Main menu"
-      className="c11"
+      className="c9"
       role="navigation"
     >
       <ul
         aria-hidden="false"
-        className="c12 c13"
+        className="c10 c11"
         role="menubar"
       >
         <li
-          className="c14 c15"
+          aria-haspopup={true}
+          className="c12 c13"
+          role="menuitem"
+        >
+          <Link
+            className="c14 c15"
+            to="/test-page"
+          >
+            Housing Advice
+          </Link>
+          <button
+            aria-expanded={false}
+            className="c16"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="isvg loading c17"
+            />
+          </button>
+        </li>
+        <li
+          className="c18"
         >
           <ul
-            className="c12 c13"
+            aria-expanded={false}
+            aria-hidden={true}
+            className="c19"
+            role="menu"
           >
             <li
-              aria-haspopup={true}
-              className="c14 c16"
-              role="menuitem"
+              className="c12 c20"
             >
               <Link
-                className="c17 c18"
-                to="/tobys-page"
+                className="c14 c15"
+                to="/sprint-7-legal-page-demo"
               >
-                Housing Advice
+                Benefits
               </Link>
-              <button
-                aria-expanded={false}
-                className="c19"
-                onClick={[Function]}
-                type="button"
-              >
-                <span
-                  className="isvg loading c20"
-                />
-              </button>
             </li>
-            <ul
-              aria-expanded={false}
-              aria-hidden={true}
-              className="c21"
-              role="menu"
-            >
-              <li
-                className="c14 c16"
-              >
-                <Link
-                  className="c17 c18"
-                  to="/320,000-people-in-britain-are-now-homeless"
-                >
-                  320,000 people in Britain are now homeless
-                </Link>
-              </li>
-              <li
-                className="c14 c16"
-              >
-                <Link
-                  className="c17 c18"
-                  to="/tobys-page"
-                >
-                  Tobys Page
-                </Link>
-              </li>
-              <li
-                className="c14 c16"
-              >
-                <Link
-                  className="c17 c18"
-                  to="/shelter-manchester-to-hold-vigil-for-lost-homeless-people"
-                >
-                  Shelter Manchester to hold vigil for lost homeless people
-                </Link>
-              </li>
-              <li
-                className="c14 c16"
-              >
-                <Link
-                  className="c17 c18"
-                  to="/shelter-demo-page"
-                >
-                  Shelter Demo Page
-                </Link>
-              </li>
-            </ul>
           </ul>
+        </li>
+        <li
+          aria-haspopup={false}
+          className="c12 c13"
+          role="menuitem"
+        >
+          <Link
+            className="c14 c15"
+            to="/test-page"
+          >
+            What we do
+          </Link>
         </li>
       </ul>
       <ul
         aria-label="Secondary menu"
-        className="c12 c22"
+        className="c10 c21"
         role="navigation"
       >
         <li
-          className="c14 c16"
+          className="c12 c20"
         >
           <Link
-            className="c17 c18"
-            to="/tobys-page"
+            className="c14 c15"
+            to="/test-page"
           >
-            Tobys Page
+            Test Page
           </Link>
         </li>
         <li
-          className="c14 c16"
+          className="c12 c20"
         >
           <a
-            className="c17 c18"
+            className="c14 c15"
             href="https://scotland.shelter.org.uk/"
             rel="noopener noreferrer"
             target="_blank"
@@ -680,7 +608,7 @@ Array [
       </ul>
     </nav>
     <a
-      className="c23"
+      className="c22"
       href="#main"
     >
       Skip to main content

@@ -11,6 +11,7 @@ import ContentForm from '../components/form';
 import RichText from '../components/rich-text';
 import Modal from '../components/modal';
 import EventMap from '../components/standard-event/map';
+import Assemblies from '../components/assemblies';
 // Styles
 import {
   Container,
@@ -22,7 +23,7 @@ import TwoColumnTextAndImageBlock from '../components/two-column-text-and-image-
 import { consistentString } from '../utils/content-formatting';
 
 const Page = ({ data }) => {
-  const standardEvent = data.contentfulPageAssemblyStandardEvent;
+  const standardEvent = data.contentfulPageStandardEvent;
   const [mapModal, toggleMapModal] = useToggle(false);
   const formRef = useRef(null);
 
@@ -39,9 +40,10 @@ const Page = ({ data }) => {
     waitingListForm,
     twoColumn,
     bodyCopy,
+    assemblies,
     sidebarAssemblies,
     pageInformation,
-  } = data.contentfulPageAssemblyStandardEvent;
+  } = data.contentfulPageStandardEvent;
 
   const { eventLocation } = event;
   const eventStatus = consistentString(event.eventStatus);
@@ -65,6 +67,7 @@ const Page = ({ data }) => {
             <ContentWithSideBar>
               <TwoThirds>
                 <RichText richText={bodyCopy} />
+                <Assemblies assemblies={assemblies} insideContainer />
               </TwoThirds>
               <SideBar>
                 <SideBarAssemblies assemblies={sidebarAssemblies} />
@@ -136,7 +139,7 @@ export default Page;
 
 export const standardEventPageQuery = graphql`
   query standardEventPageTemplateQuery($slug: String!) {
-    contentfulPageAssemblyStandardEvent(slug: { eq: $slug }) {
+    contentfulPageStandardEvent(slug: { eq: $slug }) {
       slug
       event {
         ...EventFragment
@@ -148,9 +151,7 @@ export const standardEventPageQuery = graphql`
         ...TwoColumnTextAndImageBlockFragment
       }
       bodyCopy {
-        childContentfulRichText {
-          html
-        }
+        json
       }
       registerInterestForm {
         ...AssemblyFormFragment
@@ -166,6 +167,24 @@ export const standardEventPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      assemblies {
+        ... on Node {
+          ...CardsWithIconsFragment
+          ...ContentCardBannerFragment
+          ...CtaAssemblyFragment
+          ...DownloadBannerAssemblyFragment
+          ...AssemblyFormFragment
+          ...TestimonialsAssemblyFragment
+          ...AdviceSearchBoxComponentFragment
+          ...DonationBanner
+          ...GoogleMapFragment
+          ...InlineCallout
+          ...LinkBoxFragment
+          ...ShareBlockFragment
+          ...StatsFragment
+          ...TwoColumnTextAndImageBlockFragment
+        }
       }
     }
   }

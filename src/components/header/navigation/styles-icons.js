@@ -22,19 +22,19 @@ export const MobileMenuClose = styled.button`
 export const SubNavButton = styled(MobileMenuClose)`
   height: auto;
   width: 25px;
-  margin-left: 5px;
-
-  svg {
-    width: 15px;
-  }
 
   ${breakpoint.desktop`
-    display: flex;
+    display: ${({ legal }) => (legal ? 'none' : 'flex')};
+    margin-left: 5px;
 
     svg {
       width: auto;
     }
   `}
+
+  svg {
+    width: 15px;
+  }
 `;
 
 export const MenuSVG = styled(SVG)`

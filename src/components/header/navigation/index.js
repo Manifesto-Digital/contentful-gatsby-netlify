@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import NavigationMenu from './navigation';
-import SearchDonate from '../search-donate';
+import NavigationMenuItem from './menu-item';
+import SearchBar from '../search-donate/search-bar';
 import { Overlay } from '../../styled/overlay';
-
 import { MobileMenuClose, MenuSVG } from './styles-icons';
 import {
   Wrapper,
@@ -48,15 +47,15 @@ const Navigation = ({
         >
           <MenuSVG src={CloseSVG} />
         </MobileMenuClose>
-        <SearchDonate resolution="mobile" searchFocus={searchFocus} />
+        <SearchBar resolution="mobile" searchFocus={searchFocus} />
         <Menus role="navigation" aria-label="Main menu">
           {navigationItems && (
             <MenuList role="menubar" aria-hidden="false">
               {navigationItems.map((item, i) => (
-                <NavigationMenu
+                <NavigationMenuItem
                   key={i}
                   id={item.id}
-                  pageData={item}
+                  menuItem={item}
                   menuOpen={activeMenu === item.id}
                   setActiveMenu={updateActiveMenu}
                 />
