@@ -1,14 +1,92 @@
 # Code Overview
 
-- project layout
-- where do i find things?
-- queries (graph)
-- fragments
-- linting
-- testing
-- analytics
-- forms
-- dynamic vs static
+## Table of contents
+
+- [Code Overview](#code-overview)
+  - [Table of contents](#table-of-contents)
+  - [Project Layout](#project-layout)
+      - [Create Pages](#create-pages)
+      - [Templates](#templates)
+      - [Components](#components)
+  - [Linting](#linting)
+  - [Testing](#testing)
+      - [Jest](#jest)
+      - [Enzyme](#enzyme)
+      - [Snapshot testing](#snapshot-testing)
+  - [Analytics](#analytics)
+  - [Migrations](#migrations)
+    - [Example migration](#example-migration)
+      - [Running migrations](#running-migrations)
+      - [Migration to edit the event content model](#migration-to-edit-the-event-content-model)
+      - [Related seed](#related-seed)
+      - [Useful information](#useful-information)
+
+## Project Layout
+
+Below is a high level visual representation of the layout of the folders in this project.
+
+```
+project
+└───create-pages
+└───queries
+└───src
+│   │
+│   └───assets
+│       └───images
+│       └───svg
+│   └───components
+│       └───componentA
+│           │   index.js
+│           │   test.js
+│           │   styles.js
+│   └───fragments
+│   └───pages
+│   └───prop-types
+│   └───templates
+│   └───utils
+│   └───variables
+```
+
+#### Create Pages
+
+Create pages folder is used to organise each Page Assemblies associated page generation. We pass the Gatsby createPage function to these files. Some templates have the same page generation steps, but have been left separate for clarity.
+
+This extension point is called only after the initial sourcing and transformation of nodes plus creation of the GraphQL schema are complete so you can query your data in order to create pages.
+
+#### Templates
+
+Every template in the templates folders if the first entry point from Gatsby into React. They are always referenced in the createPage function. https://www.gatsbyjs.org/docs/building-with-components/#page-template-components
+
+#### Components
+
+The folder structure in `components` is very flat currently, this could be organised now there is a full view of the use cases for each component. Each component should have a `.test` file associated to it.
+
+## Linting
+
+We are using ESLint and there should be a `.eslintrc` file in the root of the project. Prettier is also run when linting `yarn lint` will also execute prettier.
+
+## Testing
+
+We are using `Jest` and `Enzyme` for our components testing along with `react-test-renderer` for generating the snapshots.
+
+#### Jest
+
+Jest is a JavaScript unit testing framework, used by Facebook to test services and React applications.
+
+#### Enzyme
+
+Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
+
+#### Snapshot testing
+
+Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
+
+We have a wrapper in `test-helpers` called `renderWithTheme` that gives the snapshot access to theme variables, this ensures if a theme variable is changed then each component snaphsot that subscribes to that variable will fail and alert the developer to the effect.
+
+#### React testing library
+During the project and the emergence of React hooks the `react-testing-library` by Ken C Dodds has become a recommended way to test stateful components. This was used for it's simplicity in the `finder` component towards the end of the project and could be utilised more moving forward.
+
+## Analytics
 
 ## Migrations
 
