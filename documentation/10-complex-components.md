@@ -1,8 +1,16 @@
 # Complex components
 
-  - [Legal sidebar](#legal-sidebar)
-  - [Donation Form Handler](#donation-form-handler)
-  - [Rich Text](#rich-text)
+- [Legal sidebar](#legal-sidebar)
+- [Donation Form Handler](#donation-form-handler)
+- [Rich Text](#rich-text)
+- [Content Form](#content-form)
+  - [Initial Values](#initial-values)
+  - [Form Validation](#form-validation)
+  - [Form Fields](#form-fields)
+  - [Form Submission](#form-submission)
+    - [Redirection / thankyou message](#redirection--thankyou-message)
+    - [Data submission to API](#data-submission-to-api)
+
 
 ## Legal sidebar
 
@@ -223,3 +231,47 @@ To achieve this there is a temporary helper function that flattens the values. I
   "removeMarginBottom": true
 }
 ```
+
+## Content Form
+In contentful there is a `Assembly - Form` content model. There are various fields that handles the form logic, including the URL that the form submits, hidden fields and after submission behavior.
+
+The main functionality comes from the `formFields` field which is a multi reference field allowing `Component - Form field` content type. This allows the editor to create a form from a choice of possible field types and options.
+
+In the `Component - Form field` content model there is all the information we require to render a field.
+
+The entry point for the form component is `src/components/form/index.js`. [Formik](https://github.com/jaredpalmer/formik) is used to handle the forms in our React project, predominantly to do some of the heavy lifting and simplify logic.
+
+### Initial Values
+We pass through initial values for all fields. Inside `/form/helpers.js` there is a `getInitialValues` function that loops through the form fields and combines with the hidden value fields. Example of output from `getInitialValues`
+
+```
+{
+  "sourceCode": "1234",
+  "formId": "1234",
+  "first_name": "",
+  "last_name": "",
+  "email": ""
+}
+```
+
+### Form Validation
+For form validation we are using [Yup](https://github.com/jquense/yup).
+
+Each `Component - Form field` has the option to set the field as required and set the field type. 
+
+Inside `/form/helpers.js` there is a `getValidationSchema` function that loops through the form fields and generates the Yup Schema using [Yup.object.shape](https://github.com/jquense/yup#objectshapefields-object-nosortedges-arraystring-string-schema) 
+ to pass into Formik.
+
+### Form Fields
+Inside the Form we loop through the chosen form fields. We use `FormFieldType` component to determine if a fieldset is necessary.
+
+The `FormField` component is then called, this ensures we have a label for each form field. 
+
+The `FieldInputField` is the component that decides the React component to render for that field. After this check the form fields used should be as agnostic and simple as possible, with any destructuring of values occurring before in the `filedInputField` component.
+
+### Form Submission
+#### Redirection / thankyou message
+If the redirect after submission reference field in contentful `Assembly - Form` is populate then this takes priority of the thank you message. On successful submission the user is redirected. Else the thank you message should be shown
+
+#### Data submission to API
+TODO: ADD ONCE IN PLACE
