@@ -56,7 +56,7 @@ Now we have each pages parent items we have to create a hierarchy structure for 
 
 In `create-pages/legal.js` there is a `buildHierarchy` function that loops through each legal page and returns an object containing the legal hierarchy. An example object structure that is built below.
 
-```
+```javascript
 {
   "legalHierarchy": [
     {
@@ -94,36 +94,36 @@ As all donation components have certain requirements, this logic was pulled out 
 
 The component uses render props pattern. It takes care of all the submission and hidden values that must be on each donation form while still allowing additional fields to be added in the form if specific use cases vary.
 
-```
+```javascript
 <Formik
-    onSubmit={() => {}} // Required to prevent submission error
-    initialValues={{
-        cid: donation.defaultEnglandCampaignId,
-        free_amount: '1',
-        'amount-holder': '',
-        amount: defaultPennyValue.toString(),
-        reserved_appeal_code: getReservedAppealCode(location),
-        frequency,
-    }}
+  onSubmit={() => {}} // Required to prevent submission error
+  initialValues={{
+    cid: donation.defaultEnglandCampaignId,
+    free_amount: '1',
+    'amount-holder': '',
+    amount: defaultPennyValue.toString(),
+    reserved_appeal_code: getReservedAppealCode(location),
+    frequency,
+  }}
 >
-    {({ submitForm, setFieldValue }) => (
+  {({ submitForm, setFieldValue }) => (
     <StyledForm
-        inline={inline ? 1 : 0}
-        as={Form}
-        onSubmit={submitForm}
-        action="https://donate.shelter.org.uk/b"
-        method="GET"
-        className={className}
-        id={id || null}
+      inline={inline ? 1 : 0}
+      as={Form}
+      onSubmit={submitForm}
+      action="https://donate.shelter.org.uk/b"
+      method="GET"
+      className={className}
+      id={id || null}
     >
-        <Field type="hidden" name="cid" />
-        <Field type="hidden" name="free_amount" />
-        <Field type="hidden" name="amount" />
-        <Field type="hidden" name="reserved_appeal_code" />
-        <Field type="hidden" name="frequency" />
-        {render({ handleAmountChange, setFieldValue, defaultValue })}
+      <Field type="hidden" name="cid" />
+      <Field type="hidden" name="free_amount" />
+      <Field type="hidden" name="amount" />
+      <Field type="hidden" name="reserved_appeal_code" />
+      <Field type="hidden" name="frequency" />
+      {render({ handleAmountChange, setFieldValue, defaultValue })}
     </StyledForm>
-    )}
+  )}
 </Formik>
 ```
 
@@ -138,33 +138,33 @@ Above you can see that the hidden fields are populated with values.
 
 A typical use of this component is used in the `src/components/donation-hero/own-amount.js`
 
-```
+```javascript
 <DonationForm
-    frequency={frequency}
-    id="donation-hero-own-amount-form"
-    render={({ handleAmountChange, setFieldValue, defaultValue }) => (
+  frequency={frequency}
+  id="donation-hero-own-amount-form"
+  render={({ handleAmountChange, setFieldValue, defaultValue }) => (
     <>
-        <VisuallyHidden as="label" htmlFor="amount-holder-other-amount">
+      <VisuallyHidden as="label" htmlFor="amount-holder-other-amount">
         Donate
-        </VisuallyHidden>
-        <Field
+      </VisuallyHidden>
+      <Field
         name="amount-holder"
         render={props => (
-            <DonationInput
-                noMargin
-                inline
-                placeholder={defaultValue.toString()}
-                {...props}
-                id="amount-holder-other-amount"
-                onChange={e => handleAmountChange(e, setFieldValue)}
-            />
+          <DonationInput
+            noMargin
+            inline
+            placeholder={defaultValue.toString()}
+            {...props}
+            id="amount-holder-other-amount"
+            onChange={e => handleAmountChange(e, setFieldValue)}
+          />
         )}
-        />
-        <OwnAmountSubmit as={Button} bg="donate" type="submit">
+      />
+      <OwnAmountSubmit as={Button} bg="donate" type="submit">
         Donate
-        </OwnAmountSubmit>
+      </OwnAmountSubmit>
     </>
-    )}
+  )}
 />
 ```
 

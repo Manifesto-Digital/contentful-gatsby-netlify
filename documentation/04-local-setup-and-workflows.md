@@ -49,7 +49,7 @@ In gatsby-node.js we have multiple function calls that are stored in `create-pag
 
 Inside `/queries` you can see many examples of querying a page content model. Here is a simple example:
 
-```
+```javascript
 const getContentPages = async graphql =>
   graphql(`
     {
