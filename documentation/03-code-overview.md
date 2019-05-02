@@ -5,14 +5,14 @@
 - [Code Overview](#code-overview)
   - [Table of contents](#table-of-contents)
   - [Project Layout](#project-layout)
-      - [Create Pages](#create-pages)
-      - [Templates](#templates)
-      - [Components](#components)
+    - [Create Pages](#create-pages)
+    - [Templates](#templates)
+    - [Components](#components)
   - [Linting](#linting)
   - [Testing](#testing)
-      - [Jest](#jest)
-      - [Enzyme](#enzyme)
-      - [Snapshot testing](#snapshot-testing)
+    - [Jest](#jest)
+    - [Enzyme](#enzyme)
+    - [Snapshot testing](#snapshot-testing)
   - [Analytics](#analytics)
   - [Migrations](#migrations)
     - [Example migration](#example-migration)
@@ -57,7 +57,6 @@ The `exports.createPages` extension point is called only after the initial sourc
 
 Every template in the templates folders if the first entry point from Gatsby into React. They are always referenced in the `createPage` function. https://www.gatsbyjs.org/docs/building-with-components/#page-template-components
 
-
 #### Components
 
 The folder structure in `components` is very flat currently, this could be organised now there is a full view of the use cases for each component. Each component should have a `.test` file associated to it.
@@ -84,7 +83,8 @@ Snapshot tests are a very useful tool whenever you want to make sure your UI doe
 
 We have a wrapper in `test-helpers` called `renderWithTheme` that gives the [Test Renderer snapshot](https://reactjs.org/docs/test-renderer.html) access to theme variables, this ensures if a theme variable is changed then each component snaphsot that subscribes to that variable will fail and alert the developer to the effect.
 
-#### React testing library
+#### React testing library
+
 During the project and the emergence of React hooks the [react-testing-library](https://github.com/testing-library/react-testing-library) by Ken C Dodds has become a recommended way to test stateful components. This was used for it's simplicity in the `finder` component towards the end of the project and could be utilised more moving forward.
 
 ## Analytics

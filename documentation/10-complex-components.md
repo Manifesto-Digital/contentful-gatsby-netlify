@@ -11,7 +11,6 @@
     - [Redirection / thankyou message](#redirection--thankyou-message)
     - [Data submission to API](#data-submission-to-api)
 
-
 ## Legal sidebar
 
 The legal sidebar had the following requirements.
@@ -25,14 +24,14 @@ Design can be seen [here](./assets/legal-sidebar.png)
 
 A hierarchy was needed specific to the legal section that had an actual link to pieces of content, so that if a piece of content updated then the hierarchy should also.
 
-A custom extension `Menu Parent` was created. // TODO: link to custom extensions
+A custom extension [Menu Parent](./08-contentful.md#menu-parent) was created.
 This allows the editor to choose their direct parent from a list of legal pages that are generated from `Component - URL hierarchy`.
 
 This extensions exposes an array of `menuItems` that correspond to the current pages parent pages all the way to the root legal page. The big benefit of this approach means that we can allow any level of depth, if this was a GraphQL query then we would have to explicitly state the depth, and it that depth did not exist we would run into this [gotcha](./09-debugging-and-gotchas.md#entity-doesnt-exist-then-query-fails) fast.
 
 Now we have each pages parent items we have to create a hierarchy structure for all legal pages, so that we can display the sidebar with links correctly. Below is an example of a menuParent array that would be available on each legal page.
 
-```
+```javascript
 "menuParent": [
     {
       "label": "Legal",
@@ -189,7 +188,7 @@ When querying for Rich Text fields use the JSON field, this retrieves the full J
 
 Inside the `renderNodes` object, we use the `[BLOCKS.EMBEDDED_ENTRY]: node => {}` key to be able to handle when a block embedded component is used. A simple node object example is shown below (sys emptied as not needed for example).
 
-```
+```javascript
 {
   "data": {
     "target": {
@@ -222,7 +221,7 @@ Above you can see every field value is now an object with the locale as it's key
 
 To achieve this there is a temporary helper function that flattens the values. In `src/components/rich-text/helpers.js` there is a `fieldsMap` function that recursively loops through that turns the above `node.data.target.fields` into the following object that matches the structure used elsewhere.
 
-```
+```javascript
 {
   "name": "Inline callout",
   "icon": "Download",
@@ -233,6 +232,7 @@ To achieve this there is a temporary helper function that flattens the values. I
 ```
 
 ## Content Form
+
 In contentful there is a `Assembly - Form` content model. There are various fields that handles the form logic, including the URL that the form submits, hidden fields and after submission behavior.
 
 The main functionality comes from the `formFields` field which is a multi reference field allowing `Component - Form field` content type. This allows the editor to create a form from a choice of possible field types and options.
@@ -242,9 +242,10 @@ In the `Component - Form field` content model there is all the information we re
 The entry point for the form component is `src/components/form/index.js`. [Formik](https://github.com/jaredpalmer/formik) is used to handle the forms in our React project, predominantly to do some of the heavy lifting and simplify logic.
 
 ### Initial Values
+
 We pass through initial values for all fields. Inside `/form/helpers.js` there is a `getInitialValues` function that loops through the form fields and combines with the hidden value fields. Example of output from `getInitialValues`
 
-```
+```javascript
 {
   "sourceCode": "1234",
   "formId": "1234",
@@ -255,23 +256,28 @@ We pass through initial values for all fields. Inside `/form/helpers.js` there i
 ```
 
 ### Form Validation
+
 For form validation we are using [Yup](https://github.com/jquense/yup).
 
-Each `Component - Form field` has the option to set the field as required and set the field type. 
+Each `Component - Form field` has the option to set the field as required and set the field type.
 
-Inside `/form/helpers.js` there is a `getValidationSchema` function that loops through the form fields and generates the Yup Schema using [Yup.object.shape](https://github.com/jquense/yup#objectshapefields-object-nosortedges-arraystring-string-schema) 
- to pass into Formik.
+Inside `/form/helpers.js` there is a `getValidationSchema` function that loops through the form fields and generates the Yup Schema using [Yup.object.shape](https://github.com/jquense/yup#objectshapefields-object-nosortedges-arraystring-string-schema)
+to pass into Formik.
 
 ### Form Fields
+
 Inside the Form we loop through the chosen form fields. We use `FormFieldType` component to determine if a fieldset is necessary.
 
-The `FormField` component is then called, this ensures we have a label for each form field. 
+The `FormField` component is then called, this ensures we have a label for each form field.
 
 The `FieldInputField` is the component that decides the React component to render for that field. After this check the form fields used should be as agnostic and simple as possible, with any destructuring of values occurring before in the `filedInputField` component.
 
 ### Form Submission
+
 #### Redirection / thankyou message
+
 If the redirect after submission reference field in contentful `Assembly - Form` is populate then this takes priority of the thank you message. On successful submission the user is redirected. Else the thank you message should be shown
 
 #### Data submission to API
+
 TODO: ADD ONCE IN PLACE

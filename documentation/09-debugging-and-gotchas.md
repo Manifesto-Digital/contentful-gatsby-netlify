@@ -23,10 +23,12 @@ https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql
 
 :bulb: Use `Ctrl + Enter` for autocomplete to see what fields are available
 
-### Max callstack size exceeded
+### Max callstack size exceeded
+
 Very likely to be an infinite loop [Linking to content via Rich Text](#linking-to-content-via-rich-text)
 
-### Cannot query field X on type X
+### Cannot query field X on type X
+
 This means that the field you are querying for does not exist on the schema.
 
 If you are confident that the content type exists in contentful with the correct ID used in the query, possible cause could be [Entity doesn't exist then query fails](#entity-doesnt-exist-then-query-fails)
@@ -35,7 +37,8 @@ If this is a page query type then potentially the name of the content has change
 
 ## Gotchas
 
-### Linking to content via Rich Text
+### Linking to content via Rich Text
+
 When linking to content inside Rich text this creates a reference to that piece of content. During `gatsby-source-contentful` schema generation this is attempted to be parsed. The large issue is that every field on the referenced piece of content is available and is not restricted on depth.
 
 This makes an endless loop extremely likely. Here is an example small example.
@@ -50,7 +53,8 @@ Whenever an `entry-hyperlink` is used in the rich text we mutate the referenced 
 
 Related issue: https://github.com/gatsbyjs/gatsby/issues/11364#issuecomment-462038897
 
-### Embedding entries inside Rich Text
+### Embedding entries inside Rich Text
+
 The problem with linking content still exists here. If the embedded component contains any references to other content then we have to also mutate that link.
 
 Again there is a temporary solution with a patch for `gatsby-source-contentful` as seen in the `src/patches`.

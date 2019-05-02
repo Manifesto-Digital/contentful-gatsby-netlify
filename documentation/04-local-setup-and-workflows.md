@@ -6,9 +6,9 @@
   - [Table of contents](#table-of-contents)
   - [Running locally](#running-locally)
     - [Steps](#steps)
-        - [Add queries to create page](#add-queries-to-create-page)
-        - [A Page template Query](#a-page-template-query)
-        - [Create a fragment](#create-a-fragment)
+      - [Add queries to create page](#add-queries-to-create-page)
+      - [A Page template Query](#a-page-template-query)
+      - [Create a fragment](#create-a-fragment)
       - [Adding to a list of assemblies](#adding-to-a-list-of-assemblies)
 
 ## Running locally
@@ -21,8 +21,6 @@ You will require a `.env.development` and `.env.production` with the following v
 - `GOOGLE_MAP_API_KEY`: https://console.cloud.google.com/apis/credentials
 - `GATSBY_CONTENTFUL_ENVIRONMENT` : Environment id of your choosing (defaults to master)
 
-    <!-- -->
-
 ### Steps
 
 - Clone the repository
@@ -32,21 +30,24 @@ You will require a `.env.development` and `.env.production` with the following v
 
 If you encounter errors while running locally then check the [debugging](./09-debugging-and-gotchas.md) section
 
-## Typical workflows
+## Typical workflows
+
 A high level view of how content flows into gatsby can be found [here](./assets/FE-content-flow-overview.jpg). If you require content structure changes in contentful then follow the next steps.
 
-### Contentful content model creation or changed
+### Contentful content model creation or changed
+
 :exclamation: Always follow [contentful conventions](./08-contentful.md)
 
 If no page content model changes are needed skip to component creation [New Component](#new-component)
 
-#### New Page
+#### New Page
 
-##### Add queries to create page
+#### Add queries to create page
 
 In gatsby-node.js we have multiple function calls that are stored in `create-pages/`. The Gatsby createPage that is exposed is passed to the external functions. This is purely for organization.
 
-###### Add the new page query
+##### Add the new page query
+
 Inside `/queries` you can see many examples of querying a page content model. Here is a simple example:
 
 ```
@@ -69,7 +70,8 @@ module.exports = { getContentPages };
 
 The above GraphQL query is requesting all the content of type `PageAssemblyContentPage` and has the filename `content-page.js`. Use the [GraphiQL IDE](./09-debugging-and-gotchas.md#graphiQL-ide) to create and debug the query.
 
-###### Create a file in create-pages
+##### Create a file in create-pages
+
 Depending on the use-case the logic inside this file could vary greatly, the following is the most simplest example. It will do the following:
 
 - Query the page content from the schema (generated from contentful)
@@ -117,7 +119,7 @@ The `gatsbyCreatePage` function has been passed from gatsby-node.js. The paramet
 
 :bulb: Data passed to context is available in page queries as GraphQL variables.
 
-###### Add New Page creation in gatsby-node
+##### Add New Page creation in gatsby-node
 
 After adding all the page creation logic. Require the file and then call the default exported function and pass through the necessary params. Single example below.
 
@@ -127,23 +129,21 @@ const createMyNewPage = require('./create-pages/my-new-pages.js');
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  await Promise.all([
-    createMyNewPage(graphql, createPage),
-  ]);
+  await Promise.all([createMyNewPage(graphql, createPage)]);
 };
-
 ```
 
-#### Page modification
+#### Page modification
 
 If the name of the content model is to be changed as mentioned in the gotcha [here](./09-debugging-and-gotchas.md##content-model-name-is-used-in-query) the page query will have to be updated.
 
-#### New Component
+#### New Component
+
 :exclamation: Always follow [contentful conventions](./08-contentful.md)
 
 After creating the new component content type in most cases this will also need to be added to a page template.
 
-##### A Page template Query
+#### A Page template Query
 
 At the bottom of every page template (`/src/templates`) there is a GraphQl query. The slug has been passed automatically from the `createPage` function. This allows us to query for the piece of content that will make up this page.
 
@@ -151,7 +151,7 @@ The result of that query is made available automatically as `data` props in the 
 
 If the component is re-usable then a fragment should be made.
 
-##### Create a fragment
+#### Create a fragment
 
 We have a folder for fragments `src/fragments` there will be many examples here on the different uses. **Fragments can be used within fragments**
 https://www.gatsbyjs.org/docs/querying-with-graphql/#fragments
