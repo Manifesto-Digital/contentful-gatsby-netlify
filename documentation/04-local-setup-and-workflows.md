@@ -16,7 +16,6 @@
 You will require a `.env.development` and `.env.production` with the following values.
 
 - `ctfl_spaceId`: Contentful -> Settings -> General Settings
-- `ctld_token`: Contentful -> Settings -> Api keys -> Content Delivery api
 - `ctfl_accessToken`: Contentful -> Settings -> Api keys -> Content Delivery api
 - `GOOGLE_MAP_API_KEY`: https://console.cloud.google.com/apis/credentials
 - `GATSBY_CONTENTFUL_ENVIRONMENT` : Environment id of your choosing (defaults to master)
