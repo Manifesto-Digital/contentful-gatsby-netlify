@@ -1,5 +1,11 @@
 # Deploying
 
+- [CircleCi](#circleci)
+  - [Production](#production)
+  - [Any other environment](#any-other-environment)
+  - [Migrations](#migrations)
+  - [Gotcha's](#gotchas)
+
 Deployments are largely controlled by CircleCi but there are some situations where you may want to deploy to new environments for testing, in these situations Netlify will be used.
 
 ## CircleCi

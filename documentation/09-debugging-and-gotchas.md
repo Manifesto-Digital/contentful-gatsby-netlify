@@ -1,12 +1,15 @@
 # Debugging and gotchas
 
-- [Debugging and gotchas](#debugging-and-gotchas)
-  - [Common Debugging](#common-debugging)
-    - [GraphiQL IDE](#graphiql-ide)
-  - [Gotchas](#gotchas)
-    - [Single ref field with multiple types](#single-ref-field-with-multiple-types)
-    - [Entity doesn't exist then query fails](#entity-doesnt-exist-then-query-fails)
-    - [Content model name is used in query](#content-model-name-is-used-in-query)
+- [Common Debugging](#common-debugging)
+  - [GraphiQL IDE](#graphiql-ide)
+  - [Max callstack size exceeded](#max-callstack-size-exceeded)
+  - [Cannot query field X on type X](#cannot-query-field-x-on-type-x)
+- [Gotchas](#gotchas)
+  - [Linking to content via Rich Text](#linking-to-content-via-rich-text)
+  - [Embedding entries inside Rich Text](#embedding-entries-inside-rich-text)
+  - [Single ref field with multiple types](#single-ref-field-with-multiple-types)
+  - [Entity doesn't exist then query fails](#entity-doesnt-exist-then-query-fails)
+  - [Content model name is used in query](#content-model-name-is-used-in-query)
 
 ## Common Debugging
 

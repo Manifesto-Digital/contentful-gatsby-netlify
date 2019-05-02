@@ -5,18 +5,26 @@
 - [Local Setup and Workflows](#local-setup-and-workflows)
   - [Table of contents](#table-of-contents)
   - [Running locally](#running-locally)
+  - [Typical workflows](#typical-workflows)
+    - [Contentful content model creation or changed](#contentful-content-model-creation-or-changed)
+      - [New page](#new-page)
         - [Add queries to create page](#add-queries-to-create-page)
+        - [Add the new page query](#add-the-new-page-query)
+        - [Create a file in create-pages](#create-a-file-in-create-pages)
+        - [Add New Page creation in gatsby-node](#add-new-page-creation-in-gatsby-node)
+      - [Page modification](#page-modification)
+      - [New Component](#new-component)
         - [A Page template Query](#a-page-template-query)
         - [Create a fragment](#create-a-fragment)
-      - [Adding to a list of assemblies](#adding-to-a-list-of-assemblies)
+        - [Adding to a list of assemblies](#adding-to-a-list-of-assemblies)
 
 ## Running locally
 
 You will require a `.env.development` and `.env.production` with the following values.
 
 - `ctfl_spaceId`: Contentful -> Settings -> General Settings
-- `ctld_token`: Contentful -> Settings -> Api keys -> content delivery api
-- `ctfl_accessToken`: Contentful -> Settings -> Api keys -> content delivery api
+- `ctld_token`: Contentful -> Settings -> Api keys -> Content Delivery api
+- `ctfl_accessToken`: Contentful -> Settings -> Api keys -> Content Delivery api
 - `GOOGLE_MAP_API_KEY`: https://console.cloud.google.com/apis/credentials
 - `GATSBY_CONTENTFUL_ENVIRONMENT` : Environment id of your choosing (defaults to master)
 
@@ -35,7 +43,7 @@ If encountered errors while running locally then check the [debugging](./09-debu
 A high level view of how content flows into gatsby can be found [here](./assets/FE-content-flow-overview.jpg) link. If you are requiring content structure changes in contentful then please follow the next steps.
 
 ### Contentful content model creation or changed
-:exclamation: Always follow [contentful conventions](./08-contentful-conventions.md)
+:exclamation: Always follow [contentful conventions](./08-contentful.md)
 
 If no page content model changes are needed skip to component creation [New Component](#new-component)
 
@@ -114,11 +122,28 @@ The `gatsbyCreatePage` function has been passed from gatsby-node.js. The paramat
 - **component**: Which template to use as the entry point (receives the path as slug in the GraphQL query in that template)
 - **context**: An object to be passed, that will be available as a `pageContext` prop
 
+:bulb: Data passed to context is available in page queries as GraphQL variables.
+###### Add New Page creation in gatsby-node
+After adding all the page creation logic. Require the file and then call the default exported function and pass through the necessary params. Single example below.
+
+```
+const createMyNewPage = require('./create-pages/my-new-pages.js');
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  await Promise.all([
+    createMyNewPage(graphql, createPage),
+  ]);
+};
+
+```
+
 #### Page modification
 If the name of the content model is to be changed as mentioned in the gotcha [here](./09-debugging-and-gotchas.md##content-model-name-is-used-in-query) the page query will have to be updated.
 
 #### New Component
-:exclamation: Always follow [contentful conventions](./08-contentful-conventions.md)
+:exclamation: Always follow [contentful conventions](./08-contentful.md)
 
 After creating the new component content type in most cases this will also need to be added to a page template.
 

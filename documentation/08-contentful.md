@@ -1,4 +1,17 @@
-# Contentful conventions
+# Contentful
+
+- [Fields](#fields)
+  - [Rich text](#rich-text)
+      - [Formatting options](#formatting-options)
+      - [Hyperlinks](#hyperlinks)
+      - [Embedded entries & assets](#embedded-entries--assets)
+      - [Link to entry](#link-to-entry)
+      - [Embedded block entry](#embedded-block-entry)
+  - [Single Reference field](#single-reference-field)
+- [Custom extensions](#custom-extensions)
+  - [For Page Content models](#for-page-content-models)
+    - [Shelter Slug](#shelter-slug)
+    - [Menu Parent](#menu-parent)
 
 ## Fields
 
@@ -65,7 +78,11 @@ Currently the IDs of two top level `Component - URL hierarchy` pieces of content
 - pageAssemblyLegalHomepage
 - pageAssemblyLegalLandingPage
 - pageAssemblyLegalWhatsNewPage'
+
+
   <!-- -->
+  <!-- -->
+
   **IDS**
 - Legal - `qYQMbZoZx7QoiZUfX2okV`
 - Else - `1VIR12YBIauAS66hZiGCwm`

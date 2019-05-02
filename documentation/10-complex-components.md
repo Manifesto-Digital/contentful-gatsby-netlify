@@ -1,8 +1,7 @@
 # Complex components
 
-- [Complex components](#complex-components)
   - [Legal sidebar](#legal-sidebar)
-    - [Donation Form Handler](#donation-form-handler)
+  - [Donation Form Handler](#donation-form-handler)
   - [Rich Text](#rich-text)
 
 ## Legal sidebar
@@ -82,7 +81,7 @@ The next obstacle is to determine what levels of the hierarchy to display, as if
 
 There is a helper function in `src/components/legal-sidebar/helpers.js` that loops through the hierarchy object until it finds the current item, it stores and returns the current active level and a specified amount of levels above. An active prop is also added to be used for styling.
 
-### Donation Form Handler
+## Donation Form Handler
 
 As all donation components have certain requirements, this logic was pulled out into the donation Form Handler to be as versatile as possible while also ensuring the functionality required was there.
 
