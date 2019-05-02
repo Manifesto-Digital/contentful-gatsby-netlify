@@ -1,10 +1,11 @@
 # Deploying
 
-- [CircleCi](#circleci)
-  - [Production](#production)
-  - [Any other environment](#any-other-environment)
-  - [Migrations](#migrations)
-  - [Gotcha's](#gotchas)
+- [Deploying](#deploying)
+  - [CircleCi](#circleci)
+    - [Production](#production)
+    - [Any other environment](#any-other-environment)
+    - [Migrations](#migrations)
+    - [Gotcha's](#gotchas)
 
 Deployments are largely controlled by CircleCi but there are some situations where you may want to deploy to new environments for testing, in these situations Netlify will be used.
 
@@ -23,7 +24,7 @@ At a high level this automates:
 - forward migrations for Contentful
 - deploying to Netlify
 
-View the [CircleCi documentation] for setup instructions.(06-infrastructure-setup.md#CircleCi).
+View the [CircleCi documentation](./07-infrastructure-setup.md#CircleCi) for setup instructions.
 
 ### Production
 
@@ -47,7 +48,7 @@ Any `pull request` opened will run a simplified CircleCi workflow. This only run
 
 If Netlify is configured against the target branch,Netlify will create a deploy preview. Netlify will also automatically deploy once the branch is merged into.
 
-View the [Netlify documentation](06-infrastructure-setup.md#Netlify) for configuration instructions.
+View the [Netlify documentation](07-infrastructure-setup.md#Netlify) for configuration instructions.
 
 ### Migrations
 
