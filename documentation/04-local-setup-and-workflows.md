@@ -5,18 +5,11 @@
 - [Local Setup and Workflows](#local-setup-and-workflows)
   - [Table of contents](#table-of-contents)
   - [Running locally](#running-locally)
-  - [Typical workflows](#typical-workflows)
-    - [Contentful content model creation or changed](#contentful-content-model-creation-or-changed)
-      - [New page](#new-page)
+    - [Steps](#steps)
         - [Add queries to create page](#add-queries-to-create-page)
-        - [Add the new page query](#add-the-new-page-query)
-        - [Create a file in create-pages](#create-a-file-in-create-pages)
-        - [Add New Page creation in gatsby-node](#add-new-page-creation-in-gatsby-node)
-      - [Page modification](#page-modification)
-      - [New Component](#new-component)
         - [A Page template Query](#a-page-template-query)
         - [Create a fragment](#create-a-fragment)
-        - [Adding to a list of assemblies](#adding-to-a-list-of-assemblies)
+      - [Adding to a list of assemblies](#adding-to-a-list-of-assemblies)
 
 ## Running locally
 
@@ -30,17 +23,17 @@ You will require a `.env.development` and `.env.production` with the following v
 
     <!-- -->
 
-**Steps**
+### Steps
 
 - Clone the repository
 - Install dependencies `yarn install`
 - Add the `.env.development` and `.env.production` files into root
 - Run `yarn develop`
 
-If encountered errors while running locally then check the [debugging](./09-debugging-and-gotchas.md) section
+If you encounter errors while running locally then check the [debugging](./09-debugging-and-gotchas.md) section
 
 ## Typical workflows
-A high level view of how content flows into gatsby can be found [here](./assets/FE-content-flow-overview.jpg) link. If you are requiring content structure changes in contentful then please follow the next steps.
+A high level view of how content flows into gatsby can be found [here](./assets/FE-content-flow-overview.jpg). If you require content structure changes in contentful then follow the next steps.
 
 ### Contentful content model creation or changed
 :exclamation: Always follow [contentful conventions](./08-contentful.md)
@@ -51,7 +44,7 @@ If no page content model changes are needed skip to component creation [New Comp
 
 ##### Add queries to create page
 
-In gatsby-node.js we have multiple function calls that are stored in `create-pages/`. The Gatsby createPage that is exposed is passed to the external functions. This is purely organisational.
+In gatsby-node.js we have multiple function calls that are stored in `create-pages/`. The Gatsby createPage that is exposed is passed to the external functions. This is purely for organization.
 
 ###### Add the new page query
 Inside `/queries` you can see many examples of querying a page content model. Here is a simple example:
@@ -83,9 +76,9 @@ Depending on the use-case the logic inside this file could vary greatly, the fol
 - Loop through every piece of content for that content model
 - Create a static html page for each
 
-**The simple example is shown below in full**
+**A simple example**
 
-```
+```javascript
 const path = require('path');
 const { getContentPages } = require('../queries/content-page');
 
@@ -116,17 +109,19 @@ async function createContentPages(graphql, gatsbyCreatePage) {
 module.exports = createContentPages;
 ```
 
-The `gatsbyCreatePage` function has been passed from gatsby-node.js. The paramaters are:
+The `gatsbyCreatePage` function has been passed from gatsby-node.js. The parameters are:
 
 - **path**: Slug
 - **component**: Which template to use as the entry point (receives the path as slug in the GraphQL query in that template)
 - **context**: An object to be passed, that will be available as a `pageContext` prop
 
 :bulb: Data passed to context is available in page queries as GraphQL variables.
+
 ###### Add New Page creation in gatsby-node
+
 After adding all the page creation logic. Require the file and then call the default exported function and pass through the necessary params. Single example below.
 
-```
+```javascript
 const createMyNewPage = require('./create-pages/my-new-pages.js');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -140,6 +135,7 @@ exports.createPages = async ({ graphql, actions }) => {
 ```
 
 #### Page modification
+
 If the name of the content model is to be changed as mentioned in the gotcha [here](./09-debugging-and-gotchas.md##content-model-name-is-used-in-query) the page query will have to be updated.
 
 #### New Component
@@ -168,7 +164,7 @@ The term assemblies in this case is just a multi-ref field in contentful that ca
 
 We then loop through the returned array of assemblies to determine which React component to render for each content item in the assembly. Because of this we also need to query for an identifiable id on the component. **Each components fragment requires the type and id returned from the query** The following schema values are generated automatically and are required to be added to every component query.
 
-```
+```javascript
     id
     internal {
       type

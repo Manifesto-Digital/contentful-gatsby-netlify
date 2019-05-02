@@ -91,7 +91,7 @@ During the project and the emergence of React hooks the [react-testing-library](
 
 ## Migrations
 
-Contenful model changes support migrations which are simples changes as code. These can be simple creations or modifications with transformation of data.
+Contenful model changes support migrations which are structural schema changes as code. These can be simple creations or modifications with transformation of data.
 
 To create a migration that is automatically run during CI/CD:
 
@@ -104,9 +104,9 @@ To create a migration that is automatically run during CI/CD:
 
 #### Running migrations
 
-Circle will run `.circleci/migrate.js` during deployment but the raw command for a migration can be run to test individual migrations using the `contentful-cli` CLI. As a not the javascript library `contentful-migration` is used but the CLI tasks have moved to the `contentful-cli`.
+Circle will run `.circleci/migrate.js` during deployment but the raw command for a migration can be run to test individual migrations using the `contentful-cli` CLI. As a note the javascript library `contentful-migration` is used but the CLI tasks have moved to the `contentful-cli`.
 
-The migration version is stored as content in Contentful wihtin the `migrationVersion` model. It will look for the next sequential file name and updated the contentful `migrationVersion` each migration that is run.
+The migration version is stored as content in Contentful within the `migrationVersion` model. It will look for the next sequential file name and updated the contentful `migrationVersion` each migration that is run.
 
 #### Migration to edit the event content model
 
@@ -264,7 +264,7 @@ module.exports = function(migration) {
 
 #### Useful information
 
-We found generating the seeds and migrations easier by first exporting hte models that needed adjusting and modifing this code.
+We found generating the seeds and migrations easier by first exporting the models that needed adjusting and modifying this code.
 
 Get the content from a content type (you can change the query to limit this to specific pieces of content):
 `contentful space export --space-id [SPACE_ID] --environment-id [ENV] --content-file topic-url-hierarchy.json --export-dir content_export/ --content-only --use-verbose-renderer --skip-assets --query-entries 'content_type=topicUrlHierarchy' --query-assets 'fields.title=doesntexist'`
