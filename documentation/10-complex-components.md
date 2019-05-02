@@ -28,34 +28,34 @@ A hierarchy was needed specific to the legal section that had an actual link to 
 A custom extension `Menu Parent` was created. // TODO: link to custom extensions
 This allows the editor to choose their direct parent from a list of legal pages that are generated from `Component - URL hierarchy`.
 
-This extensions exposes an array of menuItems that correspond to the current pages parent pages all the way to the root legal page. The big benefit of this approach means that we can allow any level of depth, if this was a GraphQL query then we would have to explicitly state the depth, and it that depth did not exist we would run into this [gotcha](./09-debugging-and-gotchas.md#entity-doesnt-exist-then-query-fails) fast.
+This extensions exposes an array of `menuItems` that correspond to the current pages parent pages all the way to the root legal page. The big benefit of this approach means that we can allow any level of depth, if this was a GraphQL query then we would have to explicitly state the depth, and it that depth did not exist we would run into this [gotcha](./09-debugging-and-gotchas.md#entity-doesnt-exist-then-query-fails) fast.
 
 Now we have each pages parent items we have to create a hierarchy structure for all legal pages, so that we can display the sidebar with links correctly. Below is an example of a menuParent array that would be available on each legal page.
 
 ```
-    "menuParent": [
-              {
-                "label": "Legal",
-                "menuItem": [
-                  {
-                    "title": "Shelter Legal",
-                    "slug": "shelter-legal"
-                  }
-                ]
-              },
-                {
-                "label": "Benefits",
-                "menuItem": [
-                  {
-                    "title": "Benefits",
-                    "slug": "shelter-legal/benefits"
-                  }
-                ]
-              },
-            ]
+"menuParent": [
+    {
+      "label": "Legal",
+      "menuItem": [
+        {
+          "title": "Shelter Legal",
+          "slug": "shelter-legal"
+        }
+      ]
+    },
+      {
+      "label": "Benefits",
+      "menuItem": [
+        {
+          "title": "Benefits",
+          "slug": "shelter-legal/benefits"
+        }
+      ]
+    },
+  ]
 ```
 
-In `create-pages/legal.js` there is a `buildHierarchy` function that loop through each legal page and returns an object containing the legal hierarchy. An example object structure that is built below.
+In `create-pages/legal.js` there is a `buildHierarchy` function that loops through each legal page and returns an object containing the legal hierarchy. An example object structure that is built below.
 
 ```
 {
@@ -177,7 +177,7 @@ The approach allows donation components to share the necessary logic while still
 
 ## Rich Text
 
-Towards the end of the project the recommended approach for Rich Text changed. Before custom handling of `renderNodes` were handled in gatsby-config. The one main drawback of this meant that we had no access to React components as this was before the data become available.
+Towards the end of the project the recommended approach for Rich Text changed. Before custom handling of `renderNodes` were handled in gatsby-config. The one main drawback of this meant that we had no access to React components as this was before the data was passed to React.
 
 The `documentToReactComponents` from the `@contentful/rich-text-react-renderer` package allowed us to leverage React and opened up the possibilities of embedding components inside the Rich Text Editor.
 
@@ -218,9 +218,9 @@ Inside the `renderNodes` object, we use the `[BLOCKS.EMBEDDED_ENTRY]: node => {}
 }
 ```
 
-Above you can see every field value is now an object with the locale as it's key. We want to be able to pass the data down to our components that are already created and the data structure to match what we receive when querying for data (no local present).
+Above you can see every field value is now an object with the locale as it's key. We want to be able to pass the data down to our components that are already created and the data structure to match what we receive when querying for data (no locale present).
 
-To achieve this there is a temporary helper function that flattens the values. In `src/components/rich-text/helpers.js` there is a `fieldsMap` function that recursively loops through that turns the above `node.data.target.fields` into the following object.
+To achieve this there is a temporary helper function that flattens the values. In `src/components/rich-text/helpers.js` there is a `fieldsMap` function that recursively loops through that turns the above `node.data.target.fields` into the following object that matches the structure used elsewhere.
 
 ```
 {

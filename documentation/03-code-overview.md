@@ -49,13 +49,14 @@ project
 
 #### Create Pages
 
-Create pages folder is used to organise each Page Assemblies associated page generation. We pass the Gatsby createPage function to these files. Some templates have the same page generation steps, but have been left separate for clarity.
+`src/create-pages` is where we have all the logic that dynamically generates pages. We pass the Gatsby createPage function to these files. Some templates have the same page generation steps and could be combined, but have been left separate for clarity.
 
-This extension point is called only after the initial sourcing and transformation of nodes plus creation of the GraphQL schema are complete so you can query your data in order to create pages.
+The `exports.createPages` extension point is called only after the initial sourcing and transformation of nodes plus creation of the GraphQL schema are complete so you can query your data in order to create pages.
 
 #### Templates
 
-Every template in the templates folders if the first entry point from Gatsby into React. They are always referenced in the createPage function. https://www.gatsbyjs.org/docs/building-with-components/#page-template-components
+Every template in the templates folders if the first entry point from Gatsby into React. They are always referenced in the `createPage` function. https://www.gatsbyjs.org/docs/building-with-components/#page-template-components
+
 
 #### Components
 
@@ -71,20 +72,20 @@ We are using `Jest` and `Enzyme` for our components testing along with `react-te
 
 #### Jest
 
-Jest is a JavaScript unit testing framework, used by Facebook to test services and React applications.
+[Jest](https://jestjs.io/docs/en/getting-started) is a JavaScript unit testing framework, used by Facebook to test services and React applications.
 
 #### Enzyme
 
-Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
+[Enzyme](https://airbnb.io/enzyme/) is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
 
 #### Snapshot testing
 
 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
 
-We have a wrapper in `test-helpers` called `renderWithTheme` that gives the snapshot access to theme variables, this ensures if a theme variable is changed then each component snaphsot that subscribes to that variable will fail and alert the developer to the effect.
+We have a wrapper in `test-helpers` called `renderWithTheme` that gives the [Test Renderer snapshot](https://reactjs.org/docs/test-renderer.html) access to theme variables, this ensures if a theme variable is changed then each component snaphsot that subscribes to that variable will fail and alert the developer to the effect.
 
 #### React testing library
-During the project and the emergence of React hooks the `react-testing-library` by Ken C Dodds has become a recommended way to test stateful components. This was used for it's simplicity in the `finder` component towards the end of the project and could be utilised more moving forward.
+During the project and the emergence of React hooks the [react-testing-library](https://github.com/testing-library/react-testing-library) by Ken C Dodds has become a recommended way to test stateful components. This was used for it's simplicity in the `finder` component towards the end of the project and could be utilised more moving forward.
 
 ## Analytics
 
