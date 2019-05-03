@@ -71,3 +71,8 @@ These were:
 - Workflow (integration with Jira)
 
 The idea would be to utilize this API in conjunction with the Contentful webhook system and managment API to maniplate data or create functionality without complex UI Extentions.
+
+## Jira
+
+Workflows in Jira operate in a state machine like flow.
+The Jira API provides transition states in a [to, from] format. We then map these to a set of rules in the Laravel API and appropriately edit Contentful content based on these Jira transition rules
