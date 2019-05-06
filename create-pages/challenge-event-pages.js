@@ -3,7 +3,7 @@ const { getChallengeEventPages } = require('../queries/challenge-event-page');
 
 async function createChallengeEventPages(graphql, gatsbyCreatePage) {
   const challengeEventTemplate = path.resolve(
-    'src/templates/challenge-event.js'
+    'src/templates/challenge-event/index.js'
   );
 
   // Get press release pages
