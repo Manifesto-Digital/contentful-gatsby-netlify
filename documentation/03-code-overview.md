@@ -23,7 +23,7 @@
 
 ## Project Layout
 
-Below is a high level visual representation of the layout of the folders in this project.
+Below is a high-level visual representation of the layout of the folders in this project.
 
 ```
 project
@@ -59,7 +59,7 @@ Every template in the templates folders if the first entry point from Gatsby int
 
 #### Components
 
-The folder structure in `components` is very flat currently, this could be organised now there is a full view of the use cases for each component. Each component should have a `.test` file associated to it.
+The folder structure in `components` is very flat currently, this could be organised now there is a full view of the use cases for each component. Each component should have a `.test` the file associated with it.
 
 ## Linting
 
@@ -81,30 +81,30 @@ We are using `Jest` and `Enzyme` for our components testing along with `react-te
 
 Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
 
-We have a wrapper in `test-helpers` called `renderWithTheme` that gives the [Test Renderer snapshot](https://reactjs.org/docs/test-renderer.html) access to theme variables, this ensures if a theme variable is changed then each component snaphsot that subscribes to that variable will fail and alert the developer to the effect.
+We have a wrapper in `test-helpers` called `renderWithTheme` that gives the [Test Renderer snapshot](https://reactjs.org/docs/test-renderer.html) access to these theme variables, this ensures if a theme variable is changed then each component snapshot that subscribes to that variable will fail and alert the developer to the effect.
 
 #### React testing library
 
-During the project and the emergence of React hooks the [react-testing-library](https://github.com/testing-library/react-testing-library) by Ken C Dodds has become a recommended way to test stateful components. This was used for it's simplicity in the `finder` component towards the end of the project and could be utilised more moving forward.
+During the project and the emergence of React hooks, the [react-testing-library](https://github.com/testing-library/react-testing-library) by Kent C Dodds has become a recommended way to test stateful components. This was used for its simplicity in the `finder` component towards the end of the project and could be utilised more moving forward.
 
 ## Analytics
 
 ## Migrations
 
-Contenful model changes support migrations which are structural schema changes as code. These can be simple creations or modifications with transformation of data.
+Contentful model changes support migrations which are structural schema changes as code. These can be simple creations or modifications with the transformation of data.
 
 To create a migration that is automatically run during CI/CD:
 
 1. Inside `.circleci/__migrations__` create a sequentially named migration file with a descriptive name.
 2. Add your migration
-3. Add a seed - this is related to a Gatsby schema workaround, where new fields that are empty are not queriable. Its about adding data to your new fields from your migration.
+3. Add a seed - this is related to a Gatsby schema workaround, where new fields that are empty are not queriable. It's about adding data to your new fields from your migration.
 4. Test your migration
 
 ### Example migration
 
 #### Running migrations
 
-Circle will run `.circleci/migrate.js` during deployment but the raw command for a migration can be run to test individual migrations using the `contentful-cli` CLI. As a note the javascript library `contentful-migration` is used but the CLI tasks have moved to the `contentful-cli`.
+Circle will run `.circleci/migrate.js` during deployment but the raw command for a migration can be run to test individual migrations using the `contentful-cli` CLI. As a note, the javascript library `contentful-migration` is used but the CLI tasks have moved to the `contentful-cli`.
 
 The migration version is stored as content in Contentful within the `migrationVersion` model. It will look for the next sequential file name and updated the contentful `migrationVersion` each migration that is run.
 

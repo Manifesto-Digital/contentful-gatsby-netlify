@@ -27,9 +27,9 @@ A hierarchy was needed specific to the legal section that had an actual link to 
 A custom extension [Menu Parent](./08-contentful.md#menu-parent) was created.
 This allows the editor to choose their direct parent from a list of legal pages that are generated from `Component - URL hierarchy`.
 
-This extensions exposes an array of `menuItems` that correspond to the current pages parent pages all the way to the root legal page. The big benefit of this approach means that we can allow any level of depth, if this was a GraphQL query then we would have to explicitly state the depth, and it that depth did not exist we would run into this [gotcha](./09-debugging-and-gotchas.md#entity-doesnt-exist-then-query-fails) fast.
+This extension exposes an array of `menuItems` that correspond to the current pages parent pages all the way to the root legal page. The big benefit of this approach means that we can allow any level of depth, if this was a GraphQL query then we would have to explicitly state the depth, and it that depth did not exist we would run into this [gotcha](./09-debugging-and-gotchas.md#entity-doesnt-exist-then-query-fails) fast.
 
-Now we have each pages parent items we have to create a hierarchy structure for all legal pages, so that we can display the sidebar with links correctly. Below is an example of a menuParent array that would be available on each legal page.
+Now we have each page's parent items we have to create a hierarchy structure for all legal pages so that we can display the sidebar with links correctly. Below is an example of a `menuParent` array that would be available on each legal page.
 
 ```javascript
 "menuParent": [
@@ -86,7 +86,7 @@ In `create-pages/legal.js` there is a `buildHierarchy` function that loops throu
 
 The next obstacle is to determine what levels of the hierarchy to display, as if the current item is 6 levels deep we do not want to show them all in the sidebar.
 
-There is a helper function in `src/components/legal-sidebar/helpers.js` that loops through the hierarchy object until it finds the current item, it stores and returns the current active level and a specified amount of levels above. An active prop is also added to be used for styling.
+There is a helper function in `src/components/legal-sidebar/helpers.js` that loops through the hierarchy object until it finds the current item, it stores and returns the currently active level and a specified amount of levels above. An active prop is also added to be used for styling.
 
 ## Donation Form Handler
 
@@ -170,13 +170,13 @@ A typical use of this component is used in the `src/components/donation-hero/own
 
 The example above uses all the props that were made passed down from the Donation handler.
 
-It has the required `amount-holder` field. This uses the `handleAmountChange` function passed down and passes the current field value to the donation Form handler. This in turn updates the hidden donation fields accordingly to ensure the correct format is sent on submission.
+It has the required `amount-holder` field. This uses the `handleAmountChange` function passed down and passes the current field value to the donation Form Handler. This, in turn, updates the hidden donation fields accordingly to ensure the correct format is sent on submission.
 
 The approach allows donation components to share the necessary logic while still leaving the presentation completely up to the use-case.
 
 ## Rich Text
 
-Towards the end of the project the recommended approach for Rich Text changed. Before custom handling of `renderNodes` were handled in gatsby-config. The one main drawback of this meant that we had no access to React components as this was before the data was passed to React.
+Towards the end of the project, the recommended approach for Rich Text changed. Before custom handling of `renderNodes` were handled in gatsby-config. The one main drawback of this meant that we had no access to React components as this was before the data was passed to React.
 
 The `documentToReactComponents` from the `@contentful/rich-text-react-renderer` package allowed us to leverage React and opened up the possibilities of embedding components inside the Rich Text Editor.
 
@@ -184,7 +184,7 @@ We currently still have this large [gotcha](./09-debugging-and-gotchas.md#linkin
 
 Docs on Rich text react renderer https://github.com/contentful/rich-text/tree/master/packages/rich-text-react-renderer.
 
-When querying for Rich Text fields use the JSON field, this retrieves the full JSON associated to the field.
+When querying for Rich Text fields use the JSON field, this retrieves the full JSON associated with the field.
 
 Inside the `renderNodes` object, we use the `[BLOCKS.EMBEDDED_ENTRY]: node => {}` key to be able to handle when a block embedded component is used. A simple node object example is shown below (sys emptied as not needed for example).
 
@@ -233,13 +233,13 @@ To achieve this there is a temporary helper function that flattens the values. I
 
 ## Content Form
 
-In contentful there is a `Assembly - Form` content model. There are various fields that handles the form logic, including the URL that the form submits, hidden fields and after submission behavior.
+In contentful, there is an `Assembly - Form` content model. There are various fields that handle the form logic, including the URL that the form submits, hidden fields and after submission behavior.
 
-The main functionality comes from the `formFields` field which is a multi reference field allowing `Component - Form field` content type. This allows the editor to create a form from a choice of possible field types and options.
+The main functionality comes from the `formFields` field which is a multi-reference field allowing `Component - Form field` content type. This allows the editor to create a form from a choice of possible field types and options.
 
 In the `Component - Form field` content model there is all the information we require to render a field.
 
-The entry point for the form component is `src/components/form/index.js`. [Formik](https://github.com/jaredpalmer/formik) is used to handle the forms in our React project, predominantly to do some of the heavy lifting and simplify logic.
+The entry point for the form component is `src/components/form/index.js`. [Formik](https://github.com/jaredpalmer/formik) is used to handle the forms in our React project, predominantly to do some of the heavy lifting and simplify the logic.
 
 ### Initial Values
 
@@ -257,7 +257,7 @@ We pass through initial values for all fields. Inside `/form/helpers.js` there i
 
 ### Form Validation
 
-For form validation we are using [Yup](https://github.com/jquense/yup).
+For form validation, we are using [Yup](https://github.com/jquense/yup).
 
 Each `Component - Form field` has the option to set the field as required and set the field type.
 
@@ -266,17 +266,17 @@ to pass into Formik.
 
 ### Form Fields
 
-Inside the Form we loop through the chosen form fields. We use `FormFieldType` component to determine if a fieldset is necessary.
+Inside the Form, we loop through the chosen form fields. We use `FormFieldType` component to determine if a fieldset is necessary.
 
 The `FormField` component is then called, this ensures we have a label for each form field.
 
-The `FieldInputField` is the component that decides the React component to render for that field. After this check the form fields used should be as agnostic and simple as possible, with any destructuring of values occurring before in the `filedInputField` component.
+The `FieldInputField` is the component that decides the React component to render for that field. After this check, the form fields used should be as agnostic and simple as possible, with any destructuring of values occurring before in the `filedInputField` component.
 
 ### Form Submission
 
 #### Redirection / thankyou message
 
-If the redirect after submission reference field in contentful `Assembly - Form` is populate then this takes priority of the thank you message. On successful submission the user is redirected. Else the thank you message should be shown
+If the redirect after submission reference field in contentful `Assembly - Form` is populated then this takes priority of the thank you message. On successful submission, the user is redirected. Else the thank you message should be shown
 
 #### Data submission to API
 

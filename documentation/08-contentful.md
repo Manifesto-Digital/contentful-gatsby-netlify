@@ -15,7 +15,7 @@
 
 ## Fields
 
-Below is a list of conventions when adding a field to contentful model
+Below is a list of conventions when adding a field to contentful model.
 
 ### Rich text
 
@@ -64,13 +64,13 @@ An extension that generates the value of the slug based on the `menuParent` choi
 
 The `menuParent` choice is when the editor chooses the direct parent of the current page to generate the hierarchy.
 
-This will then update this slug field to show the full url path for the piece of content.
+This will then update this slug field to show the full URL path for the piece of content.
 
 #### Menu Parent
 
-A hierarchy select menu that is populated from the `Component - URL hierarchy`. This allows the editor to choose the direct parent and from that we can populate the full path of the page.
+A hierarchy select menu that is populated from the `Component - URL hierarchy`. This allows the editor to choose the direct parent and from that, we can populate the full path of the page.
 
-Currently the IDs of two top level `Component - URL hierarchy` pieces of content that are hard-coded in the extension. It checks the current content type to determine what hierarchy to use.
+Currently the IDs of two top-level `Component - URL hierarchy` pieces of content that are hard-coded in the extension. It checks the current content type to determine what hierarchy to use.
 
 **Legal Page content types**
 
@@ -83,6 +83,6 @@ Currently the IDs of two top level `Component - URL hierarchy` pieces of content
   <!-- -->
   <!-- -->
 
-  **IDS**
+  **IDs**
 - Legal - `qYQMbZoZx7QoiZUfX2okV`
 - Else - `1VIR12YBIauAS66hZiGCwm`

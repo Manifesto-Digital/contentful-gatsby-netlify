@@ -1,27 +1,27 @@
 # Infrastructure & Tooling
 
-The shelter websites is made up of a few microservices:
+The shelter websites are made up of a few microservices:
 
 - Contentful is used for delivering the data.
-- Azure hosts the Laravel Api for doing slightly more complicated actions with the Contentful data.
-- Netlify hosts the static Gatsby generatted sites.
+- Azure hosts the Laravel API for doing slightly more complicated actions with the Contentful data.
+- Netlify hosts the static Gatsby generated sites.
 - CircleCi is the automation tool.
 
 ## Contentful
 
-[Contentful](app.contentful.com) is a content architecute plaftform. It is responsible for providing all content for the Shelter website and future spin offs.
+[Contentful](app.contentful.com) is a content architecture platform. It is responsible for providing all content for the Shelter website and future spin-offs.
 
 Key area's:
 
 - Content models: provide structure for various pieces of content.
 - Environments: allow multiple versions of the content for testing.
-- Api keys: provide access to integration services with granular environment access.
+- API keys: provide access to integration services with granular environment access.
 - Webhooks: allow triggers based on content actions.
 - Roles & permissions: control users editing and publishing capabilities
 
-### Extending the contenful interface
+### Extending the Contentful interface
 
-There are situations where you want to slightly alter what Contentful's UI offers, for example add information about previous versions, enter UI Extensions.
+There are situations where you want to slightly alter what Contentful's UI offers, for example, add information about previous versions, enter UI Extensions.
 
 A repository has been created to house all future [UI Extensions](https://github.com/Shelter-England/contentful-extentions).
 
@@ -55,13 +55,13 @@ Using environment variables you can connect the different Netlify environments t
 
 ## CircleCi
 
-CircleCi is used as an automation tool for shipping and checking quality of code before allowing it to be production ready.
+CircleCi is used as an automation tool for shipping and checking the quality of code before allowing it to be production ready.
 
 This is covered in more detail in the [deploying](05-deploying.md#CircleCi) section.
 
 ## Azure
 
-Azure is used to host the Laravel API.
+Azure is used for hosting the Laravel API.
 
 This API came about from key functionality that was not offered out the box in Contentful.
 
@@ -70,4 +70,4 @@ These were:
 - Notifications (currently Slack)
 - Workflow (integration with Jira)
 
-The idea would be to utilize this API in conjunction with the Contentful webhook system and managment API to maniplate data or create functionality without complex UI Extentions.
+The idea would be to utilize this API in conjunction with the Contentful webhook system and management API to manipulate data or create functionality without complex UI Extensions.
