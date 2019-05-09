@@ -8,8 +8,9 @@ import QuotationWithImage from '../components/quotation';
 import PersonCardList from '../components/person/card-list';
 import Assemblies from '../components/assemblies';
 import { Container, TwoThirds } from '../components/styled/containers';
+import Breadcrumbs from '../components/breadcrumbs';
 
-const Page = ({ data }) => {
+const Page = ({ data, pageContext }) => {
   const {
     title,
     person,
@@ -25,6 +26,12 @@ const Page = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle paddingBottom>
           <h1>{title}</h1>
           {jobTitle && <h3>{jobTitle}</h3>}
@@ -54,6 +61,7 @@ Page.propTypes = {
   data: PropTypes.shape({
     contentfulPagePerson: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default Page;

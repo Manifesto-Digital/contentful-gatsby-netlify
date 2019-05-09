@@ -17,12 +17,14 @@ async function createFurnitureShopPages(graphql, gatsbyCreatePage) {
   // Create pages
   pages.data.allContentfulPageFurnitureShop.edges.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: node.slug,
       component: standardEventPageTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
       },
     });
   });

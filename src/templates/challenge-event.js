@@ -6,8 +6,10 @@ import Layout from '../components/layout';
 import HeroVideo from '../components/hero/hero-video';
 import StickyBanner from '../components/challenge-event/sticky-banner';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
+import { Container } from '../components/styled/containers';
 
-const ChallengeEventPage = ({ data }) => {
+const ChallengeEventPage = ({ data, pageContext }) => {
   const {
     heroImage,
     bannerButtonText,
@@ -113,6 +115,12 @@ const ChallengeEventPage = ({ data }) => {
       pageTitle={eventName}
       removeFooterMargin
     >
+      <Container>
+        <Breadcrumbs
+          parentPages={pageContext.menuParent}
+          currentTitle={eventName}
+        />
+      </Container>
       <HeroVideo
         title={eventName}
         subtitle={displayLocation}
@@ -142,6 +150,7 @@ ChallengeEventPage.propTypes = {
   data: PropTypes.shape({
     contentfulPageAssemblyChallengeEventPage: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default ChallengeEventPage;

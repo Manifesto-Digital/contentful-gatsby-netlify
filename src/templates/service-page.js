@@ -8,11 +8,12 @@ import ContactCard from '../components/contact-card';
 import OpeningTimes from '../components/opening-times';
 import Map from '../components/google-map';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 import PageTitle from '../components/page-title';
 
-const ServicePage = ({ data }) => {
+const ServicePage = ({ data, pageContext }) => {
   const {
     title,
     service,
@@ -25,6 +26,12 @@ const ServicePage = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle>
           <h1>{title}</h1>
         </PageTitle>
@@ -61,6 +68,7 @@ ServicePage.propTypes = {
   data: PropTypes.shape({
     contentfulPageService: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default ServicePage;

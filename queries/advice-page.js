@@ -8,6 +8,8 @@
  * The component___sub_pages filter option is available as the only content model that the subpage can take is a Advice page assembly
  *
  */
+const { PagesFragment } = require('./pages-fragment');
+
 const getAdvicePages = async graphql =>
   graphql(`
     {
@@ -19,6 +21,13 @@ const getAdvicePages = async graphql =>
             title
             id
             slug
+              menuParent {
+              ... on ContentfulComponentUrlHierarchy {
+                menuItem {
+                  ${PagesFragment}
+                }
+              }
+            }
             subPages {
               title
               pages {
