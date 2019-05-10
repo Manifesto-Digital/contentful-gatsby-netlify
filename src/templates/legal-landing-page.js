@@ -16,6 +16,7 @@ import RichText from '../components/rich-text';
 import PageTitle from '../components/page-title';
 import LegalSubPageList from '../components/legal-landing-page/subpage-list';
 import InlineCallOut from '../components/inline-callout';
+import Breadcrumbs from '../components/breadcrumbs';
 
 const LegalLandingPage = ({ data, pageContext }) => {
   const {
@@ -42,6 +43,10 @@ const LegalLandingPage = ({ data, pageContext }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title} legal>
       <Container>
+        <Breadcrumbs
+          parentPages={pageContext.menuParent}
+          currentTitle={title}
+        />
         <ContentWithSideBar>
           {currentPageHierarchy && heading && (
             <SideBar left desktop>

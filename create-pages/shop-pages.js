@@ -15,12 +15,14 @@ async function createShopPages(graphql, gatsbyCreatePage) {
   // Create pages
   shopPages.data.allContentfulPageShop.edges.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: node.slug,
       component: shopPageTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
       },
     });
   });

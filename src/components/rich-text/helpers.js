@@ -18,6 +18,16 @@ const flattenKey = (key, field) => {
   if (Array.isArray(field[key]) && field[key].length === 1) {
     return [fieldsMap(field[key][0].fields)];
   }
+  if (
+    Array.isArray(field[key]) &&
+    field[key].length > 1 &&
+    field[key].find(item =>
+      Object.prototype.hasOwnProperty.call(item, 'fields')
+    )
+  ) {
+    return field[key].map(item => fieldsMap(item.fields));
+  }
+
   if (typeof field[key] === 'object') {
     if (Object.prototype.hasOwnProperty.call(field[key], 'fields')) {
       return fieldsMap(field[key].fields);

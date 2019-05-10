@@ -6,10 +6,11 @@ import Layout from '../components/layout';
 import PageTitle from '../components/page-title';
 import Policy from '../components/policy';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
 // Styles
 import { Container, TwoThirds } from '../components/styled/containers';
 
-const PolicyPage = ({ data }) => {
+const PolicyPage = ({ data, pageContext }) => {
   const {
     title,
     policy,
@@ -20,6 +21,12 @@ const PolicyPage = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle>
           <h1>{title}</h1>
         </PageTitle>
@@ -38,6 +45,7 @@ PolicyPage.propTypes = {
   data: PropTypes.shape({
     contentfulPagePolicy: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default PolicyPage;

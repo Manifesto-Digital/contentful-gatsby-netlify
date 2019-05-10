@@ -17,9 +17,9 @@ const RichText = ({ richText, className, sidebar }) => {
         const flattenedFields = fieldsMap(imageObject);
         return <Image image={flattenedFields} width={1000} />;
       },
-
       [BLOCKS.EMBEDDED_ENTRY]: node => {
         const { fields, sys } = node.data.target;
+        if (!fields) return null;
         const flattenedFields = fieldsMap(fields);
         return <RichTextAssembly fields={flattenedFields} sys={sys} />;
       },
@@ -50,8 +50,7 @@ const RichText = ({ richText, className, sidebar }) => {
     },
   };
 
-  const json = richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
-
+  const json = richText && richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
   if (!json) return null;
 
   return (

@@ -18,11 +18,14 @@ async function createChallengeEventPages(graphql, gatsbyCreatePage) {
   // Create single pages
   challengeEvents.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
+
     gatsbyCreatePage({
       path: node.slug,
       component: challengeEventTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
       },
     });
   });

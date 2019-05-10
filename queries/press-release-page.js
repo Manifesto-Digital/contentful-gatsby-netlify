@@ -1,3 +1,5 @@
+const { PagesFragment } = require('./pages-fragment');
+
 const getPressReleasePages = async graphql =>
   graphql(`
     {
@@ -7,6 +9,13 @@ const getPressReleasePages = async graphql =>
             title
             id
             slug
+            menuParent {
+              ... on ContentfulComponentUrlHierarchy {
+                menuItem {
+                  ${PagesFragment}
+                }
+              }
+            }
             datePosted
             showContactSideBar
             showThumbnailOnListingPage

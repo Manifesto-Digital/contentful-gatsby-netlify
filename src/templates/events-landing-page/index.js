@@ -5,13 +5,14 @@ import Layout from '../../components/layout';
 // Components
 import PageTitle from '../../components/page-title';
 import RichText from '../../components/rich-text';
+import Breadcrumbs from '../../components/breadcrumbs';
 // Styles
 import { Container, TwoThirds } from '../../components/styled/containers';
 import { SectionTag } from '../../components/styled/tags';
 import EventCard from '../../components/event-card';
 import { Wrapper, CardWrapper } from './styles';
 
-const EventsLandingPage = ({ data }) => {
+const EventsLandingPage = ({ data, pageContext }) => {
   const {
     title,
     topTextSection,
@@ -22,6 +23,12 @@ const EventsLandingPage = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle>
           <h1>{title}</h1>
         </PageTitle>
@@ -51,6 +58,7 @@ EventsLandingPage.propTypes = {
   data: PropTypes.shape({
     contentfulPageEventsLanding: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default EventsLandingPage;

@@ -15,12 +15,14 @@ async function createPersonPages(graphql, gatsbyCreatePage) {
   // Create pages
   pages.data.allContentfulPagePerson.edges.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: node.slug,
       component: personPageTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
         category: node.person.category,
         personId: node.person.id,
       },

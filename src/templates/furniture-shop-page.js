@@ -9,8 +9,11 @@ import ShopInfo from '../components/shop-furniture/shop-info';
 import ShopMap from '../components/shop-furniture/shop-map';
 import Layout from '../components/layout';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
+// Styles
+import { Container } from '../components/styled/containers';
 
-const Page = ({ data }) => {
+const Page = ({ data, pageContext }) => {
   const {
     pageHeader,
     subHeader,
@@ -30,6 +33,12 @@ const Page = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={pageHeader}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={pageHeader}
+          />
+        </Container>
         <ShopHero
           header={pageHeader}
           subHeader={subHeader}
@@ -62,6 +71,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.object,
+  pageContext: PropTypes.object,
 };
 
 export default Page;

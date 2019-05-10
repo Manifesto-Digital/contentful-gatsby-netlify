@@ -26,11 +26,14 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   // Create single pages
   pressReleases.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
+
     gatsbyCreatePage({
       path: node.slug,
       component: pressReleasePageTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
       },
     });
   });
@@ -43,17 +46,17 @@ async function createPressReleasePages(graphql, gatsbyCreatePage) {
   const pressReleaseListingPage =
     pressReleaseListingsPages.data.contentfulPagePressReleaseListings;
 
-  const { title, subHeading, slug } = pressReleaseListingPage;
+  const { title, subHeading, slug: listingsSlug } = pressReleaseListingPage;
 
   const postsPerPage = 3; // deliberately low for testing purposes,
   const numPages = Math.ceil(pressReleases.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
     gatsbyCreatePage({
-      path: i === 0 ? `/${slug}` : `/${slug}/${i + 1}`,
+      path: i === 0 ? `/${listingsSlug}` : `/${listingsSlug}/${i + 1}`,
       component: pressReleaseListingPageTemplate,
       context: {
-        slug,
+        slug: listingsSlug,
         title,
         subHeading,
         limit: postsPerPage,
