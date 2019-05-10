@@ -9,6 +9,7 @@ import FeaturedEvent from '../../components/featured-event';
 import EventListCard from '../../components/event-list-card';
 import Assemblies from '../../components/assemblies';
 import SideBarAssemblies from '../../components/assemblies/sidebar';
+import Breadcrumbs from '../../components/breadcrumbs';
 // Styles
 import {
   Container,
@@ -19,7 +20,7 @@ import {
 import { IntroWrapper, OtherEventsWrapper } from './styles';
 import { SectionTag } from '../../components/styled/tags';
 
-const EventCategoryPage = ({ data }) => {
+const EventCategoryPage = ({ data, pageContext }) => {
   const {
     title,
     strapline,
@@ -43,6 +44,12 @@ const EventCategoryPage = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle>
           <h1>{title}</h1>
         </PageTitle>
@@ -83,6 +90,7 @@ EventCategoryPage.propTypes = {
     contentfulPageEventCategory: PropTypes.object,
     allContentfulDataEvent: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default EventCategoryPage;

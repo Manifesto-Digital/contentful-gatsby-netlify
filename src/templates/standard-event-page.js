@@ -12,6 +12,7 @@ import RichText from '../components/rich-text';
 import Modal from '../components/modal';
 import EventMap from '../components/standard-event/map';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
 // Styles
 import {
   Container,
@@ -22,7 +23,7 @@ import {
 import TwoColumnTextAndImageBlock from '../components/two-column-text-and-image-block';
 import { consistentString } from '../utils/content-formatting';
 
-const Page = ({ data }) => {
+const Page = ({ data, pageContext }) => {
   const standardEvent = data.contentfulPageStandardEvent;
   const [mapModal, toggleMapModal] = useToggle(false);
   const formRef = useRef(null);
@@ -51,6 +52,12 @@ const Page = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={event.eventName}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={event.eventName}
+          />
+        </Container>
         <EventHero
           event={event}
           displayMap={displayMap}
@@ -133,6 +140,7 @@ const Page = ({ data }) => {
 
 Page.propTypes = {
   data: PropTypes.object,
+  pageContext: PropTypes.object,
 };
 
 export default Page;
