@@ -9,7 +9,6 @@
     "@contentful/rich-text-types": "^13.1.0",
     "@nearform/gatsby-source-contentful": "^1.1.0",
     "@reach/router": "^1.2.1",
-    "@rehooks/window-scroll-position": "rehooks/window-scroll-position",
     "@svgr/webpack": "4.1.0",
     "await-exec": "^0.1.2",
     "axios": "0.18.0",
