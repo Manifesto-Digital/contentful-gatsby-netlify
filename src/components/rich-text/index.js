@@ -50,8 +50,7 @@ const RichText = ({ richText, className, sidebar }) => {
     },
   };
 
-  const json = richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
-
+  const json = richText && richText.json ? richText.json : richText; // Embedded Rich text json has key content currently
   if (!json) return null;
 
   return (

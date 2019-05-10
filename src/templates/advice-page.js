@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { dateAsString } from '../utils/dates';
 // Components
 import Layout from '../components/layout';
 import Assemblies from '../components/assemblies';
@@ -27,6 +28,7 @@ const AdvicePage = ({ data, pageContext }) => {
     sidebarAssemblies,
     displayBounceCard,
     pageInformation,
+    lastAmended,
   } = data.contentfulPageAdvice;
   const { subpages, slug } = pageContext;
 
@@ -55,6 +57,9 @@ const AdvicePage = ({ data, pageContext }) => {
               {guideSubTitle && <h1>{guideSubTitle}</h1>}
               {bodyCopy && <RichText richText={bodyCopy} />}
               <Assemblies assemblies={assemblies} insideContainer />
+              {lastAmended && (
+                <p>Last updated: {dateAsString(lastAmended, 'D MMMM YYYY')}</p>
+              )}
               <FeedbackModal />
             </TwoThirds>
             <SideBar>
@@ -92,6 +97,7 @@ export const advicePageQuery = graphql`
       pageInformation {
         ...PageInformationFragment
       }
+      lastAmended
       assemblies {
         ... on Node {
           ...CtaAssemblyFragment
