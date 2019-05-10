@@ -7,4 +7,4 @@ After an inital discovery phase there were a few key areas identified on how to 
 - Integrate with a variety of tools and services
 - Futureproof Shelter's Digital publishing capabilities
 
-Based on this the [stack](02-technical-overview.md) was described to be as decoupled as possible, leaning on microservied architechture to devolve responsibility to services that specialise delivering content, building static sites and modern hosting.
+Based on this the [stack](02-technical-overview.md) was described to be as decoupled as possible and to devolve responsibility to services that specialise delivering content, building static sites and modern hosting.
