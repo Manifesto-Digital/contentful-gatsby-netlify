@@ -6,10 +6,11 @@ import Layout from '../components/layout';
 import Hero from '../components/hero';
 import RichText from '../components/rich-text';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
 // Styles
 import { Container } from '../components/styled/containers';
 
-const Page = ({ data }) => {
+const Page = ({ data, pageContext }) => {
   const {
     bodyCopy,
     heroContent,
@@ -17,12 +18,19 @@ const Page = ({ data }) => {
     pageInformation,
     title,
   } = data.contentfulPageContent;
+
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
         {heroContent && <Hero content={heroContent[0]} />}
         <section>
-          <Container>{bodyCopy && <RichText richText={bodyCopy} />}</Container>
+          <Container>
+            <Breadcrumbs
+              parentPages={pageContext.menuParent}
+              currentTitle={title}
+            />
+            {bodyCopy && <RichText richText={bodyCopy} />}
+          </Container>
         </section>
         <Assemblies assemblies={assemblies} />
       </article>
@@ -34,6 +42,7 @@ Page.propTypes = {
   data: PropTypes.shape({
     contentfulPageContent: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default Page;

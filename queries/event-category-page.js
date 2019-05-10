@@ -1,3 +1,5 @@
+const { PagesFragment } = require('./pages-fragment');
+
 const getEventCategoryPages = async graphql =>
   graphql(`
     {
@@ -7,6 +9,13 @@ const getEventCategoryPages = async graphql =>
             id
             slug
             eventType
+            menuParent {
+              ... on ContentfulComponentUrlHierarchy {
+                menuItem {
+                  ${PagesFragment}
+                }
+              }
+            }
           }
         }
       }

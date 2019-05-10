@@ -18,6 +18,7 @@ import SubpageMenu from '../components/advice-page/subpage-menu';
 import SubpagePagination from '../components/advice-page/subpage-pagination';
 import SidebarAssemblies from '../components/assemblies/sidebar';
 import BounceCard from '../components/bounce-card';
+import Breadcrumbs from '../components/breadcrumbs';
 
 const AdvicePage = ({ data, pageContext }) => {
   const {
@@ -40,6 +41,12 @@ const AdvicePage = ({ data, pageContext }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle>
           <h1>{pageTitle}</h1>
         </PageTitle>
