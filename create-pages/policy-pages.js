@@ -15,12 +15,14 @@ async function createPolicyPages(graphql, gatsbyCreatePage) {
   // Create pages
   policyPages.data.allContentfulPagePolicy.edges.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: node.slug,
       component: policyPageTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
       },
     });
   });

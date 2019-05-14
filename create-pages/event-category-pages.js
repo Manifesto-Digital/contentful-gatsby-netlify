@@ -18,12 +18,14 @@ async function createEventCategoryPages(graphql, gatsbyCreatePage) {
   eventCategoryPages.data.allContentfulPageEventCategory.edges.forEach(
     ({ node }) => {
       if (!node.slug) return;
+      const { menuParent, slug } = node;
 
       gatsbyCreatePage({
         path: node.slug,
         component: eventCategoryPageTemplate,
         context: {
-          slug: node.slug,
+          slug,
+          menuParent,
           type: node.eventType,
         },
       });

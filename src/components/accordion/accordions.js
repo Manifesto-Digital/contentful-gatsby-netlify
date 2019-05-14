@@ -5,13 +5,12 @@ import { Container } from '../styled/containers';
 import Accordion from '.';
 import RichText from '../rich-text';
 
-function Accordions({ data }) {
+function Accordions({ data, insideContainer }) {
   const { accordions } = data;
   if (!accordions) return null;
-
   return (
     <AccordionsWrapper>
-      <Container>
+      <Container padding={!insideContainer}>
         {accordions.map((accordion, i) => (
           <Accordion header={accordion.heading} key={i}>
             <RichText richText={accordion.content} />
@@ -26,6 +25,11 @@ Accordions.propTypes = {
     accordions: PropTypes.array,
     title: PropTypes.string,
   }),
+  insideContainer: PropTypes.bool,
+};
+
+Accordions.defaultProps = {
+  insideContainer: false,
 };
 
 export default Accordions;

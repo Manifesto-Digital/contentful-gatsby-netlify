@@ -7,7 +7,7 @@ const Breadcrumbs = ({ parentPages, currentTitle }) => {
 
   // Flatten the parent to a cleaner format
   const flattenedParentPages = parentPages
-    .filter(value => Object.keys(value).length !== 0)
+    .filter(page => Object.keys(page).length !== 0 && page.menuItem)
     .map(page => page.menuItem[0]);
 
   if (flattenedParentPages.length === 0) return null;

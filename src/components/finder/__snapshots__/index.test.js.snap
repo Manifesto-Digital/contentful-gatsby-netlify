@@ -245,13 +245,13 @@ Object {
       class="sc-bxivhb bAZvsb"
     >
       <div
-        class="sc-fBuWsC ioXrhm"
+        class="sc-gisBJw TqsAK"
       >
         <h1>
           Topic - Services Finder
         </h1>
         <div
-          class="sc-hzDkRC cmDYgb"
+          class="sc-fAjcbJ kvRLRq"
         >
           <p>
             Some body text
@@ -273,11 +273,11 @@ Object {
         Your postcode or town
       </p>
       <form
-        class="sc-fMiknA hHsqOy"
+        class="sc-kjoXOD fNiuvy"
         role="search"
       >
         <div
-          class="sc-fAjcbJ fVGsRR"
+          class="sc-kgAjT iESWpB"
         >
           <label
             class="sc-gipzik fqhPMh"
@@ -286,14 +286,14 @@ Object {
             Search for services
           </label>
           <input
-            class="sc-caSCKo tKmWb"
+            class="sc-cJSrbW dlzxDg"
             data-testid="search-input"
             name="search-input"
             type="text"
             value=""
           />
           <button
-            class="sc-gisBJw eqbxkT"
+            class="sc-ksYbfQ jdrCOs"
             disabled=""
             type="submit"
           >
@@ -306,10 +306,10 @@ Object {
           </button>
         </div>
         <div
-          class="sc-kjoXOD fIALgx"
+          class="sc-hmzhuo cJhKFP"
         >
           <span
-            class="isvg loading sc-cHGsZl dPMmUY"
+            class="isvg loading sc-frDJqD jRmhSC"
           />
         </div>
       </form>

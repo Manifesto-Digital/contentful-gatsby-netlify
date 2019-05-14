@@ -8,6 +8,7 @@ import RichText from '../components/rich-text';
 import ShopSidebar from '../components/shop-sidebar';
 import Form from '../components/form';
 import Assemblies from '../components/assemblies';
+import Breadcrumbs from '../components/breadcrumbs';
 // Styles
 import {
   Container,
@@ -16,7 +17,7 @@ import {
   ContentWithSideBar,
 } from '../components/styled/containers';
 
-const Page = ({ data }) => {
+const Page = ({ data, pageContext }) => {
   const {
     title,
     bodyCopy,
@@ -29,6 +30,12 @@ const Page = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle>
           <h1>{title}</h1>
         </PageTitle>
@@ -53,6 +60,7 @@ Page.propTypes = {
   data: PropTypes.shape({
     contentfulPageShop: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default Page;

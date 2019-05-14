@@ -15,10 +15,11 @@ import PaddedBox from '../../components/padded-box';
 import PageTitle from '../../components/page-title';
 import RichText from '../../components/rich-text';
 import Assemblies from '../../components/assemblies';
+import Breadcrumbs from '../../components/breadcrumbs';
 // Styles
 import { PublishedDate } from './styles';
 
-const PressReleasePage = ({ data }) => {
+const PressReleasePage = ({ data, pageContext }) => {
   const {
     title,
     bodyCopy,
@@ -65,6 +66,12 @@ const PressReleasePage = ({ data }) => {
   return (
     <Layout pageInformation={pageInformation} pageTitle={title}>
       <article>
+        <Container>
+          <Breadcrumbs
+            parentPages={pageContext.menuParent}
+            currentTitle={title}
+          />
+        </Container>
         <PageTitle twoThirds>
           <h1>{title}</h1>
         </PageTitle>
@@ -103,6 +110,7 @@ PressReleasePage.propTypes = {
   data: PropTypes.shape({
     contentfulPagePressRelease: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 };
 
 export default PressReleasePage;

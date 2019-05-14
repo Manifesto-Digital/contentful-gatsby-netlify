@@ -15,12 +15,14 @@ async function createServicePages(graphql, gatsbyCreatePage) {
   // Create pages
   servicePages.data.allContentfulPageService.edges.forEach(({ node }) => {
     if (!node.slug) return;
+    const { menuParent, slug } = node;
 
     gatsbyCreatePage({
       path: node.slug,
       component: servicePageTemplate,
       context: {
-        slug: node.slug,
+        slug,
+        menuParent,
       },
     });
   });
