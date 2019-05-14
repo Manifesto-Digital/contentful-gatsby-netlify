@@ -53,6 +53,13 @@ Netlify is connected to a Github repository and allows you to create multiple si
 
 Using environment variables you can connect the different Netlify environments to different Contentful spaces/environments.
 
+### Netlify build strategy
+
+1. A build hook is triggered and started in Netlify from a webhook
+2. Multiple other build hooks get triggered while first step builds
+3. Full build from step one finishes
+4. The last build instruction gets triggered and all intermediate ones get discarded
+
 ## CircleCi
 
 CircleCi is used as an automation tool for shipping and checking the quality of code before allowing it to be production ready.
