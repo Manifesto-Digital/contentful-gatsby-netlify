@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+
 import { dateAsString } from '../utils/dates';
 import { buildCurrentPageHierarchy } from '../components/legal-sidebar/helpers';
 // Components
@@ -50,6 +51,11 @@ const LegalPage = ({ data, pageContext }) => {
 
   let currentPageHierarchy = null;
   let heading = null;
+
+  // Triggered when brackets are detected when rendering the richText
+  const pushToReferenceList = useCallback(text => {
+    updateReferenceList(c => [...c, text]);
+  }, []);
 
   try {
     ({ currentPageHierarchy, heading } = buildCurrentPageHierarchy(
@@ -101,7 +107,7 @@ const LegalPage = ({ data, pageContext }) => {
               {tableOfContents && (
                 <ContentWithReferences
                   tableOfContents={tableOfContents}
-                  updateReferenceList={updateReferenceList}
+                  updateReferenceList={pushToReferenceList}
                 />
               )}
               {lastAmended && (
