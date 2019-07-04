@@ -1,35 +1,38 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import { dateAsString } from '../utils/dates';
-import { buildCurrentPageHierarchy } from '../components/legal-sidebar/helpers';
+import { dateAsString } from '../../utils/dates';
+import { buildCurrentPageHierarchy } from '../../components/legal-sidebar/helpers';
 // Components
-import Layout from '../components/layout';
-import Breadcrumbs from '../components/breadcrumbs';
-import RichText from '../components/rich-text';
-import TableOfContent from '../components/table-of-contents';
-import ContentWithReferences from '../components/table-of-contents/content-with-references';
-import { TableOfContentsFootNotes } from '../components/table-of-contents/footnotes';
-import LegalSideBar from '../components/legal-sidebar';
-import LinkList from '../components/link-list';
-import PageTitle from '../components/page-title';
-import InlineCallOut from '../components/inline-callout';
+import Layout from '../../components/layout';
+import Breadcrumbs from '../../components/breadcrumbs';
+import RichText from '../../components/rich-text';
+import TableOfContent from '../../components/table-of-contents';
+import ContentWithReferences from '../../components/table-of-contents/content-with-references';
+import { TableOfContentsFootNotes } from '../../components/table-of-contents/footnotes';
+import LegalSideBar from '../../components/legal-sidebar';
+import LinkList from '../../components/link-list';
+import PageTitle from '../../components/page-title';
+import InlineCallOut from '../../components/inline-callout';
+import { createFootnotes } from './rich-text-formatting';
 // Styles
 import {
   SidebarInner,
   FootNotes,
-} from '../components/table-of-contents/styles';
+} from '../../components/table-of-contents/styles';
 import {
   Container,
   ContentWithSideBar,
   TwoThirds,
   SideBar,
   Section,
-} from '../components/styled/containers';
+} from '../../components/styled/containers';
 
 const LegalPage = ({ data, pageContext }) => {
   const [referenceList, updateReferenceList] = useState([]);
+  const [modifiedContent, updateModifiedContent] = useState([]);
+
   const legalPage = data.contentfulPageLegal;
   const {
     slug,
@@ -49,14 +52,23 @@ const LegalPage = ({ data, pageContext }) => {
     essentialLinks ||
     downloads;
 
+  useEffect(() => {
+    // If a square bracket is detected in the table of contents RichText then a
+    // footnote is created with am anchor link is rendered in it's place linking
+    // to the related footnote
+    const [modifiedTableOfContents, footnotes] = createFootnotes(
+      tableOfContents
+    );
+    if (modifiedTableOfContents) {
+      updateModifiedContent(modifiedTableOfContents);
+    }
+    if (footnotes) {
+      updateReferenceList(footnotes);
+    }
+  }, [tableOfContents]);
+
   let currentPageHierarchy = null;
   let heading = null;
-
-  // Triggered when brackets are detected when rendering the richText
-  const pushToReferenceList = useCallback(text => {
-    updateReferenceList(c => [...c, text]);
-  }, []);
-
   try {
     ({ currentPageHierarchy, heading } = buildCurrentPageHierarchy(
       pageContext.legalHierarchy,
@@ -104,11 +116,8 @@ const LegalPage = ({ data, pageContext }) => {
                 This content applies to <strong>{applicableRegions}</strong>
               </InlineCallOut>
 
-              {tableOfContents && (
-                <ContentWithReferences
-                  tableOfContents={tableOfContents}
-                  updateReferenceList={pushToReferenceList}
-                />
+              {modifiedContent && (
+                <ContentWithReferences contents={modifiedContent} />
               )}
               {lastAmended && (
                 <p>Last updated: {dateAsString(lastAmended, 'D MMMM YYYY')}</p>

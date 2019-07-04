@@ -3,7 +3,7 @@ const { getLegalPages } = require('../queries/legal-page');
 const { getLegalLandingPages } = require('../queries/legal-landing-page');
 
 async function createLegalPages(graphql, gatsbyCreatePage) {
-  const legalPageTemplate = path.resolve('src/templates/legal-page.js');
+  const legalPageTemplate = path.resolve('src/templates/legal-page/index.js');
   const legalLandingPageTemplate = path.resolve(
     'src/templates/legal-landing-page.js'
   );
