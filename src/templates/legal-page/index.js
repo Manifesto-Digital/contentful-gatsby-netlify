@@ -54,7 +54,7 @@ const LegalPage = ({ data, pageContext }) => {
 
   useEffect(() => {
     // If a square bracket is detected in the table of contents RichText then a
-    // footnote is created with am anchor link is rendered in it's place linking
+    // footnote is created with an anchor link rendered in it's place linking
     // to the related footnote
     const [modifiedTableOfContents, footnotes] = createFootnotes(
       tableOfContents
