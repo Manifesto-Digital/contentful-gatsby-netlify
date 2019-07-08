@@ -100,10 +100,8 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
                   ))}
               </Social>
               <Text>
-                <small>
-                  <SiteDate>{`© ${new Date().getFullYear()}`} </SiteDate>
-                  <RichText richText={footerText} />
-                </small>
+                <SiteDate>{`© ${new Date().getFullYear()}`} </SiteDate>
+                <RichText richText={footerText} />
               </Text>
             </ContentWrapper>
             <LogoWrapper to="/">

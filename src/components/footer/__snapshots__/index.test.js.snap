@@ -253,6 +253,7 @@ exports[`Renders correctly 1`] = `
   position: absolute;
   top: 0;
   left: 0;
+  width: 37px;
 }
 
 .c16 {
@@ -316,6 +317,12 @@ exports[`Renders correctly 1`] = `
 @media (min-width:40.0625em) {
   .c4 .c6 {
     font-size: 1.35em;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c17 {
+    width: 43px;
   }
 }
 
@@ -416,33 +423,31 @@ exports[`Renders correctly 1`] = `
           <div
             className="c15"
           />
-          <div
+          <small
             className="c16"
           >
-            <small>
-              <div
-                className="c17"
-              >
-                © 2019
-                 
-              </div>
-              <div
-                className="c18"
-              >
-                <p>
-                  Some body text
-                </p>
-                <h2>
-                  Some header text
-                </h2>
-                <p>
-                  <b>
-                    some bollld text
-                  </b>
-                </p>
-              </div>
-            </small>
-          </div>
+            <div
+              className="c17"
+            >
+              © 2019
+               
+            </div>
+            <div
+              className="c18"
+            >
+              <p>
+                Some body text
+              </p>
+              <h2>
+                Some header text
+              </h2>
+              <p>
+                <b>
+                  some bollld text
+                </b>
+              </p>
+            </div>
+          </small>
         </div>
         <Link
           className="c19"
