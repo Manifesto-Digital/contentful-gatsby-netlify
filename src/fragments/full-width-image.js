@@ -9,6 +9,7 @@ export const FullWidthImageFragment = graphql`
     internal {
       type
     }
+    removeMarginBottom
     imageHeader: header
     image {
       ...ImageFragment
