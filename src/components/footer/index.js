@@ -20,6 +20,8 @@ import {
   Logo,
   FooterAccordion,
   ContentWrapper,
+  SiteDate,
+  Text,
 } from './styles';
 
 const footerQuery = graphql`
@@ -97,7 +99,12 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
                     <Icon key={i} icon={consistentString(type)} />
                   ))}
               </Social>
-              <RichText richText={footerText} />
+              <Text>
+                <small>
+                  <SiteDate>{`© ${new Date().getFullYear()}`} </SiteDate>
+                  <RichText richText={footerText} />
+                </small>
+              </Text>
             </ContentWrapper>
             <LogoWrapper to="/">
               <Logo src={LogoSVG} cacheGetRequests />
