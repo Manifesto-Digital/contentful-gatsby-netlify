@@ -27,7 +27,7 @@ export const LogoWrapper = styled(Link)`
   `}
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.palette.black};
