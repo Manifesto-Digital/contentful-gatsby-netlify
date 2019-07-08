@@ -12,9 +12,9 @@ const Wrapper = styled(ResponsiveImage)`
 
 const FullWidthImage = ({ data }) => (
   <>
-    {data.header && (
+    {data.imageHeader && (
       <Container>
-        <h2>{data.header}</h2>
+        <h2>{data.imageHeader}</h2>
       </Container>
     )}
     <Wrapper

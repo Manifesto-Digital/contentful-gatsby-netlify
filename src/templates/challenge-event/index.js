@@ -64,6 +64,7 @@ export const challengeEventPageQuery = graphql`
           ...ShareBlockFragment
           ...StatsFragment
           ...TwoColumnTextAndImageBlockFragment
+          ...FullWidthImageFragment
         }
       }
     }
