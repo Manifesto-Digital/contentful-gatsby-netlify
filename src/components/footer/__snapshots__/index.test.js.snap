@@ -286,7 +286,7 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:'641px') {
+@media (min-width:40.0625em) {
   .c3 {
     grid-template-columns: repeat(4,1fr);
     grid-gap: 20px;

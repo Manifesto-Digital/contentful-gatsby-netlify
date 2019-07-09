@@ -67,10 +67,10 @@ export const Menus = styled.nav`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: ${({ theme }) => theme.spacing.standard};
 
-  @media (min-width: '641px') {
+  ${breakpoint.tablet`
     grid-template-columns: repeat(4, 1fr);
     grid-gap: ${({ theme }) => theme.spacing.standard};
-  }
+  `}
 `;
 
 export const MenuList = styled.ul`
