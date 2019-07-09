@@ -67,64 +67,42 @@ const Page = ({ data, pageContext }) => {
           formRef={formRef}
           toggleMapModal={toggleMapModal}
         />
-
         {twoColumn && <TwoColumnTextAndImageBlock data={twoColumn} />}
-        {bodyCopy && (
-          <Container>
-            <ContentWithSideBar>
-              <TwoThirds>
-                <RichText richText={bodyCopy} />
-                <Assemblies assemblies={assemblies} insideContainer />
-              </TwoThirds>
-              <SideBar>
-                <SideBarAssemblies assemblies={sidebarAssemblies} />
-              </SideBar>
-            </ContentWithSideBar>
-          </Container>
-        )}
+        <Container>
+          <ContentWithSideBar>
+            <TwoThirds>
+              {bodyCopy && <RichText richText={bodyCopy} />}
 
-        {/* "Register Interest": Register interest form */}
-        {eventStatus === eventStatuses.registerInterest &&
-          registerInterestForm && (
-            <Container>
-              <ContentWithSideBar>
-                <TwoThirds>
+              {assemblies && (
+                <Assemblies assemblies={assemblies} insideContainer />
+              )}
+              {/* "Register Interest": Register interest form */}
+              {eventStatus === eventStatuses.registerInterest &&
+                registerInterestForm && (
                   <div ref={formRef}>
                     <ContentForm insideContainer data={registerInterestForm} />
                   </div>
-                </TwoThirds>
-                <SideBar />
-              </ContentWithSideBar>
-            </Container>
-          )}
+                )}
 
-        {/* "Open": Sign up form */}
-        {eventStatus === eventStatuses.open && signUpForm && (
-          <Container>
-            <ContentWithSideBar>
-              <TwoThirds>
+              {/* "Open": Sign up form */}
+              {eventStatus === eventStatuses.open && signUpForm && (
                 <div ref={formRef}>
                   <ContentForm insideContainer data={signUpForm} />
                 </div>
-              </TwoThirds>
-              <SideBar />
-            </ContentWithSideBar>
-          </Container>
-        )}
+              )}
 
-        {/* "Waiting List: Waiting list form */}
-        {eventStatus === eventStatuses.waitingList && waitingListForm && (
-          <Container>
-            <ContentWithSideBar>
-              <TwoThirds>
+              {/* "Waiting List: Waiting list form */}
+              {eventStatus === eventStatuses.waitingList && waitingListForm && (
                 <div ref={formRef}>
                   <ContentForm insideContainer data={waitingListForm} />
                 </div>
-              </TwoThirds>
-              <SideBar />
-            </ContentWithSideBar>
-          </Container>
-        )}
+              )}
+            </TwoThirds>
+            <SideBar>
+              <SideBarAssemblies assemblies={sidebarAssemblies} />
+            </SideBar>
+          </ContentWithSideBar>
+        </Container>
         {/* <Assemblies assemblies={modules} /> */}
       </article>
 
