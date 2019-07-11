@@ -21,7 +21,7 @@ import { Container } from '../styled/containers';
 const navigationQuery = graphql`
   query navigationItemsQuery {
     allContentfulAssemblyNavigationMenu(
-      filter: { id: { eq: "e230d8b8-4ee6-5d4c-bf25-57af664d12d7" } }
+      filter: { contentful_id: { eq: "zI5rjaW3EkKWKItjdZ5p3" } }
     ) {
       edges {
         node {

@@ -178,13 +178,5 @@ export const SiteDate = styled.div`
 export const Text = styled.small`
   position: relative;
   width: 100%;
-
-  div {
-    &:last-child {
-      text-indent: 37px;
-      ${breakpoint.tablet`
-       text-indent: 43px;
-      `};
-    }
-  }
+  white-space: pre;
 `;
