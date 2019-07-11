@@ -14,6 +14,66 @@ exports[`Renders correctly 1`] = `
   padding: 0 20px;
 }
 
+.c16 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c16 ul li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.c16 ul li::before {
+  content: ' ';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #212122;
+}
+
+.c16 ul li ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.c16 ul li ul li:before {
+  background: transparent;
+  border: 1px solid #212122;
+}
+
+.c16 ol li::before {
+  min-width: 10px;
+}
+
+.c16 blockquote {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 0;
+  padding: 60px 20px 20px 20px;
+  border-left: 4px solid #ea232d;
+  font-size: 1.35em;
+  font-weight: 300;
+}
+
+.c16 blockquote:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(test-file-stub);
+  top: 10px;
+  left: 20px;
+  color: #ea232d;
+}
+
 .c5 {
   position: relative;
 }
@@ -32,72 +92,12 @@ exports[`Renders correctly 1`] = `
   color: #4d63b5;
 }
 
-.c18 ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-.c18 ul li {
-  position: relative;
-  padding-left: 40px;
-}
-
-.c18 ul li::before {
-  content: ' ';
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #212122;
-}
-
-.c18 ul li ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-.c18 ul li ul li:before {
-  background: transparent;
-  border: 1px solid #212122;
-}
-
-.c18 ol li::before {
-  min-width: 10px;
-}
-
-.c18 blockquote {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  position: relative;
-  margin-right: 20px;
-  margin-bottom: 0;
-  padding: 60px 20px 20px 20px;
-  border-left: 4px solid #ea232d;
-  font-size: 1.35em;
-  font-weight: 300;
-}
-
-.c18 blockquote:before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url(test-file-stub);
-  top: 10px;
-  left: 20px;
-  color: #ea232d;
-}
-
-.c20 {
+.c18 {
   display: block;
   width: 150px;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -146,7 +146,7 @@ exports[`Renders correctly 1`] = `
   margin-bottom: 20px;
 }
 
-.c15 .c21 {
+.c15 .c19 {
   color: #fff;
   fill: #fff;
 }
@@ -236,7 +236,7 @@ exports[`Renders correctly 1`] = `
   color: #e5e5e5;
 }
 
-.c4 .c23 {
+.c4 .c21 {
   padding-left: 20px;
 }
 
@@ -244,25 +244,9 @@ exports[`Renders correctly 1`] = `
   color: #fff;
 }
 
-.c4 .c22 {
+.c4 .c20 {
   color: #fff;
   padding-left: 20px;
-}
-
-.c17 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 37px;
-}
-
-.c16 {
-  position: relative;
-  width: 100%;
-}
-
-.c16 div:last-child {
-  text-indent: 37px;
 }
 
 @media (min-width:40.0625em) {
@@ -272,7 +256,7 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c19 {
+  .c17 {
     margin-bottom: 20px;
     padding: 20px 25px;
     margin-right: 0;
@@ -308,6 +292,16 @@ exports[`Renders correctly 1`] = `
   }
 }
 
+@media (min-width:62em) {
+  .c14 {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    width: 50%;
+    max-width: 340px;
+  }
+}
+
 @media (min-width:40.0625em) {
   .c4 h3 {
     margin-bottom: 40px;
@@ -320,19 +314,7 @@ exports[`Renders correctly 1`] = `
   }
 }
 
-@media (min-width:40.0625em) {
-  .c17 {
-    width: 43px;
-  }
-}
-
-@media (min-width:40.0625em) {
-  .c16 div:last-child {
-    text-indent: 43px;
-  }
-}
-
-<footer
+<div
   className="c0"
 >
   <div
@@ -365,7 +347,7 @@ exports[`Renders correctly 1`] = `
                 className="c10"
                 to="/test-page"
               >
-                Test Page 
+                Housing Advice
               </Link>
             </li>
             <li
@@ -400,7 +382,7 @@ exports[`Renders correctly 1`] = `
                 className="c10"
                 to="/test-page"
               >
-                Test Page 
+                What we do
               </Link>
             </li>
           </ul>
@@ -423,42 +405,32 @@ exports[`Renders correctly 1`] = `
           <div
             className="c15"
           />
-          <small
+          <div
             className="c16"
           >
-            <div
-              className="c17"
-            >
-              © 2019
-               
-            </div>
-            <div
-              className="c18"
-            >
-              <p>
-                Some body text
-              </p>
-              <h2>
-                Some header text
-              </h2>
-              <p>
-                <b>
-                  some bollld text
-                </b>
-              </p>
-            </div>
-          </small>
+            <p>
+              Some body text
+            </p>
+            <h2>
+              Some header text
+            </h2>
+            <p>
+              <b>
+                some bollld text
+              </b>
+            </p>
+          </div>
         </div>
         <Link
-          className="c19"
+          className="c17"
           to="/"
         >
           <span
-            className="isvg loading c20"
+            className="isvg loading c18"
           />
         </Link>
       </div>
     </div>
   </div>
-</footer>
+</div>
 `;
