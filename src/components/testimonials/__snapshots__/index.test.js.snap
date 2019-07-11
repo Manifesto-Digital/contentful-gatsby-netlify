@@ -238,7 +238,7 @@ exports[`renders testimonials correctly 1`] = `
   margin-bottom: 30px;
 }
 
-.c4 {
+.c8 {
   position: relative;
   width: 90%;
   background-color: #fff;
@@ -246,7 +246,7 @@ exports[`renders testimonials correctly 1`] = `
   margin: -30px auto 0;
 }
 
-.c8 {
+.c4 {
   position: relative;
   width: 90%;
   background-color: #fff;
@@ -274,21 +274,6 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c3 {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 50%;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-  }
-}
-
-@media (min-width:40.0625em) {
   .c7 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -304,7 +289,7 @@ exports[`renders testimonials correctly 1`] = `
 }
 
 @media (min-width:40.0625em) {
-  .c4 {
+  .c3 {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -312,9 +297,9 @@ exports[`renders testimonials correctly 1`] = `
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
-    margin: 0;
-    margin-left: -30px;
-    margin-right: 30px;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
   }
 }
 
@@ -330,6 +315,21 @@ exports[`renders testimonials correctly 1`] = `
     margin: 0;
     margin-left: 30px;
     margin-right: -30px;
+  }
+}
+
+@media (min-width:40.0625em) {
+  .c4 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    margin: 0;
+    margin-left: -30px;
+    margin-right: 30px;
   }
 }
 
