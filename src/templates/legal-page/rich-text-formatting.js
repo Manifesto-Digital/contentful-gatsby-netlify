@@ -45,6 +45,8 @@ export default handleBracketsInRichText;
  * @param {{title, textContent}[]} tableOfContents
  */
 export const createFootnotes = tableOfContents => {
+  if (!tableOfContents) return [null, null];
+
   const footnotes = [];
   const pushToFootnotes = text => {
     footnotes.push(text);
