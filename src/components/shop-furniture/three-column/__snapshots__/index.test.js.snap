@@ -56,12 +56,6 @@ exports[`renders correctly 1`] = `
   fill: #ea232d;
 }
 
-.c1 {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .c8 ul {
   padding-left: 0;
   list-style: none;
@@ -120,6 +114,12 @@ exports[`renders correctly 1`] = `
   top: 10px;
   left: 20px;
   color: #ea232d;
+}
+
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 @media (min-width:32em) {
