@@ -162,15 +162,24 @@ workflows:
   build-test-deploy:
     jobs:
       - test
-      - migrate-test
+      - migrate-test:
+          filters:
+            branches:
+              ignore: /^manifesto-uat.*/
       - build:
           requires:
             - test
             - migrate-test
+          filters:
+            branches:
+              ignore: /^manifesto-uat.*/
       - clean-up:
           requires:
             - migrate-test
             - build
+          filters:
+            branches:
+              ignore: /^manifesto-uat.*/
       - approve-deployment:
           type: approval
           requires:
