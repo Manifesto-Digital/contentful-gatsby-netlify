@@ -47,6 +47,8 @@ const ShareBlock = ({ data, insideContainer }) => {
                         href={`${url[type]}${location.href}`}
                         target="_blank"
                         rel="noopener"
+                        className="tracking-share"
+                        data-tracking={type}
                       >
                         <Icon icon={consistentString(type)} />
                         {type === 'Email' ? 'Email' : 'Share'}
