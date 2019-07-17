@@ -14,24 +14,6 @@ exports[`Renders correctly 1`] = `
   padding: 0 20px;
 }
 
-.c5 {
-  position: relative;
-}
-
-.c5:not(:first-of-type):before {
-  position: absolute;
-  content: ' ';
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-
-.c7 {
-  position: relative;
-  font-weight: normal;
-  color: #4d63b5;
-}
-
 .c16 ul {
   padding-left: 0;
   list-style: none;
@@ -90,6 +72,24 @@ exports[`Renders correctly 1`] = `
   top: 10px;
   left: 20px;
   color: #ea232d;
+}
+
+.c5 {
+  position: relative;
+}
+
+.c5:not(:first-of-type):before {
+  position: absolute;
+  content: ' ';
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.c7 {
+  position: relative;
+  font-weight: normal;
+  color: #4d63b5;
 }
 
 .c18 {
