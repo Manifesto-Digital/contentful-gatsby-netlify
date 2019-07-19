@@ -164,17 +164,6 @@ export const FooterAccordion = styled(Accordion)`
   }
 `;
 
-export const SiteDate = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 37px;
-  ${breakpoint.tablet`
-       width: 43px;
-      `};
-`;
-
 export const Text = styled.small`
   position: relative;
   width: 100%;
