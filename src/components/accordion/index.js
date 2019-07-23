@@ -15,6 +15,7 @@ function Accordion({ header, children, className, active, id, footer, order }) {
       event: 'accordionInteraction',
       accordionTitle: `${header}`,
       accordionPosition: `${order}`,
+      accordionOpen: isOpen
     };
     sendEvent(analyticsData);
   };
