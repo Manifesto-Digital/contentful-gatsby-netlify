@@ -23,7 +23,7 @@ const CTABanner = ({
       <Header bannerColour={consistentString(bannerColour)}>
         {headerText}
       </Header>
-      <CTA {...CTA.fromCMS(cta)} />
+      <CTA className="tracking-banner-cta" {...CTA.fromCMS(cta)} />
     </Container>
   </Banner>
 );

@@ -31,6 +31,8 @@ const NavigationMenuItem = ({
           <SubNavButton
             type="button"
             onClick={() => setActiveMenu(id)}
+            className="tracking-subnav-button"
+            data-tracking={menuLabel || navLink.title}
             aria-expanded={menuOpen}
             legal={legal}
           >

@@ -6,7 +6,13 @@ import { Link } from 'gatsby';
  * Both internal and external links are references to content
  *
  */
-const LinkHandler = ({ className, children, link, internalLink = false }) => {
+const LinkHandler = ({
+  className,
+  children,
+  link,
+  dataTracking,
+  internalLink = false,
+}) => {
   if (!link && !internalLink) return null; // Is a multi ref that will only ever allow 1
   const linkRef = Array.isArray(link) ? link[0] : internalLink || link;
   if (
@@ -18,6 +24,7 @@ const LinkHandler = ({ className, children, link, internalLink = false }) => {
       <a
         href={URL}
         className={className}
+        data-tracking={dataTracking}
         rel="noopener"
         target={newTab ? '_blank' : '_self'}
       >
@@ -27,7 +34,11 @@ const LinkHandler = ({ className, children, link, internalLink = false }) => {
   }
   if (linkRef.slug) {
     return (
-      <Link to={`/${linkRef.slug}`} className={className}>
+      <Link
+        to={`/${linkRef.slug}`}
+        className={className}
+        data-tracking={dataTracking}
+      >
         {children}
       </Link>
     );
@@ -70,6 +81,7 @@ LinkHandler.propTypes = {
     PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
+  dataTracking: PropTypes.string,
   internalLink: PropTypes.shape({
     slug: PropTypes.string,
   }),

@@ -61,6 +61,13 @@ const footerQuery = graphql`
 export const PureFooter = ({ pageData, removeMarginTop }) => {
   const { footerText, shareType, navigationItems } = pageData;
 
+  const url = {
+    Email: 'mailto:info@shelter.org.uk',
+    LinkedIn: 'https://www.linkedin.com/company/shelter-uk',
+    Twitter: 'https://twitter.com/Shelter',
+    Facebook: 'https://www.facebook.com/ShelterUK/',
+  };
+
   return (
     <Wrapper removeMarginTop={removeMarginTop}>
       <Top>
@@ -94,7 +101,13 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
               <Social>
                 {shareType &&
                   shareType.map((type, i) => (
-                    <Icon key={i} icon={consistentString(type)} />
+                    <a
+                      href={url[type]}
+                      className="tracking-footer-social"
+                      data-tracking={type.toLowerCase()}
+                    >
+                      <Icon key={i} icon={consistentString(type)} />
+                    </a>
                   ))}
               </Social>
               <RichText richText={footerText} />
