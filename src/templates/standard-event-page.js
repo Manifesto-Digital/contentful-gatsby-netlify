@@ -98,12 +98,13 @@ const Page = ({ data, pageContext }) => {
                 </div>
               )}
             </TwoThirds>
-            <SideBar>
-              <SideBarAssemblies assemblies={sidebarAssemblies} />
-            </SideBar>
+            {sidebarAssemblies && (
+              <SideBar>
+                <SideBarAssemblies assemblies={sidebarAssemblies} />
+              </SideBar>
+            )}
           </ContentWithSideBar>
         </Container>
-        {/* <Assemblies assemblies={modules} /> */}
       </article>
 
       {/* Map modal */}
