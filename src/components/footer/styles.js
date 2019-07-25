@@ -23,7 +23,7 @@ export const LogoWrapper = styled(Link)`
     margin-bottom: ${({ theme }) => theme.spacing.standard};
     padding: ${({ theme }) => theme.spacing.standard} 25px;
     margin-right: 0;
-    margin-bottom: 0;
+    margin-top: auto;
   `}
 `;
 
