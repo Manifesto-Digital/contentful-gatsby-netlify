@@ -35,6 +35,7 @@ const Assemblies = ({ fields, sys }) => {
         removeMarginBottom={fields.removeMarginBottom}
         cta={cta}
         bannerColour={fields.bannerColour}
+        insideContainer
       />
     );
   }
