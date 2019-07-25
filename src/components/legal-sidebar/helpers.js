@@ -1,5 +1,5 @@
 export const buildCurrentPageHierarchy = (hierarchy, slug) => {
-  const hierarchyDepth = 2;
+  const hierarchyDepth = 1;
 
   if (!hierarchy || !slug) {
     throw new Error('hierarchy object and page slug required');
@@ -22,7 +22,6 @@ export const buildCurrentPageHierarchy = (hierarchy, slug) => {
     function recursiveLoop(level) {
       level.forEach((pageRef, i) => {
         if (foundPageDepth) return false;
-        depth += 1;
         if (existsOnLevel(level)) {
           foundPageDepth = depth;
           foundPage = level[i];
@@ -30,10 +29,13 @@ export const buildCurrentPageHierarchy = (hierarchy, slug) => {
         }
         if (pageRef.children) {
           parents.push(pageRef);
+          depth += 1;
+
           recursiveLoop(pageRef.children);
         }
       });
     }
+
     recursiveLoop(hierarchyLevel);
 
     if (!foundPage) throw new Error(`no page found in hierarchy : ${slug}`);
@@ -62,9 +64,10 @@ export const buildCurrentPageHierarchy = (hierarchy, slug) => {
 
     function recursiveLoop(level) {
       level.forEach((pageRef, i) => {
-        depth += 1;
         // If the correct start depth and slug is in parents slug array
         if (parents.find(parent => parent.slug === pageRef.slug)) {
+          depth += 1;
+
           // Set current item to active
           level[i].active = true;
           // Push the first time this matches, this will also include the children
@@ -91,6 +94,7 @@ export const buildCurrentPageHierarchy = (hierarchy, slug) => {
       parents,
       foundPage
     );
+
     return {
       currentPageHierarchy: currentLegalSidebar.visibleHierarchy[0],
       heading: currentLegalSidebar.heading,

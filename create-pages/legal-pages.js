@@ -49,7 +49,8 @@ async function createLegalPages(graphql, gatsbyCreatePage) {
       label: parent.menuItem[0].title,
       slug: parent.menuItem[0].slug,
       title: parent.menuItem[0].title,
-      description: parent.menuItem[0].pageInformation.shortDescription,
+      description:
+        parent.menuItem[0].pageInformation.shortDescription.shortDescription,
     }));
 
   /**
