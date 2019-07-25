@@ -15,19 +15,19 @@ const CTABanner = ({
   sidebar,
   insideContainer,
 }) => (
-    <Banner
-      bannerColour={consistentString(bannerColour)}
-      removeMarginBottom={removeMarginBottom}
-      sidebar={sidebar}
-    >
-      <Container padding={!insideContainer}>
-        <Header bannerColour={consistentString(bannerColour)}>
-          {headerText}
-        </Header>
-        <CTA className="tracking-banner-cta" {...CTA.fromCMS(cta)} />
-      </Container>
-    </Banner>
-  );
+  <Banner
+    bannerColour={consistentString(bannerColour)}
+    removeMarginBottom={removeMarginBottom}
+    sidebar={sidebar}
+  >
+    <Container padding={!insideContainer}>
+      <Header bannerColour={consistentString(bannerColour)}>
+        {headerText}
+      </Header>
+      <CTA className="tracking-banner-cta" {...CTA.fromCMS(cta)} />
+    </Container>
+  </Banner>
+);
 
 CTABanner.propTypes = {
   cta: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
