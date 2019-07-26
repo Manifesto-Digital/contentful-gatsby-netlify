@@ -11,12 +11,13 @@ import useToggle from '../../../utils/useToggle';
 import { SubNavButton, ArrowSVG } from '../navigation/styles-icons';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
-const ThirdNavigation = ({ activeMenuItem, activeParents }) => {
+const ThirdNavigation = ({ activeMenuItem, activePages }) => {
   const [moreMenuOpen, setMoreMenuState] = useToggle(false);
 
   if (!activeMenuItem || !activeMenuItem.childNavigationItems) {
     return null;
   }
+
   const childMenuItems = activeMenuItem.childNavigationItems.filter(
     item => item.navigationLink
   );
@@ -29,12 +30,11 @@ const ThirdNavigation = ({ activeMenuItem, activeParents }) => {
       ? childMenuItems.slice(amountToShow)
       : null;
 
-  const isActive = slug => activeParents.includes(slug);
-
+  const isActive = slug => activePages.includes(slug);
   // Check which which menu items to display based on which parent is active
-  const activeSubMenu = childMenuItems
-    .filter(menuItem => menuItem.navigationLink)
-    .find(menuItem => activeParents.includes(menuItem.navigationLink[0].slug));
+  const activeSubMenu = childMenuItems.filter(
+    menuItem => menuItem.navigationLink
+  );
 
   if (!activeSubMenu) return null;
 
@@ -92,7 +92,7 @@ const ThirdNavigation = ({ activeMenuItem, activeParents }) => {
 
 ThirdNavigation.propTypes = {
   activeMenuItem: PropTypes.object,
-  activeParents: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activePages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ThirdNavigation;
