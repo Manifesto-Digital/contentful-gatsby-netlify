@@ -28,6 +28,11 @@ export const GlobalStyle = createGlobalStyle`
         hyphens: auto;
     }
 
+    header {
+        word-break: normal;
+        hyphens: none;
+    }
+
     h1,
     h2,
     h3,
