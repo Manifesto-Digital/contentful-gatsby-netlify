@@ -21,9 +21,9 @@ const ContentCard = ({ data, bannerFlow, cardCount }) => {
   const cardLink = {};
   cardLink.slug = slug;
 
+  if (!pageInformation) return null;
   // Fallback until all images are set in pageInformation field
   const image = pageInformation.pageThumbnail;
-
   // Fallback until all descriptions are set in pageInformation field
   const description = pageInformation.shortDescription.shortDescription;
 

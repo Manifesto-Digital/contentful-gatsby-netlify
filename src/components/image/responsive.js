@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 
 const ResponsiveImage = ({
-  image: { description, file },
+  image,
   mobileW,
   desktopW,
   fit,
@@ -14,8 +14,8 @@ const ResponsiveImage = ({
   className,
   presentational = false,
 }) => {
-  if (!mobileW || !desktopW || !file) return null;
-
+  if (!mobileW || !desktopW || !image || !image.description) return null;
+  const { description, file } = image;
   const { url } = file;
 
   // Use the https://www.contentful.com/developers/docs/references/images-api/ to construct a mobile and desktop image

@@ -17,9 +17,9 @@ const Hero = ({ content }) => {
   return (
     <HeroNoCard>
       <CenteredMedia>
-        {image && (
+        {/* {image && (
           <ResponsiveImage mobileW={800} desktopW={1600} image={image} />
-        )}
+        )} */}
       </CenteredMedia>
       <CenteredContent black={blackText}>
         <Title>{title}</Title>

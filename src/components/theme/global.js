@@ -24,6 +24,8 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${({ theme }) => theme.fonts.primary};
         color: ${({ theme }) => theme.palette.black};
         overflow-x: hidden;
+        word-break: break-all;
+        hyphens: auto;
     }
 
     h1,
@@ -39,8 +41,6 @@ export const GlobalStyle = createGlobalStyle`
     h1, h2, h3 {
         line-height: 1.25;
     }
-
-
 
     h1 {
         font-size:  ${({ theme }) => theme.headers.h2};

@@ -10,7 +10,9 @@ const Testimonial = ({ data, loopIndex }) => {
   return (
     <Wrapper>
       <ImageWrapper loopIndex={loopIndex}>
-        <ResponsiveImage image={image} mobileW={550} desktopW={550} />
+        {image && (
+          <ResponsiveImage image={image} mobileW={550} desktopW={550} />
+        )}
       </ImageWrapper>
       <TextWrapper bg={backgroundColour} loopIndex={loopIndex}>
         <RichText richText={text} />
