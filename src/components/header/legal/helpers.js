@@ -16,10 +16,10 @@ export const getActivePages = (childMenuItems, location) => {
     return location.pathname.match(regex);
   };
 
-  let activePagesArray = [];
   let pageFound = false;
+  let activePagesArray = [];
 
-  const checkLevel = items => {
+  const checkPageLevel = items => {
     for (let i = 0; i < items.length; i += 1) {
       const item = items[i];
       if (!item.navigationLink) return;
@@ -35,13 +35,13 @@ export const getActivePages = (childMenuItems, location) => {
         // Recursively go through the child navigation items storing
         // potential active parents item slugs
         activePagesArray.push(itemSlug);
-        checkLevel(item.childNavigationItems);
+        checkPageLevel(item.childNavigationItems);
       }
     }
+    // If page not found on level reset
     if (!pageFound) activePagesArray = [];
     return activePagesArray;
   };
 
-  checkLevel(childMenuItems);
-  return activePagesArray;
+  return checkPageLevel(childMenuItems);
 };
