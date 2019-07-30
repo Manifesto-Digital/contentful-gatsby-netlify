@@ -4,6 +4,8 @@ import { CardWrapper, Card, Icon, NumberText } from './styles';
 import iconSrc from '../../utils/iconSrc';
 
 const ContactCard = ({ data }) => {
+  if (!data) return null;
+
   const {
     contactNumber1,
     contactNumber1Text,
