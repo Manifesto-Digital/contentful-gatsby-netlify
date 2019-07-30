@@ -37,7 +37,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
       const { id, internal } = assembly;
 
       // CTA
-      if (internal.type === 'ContentfulAssemblyCta') {
+      if (internal.type === 'ContentfulAssemblyCta' && assembly.cta) {
         return (
           <CTABanner
             key={id}
