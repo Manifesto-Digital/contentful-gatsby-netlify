@@ -2,6 +2,15 @@ import styled from 'styled-components';
 import { breakpoint } from '../theme/breakpoint';
 import RichText from '../rich-text';
 
+export const Header = styled.h2`
+  color: ${({ theme }) => theme.palette.black};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
+
+  a {
+    text-decoration: none;
+  }
+`;
+
 export const Grid = styled.section`
   display: block;
   margin-bottom: ${({ theme }) => theme.spacing.standard};
