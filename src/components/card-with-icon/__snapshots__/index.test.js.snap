@@ -83,7 +83,8 @@ exports[`displays the correct icon 1`] = `
     Sub text
   </p>
   <a
-    className="c4 c5"
+    className="tracking-card-cta c4 c5"
+    data-tracking="Telephone"
     href="http://mock.com"
     rel="noopener"
     target="_self"
@@ -180,7 +181,8 @@ exports[`renders correctly 1`] = `
     Sub text
   </p>
   <a
-    className="c4 c5"
+    className="tracking-card-cta c4 c5"
+    data-tracking="Telephone"
     href="http://mock.com"
     rel="noopener"
     target="_self"

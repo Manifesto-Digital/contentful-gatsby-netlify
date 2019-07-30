@@ -38,6 +38,8 @@ it('opens and updates aria on click', () => {
   const mockData = createAccordion();
   const wrapper = mountWithTheme(<Accordion {...mockData} />);
 
+  global.dataLayer = [];
+
   act(() => {
     wrapper.find(HeadingButton).simulate('click');
   });
