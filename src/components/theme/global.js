@@ -85,7 +85,7 @@ export const GlobalStyle = createGlobalStyle`
         padding-left: 0;
     }
 
-    ol li{
+    ol li {
         counter-increment: step-counter;
         position: relative;
         padding-left: 2em;
