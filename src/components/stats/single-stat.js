@@ -11,13 +11,14 @@ const SingleStat = ({ info, type, index }) => {
     <Stat cardType={type} index={index}>
       <Title>
         {title}
-        {subtitle && (
+        {title && subtitle && (
           <>
-            <br /> <span>{subtitle}</span>
+            <br />{' '}
           </>
         )}
+        {subtitle && <span>{subtitle}</span>}
       </Title>
-      <RichText richText={text} />
+      {text && <RichText richText={text} />}
     </Stat>
   );
 };

@@ -1,6 +1,6 @@
 export const statsToArray = content => {
   const createStatObject = (title, subtitle, text) => {
-    if (!title || !text) return null;
+    if (!text) return null;
 
     return {
       title,
