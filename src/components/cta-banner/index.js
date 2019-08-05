@@ -13,13 +13,14 @@ const CTABanner = ({
   bannerColour,
   removeMarginBottom,
   sidebar,
+  insideContainer,
 }) => (
   <Banner
     bannerColour={consistentString(bannerColour)}
     removeMarginBottom={removeMarginBottom}
     sidebar={sidebar}
   >
-    <Container>
+    <Container padding={!insideContainer}>
       <Header bannerColour={consistentString(bannerColour)}>
         {headerText}
       </Header>
@@ -34,6 +35,10 @@ CTABanner.propTypes = {
   bannerColour: PropTypes.oneOf(['Red', 'San Marino Blue', 'Black']).isRequired,
   removeMarginBottom: PropTypes.bool,
   sidebar: PropTypes.bool,
+  insideContainer: PropTypes.bool,
+};
+CTABanner.defaultProps = {
+  insideContainer: false,
 };
 
 export default CTABanner;

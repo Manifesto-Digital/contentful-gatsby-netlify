@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const Banner = styled.section`
-  padding: ${({ theme }) => theme.spacing.standard} 0;
+  padding: ${({ theme, bannerColour }) =>
+      (bannerColour === 'transparent' && '0') || theme.spacing.standard}
+    0;
   background-color: ${({ bannerColour, theme }) =>
     (bannerColour === 'red' && theme.palette.primary) ||
     (bannerColour === 'san-marino-blue' && theme.palette.sanMarinoBlue) ||
-    (bannerColour === 'black' && theme.palette.black)};
+    (bannerColour === 'black' && theme.palette.black) ||
+    (bannerColour === 'transparent' && 'transparent')};
   margin-bottom: ${({ removeMarginBottom, sidebar, theme }) =>
     (removeMarginBottom && '0') ||
     (sidebar && theme.spacing.standard) ||
