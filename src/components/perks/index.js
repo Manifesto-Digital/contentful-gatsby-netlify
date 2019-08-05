@@ -6,6 +6,8 @@ import iconSrc from '../../utils/iconSrc';
 import { consistentString } from '../../utils/content-formatting';
 
 const Perks = ({ data, insideContainer }) => {
+  if (!data) return null;
+
   const { headerText, backgroundColour, eventIcons, removeBottomMargin } = data;
 
   if (!eventIcons || eventIcons.length === 0) return;

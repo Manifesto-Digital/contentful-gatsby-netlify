@@ -4,6 +4,8 @@ import { Card, Thumbnail, CardContent, CategoryCTA } from './styles';
 import CTA from '../cta';
 
 const EventCard = ({ data }) => {
+  if (!data) return null;
+
   const {
     event,
     cardText,

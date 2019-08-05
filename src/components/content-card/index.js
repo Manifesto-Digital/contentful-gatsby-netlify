@@ -16,6 +16,8 @@ import {
 const isOdd = num => num % 2 === 1;
 
 const ContentCard = ({ data, bannerFlow, cardCount }) => {
+  if (!data) return null;
+
   const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
