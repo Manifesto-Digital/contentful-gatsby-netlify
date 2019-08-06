@@ -9,12 +9,10 @@ const ContentGrid = ({ content }) => {
   const { border, heading, grid1, grid2, grid3, grid4 } = content;
   const contentArray = [grid1, grid2, grid3, grid4];
 
-  console.log(heading);
-
   return (
     <Grid>
       <Container>
-        {heading && <Header>heading</Header>}
+        {heading && <Header>{heading}</Header>}
         <ItemsWrapper>
           {contentArray.map((gridContent, i) => (
             <Item key={i} richText={gridContent} border={border} />
