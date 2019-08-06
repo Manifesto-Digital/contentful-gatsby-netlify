@@ -13,17 +13,18 @@ const CTABanner = ({
   bannerColour,
   removeMarginBottom,
   sidebar,
+  insideContainer,
 }) => (
   <Banner
     bannerColour={consistentString(bannerColour)}
     removeMarginBottom={removeMarginBottom}
     sidebar={sidebar}
   >
-    <Container>
+    <Container padding={!insideContainer}>
       <Header bannerColour={consistentString(bannerColour)}>
         {headerText}
       </Header>
-      <CTA {...CTA.fromCMS(cta)} />
+      <CTA className="tracking-banner-cta" {...CTA.fromCMS(cta)} />
     </Container>
   </Banner>
 );
@@ -34,6 +35,10 @@ CTABanner.propTypes = {
   bannerColour: PropTypes.oneOf(['Red', 'San Marino Blue', 'Black']).isRequired,
   removeMarginBottom: PropTypes.bool,
   sidebar: PropTypes.bool,
+  insideContainer: PropTypes.bool,
+};
+CTABanner.defaultProps = {
+  insideContainer: false,
 };
 
 export default CTABanner;

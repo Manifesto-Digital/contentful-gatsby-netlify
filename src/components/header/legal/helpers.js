@@ -1,30 +1,47 @@
-export const buildActiveParentItemsArray = (childMenuItems, location) => {
-  const checkParentSlugs = item => {
-    if (!item.navigationLink) return false;
-    const itemSlug = item.navigationLink[0].slug;
-    return location.pathname.includes(itemSlug);
+/**
+ *
+ * Loop through the professionals navigation menu to find the current active page
+ * and the parent pages so to that the correct menus and active states will be shown
+ *
+ * @param {Object []} childMenuItems
+ * @param {Object} location
+ *
+ * @returns [menuParentSlug, menuParentSlug, activePageSlug] (example)
+ */
+export const getActivePages = (childMenuItems, location) => {
+  const isActivePage = slug => {
+    // Match optional trailing slash
+    const string = `${slug}((/w+)+|/?)$`;
+    const regex = new RegExp(string, 'g');
+    return location.pathname.match(regex);
   };
 
-  // Build an array of slugs of matching parent pages, so that we can apply an active state to the parent items
-  const activeParentsAray = childMenuItems.reduce((acc, navItem) => {
-    if (!navItem || !navItem.navigationLink) return acc;
+  let pageFound = false;
+  let activePagesArray = [];
 
-    if (checkParentSlugs(navItem)) {
-      acc.push(navItem.navigationLink[0].slug);
-    }
+  const checkPageLevel = items => {
+    for (let i = 0; i < items.length; i += 1) {
+      const item = items[i];
+      if (!item.navigationLink) return;
 
-    if (navItem.childNavigationItems) {
-      const foundChildItem = navItem.childNavigationItems.find(childItem =>
-        checkParentSlugs(childItem)
-      );
+      const itemSlug = item.navigationLink[0].slug;
 
-      // Check if the child items match
-      if (foundChildItem && foundChildItem.navigationLink) {
-        acc.push(foundChildItem.navigationLink[0].slug);
+      if (isActivePage(itemSlug)) {
+        // If found push the active page slug
+        activePagesArray.push(itemSlug);
+        pageFound = true;
+        break;
+      } else if (item.childNavigationItems) {
+        // Recursively go through the child navigation items storing
+        // potential active parents item slugs
+        activePagesArray.push(itemSlug);
+        checkPageLevel(item.childNavigationItems);
       }
     }
-    return acc;
-  }, []);
+    // If page not found on level reset
+    if (!pageFound) activePagesArray = [];
+    return activePagesArray;
+  };
 
-  return activeParentsAray;
+  return checkPageLevel(childMenuItems);
 };

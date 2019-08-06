@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { buildActiveParentItemsArray } from './helpers';
+import { getActivePages } from './helpers';
 import ThirdNavigation from './third-navigation';
 import { ItemLink } from '../navigation/styles';
 import {
@@ -21,17 +21,14 @@ const SecondNavigation = ({ professionalsMenuItem, location }) => {
 
   const menuItems = professionalsMenuItem.childNavigationItems;
 
-  // Get the active page and potentially active parent slugs
-  const activeParentItemsArray = buildActiveParentItemsArray(
-    menuItems,
-    location
-  );
+  // Get the active page slugs (current and any parent pages)
+  const activePages = getActivePages(menuItems, location);
 
-  const isActive = slug => activeParentItemsArray.includes(slug);
+  const isActive = slug => activePages.includes(slug);
 
-  // Check if any items in the navigation is a parent of the current page
+  // Check if any items should have an active state
   const activeMenuItem = menuItems.find(menuItem =>
-    activeParentItemsArray.includes(menuItem.navigationLink[0].slug)
+    activePages.includes(menuItem.navigationLink[0].slug)
   );
 
   return (
@@ -60,7 +57,7 @@ const SecondNavigation = ({ professionalsMenuItem, location }) => {
           <ThirdNavigation
             activeMenuItem={activeMenuItem}
             location={location}
-            activeParents={activeParentItemsArray}
+            activePages={activePages}
           />
         )}
       </Container>

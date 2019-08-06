@@ -12,7 +12,7 @@ function Accordions({ data, insideContainer }) {
     <AccordionsWrapper>
       <Container padding={!insideContainer}>
         {accordions.map((accordion, i) => (
-          <Accordion header={accordion.heading} key={i}>
+          <Accordion header={accordion.heading} key={i} order={i + 1}>
             <RichText richText={accordion.content} />
           </Accordion>
         ))}

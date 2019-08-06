@@ -123,7 +123,8 @@ exports[`renders correctly 1`] = `
           mock header text
         </p>
         <a
-          className="c6"
+          className=" tracking-download c6"
+          data-tracking="PDF"
           download={true}
           href="//assets.ctfassets.net/6sxvmndnpn0s/6gDmPHZ04gCMMS4sOa0IEk/7c712c5e8e383bbafd61f2d9d570de4f/component_tree-pdf.pdf"
         >

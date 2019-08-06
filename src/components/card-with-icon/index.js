@@ -14,7 +14,13 @@ const CardWithIcon = ({ data, cardsCount }) => {
       {subText && <SubText>{subText}</SubText>}
 
       {link && (
-        <CardCTA link={link} bg="red" fullWidth>
+        <CardCTA
+          link={link}
+          bg="red"
+          fullWidth
+          dataTracking={icon}
+          className="tracking-card-cta"
+        >
           {ctaText}
         </CardCTA>
       )}
