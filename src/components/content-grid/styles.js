@@ -5,10 +5,6 @@ import RichText from '../rich-text';
 export const Header = styled.h2`
   color: ${({ theme }) => theme.palette.black};
   margin-bottom: ${({ theme }) => theme.spacing.medium};
-
-  a {
-    text-decoration: none;
-  }
 `;
 
 export const Grid = styled.section`
