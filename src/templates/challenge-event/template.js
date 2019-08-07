@@ -4,7 +4,7 @@ import { dateAsString } from '../../utils/dates';
 import HeroVideo from '../../components/hero/hero-video';
 import StickyBanner from '../../components/challenge-event/sticky-banner';
 import Assemblies from '../../components/assemblies';
-import { ImageProps, FileDownload } from '../../prop-types';
+import { ImageProps } from '../../prop-types';
 
 const ChallengeTemplate = ({ challengeEvent }) => {
   const {
