@@ -4,15 +4,16 @@ import { dateAsString } from '../../utils/dates';
 import HeroVideo from '../../components/hero/hero-video';
 import StickyBanner from '../../components/challenge-event/sticky-banner';
 import Assemblies from '../../components/assemblies';
+import { ImageProps, FileDownload } from '../../prop-types';
 
-const ChallengeTemplate = ({ data }) => {
+const ChallengeTemplate = ({ challengeEvent }) => {
   const {
     heroImage,
     bannerButtonText,
     backgroundVideo,
     assemblies,
     event,
-  } = data.contentfulPageChallengeEvent;
+  } = challengeEvent;
 
   // Grab the information from the event reference
   const { eventName, displayLocation, distance } = event;
@@ -148,8 +149,16 @@ const ChallengeTemplate = ({ data }) => {
 };
 
 ChallengeTemplate.propTypes = {
-  data: PropTypes.shape({
-    contentfulPageChallengeEvent: PropTypes.object,
+  challengeEvent: PropTypes.shape({
+    heroImage: ImageProps,
+    bannerButtonText: PropTypes.string,
+    backgroundVideo: PropTypes.shape({
+      file: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }),
+    }),
+    assemblies: PropTypes.array,
+    event: PropTypes.object,
   }),
 };
 

@@ -16,7 +16,7 @@ const ChallengeEventPage = ({ data }) => {
       pageTitle={eventName}
       removeFooterMargin
     >
-      <ChallengeTemplate data={data} />
+      <ChallengeTemplate challengeEvent={data.contentfulPageChallengeEvent} />
     </Layout>
   );
 };
