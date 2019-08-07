@@ -51,9 +51,10 @@ const AdvicePage = ({ data, pageContext }) => {
           <h1>{pageTitle}</h1>
         </PageTitle>
         <Container>
-          <SubpageMenu subpages={subpages} activeSlug={slug} />
           <ContentWithSideBar>
             <TwoThirds>
+              <SubpageMenu subpages={subpages} activeSlug={slug} />
+
               {guideSubTitle && <h1>{guideSubTitle}</h1>}
               {bodyCopy && <RichText richText={bodyCopy} />}
               <Assemblies assemblies={assemblies} insideContainer />
