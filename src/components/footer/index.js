@@ -20,12 +20,13 @@ import {
   Logo,
   FooterAccordion,
   ContentWrapper,
+  Text,
 } from './styles';
 
 const footerQuery = graphql`
   query footerItemsQuery {
     allContentfulAssemblyFooter(
-      filter: { id: { eq: "212aa2ec-1643-592c-8ebe-d267f9250a11" } }
+      filter: { contentful_id: { eq: "68A7eXSYKTZiJzxAGP04wH" } }
     ) {
       edges {
         node {
@@ -60,6 +61,11 @@ const footerQuery = graphql`
 
 export const PureFooter = ({ pageData, removeMarginTop }) => {
   const { footerText, shareType, navigationItems } = pageData;
+
+  const replaceDateShortCode = text => {
+    const regex = /\[date\]+/gi;
+    return text.replace(regex, new Date().getFullYear());
+  };
 
   const url = {
     Email: 'mailto:info@shelter.org.uk',
@@ -110,7 +116,12 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
                     </a>
                   ))}
               </Social>
-              <RichText richText={footerText} />
+              <Text>
+                <RichText
+                  richText={footerText}
+                  textRenderer={replaceDateShortCode}
+                />
+              </Text>
             </ContentWrapper>
             <LogoWrapper to="/">
               <Logo src={LogoSVG} cacheGetRequests />
