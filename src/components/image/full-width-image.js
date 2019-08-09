@@ -10,11 +10,11 @@ const Wrapper = styled(ResponsiveImage)`
     removeMarginBottom ? 0 : theme.spacing.large};
 `;
 
-const FullWidthImage = ({ data }) => (
+const FullWidthImage = ({ data, insideContainer }) => (
   <>
-    {data.header && (
-      <Container>
-        <h2>{data.header}</h2>
+    {data.imageHeader && (
+      <Container padding={!insideContainer}>
+        <h2>{data.imageHeader}</h2>
       </Container>
     )}
     <Wrapper
@@ -32,6 +32,11 @@ FullWidthImage.propTypes = {
     image: PropTypes.object.isRequired,
     removeMarginBottom: PropTypes.bool,
   }),
+  insideContainer: PropTypes.bool,
+};
+
+FullWidthImage.defaultProps = {
+  insideContainer: false,
 };
 
 export default FullWidthImage;

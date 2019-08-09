@@ -6,6 +6,7 @@ import InlineCallOut from '../inline-callout';
 import RichText from '../rich-text';
 import CTABanner from '../cta-banner';
 import ContentCardBanner from '../content-card-banner';
+import FullWidthImage from '../image/full-width-image';
 
 const SidebarAssemblies = ({ assemblies }) => {
   if (!assemblies || assemblies.length === 0) return null;
@@ -49,6 +50,9 @@ const SidebarAssemblies = ({ assemblies }) => {
         return <RichText key={id} richText={assembly.text} sidebar />;
       }
 
+      if (internal.type === 'ContentfulComponentFullWidthImage') {
+        return <FullWidthImage key={id} data={assembly} insideContainer />;
+      }
       return null;
     });
 
