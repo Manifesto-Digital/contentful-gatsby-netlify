@@ -16,6 +16,8 @@ import DonationInput from '../form-elements/donation-input';
 import { VisuallyHidden } from '../styled/accessibility';
 
 const DonationBanner = ({ banner }) => {
+  if (!banner) return null;
+
   const { headerText, removeMarginBottom, donationInputDefaultValue } = banner;
 
   return (

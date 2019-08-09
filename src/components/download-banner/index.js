@@ -7,6 +7,8 @@ import { Container } from '../styled/containers';
 import { Banner, FileImage, Wrapper, FileDetails, Header } from './styles';
 
 const DownloadBanner = ({ banner }) => {
+  if (!banner) return null;
+
   const { headerText, removeMarginBottom, downloadCta } = banner;
 
   return (

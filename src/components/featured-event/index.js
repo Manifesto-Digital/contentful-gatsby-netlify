@@ -14,6 +14,8 @@ import iconSrc from '../../utils/iconSrc';
 import { dateAsString } from '../../utils/dates';
 
 const FeaturedEvent = ({ data }) => {
+  if (!data) return null;
+
   const { slug, mainCtaText, event } = data;
   const {
     eventName,

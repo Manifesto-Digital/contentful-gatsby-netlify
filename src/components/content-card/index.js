@@ -16,14 +16,16 @@ import {
 const isOdd = num => num % 2 === 1;
 
 const ContentCard = ({ data, bannerFlow, cardCount }) => {
+  if (!data) return null;
+
   const { title, slug, pageInformation = null } = data;
 
   const cardLink = {};
   cardLink.slug = slug;
 
+  if (!pageInformation) return null;
   // Fallback until all images are set in pageInformation field
   const image = pageInformation.pageThumbnail;
-
   // Fallback until all descriptions are set in pageInformation field
   const description = pageInformation.shortDescription.shortDescription;
 

@@ -44,6 +44,8 @@ const ContentForm = ({ data, insideContainer }) => {
     }
   }, [submitted]); // Only re-run the effect if submitted changes
 
+  if (!formFields) return null;
+
   return (
     <ModuleWrapper>
       <Container padding={!insideContainer}>

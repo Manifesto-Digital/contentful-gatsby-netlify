@@ -8,6 +8,8 @@ import { Container } from '../styled/containers';
 import { BannerBackground, HeaderText, CardRow } from './styles';
 
 const ContentCardBanner = ({ data, sidebar }) => {
+  if (!data) return null;
+
   const { header, bannerColour, bannerFlow, contentCards } = data;
 
   if (!contentCards || contentCards.length < 2) return null;

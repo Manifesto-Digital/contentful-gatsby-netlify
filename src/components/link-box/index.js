@@ -5,6 +5,8 @@ import { Container } from '../styled/containers';
 import { Wrapper, ListWrapper, ListItem } from './styles';
 
 const LinkBox = ({ data }) => {
+  if (!data) return null;
+
   const { headerText, itemsPerRow, links } = data;
 
   return (

@@ -5,6 +5,8 @@ import { Title, Wrapper, ListWrapper, ListItem, ArrowSVG } from './styles';
 import AngleRight from '../../assets/svg/icons/chevron-right-light.svg';
 
 const RelatedAdvice = ({ data, insideContainer }) => {
+  if (!data) return null;
+
   const { headerText, columns, links } = data;
   return (
     <Container padding={!insideContainer}>

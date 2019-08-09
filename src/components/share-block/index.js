@@ -7,6 +7,8 @@ import { Wrapper, Inner, ShareLink } from './styles';
 import { Container } from '../styled/containers';
 
 const ShareBlock = ({ data, insideContainer }) => {
+  if (!data) return null;
+
   const { headerText, shareType } = data;
   const url = {
     Print: 'printer',

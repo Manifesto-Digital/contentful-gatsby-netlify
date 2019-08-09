@@ -8,7 +8,7 @@ const QuotationWithImage = ({ quote, insideContainer, image }) => (
   <Wrapper>
     <Container padding={!insideContainer}>
       <Flex>
-        <QuoteImage image={image} width={600} />
+        {image && <QuoteImage image={image} width={600} />}
         <Blockquote>
           <QuoteMark src={QuoteLeft} />
           {quote}

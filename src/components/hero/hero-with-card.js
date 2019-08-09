@@ -24,7 +24,7 @@ const Hero = ({ content }) => {
         )}
       </WithCardMedia>
       <Container padding={false}>
-        <CardContent position={cardPosition.toLowerCase()}>
+        <CardContent position={cardPosition && cardPosition.toLowerCase()}>
           <Title>{title}</Title>
           {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
           {link && linkText && (

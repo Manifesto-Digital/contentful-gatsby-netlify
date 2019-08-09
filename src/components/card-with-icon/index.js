@@ -5,6 +5,8 @@ import iconSrc from '../../utils/iconSrc';
 import { CardContainer, TitleText, SubText, CardCTA, CardSVG } from './styles';
 
 const CardWithIcon = ({ data, cardsCount }) => {
+  if (!data) return null;
+
   const { icon, titleText, subText, ctaText, link } = data;
 
   return (

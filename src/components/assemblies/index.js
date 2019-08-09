@@ -41,7 +41,7 @@ const Assemblies = React.memo(function AssembliesComponent({
       const { id, internal } = assembly;
 
       // CTA
-      if (internal.type === 'ContentfulAssemblyCta') {
+      if (internal.type === 'ContentfulAssemblyCta' && assembly.cta) {
         return (
           <CTABanner
             key={id}

@@ -7,6 +7,8 @@ import { Container } from '../styled/containers';
 import { FlexWrapper } from './styles';
 
 const CardsWithIcons = ({ data, insideContainer }) => {
+  if (!data) return null;
+
   const { cards } = data;
 
   return (

@@ -13,6 +13,8 @@ import iconSrc from '../../utils/iconSrc';
 import { dateAsString } from '../../utils/dates';
 
 const EventListCard = ({ data }) => {
+  if (!data) return null;
+
   const { slug, event } = data;
   const {
     eventName,

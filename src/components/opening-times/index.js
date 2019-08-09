@@ -5,6 +5,8 @@ import { dayOfTheWeek } from '../../utils/dates';
 import { TimeList, Time, Day, TimeVal } from './styles';
 
 const OpeningTimes = ({ data }) => {
+  if (!data) return null;
+
   const {
     mondayOpeningTimes,
     tuesdayOpeningTimes,

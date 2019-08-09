@@ -6,6 +6,8 @@ import { Container } from '../styled/containers';
 import { Header, Wrapper, StyledLinkHandler } from './styles';
 
 const Banner = ({ banner, sidebar }) => {
+  if (!banner) return null;
+
   const {
     headerText,
     bannerColour,

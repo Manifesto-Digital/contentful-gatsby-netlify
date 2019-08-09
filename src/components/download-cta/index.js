@@ -8,6 +8,7 @@ import DownloadSVG from '../../assets/svg/icons/download-light.svg';
 import { Button, FileInfo, ButtonText, ButtonSVG } from './styles';
 
 const DownloadCTA = ({ cta, className }) => {
+  if (!cta) return null;
   const { buttonText, download } = cta;
 
   return (

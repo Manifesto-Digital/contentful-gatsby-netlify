@@ -7,6 +7,7 @@ import DonationHero from '../donation-hero';
 
 const Hero = ({ content }) => {
   const { type } = content.internal;
+  if (!content) return null;
 
   if (type === 'ContentfulComponentHeroWithCard') {
     return <HeroWithCard content={content} />;

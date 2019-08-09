@@ -6,6 +6,8 @@ import { Header, Grid, Item, ItemsWrapper } from './styles';
 import { Container } from '../styled/containers';
 
 const ContentGrid = ({ content }) => {
+  if (!content) return null;
+
   const { border, heading, grid1, grid2, grid3, grid4 } = content;
   const contentArray = [grid1, grid2, grid3, grid4];
 
