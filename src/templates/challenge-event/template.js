@@ -1,23 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { dateAsString } from '../utils/dates';
-import Layout from '../components/layout';
-import HeroVideo from '../components/hero/hero-video';
-import StickyBanner from '../components/challenge-event/sticky-banner';
-import Assemblies from '../components/assemblies';
-import Breadcrumbs from '../components/breadcrumbs';
-import { Container } from '../components/styled/containers';
+import { dateAsString } from '../../utils/dates';
+import HeroVideo from '../../components/hero/hero-video';
+import StickyBanner from '../../components/challenge-event/sticky-banner';
+import Assemblies from '../../components/assemblies';
+import { ImageProps } from '../../prop-types';
 
-const ChallengeEventPage = ({ data, pageContext }) => {
+const ChallengeTemplate = ({ challengeEvent }) => {
   const {
     heroImage,
     bannerButtonText,
     backgroundVideo,
     assemblies,
-    pageInformation,
     event,
-  } = data.contentfulPageChallengeEvent;
+  } = challengeEvent;
 
   // Grab the information from the event reference
   const { eventName, displayLocation, distance } = event;
@@ -33,12 +29,11 @@ const ChallengeEventPage = ({ data, pageContext }) => {
   const heroBannerRef = useRef(null);
   const stickyBarRef = useRef(null);
 
-  // On resize just remove the stickyBarPosition so it will calculate again on next scroll
-  const handleResize = () => {
-    setStickBarPosition(null);
-  };
-
   useEffect(() => {
+    // On resize just remove the stickyBarPosition so it will calculate again on next scroll
+    const handleResize = () => {
+      setStickBarPosition(null);
+    };
     let resizeTimer;
     window.addEventListener('resize', () => {
       // Simple debounce
@@ -51,13 +46,21 @@ const ChallengeEventPage = ({ data, pageContext }) => {
     return function cleanup() {
       window.removeEventListener('resize', handleResize);
     };
-  }, [handleResize, stickyBarPosition]);
+  }, [stickyBarPosition]);
 
   useEffect(() => {
     // Store last scroll to detect direction for animation reasons
     let lastScroll;
 
     const handleStickyBarScroll = () => {
+      if (
+        !heroBannerRef ||
+        !heroBannerRef.current ||
+        !stickyBarRef ||
+        !stickyBarRef.current
+      ) {
+        return;
+      }
       const scrollPosition =
         window.pageYOffset !== undefined
           ? window.pageYOffset
@@ -68,7 +71,7 @@ const ChallengeEventPage = ({ data, pageContext }) => {
             ).scrollTop;
 
       // Store the original position of the banner so we can un-stick when would have been visible
-      if (!stickyBarPosition) {
+      if (stickyBarPosition === null) {
         setStickBarPosition(
           stickyBarRef.current.offsetTop + stickyBarRef.current.offsetHeight
         );
@@ -93,7 +96,11 @@ const ChallengeEventPage = ({ data, pageContext }) => {
         if (scrollPosition < middleOfHeroBanner || bannerWouldBeVisible) {
           setBannerStuck(false);
         }
-      } else if (scrollPosition > middleOfHeroBanner && !bannerWouldBeVisible) {
+      } else if (
+        scrollPosition > middleOfHeroBanner &&
+        !bannerWouldBeVisible &&
+        !bannerStuck
+      ) {
         if (lastScroll < scrollPosition) {
           setAnimateBanner(true);
         }
@@ -102,7 +109,10 @@ const ChallengeEventPage = ({ data, pageContext }) => {
       lastScroll = scrollPosition;
     };
 
-    window.addEventListener('scroll', handleStickyBarScroll, true);
+    // Can't debounce due to the design of the sticky
+    // bar needing to stick at such a specific point
+    window.addEventListener('scroll', handleStickyBarScroll);
+
     // Specify how to clean up after this effect:
     return function cleanup() {
       window.removeEventListener('scroll', handleStickyBarScroll);
@@ -110,17 +120,7 @@ const ChallengeEventPage = ({ data, pageContext }) => {
   }, [stickyBarPosition, bannerStuck, animateBanner]);
 
   return (
-    <Layout
-      pageInformation={pageInformation}
-      pageTitle={eventName}
-      removeFooterMargin
-    >
-      <Container>
-        <Breadcrumbs
-          parentPages={pageContext.menuParent}
-          currentTitle={eventName}
-        />
-      </Container>
+    <>
       <HeroVideo
         title={eventName}
         subtitle={displayLocation}
@@ -131,7 +131,9 @@ const ChallengeEventPage = ({ data, pageContext }) => {
         eventLink={event.link}
         heroBannerRef={heroBannerRef}
       />
+
       <Assemblies assemblies={assemblies} />
+
       <StickyBanner
         title={eventName}
         subtitle={displayLocation}
@@ -142,56 +144,22 @@ const ChallengeEventPage = ({ data, pageContext }) => {
         bannerStuck={bannerStuck}
         animateBanner={animateBanner}
       />
-    </Layout>
+    </>
   );
 };
 
-ChallengeEventPage.propTypes = {
-  data: PropTypes.shape({
-    contentfulPageAssemblyChallengeEventPage: PropTypes.object,
+ChallengeTemplate.propTypes = {
+  challengeEvent: PropTypes.shape({
+    heroImage: ImageProps,
+    bannerButtonText: PropTypes.string,
+    backgroundVideo: PropTypes.shape({
+      file: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }),
+    }),
+    assemblies: PropTypes.array,
+    event: PropTypes.object,
   }),
-  pageContext: PropTypes.object,
 };
 
-export default ChallengeEventPage;
-
-export const challengeEventPageQuery = graphql`
-  query challengeEventPageQuery($slug: String!) {
-    contentfulPageChallengeEvent(slug: { eq: $slug }) {
-      heroImage {
-        ...ImageFragment
-      }
-      backgroundVideo {
-        file {
-          url
-        }
-      }
-      event {
-        ...EventFragment
-      }
-      bannerButtonText
-      pageInformation {
-        ...PageInformationFragment
-      }
-      assemblies {
-        ... on Node {
-          ...PerksListFragment
-          ...TestimonialsAssemblyFragment
-          ...TwoColumnTextAndImageBlockFragment
-          ...CardsWithIconsFragment
-          ...CtaAssemblyFragment
-          ...DownloadBannerAssemblyFragment
-          ...AssemblyFormFragment
-          ...ContentGrid4Fragment
-          ...DonationBanner
-          ...GoogleMapFragment
-          ...InlineCallout
-          ...LinkBoxFragment
-          ...ShareBlockFragment
-          ...StatsFragment
-          ...TwoColumnTextAndImageBlockFragment
-        }
-      }
-    }
-  }
-`;
+export default ChallengeTemplate;

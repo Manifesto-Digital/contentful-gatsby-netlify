@@ -8,5 +8,6 @@ export const SidebarFragment = graphql`
     ...BannerComponentFragment
     ...RichTextFragment
     ...InlineCallout
+    ...FullWidthImageFragment
   }
 `;

@@ -27,7 +27,11 @@ import PersonCollection from '../person/collection';
 import Accordions from '../accordion/accordions';
 import FullWidthImage from '../image/full-width-image';
 
-const Assemblies = ({ assemblies, insideContainer }) => {
+// Prevent unnecessary re-rendering, useful in Challenge Event scroll handler
+const Assemblies = React.memo(function AssembliesComponent({
+  assemblies,
+  insideContainer,
+}) {
   if (!assemblies || assemblies.length === 0) return null;
 
   const AssembliesLoop = () =>
@@ -212,7 +216,7 @@ const Assemblies = ({ assemblies, insideContainer }) => {
     });
 
   return <AssembliesLoop />;
-};
+});
 
 Assemblies.propTypes = {
   assemblies: PropTypes.arrayOf(

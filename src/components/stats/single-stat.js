@@ -25,7 +25,7 @@ const SingleStat = ({ info, type, index }) => {
 SingleStat.propTypes = {
   info: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
     text: PropTypes.shape(richTextPropTypes).isRequired,
   }),
   type: PropTypes.string.isRequired,

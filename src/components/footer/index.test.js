@@ -29,7 +29,7 @@ test('Should populate a menu item correctly', () => {
       .find(ItemLink)
       .at(0)
       .text()
-  ).toEqual(mockData.navigationItems[0].menuLabel);
+  ).toEqual(mockData.navigationItems[0].navigationLink[0].title);
 
   expect(
     wrapper
