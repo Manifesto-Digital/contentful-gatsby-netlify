@@ -6,6 +6,7 @@ export const ContentGrid4Fragment = graphql`
     internal {
       type
     }
+    heading
     border
     grid1 {
       json
