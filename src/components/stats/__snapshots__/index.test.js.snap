@@ -156,8 +156,8 @@ exports[`renders correctly 1`] = `
             className="c5"
           >
             stat 1 title
-            <br />
              
+            <br />
             <span>
               subtitle
             </span>
@@ -185,8 +185,8 @@ exports[`renders correctly 1`] = `
             className="c5"
           >
             stat 2 title
-            <br />
              
+            <br />
             <span>
               subtitle
             </span>
@@ -227,8 +227,8 @@ exports[`renders correctly 1`] = `
             className="c5"
           >
             stat 3 title
-            <br />
              
+            <br />
             <span>
               subtitle
             </span>
@@ -256,8 +256,8 @@ exports[`renders correctly 1`] = `
             className="c5"
           >
             stat 4 title
-            <br />
              
+            <br />
             <span>
               subtitle
             </span>
