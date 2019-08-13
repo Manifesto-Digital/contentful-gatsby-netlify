@@ -13,11 +13,17 @@ const SingleStat = ({ info, type, index }) => {
         {title}
         {subtitle && (
           <>
-            <br /> <span>{subtitle}</span>
+            {title && (
+              <>
+                {` `}
+                <br />
+              </>
+            )}
+            <span>{subtitle}</span>
           </>
         )}
       </Title>
-      <RichText richText={text} />
+      {text && <RichText richText={text} />}
     </Stat>
   );
 };
