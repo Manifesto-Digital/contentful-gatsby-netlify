@@ -101,7 +101,7 @@ exports[`Renders correctly 1`] = `
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
 }
 
 .c11 {
@@ -154,7 +154,7 @@ exports[`Renders correctly 1`] = `
   padding: 5px 10px;
 }
 
-.c23 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -168,7 +168,7 @@ exports[`Renders correctly 1`] = `
   border-bottom: 1px solid #e5e5e5;
 }
 
-.c23 .c12 {
+.c25 .c12 {
   padding: 5px 10px;
 }
 
@@ -226,7 +226,7 @@ exports[`Renders correctly 1`] = `
   transition: 0.2s ease-in opacity;
 }
 
-.c25 {
+.c24 {
   padding: 0;
   margin: 0;
   -webkit-clip: rect(1px,1px,1px,1px);
@@ -240,7 +240,7 @@ exports[`Renders correctly 1`] = `
   white-space: nowrap;
 }
 
-.c24 {
+.c23 {
   display: inline-block;
   text-align: center;
   padding: 10px 1em;
@@ -260,16 +260,16 @@ exports[`Renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: 10px;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-font-smoothing: antialiased;
 }
 
-.c24:hover {
+.c23:hover {
   color: #fff;
 }
 
-.c24:hover {
+.c23:hover {
   color: #fff;
 }
 
@@ -399,6 +399,7 @@ exports[`Renders correctly 1`] = `
 
 @media (min-width:62em) {
   .c13 {
+    padding: 0;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -448,19 +449,19 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c23 {
-    padding: 0;
+  .c25 {
+    padding-right: 0;
   }
 }
 
 @media (min-width:62em) {
-  .c23 .c12 {
+  .c25 .c12 {
     padding: 5px 0;
   }
 }
 
 @media (min-width:62em) {
-  .c23 .c12 {
+  .c25 .c12 {
     margin-right: auto;
     padding: 0;
   }
@@ -517,7 +518,7 @@ exports[`Renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c24 {
+  .c23 {
     height: 100%;
   }
 }
@@ -659,22 +660,22 @@ exports[`Renders correctly 1`] = `
                 </Link>
               </li>
               <li
-                className="c14 c23"
+                className="c14 c15"
               >
                 <Link
-                  className="c24"
+                  className="c23"
                   to="/donate"
                 >
                   Donate
                   <legend
-                    className="c25"
+                    className="c24"
                   >
                     Donate
                   </legend>
                 </Link>
               </li>
               <li
-                className="c14 c23"
+                className="c14 c25"
               >
                 <a
                   className="c16 c17"

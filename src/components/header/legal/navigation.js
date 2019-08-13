@@ -55,21 +55,22 @@ const Navigation = ({
                   id={item.id}
                   menuItem={item}
                   menuOpen={activeMenu === item.id}
-                  setActiveMenu={updateActiveMenu}
+                  setActiveMenu={() => updateActiveMenu(item.id)}
                   legal
                 />
               ))}
-              <Item topLevel legal>
+              <Item topLevel>
                 <LegalDonateButton
                   mobileMenu
                   internalLink={{ slug: 'donate' }}
                   bg="donate"
+                  noMargin
                 >
                   Donate
                   <VisuallyHidden as="legend">Donate</VisuallyHidden>
                 </LegalDonateButton>
               </Item>
-              <Item topLevel legal>
+              <Item topLevel lastItem>
                 <ItemLink
                   as="a"
                   href="https://scotland.shelter.org.uk/"

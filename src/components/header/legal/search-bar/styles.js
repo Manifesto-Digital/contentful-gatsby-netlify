@@ -6,12 +6,11 @@ import { inputStyles } from '../../../styled/inputs';
 
 export const FormWrapper = styled.form`
   display: none;
+  height: 43px;
 
   ${breakpoint.desktop`
       display: flex;
   `}
-
-  height: 43px;
 `;
 
 export const InputWrap = styled.div`
@@ -32,24 +31,24 @@ export const InputWrap = styled.div`
 export const SearchInput = styled.input`
   ${inputStyles}
   width: 100%;
-  margin-right: ${({ theme }) => theme.spacing.small};
+  margin-right: 5px;
   background-color: ${({ theme }) => theme.palette.white};
-  border: 0;
+  border: 1px solid ${({ theme }) => theme.palette.black};
   padding-left: ${({ theme }) => theme.spacing.large};
 
   ${breakpoint.desktop`
-      min-width: 250px;
+      min-width: 320px;
   `}
 `;
 
 export const SearchIcon = styled(SVG)`
   display: block;
   position: absolute;
-  left: 10px;
+  left: 15px;
+  width: 18px;
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  fill: ${({ theme }) => theme.palette.royalBlue};
+  fill: ${({ theme }) => theme.palette.grey66};
 
   svg {
     display: block;
@@ -61,7 +60,7 @@ export const SearchButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 ${({ theme }) => theme.spacing.small};
+  padding: 0 18px;
   color: ${({ theme }) => theme.palette.white};
   background-color: ${({ theme }) => theme.palette.grey80};
 `;

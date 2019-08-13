@@ -40,11 +40,13 @@ const legalNavigationQuery = graphql`
               ...LinkFragment
             }
             childNavigationItems {
+              id
               menuLabel
               navigationLink {
                 ...LinkFragment
               }
               childNavigationItems {
+                id
                 menuLabel
                 navigationLink {
                   ...LinkFragment
@@ -65,11 +67,6 @@ export const PureLegalHeader = ({ pageData }) => {
   const [isOpen, openState] = useToggle(false);
   const [searchOpen, searchState] = useToggle(false);
   const { navigationItems } = pageData;
-
-  // We only want to show the second level navigation if Professionals item exists
-  const professionalsMenuItem = navigationItems
-    ? navigationItems.find(item => item.menuLabel === 'Professionals')
-    : null;
 
   return (
     <header>
@@ -99,16 +96,14 @@ export const PureLegalHeader = ({ pageData }) => {
           </HeaderBar>
         </Container>
       </HeaderWrapper>
-      {professionalsMenuItem && (
-        <Location>
-          {({ location }) => (
-            <SecondNavigation
-              location={location}
-              professionalsMenuItem={professionalsMenuItem}
-            />
-          )}
-        </Location>
-      )}
+      <Location>
+        {({ location }) => (
+          <SecondNavigation
+            location={location}
+            topLevelNavigationItems={navigationItems}
+          />
+        )}
+      </Location>
     </header>
   );
 };

@@ -11,14 +11,19 @@ import useToggle from '../../../utils/useToggle';
 import { SubNavButton, ArrowSVG } from '../navigation/styles-icons';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
 
-const ThirdNavigation = ({ activeMenuItem, activePages }) => {
+const ThirdNavigation = ({ parentMenu, activePages }) => {
   const [moreMenuOpen, setMoreMenuState] = useToggle(false);
 
-  if (!activeMenuItem || !activeMenuItem.childNavigationItems) {
+  // Check if any items should have an active state
+  const activeParentItem = parentMenu.find(menuItem =>
+    activePages.includes(menuItem.navigationLink[0].slug)
+  );
+
+  if (!activeParentItem || !activeParentItem.childNavigationItems) {
     return null;
   }
 
-  const childMenuItems = activeMenuItem.childNavigationItems.filter(
+  const childMenuItems = activeParentItem.childNavigationItems.filter(
     item => item.navigationLink
   );
 
@@ -91,7 +96,7 @@ const ThirdNavigation = ({ activeMenuItem, activePages }) => {
 };
 
 ThirdNavigation.propTypes = {
-  activeMenuItem: PropTypes.object,
+  parentMenu: PropTypes.object,
   activePages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

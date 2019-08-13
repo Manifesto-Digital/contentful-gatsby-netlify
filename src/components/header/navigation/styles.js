@@ -34,9 +34,10 @@ export const MenuList = styled.ul`
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 ${({ theme }) => theme.spacing.small};
 
   ${breakpoint.desktop`
+    padding: 0;
     flex-direction: row;
     width: auto;
   `}
@@ -52,7 +53,7 @@ export const Menus = styled.nav`
 
   ${breakpoint.desktop`
     flex-direction: row;
-  justify-content: ${({ legal }) => legal && 'flex-end'};
+    justify-content: ${({ legal }) => legal && 'flex-end'};
     max-width: ${({ theme }) => theme.sizes.maxWidth};
     margin: 0 auto;
     padding: 0 ${({ theme }) => theme.spacing.small};
@@ -67,8 +68,8 @@ export const Item = styled.li`
   border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
 
   ${breakpoint.desktop`
-     padding: ${({ topLevel, legal }) => topLevel && legal && '0'};
-  `}
+    padding-right:  ${({ lastItem }) => lastItem && '0'};
+  `};
 
   ${MenuList} {
     padding: 5px ${({ theme }) => theme.spacing.small};
@@ -77,10 +78,10 @@ export const Item = styled.li`
     `}
 
     ${breakpoint.desktop`
-    margin-right: auto;
-     padding: ${({ topLevel, theme }) =>
-       topLevel ? `0` : `${theme.spacing.small}`};
-  `}
+      margin-right: auto;
+      padding: ${({ topLevel, theme }) =>
+        topLevel ? `0` : `${theme.spacing.small}`};
+    `}
   }
 `;
 
