@@ -23,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-family: ${({ theme }) => theme.fonts.primary};
         color: ${({ theme }) => theme.palette.black};
-        overflow-x: hidden;
         word-break: break-all;
         hyphens: auto;
     }
