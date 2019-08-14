@@ -61,13 +61,15 @@ export const Menus = styled.nav`
 `;
 
 export const Item = styled.li`
-  display: flex;
+  display: ${({ desktopOnly }) => (desktopOnly ? 'none' : 'flex')};
   align-items: center;
   margin-bottom: 0;
   padding: ${({ theme }) => theme.spacing.small};
   border-bottom: 1px solid ${({ theme }) => theme.palette.grey10};
 
   ${breakpoint.desktop`
+    display: ${({ desktopOnly }) => desktopOnly && 'flex'};
+
     padding-right:  ${({ lastItem }) => lastItem && '0'};
   `};
 

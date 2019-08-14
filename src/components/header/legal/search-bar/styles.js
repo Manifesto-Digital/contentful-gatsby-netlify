@@ -5,11 +5,12 @@ import { buttonReset } from '../../../styled/buttons';
 import { inputStyles } from '../../../styled/inputs';
 
 export const FormWrapper = styled.form`
-  display: none;
+  display: ${({ resolution }) => (resolution === 'desktop' ? 'none' : 'flex')};
   height: 43px;
 
   ${breakpoint.desktop`
-      display: flex;
+    display: ${({ resolution }) =>
+      resolution === 'desktop' ? 'flex' : 'none'};
   `}
 `;
 

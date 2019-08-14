@@ -17,6 +17,9 @@ import {
 } from '../styles';
 import { Container } from '../../styled/containers';
 import SecondNavigation from './second-navigation';
+import { LegalDonateButton } from './styles';
+import { VisuallyHidden } from '../../styled/accessibility';
+import MagGlass from '../../../assets/svg/icons/search-light.svg';
 
 const legalNavigationQuery = graphql`
   query legalNavigationQuery {
@@ -77,6 +80,27 @@ export const PureLegalHeader = ({ pageData }) => {
               <Logo src={LogoSVG} cacheGetRequests />
             </LogoWrapper>
             <MenuControls>
+              <LegalDonateButton
+                mobileOnly
+                internalLink={{ slug: 'donate' }}
+                bg="donate"
+                noMargin
+              >
+                Donate
+                <VisuallyHidden as="legend">Donate</VisuallyHidden>
+              </LegalDonateButton>
+              {/* Search Icon */}
+              <MobileMenuOpen
+                type="button"
+                onClick={() => {
+                  openState();
+                  searchState();
+                }}
+                active={isOpen}
+                aria-expanded={isOpen}
+              >
+                <BurgerIcon src={MagGlass} cacheGetRequests />
+              </MobileMenuOpen>
               <MobileMenuOpen
                 type="button"
                 onClick={openState}

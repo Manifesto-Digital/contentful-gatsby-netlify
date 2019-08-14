@@ -14,6 +14,7 @@ import {
 } from '../navigation/styles';
 import { LegalDonateButton } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
+import LegalSearchBar from './search-bar';
 
 const Navigation = ({
   navigationItems,
@@ -46,6 +47,7 @@ const Navigation = ({
         >
           <MenuSVG src={CloseSVG} />
         </MobileMenuClose>
+        <LegalSearchBar searchFocus={searchFocus} />
         <Menus role="navigation" aria-label="Main menu" legal>
           {navigationItems && (
             <MenuList role="menubar" aria-hidden="false">
@@ -59,9 +61,8 @@ const Navigation = ({
                   legal
                 />
               ))}
-              <Item topLevel>
+              <Item topLevel desktopOnly>
                 <LegalDonateButton
-                  mobileMenu
                   internalLink={{ slug: 'donate' }}
                   bg="donate"
                   noMargin

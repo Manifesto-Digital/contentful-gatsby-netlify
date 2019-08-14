@@ -14,6 +14,7 @@ export const LegalDonateButton = styled(LinkHandler)`
 
   ${breakpoint.desktop`
     height: 100%;
+    display: ${({ mobileOnly }) => mobileOnly && 'none'};
   `};
 
   &:hover {
