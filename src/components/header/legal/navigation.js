@@ -47,7 +47,7 @@ const Navigation = ({
         >
           <MenuSVG src={CloseSVG} />
         </MobileMenuClose>
-        <LegalSearchBar searchFocus={searchFocus} resolution='mobile'/>
+        <LegalSearchBar searchFocus={searchFocus} resolution="mobile" />
         <Menus role="navigation" aria-label="Main menu" legal>
           {navigationItems && (
             <MenuList role="menubar" aria-hidden="false">
