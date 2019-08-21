@@ -24,13 +24,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${({ theme }) => theme.fonts.primary};
         color: ${({ theme }) => theme.palette.black};
         overflow-x: hidden;
-        word-break: break-all;
-        hyphens: auto;
-    }
-
-    header {
-        word-break: normal;
-        hyphens: none;
     }
 
     h1,
