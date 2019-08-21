@@ -152,7 +152,6 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 43px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -175,6 +174,7 @@ Array [
 
 @media (min-width:62em) {
   .c0 {
+    height: 43px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

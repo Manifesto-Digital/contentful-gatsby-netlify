@@ -96,7 +96,7 @@ const ThirdNavigation = ({ parentMenu, activePages }) => {
 };
 
 ThirdNavigation.propTypes = {
-  parentMenu: PropTypes.object,
+  parentMenu: PropTypes.array,
   activePages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

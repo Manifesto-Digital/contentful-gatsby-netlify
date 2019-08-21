@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import useToggle from '../../../utils/useToggle';
 import { SubNavButton, ArrowSVG } from './styles-icons';
 import { SubMenuUl, ItemLink, Item, SubMenuListItem } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
