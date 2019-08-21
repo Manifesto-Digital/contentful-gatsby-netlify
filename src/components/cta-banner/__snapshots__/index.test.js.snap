@@ -78,7 +78,7 @@ exports[`renders correctly 2`] = `
       mock header text
     </h3>
     <Link
-      className="c3"
+      className="tracking-banner-cta c3"
       to="/internal-link-slug"
     >
       <span

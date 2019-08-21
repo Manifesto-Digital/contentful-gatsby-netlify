@@ -5,6 +5,8 @@ import iconSrc from '../../utils/iconSrc';
 import { CardContainer, TitleText, SubText, CardCTA, CardSVG } from './styles';
 
 const CardWithIcon = ({ data, cardsCount }) => {
+  if (!data) return null;
+
   const { icon, titleText, subText, ctaText, link } = data;
 
   return (
@@ -14,7 +16,13 @@ const CardWithIcon = ({ data, cardsCount }) => {
       {subText && <SubText>{subText}</SubText>}
 
       {link && (
-        <CardCTA link={link} bg="red" fullWidth>
+        <CardCTA
+          link={link}
+          bg="red"
+          fullWidth
+          dataTracking={icon}
+          className="tracking-card-cta"
+        >
           {ctaText}
         </CardCTA>
       )}

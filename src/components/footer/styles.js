@@ -23,11 +23,11 @@ export const LogoWrapper = styled(Link)`
     margin-bottom: ${({ theme }) => theme.spacing.standard};
     padding: ${({ theme }) => theme.spacing.standard} 25px;
     margin-right: 0;
-    margin-bottom: 0;
+    margin-top: auto;
   `}
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.palette.black};
@@ -68,9 +68,9 @@ export const Menus = styled.nav`
   grid-gap: ${({ theme }) => theme.spacing.standard};
 
   ${breakpoint.tablet`
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: ${({ theme }) => theme.spacing.standard};
-   `}
+  `}
 `;
 
 export const MenuList = styled.ul`
@@ -128,12 +128,6 @@ export const ContentWrapper = styled.div`
   flex: 0 1 100%;
   width: 100%;
   text-align: left;
-
-  ${breakpoint.desktop`
-    flex: 0 1 50%;
-    width: 50%;
-    max-width: 340px;
-  `};
 `;
 
 export const FooterAccordion = styled(Accordion)`
@@ -168,4 +162,10 @@ export const FooterAccordion = styled(Accordion)`
       isOpen ? theme.palette.primary : theme.palette.white};
     padding-left: ${({ theme }) => theme.spacing.standard};
   }
+`;
+
+export const Text = styled.small`
+  position: relative;
+  width: 100%;
+  white-space: pre;
 `;

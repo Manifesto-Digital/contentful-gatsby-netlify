@@ -13,11 +13,17 @@ const SingleStat = ({ info, type, index }) => {
         {title}
         {subtitle && (
           <>
-            <br /> <span>{subtitle}</span>
+            {title && (
+              <>
+                {` `}
+                <br />
+              </>
+            )}
+            <span>{subtitle}</span>
           </>
         )}
       </Title>
-      <RichText richText={text} />
+      {text && <RichText richText={text} />}
     </Stat>
   );
 };
@@ -25,7 +31,7 @@ const SingleStat = ({ info, type, index }) => {
 SingleStat.propTypes = {
   info: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
     text: PropTypes.shape(richTextPropTypes).isRequired,
   }),
   type: PropTypes.string.isRequired,

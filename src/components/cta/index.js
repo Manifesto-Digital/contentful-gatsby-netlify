@@ -15,6 +15,7 @@ const CTA = ({
   className,
   externalUrl,
   marginBottom,
+  dataTracking,
 }) => {
   if (!link) return null;
 
@@ -23,6 +24,7 @@ const CTA = ({
       link={link}
       bg={consistentString(bg)}
       className={className}
+      dataTracking={dataTracking}
       fullWidth={fullWidth}
       externalUrl={externalUrl}
       marginBottom={marginBottom}
@@ -55,6 +57,7 @@ CTA.propTypes = {
   externalUrl: PropTypes.bool,
   className: PropTypes.string,
   marginBottom: PropTypes.bool,
+  dataTracking: PropTypes.string,
 };
 
 export default CTA;

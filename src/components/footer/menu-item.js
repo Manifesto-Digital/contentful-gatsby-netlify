@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { MenuList, ItemLink, Item } from './styles';
 
 const MenuItem = ({ pageData }) => {
-  const { menuLabel, navigationLink, childNavigationItems } = pageData;
+  const { navigationLink, childNavigationItems } = pageData;
   const navLink = navigationLink ? navigationLink[0] : null;
 
   if (!navLink) return null;
@@ -12,7 +12,7 @@ const MenuItem = ({ pageData }) => {
   return (
     <MenuList>
       <Item role="menuitem" aria-haspopup={!!childNavigationItems}>
-        <ItemLink internalLink={navLink}>{menuLabel || navLink.title}</ItemLink>
+        <ItemLink internalLink={navLink}>{navLink.title}</ItemLink>
       </Item>
       {childNavigationItems &&
         childNavigationItems.map(

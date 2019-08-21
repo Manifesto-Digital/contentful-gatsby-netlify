@@ -9,6 +9,7 @@ import { Container } from '../styled/containers';
 import { VisuallyHidden } from '../styled/accessibility';
 
 const AdviceSearchBox = ({ data, insideContainer }) => {
+  if (!data) return null;
   const { headerText, placeholder } = data;
   const country = data.collectionToSearch.toLowerCase();
 

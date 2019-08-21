@@ -18,9 +18,10 @@ const Layout = ({
   pageTitle,
   legal,
 }) => {
-  const description = pageInformation
-    ? pageInformation.seoDescription.internal.content
-    : '';
+  const description =
+    pageInformation && pageInformation.seoDescription
+      ? pageInformation.seoDescription.internal.content
+      : '';
   const title =
     pageInformation && pageInformation.setTitle
       ? pageInformation.seoTitle

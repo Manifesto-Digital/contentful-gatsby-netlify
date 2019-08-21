@@ -40,8 +40,6 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.25;
     }
 
-
-
     h1 {
         font-size:  ${({ theme }) => theme.headers.h2};
         ${breakpoint.tablet`

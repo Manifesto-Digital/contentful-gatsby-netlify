@@ -30,7 +30,9 @@ const PersonCard = ({ person, link, columns }) => {
 
   return (
     <Card hasLink={!!link} columns={columns} as={columns && 'li'}>
-      <StyledImage image={photo} width={500} height={500} fit="fill" />
+      {photo && (
+        <StyledImage image={photo} width={500} height={500} fit="fill" />
+      )}
       <Info>
         <Name>
           {firstName} {lastName}

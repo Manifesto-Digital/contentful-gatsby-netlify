@@ -7,6 +7,8 @@ import { Wrapper, Inner, ShareLink } from './styles';
 import { Container } from '../styled/containers';
 
 const ShareBlock = ({ data, insideContainer }) => {
+  if (!data) return null;
+
   const { headerText, shareType } = data;
   const url = {
     Print: 'printer',
@@ -47,6 +49,8 @@ const ShareBlock = ({ data, insideContainer }) => {
                         href={`${url[type]}${location.href}`}
                         target="_blank"
                         rel="noopener"
+                        className="tracking-share"
+                        data-tracking={type}
                       >
                         <Icon icon={consistentString(type)} />
                         {type === 'Email' ? 'Email' : 'Share'}

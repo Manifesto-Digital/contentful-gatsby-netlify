@@ -20,12 +20,13 @@ import {
   Logo,
   FooterAccordion,
   ContentWrapper,
+  Text,
 } from './styles';
 
 const footerQuery = graphql`
   query footerItemsQuery {
     allContentfulAssemblyFooter(
-      filter: { id: { eq: "212aa2ec-1643-592c-8ebe-d267f9250a11" } }
+      filter: { contentful_id: { eq: "68A7eXSYKTZiJzxAGP04wH" } }
     ) {
       edges {
         node {
@@ -61,6 +62,18 @@ const footerQuery = graphql`
 export const PureFooter = ({ pageData, removeMarginTop }) => {
   const { footerText, shareType, navigationItems } = pageData;
 
+  const replaceDateShortCode = text => {
+    const regex = /\[date\]+/gi;
+    return text.replace(regex, new Date().getFullYear());
+  };
+
+  const url = {
+    Email: 'mailto:info@shelter.org.uk',
+    LinkedIn: 'https://www.linkedin.com/company/shelter-uk',
+    Twitter: 'https://twitter.com/Shelter',
+    Facebook: 'https://www.facebook.com/ShelterUK/',
+  };
+
   return (
     <Wrapper removeMarginTop={removeMarginTop}>
       <Top>
@@ -94,10 +107,21 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
               <Social>
                 {shareType &&
                   shareType.map((type, i) => (
-                    <Icon key={i} icon={consistentString(type)} />
+                    <a
+                      href={url[type]}
+                      className="tracking-footer-social"
+                      data-tracking={type.toLowerCase()}
+                    >
+                      <Icon key={i} icon={consistentString(type)} />
+                    </a>
                   ))}
               </Social>
-              <RichText richText={footerText} />
+              <Text>
+                <RichText
+                  richText={footerText}
+                  textRenderer={replaceDateShortCode}
+                />
+              </Text>
             </ContentWrapper>
             <LogoWrapper to="/">
               <Logo src={LogoSVG} cacheGetRequests />

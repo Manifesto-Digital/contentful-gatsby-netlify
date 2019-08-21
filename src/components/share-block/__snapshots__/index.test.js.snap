@@ -122,7 +122,8 @@ exports[`renders Header Text 1`] = `
       className="c2"
     >
       <a
-        className="c3"
+        className="tracking-share c3"
+        data-tracking="Email"
         href="mailto:?&subject=Shelter&body=http://localhost:8000/"
         rel="noopener"
         target="_blank"
@@ -260,7 +261,8 @@ exports[`renders a share block with links 1`] = `
       className="c2"
     >
       <a
-        className="c3"
+        className="tracking-share c3"
+        data-tracking="Email"
         href="mailto:?&subject=Shelter&body=http://localhost:8000/"
         rel="noopener"
         target="_blank"

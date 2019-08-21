@@ -18,9 +18,9 @@ const AccordionsHandler = ({ render, mobileOnly }) => {
       document.documentElement.clientWidth ||
       document.body.clientWidth;
 
-    if (windowWidth > sizes.tablet && childrenState) {
+    if (windowWidth >= sizes.tablet && childrenState) {
       setChildrenState(false);
-    } else if (windowWidth <= sizes.tablet && !childrenState) {
+    } else if (windowWidth < sizes.tablet && !childrenState) {
       setChildrenState(true);
     }
   };

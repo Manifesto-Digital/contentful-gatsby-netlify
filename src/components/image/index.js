@@ -10,7 +10,8 @@ const Image = ({
   fit,
   presentational,
 }) => {
-  if (!file || !file.url) return;
+  if (!file || !file.url) return null;
+
   const { url } = file;
   const params = queryString.stringify({
     h: height,

@@ -8,10 +8,16 @@ import DownloadSVG from '../../assets/svg/icons/download-light.svg';
 import { Button, FileInfo, ButtonText, ButtonSVG } from './styles';
 
 const DownloadCTA = ({ cta, className }) => {
+  if (!cta) return null;
   const { buttonText, download } = cta;
 
   return (
-    <Button className={className} href={download.file.url} download>
+    <Button
+      className={`${className || ''} tracking-download`}
+      href={download.file.url}
+      data-tracking={mimeTypeToString(download.file.contentType)}
+      download
+    >
       <div>
         <ButtonText>{buttonText}</ButtonText>
         <FileInfo>{formatFilesize(download.file.details.size)}</FileInfo>
