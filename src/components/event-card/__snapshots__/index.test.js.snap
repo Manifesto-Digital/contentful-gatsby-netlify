@@ -86,6 +86,7 @@ exports[`renders correctly 1`] = `
     </p>
     <Link
       className="c3"
+      data-tracking="tracking-cta"
       to="/internal-link-slug"
     >
       <span

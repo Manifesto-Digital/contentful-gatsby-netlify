@@ -219,7 +219,8 @@ exports[`renders correctly 1`] = `
           </Link>
         </div>
         <Link
-          className="c11"
+          className="tracking-card c11"
+          data-tracking="card"
           to="/shelter-demo-page"
         >
           A short description for Callams test page
@@ -251,7 +252,8 @@ exports[`renders correctly 1`] = `
           </Link>
         </div>
         <Link
-          className="c11"
+          className="tracking-card c11"
+          data-tracking="card"
           to="/shelter-demo-page"
         >
           A short description for Callams test page

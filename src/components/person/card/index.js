@@ -54,7 +54,12 @@ const PersonCard = ({ person, link, columns }) => {
       </IconHolder>
 
       {link && (
-        <CoveringLink aria-hidden="true" internalLink={link}>
+        <CoveringLink
+          aria-hidden="true"
+          internalLink={link}
+          className="tracking-card"
+          dataTracking="people-collection"
+        >
           <VisuallyHidden>
             {firstName} {lastName}
           </VisuallyHidden>

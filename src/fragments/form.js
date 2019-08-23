@@ -6,6 +6,7 @@ export const AssemblyFormFragment = graphql`
     internal {
       type
     }
+    administrativeTitle
     submitUrl
     sourceCode
     formId

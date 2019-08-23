@@ -83,7 +83,8 @@ exports[`renders correctly 1`] = `
     </Link>
   </div>
   <Link
-    className="c5"
+    className="tracking-card c5"
+    data-tracking="card"
     to="/shelter-demo-page"
   >
     A short description for Callams test page

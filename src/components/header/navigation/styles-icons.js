@@ -47,4 +47,5 @@ export const ArrowSVG = styled(SVG)`
   fill: ${({ theme }) => theme.palette.black};
   width: 20px;
   cursor: pointer;
+  pointer-events: none;
 `;

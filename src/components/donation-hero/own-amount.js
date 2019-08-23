@@ -9,10 +9,9 @@ import { CollapsableArea, OwnAmountButton, OwnAmountSubmit } from './styles';
 import Button from '../button';
 import { VisuallyHidden } from '../styled/accessibility';
 
-const OwnAmount = ({ frequency }) => {
+const OwnAmount = ({ frequency, activeImage, activeDescription }) => {
   // State for other amount option
   const [collapsed, setCollapsed] = useState(true);
-
   return (
     <>
       <OwnAmountButton
@@ -24,6 +23,11 @@ const OwnAmount = ({ frequency }) => {
         <DonationForm
           frequency={frequency}
           id="donation-hero-own-amount-form"
+          dataTracking={{
+            donationImage: activeImage,
+            activeDescription,
+            donationBespoke: true,
+          }}
           render={({ handleAmountChange, setFieldValue, defaultValue }) => (
             <>
               <VisuallyHidden as="label" htmlFor="amount-holder-other-amount">
@@ -55,6 +59,8 @@ const OwnAmount = ({ frequency }) => {
 
 OwnAmount.propTypes = {
   frequency: PropTypes.oneOf(['once', 'regular']),
+  activeDescription: PropTypes.string,
+  activeImage: PropTypes.object,
 };
 
 export default OwnAmount;

@@ -29,6 +29,7 @@ const ContentForm = ({ data, insideContainer }) => {
     redirectAfterSubmission,
     backgroundColour,
     formHeader,
+    administrativeTitle,
   } = data;
 
   const hiddenInitialValues = {
@@ -59,7 +60,8 @@ const ContentForm = ({ data, insideContainer }) => {
             sendAnalyticsSubmissionEvent(
               values,
               formFields,
-              hiddenInitialValues
+              hiddenInitialValues,
+              { formName: administrativeTitle, formHeader }
             );
 
             if (redirectAfterSubmission) {

@@ -69,6 +69,7 @@ exports[`Renders correctly 1`] = `
   fill: #212122;
   width: 20px;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .c8 {

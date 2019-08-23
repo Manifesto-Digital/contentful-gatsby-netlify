@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 import { getQueryParams } from '../../utils/query-params';
 import { donation } from '../../variables';
+import { sendEvent } from '../../utils/analytics';
 // Styles
 import { StyledForm } from './styles';
 
@@ -14,6 +15,7 @@ const DonationFormHandler = ({
   frequency,
   inline,
   id,
+  dataTracking,
 }) => {
   const defaultValue = defaultDonationValue || 30;
   const defaultPennyValue = defaultValue * 100;
@@ -50,7 +52,15 @@ const DonationFormHandler = ({
     <Location>
       {({ location }) => (
         <Formik
-          onSubmit={() => {}} // Required to prevent submission error
+          onSubmit={values => {
+            sendEvent({
+              donationValue: values.amount / 100,
+              donationFrequency: values.frequency,
+              interactType: 'Donation Submit',
+              event: 'donationSubmit',
+              ...dataTracking,
+            });
+          }}
           initialValues={{
             cid: donation.defaultEnglandCampaignId,
             free_amount: '1',
@@ -64,10 +74,10 @@ const DonationFormHandler = ({
             <StyledForm
               inline={inline ? 1 : 0}
               as={Form}
-              onSubmit={submitForm}
               action="https://donate.shelter.org.uk/b"
               method="GET"
               className={className}
+              onSubmit={submitForm}
               id={id || null}
             >
               <Field type="hidden" name="cid" />
@@ -91,6 +101,10 @@ DonationFormHandler.propTypes = {
   frequency: PropTypes.oneOf(['once', 'regular']),
   inline: PropTypes.bool,
   id: PropTypes.string,
+  dataTracking: PropTypes.shape({
+    donationDescription: PropTypes.string,
+    donationImage: PropTypes.string,
+  }),
 };
 
 DonationFormHandler.defaultProps = {

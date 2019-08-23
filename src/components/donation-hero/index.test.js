@@ -100,6 +100,8 @@ it('switches option values when changing slider', () => {
     image: mockData.singleImage3,
   });
 
+  global.dataLayer = [];
+
   const onChange = wrapper.find(Slider).prop('onChange');
   onChange(mockData.singleAmount5);
 
