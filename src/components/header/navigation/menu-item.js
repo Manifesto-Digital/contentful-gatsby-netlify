@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import useToggle from '../../../utils/useToggle';
 import { SubNavButton, ArrowSVG } from './styles-icons';
 import { SubMenuUl, ItemLink, Item, SubMenuListItem } from './styles';
 import AngleRight from '../../../assets/svg/icons/chevron-down-light.svg';
@@ -13,12 +12,25 @@ const NavigationMenuItem = ({
   legal,
   navLevel,
 }) => {
-  const [subMenuState, setSubMenuState] = useToggle();
+  const [activeSubMenus, setOpenSubMenus] = useState([]);
   const { menuLabel, navigationLink, childNavigationItems } = menuItem;
   const navLink = navigationLink ? navigationLink[0] : null;
 
   if (!navLink) return null;
 
+  const subMenuClick = subMenuItemID => {
+    if (activeSubMenus.includes(subMenuItemID)) {
+      // Remove from active menus
+      const updatedActiveMenus = activeSubMenus.filter(
+        itemID => itemID !== subMenuItemID
+      );
+      setOpenSubMenus(updatedActiveMenus);
+    } else {
+      // Add to active menus
+      const updatedActiveMenus = [...activeSubMenus, subMenuItemID];
+      setOpenSubMenus(updatedActiveMenus);
+    }
+  };
   return (
     <>
       <Item
@@ -57,8 +69,8 @@ const NavigationMenuItem = ({
                     key={i}
                     id={item.id}
                     menuItem={item}
-                    menuOpen={subMenuState}
-                    setActiveMenu={() => setSubMenuState()}
+                    menuOpen={activeSubMenus.includes(item.id)}
+                    setActiveMenu={() => subMenuClick(item.id)}
                     navLevel={navLevel + 1}
                   />
                 ) : (

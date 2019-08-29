@@ -13,31 +13,30 @@ import {
 import { Container } from '../../styled/containers';
 import LegalSearchBar from './search-bar';
 
-const SecondNavigation = ({ professionalsMenuItem, location }) => {
+const SecondNavigation = ({ topLevelNavigationItems, location }) => {
   // If there are no sub items for the professional menu item then return early
-  if (!professionalsMenuItem || !professionalsMenuItem.childNavigationItems) {
-    return null;
-  }
-
-  const menuItems = professionalsMenuItem.childNavigationItems;
+  if (!topLevelNavigationItems || !location) return null;
 
   // Get the active page slugs (current and any parent pages)
-  const activePages = getActivePages(menuItems, location);
+  const activePages = getActivePages(topLevelNavigationItems, location);
+
+  // Check if any items should have an active state
+  const activeParentItem = topLevelNavigationItems.find(menuItem =>
+    activePages.includes(menuItem.navigationLink[0].slug)
+  );
 
   const isActive = slug => activePages.includes(slug);
 
-  // Check if any items should have an active state
-  const activeMenuItem = menuItems.find(menuItem =>
-    activePages.includes(menuItem.navigationLink[0].slug)
-  );
+  if (!activeParentItem || !activeParentItem.childNavigationItems) return null;
+  const activeMenu = activeParentItem.childNavigationItems;
 
   return (
     <SecondHeaderWrapper>
       <Container noMobilePadding>
         <SecondHeaderBar>
-          <SubsectionHeader>Professionals</SubsectionHeader>
+          <SubsectionHeader>{activeParentItem.menuLabel}</SubsectionHeader>
           <LegalMenuList role="menubar" aria-hidden="false">
-            {menuItems.map(
+            {activeMenu.map(
               (navItem, i) =>
                 navItem.navigationLink && (
                   <LegalItem key={i} role="menuitem">
@@ -53,9 +52,9 @@ const SecondNavigation = ({ professionalsMenuItem, location }) => {
           </LegalMenuList>
           <LegalSearchBar resolution="desktop" />
         </SecondHeaderBar>
-        {activeMenuItem && activeMenuItem.childNavigationItems && (
+        {activeMenu && (
           <ThirdNavigation
-            activeMenuItem={activeMenuItem}
+            parentMenu={activeMenu}
             location={location}
             activePages={activePages}
           />
@@ -66,7 +65,7 @@ const SecondNavigation = ({ professionalsMenuItem, location }) => {
 };
 
 SecondNavigation.propTypes = {
-  professionalsMenuItem: PropTypes.object,
+  topLevelNavigationItems: PropTypes.array,
   location: PropTypes.object,
 };
 

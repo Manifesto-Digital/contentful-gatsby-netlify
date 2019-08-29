@@ -9,11 +9,12 @@ export const LegalDonateButton = styled(LinkHandler)`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: ${({ mobileMenu, theme }) => mobileMenu && theme.spacing.small};
   text-decoration: none;
+  -webkit-font-smoothing: antialiased;
 
   ${breakpoint.desktop`
     height: 100%;
+    display: ${({ mobileOnly }) => mobileOnly && 'none'};
   `};
 
   &:hover {
@@ -41,7 +42,7 @@ export const SecondHeaderWrapper = styled.div`
 
 export const SecondHeaderBar = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: ${({ theme }) => theme.spacing.small};
 
   ${ItemLink} {
@@ -50,6 +51,7 @@ export const SecondHeaderBar = styled.div`
 `;
 
 export const SubsectionHeader = styled.h3`
+  flex-shrink: 0;
   margin-right: ${({ theme }) => theme.spacing.large};
   margin-bottom: 0;
   font-weight: normal;

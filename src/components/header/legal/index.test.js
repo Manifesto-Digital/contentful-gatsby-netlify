@@ -5,10 +5,10 @@ import { snapshotComponent, mountWithTheme } from 'test-helpers';
 import { createHeaderNavigation } from '../../../utils/test-factories';
 import { PureLegalHeader } from '.';
 import { hidePascalCaseWarning } from '../../../utils/test-mocks';
-import { resizeWindow } from '../../../utils/test-window-resize';
 import { Overlay } from '../../styled/overlay';
-import { MobileMenuOpen } from '../styles';
+import { MobileMenuOpen, BurgerIcon } from '../styles';
 import { Wrapper } from '../navigation/styles';
+import { sizes, emSize } from '../../theme/breakpoint';
 
 it('Renders correctly', () => {
   const mockData = createHeaderNavigation();
@@ -21,10 +21,15 @@ it('Displays burger icon on mobile devices', () => {
   const mockData = createHeaderNavigation();
   const wrapper = mountWithTheme(<PureLegalHeader pageData={mockData} />);
 
-  resizeWindow(760, 1024);
+  expect(wrapper.find(BurgerIcon)).toHaveLength(1);
 
-  expect(wrapper.find(MobileMenuOpen)).toHaveLength(1);
-  expect(wrapper.find(MobileMenuOpen)).toHaveStyleRule('display', 'flex');
+  const hamburger = wrapper.find(MobileMenuOpen).at(0);
+
+  // Hidden on mobile showing on desktop
+  expect(hamburger).toHaveStyleRule('display', 'flex');
+  expect(hamburger).toHaveStyleRule('display', 'none', {
+    media: `(min-width: ${emSize(sizes.desktop)})`,
+  });
 });
 
 test('Should activate menu and display an overlay on button click', () => {
@@ -32,7 +37,10 @@ test('Should activate menu and display an overlay on button click', () => {
   const wrapper = mountWithTheme(<PureLegalHeader pageData={mockData} />);
 
   act(() => {
-    wrapper.find(MobileMenuOpen).simulate('click');
+    wrapper
+      .find(MobileMenuOpen)
+      .at(0)
+      .simulate('click'); // hamburger
   });
   wrapper.update();
   expect(wrapper.find(Wrapper)).toHaveStyleRule('transform', 'translateX(0)');

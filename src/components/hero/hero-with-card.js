@@ -42,7 +42,7 @@ Hero.propTypes = {
     subtitle: PropTypes.string,
     cardPosition: PropTypes.oneOf(['Left', 'Right']),
     linkText: PropTypes.string,
-    link: PropTypes.object,
+    link: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     image: PropTypes.object,
   }),
 };
