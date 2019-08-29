@@ -21,6 +21,7 @@ exports[`renders correctly 1`] = `
 
 <Link
   className="c0"
+  data-tracking="tracking-cta"
   to="/internal-link-slug"
 >
   <span
@@ -79,6 +80,7 @@ exports[`renders correctly 2`] = `
     </h3>
     <Link
       className="tracking-banner-cta c3"
+      data-tracking="tracking-cta"
       to="/internal-link-slug"
     >
       <span

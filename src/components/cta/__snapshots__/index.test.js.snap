@@ -21,6 +21,7 @@ exports[`renders correctly 1`] = `
 
 <Link
   className="c0"
+  data-tracking="tracking-cta"
   to="/internal-link-slug"
 >
   <span

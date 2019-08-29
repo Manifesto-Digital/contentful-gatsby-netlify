@@ -68,7 +68,8 @@ export const getValidationSchema = formFields => {
 export const sendAnalyticsSubmissionEvent = (
   formValues,
   formFields,
-  hiddenInitialValues
+  hiddenInitialValues,
+  extraFields
 ) => {
   // Get any fields that are marked to send to analytics and set bool
   const fieldsToSend = formFields.reduce((acc, field) => {
@@ -101,6 +102,7 @@ export const sendAnalyticsSubmissionEvent = (
     event: 'formSubmitted',
     ...hiddenInitialValues,
     ...fieldsToSend,
+    ...extraFields,
   };
 
   sendEvent(analyticsObejctToSend);

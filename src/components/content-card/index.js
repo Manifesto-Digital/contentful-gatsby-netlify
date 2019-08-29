@@ -58,7 +58,13 @@ const ContentCard = ({ data, bannerFlow, cardCount }) => {
           )}
         </SummaryText>
       </Wrapper>
-      <CoveringLink tabIndex="-1" aria-hidden="true" internalLink={cardLink}>
+      <CoveringLink
+        tabIndex="-1"
+        aria-hidden="true"
+        internalLink={cardLink}
+        className="tracking-card"
+        dataTracking="card"
+      >
         {description}
       </CoveringLink>
     </Card>

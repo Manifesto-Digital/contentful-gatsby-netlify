@@ -60,4 +60,7 @@ CTA.propTypes = {
   dataTracking: PropTypes.string,
 };
 
+CTA.defaultProps = {
+  dataTracking: 'tracking-cta',
+};
 export default CTA;

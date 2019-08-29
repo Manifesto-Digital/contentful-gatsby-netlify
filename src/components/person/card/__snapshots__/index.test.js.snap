@@ -182,7 +182,8 @@ exports[`renders correctly 1`] = `
     />
   </div>
   <Link
-    className="c8"
+    className="tracking-card c8"
+    data-tracking="people-collection"
     to="/internal-link-slug"
   >
     <span

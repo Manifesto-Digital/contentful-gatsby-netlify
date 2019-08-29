@@ -7,6 +7,7 @@ import ResponsiveImage from '../image/responsive';
 import { StyledSlider, markStyle } from './slider';
 import DonationForm from '../donation-form-handler';
 import OwnAmount from './own-amount';
+import { sendEvent } from '../../utils/analytics';
 // Styles
 import {
   Hero,
@@ -68,6 +69,15 @@ const DonateHero = ({ content }) => {
   const frequency = selectedTabId === 'single' ? 'once' : 'regular';
 
   const onSliderChange = value => {
+    // Analytics
+    sendEvent({
+      event: 'donationAction',
+      donationValue: value,
+      donationFrequency: selectedTabId,
+      donationImage: activeImage,
+      interactType: 'Donation Slider',
+    });
+
     // Check the option value chosen exists, arrow navigation currently
     // does not pass through a correct value to the event handler
     const chosenOption = formattedValues[selectedTabId].find(
@@ -108,7 +118,16 @@ const DonateHero = ({ content }) => {
 
       <StyledContainer>
         <SliderBox>
-          <Tabs onSelect={index => setSelectedTabId(tabIds[index])}>
+          <Tabs
+            onSelect={index => {
+              sendEvent({
+                event: 'donationTabSelect',
+                tabNumber: index + 1,
+                tab: selectedTabId,
+              });
+              setSelectedTabId(tabIds[index]);
+            }}
+          >
             <StyledTabList>
               <StyledTab>Give once</StyledTab>
               <StyledTab>Give monthly</StyledTab>
@@ -128,6 +147,10 @@ const DonateHero = ({ content }) => {
                       inline={false}
                       frequency={frequency}
                       id="donation-hero-form"
+                      dataTracking={{
+                        donationImage: activeImage && activeImage.file.url,
+                        activeDescription,
+                      }}
                       render={({ handleAmountChange, setFieldValue }) => (
                         <>
                           <VisuallyHidden as="label" htmlFor="amount-holder">
@@ -156,7 +179,11 @@ const DonateHero = ({ content }) => {
                         </>
                       )}
                     />
-                    <OwnAmount frequency={frequency} />
+                    <OwnAmount
+                      frequency={frequency}
+                      activeImage={activeImage}
+                      activeDescription={activeDescription}
+                    />
                   </TabContent>
                 </TabPanel>
               );

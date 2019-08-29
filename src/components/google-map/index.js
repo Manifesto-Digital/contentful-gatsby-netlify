@@ -6,6 +6,7 @@ import InfoWindow from './InfoWindow';
 import { Wrapper, MapIconAlt, Address } from './styles';
 import { Container } from '../styled/containers';
 import IconAlt from '../../assets/svg/icons/map-marker-alt-light.svg';
+import { sendEvent } from '../../utils/analytics';
 
 const Map = ({ data, insideContainer }) => {
   const { headerText, locations } = data;
@@ -61,7 +62,16 @@ const Map = ({ data, insideContainer }) => {
                   text={place.address}
                   lat={place.location.lat}
                   lng={place.location.lon}
-                  markerClick={e => updateActiveMarker(i, e)}
+                  markerClick={e => {
+                    sendEvent({
+                      event: 'map-marker-clicked',
+                      markerText: place.address,
+                      markerLng: place.location.lon,
+                      markerLat: place.location.lat,
+                      totalMarkers: currentLocations.length,
+                    });
+                    updateActiveMarker(i, e);
+                  }}
                 >
                   {place.address && (
                     <InfoWindow
