@@ -17,29 +17,37 @@ export const getActivePages = (childMenuItems, location) => {
   };
 
   let pageFound = false;
-  let activePagesArray = [];
+  const activePagesArray = [];
 
-  const checkPageLevel = items => {
+  const checkPageLevel = (items, depth = 0) => {
     for (let i = 0; i < items.length; i += 1) {
       const item = items[i];
-      if (!item.navigationLink) return;
+
+      // Can only ever be one active current page
+      if (pageFound || !item.navigationLink) break;
+
+      // Active pages array length corresponds to hierarchy depth.
+      // If length is greater than depth then we have pushed items that have
+      // children that does not include the active page that needs to be removed
+      if (activePagesArray.length > depth) {
+        activePagesArray.splice(depth);
+      }
 
       const itemSlug = item.navigationLink[0].slug;
-
       if (isActivePage(itemSlug)) {
         // If found push the active page slug
         activePagesArray.push(itemSlug);
         pageFound = true;
-        break;
-      } else if (item.childNavigationItems) {
-        // Recursively go through the child navigation items storing
-        // potential active parents item slugs
+        return activePagesArray;
+      }
+      if (item.childNavigationItems) {
+        // Recursively go through the child navigation items
+        // Storing the item incase a child item is the active page to be able
+        // to detect active parents. If child is not active, item(s) will be spliced above
         activePagesArray.push(itemSlug);
-        checkPageLevel(item.childNavigationItems);
+        checkPageLevel(item.childNavigationItems, depth + 1);
       }
     }
-    // If page not found on level reset
-    if (!pageFound) activePagesArray = [];
     return activePagesArray;
   };
 

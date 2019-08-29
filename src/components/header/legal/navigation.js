@@ -14,6 +14,7 @@ import {
 } from '../navigation/styles';
 import { LegalDonateButton } from './styles';
 import CloseSVG from '../../../assets/svg/icons/times-light.svg';
+import LegalSearchBar from './search-bar';
 
 const Navigation = ({
   navigationItems,
@@ -46,6 +47,7 @@ const Navigation = ({
         >
           <MenuSVG src={CloseSVG} />
         </MobileMenuClose>
+        <LegalSearchBar searchFocus={searchFocus} resolution="mobile" />
         <Menus role="navigation" aria-label="Main menu" legal>
           {navigationItems && (
             <MenuList role="menubar" aria-hidden="false">
@@ -55,21 +57,21 @@ const Navigation = ({
                   id={item.id}
                   menuItem={item}
                   menuOpen={activeMenu === item.id}
-                  setActiveMenu={updateActiveMenu}
+                  setActiveMenu={() => updateActiveMenu(item.id)}
                   legal
                 />
               ))}
-              <Item topLevel legal>
+              <Item topLevel desktopOnly>
                 <LegalDonateButton
-                  mobileMenu
                   internalLink={{ slug: 'donate' }}
                   bg="donate"
+                  noMargin
                 >
                   Donate
                   <VisuallyHidden as="legend">Donate</VisuallyHidden>
                 </LegalDonateButton>
               </Item>
-              <Item topLevel legal>
+              <Item topLevel lastItem>
                 <ItemLink
                   as="a"
                   href="https://scotland.shelter.org.uk/"

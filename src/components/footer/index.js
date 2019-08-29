@@ -111,6 +111,7 @@ export const PureFooter = ({ pageData, removeMarginTop }) => {
                       href={url[type]}
                       className="tracking-footer-social"
                       data-tracking={type.toLowerCase()}
+                      key={i}
                     >
                       <Icon key={i} icon={consistentString(type)} />
                     </a>

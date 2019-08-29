@@ -46,6 +46,11 @@ export const BurgerIcon = styled(SVG)`
   width: 20px;
 `;
 
+export const SVGIcon = styled(SVG)`
+  display: block;
+  width: 20px;
+`;
+
 export const HeaderWrapper = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.palette.grey10};

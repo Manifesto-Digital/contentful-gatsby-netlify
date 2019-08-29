@@ -13,10 +13,14 @@ import {
   Logo,
   MobileMenuOpen,
   BurgerIcon,
+  SVGIcon,
   MenuControls,
 } from '../styles';
 import { Container } from '../../styled/containers';
 import SecondNavigation from './second-navigation';
+import { LegalDonateButton } from './styles';
+import { VisuallyHidden } from '../../styled/accessibility';
+import MagGlass from '../../../assets/svg/icons/search-light.svg';
 
 const legalNavigationQuery = graphql`
   query legalNavigationQuery {
@@ -40,11 +44,13 @@ const legalNavigationQuery = graphql`
               ...LinkFragment
             }
             childNavigationItems {
+              id
               menuLabel
               navigationLink {
                 ...LinkFragment
               }
               childNavigationItems {
+                id
                 menuLabel
                 navigationLink {
                   ...LinkFragment
@@ -66,11 +72,6 @@ export const PureLegalHeader = ({ pageData }) => {
   const [searchOpen, searchState] = useToggle(false);
   const { navigationItems } = pageData;
 
-  // We only want to show the second level navigation if Professionals item exists
-  const professionalsMenuItem = navigationItems
-    ? navigationItems.find(item => item.menuLabel === 'Professionals')
-    : null;
-
   return (
     <header>
       <HeaderWrapper>
@@ -80,13 +81,34 @@ export const PureLegalHeader = ({ pageData }) => {
               <Logo src={LogoSVG} cacheGetRequests />
             </LogoWrapper>
             <MenuControls>
+              <LegalDonateButton
+                mobileOnly
+                internalLink={{ slug: 'donate' }}
+                bg="donate"
+                noMargin
+              >
+                Donate
+                <VisuallyHidden as="legend">Donate</VisuallyHidden>
+              </LegalDonateButton>
+              {/* Search Icon */}
+              <MobileMenuOpen
+                type="button"
+                onClick={() => {
+                  openState();
+                  searchState();
+                }}
+                active={isOpen}
+                aria-expanded={isOpen}
+              >
+                <BurgerIcon src={MagGlass} cacheGetRequests />
+              </MobileMenuOpen>
               <MobileMenuOpen
                 type="button"
                 onClick={openState}
                 active={isOpen}
                 aria-expanded={isOpen}
               >
-                <BurgerIcon src={MenuSVG} cacheGetRequests />
+                <SVGIcon src={MenuSVG} cacheGetRequests />
               </MobileMenuOpen>
             </MenuControls>
             <LegalNavigation
@@ -99,16 +121,14 @@ export const PureLegalHeader = ({ pageData }) => {
           </HeaderBar>
         </Container>
       </HeaderWrapper>
-      {professionalsMenuItem && (
-        <Location>
-          {({ location }) => (
-            <SecondNavigation
-              location={location}
-              professionalsMenuItem={professionalsMenuItem}
-            />
-          )}
-        </Location>
-      )}
+      <Location>
+        {({ location }) => (
+          <SecondNavigation
+            location={location}
+            topLevelNavigationItems={navigationItems}
+          />
+        )}
+      </Location>
     </header>
   );
 };

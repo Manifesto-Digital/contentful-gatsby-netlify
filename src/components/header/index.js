@@ -14,6 +14,7 @@ import {
   Logo,
   MobileMenuOpen,
   BurgerIcon,
+  SVGIcon,
   MenuControls,
 } from './styles';
 import { Container } from '../styled/containers';
@@ -91,7 +92,7 @@ export const PureHeader = ({ pageData }) => {
                 active={isOpen}
                 aria-expanded={isOpen}
               >
-                <BurgerIcon src={MenuSVG} cacheGetRequests />
+                <SVGIcon src={MenuSVG} cacheGetRequests />
               </MobileMenuOpen>
             </MenuControls>
           </HeaderBar>
