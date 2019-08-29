@@ -171,9 +171,9 @@ Object {
         <div
           class="c1"
         >
-          <h1>
+          <h2>
             Topic - Services Finder
-          </h1>
+          </h2>
           <div
             class="c2"
           >
@@ -190,9 +190,9 @@ Object {
             </p>
           </div>
         </div>
-        <h2>
+        <h3>
           Where are you?
-        </h2>
+        </h3>
         <p>
           Your postcode or town
         </p>
@@ -247,9 +247,9 @@ Object {
       <div
         class="sc-gisBJw TqsAK"
       >
-        <h1>
+        <h2>
           Topic - Services Finder
-        </h1>
+        </h2>
         <div
           class="sc-bdVaJa gMnSGK"
         >
@@ -266,9 +266,9 @@ Object {
           </p>
         </div>
       </div>
-      <h2>
+      <h3>
         Where are you?
-      </h2>
+      </h3>
       <p>
         Your postcode or town
       </p>

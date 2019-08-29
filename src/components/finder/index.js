@@ -36,10 +36,10 @@ const Finder = memo(({ data, insideContainer, type }) => {
   return (
     <Container padding={!insideContainer}>
       <IntroWrapper>
-        <h1>{titleText}</h1>
+        <h2>{titleText}</h2>
         {introText && <RichText richText={introText} />}
       </IntroWrapper>
-      <h2>Where are you?</h2>
+      <h3>Where are you?</h3>
       <p>Your postcode or town</p>
       <SearchForm
         role="search"
