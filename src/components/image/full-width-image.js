@@ -1,16 +1,9 @@
-import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
-import ResponsiveImage from './responsive';
 import { Container } from '../styled/containers';
+import { Wrapper } from './styles';
 
-const Wrapper = styled(ResponsiveImage)`
-  width: 100%;
-  margin-bottom: ${({ removeMarginBottom, theme }) =>
-    removeMarginBottom ? 0 : theme.spacing.large};
-`;
-
-const FullWidthImage = ({ data, insideContainer }) => (
+const FullWidthImage = ({ data, insideContainer, sidebar }) => (
   <>
     {data.imageHeader && (
       <Container padding={!insideContainer}>
@@ -22,6 +15,7 @@ const FullWidthImage = ({ data, insideContainer }) => (
       desktopW={1800}
       removeMarginBottom={data.removeMarginBottom}
       image={data.image}
+      noStretch={sidebar}
     />
   </>
 );
@@ -33,10 +27,12 @@ FullWidthImage.propTypes = {
     removeMarginBottom: PropTypes.bool,
   }),
   insideContainer: PropTypes.bool,
+  sidebar: PropTypes.bool,
 };
 
 FullWidthImage.defaultProps = {
   insideContainer: false,
+  sidebar: false,
 };
 
 export default FullWidthImage;

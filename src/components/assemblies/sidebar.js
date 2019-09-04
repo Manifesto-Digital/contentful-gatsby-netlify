@@ -51,7 +51,9 @@ const SidebarAssemblies = ({ assemblies }) => {
       }
 
       if (internal.type === 'ContentfulComponentFullWidthImage') {
-        return <FullWidthImage key={id} data={assembly} insideContainer />;
+        return (
+          <FullWidthImage key={id} data={assembly} insideContainer sidebar />
+        );
       }
       return null;
     });
