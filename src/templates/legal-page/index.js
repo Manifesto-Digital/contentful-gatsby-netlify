@@ -45,6 +45,9 @@ const LegalPage = ({ data, pageContext }) => {
     downloads,
     lastAmended,
     pageInformation,
+    createdAt,
+    updatedAt,
+    internal,
   } = legalPage;
   const hasBottomSection =
     (referenceList && referenceList.length > 0) ||
@@ -85,6 +88,9 @@ const LegalPage = ({ data, pageContext }) => {
       removeFooterMargin
       legal
       pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
     >
       <article>
         <Container>
@@ -202,6 +208,11 @@ export const legalPageQuery = graphql`
     contentfulPageLegal(slug: { eq: $slug }) {
       slug
       title
+      updatedAt
+      createdAt
+      internal {
+        type
+      }
       pageInformation {
         ...PageInformationFragment
       }

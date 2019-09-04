@@ -16,10 +16,19 @@ const PolicyPage = ({ data, pageContext }) => {
     policy,
     pageInformation,
     assemblies,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPagePolicy;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -63,7 +72,11 @@ export const PolicyPageQuery = graphql`
           ...ShareBlockFragment
         }
       }
-
+      updatedAt
+      createdAt
+      internal {
+        type
+      }
       pageInformation {
         ...PageInformationFragment
       }

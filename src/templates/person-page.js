@@ -17,6 +17,9 @@ const Page = ({ data, pageContext }) => {
     quotation,
     pageInformation,
     assemblies,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPagePerson;
   const { jobTitle, photo, bio } = person;
   const personList = data.allContentfulDataPerson
@@ -24,7 +27,13 @@ const Page = ({ data, pageContext }) => {
     : null;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -82,6 +91,11 @@ export const personPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

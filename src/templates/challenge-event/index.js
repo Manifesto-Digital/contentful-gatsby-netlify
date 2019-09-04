@@ -5,7 +5,13 @@ import Layout from '../../components/layout';
 import ChallengeTemplate from './template';
 
 const ChallengeEventPage = ({ data }) => {
-  const { pageInformation, event } = data.contentfulPageChallengeEvent;
+  const {
+    pageInformation,
+    event,
+    createdAt,
+    updatedAt,
+    internal,
+  } = data.contentfulPageChallengeEvent;
 
   // Grab the information from the event reference
   const { eventName } = event;
@@ -15,6 +21,9 @@ const ChallengeEventPage = ({ data }) => {
       pageInformation={pageInformation}
       pageTitle={eventName}
       removeFooterMargin
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
     >
       <ChallengeTemplate challengeEvent={data.contentfulPageChallengeEvent} />
     </Layout>
@@ -46,6 +55,11 @@ export const challengeEventPageQuery = graphql`
       bannerButtonText
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

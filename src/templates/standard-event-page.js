@@ -44,13 +44,22 @@ const Page = ({ data, pageContext }) => {
     assemblies,
     sidebarAssemblies,
     pageInformation,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageStandardEvent;
 
   const { eventLocation } = event;
   const eventStatus = consistentString(event.eventStatus);
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={event.eventName}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={event.eventName}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -154,6 +163,11 @@ export const standardEventPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

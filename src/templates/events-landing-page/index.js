@@ -18,10 +18,19 @@ const EventsLandingPage = ({ data, pageContext }) => {
     topTextSection,
     featuredEvents,
     pageInformation,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageEventsLanding;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -85,6 +94,11 @@ export const eventsLandingPageQuery = graphql`
           ...LinkFragment
         }
         secondaryCtaText
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       pageInformation {
         ...PageInformationFragment

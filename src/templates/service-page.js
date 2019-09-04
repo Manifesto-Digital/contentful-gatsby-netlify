@@ -21,10 +21,19 @@ const ServicePage = ({ data, pageContext }) => {
     usefulInfoCopy,
     pageInformation,
     assemblies,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageService;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -85,6 +94,11 @@ export const servicePageQuery = graphql`
       }
       usefulInfoCopy {
         json
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

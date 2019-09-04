@@ -28,6 +28,9 @@ const PressReleasePage = ({ data, pageContext }) => {
     showContactSideBar,
     pageInformation,
     assemblies,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPagePressRelease;
 
   const formattedDate = dateAsString(datePosted, 'DD MMM YYYY');
@@ -64,7 +67,13 @@ const PressReleasePage = ({ data, pageContext }) => {
   };
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -137,6 +146,11 @@ export const pressReleasePageQuery = graphql`
             contentType
           }
         }
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

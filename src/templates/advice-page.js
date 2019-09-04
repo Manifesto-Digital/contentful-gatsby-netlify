@@ -29,6 +29,9 @@ const AdvicePage = ({ data, pageContext }) => {
     displayBounceCard,
     pageInformation,
     lastAmended,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageAdvice;
   const { subpages, slug } = pageContext;
 
@@ -39,7 +42,13 @@ const AdvicePage = ({ data, pageContext }) => {
   const guideSubTitle = pageTitle !== title ? title : null;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -99,6 +108,11 @@ export const advicePageQuery = graphql`
         ...PageInformationFragment
       }
       lastAmended
+      updatedAt
+      createdAt
+      internal {
+        type
+      }
       assemblies {
         ... on Node {
           ...CtaAssemblyFragment

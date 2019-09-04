@@ -17,10 +17,19 @@ const Page = ({ data, pageContext }) => {
     assemblies,
     pageInformation,
     title,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageContent;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         {heroContent && <Hero content={heroContent[0]} />}
         <section>
@@ -68,6 +77,11 @@ export const pageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

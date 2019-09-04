@@ -25,6 +25,9 @@ const LegalLandingPage = ({ data, pageContext }) => {
     applicableRegions,
     calloutInformation,
     pageInformation,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageLegalLanding;
 
   let currentPageHierarchy = null;
@@ -41,7 +44,14 @@ const LegalLandingPage = ({ data, pageContext }) => {
   }
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title} legal>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      legal
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <Container>
         <Breadcrumbs
           parentPages={pageContext.menuParent}
@@ -101,6 +111,11 @@ export const eventsLandingPageQuery = graphql`
       applicableRegions
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       introductionText {
         json

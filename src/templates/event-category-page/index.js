@@ -29,6 +29,9 @@ const EventCategoryPage = ({ data, pageContext }) => {
     assemblies,
     sidebarAssemblies,
     pageInformation,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageEventCategory;
 
   const standardEventPages = data.allContentfulPageStandardEvent.edges || [];
@@ -42,7 +45,13 @@ const EventCategoryPage = ({ data, pageContext }) => {
     );
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -131,6 +140,11 @@ export const eventCategoryPageQuery = graphql`
       }
       sidebarAssemblies {
         ...SidebarFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       pageInformation {
         ...PageInformationFragment

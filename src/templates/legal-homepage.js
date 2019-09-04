@@ -20,6 +20,9 @@ const LegalHomepage = ({ data }) => {
     hero,
     pageInformation,
     title,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageLegalHomepage;
 
   const updatedLegalPages = data.allContentfulPageLegal.edges;
@@ -31,6 +34,9 @@ const LegalHomepage = ({ data }) => {
       pageTitle={title}
       removeFooterMargin
       legal
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
     >
       <HeroWithCard content={hero} />
       <Container>
@@ -71,6 +77,10 @@ export const eventsLandingPageQuery = graphql`
   query LegalHomepageTemplateQuery($slug: String!) {
     contentfulPageLegalHomepage(slug: { eq: $slug }) {
       title
+      createdAt
+      internal {
+        type
+      }
       pageInformation {
         ...PageInformationFragment
       }

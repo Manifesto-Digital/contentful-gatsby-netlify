@@ -25,10 +25,19 @@ const Page = ({ data, pageContext }) => {
     form,
     pageInformation,
     assemblies,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageShop;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -80,6 +89,11 @@ export const shopPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {

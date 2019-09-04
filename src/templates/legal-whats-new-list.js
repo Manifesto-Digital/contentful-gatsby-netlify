@@ -17,7 +17,12 @@ import Pagination from '../components/pagination';
 
 const LegalWhatsNew = ({ data, pageContext }) => {
   const { title, featuredLegalPage, introductoryText } = pageContext;
-  const { pageInformation } = data.contentfulPageLegalWhatsNew;
+  const {
+    pageInformation,
+    createdAt,
+    updatedAt,
+    internal,
+  } = data.contentfulPageLegalWhatsNew;
   const legalUpdatesItems = data.allContentfulPageLegal.edges
     ? data.allContentfulPageLegal.edges.map(edge => edge.node)
     : [];
@@ -29,7 +34,13 @@ const LegalWhatsNew = ({ data, pageContext }) => {
     : legalUpdatesItems.splice(-1, 1);
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={title}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={title}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <Container>
         <ContentWithSideBar>
           <TwoThirds>
@@ -74,6 +85,11 @@ export const LegalWhatsNewQuery = graphql`
       title
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
     }
     allContentfulPageLegal(

@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-// Styles
 import { ThemeProvider } from 'styled-components';
+import { sendEvent } from '../../utils/analytics';
+import { dateAsString } from '../../utils/dates';
+// Styles
 import { GlobalStyle } from '../theme/global';
 import theme from '../theme/variables';
 // Components
@@ -17,6 +19,9 @@ const Layout = ({
   pageInformation,
   pageTitle,
   legal,
+  createdAt,
+  updatedAt,
+  contentType,
 }) => {
   const description =
     pageInformation && pageInformation.seoDescription
@@ -26,6 +31,13 @@ const Layout = ({
     pageInformation && pageInformation.setTitle
       ? pageInformation.seoTitle
       : pageTitle;
+
+  sendEvent({
+    contentType,
+    pageTitle: title,
+    contentPublishedDate: `${dateAsString(createdAt, 'DD/MM/YYYY')}`,
+    contentModifiedDate: `${dateAsString(updatedAt, 'DD/MM/YYYY')}`,
+  });
 
   return (
     <StaticQuery
@@ -73,6 +85,9 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   removeFooterMargin: PropTypes.bool,
   legal: PropTypes.bool,
+  createdAt: PropTypes.string,
+  updatedAt: PropTypes.string,
+  contentType: PropTypes.string,
   pageInformation: PropTypes.shape({
     seoTitle: PropTypes.string.isRequired,
     seoDescription: PropTypes.shape({

@@ -26,12 +26,21 @@ const Page = ({ data, pageContext }) => {
     howDoesYourDonationHelp,
     pageInformation,
     assemblies,
+    createdAt,
+    updatedAt,
+    internal,
   } = data.contentfulPageFurnitureShop;
 
   if (!shop) return null;
 
   return (
-    <Layout pageInformation={pageInformation} pageTitle={pageHeader}>
+    <Layout
+      pageInformation={pageInformation}
+      pageTitle={pageHeader}
+      createdAt={createdAt}
+      updatedAt={updatedAt}
+      contentType={internal.type}
+    >
       <article>
         <Container>
           <Breadcrumbs
@@ -102,6 +111,11 @@ export const furnitureShopPageQuery = graphql`
       }
       pageInformation {
         ...PageInformationFragment
+      }
+      updatedAt
+      createdAt
+      internal {
+        type
       }
       assemblies {
         ... on Node {
