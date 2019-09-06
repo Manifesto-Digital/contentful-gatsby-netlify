@@ -96,6 +96,7 @@ export const pageQuery = graphql`
           ...AccordionsFragment
           ...ContentCardBannerFragment
           ...FullWidthImageFragment
+          ...TableFragment
         }
       }
     }

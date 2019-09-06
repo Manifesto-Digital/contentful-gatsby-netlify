@@ -26,6 +26,7 @@ import Finder from '../finder';
 import PersonCollection from '../person/collection';
 import Accordions from '../accordion/accordions';
 import FullWidthImage from '../image/full-width-image';
+import TableWrapper from '../table/table-wrapper';
 
 // Prevent unnecessary re-rendering, useful in Challenge Event scroll handler
 const Assemblies = React.memo(function AssembliesComponent({
@@ -210,6 +211,10 @@ const Assemblies = React.memo(function AssembliesComponent({
 
       if (internal.type === 'ContentfulComponentFullWidthImage') {
         return <FullWidthImage key={id} data={assembly} />;
+      }
+      if (internal.type === 'ContentfulComponentTable') {
+        console.log('table firing?');
+        return <TableWrapper key={id} data={assembly} />;
       }
 
       return null;
