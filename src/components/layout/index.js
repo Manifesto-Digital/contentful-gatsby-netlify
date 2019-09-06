@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
@@ -32,12 +32,15 @@ const Layout = ({
       ? pageInformation.seoTitle
       : pageTitle;
 
-  sendEvent({
-    contentType,
-    pageTitle: title,
-    contentPublishedDate: `${dateAsString(createdAt, 'DD/MM/YYYY')}`,
-    contentModifiedDate: `${dateAsString(updatedAt, 'DD/MM/YYYY')}`,
-  });
+  useEffect(() => {
+    // Analytics event, page view is fired on gatsby-route-change which occurs after
+    sendEvent({
+      contentType,
+      pageTitle: title,
+      contentPublishedDate: `${dateAsString(createdAt, 'DD/MM/YYYY')}`,
+      contentModifiedDate: `${dateAsString(updatedAt, 'DD/MM/YYYY')}`,
+    });
+  }, [contentType, createdAt, title, updatedAt]);
 
   return (
     <StaticQuery

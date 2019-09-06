@@ -5,6 +5,7 @@ import Icon from './icon';
 import { consistentString } from '../../utils/content-formatting';
 import { Wrapper, Inner, ShareLink } from './styles';
 import { Container } from '../styled/containers';
+import { sendEvent } from '../../utils/analytics';
 
 const ShareBlock = ({ data, insideContainer }) => {
   if (!data) return null;
@@ -18,6 +19,11 @@ const ShareBlock = ({ data, insideContainer }) => {
     Facebook: 'https://www.facebook.com/sharer/sharer.php?u=',
   };
 
+  const printAnalyticsEvent = () =>
+    sendEvent({
+      event: 'print',
+    });
+
   return (
     <Container padding={!insideContainer}>
       {headerText && <h3>{headerText}</h3>}
@@ -29,9 +35,15 @@ const ShareBlock = ({ data, insideContainer }) => {
                 <Inner>
                   <ShareLink
                     as="button"
-                    onClick={() => window.print()}
+                    onClick={() => {
+                      window.print();
+                      printAnalyticsEvent();
+                    }}
                     onKeyDown={event => {
-                      if (event.keycode === 13) window.print();
+                      if (event.keycode === 13) {
+                        window.print();
+                        printAnalyticsEvent();
+                      }
                     }}
                     type="button"
                     tabIndex="0"
