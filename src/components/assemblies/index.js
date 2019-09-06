@@ -212,9 +212,15 @@ const Assemblies = React.memo(function AssembliesComponent({
       if (internal.type === 'ContentfulComponentFullWidthImage') {
         return <FullWidthImage key={id} data={assembly} />;
       }
+
       if (internal.type === 'ContentfulComponentTable') {
-        console.log('table firing?');
-        return <TableWrapper key={id} data={assembly} />;
+        return (
+          <TableWrapper
+            key={id}
+            data={assembly}
+            insideContainer={insideContainer}
+          />
+        );
       }
 
       return null;

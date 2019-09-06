@@ -118,6 +118,7 @@ export const advicePageQuery = graphql`
           ...ContentCardBannerFragment
           ...AssemblyFormFragment
           ...TwoColumnTextAndImageBlockFragment
+          ...TableFragment
         }
       }
       displayBounceCard
