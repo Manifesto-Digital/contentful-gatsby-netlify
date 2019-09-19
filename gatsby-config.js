@@ -54,6 +54,7 @@ module.exports = {
           process.env.ctfl_accessToken,
         host: process.env.GATSBY_CONTENTFUL_HOST || process.env.ctfl_host,
         environment: process.env.GATSBY_CONTENTFUL_ENVIRONMENT || 'master',
+        forceFullSync: true,
       },
     },
     'gatsby-plugin-offline',
