@@ -10,7 +10,7 @@
     "@reach/router": "^1.2.1",
     "@svgr/webpack": "4.1.0",
     "await-exec": "^0.1.2",
-    "axios": "0.18.0",
+    "axios": "0.21.1",
     "axios-mock-adapter": "1.16.0",
     "babel-jest": "^24.1.0",
     "babel-plugin-styled-components": "^1.8.0",
