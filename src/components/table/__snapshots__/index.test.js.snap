@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the table component correctly 1`] = `
+.c0 {
+  padding: 10px;
+  vertical-align: top;
+  border-collapse: collpase;
+  background-color: #e5e5e5;
+}
+
+<table>
+  <tbody>
+    <tr>
+      <th
+        className="c0"
+      >
+        City/town
+      </th>
+      <th
+        className="c0"
+      >
+        Number of homeless children  
+      </th>
+      <th
+        className="c0"
+      >
+        Number of schools
+      </th>
+      <th
+        className="c0"
+      >
+        Equivalent number of homeless children per school
+      </th>
+    </tr>
+    <tr>
+      <td
+        className="c0"
+      >
+        Luton
+      </td>
+      <td
+        className="c0"
+      >
+        2,549
+      </td>
+      <td
+        className="c0"
+      >
+        79
+      </td>
+      <td
+        className="c0"
+      >
+        32
+      </td>
+    </tr>
+    <tr>
+      <td
+        className="c0"
+      >
+        London
+      </td>
+      <td
+        className="c0"
+      >
+        88,410
+      </td>
+      <td
+        className="c0"
+      >
+        3,147
+      </td>
+      <td
+        className="c0"
+      >
+        28
+      </td>
+    </tr>
+    <tr>
+      <td
+        className="c0"
+      >
+        Brighton and Hove
+      </td>
+      <td
+        className="c0"
+      >
+        1,962
+      </td>
+      <td
+        className="c0"
+      >
+        90
+      </td>
+      <td
+        className="c0"
+      >
+        22
+      </td>
+    </tr>
+    <tr>
+      <td
+        className="c0"
+      >
+        Slough
+      </td>
+      <td
+        className="c0"
+      >
+        741
+      </td>
+      <td
+        className="c0"
+      >
+        55
+      </td>
+      <td
+        className="c0"
+      >
+        13
+      </td>
+    </tr>
+    <tr>
+      <td
+        className="c0"
+      >
+        Manchester
+      </td>
+      <td
+        className="c0"
+      >
+        1,872
+      </td>
+      <td
+        className="c0"
+      >
+        202
+      </td>
+      <td
+        className="c0"
+      >
+        9
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`renders the table wrapper component correctly 1`] = `
+.c1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.c0 {
+  margin-bottom: 40px;
+}
+
+.c2 {
+  padding: 10px;
+  vertical-align: top;
+  border-collapse: collpase;
+  background-color: #e5e5e5;
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <table>
+      <tbody>
+        <tr>
+          <th
+            className="c2"
+          >
+            City/town
+          </th>
+          <th
+            className="c2"
+          >
+            Number of homeless children  
+          </th>
+          <th
+            className="c2"
+          >
+            Number of schools
+          </th>
+          <th
+            className="c2"
+          >
+            Equivalent number of homeless children per school
+          </th>
+        </tr>
+        <tr>
+          <td
+            className="c2"
+          >
+            Luton
+          </td>
+          <td
+            className="c2"
+          >
+            2,549
+          </td>
+          <td
+            className="c2"
+          >
+            79
+          </td>
+          <td
+            className="c2"
+          >
+            32
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="c2"
+          >
+            London
+          </td>
+          <td
+            className="c2"
+          >
+            88,410
+          </td>
+          <td
+            className="c2"
+          >
+            3,147
+          </td>
+          <td
+            className="c2"
+          >
+            28
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="c2"
+          >
+            Brighton and Hove
+          </td>
+          <td
+            className="c2"
+          >
+            1,962
+          </td>
+          <td
+            className="c2"
+          >
+            90
+          </td>
+          <td
+            className="c2"
+          >
+            22
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="c2"
+          >
+            Slough
+          </td>
+          <td
+            className="c2"
+          >
+            741
+          </td>
+          <td
+            className="c2"
+          >
+            55
+          </td>
+          <td
+            className="c2"
+          >
+            13
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="c2"
+          >
+            Manchester
+          </td>
+          <td
+            className="c2"
+          >
+            1,872
+          </td>
+          <td
+            className="c2"
+          >
+            202
+          </td>
+          <td
+            className="c2"
+          >
+            9
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+`;

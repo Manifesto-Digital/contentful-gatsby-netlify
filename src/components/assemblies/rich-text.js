@@ -9,10 +9,10 @@ import Map from '../google-map';
 import AdviceSearchBox from '../advice-search-box';
 import VideoEmbed from '../video';
 import Accordions from '../accordion/accordions';
+import TableWrapper from '../table/table-wrapper';
 
 const Assemblies = ({ fields, sys }) => {
   const type = sys.contentType.sys.id;
-
   if (type === 'topicInlineCallout') {
     return (
       <InlineCallOut {...fields} insideContainer>
@@ -56,6 +56,10 @@ const Assemblies = ({ fields, sys }) => {
   }
   if (type === 'assemblyAccordions') {
     return <Accordions data={fields} insideContainer />;
+  }
+
+  if (type === 'topicTable') {
+    return <TableWrapper data={fields} insideContainer />;
   }
 
   return null;

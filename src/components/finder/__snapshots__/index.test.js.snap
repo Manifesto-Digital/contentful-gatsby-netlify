@@ -245,7 +245,7 @@ Object {
       class="sc-EHOje jjWEII"
     >
       <div
-        class="sc-gisBJw TqsAK"
+        class="sc-cHGsZl cXIGkJ"
       >
         <h2>
           Topic - Services Finder
@@ -273,11 +273,11 @@ Object {
         Your postcode or town
       </p>
       <form
-        class="sc-kjoXOD fNiuvy"
+        class="sc-TOsTZ gbdIXc"
         role="search"
       >
         <div
-          class="sc-kgAjT iESWpB"
+          class="sc-ksYbfQ hmbBHu"
         >
           <label
             class="sc-Rmtcm kmxnaI"
@@ -286,14 +286,14 @@ Object {
             Search for services
           </label>
           <input
-            class="sc-cJSrbW dlzxDg"
+            class="sc-hmzhuo eOHVNJ"
             data-testid="search-input"
             name="search-input"
             type="text"
             value=""
           />
           <button
-            class="sc-ksYbfQ jdrCOs"
+            class="sc-frDJqD hltJNa"
             disabled=""
             type="submit"
           >
@@ -306,10 +306,10 @@ Object {
           </button>
         </div>
         <div
-          class="sc-hmzhuo cJhKFP"
+          class="sc-kvZOFW NVdhZ"
         >
           <span
-            class="isvg loading sc-frDJqD jRmhSC"
+            class="isvg loading sc-hqyNC iGMSVi"
           />
         </div>
       </form>

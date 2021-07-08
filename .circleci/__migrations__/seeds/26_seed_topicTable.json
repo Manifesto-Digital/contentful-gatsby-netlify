@@ -1,0 +1,85 @@
+{
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6sxvmndnpn0s"
+          }
+        },
+        "id": "7l0gJyZQfAi0O0cBra5RBJ",
+        "type": "Entry",
+        "createdAt": "2019-09-05T14:07:34.957Z",
+        "updatedAt": "2019-09-05T14:48:53.785Z",
+        "environment": {
+          "sys": {
+            "id": "manifesto-snapshot-migration",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 63,
+        "publishedAt": "2019-09-05T14:48:53.785Z",
+        "firstPublishedAt": "2019-09-05T14:34:34.020Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 64,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "626lvcSPzGpLe4tAiZj4tA"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "topicTable"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-GB": "Migration - Component - table"
+        },
+        "tableHeader": {
+          "en-GB": "Table header"
+        },
+        "table": {
+          "en-GB": {
+            "tableData": [
+              [
+                "City/town",
+                "Number of homeless children  ",
+                "Number of schools",
+                "Equivalent number of homeless children per school"
+              ],
+              ["Luton", "2,549", "79", "32"],
+              ["London", "88,410", "3,147", "28"],
+              ["Brighton and Hove", "1,962", "90", "22"],
+              ["Slough", "741", "55", "13"],
+              ["Manchester", "1,872", "202", "9"]
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "assets": []
+}

@@ -157,6 +157,7 @@ export const pressReleasePageQuery = graphql`
           ...CtaAssemblyFragment
           ...PersonCollectionFragment
           ...ShareBlockFragment
+          ...TableFragment
         }
       }
       pageInformation {
